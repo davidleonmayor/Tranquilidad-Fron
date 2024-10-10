@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Musicoterapia</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .contenedor-principal {
+    position: relative;
+}
+
+  /* Estilos adicionales para la interacción */
+  .genre:hover img,
+    .imagen-footer:hover,
+    .title:hover span,
+    .nav a:hover {
+      transform: scale(1.1); /* Aumenta el tamaño al pasar el cursor */
+    }
+
+        /* Fin de estilos adicionales para la interacción */
+
+        .imagen-usuario {
+            width: 30px;
+            height: 30px;
+        }
+
+        .body {
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #59009A;
+            color: #ffffff;
+            padding: 10px;
+        }
+
+        .footer-container {
+            display: flex;
+            padding: 0;
+            justify-content: space-between;
+            align-items: flex-start;
+            width: 100%;
+        }
+
+        .contact-item {
+            display: flex;
+            flex-direction: column;
+            padding-left: 10px;
+            padding-right: 10px;
+            align-items: center;
+            text-align: center;
+        }
+
+        .contact-item span {
+            margin-bottom: 5px;
+        }
+
+        .iconos {
+            display: flex;
+            justify-content: center;
+        }
+
+        .iconos a {
+            margin: 0 10px;
+        }
+
+        .iconos img {
+            width: 24px;
+            height: 24px;
+        }
+
+        .quienes-somos {
+            align-self: center;
+            color: #ffffff;
+            text-decoration: none;
+            margin-left: auto;
+        }
+        h1 {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            color: #59009A;
+            font-style: italic;
+        }
+  
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            position: absolute;
+            padding: 0;
+            background-color: #fffcfc;
+            width: 100%;
+            left: 0%;
+        }
+  
+        .arriba {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            border-bottom: 1px solid #333;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        .logo img {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+        .logo h1 {
+            margin: 0;
+        }
+        .user {
+            display: flex;
+            align-items: center;
+            margin: 0px;
+        }
+        .user a {
+            margin-right: 20px;
+            color: #59009A;
+            text-decoration: none;
+            margin-inline-start: auto;
+        }
+        .user img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+  
+        /* Estilos del contenedor principal */
+        .container {
+            display: flex; /* Usa un diseño flexbox */
+            height: calc(100vh - 126px); /* Define la altura del contenedor menos la altura del encabezado */
+        }
+
+        /* Estilos de la barra lateral */
+        .sidebar {
+            width: 25%; /* Define el ancho de la barra lateral */
+            background-color: #c7b7fe49; /* Define el color de fondo */
+            padding: 20px; /* Añade un relleno */
+        }
+
+        /* Estilos de los elementos del menu en la barra lateral */
+        .sidebar .menu-item {
+            padding: 12px; /* Añade un relleno */
+            margin: 10px 0; /* Añade un margen vertical */
+            background: #fff; /* Define el color de fondo */
+            border-radius: 15px; /* Redondea las esquinas del cuadro */
+            transition: background 0.3s ease; /* Añade una transición para el cambio de fondo */
+        }
+
+        /* Estilos para enlaces específicos */
+        .menu-item a[href="Tus me gustas podcast.html"] {
+            color: #9c76c1; /* Define el color del texto para un enlace específico */
+        }
+
+        /* Estilos de los elementos del menú cuando están activos o al pasar el ratón */
+        .sidebar .menu-item.active,
+        .sidebar .menu-item:hover {
+            background: linear-gradient(#ffffff, #9c76c1); /* Define un fondo degradado en hover/activo */
+            box-shadow: 1px 5px 10px 0.1px rgb(145, 145, 145); /* Añade una sombra */
+        }
+
+        /* Estilos de las imágenes dentro de los elementos del menú */
+        .sidebar .menu-item img {
+            width: 24px; /* Define el ancho de la imagen */
+            height: 24px; /* Define la altura de la imagen */
+            margin-right: 10px; /* Añade un margen derecho */
+        }
+
+        /* Estilos de los enlaces dentro de los elementos del menú */
+        .sidebar .menu-item a {
+            display: flex; /* Usa un diseño flexbox */
+            align-items: center; /* Alinea los elementos verticalmente al centro */
+            color: inherit; /* Hereda el color del texto */
+            text-decoration: none; /* Elimina el subrayado de los enlaces */
+            justify-content: center; /* Centra el contenido horizontalmente */
+        }
+
+        /* Estilos del texto dentro de los elementos del menú */
+        .sidebar .menu-item span {
+            flex-grow: 1; /* Permite que el span ocupe el espacio restante */
+            text-align: center; /* Centra el texto */
+            font-size: 16px; /* Define el tamaño de la fuente */
+        }
+
+        /* Estilos del contenido principal */
+        .main-content {
+            width: 75%; /* Define el ancho del área de contenido principal */
+            padding: 20px; /* Añade un relleno */
+            overflow-y: auto; /* Añade una barra de desplazamiento vertical si el contenido desborda */
+        }
+
+        /* Estilos del título principal */
+        .title {
+            margin-right: 50px; /* Añade un margen derecho */
+            display: flex; /* Usa un diseño flexbox */
+            align-items: center; /* Alinea los elementos verticalmente al centro */
+            font-size: 75px; /* Define el tamaño de la fuente */
+            margin-bottom: 20px; /* Añade un margen inferior */
+            position: relative; /* Establece la posición relativa para el pseudo-elemento ::after */
+            margin-left: 300px; /* Añade un margen izquierdo */
+        }
+
+        /* Estilos del texto dentro del título */
+        .title span {
+            position: relative; /* Posiciona relativamente */
+            z-index: 1; /* Establece el índice z en 1 para apilar por encima del pseudo-elemento ::after */
+        }
+
+        /* Estilos del contenedor de imágenes */
+        .image-container {
+            position: relative; /* Posiciona relativamente */
+            margin-bottom: 40px; /* Añade un margen inferior */
+            display: inline-block; /* Permite un diseño adecuado en bloque en línea */
+            width: 100%; /* Define el ancho al 100% del contenedor */
+            border: 1px solid #ccc; /* Añade un borde */
+            border-radius: 10px; /* Redondea las esquinas */
+            overflow: hidden; /* Asegura que los elementos hijos sean recortados */
+            background: #fff; /* Define el color de fondo */
+        }
+
+        /* Estilos de las imágenes */
+        .image-container img {
+            width: 100%; /* Define el ancho de la imagen al 100% */
+            height: auto; /* Mantiene la relación de aspecto */
+        }
+
+        /* Estilos del texto superpuesto */
+        .overlay-text {
+            position: absolute;
+            text-align: center;
+            right: 0;
+            padding: 20px;
+            font-size: 45px;
+            line-height: 1.9;
+            color: #000000;
+            top: 30%;
+            left: 70%;
+        }
+        .overlay-text div {
+            font-family: 'Arial', sans-serif;
+        }
+        .play-text {
+            position: absolute;
+            top: 70%;
+            left: calc(40% + 10px); 
+            transform: translate(-100%, 100%);
+            font-size: 85px;
+            color: black;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .image-button {
+            width: 200px;
+            height: 200px;
+            background-image: url("img/botonPlay.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            border: none;
+            cursor: pointer;
+            outline: none;
+            position: absolute;
+            bottom: 10%;
+            left: 35%;
+            background-color: transparent;
+        }
+        .play-button {
+    position: absolute;
+    top: 50%; /* Centra verticalmente */
+    left: 50%; /* Centra horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta la posición para que el botón esté en el centro */
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Añade transición para el tamaño y la opacidad */
+    opacity: 0.8; /* Hacer el botón un poco más transparente */
+}
+
+.play-button img {
+    width: 150px; /* Tamaño del botón */
+    height: 150px; /* Tamaño del botón */
+    transition: transform 0.3s ease-in-out; /* Transición para el aumento del tamaño */
+}
+
+.play-button:hover img {
+    transform: scale(1.2); /* Aumenta el tamaño del botón al pasar el cursor */
+}
+        
+
+        .nav {
+            color: #59009A;
+            position: relative;
+            margin-left: 880px;
+        }
+        
+        .submenu {
+    position: absolute;
+    z-index: 1000; /* Valor alto para asegurar que se muestre por encima */
+    background-color: #fff;
+    padding: 5px 5px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    display: none;
+    top: 100%; /* Ajusta según sea necesario */
+    left: 0; /* Ajusta según sea necesario */
+    width: auto;
+}
+        
+.nav:hover .submenu {
+    display: block;
+}
+        .submenu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .submenu li {
+            padding: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .submenu li:hover {
+            background-color: #f0f0f0;
+        }
+
+        /* Estilos para el contenedor de la imagen pequeña */
+          .small-image-container {
+      display: flex;
+      justify-content: flex-end; /* Alinea las imágenes a la derecha */
+      margin-top: 10px;
+    }
+
+    .small-image-container img {
+      width: 50px; /* Ajusta el tamaño de la imagen pequeña */
+      height: 50px; /* Ajusta el tamaño de la imagen pequeña */
+      border-radius: 5px; /* Bordes redondeados */
+      margin-right: 10px; /* Espaciado entre imágenes y el borde derecho */
+    }
+
+    .social-icons-container {
+      display: none; /* Oculto inicialmente */
+      flex-direction: row; /* Alineación horizontal */
+      justify-content: space-around; /* Espacio entre los íconos */
+      padding: 10px; /* Espacio alrededor de los íconos */
+      background-color: #fff; /* Fondo blanco */
+      border-radius: 5px; /* Bordes redondeados */
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra */
+      position: absolute; /* Posicionamiento absoluto */
+      bottom: 100%; /* Coloca la barra encima del botón */
+      right: 0; /* Alineación a la derecha */
+      margin-top: 5px; /* Espacio entre el botón y la barra */
+      z-index: 100; /* Asegura que esté por encima de otros elementos */
+    }
+
+    .social-icon {
+      text-decoration: none; /* Elimina el subrayado */
+    }
+
+    .social-icons-container img {
+      width: 24px; /* Tamaño de los íconos */
+      height: 24px; /* Tamaño de los íconos */
+    }
+    
+               
+    /* Estilos para pantallas más pequeñas, como tablets o móviles */
+    @media only screen and (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        height: auto;
+        /* Ajustar altura automática */
+      }
+
+      .sidebar {
+        width: 100%;
+        /* Ocupar todo el ancho disponible */
+        margin-bottom: 20px;
+        /* Espacio entre el sidebar y el contenido principal */
+        padding: 8px 16px;
+      }
+
+
+      .main-content {
+        width: 100%;
+        /* Ocupar todo el ancho disponible */
+
+      }
+
+      .image-container {
+        /* Ajustar el margen izquierdo */
+        margin-left: 0;
+        text-align: left;
+        /* Centrar el contenido */
+
+      }
+
+      .image-container2 {
+        margin-left: 0;
+        text-align: center;
+        /* Centrar el contenido */
+        width: 100%;
+        /* Ajustar el ancho al 100% */
+        padding: 10px;
+        /* Agregar algo de padding si es necesario */
+      }
+
+      .track-list {
+        max-height: none;
+        /* Ajustar altura automática */
+        width: 100%;
+        /* Ajustar el ancho al 100% */
+        padding: 10px;
+        /* Agregar algo de padding si es necesario */
+        box-sizing: border-box;
+        overflow-y: auto;
+        background-size: cover;
+        /* Asegura que la imagen cubra el contenedor sin distorsionarse */
+        background-position: center;
+        /* Centra la imagen de fondo */
+        background-repeat: no-repeat;
+        /* Evita que la imagen se repita */
+      }
+
+
+      .corner-text {
+        font-size: 1.5em;
+        /* Reducir tamaño de fuente para pantallas pequeñas */
+        top: 10px;
+        left: 10px;
+      }
+
+      .bottom-left-text {
+        font-size: 1em;
+        /* Reducir tamaño de fuente para pantallas pequeñas */
+        bottom: 10px;
+        left: 10px;
+      }
+
+      .title {
+        font-size: 35px;
+        /* Reducir el tamaño del título */
+        margin-left: 20px;
+        /* Ajustar el margen izquierdo */
+        text-align: center;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <script>
+ document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.small-button').forEach(function(button) {
+    button.addEventListener('click', function() {
+      console.log('Botón clickeado:', this); // Depuración: Imprime el botón clickeado
+      var socialIconsContainer = this.closest('.social-icons-container');
+      console.log('Menú de opciones encontrado:', socialIconsContainer); // Depuración: Imprime el menú de opciones encontrado
+      if (socialIconsContainer && (socialIconsContainer.style.display === 'none' || socialIconsContainer.style.display === '')) {
+        socialIconsContainer.style.display = 'flex';
+      } else {
+        socialIconsContainer.style.display = 'none';
+      }
+    });
+  });
+});
+
+</script>
+  <header>   
+    <div class="arriba">
+    <div class="logo">
+        <img src="images/logo.png" alt="Logo">
+        <h1>Musicoterapia</h1>
+    </div>
+    <div class="nav">
+      <span>Servicios</span>
+        <div class="submenu">
+        <ul>
+          <li>Biblioterapia</li>
+          <li>Arteterapia</li>
+          <li>Musicoterapia</li>
+          <li>Ejercicios</li>
+        </ul>
+      </div>
+    </div>
+    <div class="user">
+        <a href="#">Juanito Alimaña</a>
+        <img src="images/user.png" alt="Profile Picture">
+      </div>
+    </header>
+    <div class="container">
+      <aside class="sidebar">
+        <br>
+        <br>
+        <div class="menu-item">
+          <a href="principal_generos.html" style="text-decoration: none;">
+            <img src="images/genero.png" alt="Icon">
+            <span>Géneros</span>
+          </a>
+        </div>
+        <div class="menu-item">
+          <a href="principal_album.html" style="text-decoration: none;">
+            <img src="images/album.png" alt="Icon">
+            <span>Álbum</span>
+          </a>
+        </div>
+        <div class="menu-item">
+          <a href="principal_podcast.html" style="text-decoration: none;">
+            <img src="images/pod.png" alt="Icon">
+            <span>Podcast</span>
+          </a>
+        </div>
+        <div class="menu-item">
+          <a href="binaurales.html" style="text-decoration: none;">
+            <img src="images/binaural.png" alt="Icon">
+            <span>Sonidos Binaurales</span>
+          </a>
+        </div>
+        <div class="menu-item">
+          <a href="playList.html" style="text-decoration: none;">
+            <img src="images/playL.png" alt="Icon">
+            <span>PlayList</span>
+          </a>
+        </div>
+        <div class="menu-item">
+          <a href="Tus me gustas pistas.html" style="text-decoration: none;">
+            <img src="images/like.png" alt="Icon" />
+            <span>Me gusta</span>
+          </a>
+        </div>
+        <div class="menu-item">
+          <a href="buscar.html" style="text-decoration: none;">
+            <img src="images/buscar boton.png" alt="Icon" />
+            <span>Buscar</span>
+          </a>
+        </div>
+      </aside>
+      <main class="main-content">
+        <div class="image-container">
+          <img src="images/podcast 1.png" alt="Podcast 1 Image">
+          <button class="play-button">
+            <a href="Reproductorpodcast.html">
+
+            <img src="images/botonPlay.png" alt="Play"> 
+
+          </button>
+        </a>
+          <div class="small-image-container">
+            <button class="small-button">
+              <img src="images/botoncompartir.png" alt="Compartir">
+            </button>
+          </div>
+          <div class="social-icons-container">
+            <a href="#" class="social-icon"><img src="icono_facebook.png" alt="Facebook"></a>
+            <a href="#" class="social-icon"><img src="icono_instagram.png" alt="Instagram"></a>
+            <a href="#" class="social-icon"><img src="icono_whatsapp.png" alt="WhatsApp"></a>
+            <a href="#" class="social-icon"><img src="icono_telegram.png" alt="Telegram"></a>
+          </div>
+        </div>
+  
+        <div class="image-container">
+          <img src="images/podcast 2.png" alt="Podcast 2 Image">
+          <button class="play-button">
+            <a href="Reproductorpodcast.html">
+            <img src="images/botonPlay.png" alt="Play">
+          </button>
+        </a>
+          <div class="small-image-container">
+            <button class="small-button">
+              <img src="images/botoncompartir.png" alt="Compartir">
+            </button>
+          </div>
+          <div class="social-icons-container">
+            <a href="#" class="social-icon"><img src="icono_facebook.png" alt="Facebook"></a>
+            <a href="#" class="social-icon"><img src="icono_instagram.png" alt="Instagram"></a>
+            <a href="#" class="social-icon"><img src="icono_whatsapp.png" alt="WhatsApp"></a>
+            <a href="#" class="social-icon"><img src="icono_telegram.png" alt="Telegram"></a>
+          </div>
+        </div>
+  
+        <div class="image-container">
+          <img src="images/podcast 3.png" alt="Podcast 3 Image">
+          <button class="play-button">
+            <a href="Reproductorpodcast.html">
+            <img src="images/botonPlay.png" alt="Play">
+          </button>
+        </a>
+          <div class="small-image-container">
+            <button class="small-button">
+              <img src="images/botoncompartir.png" alt="Compartir">
+            </button>
+          </div>
+          <div class="social-icons-container">
+            <a href="#" class="social-icon"><img src="icono_facebook.png" alt="Facebook"></a>
+            <a href="#" class="social-icon"><img src="icono_instagram.png" alt="Instagram"></a>
+            <a href="#" class="social-icon"><img src="icono_whatsapp.png" alt="WhatsApp"></a>
+            <a href="#" class="social-icon"><img src="icono_telegram.png" alt="Telegram"></a>
+          </div>
+        </div>
+  
+        <div class="image-container">
+          <img src="images/podcast 4.png" alt="Podcast 4 Image">
+          <button class="play-button">
+            <a href="Reproductorpodcast.html">
+            <img src="images/botonPlay.png" alt="Play">
+          </button>
+        </a>
+          <div class="small-image-container">
+            <button class="small-button">
+              <img src="images/botoncompartir.png" alt="Compartir">
+            </button>
+          </div>
+          <div class="social-icons-container">
+            <a href="#" class="social-icon"><img src="icono_facebook.png" alt="Facebook"></a>
+            <a href="#" class="social-icon"><img src="icono_instagram.png" alt="Instagram"></a>
+            <a href="#" class="social-icon"><img src="icono_whatsapp.png" alt="WhatsApp"></a>
+            <a href="#" class="social-icon"><img src="icono_telegram.png" alt="Telegram"></a>
+          </div>
+        </div>
+  
+      </main>
+    </div>
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="contact-item">
+            <span>Contáctanos</span>
+            <div class="iconos">
+                <a href="#"><img src="images/WhatsApp.png" alt="WhatsApp"></a>
+            </div>
+        </div>
+        <div class="contact-item">
+            <span>Canales de atención</span>
+            <div class="iconos">
+                <a href="#"><img src="images/Telegram App.png" alt="Telegram"></a>
+                <a href="#"><img src="images/Email.png" alt="Email"></a>
+            </div>
+        </div>
+        <div class="contact-item">
+            <span>Redes sociales</span>
+            <div class="iconos">
+                <a href="#"><img src="images/Facebook.png" alt="Facebook"></a>
+                <a href="#"><img src="images/Instagram.png" alt="Instagram"></a>
+            </div>
+        </div>
+        <a class="quienes-somos" href="#">¿Quiénes somos?</a>
+      </div>
+    </footer>
+    
+</body>
+</html>
