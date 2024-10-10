@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="../../headeryfooter/Style.css">
+  <link rel="stylesheet" href="../Stylee.css">
+
+  <title>Mapa de sueños</title>
+  <style>
+
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="../Home_Usuario/HomeUsuario.html"><img src="https://i.ibb.co/4MSTbtM/2f043346-e172-4c47-b8b4-d69f213fc49e.jpg" alt="Logo de Atención Profesional"></a>
+        <span class="Profesional">Atención Profesional</span>
+      </div>
+      <div class="menu-icon">
+        <i class="material-icons">menu</i>
+      </div>
+      <div class="servicios">
+        <span>Servicios</span>
+        <div class="submenu">
+          <ul>
+            <li>Biblioterapia</li>
+            <li>Arteterapia</li>
+            <li>Musicoterapia</li>
+            <li>Ejercicios</li>
+          </ul>
+        </div>
+      </div>
+      <div class="user-info">
+        <span>Juanito Alimaña</span>
+        <img class="imagen-usuario" src="https://pps.whatsapp.net/v/t61.24694-24/425171185_1161987931585359_8379654463750076539_n.jpg?ccb=11-4&oh=01_Q5AaICQrNgt5q8xzlA08ydTiz0MYYzWsQrMTW8GSElA5yevr&oe=670D1BA8&_nc_sid=5e03e0&_nc_cat=101" alt="Foto de perfil del usuario">
+      </div>
+    </nav>
+    <div class="dropdown-menu">
+      <ul>
+        <li><a href="#">Biblioterapia</a></li>
+        <li><a href="#">Arteterapia</a></li>
+        <li><a href="#">Musicoterapia</a></li>
+        <li><a href="#">Ejercicios</a></li>
+        <li><a href="#">Perfil</a></li>
+      </ul>
+    </div>
+  </header>
+
+ 
+<main class="main">
+  <div class="book">
+    <img src="https://www.elejandria.com/covers/El_Camino_de_la_Prosperidad-James_Allen-md.png" alt="Hojarasca">
+    
+    <div class="book-info">
+      <h1>El camino de la prosperidad</h1>
+      <br>
+      <p><strong>Autor:</strong> James Allen</p>
+      <p><strong>Editorial:</strong>  Obelisco</p>
+      <p><strong>Enlace:</strong> <a class="linklibro" href="https://www.elejandria.com/libro/el-camino-de-la-prosperidad/james-allen/1876">Link</a></p>
+      <p class="description"><strong>Descripción:</strong> En el año 1878 obtuve el título de doctor en medicina por la Universidad de Londres, asistiendo después en Netley a los cursos que son de rigor antes de ingresar como médico en el ejército. Concluidos allí mis estudios, fui puntualmente destinado el 5.0 de Fusileros de Northumberland en calidad de médico ayudante. El regimiento se hallaba por entonces estacionado en la India, y antes de que pudiera unirme a él, estalló la segunda guerra de Afganistán. Al desembarcar en Bombay me llegó la noticia de que las tropas a las que estaba agregado habían traspuesto la línea montañosa, muy dentro ya de territorio enemigo. Seguí, sin embargo, camino con muchos otros oficiales en parecida situación a la mía, hasta Candahar, donde sano y salvo, y en compañía por fin del regimiento, me incorporé sin más dilación a mi nuevo servicio.
+
+        La campaña trajo a muchos honores, pero a mí sólo desgracias y calamidades. Fui separado de mi brigada e incorporado a las tropas de Berkshire, con las que estuve de servicio durante el desastre de Maiwand. En la susodicha batalla una bala de Jezail me hirió el hombro, haciéndose añicos el hueso y sufriendo algún daño la arteria subclavia. Hubiera caído en manos de los despiadados ghazis a no ser por el valor y lealtad de Murray, mi asistente, quien, tras ponerme de través sobre una caballería, logró alcanzar felizmente las líneas británicas.</p>
+      <div class="rating">
+        <div class="star" data-value="1"></div>
+        <div class="star" data-value="2"></div>
+        <div class="star" data-value="3"></div>
+        <div class="star" data-value="4"></div>
+        <div class="star" data-value="5"></div>
+        <span id="average-rating">0</span>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="comments">
+    <h2>Comentarios</h2>
+    <div id="comment-list"></div>
+    <textarea id="comment-text" rows="4" placeholder="Escribe una reseña"></textarea>
+    <button id="add-comment-btn">Enviar</button>
+    <div id="commentList"></div>
+  </div>
+
+  <div class="overlay" id="overlay"></div>
+  <div class="confirm-delete" id="confirm-delete">
+    <p>¿Estás seguro de que deseas eliminar este comentario?</p>
+    <button id="confirm-yes">Sí</button>
+    <button id="confirm-no">No</button>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-container">
+      <div class="contact-item">
+          <span>Contáctanos</span>
+          <div class="iconos">
+              <a href="https://web.whatsapp.com/"><img src="../../imagenes/WhatsApp.png" alt="WhatsApp"></a>
+          </div>
+      </div>
+      <div class="contact-item">
+          <span>Canales de atención</span>
+          <div class="iconos">
+              <a href="https://web.telegram.org/"><img src="../../imagenes/Telegram App.png" alt="Telegram"></a>
+              <a href="https://mail.google.com/mail/u/0/?ogbl#inbox"><img src="../../imagenes/Email.png" alt="Email"></a>
+          </div>
+      </div>
+      <div class="contact-item">
+          <span>Redes sociales</span>
+          <div class="iconos">
+              <a href="https://www.facebook.com/"><img src="../../imagenes/Facebook.png" alt="Facebook"></a>
+              <a href="https://www.instagram.com/"><img src="../../imagenes/Instagram.png" alt="Instagram"></a>
+          </div>
+      </div>
+      <a class="quienes-somos" href="#">¿Quiénes somos?</a>
+  </div>
+</footer>   
+<script src="../headeryfooter/script.js"></script>   
+<script src="../script.js"></script>  
+</body>
+</html>

@@ -1,0 +1,100 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fffcfc;
+  width: 100%;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 1.2rem 0;
+}
+
+h2 {
+  text-align: center;
+  color: #59009A;
+  font-size: 1rem;
+}
+
+.pregunta {
+  margin-bottom: 1.2rem;
+  margin: 2.4rem;
+}
+
+button {
+  display: block;
+  padding: 0.6rem 1.8rem;
+  background-color: #59009A;
+  color: #fff;
+  border: none;
+  border-radius: 1.8rem;
+  cursor: pointer;
+  margin: 1.2rem auto;
+}
+
+button:hover {
+  background-color: #440173;
+}
+
+main {
+  display: flex;
+  justify-content: space-around;
+  padding: 1.2rem;
+  flex-wrap: wrap;
+}
+
+main section {
+  text-align: center;
+  flex: 1;
+  margin: 0 0.6rem;
+}
+
+main section img {
+  width: 22.8rem; /* Tamaño fijo de la imagen */
+  height: 10.8rem; /* Tamaño fijo de la imagen */
+  border: double;
+  border-radius: 5%;
+  object-fit: cover;
+  max-width: none; /* Evita que la imagen cambie de tamaño */
+}
+
+/* Media query usando rem */
+@media (max-width: 48rem) {
+  main {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  main section {
+    margin-bottom: 1.2rem;
+    width: auto; /* Mantén el tamaño de la sección, sin cambios */
+  }
+
+  main section img {
+    width: 22.8rem; /* Mantén el tamaño fijo de la imagen */
+    height: 10.8rem; /* Mantén el tamaño fijo de la imagen */
+  }
+}
+section a img {
+  transition: transform 0.3s ease; /* Añade una transición suave */
+}
+
+section a:hover img {
+  transform: scale(1.09); /* Incrementa el tamaño de la imagen al pasar el cursor */
+}
+@keyframes clickedEffect {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.4);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

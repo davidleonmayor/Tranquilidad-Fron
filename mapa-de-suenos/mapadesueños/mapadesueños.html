@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editor de Lienzo Interactivo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+   
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+
+<body>
+    <div class="sidebar">
+        <button class="btn-image" title="Agregar imagen"><i class="fa-solid fa-image"></i></button>
+        <button onclick="addTextbox()">A</button>
+        <button class="btn-shape" title="Agregar forma"><i class="fa-regular fa-square"></i></button>
+        <button class="btn-sticker" title="Agregar sticker"><i class="fa-regular fa-face-smile"></i></button>
+        <button class="btn-undo" title="Deshacer"><i class="fa-solid fa-undo"></i></button>
+        <button id="zoomInBtn" title="Acercar">+</button>
+        <button id="zoomOutBtn" title="Alejar">-</button>
+    </div>
+<!-- Botones de control -->
+ 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<!-- Contenedor de botones flotantes -->
+<div class="toolbar">
+    <button onclick="toggleBold()"><i class="fas fa-bold"></i></button>
+    <button onclick="toggleItalic()"><i class="fas fa-italic"></i></button>
+    <button onclick="changeTextColor()"><i class="fas fa-paint-brush"></i></button>
+    <button onclick="alignText('left')"><i class="fas fa-align-left"></i></button>
+    <button onclick="alignText('center')"><i class="fas fa-align-center"></i></button>
+    <button onclick="alignText('right')"><i class="fas fa-align-right"></i></button>
+</div>
+    <div id="canvas-container">
+        <canvas id="myCanvas" width="10000" height="610"></canvas>
+        <button id="fullscreen-btn" onclick="toggleFullscreen()">
+            <img src="https://img.icons8.com/ios/452/full-screen.png" alt="Fullscreen Icon">
+        </button>
+    </div>
+
+    <!-- Menú emergente para formas -->
+    <div class="popup-menu" id="shapesMenu">
+        <button class="shape custom" title="Forma personalizada"></button>
+        <button class="shape square" title="Cuadrado"></button>
+        <button class="shape circle" title="Círculo"></button>
+        <button class="shape triangle" title="Triángulo"></button>
+        <button class="shape rectangle" title="Rectángulo"></button>
+<button class="shape oval" title="Óvalo"></button>
+<button class="shape star" title="Estrella"></button>
+<button class="shape heart" title="Corazón"></button>
+<button class="shape diamond" title="Diamante"></button>
+<button class="shape hexagon" title="Hexágono"></button>
+<button class="shape pentagon" title="Pentágono"></button>
+<button class="shape parallelogram" title="Paralelogramo"></button>
+<button class="shape trapezoid" title="Trapecio"></button>
+<button class="shape crescent" title="Media Luna"></button>
+
+    </div>
+
+    <!-- Menú emergente para stickers -->
+    <div class="popup-menu" id="stickersMenu">
+ <button class="sticker" title="Sticker 1">😊</button>
+<button class="sticker" title="Sticker 2">😂</button>
+<button class="sticker" title="Sticker 3">😍</button>
+<button class="sticker" title="Sticker 4">😎</button>
+<button class="sticker" title="Sticker 5">😢</button>
+<button class="sticker" title="Sticker 6">😡</button>
+<button class="sticker" title="Sticker 7">🤔</button>
+<button class="sticker" title="Sticker 8">🤯</button>
+<button class="sticker" title="Sticker 9">😴</button>
+<button class="sticker" title="Sticker 10">🤗</button>
+<button class="sticker" title="Sticker 11">🙃</button>
+<button class="sticker" title="Sticker 12">😇</button>
+<button class="sticker" title="Sticker 13">😱</button>
+<button class="sticker" title="Sticker 14">🥳</button>
+<button class="sticker" title="Sticker 15">🤩</button>
+<button class="sticker" title="Sticker 16">🤤</button>
+<button class="sticker" title="Sticker 17">😈</button>
+<button class="sticker" title="Sticker 18">👿</button>
+<button class="sticker" title="Sticker 19">👽</button>
+<button class="sticker" title="Sticker 20">👾</button>
+<button class="sticker" title="Sticker 21">💀</button>
+<button class="sticker" title="Sticker 22">👻</button>
+<button class="sticker" title="Sticker 23">🎃</button>
+<button class="sticker" title="Sticker 24">🤡</button>
+<button class="sticker" title="Sticker 25">🤖</button>
+<button class="sticker" title="Sticker 26">💩</button>
+<button class="sticker" title="Sticker 27">👋</button>
+<button class="sticker" title="Sticker 28">👌</button>
+<button class="sticker" title="Sticker 29">✌️</button>
+<button class="sticker" title="Sticker 30">👍</button>
+<button class="sticker" title="Sticker 31">👎</button>
+<button class="sticker" title="Sticker 32">👏</button>
+<button class="sticker" title="Sticker 33">👐</button>
+<button class="sticker" title="Sticker 34">🙌</button>
+<button class="sticker" title="Sticker 35">🙏</button>
+<button class="sticker" title="Sticker 36">🤝</button>
+<button class="sticker" title="Sticker 37">💪</button>
+<button class="sticker" title="Sticker 38">🦾</button>
+<button class="sticker" title="Sticker 39">🦵</button>
+<button class="sticker" title="Sticker 40">🦶</button>
+<button class="sticker" title="Sticker 41">👀</button>
+<button class="sticker" title="Sticker 42">👁️</button>
+<button class="sticker" title="Sticker 43">👄</button>
+<button class="sticker" title="Sticker 44">💋</button>
+<button class="sticker" title="Sticker 45">🧠</button>
+<button class="sticker" title="Sticker 46">🦷</button>
+<button class="sticker" title="Sticker 47">🦴</button>
+<button class="sticker" title="Sticker 48">🦻</button>
+<button class="sticker" title="Sticker 49">👂</button>
+<button class="sticker" title="Sticker 50">👃</button>
+
+        <!-- Agregar más stickers aquí -->
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/fabric@5.0.0/dist/fabric.min.js"></script>
+ 
+    <script src="../headeryfooter/script.js"></script> 
+    <script src="script.js"></script> 
+</body>
+</html>
