@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="../Home_Usuario/HomeUsuario.html">
+                    <img src="https://i.ibb.co/4MSTbtM/2f043346-e172-4c47-b8b4-d69f213fc49e.jpg" alt="Logo de Atención Profesional">
+                </a>
+                <span class="Profesional">Rutinas de ejercicios</span>
+            </div>
+            <div class="menu-icon">
+                <i class="material-icons">menu</i>
+            </div>
+            <div class="servicios">
+                <span>Servicios</span>
+                <div class="submenu">
+                    <ul>
+                        <li>Biblioterapia</li>
+                        <li>Arteterapia</li>
+                        <li>Musicoterapia</li>
+                        <li>Ejercicios</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="user-info">
+                <span>Juanito Alimaña</span>
+                <img class="imagen-usuario" src="https://pps.whatsapp.net/v/t61.24694-24/425171185_1161987931585359_8379654463750076539_n.jpg?ccb=11-4&oh=01_Q5AaICQrNgt5q8xzlA08ydTiz0MYYzWsQrMTW8GSElA5yevr&oe=670D1BA8&_nc_sid=5e03e0&_nc_cat=101" alt="Foto de perfil del usuario">
+            </div>
+        </nav>
+        <div class="dropdown-menu">
+            <ul>
+                <li><a href="#">Biblioterapia</a></li>
+                <li><a href="#">Arteterapia</a></li>
+                <li><a href="#">Musicoterapia</a></li>
+                <li><a href="#">Ejercicios</a></li>
+                <li><a href="#">Perfil</a></li>
+            </ul>
+        </div>
+    </header>
+   
+
+    <div class="container">
+        <div class="cont">
+        <aside class="sidebar">
+            <div class="menu-item">
+                <a href="/inicio/index.html">
+                    <img src="/imagenes/home_24dp_434343_FILL0_wght400_GRAD0_opsz24.svg" alt="Icon" />
+                    <span>Inicio</span>
+                </a>
+            </div>
+            <div class="menu-item active">
+                <a href="/calendario/index.html">
+                    <img src="/imagenes/event_24dp_434343_FILL0_wght400_GRAD0_opsz24.svg" alt="Icon" />
+                    <span>Calendario</span>
+                </a>
+            </div>
+            <div class="menu-item">
+                <a href="/favoritos/favoritos.html">
+                    <img src="/imagenes/favorite_24dp_434343_FILL0_wght400_GRAD0_opsz24.svg" alt="Icon" />
+                    <span>Favoritos</span>
+                </a>
+            </div>
+            <div class="menu-item">
+                <a href="../VISTAS/principal_podcast.html">
+                    <img src="/imagenes/notifications_24dp_434343_FILL0_wght400_GRAD0_opsz24.svg" alt="Icon" />
+                    <span>Notificaciones</span>
+                </a>
+            </div>
+            
+           
+        </aside>
+        <div class="add-task">
+            <h2>Agregar Tarea</h2>
+            <form>
+                <label for="task-title">Título:</label>
+                <input type="text" id="task-title" name="task-title" required>
+
+                <label for="task-details">Detalles:</label>
+                <textarea id="task-details" name="task-details" rows="4" required></textarea>
+
+                <button type="submit" class="save">Guardar</button>
+            </form>
+        </div>
+    </div>
+        <main>
+            <h2 class="title">Mis Tareas</h2>
+            <div class="notes-container">
+                
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+          <div class="contact-item">
+            <span>Contáctanos</span>
+            <div class="iconos">
+              <a href="https://web.whatsapp.com/"><img src="imagenes/WhatsApp.png" alt="WhatsApp"></a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span>Canales de atención</span>
+            <div class="iconos">
+              <a href="https://web.telegram.org/"><img src="/imagenes/Telegram App.png" alt="Telegram"></a>
+              <a href="https://mail.google.com/mail/u/0/?ogbl#inbox"><img src="/imagenes/Email.png" alt="Email"></a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span>Redes sociales</span>
+            <div class="iconos">
+              <a href="https://www.facebook.com/"><img src="/imagenes/Facebook.png" alt="Facebook"></a>
+              <a href="https://www.instagram.com/"><img src="/imagenes/Instagram.png" alt="Instagram"></a>
+            </div>
+          </div>
+          <a class="quienes-somos" href="#">¿Quiénes somos?</a>
+        </div>
+      </footer>
+      
+      <script>
+        const menuIcon = document.querySelector('.menu-icon');
+      const navbar = document.querySelector('header');
+      
+      // Añadir un event listener para abrir/cerrar el menú
+      menuIcon.addEventListener('click', () => {
+        navbar.classList.toggle('menu-open');
+      });
+      </script>
+      
+  
+  </body>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+    const taskForm = document.querySelector('form');
+    const taskTitleInput = document.getElementById('task-title');
+    const taskDetailsInput = document.getElementById('task-details');
+    const notesContainer = document.querySelector('.notes-container');
+
+    // Cargar tareas desde el localStorage al cargar la página
+    function loadTasks() {
+        const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+        tasks.forEach(task => addTask(task.title, task.details));
+    }
+
+    // Guardar las tareas en localStorage
+    function saveTasks() {
+        const tasks = [];
+        document.querySelectorAll('.note').forEach(note => {
+            const title = note.querySelector('h3').textContent;
+            const details = note.querySelector('p').textContent;
+            tasks.push({ title, details });
+        });
+        localStorage.setItem('tasks', JSON.stringify(tasks));
+    }
+
+    // Función para agregar una nueva tarea
+    function addTask(title, details) {
+        const note = document.createElement('div');
+        note.classList.add('note');
+
+        note.innerHTML = `
+            <h3>${title}</h3>
+            <p>${details}</p>
+            <div class="note-buttons">
+                <button class="edit">Editar</button>
+                <button class="delete">Eliminar</button>
+            </div>
+        `;
+
+        // Añadir funcionalidad a los botones de editar y eliminar
+        note.querySelector('.delete').addEventListener('click', function () {
+            note.remove();
+            saveTasks(); // Actualiza el localStorage al eliminar
+        });
+
+        note.querySelector('.edit').addEventListener('click', function () {
+            editTask(note, title, details);
+        });
+
+        notesContainer.appendChild(note);
+        saveTasks(); // Guarda en localStorage al agregar una nueva tarea
+    }
+
+    // Función para editar una tarea
+    function editTask(note, oldTitle, oldDetails) {
+        taskTitleInput.value = oldTitle;
+        taskDetailsInput.value = oldDetails;
+
+        taskForm.removeEventListener('submit', createTaskHandler);
+
+        taskForm.addEventListener('submit', function updateTaskHandler(event) {
+            event.preventDefault();
+            const newTitle = taskTitleInput.value;
+            const newDetails = taskDetailsInput.value;
+
+            note.querySelector('h3').textContent = newTitle;
+            note.querySelector('p').textContent = newDetails;
+
+            taskTitleInput.value = '';
+            taskDetailsInput.value = '';
+
+            taskForm.removeEventListener('submit', updateTaskHandler);
+            taskForm.addEventListener('submit', createTaskHandler);
+            saveTasks(); // Actualiza el localStorage al editar
+        });
+    }
+
+    // Manejar la creación de nuevas tareas
+    function createTaskHandler(event) {
+        event.preventDefault();
+
+        const title = taskTitleInput.value;
+        const details = taskDetailsInput.value;
+
+        if (title.trim() && details.trim()) {
+            addTask(title, details);
+            taskTitleInput.value = '';
+            taskDetailsInput.value = '';
+        }
+    }
+
+    taskForm.addEventListener('submit', createTaskHandler);
+
+    // Cargar las tareas al inicio
+    loadTasks();
+});
+
+  </script>
+  </html>
+
+
