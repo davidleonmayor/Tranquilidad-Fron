@@ -1,0 +1,164 @@
+:root{
+    --color-headerFooter:#59009A;
+  }
+  
+  /* header */
+  body {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+  }
+  
+  span{
+    color:white
+  }
+  
+  header {
+    width: 100%;
+    height: 100px;
+    box-sizing: border-box;
+    background-color: var(--color-headerFooter);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  header nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 0px 10px 0px 10px;
+  
+  }
+  
+  .service-user {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+  }
+  
+  
+  .servicios .submenu,
+  .menu-icon {
+    display: none;
+  }
+  
+  .logo img {
+    border-radius: 50%;
+  }
+  
+  .logo img,
+  .user-info img {
+    width: 60px;
+    height: auto;
+    object-fit: cover;
+    display: flex;
+  
+  }
+  
+  .logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .user-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .user-info img {
+    width: 60px;
+    border-radius: 50%;
+  }
+  
+  /* Footer */
+  footer div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: var(--color-headerFooter);
+  }
+  
+  .contact-item{
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  
+  .footer-container{
+    padding: 10px;
+    color:#ffff;
+  }
+  .items{
+    gap: 30px;
+  }
+  .quienes-somos{
+    display: flex;
+    align-items: center;
+    color:#ffff;
+    text-decoration: none;
+  }
+  
+  main{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: flex-start;
+  }
+  
+  .iconos img{
+    display: flex;
+    width: clamp(2rem, 3vw, 4rem);
+  }
+  
+  .contact-item span, .footer-container a{
+    font-size: clamp(0.8rem, 2.5vw, 1rem);
+  }
+  
+  /* Media de pantallas menores a 400px en header*/
+  @media (max-width:400px) {
+  
+    header {
+      height: 100px;
+    }
+  
+    .service-user {
+      flex-direction: row-reverse;
+    }
+  
+    .servicios span {
+      display: none;
+    }
+  
+    .menu-icon {
+      display: flex;
+    }
+  
+    .menu-icon .material-icons{
+      color: white;
+      font-size: 50px;
+    }
+  
+    .user-info {
+      display: none;
+    }
+  
+    .logo {
+      display: flex;
+      flex-direction: row;
+    }
+  
+    .contact-item span{
+      display: none;
+    }
+  }

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mis Archivos</title>
+  <link rel="stylesheet" href="../Css/archivo.css">
+</head>
+<body>
+
+  <div class="explore-section">
+    <h2 class="explore-title">Explorar</h2>
+    <div class="search-bar">
+        <input type="text" placeholder="Buscar...">
+        <button>Buscar</button>
+        <a href="publicarComunidad.html">
+            <button class="publicar">Publicar</button>
+        </a>
+    </div>
+</div>
+  
+  
+  <div class="center">
+    <h2>Archivos</h2>
+  </div>
+  <div class="container">
+    
+    <div class="item">
+      <div class="bloque">
+        <a href="MisDibujos.html">
+          <img src="https://img.freepik.com/psd-gratis/ilustracion-carpeta-archivos-isoltada_23-2151439694.jpg?t=st=1720838323~exp=1720841923~hmac=9efbd168117ca131bba283234e6a7daa0d2e58daca64bb01e205ccb8632577fa&w=996" alt="Plantilla">
+        </a>
+      </div>
+      <p>Dibujos</p>
+    </div>
+    <div class="item">
+      <div class="bloque">
+        <a href="MisPinturas.html">
+          <img src="https://img.freepik.com/psd-gratis/ilustracion-carpeta-archivos-isoltada_23-2151439694.jpg?t=st=1720838323~exp=1720841923~hmac=9efbd168117ca131bba283234e6a7daa0d2e58daca64bb01e205ccb8632577fa&w=996" alt="Plantilla">
+        </a>
+      </div>
+      <p>Pinturas</p>
+    </div>
+    <div class="item">
+      <div class="bloque">
+        <a href="Favoritos.html">
+          <img src="https://img.freepik.com/psd-gratis/ilustracion-carpeta-archivos-isoltada_23-2151439694.jpg?t=st=1720838323~exp=1720841923~hmac=9efbd168117ca131bba283234e6a7daa0d2e58daca64bb01e205ccb8632577fa&w=996" alt="Plantilla">
+        </a>
+      </div>
+      <p>Favoritos</p>
+    </div>
+  </div>
+  
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const bloques = document.querySelectorAll('.bloque');
+  
+      bloques.forEach(bloque => {
+        bloque.addEventListener('mouseenter', function() {
+          bloque.style.opacity = '0.8';
+        });
+  
+        bloque.addEventListener('mouseleave', function() {
+          bloque.style.opacity = '1';
+        });
+      });
+  
+      const searchButton = document.querySelector('.search-bar button');
+      
+      searchButton.addEventListener('click', function() {
+        searchButton.classList.add('clicked');
+        setTimeout(() => {
+          searchButton.classList.remove('clicked');
+        }, 300); 
+      });
+    });
+  </script>
+  
+  <style>
+    
+    .search-bar button.clicked {
+      transform: scale(1.1);
+      transition: transform 0.3s;
+    }
+  </style>
+  
+</body>
+</html>
+
