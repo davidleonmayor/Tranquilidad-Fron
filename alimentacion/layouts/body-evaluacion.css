@@ -1,0 +1,78 @@
+/* Estilos generales para el formulario */
+main {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 60%;
+}
+
+a{
+    text-decoration: none;
+}
+
+.card div{
+   display: flex;
+   flex-direction: column;
+}
+
+.card h2 {
+    margin-top: 0;
+}
+
+.card form {
+    display: flex;
+    flex-direction: column;
+    width: 100%; /* Asegura que el formulario ocupe todo el ancho de la tarjeta */
+}
+
+.card form label{
+    margin: 15px 0; /* Espaciado más amplio entre elementos */
+    height: 22px;
+    width: 100%; /* Asegura que los elementos ocupen todo el ancho disponible */
+    font-size: 16px; /* Tamaño de fuente aumentado */
+    margin-bottom: 0px;
+}
+
+
+.card form input {
+    margin: 5px 0; /* Espaciado más amplio entre elementos */
+    height: 22px;
+    width: 100%; /* Asegura que los elementos ocupen todo el ancho disponible */
+    font-size: 16px; /* Tamaño de fuente aumentado */
+}
+
+.card form a {
+    background-color: #59009A;
+    color: white;
+    border: none;
+    padding: 12px 24px; /* Tamaño de padding aumentado */
+    border-radius: 5px;
+    cursor: pointer;
+    align-self: flex-end; /* Alinea el botón a la derecha */
+    margin-top: 20px;
+    font-size: 16px; /* Aumenta el tamaño de la fuente */
+}
+
+.card form a:hover {
+    background-color: #7300BF; /* Color más claro al pasar el mouse */
+}
+
+.card form a:focus {
+    outline: 2px solid #59009A; /* Mejora de accesibilidad */
+}
+
+
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .card {
+        width: 90%; /* Reduce el ancho en pantallas pequeñas */
+    }
+}
