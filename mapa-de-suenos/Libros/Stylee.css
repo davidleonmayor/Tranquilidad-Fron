@@ -1,0 +1,276 @@
+@media (max-width: 768px) {
+    .main {
+      flex-direction: column; /* Cambia la dirección del flex a columna */
+      align-items: center; /* Centra el contenido */
+    }
+  
+    .book, .comments {
+      width: 100%; /* Haz que ambos elementos ocupen todo el ancho disponible */
+      margin-right: 0; /* Elimina el margen derecho de la caja del libro */
+      margin-bottom: 1.25rem; /* Añade espacio entre las dos cajas */
+    }
+  
+    .book-info {
+      max-width: 100%; /* Ajusta la caja de información del libro al 100% del ancho */
+    }
+  
+    .comments {
+      max-width: 100%; /* Haz que los comentarios ocupen todo el ancho */
+    }
+  }
+    
+      html, body {
+      height: 100%; /* Asegura que el html y body ocupen toda la altura */
+      margin: 0; /* Elimina margenes por defecto */
+  }
+     
+  
+  .servicioss {
+    cursor: pointer;
+}
+
+body {
+    font-family: 'roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fffcfc;
+    width: 100%;
+    flex-direction: column;
+    display: flex;
+}
+
+/* Contenido del body */
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 1.25rem 1.25rem 1.25rem 0; /* Cambiado de 20px a rem */
+}
+
+h2 {
+    text-align: center;
+    color: #59009A;
+}
+
+.pregunta {
+    margin-bottom: 1.25rem; /* Cambiado de 20px a rem */
+    margin: 2.5rem; /* Cambiado de 40px a rem */
+    margin-top: auto;
+}
+
+button {
+    display: block;
+    padding: 0.625rem 1.875rem; /* Cambiado de 10px 30px a rem */
+    background-color: #59009A;
+    color: #fff;
+    border: none;
+    border-radius: 1.875rem; /* Cambiado de 30px a rem */
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: 12.5rem; /* Cambiado de 200px a rem */
+}
+
+button:hover {
+    background-color: #59009A;
+}
+
+.main {
+    padding: 1.25rem; /* Cambiado de 20px a rem */
+    display: flex;
+    align-items: flex-start;
+    flex-grow: 1;
+    margin-top: 6.25rem; /* Cambiado de 100px a rem */
+}
+
+.book {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    background-color: white;
+    padding: 1.25rem; /* Cambiado de 20px a rem */
+    border-radius: 0.5rem; /* Cambiado de 8px a rem */
+    box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.1); /* Cambiado de 2px 5px a rem */
+    flex-grow: 1;
+    margin-right: 1.25rem; /* Cambiado de 20px a rem */
+    position: relative;
+    min-height: 20rem; /* Ajusta este valor para darle más altura */
+    max-height: auto; /* Permite que se expanda si el contenido crece */
+}
+
+.book img {
+    max-width: 9.375rem; /* Cambiado de 150px a rem */
+    margin-right: 1.25rem; /* Cambiado de 20px a rem */
+    border-radius: 0.5rem; /* Cambiado de 8px a rem */
+    width: 20rem;
+    height: 14rem;
+}
+
+.book-info {
+    max-width: 37.5rem; /* Cambiado de 600px a rem */
+    font-size: 0.9375rem; /* Cambiado de 15px a rem */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.book-info p.description {
+    max-width: 112.5rem; /* Cambiado de 1800px a rem */
+    font-size: 0.9375rem; /* Cambiado de 15px a rem */
+}
+
+.book-info h1 {
+    margin: 0;
+    color: #59009A;
+}
+
+.book-info p {
+    color: #666;
+    margin: 0.3125rem 0; /* Cambiado de 5px a rem */
+}
+
+
+  
+.rating {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 16.25rem; /* Cambiado de 260px a rem */
+  left: 1.875rem; /* Cambiado de 30px a rem */
+}
+
+.rating .star {
+  width: 1.25rem; /* Cambiado de 20px a rem */
+  height: 1.25rem; /* Cambiado de 20px a rem */
+  background: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23D3D3D3"><path d="M12 2.5l2.2 6.8h7.1l-5.7 4.1 2.2 6.8-5.8-4.2-5.8 4.2 2.2-6.8-5.7-4.1h7.1z"/></svg>') no-repeat center;
+  background-size: contain;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+/* Estrellas amarillas cuando están seleccionadas */
+.rating .star.selected {
+  background: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23FFD700"><path d="M12 2.5l2.2 6.8h7.1l-5.7 4.1 2.2 6.8-5.8-4.2-5.8 4.2 2.2-6.8-5.7-4.1h7.1z"/></svg>') no-repeat center;
+  background-size: contain;
+}
+
+/* Estrellas amarillas al pasar el mouse */
+.rating .star:hover,
+.rating .star.hovered {
+  background: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23FFD700"><path d="M12 2.5l2.2 6.8h7.1l-5.7 4.1 2.2 6.8-5.8-4.2-5.8 4.2 2.2-6.8-5.7-4.1h7.1z"/></svg>') no-repeat center;
+  background-size: contain;
+}
+
+.comments {
+  background-color: white;
+  padding: 1.25rem; /* Cambiado de 20px a rem */
+  border-radius: 0.5rem; /* Cambiado de 8px a rem */
+  box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.1); /* Cambiado de 2px 5px a rem */
+  width: 18.75rem; /* Cambiado de 300px a rem */
+  display: flex;
+  flex-direction: column;
+}
+
+.comments h2 {
+  color: #59009A;
+  margin-top: 0;
+}
+
+.comments textarea {
+  padding: 0.625rem; /* Cambiado de 10px a rem */
+  margin-top: 0.625rem; /* Cambiado de 10px a rem */
+  border: 0.0625rem solid #CCC; /* Cambiado de 1px a rem */
+  border-radius: 0.25rem; /* Cambiado de 4px a rem */
+  resize: vertical;
+}
+
+#comment-text {
+  font-family: 'roboto', sans-serif;
+}
+
+.comments button {
+  margin-top: 0.625rem; /* Cambiado de 10px a rem */
+  padding: 0.625rem 1.25rem; /* Cambiado de 10px 20px a rem */
+  background-color: #59009A;
+  color: white;
+  border: none;
+  border-radius: 0.25rem; /* Cambiado de 4px a rem */
+  cursor: pointer;
+}
+
+.comment-item {
+  border-bottom: 0.0625rem solid #ddd; /* Cambiado de 1px a rem */
+  padding: 0.625rem 0; /* Cambiado de 10px a rem */
+  position: relative; /* Para que el botón flote correctamente */
+  border: 0.0625rem solid #ccc; /* Bordes de los comentarios */
+  padding: 0.625rem; /* Cambiado de 10px a rem */
+  margin: 0.625rem 0; /* Cambiado de 10px a rem */
+  border-radius: 0.3125rem; /* Cambiado de 5px a rem */
+  max-width: 31.25rem; /* Cambiado de 500px a rem */
+  overflow: hidden; /* Ocultar el desbordamiento */
+  word-wrap: break-word; /* Ajustar palabras largas */
+}
+
+.comment-item:last-child {
+  border-bottom: none;
+}
+
+.referencia {
+  color: white;
+}
+
+.delete-btn {
+  width: 1.25rem; /* Cambiado de 20px a rem */
+  height: 1.25rem; /* Cambiado de 20px a rem */
+  background: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23FFFFFF"><path d="M3 6h18v2H3V6zm2 3h14l-1 12H6L5 9zm3 0v10h2V9H8zm4 0v10h2V9h-2z"/></svg>') no-repeat center;
+  background-size: contain;
+  border: none;
+  cursor: pointer;
+  margin-left: 0.625rem; /* Cambiado de 10px a rem */
+  padding: 0;
+  position: absolute; /* Posicionamiento absoluto para situar el botón */
+  right: -11.25rem; /* Cambiado de 180px a rem */
+  top: 0.625rem; /* Cambiado de 10px a rem */
+}
+
+.confirm-delete {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border: 0.0625rem solid #ccc; /* Cambiado de 1px a rem */
+  padding: 1.25rem; /* Cambiado de 20px a rem */
+  z-index: 1000;
+  box-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.1); /* Cambiado de 2px 10px a rem */
+  border-radius: 5%; /* Este valor se puede mantener, ya que no es px */
+}
+
+.confirm-delete button {
+  display: inline-block; /* Cambia a inline-block */
+  margin: 0.3125rem; /* Cambiado de 5px a rem */
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+::-webkit-scrollbar {
+  width: 0.5625rem; /* Cambiado de 9px a rem */
+}
+
+::-webkit-scrollbar-track {
+  background: #f0f0f0; /* Color de fondo de la pista del scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #ccc; /* Color de la barra de desplazamiento */
+  border-radius: 0.625rem; /* Cambiado de 10px a rem */
+  border: 0.125rem solid #f0f0f0; /* Cambiado de 2px a rem */
+}

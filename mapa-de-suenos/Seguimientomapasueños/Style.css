@@ -1,0 +1,110 @@
+/* Contenido del body */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    background: linear-gradient(135deg, white, white);
+    display: flex;
+    flex-direction: column;
+    min-height: 115vh;
+    box-sizing: border-box; /* Asegura que el padding y los bordes no causen desbordamiento */
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit; /* Asegura que todos los elementos usen el box-sizing adecuado */
+}
+
+.main-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 3.125rem; /* 50px */
+    margin-top: 2rem; /* Agregar margen superior para bajar la caja en pantallas grandes */
+}
+
+.board {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    height: 43.75rem; /* 70vh */
+    background-color: #CCBAF2;
+    padding: 1.25rem; /* 20px */
+    border-radius: 0.625rem; /* 10px */
+    box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.1); /* 20px */
+    overflow: hidden;
+}
+
+.column {
+    width: 30%;
+    background-color: #f9f9f9;
+    padding: 0.625rem; /* 10px */
+    border-radius: 0.3125rem; /* 5px */
+    transition: background-color 0.3s ease;
+    overflow-y: auto;
+    margin-bottom: 1rem; /* Agrega un margen para evitar que las columnas se peguen */
+}
+
+.column:hover {
+    background-color: #FCF2F2;
+}
+
+.column h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 0.625rem; /* 10px */
+    padding: 0.625rem; /* 10px */
+    background-color: #CCBAF2;
+    border-radius: 0.3125rem; /* 5px */
+    color: white;
+    text-transform: uppercase;
+    font-size: 1.2em;
+}
+
+.task {
+    background-color: #fff;
+    margin: 0.625rem 0; /* 10px */
+    padding: 0.625rem; /* 10px */
+    border-radius: 0.3125rem; /* 5px */
+    box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.2); /* 2px */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.task:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.3); /* 4px */
+}
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 48rem) { /* 768px */
+    .main-content {
+        margin-top: 2rem; /* Agregar margen superior para bajar la caja */
+    }
+
+    .board {
+        flex-direction: column; /* Coloca las columnas de manera vertical */
+        height: auto; /* Ajusta la altura al contenido */
+        width: 90%; /* Ajusta el ancho para pantallas pequeñas */
+        padding: 0.625rem; /* Reduce el padding en pantallas pequeñas */
+    }
+
+    .column {
+        width: 100%; /* Las columnas ocupan el 100% del ancho */
+        margin-bottom: 1rem; /* Espaciado entre columnas */
+        padding: 0.5rem; /* Reduce el padding para pantallas pequeñas */
+    }
+
+    .task {
+        font-size: 0.875rem; /* Ajustar el tamaño de la tarea en pantallas pequeñas */
+    }
+
+    .column h2 {
+        font-size: 1rem; /* Reduce el tamaño del título para que se ajuste mejor */
+        padding: 0.5rem; /* Reduce el padding del título */
+    }
+}
+
+.mapa {
+    font-size: 2.1875rem; /* 35px */
+}
