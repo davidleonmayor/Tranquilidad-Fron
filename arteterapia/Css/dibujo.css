@@ -1,0 +1,163 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fffcfc;
+}
+
+.sidebar-container {
+  display: flex;
+  flex: 1;
+  height: calc(100vh - 100px); /* Ajusta según la altura de tu header y footer */
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 0;
+  width: 100px; /* Ajusta el ancho según tus necesidades */
+}
+
+.sidebar .options,
+.sidebar .icons {
+  border: 1px solid #ccc;
+  margin: 10px 0;
+  padding: 10px;
+  width: 80px; /* Ajusta el ancho según tus necesidades */
+}
+
+.sidebar .options {
+  position: relative;
+}
+
+.sidebar .options button {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: bold;
+  width: 100%;
+}
+
+.sidebar .options-menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  flex-direction: row;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  margin-top: -1px; /* Ajuste para alinear el borde superior del menú con el botón */
+}
+
+.sidebar .options:hover .options-menu {
+  display: flex;
+}
+
+.sidebar .options-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.sidebar .options-menu li {
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.sidebar .options-menu li:hover {
+  background-color: #f0f0f0;
+}
+
+.sidebar .icons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: minmax(40px, auto);
+  grid-gap: 10px;
+}
+
+.sidebar .icons i {
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin: 20px;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex: 1;
+}
+
+.bloque {
+  width: 309px;
+  height: auto; /* Permitir que la altura se ajuste al contenido */
+  margin: 10px;
+  flex: 1 1 calc(25% - 20px);
+  box-sizing: border-box;
+  text-align: center;
+  border: 1px solid #ccc;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: relative; /* Mantener el contexto de posición */
+  overflow: hidden; /* Evitar que el contenido sobresalga */
+}
+
+.bloque img {
+  width: 100%; /* Asegúrate de que la imagen ocupa todo el ancho del contenedor */
+  height: auto; /* Mantener la proporción de la imagen */
+  display: block; /* Evitar espacios en blanco debajo de la imagen */
+  margin: 0 auto; /* Centrar la imagen si es necesario */
+}
+
+.bloque p {
+  font-size: 16px;
+  margin-bottom: 0;
+}
+
+
+
+@media (max-width: 768px) {
+  .sidebar {
+      width: 70px; /* Ajustar el ancho del sidebar para pantallas pequeñas */
+  }
+
+  .content {
+      margin: 10px; /* Reducir el margen en pantallas pequeñas */
+  }
+
+  .bloque {
+      flex: 1 1 calc(50% - 20px); /* Dos bloques por fila en pantallas pequeñas */
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+      display: none; /* Ocultar sidebar en pantallas muy pequeñas */
+  }
+
+  .content {
+      margin: 0; /* Sin márgenes en pantallas muy pequeñas */
+  }
+
+  .bloque {
+      flex: 1 1 100%; /* Un bloque por fila en pantallas muy pequeñas */
+  }
+}
