@@ -1,0 +1,565 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
+  
+}
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #674dbc;
+    height: 100vh;
+
+}
+.contenedor{
+display: flex;
+flex-direction: column ;
+align-items: center;
+
+}
+.contenedorImagen{
+    width: 200x;
+    height: 200px;
+}
+.contenedorImagen img{
+    width: 100%;
+    height: 100%;
+}
+h2{
+    text-align: center;
+    margin-top: 20PX;
+    color: aliceblue;
+}
+.contenedorParrafo {
+    text-align: center;
+    margin-bottom: 50PX;
+    margin-top: 50px;
+    width: 300px;
+}
+.contenedorParrafo P{
+    color: aliceblue;
+}
+button{
+    background-color: aliceblue;
+    color: rgba(151, 71, 255, 1);
+    width: 150px;
+    height: 40px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+button:hover{
+    background-color:  #cecadd;
+}
+/* login */
+.contenedorCrearcuenta{
+    display: flex;
+    height: auto;
+    height: 100vh;
+}  
+.ingresar{
+    display: flex;
+    background-color:#674dbc;
+    width: 30%;
+    padding: 15px;
+    flex-direction: column;
+    align-items: center;
+}
+.contenedorLogo{
+    width: 140px;
+    height: 140px;
+    margin-bottom: 40px;
+}
+.contenedorLogo img{
+    width: 100%;
+    height: 100%;
+}
+.contenedorH2{
+    margin-bottom: 80px;
+}
+.contenedorP{
+    text-align: center;
+    color: aliceblue;
+    margin-bottom: 80PX;
+}
+.crearCuenta{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+
+    height:100%;
+    overflow:hidden;
+    /* background-color: #fafafb; */
+    background-image: url('imagenes/fondoPino.png');
+}
+.crearCuentaProfesional{
+    display: flex;
+    background-image: url('imagenes/fondoPino.png');
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    background-color:rgb(230, 230, 230);
+}
+.crearCuentaProfesional h1{
+    color: #8a66fd;
+    margin-bottom: 50px;
+}
+.crearCuentaProfesional  p{
+    margin-bottom: 30px;
+    color: #8a66fd;
+}
+.crearCuenta h1{
+    color: white;
+    
+}
+.contenedorIngresar{
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+.crearCuenta p{
+    margin-bottom: 15px;
+    color: white;
+}
+.registrarse{
+    display: flex;
+    height: 310px;
+    overflow: auto;
+    flex-direction: column;
+    margin-bottom:15px ;
+    color:white;
+    gap: 15px 0px;
+}
+.btnRegistro{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} 
+.redes{
+    margin-top: 10px;
+    display: flex ;
+    gap: 15px;
+    
+} 
+.contenedorRedes{
+    width: 40px;
+    height: 40px;
+}
+.redes img{
+    width: 100%;
+    height: 100%;
+}
+ .button {
+    padding: 10px;
+    border: none;
+    border-radius: 15px;
+    background-color:aliceblue;
+    color:#8a66fd;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+    margin-top: 10px;
+}
+.button:hover {
+    background-color: #cecadd; 
+} 
+.buttonRegistroP{
+    padding: 10px;
+    border: none;
+    border-radius: 15px;
+    background-color:#8a66fd;
+    color:aliceblue;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+    margin-top: 10px;
+}
+.buttonRegistroP:hover{
+    background-color: #d9cefa;
+    color: #8a66fd;
+    
+}
+
+
+.inputGrupo input{
+    background-color: #F5F5F5 ;
+    border: none;
+    width: 100%;
+    padding: 20px;
+    border-radius: 8px;
+    height: 30px;
+}
+.texto{
+    color: black;
+}
+/* header */
+
+#menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fafafb;
+    padding: 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+header .logo img {
+    width: 100px;
+    height: 100px;
+}
+
+header .tagline h2 {
+    margin: 0;
+    font-size: 40px;
+    color: #59009A;
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    padding: 10px;
+    text-align: center;
+    align-items: center;
+}
+
+nav ul li {
+    margin: 0 10px;
+    position: relative; /* Necesario para el submenu */
+}
+nav ul li a {
+    text-decoration: none;
+    color: #59009A;
+}
+nav ul li a img {
+    width: 50px;
+    height: 50px;
+}
+
+.nav-user-icon img {
+    cursor: pointer;
+   
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    padding: 5px;
+    top: 100%;
+    right: 0;
+    background-color:rgb(217, 217, 217);
+    box-shadow: 0 8px 16px rgba(0, 0, 0,0.5);
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.submenu a {
+    display: block;
+    border-bottom: #8a66fd solid 1px ;
+    padding: 10px;
+    text-decoration: none;
+    color: #59009A;
+}
+
+.submenu a:hover {
+    background-color:rgba(170, 170, 170, 0.5);
+}
+/* Footer */
+footer {
+    background-color: #59009A;
+    color: #ffffff;
+    padding: 10px;
+}
+
+.footer-container {
+    display: flex;
+    padding: 0;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.contact-item {
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+    padding-right: 10px;
+    align-items: center;
+    text-align: center;
+}
+.contact-item span {
+    margin-bottom: 5px;
+}
+
+.iconos {
+    display: flex;
+    justify-content: center;
+}
+
+.iconos a {
+    margin: 0 10px;
+}
+
+.iconos img {
+    width: 24px;
+    height: 24px;
+}
+
+.quienes-somos {
+    align-self: center;
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: auto;
+}  
+ /*contenido vista usuario  */
+.contenido{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+   overflow:auto;
+    background-color: rgb(240, 248, 255);
+    height: calc(100vh - 100px);
+}
+.informacion{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px 0px;
+    width: 70%;
+    height: 95%;
+    
+}
+.informacion2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    text-align: center;
+    padding: 10px;
+    width: 40%;
+    height: 95%;
+}
+.informacion2 h1{
+    margin-top: 20px;
+    color: grey;
+}
+.contenedorAcercademi{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    overflow: hidden;
+    align-items: center;
+    justify-content: space-between;
+   height: 85%;
+  
+}
+.contenedorParrafoAcercademi{
+    text-align: left;
+}
+.contenedorAcercademi p{
+    font-size: 20px;
+}
+.infoUsuario{
+    display: flex;
+    border-radius: 15px;
+   padding: 10px;
+   gap: 0 50px;
+   background-color: rgb(217, 217, 217,0.5);
+    width: 95%;
+    height: 40%;
+}
+.infoUsuario2{
+   padding: 10px;
+   border-radius: 15px;
+   display: flex;
+   flex-direction: column;
+    background-color: rgb(217, 217, 217,0.5);
+    width: 95%;
+    height: auto;
+}
+.infoUsuario2 h2{
+
+    color: grey;
+    margin: 0;
+} 
+.Detalles{
+    display: flex;
+    flex-direction: column;
+   
+
+}
+.infoDetalle{
+    display: flex;
+    align-items:center ;
+    gap: 0px 15px;
+    margin-bottom: 10px;
+    
+}
+.infoDetalleimg{
+    width: 30px;
+    height: 30px;
+}
+.infoDetalleimg img{
+    width: 100%;
+    height: 100%;
+}
+.acercaDemi{
+    background-color: rgb(217, 217, 217,0.5);
+    border-radius: 15px;
+    width: 95%;
+    height: 95%;
+}
+.logoUsuario{
+    width: 165px;
+    height: 100%;
+}
+.logoUsuario img{
+    width: 100%;
+    height: 100%;
+}
+.infoUsuario .descripcion{
+    display: flex;
+    width:60%;
+
+}
+.descripcion{
+    display: flex;
+    flex-direction: column;
+    gap: 30px 0px;
+}
+.descripcion h2{
+    color: grey;    
+}
+.botonesUsuario{
+    display: flex;
+    gap: 0 15px;
+    align-items: center;
+    justify-content: center;
+}
+.boton {
+    padding: 5px;
+    border: none;
+    border-radius: 15px;
+    background-color:#8a66fd;
+    color:white;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 0 5px;
+    margin-top: 10px;
+}
+
+
+.boton:hover{
+    background-color: #674dbc;
+}
+.botonimg{
+    width: 30px;
+    height: 30px;
+}
+.botonimg img{
+    width: 100%;
+    height: 100%;
+}
+@media(max-width:1180px){
+    .boton h3{
+        font-size: 15px;
+    }
+ 
+}
+@media (max-width: 860px){
+    *{
+        font-size: 15px;
+    }
+    .contenido{
+        height: auto;
+        padding: 10px;
+        flex-direction: column;
+    }
+    .infoUsuario{
+        gap: 0 15px;
+    }
+    .informacion{
+        width: 100%;
+    }
+    .informacion2{
+        width: 100%;
+    }  
+    .botonimg{
+        width: 20px;
+        height: 20px;
+    }
+    .descripcion{
+        gap: 10px 0;
+    }
+    
+    /* vista usuario editar */
+}
+.contenedorEditar{
+    display: flex ;
+    gap: 0 15px;
+}
+.contenedorActualizar{
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+justify-content: center;
+align-items: center;
+
+}
+.infoDetalleEditar{
+    display: flex;
+    justify-content: space-between;
+}
+.EditarAcercademi {
+    padding: 10x;
+    width: auto;
+    
+}
+.contenedorEditarNombre{
+    width: 50%;
+    height: 100%;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: rgb(217, 217, 217,0.5) ;
+}
+.contenedorEditarNombre .inputGrupo input{
+    width: 95%;
+}
+.inputGrupo textarea{
+    width: 95%;
+    padding: 0.75em;
+    margin-top: 0.5em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+
+    
+
+
+
+
