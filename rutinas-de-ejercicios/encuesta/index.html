@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="Style.css">
-  <title>Atención Profesional</title>
+  <title>Rutinas de Ejercicios</title>
 </head>
 <body>
   <header>
     <nav class="navbar">
       <div class="logo">
         <a href="../Home_Usuario/HomeUsuario.html"><img src="https://i.ibb.co/4MSTbtM/2f043346-e172-4c47-b8b4-d69f213fc49e.jpg" alt="Logo de Atención Profesional"></a>
-        <span class="Profesional">Rutinas de Ejercicios</span>
+        <span class="Profesional">Rutinas de ejercicios</span>
       </div>
       <div class="menu-icon">
         <i class="material-icons">menu</i>
@@ -43,54 +43,54 @@
       </ul>
     </div>
   </header>
-    <main>
-        <div class="card-container">
-            <div class="card">
-                <a href="/detalles/index.html">
-                <img src="/detalles/sportswoman-stretching-her-back-white-copyspace.jpg" alt="" class="refe">
-            
-                <h2>Estiramiento de torso</h2>
-                <p>05:00 </p>
-            </a>
+    <div class="survey-container">
+        <h2>Encuesta Regular de Bienestar</h1>
+        <form action="/submit-survey" method="post">
+            <!-- Pregunta 1 -->
+            <div class="question">
+                <label for="stress-level">¿Cómo te sientes de estresado/a hoy?</label>
+                <select id="stress-level" name="stress-level" required>
+                    <option value="" disabled selected>Selecciona una opción</option>
+                    <option value="no-estresado">Nada estresado/a</option>
+                    <option value="poco-estresado">Poco estresado/a</option>
+                    <option value="moderadamente-estresado">Moderadamente estresado/a</option>
+                    <option value="muy-estresado">Muy estresado/a</option>
+                    <option value="extremadamente-estresado">Extremadamente estresado/a</option>
+                </select>
             </div>
-            <div class="card">
-                <a href="/estiramiento/detalles2/index.html">
-                <img src="/andres/ejercicios/imagenes/close-up-hand-stretching-foot.jpg" alt="" class="refe">
-         
-                <h2>Estiramiento de tobillos</h2>
-                <p>05:00 </p>
-            </a>
+
+            <!-- Pregunta 2 -->
+            <div class="question">
+                <label for="sleep-quality">¿Cómo fue tu sueño anoche?</label>
+                <select id="sleep-quality" name="sleep-quality" required>
+                    <option value="" disabled selected>Selecciona una opción</option>
+                    <option value="excelente">Excelente</option>
+                    <option value="bueno">Bueno</option>
+                    <option value="regular">Regular</option>
+                    <option value="malo">Malo</option>
+                    <option value="muy-malo">Muy malo</option>
+                </select>
             </div>
-            <div class="card">
-                <a href="/estiramiento/detalles3/index.html">
-                <img src="/andres/ejercicios/imagenes/front-view-woman-doing-physiotherapy-exercises-neck.jpg" alt="" class="refe">
-                <h2>Estiramiento de cuello</h2>
-                <p>05:00 </p>
-            </a>
+
+            <!-- Pregunta 3 -->
+            <div class="question">
+                <label for="mood">¿Cómo es tu estado de ánimo hoy?</label>
+                <select id="mood" name="mood" required>
+                    <option value="" disabled selected>Selecciona una opción</option>
+                    <option value="muy-feliz">Muy feliz</option>
+                    <option value="feliz">Feliz</option>
+                    <option value="neutral">Neutral</option>
+                    <option value="triste">Triste</option>
+                    <option value="muy-triste">Muy triste</option>
+                </select>
             </div>
-            <div class="card">
-                <a href="/estiramiento/detalles4/index.html">
-                <img src="/andres/ejercicios/imagenes/high-angle-woman-sitting-floor.jpg" class="refe">
-                <h2>Estiramiento mariposa </h2>
-                <p>05:00 </p>
-            </a>
-            </div>
-            <div class="card">
-                <a href="/estiramiento/detalles5/index.html">
-                <img src="/andres/ejercicios/imagenes/portrait-smiling-fitness-woman-stretching-her-hands-white-wall.jpg" alt="" class="refe">
-                <h2>Estiramiento de brazo</h2>
-                <p>05:00 </p>
-            </a>
-            </div>
-            
-        </div>
-        <div class="go">
-            <a href="/comentarios2/index.html">
-        <button class="boton">comenzar</button>
-    </a>
+        </form>
+            <!-- Botón de envío -->
+             <a href="/inicio/index.html">
+            <button>Enviar Encuesta</button>
+        </a>
+        
     </div>
-    </main>
-   
 </body>
 <footer>
     <div class="footer-container">
@@ -120,4 +120,5 @@
   
   <script src="script.js"></script>
 </body>
+</html>
 </html>
