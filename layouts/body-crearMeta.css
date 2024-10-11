@@ -1,0 +1,61 @@
+/* estilos generales para el body */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* estilo para el main */
+main {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* estilo para el section */
+section {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 800px;
+}
+
+/* estilo para el h2 en section */
+section h2 {
+    margin-top: 0;
+}
+
+/* estilo para el formulario */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* estilo para los labels */
+label {
+    font-weight: bold;
+}
+
+/* estilos para inputs y textarea */
+input, textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* estilo para el botón */
+button {
+    background-color: #59009A;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    align-self: flex-end;
+}

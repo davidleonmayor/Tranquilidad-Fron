@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../layouts/styleHeader.css">
+    <link rel="stylesheet" href="../layouts/styleFooter.css">
+    <link rel="stylesheet" href="../layouts/body-seguimiento.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- CDN actualizado para Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script> 
+    <title>Seguimiento</title>
+    
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+          <div class="logo">
+            <a href="../Home_Usuario/HomeUsuario.html"><img src="https://i.ibb.co/4MSTbtM/2f043346-e172-4c47-b8b4-d69f213fc49e.jpg" alt="Logo de Atención Profesional"></a>
+            <span class="Alimentaciòn">Alimentaciòn </span>
+          </div>
+          <div class="menu-icon">
+            <i class="material-icons">menu</i>
+          </div>
+          <div class="servicios">
+            <span>Servicios</span>
+            <div class="submenu">
+              <ul>
+                <li>Biblioterapia</li>
+                <li>Arteterapia</li>
+                <li>Musicoterapia</li>
+                <li>Ejercicios</li>
+              </ul>
+            </div>
+          </div>
+          <div class="user-info">
+            <span>Juanito Alimaña</span>
+            <img class="imagen-usuario" src="https://pps.whatsapp.net/v/t61.24694-24/425171185_1161987931585359_8379654463750076539_n.jpg?ccb=11-4&oh=01_Q5AaICQrNgt5q8xzlA08ydTiz0MYYzWsQrMTW8GSElA5yevr&oe=670D1BA8&_nc_sid=5e03e0&_nc_cat=101" alt="Foto de perfil del usuario">
+          </div>
+        </nav>
+        <div class="dropdown-menu">
+          <ul>
+            <li><a href="#">Biblioterapia</a></li>
+            <li><a href="#">Arteterapia</a></li>
+            <li><a href="#">Musicoterapia</a></li>
+            <li><a href="#">Ejercicios</a></li>
+            <li><a href="#">Perfil</a></li>
+          </ul>
+        </div>
+    </header>
+
+    <div class="section">
+        <h3>Metas personales</h3>
+        <table>
+            <tr>
+                <th>Peso actual</th>
+                <td>68 kg</td>
+            </tr>
+            <tr>
+                <th>Peso deseado</th>
+                <td>60 kg</td>
+            </tr>
+            <tr>
+                <th>Meta</th>
+                <td>Bajar de peso</td>
+            </tr>
+            <tr>
+                <th>Plan de dieta actual</th>
+                <td>n/a</td>
+            </tr>
+        </table>
+    </div>
+    <div class="section">
+        <h3>Mediciones</h3>
+        <table>
+            <tr>
+                <th>Peso</th>
+                <td>68 kg</td>
+            </tr>
+            <tr>
+                <th>Grasa corporal</th>
+                <td>12%</td>
+            </tr>
+            <tr>
+                <th>Cintura</th>
+                <td>90 cm</td>
+            </tr>
+            <tr>
+                <th>Pecho</th>
+                <td>86 cm</td>
+            </tr>
+        </table>
+    </div>
+    <div class="section">
+        <h3>Estadísticas</h3>
+        <div>
+
+          <!-- Tamaño fijo añadido para el canvas -->
+          <canvas id="miGrafica" width="600" height="400"></canvas>
+        </div>
+    </div>
+    <div class="section">
+        <h3>Comidas</h3>
+        <table>
+            <tr>
+                <th>Platillo</th>
+                <td>Platillo sube 10kg en 1 mes</td>
+            </tr>
+            <tr>
+                <th>Grasas</th>
+                <td>500 kcal</td>
+            </tr>
+            <tr>
+                <th>Proteina</th>
+                <td>20 gr</td>
+            </tr>
+            <tr>
+                <th>Gramos</th>
+                <td>3000 gr</td>
+            </tr>
+            <tr>
+                <th>Carbohidratos</th>
+                <td>40 gr</td>
+            </tr>
+        </table>
+    </div>
+
+    
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const ctx = document.getElementById('miGrafica').getContext('2d');
+      const miGrafica = new Chart(ctx, {
+          type: 'bar',  // Tipo de gráfico (barras)
+          data: {
+              labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio'],
+              datasets: [{
+                  label: 'Estadísticas',
+                  data: [12, 19, 3, 5, 2, 3],
+                  backgroundColor: [
+                      'rgba(75, 192, 192, 0.2)',
+                      'rgba(54, 162, 235, 0.2)',
+                      'rgba(255, 206, 86, 0.2)',
+                      'rgba(75, 192, 192, 0.2)',
+                      'rgba(153, 102, 255, 0.2)',
+                      'rgba(255, 159, 64, 0.2)'
+                  ],
+                  borderColor: [
+                      'rgba(75, 192, 192, 1)',
+                      'rgba(54, 162, 235, 1)',
+                      'rgba(255, 206, 86, 1)',
+                      'rgba(75, 192, 192, 1)',
+                      'rgba(153, 102, 255, 1)',
+                      'rgba(255, 159, 64, 1)'
+                  ],
+                  borderWidth: 1
+              }]
+          },
+          options: {
+              scales: {
+                  y: {
+                      beginAtZero: true
+                  }
+              }
+          }
+      });
+
+      // Lógica para el menú desplegable
+      const menuIcon = document.querySelector('.menu-icon');
+      const navbar = document.querySelector('header');
+
+      // Añadir un event listener para abrir/cerrar el menú
+      menuIcon.addEventListener('click', () => {
+          navbar.classList.toggle('menu-open');
+      });
+  });</script>
+
+</body>
+<footer>
+    <div class="footer-container">
+      <div class="contact-item">
+        <span>Contáctanos</span>
+        <div class="iconos">
+          <a href="https://web.whatsapp.com/"><img src="../inclued/WhatsApp.png" alt="WhatsApp"></a>
+        </div>
+      </div>
+     
+      <div class="contact-item">
+        <span>Canales de atención</span>
+        <div class="iconos">
+          <a href="https://web.telegram.org/"><img src="../inclued/Telegram App.png" alt="Telegram"></a>
+          <a href="https://mail.google.com/mail/u/0/?ogbl#inbox"><img src="../inclued/Email.png" alt="Email"></a>
+        </div>
+      </div>
+      <div class="contact-item">
+        <span>Redes sociales</span>
+        <div class="iconos">
+          <a href="https://www.facebook.com/"><img src="../inclued/Facebook.png" alt="Facebook"></a>
+          <a href="https://www.instagram.com/"><img src="../inclued/Instagram.png" alt="Instagram"></a>
+        </div>
+      </div>
+      <a class="quienes-somos" href="#">¿Quiénes somos?</a>
+    </div>
+  </footer>
+  
+ 
+</html>

@@ -1,0 +1,41 @@
+main {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+a {
+    text-decoration: none; /* Elimina el subrayado */
+    color: inherit; /* Elimina el color azul y aplica el color heredado */
+}
+
+.body{
+    text-decoration: none;
+}
+.card {
+    font-family: 'roboto', sans-serif;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 500ms;
+}
+
+.card:hover,
+.card:active{
+    transform:scale(1.1);
+}
+
+
+.card img {
+    width: 150px;
+    margin-bottom: 20px;
+}
+
+.card p{
+    margin: 10px;
+}
+
+
