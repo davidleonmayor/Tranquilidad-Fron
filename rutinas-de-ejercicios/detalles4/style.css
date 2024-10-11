@@ -1,0 +1,253 @@
+.cont {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+  }
+  
+  .contenedor {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .guia {
+    width: 95%;
+    height: auto;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
+  }
+  
+  .instruccines {
+    font-family: sans-serif;
+    font-size: 20px;
+    margin: 30px;
+    padding: 20px;
+    width: 100%;
+  }
+  
+  .title {
+    color: #59009A;
+  }
+  
+  .volver {
+    background-color: #59009A;
+    height: 60px;
+    border-radius: 10px;
+    width: 100px;
+    color: #fff;
+    margin-bottom: 20px;
+  }
+  
+  .volver:hover {
+    background-color: #3e006b;
+    cursor: pointer;
+  }
+  
+  .one {
+    margin-top: 20px;
+  }
+  
+  
+  ul{
+    margin-left: 20px;
+  }
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  
+  h1{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #59009A;
+    font-style: italic;
+  }
+  
+  
+  
+  body {
+    font-family: sans-serif;
+    margin: 0;
+  
+    padding: 0;
+    background-color: #fffcfc;
+    width: 100%;
+    left: 0%;
+  }
+  
+  .arriba {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      border-bottom: 1px solid #333;
+  }
+  .logo {
+      display: flex;
+      align-items: center;
+  }
+  .logo img {
+      width: 50px;
+      height: 50px;
+      margin-right: 10px;
+  }
+  .logo h1 {
+      margin: 0;
+  }
+  .user {
+      display: flex;
+      align-items: center;
+      margin: 0px;
+  }
+  .user a {
+      margin-right: 20px;
+      color: #59009A;
+      text-decoration: none;
+    
+      margin-inline-start: auto;
+  }
+  .user img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+  }
+  .nav {
+    color: #59009A;
+    position: relative;
+    margin-left: 880px;
+    
+    }
+    
+    .submenu {
+    position: absolute;
+    background-color: #fff;
+    padding: 5px 5px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    display: none;
+    top: 24px;
+    left: 0px;
+    width: auto;
+    }
+    
+    .nav:hover .submenu {
+    display: flex;
+    }
+    
+    .submenu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    }
+    
+    .submenu li {
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+    }
+    
+    .submenu li:hover {
+    background-color: #f0f0f0;
+    }
+  
+  .body {
+    padding: 20px;
+  }
+  
+  footer {
+    background-color: #59009A;
+    color: #ffffff;
+    padding: 10px;
+    text-align: center;
+  
+    bottom: 0;
+    width: 99%;
+  }
+  
+  .footer-container {
+    display: flex;
+    padding: 0;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+  }
+  
+  .contact-item {
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+    padding-right: 10px;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .contact-item span {
+    margin-bottom: 5px;
+  }
+  
+  .iconos {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .iconos a {
+    margin: 0 10px;
+  }
+  
+  .iconos img {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .quienes-somos {
+    align-self: center;
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: auto;
+  }
+  
+  
+  
+  @media (max-width: 768px) {
+    .arriba {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .nav {
+      margin-left: 0;
+    }
+  
+    .user {
+      margin-top: 10px;
+    }
+  
+    .contenedor {
+      width: 100%;
+      margin: 20px 0;
+    }
+  
+    .instruccines {
+      width: 90%;
+      font-size: 18px;
+    }
+  
+    .footer-container {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .iconos {
+      margin-bottom: 10px;
+    }
+  
+    .quienes-somos {
+      margin-top: 10px;
+    }
+  }
+  
