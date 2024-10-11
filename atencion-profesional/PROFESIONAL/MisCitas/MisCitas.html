@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atención Profesional</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="MisCitas.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+          <div class="logo">
+            <a href="../Home_Usuario/HomeUsuario.html"><img src="https://i.ibb.co/4MSTbtM/2f043346-e172-4c47-b8b4-d69f213fc49e.jpg" alt="Logo de Atención Profesional"></a>
+            <span class="Profesional">Atención Profesional</span>
+          </div>
+          <div class="menu-icon">
+            <i class="material-icons">menu</i>
+          </div>
+          <div class="servicios">
+            <span>Servicios</span>
+            <div class="submenu">
+              <ul>
+                <li>Biblioterapia</li>
+                <li>Arteterapia</li>
+                <li>Musicoterapia</li>
+                <li>Ejercicios</li>
+              </ul>
+            </div>
+          </div>
+          <div class="user-info">
+            <span>Juanito Alimaña</span>
+            <img class="imagen-usuario" src="https://pps.whatsapp.net/v/t61.24694-24/425171185_1161987931585359_8379654463750076539_n.jpg?ccb=11-4&oh=01_Q5AaICQrNgt5q8xzlA08ydTiz0MYYzWsQrMTW8GSElA5yevr&oe=670D1BA8&_nc_sid=5e03e0&_nc_cat=101" alt="Foto de perfil del usuario">
+          </div>
+        </nav>
+        <div class="dropdown-menu">
+          <ul>
+            <li><a href="#">Biblioterapia</a></li>
+            <li><a href="#">Arteterapia</a></li>
+            <li><a href="#">Musicoterapia</a></li>
+            <li><a href="#">Ejercicios</a></li>
+            <li><a href="#">Perfil</a></li>
+          </ul>
+        </div>
+      </header>
+    <main>
+        <div class="container">
+            <section class="appointments">
+                <div class="appointment">
+                    <p>Usuario: Juanito Alinsaña #1202</p>
+                    <p>Fecha: 10-05-2024</p>
+                    <p>Hora: 14:00</p>
+                    <div class="dropdown">
+                        <button class="dropdown-button">Acciones</button>
+                        <div class="dropdown-content">
+                            <a href="../Consulta_Profesional/ConsultaProfesional.html"><button class="accept-button">Ingresar</button></a>
+                            <a href="../CancelarCita1_Profesional/CancelarCita.html"><button class="deny-button">Denegar</button></a>
+                            <button class="edit-button" onclick="mostrarFormulario(this)">Editar</button>
+<form class="edit-form" style="display: none;">
+    <label for="new-date">Selecciona una nueva fecha:</label>
+    <input type="date" id="new-date" name="new-date">
+    <button type="submit" class="save-button">Guardar</button>
+</form>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="appointment">
+                    <p>Usuario: Radamel Falcao G. #5419</p>
+                    <p>Fecha: 10-05-2024</p>
+                    <p>Hora: 16:00</p>
+                    <div class="dropdown">
+                        <button class="dropdown-button">Acciones</button>
+                        <div class="dropdown-content">
+                            <a href="../Consulta_Profesional/ConsultaProfesional.html"><button class="accept-button">Ingresar</button></a>
+                            <a href="../CancelarCita1_Profesional/CancelarCita.html"><button class="deny-button">Denegar</button></a>
+                            <button class="edit-button" onclick="mostrarFormulario(this)">Editar</button>
+<form class="edit-form" style="display: none;">
+    <label for="new-date">Selecciona una nueva fecha:</label>
+    <input type="date" id="new-date" name="new-date">
+    <button type="submit" class="save-button">Guardar</button>
+</form>
+                        </div>
+                    </div>
+                </div>
+                <div class="appointment">
+                    <p>Usuario: Alfredo Di Stefano #09</p>
+                    <p>Fecha: 10-05-2024</p>
+                    <p>Hora: 08:00</p>
+                    <div class="dropdown">
+                        <button class="dropdown-button">Acciones</button>
+                        <div class="dropdown-content">
+                            <a href="../Consulta_Profesional/ConsultaProfesional.html"><button class="accept-button">Ingresar</button></a>
+                            <a href="../CancelarCita1_Profesional/CancelarCita.html"><button class="deny-button">Denegar</button></a>
+                            <button class="edit-button" onclick="mostrarFormulario(this)">Editar</button>
+<form class="edit-form" style="display: none;">
+    <label for="new-date">Selecciona una nueva fecha:</label>
+    <input type="date" id="new-date" name="new-date">
+    <button type="submit" class="save-button">Guardar</button>
+</form>
+                        </div>
+                    </div>
+                </div>
+                <div class="appointment">
+                    <p>Usuario: Ludovico Peluche #29</p>
+                    <p>Fecha: 10-05-2024</p>
+                    <p>Hora: 08:00</p>
+                    <div class="dropdown">
+                        <button class="dropdown-button">Acciones</button>
+                        <div class="dropdown-content">
+                            <a href="../Consulta_Profesional/ConsultaProfesional.html"><button class="accept-button">Ingresar</button></a>
+                            <a href="../CancelarCita1_Profesional/CancelarCita.html"><button class="deny-button">Denegar</button></a>
+                            <button class="edit-button" onclick="mostrarFormulario(this)">Editar</button>
+                            <form class="edit-form" style="display: none;">
+                                <label for="new-date">Selecciona una nueva fecha:</label>
+                                <input type="date" id="new-date" name="new-date">
+                                <button type="submit" class="save-button">Guardar</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="appointment">
+                    <p>Usuario: Pedro Navaja #19</p>
+                    <p>Fecha: 10-05-2024</p>
+                    <p>Hora: 08:00</p>
+                    <div class="dropdown">
+                        <button class="dropdown-button">Acciones</button>
+                        <div class="dropdown-content">
+                            <a href="../Consulta_Profesional/ConsultaProfesional.html"><button class="accept-button">Ingresar</button></a>
+                            <a href="../CancelarCita1_Profesional/CancelarCita.html"><button class="deny-button">Denegar</button></a>
+                            <button class="edit-button" onclick="mostrarFormulario(this)">Editar</button>
+<form class="edit-form" style="display: none;">
+    <label for="new-date">Selecciona una nueva fecha:</label>
+    <input type="date" id="new-date" name="new-date">
+    <button type="submit" class="save-button">Guardar</button>
+</form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="datepicker">
+                <div class="datepicker-top">
+                    <div class="month-selector">
+                        <span class="month-name">← Mayo 2024 →</span>
+                    </div>
+                </div>
+                <div class="datepicker-calendar">
+                    <span class="day">lun</span>
+                    <span class="day">mar</span>
+                    <span class="day">mie</span>
+                    <span class="day">ju</span>
+                    <span class="day">vi</span>
+                    <span class="day">sa</span>
+                    <span class="day">do</span>
+                    <button class="date faded">30</button>
+                    <button class="date">1</button>
+                    <button class="date">2</button>
+                    <button class="date">3</button>
+                    <button class="date">4</button>
+                    <button class="date">5</button>
+                    <button class="date">6</button>
+                    <button class="date">7</button>
+                    <button class="date">8</button>
+                    <button class="date">9</button>
+                    <button class="date">10</button>
+                    <button class="date">11</button>
+                    <button class="date current-day">12</button>
+                    <button class="date">13</button>
+                    <button class="date">14</button>
+                    <button class="date">15</button>
+                    <button class="date">16</button>
+                    <button class="date">17</button>
+                    <button class="date">18</button>
+                    <button class="date">19</button>
+                    <button class="date">20</button>
+                    <button class="date">21</button>
+                    <button class="date">22</button>
+                    <button class="date">23</button>
+                    <button class="date">24</button>
+                    <button class="date">25</button>
+                    <button class="date">26</button>
+                    <button class="date">27</button>
+                    <button class="date">28</button>
+                    <button class="date">29</button>
+                    <button class="date">30</button>
+                    <button class="date">31</button>
+                    <button class="date faded">1</button>
+                    <button class="date faded">2</button>
+                    <button class="date faded">3</button>
+                </div>
+            </div>
+        </div>
+        
+    </main>
+    <footer>
+        <div class="footer-container">
+          <div class="contact-item">
+            <span>Contáctanos</span>
+            <div class="iconos">
+              <a href="https://web.whatsapp.com/"><img src="imagenes/WhatsApp.png" alt="WhatsApp"></a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span>Canales de atención</span>
+            <div class="iconos">
+              <a href="https://web.telegram.org/"><img src="imagenes/Telegram App.png" alt="Telegram"></a>
+              <a href="https://mail.google.com/mail/u/0/?ogbl#inbox"><img src="imagenes/Email.png" alt="Email"></a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span>Redes sociales</span>
+            <div class="iconos">
+              <a href="https://www.facebook.com/"><img src="imagenes/Facebook.png" alt="Facebook"></a>
+              <a href="https://www.instagram.com/"><img src="imagenes/Instagram.png" alt="Instagram"></a>
+            </div>
+          </div>
+          <a class="quienes-somos" href="#">¿Quiénes somos?</a>
+        </div>
+      </footer>
+      <script src="script.js"></script>
+    <script src="MisCitas.js"></script>
+</body>
+</html>

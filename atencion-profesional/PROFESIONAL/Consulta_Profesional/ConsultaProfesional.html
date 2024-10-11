@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atención Profesional</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="ConsultaProfesional.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+          <div class="logo">
+            <a href="../Home_Usuario/HomeUsuario.html"><img src="https://i.ibb.co/4MSTbtM/2f043346-e172-4c47-b8b4-d69f213fc49e.jpg" alt="Logo de Atención Profesional"></a>
+            <span class="Profesional">Atención Profesional</span>
+          </div>
+          <div class="menu-icon">
+            <i class="material-icons">menu</i>
+          </div>
+          <div class="servicios">
+            <span>Servicios</span>
+            <div class="submenu">
+              <ul>
+                <li>Biblioterapia</li>
+                <li>Arteterapia</li>
+                <li>Musicoterapia</li>
+                <li>Ejercicios</li>
+              </ul>
+            </div>
+          </div>
+          <div class="user-info">
+            <span>Juanito Alimaña</span>
+            <img class="imagen-usuario" src="https://pps.whatsapp.net/v/t61.24694-24/425171185_1161987931585359_8379654463750076539_n.jpg?ccb=11-4&oh=01_Q5AaICQrNgt5q8xzlA08ydTiz0MYYzWsQrMTW8GSElA5yevr&oe=670D1BA8&_nc_sid=5e03e0&_nc_cat=101" alt="Foto de perfil del usuario">
+          </div>
+        </nav>
+        <div class="dropdown-menu">
+          <ul>
+            <li><a href="#">Biblioterapia</a></li>
+            <li><a href="#">Arteterapia</a></li>
+            <li><a href="#">Musicoterapia</a></li>
+            <li><a href="#">Ejercicios</a></li>
+            <li><a href="#">Perfil</a></li>
+          </ul>
+        </div>
+      </header>
+
+    <main>
+        
+        <div class="video-call">
+            <div class="video">
+                <img src="imagenes/video.avif" alt="Video Placeholder">
+            </div>
+            <div class="chat">
+                <div id="chat-box" style="height: 400px; overflow-y: auto; background-color: #f0f0f0; padding: 10px; border: 1px solid #ddd;"></div>
+                <input type="text" id="chat-input" placeholder="Escribe tu mensaje..." style="width: 100%; padding: 10px; margin-top: 10px;">
+                <button id="send-chat" style="width: 100%; padding: 10px; margin-top: 5px; background-color: #59009A; color: white;">Enviar</button>
+            </div>
+        </div>
+        <div class="controls">
+            <button class="btn audio" id="toggle-audio"><img src="imagenes/audio.png" alt="Audio"></button>
+            <button class="btn video" id="toggle-video"><img src="imagenes/video.jpg" alt="Video"></button>
+            <a href="../GenerarInforme1_Profesional/Informe.html"><button class="btn end-call"><img src="imagenes/end.webp" alt="End Call"></button></a>
+            <button class="btn settings"><img src="imagenes/Ajustes.png" alt="Settings"></button>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+          <div class="contact-item">
+            <span>Contáctanos</span>
+            <div class="iconos">
+              <a href="https://web.whatsapp.com/"><img src="imagenes/WhatsApp.png" alt="WhatsApp"></a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span>Canales de atención</span>
+            <div class="iconos">
+              <a href="https://web.telegram.org/"><img src="imagenes/Telegram App.png" alt="Telegram"></a>
+              <a href="https://mail.google.com/mail/u/0/?ogbl#inbox"><img src="imagenes/Email.png" alt="Email"></a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span>Redes sociales</span>
+            <div class="iconos">
+              <a href="https://www.facebook.com/"><img src="imagenes/Facebook.png" alt="Facebook"></a>
+              <a href="https://www.instagram.com/"><img src="imagenes/Instagram.png" alt="Instagram"></a>
+            </div>
+          </div>
+          <a class="quienes-somos" href="#">¿Quiénes somos?</a>
+        </div>
+      </footer>
+      <script src="script.js"></script>
+    <script>
+        // 1. Submenú desplegable con JavaScript
+        const serviciosBtn = document.getElementById('servicios-btn');
+        const submenu = document.getElementById('submenu');
+
+        serviciosBtn.addEventListener('click', function() {
+            submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+        });
+
+        // 2. Validación de imagen de usuario
+        const imgUsuario = document.getElementById('imagen-usuario');
+        imgUsuario.onerror = function() {
+            imgUsuario.src = 'imagenes/default-user.png'; // Imagen de reemplazo
+        };
+
+        // 3. Botones de control de videollamada
+        let audioEnabled = true;
+        let videoEnabled = true;
+
+        const toggleAudio = document.getElementById('toggle-audio');
+        const toggleVideo = document.getElementById('toggle-video');
+
+        toggleAudio.addEventListener('click', function() {
+            audioEnabled = !audioEnabled;
+            toggleAudio.innerHTML = audioEnabled 
+                ? '<img src="imagenes/audio.png" alt="Audio">'
+                : '<img src="imagenes/mute.png" alt="Audio Mute">';
+        });
+
+        toggleVideo.addEventListener('click', function() {
+            videoEnabled = !videoEnabled;
+            toggleVideo.innerHTML = videoEnabled 
+                ? '<img src="imagenes/video.jpg" alt="Video">'
+                : '<img src="imagenes/no-video.png" alt="Video Off">';
+        });
+
+        // 4. Simulación de chat
+        const sendChatBtn = document.getElementById('send-chat');
+        const chatInput = document.getElementById('chat-input');
+        const chatBox = document.getElementById('chat-box');
+
+        sendChatBtn.addEventListener('click', function() {
+            const message = chatInput.value;
+            if (message.trim() !== '') {
+                const newMessage = document.createElement('p');
+                newMessage.textContent = `Tú: ${message}`;
+                chatBox.appendChild(newMessage);
+                chatInput.value = ''; // Limpiar el campo de entrada
+                chatBox.scrollTop = chatBox.scrollHeight; // Desplazar al final del chat
+            }
+        });
+    </script>
+</body>
+</html>
