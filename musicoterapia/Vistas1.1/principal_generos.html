@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+    />
+    <style>
+      h1 {
+        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+        color: #59009a;
+        font-style: italic;
+      }
+
+      .submenu {
+        position: absolute;
+        background-color: #fff;
+        padding: 5px 5px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        display: none;
+        top: 24px;
+        left: 0px;
+        width: auto;
+        z-index: 1000; /* Asegura que el submenú esté por encima de otros elementos */
+      }
+
+      .nav:hover .submenu {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .submenu ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .submenu li {
+        padding: 10px 20px; /* Reducido para mejor apariencia */
+        border-bottom: 1px solid #ddd;
+        cursor: pointer; /* Indica que es clickable */
+      }
+
+      .submenu li:hover {
+        background-color: #f0f0f0;
+      }
+
+      /* Estilos del contenedor principal */
+      .container {
+        display: flex;
+        min-height: calc(100vh - 126px);
+        margin-top: 80px; /* Añadir margen superior para evitar superposición con el header */
+        margin-bottom: 0;
+      }
+
+      /* Estilos de la barra lateral */
+      .sidebar {
+        width: 25%;
+        background-color: #c7b7fe49;
+        padding: 20px;
+      }
+
+      /* Estilos de los elementos del menu en la barra lateral */
+      .sidebar .menu-item {
+        padding: 12px;
+        margin: 10px 0;
+        background: #fff;
+        border-radius: 15px;
+        transition: background 0.3s ease;
+      }
+
+      /* Estilos de los elementos del menú cuando están activos o al pasar el ratón */
+      .sidebar .menu-item.active,
+      .sidebar .menu-item:hover {
+        background: linear-gradient(#ffffff, #9c76c1);
+        box-shadow: 1px 5px 10px 0.1px rgb(145, 145, 145);
+      }
+
+      /* Estilos de las imágenes dentro de los elementos del menú */
+      .sidebar .menu-item img {
+        width: 24px;
+        height: 24px;
+        margin-right: 10px;
+      }
+
+      /* Estilos de los enlaces dentro de los elementos del menú */
+      .sidebar .menu-item a {
+        display: flex;
+        align-items: center;
+        color: inherit;
+        text-decoration: none;
+        justify-content: center;
+      }
+
+      /* Estilos del texto dentro de los elementos del menú */
+      .sidebar .menu-item span {
+        flex-grow: 1;
+        text-align: center;
+        font-size: 16px;
+      }
+
+      /* Estilos del contenido principal */
+      .main-content {
+        width: 75%;
+        padding: 20px;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .title {
+        display: flex;
+        justify-content: center; /* Centra horizontalmente */
+        align-items: center; /* Centra verticalmente */
+        font-size: 75px;
+        margin-bottom: 20px;
+        font-family: "Roboto Slab", serif;
+        width: 100%; /* Asegura que tome todo el ancho disponible */
+        margin-left: 0; /* Elimina el margen izquierdo */
+      }
+
+      .title span {
+        position: relative;
+        z-index: 1;
+        transition: color 0.3s;
+      }
+
+      .genres {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        font-family: "Roboto", sans-serif;
+        flex-grow: 1;
+      }
+
+      .genre {
+        width: calc(50% - 20px);
+        text-align: center;
+      }
+
+      .genre h3 {
+        margin-bottom: 10px;
+        font-family: "Roboto Slab", serif; /* Fuente Roboto Slab para los títulos */
+        transition: color 0.3s; /* Agrega una transición de color al pasar el cursor sobre el título */
+      }
+
+      .genre:hover h3 {
+        color: #59009a; /* Cambia el color del título al pasar el cursor */
+      }
+
+      .genre img {
+        width: 60%; /* Aumenta el ancho a 60% */
+        height: 230px; /* Define un alto específico */
+        border-radius: 10px;
+        transition: transform 0.3s; /* Agrega una transición para suavizar el cambio */
+      }
+
+      .genre:hover img {
+        transform: scale(
+          1.1
+        ); /* Aumenta el tamaño de la imagen al pasar el cursor */
+      }
+
+      .genres a {
+        color: inherit; /* Inherits the color from parent elements */
+        text-decoration: none; /* Removes the underline */
+      }
+
+      .genres a:hover {
+        color: #59009a; /* Optional: Change color on hover for visual feedback */
+      }
+
+      /* Estilo para el título Álbum */
+      .main-content .title span {
+        font-family: "Roboto", sans-serif; /* Cambia la fuente a Roboto */
+      }
+
+      /* Estilos para pantallas más pequeñas, como tablets o móviles */
+      @media only screen and (max-width: 768px) {
+        .container {
+          flex-direction: column;
+          height: auto;
+          /* Ajustar altura automática */
+        }
+
+        .sidebar {
+          width: 95%;
+          /* Ocupar todo el ancho disponible */
+          margin-bottom: 20px;
+          /* Espacio entre el sidebar y el contenido principal */
+          padding: 8px 16px;
+        }
+
+        .main-content {
+          width: 100%;
+          /* Ocupar todo el ancho disponible */
+        }
+
+        .image-container {
+          /* Ajustar el margen izquierdo */
+          margin-left: 0;
+          text-align: left;
+          /* Centrar el contenido */
+        }
+
+        .image-container2 {
+          margin-left: 0;
+          text-align: center;
+          /* Centrar el contenido */
+          width: 100%;
+          /* Ajustar el ancho al 100% */
+          padding: 10px;
+          /* Agregar algo de padding si es necesario */
+        }
+
+        .track-list {
+          max-height: none;
+          /* Ajustar altura automática */
+          width: 100%;
+          /* Ajustar el ancho al 100% */
+          padding: 10px;
+          /* Agregar algo de padding si es necesario */
+          box-sizing: border-box;
+          overflow-y: auto;
+          background-size: cover;
+          /* Asegura que la imagen cubra el contenedor sin distorsionarse */
+          background-position: center;
+          /* Centra la imagen de fondo */
+          background-repeat: no-repeat;
+          /* Evita que la imagen se repita */
+        }
+
+        .corner-text {
+          font-size: 1.5em;
+          /* Reducir tamaño de fuente para pantallas pequeñas */
+          top: 10px;
+          left: 10px;
+        }
+
+        .bottom-left-text {
+          font-size: 1em;
+          /* Reducir tamaño de fuente para pantallas pequeñas */
+          bottom: 10px;
+          left: 10px;
+        }
+
+        .title {
+          font-size: 55px;
+          /* Cambiar el tamaño del texto para pantallas pequeñas */
+          margin: 20px;
+          width: 100%;
+          /* Asegúrate de que ocupe el ancho completo */
+          text-align: center;
+          /* Asegura que el texto esté centrado */
+        }
+
+        .footer-container {
+          flex-direction: column;
+          /* Cambia las columnas a filas */
+          align-items: center;
+          /* Alinea los elementos al centro */
+        }
+
+        .contact-item {
+          text-align: center;
+          /* Centra el texto de los items */
+        }
+
+        .quienes-somos {
+          margin-left: 0;
+          /* Elimina el margen izquierdo para centrar el enlace en pantallas pequeñas */
+          margin-top: 20px;
+          /* Agrega un poco de espacio superior */
+          align-self: center;
+          /* Centra horizontalmente en el contexto de la columna */
+        }
+
+        .iconos img {
+          margin-right: 0;
+          margin-bottom: 10px;
+          /* Espacio entre los íconos en móviles */
+        }
+      }
+      /* Barra de navegación y otros estilos */
+      html,
+      body {
+        margin: 0; /* Elimina márgenes por defecto */
+        padding: 0; /* Elimina relleno por defecto */
+        height: 100%;
+      }
+
+      body {
+        font-family: "Roboto", sans-serif;
+        font-style: normal; /* Esto asegura que no esté en cursiva */
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        margin: 0;
+        min-height: 100vh; /* Asegúrate de que el cuerpo tenga al menos el 100% de la altura de la ventana */
+      }
+
+      .navbar {
+        background-color: #fff;
+
+        padding: 1rem;
+        display: flex;
+        align-items: center;
+        border-bottom: 0.0625rem solid #ddd;
+        width: 98%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+      }
+
+      .dropdown-menu {
+        display: none;
+        background-color: #fff;
+        position: fixed;
+        top: 5rem;
+        right: 1.25rem;
+        width: 12.5rem;
+        box-shadow: 0 0.3125rem 0.9375rem rgba(0, 0, 0, 0.2);
+        border-radius: 0.3125rem;
+        z-index: 1000;
+      }
+
+      .dropdown-menu ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .dropdown-menu ul li {
+        padding: 0.9375rem 1.25rem;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .dropdown-menu ul li:last-child {
+        border-bottom: none;
+      }
+
+      .dropdown-menu ul li a {
+        text-decoration: none;
+        color: #59009a;
+      }
+
+      .dropdown-menu ul li:hover {
+        background-color: #f0f0f0;
+      }
+
+      .menu-icon {
+        display: none;
+        cursor: pointer;
+        font-size: 2rem;
+        color: #59009a;
+      }
+
+      .nav-items {
+        display: flex;
+        align-items: center;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+      }
+
+      .logo img {
+        width: 4.0625rem;
+        height: 3.75rem;
+        margin: 0rem 1.5625rem 0rem 0.625rem;
+      }
+
+      .logo span {
+        font-family: "Roboto", sans-serif;
+        color: #59009a;
+        font-style: normal;
+        font-size: 1.7rem;
+        font-weight: bold;
+      }
+
+      .navbar span {
+        color: #59009a;
+        margin-right: 1.25rem;
+      }
+
+      .servicios {
+        position: relative;
+        margin-left: auto;
+        font-size: 1.0625rem;
+        text-align: center;
+        cursor: pointer;
+      }
+
+      .submenu {
+        position: absolute;
+        background-color: #fff;
+        padding: 0.625rem 0;
+        border-radius: 0.3125rem;
+        box-shadow: 0 0.3125rem 0.9375rem rgba(0, 0, 0, 0.2);
+        display: none;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: max-content;
+        z-index: 1000;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      .servicios:hover .submenu {
+        display: block;
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .submenu ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .submenu li {
+        padding: 0.9375rem 1.875rem;
+        border-bottom: 0.0625rem solid #ddd;
+        font-size: 1rem;
+        transition: background-color 0.3s ease;
+      }
+
+      .submenu li:hover {
+        background-color: #f0f0f0;
+      }
+
+      .user-info {
+        display: flex;
+        align-items: center;
+        margin: 0;
+        font-size: 1.0625rem;
+      }
+
+      .imagen-usuario {
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 50%;
+      }
+
+      .body {
+        font-family: "Roboto", sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Agregar estilos para el footer */
+      .footer-container {
+        display: flex;
+        padding: 0;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        margin: 0; /* Asegúrate de que no haya margen que cause espacios en blanco */
+      }
+
+      .contact-item {
+        display: flex;
+        flex-direction: column;
+        padding-left: 10px;
+        padding-right: 10px;
+        align-items: center;
+        text-align: center;
+        max-width: 500px;
+      }
+
+      .contact-item span {
+        margin-bottom: 5px;
+      }
+
+      .iconos {
+        display: flex;
+        justify-content: center;
+      }
+
+      .iconos a {
+        margin: 0 10px;
+      }
+
+      .iconos img {
+        width: 24px;
+        height: 24px;
+      }
+
+      .quienes-somos {
+        align-self: center;
+        color: #ffffff;
+        text-decoration: none;
+        margin-left: auto;
+      }
+
+      footer {
+        background-color: #59009a;
+        color: #ffffff;
+        padding: 1em;
+        text-align: center;
+        margin-top: auto; /* Esto asegura que el footer esté al final */
+        position: relative; /* Para que no haya problemas con el posicionamiento */
+        margin-top: auto; /* Esto empujará el footer hacia abajo */
+      }
+
+      main {
+        padding: 1.25rem;
+        margin-top: 1.5rem;
+      }
+
+      .comments-section {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 3.125rem;
+        max-width: 75rem;
+        margin: 0 auto;
+      }
+
+      .comment-card {
+        flex: 1 1 calc(33.333% - 2.5rem);
+        max-width: calc(33.333% - 2.5rem);
+        background-color: #fff;
+        border-radius: 0.625rem;
+        box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+      }
+
+      .comment-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
+      }
+
+      .comment {
+        display: flex;
+        align-items: center;
+        padding: 1.25rem;
+        border: none;
+      }
+
+      .comment img {
+        height: 3.75rem;
+        width: 3.75rem;
+        border-radius: 50%;
+        margin-right: 1.25rem;
+      }
+
+      .comment-info {
+        flex-grow: 1;
+      }
+
+      .comment-info h3 {
+        margin: 0;
+        font-size: 1.125rem;
+        color: #6200ea;
+      }
+
+      .comment-info .stars {
+        margin: 0.3125rem 0;
+        font-size: 1.125rem;
+        color: #f39c12;
+      }
+
+      .comment-info .comment-text {
+        display: none;
+        margin: 0.3125rem 0 0 0;
+        font-size: 1rem;
+        color: #333;
+      }
+
+      .comment-card:hover .comment-info .comment-text {
+        display: block;
+      }
+      /* Estilos para pantallas más pequeñas, como tablets o móviles */
+      @media only screen and (max-width: 768px) {
+        .container {
+          flex-direction: column;
+          height: auto;
+          /* Ajustar altura automática */
+        }
+
+        .sidebar {
+          width: 95%;
+          /* Ocupar todo el ancho disponible */
+          margin-bottom: 20px;
+          /* Espacio entre el sidebar y el contenido principal */
+          padding: 8px 16px;
+        }
+
+        .main-content {
+          width: 100%;
+          /* Ocupar todo el ancho disponible */
+        }
+
+        .image-container {
+          /* Ajustar el margen izquierdo */
+          margin-left: 0;
+          text-align: left;
+          /* Centrar el contenido */
+        }
+
+        .image-container2 {
+          margin-left: 0;
+          text-align: center;
+          /* Centrar el contenido */
+          width: 100%;
+          /* Ajustar el ancho al 100% */
+          padding: 10px;
+          /* Agregar algo de padding si es necesario */
+        }
+
+        .track-list {
+          max-height: none;
+          /* Ajustar altura automática */
+          width: 100%;
+          /* Ajustar el ancho al 100% */
+          padding: 10px;
+          /* Agregar algo de padding si es necesario */
+          box-sizing: border-box;
+          overflow-y: auto;
+          background-size: cover;
+          /* Asegura que la imagen cubra el contenedor sin distorsionarse */
+          background-position: center;
+          /* Centra la imagen de fondo */
+          background-repeat: no-repeat;
+          /* Evita que la imagen se repita */
+        }
+
+        .corner-text {
+          font-size: 1.5em;
+          /* Reducir tamaño de fuente para pantallas pequeñas */
+          top: 10px;
+          left: 10px;
+        }
+
+        .bottom-left-text {
+          font-size: 1em;
+          /* Reducir tamaño de fuente para pantallas pequeñas */
+          bottom: 10px;
+          left: 10px;
+        }
+
+        .title {
+          font-size: 55px;
+          /* Cambiar el tamaño del texto para pantallas pequeñas */
+          margin: 20px;
+          width: 100%;
+          /* Asegúrate de que ocupe el ancho completo */
+          text-align: center;
+          /* Asegura que el texto esté centrado */
+        }
+
+        .footer-container {
+          flex-direction: column;
+          /* Cambia las columnas a filas */
+          align-items: center;
+          /* Alinea los elementos al centro */
+        }
+
+        .contact-item {
+          text-align: center;
+          /* Centra el texto de los items */
+        }
+
+        .quienes-somos {
+          margin-left: 0;
+          /* Elimina el margen izquierdo para centrar el enlace en pantallas pequeñas */
+          margin-top: 20px;
+          /* Agrega un poco de espacio superior */
+          align-self: center;
+          /* Centra horizontalmente en el contexto de la columna */
+        }
+
+        .iconos img {
+          margin-right: 0;
+          margin-bottom: 10px;
+          /* Espacio entre los íconos en móviles */
+        }
+
+        /* HEADER */
+
+        .arriba {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        header .logo,
+        header .nav,
+        header .user {
+          display: flex;
+          justify-content: center;
+          margin-bottom: 10px;
+        }
+
+        header .nav {
+          width: 100%;
+          position: relative;
+          /* Mantiene el posicionamiento relativo */
+        }
+
+        header .nav span {
+          display: inline-block;
+          cursor: pointer;
+        }
+
+        header .submenu {
+          position: relative;
+          /* Ahora es relativo para que ocupe espacio y empuje el contenido */
+          background-color: #fff;
+          /* Fondo para que sea visible */
+          display: none;
+          /* Oculto por defecto */
+          padding: 5px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+          /* Sombra para visibilidad */
+          z-index: 1;
+        }
+
+        header .submenu ul {
+          display: flex;
+          flex-direction: column;
+          padding: 0;
+          margin: 0;
+        }
+
+        header .submenu li {
+          list-style: none;
+          padding: 5px 0;
+        }
+
+        /* Muestra el submenú cuando se hace hover sobre el botón "Servicios" */
+        header .nav:hover .submenu {
+          display: block;
+          /* El submenú ahora empuja el contenido hacia abajo */
+        }
+
+        .nav {
+          margin-left: 0;
+          margin-top: 20px;
+        }
+
+        .user {
+          margin-top: 20px;
+        }
+      }
+
+      @media (max-width: 1024px) {
+        .grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 30px;
+        }
+
+        .logo span {
+          font-size: 1.5rem;
+        }
+
+        .submenu ul li {
+          padding: 10px 20px;
+        }
+      }
+
+      @media only screen and (max-width: 768px) {
+        .servicios,
+        .user-info {
+          display: none;
+        }
+
+        .menu-icon {
+          display: block;
+          cursor: pointer;
+          margin-left: auto; /* Ajusta este valor para moverlo más a la izquierda */
+          margin-right: 10px; /* Ajusta este valor negativo para moverlo a la izquierda */
+          font-size: 2rem;
+          color: #59009a;
+        }
+
+        .menu-open .dropdown-menu {
+          display: block;
+        }
+
+        .footer {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .footer-links,
+        .contactanos,
+        .canales-atencion,
+        .social-media {
+          margin-bottom: 10px;
+        }
+
+        .imagenes-container {
+          justify-content: center;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .navbar {
+          padding: 5px;
+        }
+
+        .logo span {
+          font-size: 1.2rem;
+        }
+
+        .user-info {
+          font-size: 14px;
+        }
+
+        .servicios {
+          font-size: 14px;
+        }
+
+        .grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 10px;
+        }
+
+        .grid-item {
+          width: 100%;
+          height: auto;
+          padding: 20px;
+        }
+      }
+      @media (max-width: 768px) {
+        /* Ocultar texto en el footer */
+        .footer-container span {
+          display: none; /* Oculta el texto */
+          .container {
+            min-height: auto; /* Permite que el contenedor se ajuste al contenido en móviles */
+          }
+        }
+
+        /* Asegurarte de que los iconos se muestren */
+        .iconos {
+          display: flex;
+          justify-content: center; /* Centra los iconos */
+        }
+
+        .iconos a {
+          margin: 0 10px; /* Ajusta el margen entre iconos */
+        }
+      }
+      .main-content {
+        width: 100%;
+      }
+
+      /* Estilos adicionales para la interacción */
+      .genre:hover img,
+      .imagen-footer:hover,
+      .title:hover span,
+      .nav a:hover {
+        transform: scale(1.1); /* Aumenta el tamaño al pasar el cursor */
+      }
+    </style>
+    <title>Musicoterapia</title>
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="logo">
+          <a href="../Home_Usuario/HomeUsuario.html"
+            ><img src="img/logo.png" alt="Logo de Atención Profesional"
+          /></a>
+          <span class="Profesional">Musicoterapia</span>
+        </div>
+        <div class="menu-icon">
+          <i class="material-icons">menu</i>
+        </div>
+        <div class="servicios">
+          <span>Servicios</span>
+          <div class="submenu">
+            <ul>
+              <li>Biblioterapia</li>
+              <li>Arteterapia</li>
+              <li>Musicoterapia</li>
+              <li>Ejercicios</li>
+            </ul>
+          </div>
+        </div>
+        <div class="user-info">
+          <span>Juanito Alimaña</span>
+          <img
+            class="imagen-usuario"
+            src="img/user.png"
+            alt="Foto de perfil del usuario"
+          />
+        </div>
+      </nav>
+      <div class="dropdown-menu">
+        <ul>
+          <li><a href="#">Biblioterapia</a></li>
+          <li><a href="#">Arteterapia</a></li>
+          <li><a href="#">Musicoterapia</a></li>
+          <li><a href="#">Ejercicios</a></li>
+          <li><a href="#">Perfil</a></li>
+        </ul>
+      </div>
+    </header>
+    <div class="container">
+      <aside class="sidebar">
+        <br />
+        <br />
+        <div class="menu-item active">
+          <a href="principal_generos.html" style="text-decoration: none">
+            <img src="images/genero.png" alt="Icon" />
+            <span>Géneros</span>
+          </a>
+        </div>
+        <div class="menu-item">
+          <a href="principal_album.html" style="text-decoration: none">
+            <img src="images/album.png" alt="Icon" />
+            <span>Álbum</span>
+          </a>
+        </div>
+        <div class="menu-item">
+          <a href="principal_podcast.html" style="text-decoration: none">
+            <img src="images/pod.png" alt="Icon" />
+            <span>Podcast</span>
+          </a>
+        </div>
+
+        <div class="menu-item">
+          <a href="binaurales.html" style="text-decoration: none">
+            <img src="images/binaural.png" alt="Icon" />
+            <span>Sonidos Binaurales</span>
+          </a>
+        </div>
+        <div class="menu-item">
+          <a href="playList.html" style="text-decoration: none">
+            <img src="images/playL.png" alt="Icon" />
+            <span>PlayList</span>
+          </a>
+        </div>
+        <div class="menu-item">
+          <a href="Tus me gustas pistas.html" style="text-decoration: none">
+            <img src="images/like.png" alt="Icon" />
+            <span>Me gusta</span>
+          </a>
+        </div>
+        <div class="menu-item">
+          <a href="buscar.html" style="text-decoration: none">
+            <img src="images/buscar boton.png" alt="Icon" />
+            <span>Buscar</span>
+          </a>
+        </div>
+      </aside>
+
+     <main class="main-content">
+            <div class="title">
+                <span>Géneros</span>
+            </div>
+            <div class="genres">
+
+
+                <div class="genre">
+                    <a href="genero_elegido.html?genreId=1">
+                        <img src="images/clasica.png" alt="Clásica"
+                            onerror="this.onerror=null;this.src='img/placeholder.png';">
+                        <h3>Clásica</h3>
+                    </a>
+                </div>
+
+
+                <div class="genre">
+                    <a href="genero_elegido.html?genreId=2">
+                        <img src="images/ambiental.png" alt="Ambiental"
+                            onerror="this.onerror=null;this.src='img/placeholder.png';">
+                        <h3>Ambiental</h3>
+                    </a>
+                </div>
+                <div class="genre">
+                    <a href="genero_elegido.html?genreId=3">
+                        <img src="images/instrumental.png" alt="Instrumental"
+                            onerror="this.onerror=null;this.src='img/placeholder.png';">
+                        <h3>Instrumental</h3>
+                    </a>
+                </div>
+                <div class="genre">
+                    <a href="genero_elegido.html?genreId=4">
+                        <img src="images/electronica.png" alt="Electrónica"
+                            onerror="this.onerror=null;this.src='img/placeholder.png';">
+                        <h3>Electrónica</h3>
+                    </a>
+                </div>
+            </div>
+        </main>
+    </div>
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="contact-item">
+          <span>Contáctanos</span>
+          <div class="iconos">
+            <a href="#"><img src="images/WhatsApp.png" alt="WhatsApp" /></a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <span>Canales de atención</span>
+          <div class="iconos">
+            <a href="#"><img src="images/Telegram App.png" alt="Telegram" /></a>
+            <a href="#"><img src="images/Email.png" alt="Email" /></a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <span>Redes sociales</span>
+          <div class="iconos">
+            <a href="#"><img src="images/Facebook.png" alt="Facebook" /></a>
+            <a href="#"><img src="images/Instagram.png" alt="Instagram" /></a>
+          </div>
+        </div>
+        <a class="quienes-somos" href="#">¿Quiénes somos?</a>
+      </div>
+    </footer>
+  </body>
+  <script src="script.js">
+    document.addEventListener('DOMContentLoaded', function() {
+             const creacionesContainer = document.getElementById('creaciones');
+             const nombreCreacion = localStorage.getItem('nombreCreacion'); // Recupera el nombre del localStorage
+
+             if (nombreCreacion) {
+                 creacionesContainer.innerHTML = `<p>${nombreCreacion}</p>`; // Muestra el nombre
+             } else {
+                 creacionesContainer.innerHTML = '<p>No hay creaciones publicadas.</p>'; // Mensaje si no hay nombres
+             }
+         });
+  </script>
+</html>
