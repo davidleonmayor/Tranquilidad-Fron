@@ -11,6 +11,10 @@
     right: 10%;
 }
 
+.btn-view{
+    text-decoration: none;
+}
+
 .post p {
     margin: 0;
 }
@@ -21,11 +25,11 @@
 .post .details i {
     margin-right: 10px;
 }
-.post .view-button {
+.post .btn-view {
     background-color: #59009A;
     color: white;
     border: none;
-    padding: 5px 10px;
+    padding: 8px 10px 5px 10px; 
     cursor: pointer;
     border-radius: 3px;
 }

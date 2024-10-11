@@ -3,6 +3,7 @@ html, body {
     margin: 0; /* Elimina márgenes por defecto */
     padding: 0; /* Elimina relleno por defecto */
     height: 100%;
+
   }
   
   body {
@@ -22,7 +23,6 @@ html, body {
     align-items: center;
     border-bottom: 0.0625rem solid #ddd;
     width: 98%;
-    position: fixed;
     top: 0;
     left: 0;
     z-index: 1000;

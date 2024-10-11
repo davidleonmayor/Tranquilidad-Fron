@@ -1,10 +1,3 @@
-/* estilos generales para el body */
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-}
-
-/* estilo para el main */
 main {
     flex: 1;
     padding: 20px;
@@ -13,7 +6,6 @@ main {
     align-items: center;
 }
 
-/* estilo para el section */
 section {
     background-color: #fff;
     padding: 20px;
@@ -23,24 +15,17 @@ section {
     max-width: 800px;
 }
 
-/* estilo para el h2 en section */
 section h2 {
     margin-top: 0;
 }
 
-/* estilo para el formulario */
 form {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
-/* estilo para los labels */
-label {
-    font-weight: bold;
-}
 
-/* estilos para inputs y textarea */
 input, textarea {
     padding: 10px;
     border: 1px solid #ccc;
@@ -49,8 +34,8 @@ input, textarea {
     box-sizing: border-box;
 }
 
-/* estilo para el botón */
-button {
+.btn-save{
+    text-decoration: none;
     background-color: #59009A;
     color: #fff;
     border: none;
