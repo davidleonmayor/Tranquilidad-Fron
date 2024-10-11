@@ -1,0 +1,487 @@
+/* Barra de navegación y otros estilos */
+html, body {
+  margin: 0; /* Elimina márgenes por defecto */
+  padding: 0; /* Elimina relleno por defecto */
+  height: 100%;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal; /* Esto asegura que no esté en cursiva */
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Asegúrate de que el cuerpo tenga al menos el 100% de la altura de la ventana */
+}
+
+.navbar {
+  background-color: #fff;
+  
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  border-bottom: 0.0625rem solid #ddd;
+  width: 98%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+
+.dropdown-menu {
+  display: none;
+  background-color: #fff;
+  position: fixed;
+  top: 5rem;
+  right: 1.25rem;
+  width: 12.5rem;
+  box-shadow: 0 0.3125rem 0.9375rem rgba(0, 0, 0, 0.2);
+  border-radius: 0.3125rem;
+  z-index: 1000;
+}
+
+.dropdown-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dropdown-menu ul li {
+  padding: 0.9375rem 1.25rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.dropdown-menu ul li:last-child {
+  border-bottom: none;
+}
+
+.dropdown-menu ul li a {
+  text-decoration: none;
+  color: #59009A;
+}
+
+.dropdown-menu ul li:hover {
+  background-color: #f0f0f0;
+}
+
+.menu-icon {
+  display: none;
+  cursor: pointer;
+  font-size: 2rem;
+  color: #59009A;
+}
+
+.nav-items {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 4.0625rem;
+  height: 3.75rem;
+  margin: 0rem 1.5625rem 0rem 0.625rem;
+}
+
+.logo span {
+  font-family: 'Roboto', sans-serif;
+  color: #59009A;
+  font-style: normal;
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+
+.navbar span {
+  color: #59009A;
+  margin-right: 1.25rem;
+}
+
+.servicios {
+  position: relative;
+  margin-left: auto;
+  font-size: 1.0625rem;
+  text-align: center;
+  cursor: pointer;
+}
+
+.submenu {
+  position: absolute;
+  background-color: #fff;
+  padding: 0.625rem 0;
+  border-radius: 0.3125rem;
+  box-shadow: 0 0.3125rem 0.9375rem rgba(0, 0, 0, 0.2);
+  display: none;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  z-index: 1000;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.servicios:hover .submenu {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+
+.submenu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.submenu li {
+  padding: 0.9375rem 1.875rem;
+  border-bottom: 0.0625rem solid #ddd;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.submenu li:hover {
+  background-color: #f0f0f0;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  font-size: 1.0625rem;
+}
+
+.imagen-usuario {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+}
+
+.body {
+  padding: 5rem 1.25rem 1.25rem 1.25rem;
+  flex: 1;
+}
+
+/* Agregar estilos para el footer */
+.footer-container {
+  display: flex;
+  padding: 0;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 0; /* Asegúrate de que no haya margen que cause espacios en blanco */
+}
+
+.contact-item {
+  display: flex;
+  flex-direction: column;
+  padding-left: 10px;
+  padding-right: 10px;
+  align-items: center;
+  text-align: center;
+  max-width: 500px;
+}
+
+.contact-item span {
+  margin-bottom: 5px;
+}
+
+.iconos {
+  display: flex;
+  justify-content: center;
+}
+
+.iconos a {
+  margin: 0 10px;
+}
+
+.iconos img {
+  width: 24px;
+  height: 24px;
+}
+
+.quienes-somos {
+  align-self: center;
+  color: #ffffff;
+  text-decoration: none;
+  margin-left: auto;
+}
+
+footer {
+  background-color: #59009A;
+  color: #ffffff;
+  padding: 1em;
+  text-align: center;
+  margin-top: auto; /* Esto asegura que el footer esté al final */
+  position: relative; /* Para que no haya problemas con el posicionamiento */
+}
+
+
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .logo span {
+    font-size: 1.5rem;
+  }
+
+  .submenu ul li {
+    padding: 10px 20px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .servicios, .user-info {
+    display: none;
+  }
+
+  .menu-icon {
+    display: block;
+    cursor: pointer;
+    margin-left: auto; /* Ajusta este valor para moverlo más a la izquierda */
+    margin-right: 10px; /* Ajusta este valor negativo para moverlo a la izquierda */
+    font-size: 2rem;
+    color: #59009A;
+  }
+
+  .menu-open .dropdown-menu {
+    display: block;
+  }
+
+  .footer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-links,
+  .contactanos,
+  .canales-atencion,
+  .social-media {
+    margin-bottom: 10px;
+  }
+
+  .imagenes-container {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 5px;
+  }
+
+  .logo span {
+    font-size: 1.2rem;
+  }
+
+  .user-info {
+    font-size: 14px;
+  }
+
+  .servicios {
+    font-size: 14px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .grid-item {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+  }
+}
+@media (max-width: 768px) {
+  /* Ocultar texto en el footer */
+  .footer-container span {
+    display: none; /* Oculta el texto */
+  }
+  
+  /* Asegurarte de que los iconos se muestren */
+  .iconos {
+    display: flex;
+    justify-content: center; /* Centra los iconos */
+  }
+
+  .iconos a {
+    margin: 0 10px; /* Ajusta el margen entre iconos */
+  }
+}
+
+/* Contenido Body*/
+.search-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 100%; /* Ajuste para centrar la barra de búsqueda */
+  margin: 0 auto;
+  padding: 0.625rem; /* 10px */
+  box-sizing: border-box;
+  box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.2); /* Sombra para la barra de búsqueda */
+  background-color: #fff;
+  border-radius: 0.3125rem; /* 5px */
+}
+
+.search-bar {
+  flex: 1;
+  padding: 0.625rem; /* 10px */
+  font-size: 1rem; /* 16px */
+  border: 0.125rem solid #59009A; /* 2px */
+  border-radius: 0.3125rem 0 0 0.3125rem; /* Bordes redondeados, solo para la izquierda */
+  outline: none;
+}
+
+.search-button {
+  padding: 0.625rem 1.25rem; /* 10px 20px */
+  font-size: 1rem; /* 16px */
+  background-color: #59009A;
+  color: #fff;
+  border: 0.125rem solid #59009A; /* 2px */
+  border-left: none; /* Eliminar el borde izquierdo del botón */
+  border-radius: 0 0.3125rem 0.3125rem 0; /* Bordes redondeados, solo para la derecha */
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+  background-color: #7a3ec8;
+}
+
+.profile-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem; /* 20px */
+  margin-top: 1.875rem; /* 30px */
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  border-radius: 0.625rem; /* 10px */
+  box-shadow: 0 0.125rem 0.3125rem rgba(0,0,0,0.2); /* Mejor sombra */
+  padding: 1.25rem; /* 20px */
+  transition: transform 0.2s ease; /* Transición para el hover */
+}
+
+.profile:hover {
+  transform: translateY(-0.3125rem); /* Efecto de elevación en hover */
+}
+
+.profile img {
+  height: 5rem; /* 80px */
+  width: 5rem; /* 80px */
+  border-radius: 0.625rem; /* 10px */
+  margin-right: 1.25rem; /* 20px */
+}
+
+.profile-info {
+  flex-grow: 1;
+}
+
+.profile-info h3 {
+  margin: 0 0 0.625rem 0; /* 10px */
+  font-size: 1.25rem; /* 20px */
+  color: #59009A;
+}
+
+.profile-info p {
+  margin: 0;
+  font-size: 1rem; /* 16px */
+  color: #333;
+}
+
+.profile-link {
+  display: flex;
+  align-items: center; /* Alinea el icono verticalmente con la descripción */
+}
+
+.visitar-perfil {
+  width: 0.0625rem; /* 1px */
+  height: 0.0625rem; /* 1px */
+  cursor: pointer;
+  margin-left: 1.25rem; /* 20px */
+  transition: transform 0.3s ease; /* Transición para el hover */
+}
+
+.visitar-perfil:hover {
+  transform: scale(1.1);
+}
+
+button {
+  display: block;
+  padding: 0.625rem 1.875rem; /* 10px 30px */
+  background-color: #59009A;
+  color: #fff;
+  border: none;
+  border-radius: 1.875rem;} /* 30
+
+
+  /* Estilos Responsivos */
+
+/* Para tablets (máximo 768px) */
+@media (max-width: 768px) {
+  .search-container {
+    flex-direction: column;
+  }
+
+  .profile {
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .profile img {
+    margin-bottom: 1rem;
+  }
+
+  .visitar-perfil {
+    margin: 1rem 0 0 0;
+  }
+}
+
+/* Para móviles (máximo 480px) */
+@media (max-width: 480px) {
+  .search-container {
+    padding: 0.5rem;
+  }
+
+  .search-bar {
+    padding: 0.5rem;
+    font-size: 0.875rem; /* 14px */
+  }
+
+  .search-button {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+  }
+
+  .profile-info h3 {
+    font-size: 1.125rem; /* 18px */
+  }
+
+  .profile-info p {
+    font-size: 0.875rem; /* 14px */
+  }
+
+  .profile img {
+    height: 4rem; /* 64px */
+    width: 4rem; /* 64px */
+  }
+
+  .profile-list {
+    gap: 1rem;
+  }
+}
