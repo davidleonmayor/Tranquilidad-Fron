@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="styles.css"> 
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br>
+    <main>
+        <h1>Bienvenido a nuestra página</h1>
+        <p>Contenido de la página de inicio. Aquí puedes hablar sobre tu empresa y lo que ofreces.</p>
+    </main>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+        function loadTemplate(templateId, filePath) {
+            fetch(filePath)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById(templateId).innerHTML = data;
+                })
+                .catch(error => console.error('Error al cargar la plantilla:', error));
+        }
+
+        loadTemplate('header-placeholder', 'header.html');
+        loadTemplate('footer-placeholder', 'footer.html');
+    </script>
+</body>
+</html>
+
+<style>
+    body{
+        margin: 0px;
+        padding: 0px;
+        width: 100%;
+    }
+</style>
