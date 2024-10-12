@@ -1,4 +1,4 @@
-/* Barra de navegación y otros estilos */
+Barra de navegación y otros estilos
 html, body {
   margin: 0; /* Elimina márgenes por defecto */
   padding: 0; /* Elimina relleno por defecto */
@@ -317,8 +317,6 @@ footer {
     margin: 0 10px; /* Ajusta el margen entre iconos */
   }
 }
-
-
 
   main {
     padding: 20px;
