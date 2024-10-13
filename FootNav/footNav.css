@@ -1,5 +1,5 @@
-/* header */
-*{
+/* Estilos Globales */
+* {
   font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
@@ -8,13 +8,18 @@
 .body {
   display: flex;
   flex-direction: column;
-  width: 100vw;
-  height: 100vh;
-  margin: 0;
-  padding: 0;
+  min-height: 100vh; /* Asegura que el contenido ocupe la altura total */
 }
 
+.main {
+  flex: 1; /* Permite que el contenido crezca para evitar que el footer cubra elementos */
+}
+
+/* Header */
 header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   width: 100%;
   height: 100px;
   box-sizing: border-box;
@@ -25,7 +30,7 @@ header {
   border-bottom: 0.0625rem solid #ddd;
 }
 
-header span{
+header span {
   cursor: pointer;
 }
 
@@ -35,17 +40,15 @@ header nav {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  margin: 0px 10px 0px 10px;
-
+  margin: 0px 10px;
 }
 
 .servicios {
-  position: relative; /* Esto asegura que el submenu se posicione relativo a este contenedor */
+  position: relative;
 }
 
-
-.servicios span{
-  color: #59009A; 
+.servicios span {
+  color: #59009A;
 }
 
 .service-user {
@@ -53,27 +56,22 @@ header nav {
   flex-direction: row;
   align-items: center;
   gap: 30px;
-  font-size: 1.0625rem; 
+  font-size: 1.0625rem;
 }
 
-
-.menu-icon{
+.menu-icon {
   display: none;
 }
 
-
-.logo span{
+.logo span {
   color: #59009A;
-  font-size: 1.5rem; 
+  font-size: 1.5rem;
 }
 
-.logo img,
-.user-info img {
+.logo img, .user-info img {
   width: 60px;
   height: auto;
   object-fit: cover;
-  display: flex;
-
 }
 
 .logo {
@@ -90,7 +88,7 @@ header nav {
   gap: 15px;
 }
 
-.user-info span{
+.user-info span {
   color: #59009A;
 }
 
@@ -99,18 +97,20 @@ header nav {
   border-radius: 50%;
 }
 
+/* Submenu de Servicios */
 .submenu {
-  display: none ;  /* El menú estará oculto por defecto */
+  display: none;
   position: absolute;
   background-color: white;
-  top: 100%;  /* Asegura que el menú aparezca justo debajo del botón de servicios */
-  left: 0;
-  width: 150px;  /* Ajusta el tamaño del submenu */
-  z-index: 1000;  /* Asegura que el menú esté por encima de otros elementos */
+  top: 100%;
+  left: 50%; /* Centrado horizontalmente */
+  transform: translateX(-50%);
+  width: 150px;
+  z-index: 1000;
 }
 
 .submenu.active {
-  display: block;  /* Mostramos el menú cuando tenga la clase 'active' */
+  display: block;
 }
 
 .submenu ul {
@@ -119,108 +119,79 @@ header nav {
   margin: 0;
 }
 
-.submenu li a{
-  color: #59009A;
-}
-
-.submenu li{
+.submenu li {
   border: 1px solid #ccc;
   padding: 7px;
 }
 
-.submenu li:last-child{
+.submenu li:last-child {
   border-radius: 0 0 10px 10px;
 }
 
 .submenu a {
   text-decoration: none;
-  color: black;
+  color: #59009A;
 }
 
-.servicios:hover span{
+.servicios:hover span {
   text-decoration: underline;
   cursor: pointer;
-
-}
-
-.servicios:hover span{
-  text-decoration: underline;
-  cursor: pointer;
-
-}
-
-.logo:hover span {
-  text-decoration: underline;
-
-}
-
-.user-info:hover span{
-  text-decoration: underline;
 }
 
 /* Footer */
-footer div{
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #59009A;
+  z-index: 999;
+}
+
+footer div {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color: #59009A;
 }
 
-.contact-item{
+.contact-item {
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
   text-align: center;
 }
 
-.footer-container{
+.footer-container {
   padding: 10px;
 }
-.items{
+
+.items {
   gap: 30px;
 }
-.quienes-somos{
+
+.quienes-somos {
   display: flex;
   align-items: center;
-  
   color: white;
 }
 
-.main{
-  display: flex;
-  width: 100%;
-  height: 100%;
-  align-items: flex-start;
-}
-
-.iconos img{
-  display: flex;
+.iconos img {
   width: 35px;
 }
 
-.items .contact-item, .span{  /* con ',' toma todos los span dentro */
+.items .contact-item span {
   color: white;
 }
 
-/* Media de pantallas menores a 400px en header*/
-@media (max-width:480px) {
-
+/* Media Queries para pantallas pequeñas */
+@media (max-width: 480px) {
   header {
     height: 100px;
   }
 
-  .submenu{
+  .submenu {
     margin-left: -90px;
     margin-top: 1px;
     border-radius: 20px 0 0 20px;
-  }
-
-  .submenu li:last-child{
-    border-radius: 0 0 0 10px;
-  }
-
-  .submenu li:first-child{
-    border-radius: 10px 0 0 0;
   }
 
   .service-user {
@@ -237,7 +208,7 @@ footer div{
     cursor: pointer;
   }
 
-  .menu-icon .material-icons{
+  .menu-icon .material-icons {
     font-size: 50px;
     font-family: 'Material Icons';
     font-style: normal;
@@ -248,43 +219,24 @@ footer div{
   }
 
   .logo {
-    display: flex;
     flex-direction: row;
   }
 
-  .footer-container{
-    display: flex;
+  .footer-container {
     flex-direction: row;
     justify-content: space-between;
   }
 
-  .contact-item span{
+  .contact-item span {
     display: none;
   }
-  
-  .items{
+
+  .items {
     gap: 10px;
   }
-  
-  .iconos .icono{
+
+  .iconos .icono {
     width: 30px;
     height: 30px;
   }
-
-  .footer-container{
-    gap: 10px;
-  }
-  
-  
-}
-
-  /* @media (max-width:500px){
-    .iconos .icono{
-      width: 30px;
-      height: 30px;
-    }
-
-    .items {
-      font-size: 0.8rem;
-    }
-  } */
+} 
