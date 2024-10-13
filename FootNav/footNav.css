@@ -1,5 +1,11 @@
 /* header */
-body {
+*{
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.body {
   display: flex;
   flex-direction: column;
   width: 100vw;
@@ -12,10 +18,11 @@ header {
   width: 100%;
   height: 100px;
   box-sizing: border-box;
-  background-color: rebeccapurple;
+  background-color: white;
   display: flex;
   flex-direction: row;
   align-items: center;
+  border-bottom: 0.0625rem solid #ddd;
 }
 
 header span{
@@ -32,29 +39,32 @@ header nav {
 
 }
 
+.servicios {
+  position: relative; /* Esto asegura que el submenu se posicione relativo a este contenedor */
+}
+
+
 .servicios span{
-  color: white;
+  color: #59009A; 
 }
 
 .service-user {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 40px;
+  gap: 30px;
+  font-size: 1.0625rem; 
 }
 
-.servicios .submenu,
-.menu-icon {
+
+.menu-icon{
   display: none;
-  
 }
 
-.logo img {
-  border-radius: 50%;
-}
 
 .logo span{
-  color: white;
+  color: #59009A;
+  font-size: 1.5rem; 
 }
 
 .logo img,
@@ -77,11 +87,11 @@ header nav {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 10px;
+  gap: 15px;
 }
 
 .user-info span{
-  color: white;
+  color: #59009A;
 }
 
 .user-info img {
@@ -89,21 +99,18 @@ header nav {
   border-radius: 50%;
 }
 
-.servicios:hover .submenu {
-  display: block;
+.submenu {
+  display: none ;  /* El menú estará oculto por defecto */
+  position: absolute;
+  background-color: white;
+  top: 100%;  /* Asegura que el menú aparezca justo debajo del botón de servicios */
+  left: 0;
+  width: 150px;  /* Ajusta el tamaño del submenu */
+  z-index: 1000;  /* Asegura que el menú esté por encima de otros elementos */
 }
 
-.submenu {
-  display: none;
-  position: absolute;
-  
-  background-color: white;
-  border: 1px solid #ccc;
-  padding: 10px;
-  border-radius: 0 0 10px 10px;
-  margin-top: 32px;
-  
-  border-left: 0;
+.submenu.active {
+  display: block;  /* Mostramos el menú cuando tenga la clase 'active' */
 }
 
 .submenu ul {
@@ -112,8 +119,17 @@ header nav {
   margin: 0;
 }
 
-.submenu li {
-  margin: 5px 0;
+.submenu li a{
+  color: #59009A;
+}
+
+.submenu li{
+  border: 1px solid #ccc;
+  padding: 7px;
+}
+
+.submenu li:last-child{
+  border-radius: 0 0 10px 10px;
 }
 
 .submenu a {
@@ -147,13 +163,14 @@ footer div{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color: rebeccapurple;
+  background-color: #59009A;
 }
 
 .contact-item{
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
+  text-align: center;
 }
 
 .footer-container{
@@ -169,7 +186,7 @@ footer div{
   color: white;
 }
 
-main{
+.main{
   display: flex;
   width: 100%;
   height: 100%;
@@ -178,7 +195,7 @@ main{
 
 .iconos img{
   display: flex;
-  /* width: clamp(min(2vw, 3.5vw), 2vw, max(3vw, 4vw)); */
+  width: 35px;
 }
 
 .items .contact-item, .span{  /* con ',' toma todos los span dentro */
@@ -193,9 +210,17 @@ main{
   }
 
   .submenu{
-    margin-left: -53px;
-    margin-top: 16px;
+    margin-left: -90px;
+    margin-top: 1px;
     border-radius: 20px 0 0 20px;
+  }
+
+  .submenu li:last-child{
+    border-radius: 0 0 0 10px;
+  }
+
+  .submenu li:first-child{
+    border-radius: 10px 0 0 0;
   }
 
   .service-user {
@@ -208,11 +233,14 @@ main{
 
   .menu-icon {
     display: flex;
-    color: white;
+    color: #59009A;
+    cursor: pointer;
   }
 
   .menu-icon .material-icons{
     font-size: 50px;
+    font-family: 'Material Icons';
+    font-style: normal;
   }
 
   .user-info {
@@ -239,26 +267,24 @@ main{
   }
   
   .iconos .icono{
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
   }
 
   .footer-container{
     gap: 10px;
   }
   
-  .footer-container .quienes-somos{
-    /*width: clamp(60px 70px 80px)*/
-  }
+  
 }
 
-@media (max-width:768px){
-  .iconos .icono{
-    width: 40px;
-    height: 40px;
-  }
+  /* @media (max-width:500px){
+    .iconos .icono{
+      width: 30px;
+      height: 30px;
+    }
 
-  .items {
-    font-size: 0.8rem;
-  }
-}
+    .items {
+      font-size: 0.8rem;
+    }
+  } */
