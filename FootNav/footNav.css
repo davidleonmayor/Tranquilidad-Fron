@@ -155,6 +155,73 @@ header nav {
   color: #59009A; /* Cambia a color primario */
 }
 
+/* Submenu de Perfil */
+.submenu-profile {
+  display: none;
+  position: absolute;
+  background-color: white;
+  top: 100%;
+  right: 0;
+  width: 160px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.user-info:hover .submenu-profile {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+
+.submenu-profile ul {
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+}
+
+.submenu-profile li {
+  padding: 12px 20px;
+  border-bottom: 1px solid #eee;
+  font-size: 1rem;
+  color: black;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.submenu-profile li:last-child {
+  border-bottom: none;
+}
+
+.submenu-profile li:hover {
+  background-color: #f4f4f4;
+  color: #59009A;
+}
+
+.submenu-profile li a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  width: 100%;
+}
+
+.submenu-profile li a:hover {
+  color: #59009A;
+}
+
+/* Para ajustar el estilo del icono de usuario */
+.user-info {
+  position: relative;
+}
+
+.user-info img {
+  cursor: pointer;
+}
+
+
 .servicios:hover span {
   text-decoration: underline;
   cursor: pointer;
