@@ -105,32 +105,54 @@ header nav {
   top: 100%;
   left: 50%; /* Centrado horizontalmente */
   transform: translateX(-50%);
-  width: 150px;
+  width: 180px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
   z-index: 1000;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
 }
 
-.submenu.active {
+.servicios:hover .submenu {
   display: block;
+  opacity: 1;
+  visibility: visible;
 }
 
 .submenu ul {
   list-style: none;
-  padding: 0;
+  padding: 10px 0;
   margin: 0;
 }
 
 .submenu li {
-  border: 1px solid #ccc;
-  padding: 7px;
+  padding: 12px 20px;
+  border-bottom: 1px solid #eee;
+  font-size: 1rem;
+  color: black; /* Color de las letras */
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave */
 }
 
 .submenu li:last-child {
-  border-radius: 0 0 10px 10px;
+  border-bottom: none; /* Sin borde para el último */
 }
 
-.submenu a {
+.submenu li:hover {
+  background-color: #f4f4f4; /* Color al pasar el ratón */
+  color: #59009A; /* Cambia a color primario en hover */
+}
+
+.submenu li a {
   text-decoration: none;
-  color: #59009A;
+  color: inherit; /* Hereda el color del texto */
+  display: block; /* Para que el enlace cubra todo el área del li */
+  width: 100%;
+}
+
+.submenu li a:hover {
+  color: #59009A; /* Cambia a color primario */
 }
 
 .servicios:hover span {
