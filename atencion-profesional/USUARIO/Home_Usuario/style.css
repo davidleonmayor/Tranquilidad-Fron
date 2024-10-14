@@ -1,28 +1,26 @@
-
 body {
   font-family: 'Roboto', sans-serif;
-  font-style: normal; /* Esto asegura que no esté en cursiva */
+  font-style: normal; 
   background-color: #fff;
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Asegúrate de que el cuerpo tenga al menos el 100% de la altura de la ventana */
+  min-height: 100vh; 
 }
 
 .body {
-  padding: 5rem 1.25rem 1.25rem 1.25rem;
+  padding: 2rem 1.25rem 1.25rem 1.25rem;
   flex: 1;
 }
 
-  /* Contenido del body*/
+/* Contenido del body*/
 
 body {
-    font-family: Arial, sans-serif;
+  font-family: Arial, sans-serif;
 }
 
 .body{
   padding: 50px;
 }
-
 
 .carousel {
   width: 100%;
