@@ -27,3 +27,10 @@ loadTemplate('header-placeholder', '../../../FootNav/header.html', function() {
 });
 
 loadTemplate('footer-placeholder', '../../../FootNav/footer.html');
+
+
+/* INICIO ArteTerapia template */
+
+loadTemplate('explore-section-placeholder', '/arteterapia/component/explore-section/explore-section.html');
+
+/* FIN ArteTerapia template */

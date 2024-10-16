@@ -1,5 +1,9 @@
 /* misDibujos.css */
 
+#fotter-placeholder{
+  position: fixed;
+}
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -39,17 +43,7 @@ body {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* Media Queries */
-@media (max-width: 768px) {
-  .search-bar {
-    flex-direction: row;
-  }
 
-  .search-bar input[type="text"] {
-    width: 40%;
-    margin-bottom: 0;
-  }
-}
 
 
 

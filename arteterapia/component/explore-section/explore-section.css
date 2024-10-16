@@ -6,6 +6,7 @@
     text-align: center;
     width: 100%;
     margin: 20px 0;
+    
   }
   
   .explore-title {
@@ -19,7 +20,7 @@
     align-items: center;
     margin-bottom: 20px;
     display: flex;
-    flex-wrap: wrap; /* Permite que los elementos se envuelvan a nuevas líneas */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan a nuevas líneas ??'?'' */
   
   }
   
@@ -50,10 +51,20 @@
     
   
     .search-bar{
-      padding: 10px;
+      padding: 0px;
       width: 90%;
-      
+      border: 10px;
+      display: flex;  
     }
+    .inputbuscar{
+        width: 70%;
+    }
+
+    .explore-buttons{
+      padding: 10PX;
+    }
+
+
   }
   
   @media (max-width: 300px) {
@@ -63,6 +74,13 @@
       padding: 10px;
       width: 80%;
     }
+
+    .explore-buttons{
+      
+      display: grid;
+    
+    }
+
+
   }
 
-  
