@@ -5,10 +5,19 @@ body {
   background-color: #fffcfc;
 }
 
+main{
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+  overflow-y: auto;
+  height: calc(100vh - 180px);
+  box-sizing: border-box;
+}
+
 .sidebar-container {
   display: flex;
   flex: 1;
-  height: calc(100vh - 100px); /* Ajusta según la altura de tu header y footer */
+  height: calc(100vh - 180px); /* Ajusta según la altura de tu header y footer */
 }
 
 .sidebar {

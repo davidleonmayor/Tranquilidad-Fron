@@ -1,15 +1,23 @@
 body {
   font-family: sans-serif;
-  margin: 0;
-  padding: 0;
   background-color: #fffcfc;
-  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main{
+  flex-grow: 1;
 }
 
 h2 {
   font-size: 1.5em;
   text-align: center;
   margin-bottom: 10px;
+}
+
+.buscar{
+  padding-top: 20px;
 }
 
 .search-bar {
@@ -24,39 +32,41 @@ h2 {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  width: 90%; /* Ajustar el ancho al 90% del contenedor */
+  width: 30%; /* Ajustar el ancho al 90% del contenedor */
   margin-bottom: 10px;
 }
 
 .search-bar button {
-  padding: 10px 20px;
+  min-width: 64px;
+  padding: 10px;
   background-color: #59009A;
   color: #fff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  width: 50%; /* Ajustar el botón al 50% del contenedor */
+  width: 10%; /* Ajustar el botón al 50% del contenedor */
 }
 
+/* container */
 .container {
-  max-width: 100%; /* Ajuste para pantalla completa */
-  margin: 0 auto;
-  padding: 10px;
   display: flex;
   flex-wrap: wrap;
+  flex-direction: row;
   justify-content: center;
 }
 
 .bloque {
-  width: 100%; /* Cada bloque ocupa el 100% del ancho en mobile */
-  height: auto; /* Altura automática para mantener proporciones */
-  margin: 10px 0;
+  max-width: 250px;
+  max-height: 300px; /* Altura automática para mantener proporciones */
+  margin: 10px 10px;
   box-sizing: border-box;
   text-align: center;
   border: 1px solid #ccc;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1); /* Sombra más suave */
   overflow: hidden;
   border-radius: 7px;
+  transition: transform 0.75s ease;
+  transform-origin: center;
 }
 
 .bloque img {
@@ -66,14 +76,18 @@ h2 {
   border-radius: 5px;
 }
 
+.bloque:hover{
+  transform: scale(1.1);
+}
+
 .bloque p {
   font-size: 14px;
   margin-bottom: 0;
 }
 
-@media (min-width: 400px) {
+@media (max-width: 480px) {
   .bloque {
-    width: calc(50% - 20px); /* A partir de 400px, cada bloque ocupa el 50% */
+    width: calc(40% - 20px); /* A partir de 400px, cada bloque ocupa el 50% */
     margin: 10px;
   }
 
