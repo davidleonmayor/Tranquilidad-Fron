@@ -10,17 +10,14 @@ html {
   position: relative;
 }
 
-
   /* no poner nada, daña el todo, llamas a body y afecta a todos los body */
-
 
 /* Header */
 header {
-  
   top: 0;
   z-index: 1000;
   width: 100%;
-  height: 100px;
+  height: 80px;
   box-sizing: border-box;
   background-color: white;
   display: flex;
@@ -94,6 +91,10 @@ header nav {
 .user-info img {
   width: 60px;
   border-radius: 50%;
+}
+
+.imagen-usuario{
+  width: 10px;
 }
 
 /* Submenu de Servicios */
