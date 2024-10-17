@@ -1,9 +1,5 @@
 /* misDibujos.css */
 
-#fotter-placeholder{
-  position: fixed;
-}
-
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -12,20 +8,23 @@ body {
   color: #333;
 }
 
-.container {
+.main {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 15px;
   padding: 20px;
 }
 
-#explore-section-placeholder{
-  display: flex;
-  align-items: center;
-  align-items: center;
+.titulo {
+  color: black;
+  text-align: center;
+  margin: 20px 0;
+  font-size: 1.5rem;
+  
 }
 
 .bloque {
+  position: relative; 
   overflow: hidden;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -34,7 +33,8 @@ body {
 
 .bloque img {
   width: 100%;
-  height: auto;
+  height: 200px;
+  object-fit: cover;
   display: block;
 }
 
@@ -43,25 +43,52 @@ body {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
-
-
-
-
-
-/* header */
-body {
+.iconos {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
   display: flex;
-  flex-direction: column;
-  width: 100vw;
-  height: 100vh;
-  margin: 0;
-  padding: 0;
+  gap: 10px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  background-color: rgba(0, 0, 0, 0);
 }
 
-main{
-  display: flex;
-  width: 100%;
-  height: 100%;
-  align-items: flex-start;
+/* Iconos específicos */
+.download-icon, .delete-icon {
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 5px;
+  border-radius: 50%;
 }
 
+.bloque:hover .iconos {
+  opacity: 1;
+}
+
+
+.download-icon:hover, .delete-icon:hover {
+  transform: scale(1.2);
+  transition: transform 0.2s;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .main {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+}
+
+@media (max-width: 570px) {
+  .main {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 300px) {
+  .main {
+    grid-template-columns: 1fr;
+  }
+}
