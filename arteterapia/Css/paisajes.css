@@ -23,6 +23,7 @@ h1{
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
+      margin-bottom: 100px;
     }  
   h2{
     font-size: 2em;
@@ -51,6 +52,10 @@ h1{
       border-radius: 5px;
       margin-left: 10px;
       cursor: pointer;
+    }
+    .center {
+      text-align: center;
+      margin-top: 30px;
     }
   button[type="submit"] {
     padding: 10px 20px;
@@ -99,18 +104,3 @@ h1{
       width: 100%; /* Barras de búsqueda en pantallas pequeñas */
     }
   }
-  
-  html, body {
-      margin: 0; /* Elimina márgenes por defecto */
-      padding: 0; /* Elimina relleno por defecto */
-      height: 100%;
-    }
-    
-    body {
-      font-family: 'Roboto', sans-serif;
-      font-style: normal; /* Esto asegura que no esté en cursiva */
-      background-color: #fff;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh; /* Asegúrate de que el cuerpo tenga al menos el 100% de la altura de la ventana */
-    }
