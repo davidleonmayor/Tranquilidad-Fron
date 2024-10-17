@@ -93,6 +93,10 @@ header nav {
   border-radius: 50%;
 }
 
+.imagen-usuario{
+  width: 10px;
+}
+
 /* Submenu de Servicios */
 .submenu {
   display: none;
