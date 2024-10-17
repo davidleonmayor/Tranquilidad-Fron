@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const servicios = document.getElementById('serviciosIcon');
     const Submenu = document.getElementById('serviciosSubmenu');
     const Usuario = document.getElementById('userIcon');
+    const Menu = document.getElementById('menu-icon');
     const Usuariosubmenu = document.getElementById('userSubmenu');
     const perfil = document.getElementById('profilePic');
     const perfilfoto = document.getElementById('profilePic1');
@@ -33,6 +34,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     Usuario.addEventListener('click', (event) => {
+        event.preventDefault(); // Evitar que el enlace recargue la página
+        Usuariosubmenu.style.display = Usuariosubmenu.style.display === 'block' ? 'none' : 'block';
+    });
+    Menu.addEventListener('click', (event) => {
         event.preventDefault(); // Evitar que el enlace recargue la página
         Usuariosubmenu.style.display = Usuariosubmenu.style.display === 'block' ? 'none' : 'block';
     });
