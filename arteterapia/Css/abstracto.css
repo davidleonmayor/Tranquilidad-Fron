@@ -4,17 +4,6 @@ h1{
   font-style: italic;
 }
 
-
-
-body {
-  font-family: sans-serif;
-  margin: 0;
-  position: absolute;
-  padding: 0;
-  background-color: #fffcfc;
-  width: 100%;
-  left: 0%;
-}
 .container {
     max-width: 1000px;
     margin: 0 auto;
@@ -99,17 +88,5 @@ button[type="submit"] {
   }
 }
 
-html, body {
-    margin: 0; /* Elimina márgenes por defecto */
-    padding: 0; /* Elimina relleno por defecto */
-    height: 100%;
-  }
+
   
-  body {
-    font-family: 'Roboto', sans-serif;
-    font-style: normal; /* Esto asegura que no esté en cursiva */
-    background-color: #fff;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* Asegúrate de que el cuerpo tenga al menos el 100% de la altura de la ventana */
-  }

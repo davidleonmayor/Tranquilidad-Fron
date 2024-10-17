@@ -230,7 +230,7 @@ header nav {
   
 /* Footer */
 footer {
-
+  position: absolute;
   bottom: 0;
   width: 100%;
   background-color: #59009A;
