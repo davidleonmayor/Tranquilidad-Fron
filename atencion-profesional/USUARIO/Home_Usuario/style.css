@@ -10,17 +10,19 @@ body {
 .body {
   padding: 2rem 1.25rem 1.25rem 1.25rem;
   flex: 1;
+  padding: 50px;
+  margin-bottom: 80px;
 }
 
 /* Contenido del body*/
 
-body {
+/* body {
   font-family: Arial, sans-serif;
 }
 
 .body{
   padding: 50px;
-}
+} */
 
 .carousel {
   width: 100%;
@@ -57,8 +59,6 @@ body {
   background-color: #fff; /* Color del indicador activo */
 }
 
-
-
 .frases {
     text-align: center;
 }
@@ -79,9 +79,11 @@ body {
 
 .cards {
   display: flex;
-  gap: 20px;
+  /* gap: 20px; */
   justify-content: center;
   margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .cuadro {

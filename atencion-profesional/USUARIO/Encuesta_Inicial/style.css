@@ -1,20 +1,8 @@
-body {
-  font-family: 'Roboto', sans-serif;
-  font-style: normal; 
-  background-color: #fff;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh; 
-}
-
-.body {
-  padding: 2rem 1.25rem 1.25rem 1.25rem;
-  flex: 1;
-}
 
 /* Estilo para el formulario */
 main{
   margin-top: 20px;
+  margin-bottom: 100px;
 }
 .container {
   width: 80%;

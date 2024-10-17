@@ -1,42 +1,26 @@
-@media (max-width: 768px) {
-  /* Ocultar texto en el footer */
-  .footer-container span {
-    display: none; /* Oculta el texto */
-  }
-  
-  /* Asegurarte de que los iconos se muestren */
-  .iconos {
-    display: flex;
-    justify-content: center; /* Centra los iconos */
-  }
-
-  .iconos a {
-    margin: 0 10px; /* Ajusta el margen entre iconos */
-  }
-}
-  
    /* Estilos adicionales para la compra de códigos */
    .compra-codigos {
-    margin: 100px auto 20px auto;
-    max-width: 1200px;
-    padding: 20px;
     border-radius: 10px;
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
+    margin: 20px auto;
+    max-width: 1200px; 
+    padding: 20px;
+    margin-bottom: 100px;
+}
 
+.codigos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+    justify-items: center;
+}
+    
     .compra-codigos h2 {
         margin-bottom: 20px;
         color: #6200ea;
         text-align: center;
-    }
-
-    .codigos-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-        gap: 20px;
-        height: 420px;
-        margin-top: 30px;
     }
 
     .codigo-card {
@@ -47,6 +31,7 @@
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         transition: transform 0.3s ease;
         position: relative;
+        margin-bottom: 0px;
     }
 
     .codigo-card:hover {
