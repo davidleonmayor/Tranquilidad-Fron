@@ -1,6 +1,5 @@
 body {
     font-family: 'Roboto', sans-serif;
-    font-size: 1.25rem; /* 20px */
     margin: 0;
     padding: 0;
     background-color: #fffcfc;
@@ -45,6 +44,7 @@ main {
     justify-content: space-around;
     padding: 1.25rem; /* 20px */
     flex-wrap: wrap; /* Permite que los elementos se envuelvan */
+    flex-grow: 1; /* Esto asegura que el contenido principal ocupe todo el espacio disponible */
 }
 
 main section {
@@ -61,7 +61,7 @@ main section img {
 }
 
 /* Media query para pantallas pequeñas */
-@media (max-width: 16.75rem) {
+@media (max-width: 36.75rem) {
     main {
         flex-direction: column; /* Cambia la dirección a columna */
         align-items: center; /* Alinea el contenido al centro */

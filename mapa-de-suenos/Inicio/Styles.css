@@ -10,6 +10,14 @@ h2 {
     text-align: center;
     color: #59009A;
 }
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  
 
 .pregunta {
     margin-bottom: 1.25rem; /* 20px ~ 1.25rem */
@@ -38,6 +46,7 @@ main {
     justify-content: space-around;
     padding: 1.25rem; /* 20px ~ 1.25rem */
     flex-grow: 1;
+    
 }
 
 .contener {
