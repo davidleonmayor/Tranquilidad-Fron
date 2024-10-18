@@ -5,6 +5,10 @@ main {
     justify-content: center;
 }
 
+body{
+    margin-bottom: 80px;
+}
+
 .card {
     background-color: white;
     padding: 20px;
