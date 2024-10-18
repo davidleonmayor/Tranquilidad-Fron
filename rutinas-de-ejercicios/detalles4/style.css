@@ -153,6 +153,9 @@ body {
   font-size: 2rem;
   color: #59009A;
 }
+.navbar{
+  width: 100%;
+}
 
 .nav-items {
   display: flex;

@@ -670,3 +670,18 @@ main {
     margin: 0 10px; /* Ajusta el margen entre iconos */
   }
 }
+
+@media (max-width: 768px) {
+  .part1,.part2, .img,.r {
+      width: 100%;
+      padding: 0;
+  }
+  .container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+.navbar{
+  width: 100%;
+}

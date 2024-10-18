@@ -3,49 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../layouts/styleHeader.css">
-    <link rel="stylesheet" href="../layouts/styleFooter.css">
     <link rel="stylesheet" href="../layouts/body-resultados.css">
+    <script src="../../FootNav/footNav.js"></script>
+    <link rel="stylesheet" href="../../FootNav/footNav.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <title>Resultados objetivos de salud</title>
 </head>
-<header>
-    <nav class="navbar">
-      <div class="logo">
-        <a href="../Home_Usuario/HomeUsuario.html"><img src="https://i.ibb.co/4MSTbtM/2f043346-e172-4c47-b8b4-d69f213fc49e.jpg" alt="Logo de Atención Profesional"></a>
-        <span class="Alimentaciòn">Alimentaciòn </span>
-      </div>
-      <div class="menu-icon">
-        <i class="material-icons">menu</i>
-      </div>
-      <div class="servicios">
-        <span>Alimentacion</span>
-        <div class="submenu">
-          <ul>
-            <li>Biblioterapia</li>
-            <li>Arteterapia</li>
-            <li>Musicoterapia</li>
-            <li>Ejercicios</li>
-          </ul>
-        </div>
-      </div>
-      <div class="user-info">
-        <span>Juanito Alimaña</span>
-        <img class="imagen-usuario" src="https://pps.whatsapp.net/v/t61.24694-24/425171185_1161987931585359_8379654463750076539_n.jpg?ccb=11-4&oh=01_Q5AaICQrNgt5q8xzlA08ydTiz0MYYzWsQrMTW8GSElA5yevr&oe=670D1BA8&_nc_sid=5e03e0&_nc_cat=101" alt="Foto de perfil del usuario">
-      </div>
-    </nav>
-    <div class="dropdown-menu">
-      <ul>
-        <li><a href="#">Biblioterapia</a></li>
-        <li><a href="#">Arteterapia</a></li>
-        <li><a href="#">Musicoterapia</a></li>
-        <li><a href="#">Ejercicios</a></li>
-        <li><a href="#">Perfil</a></li>
-      </ul>
-    </div>
-  </header>
 <body>
-
+  <div id="header-placeholder"></div>
     <main>
             <div class="result-box">
                 <h2>¡Tus resultados están listos!</h2>
@@ -68,11 +33,11 @@
             <div class="opciones">
                 <div class="opcion">
                     <img src="../inclued/resultadoDetalle1.svg" alt="Opción 1">
-                    <button>Ver detalle</button>
+                    <a class="btn-action" href="../Seguimiento/seguimiento.html">Ver detalle</a>
                 </div>
                 <div class="opcion">
                     <img src="../inclued/resultadoDetalle2.svg" alt="Opción 2">
-                    <button>Ver detalle</button>
+                    <a class="btn-action" href="../Seguimiento/seguimiento.html">Ver detalle</a>
                 </div>
             </div>
 
@@ -81,37 +46,10 @@
             </div>
        
 
-        <a class="btn-recomendaciones" href="/metaPersonal/metaPersonal.html" role="button">Continuar</a>
+        <a class="btn-recomendaciones" href="../metaPersonal/metaPersonal.html" role="button">Continuar</a>
     </main>
-
+    <div id="footer-placeholder"></div>
 </body>
-<footer>
-    <div class="footer-container">
-      <div class="contact-item">
-        <span>Contáctanos</span>
-        <div class="iconos">
-          <a href="https://web.whatsapp.com/"><img src="../inclued/WhatsApp.png" alt="WhatsApp"></a>
-        </div>
-      </div>
-     
-      <div class="contact-item">
-        <span>Canales de atención</span>
-        <div class="iconos">
-          <a href="https://web.telegram.org/"><img src="../inclued/Telegram App.png" alt="Telegram"></a>
-          <a href="https://mail.google.com/mail/u/0/?ogbl#inbox"><img src="../inclued/Email.png" alt="Email"></a>
-        </div>
-      </div>
-      <div class="contact-item">
-        <span>Redes sociales</span>
-        <div class="iconos">
-          <a href="https://www.facebook.com/"><img src="../inclued/Facebook.png" alt="Facebook"></a>
-          <a href="https://www.instagram.com/"><img src="../inclued/Instagram.png" alt="Instagram"></a>
-        </div>
-      </div>
-      <a class="quienes-somos" href="#">¿Quiénes somos?</a>
-    </div>
-  </footer>
-  
   <script src="script.js"></script>
 
 </html>

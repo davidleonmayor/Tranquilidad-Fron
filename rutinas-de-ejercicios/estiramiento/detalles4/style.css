@@ -21,7 +21,9 @@
   box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.1); /* 2px -> 0.125rem, 5px -> 0.3125rem */
   margin-top: 3.125rem; /* 50px -> 3.125rem */
 }
-
+.navbar{
+  width: 100%;
+}
 .instruccines {
   font-family: sans-serif;
   font-size: 1.25rem; /* 20px -> 1.25rem */

@@ -12,7 +12,9 @@
     width: 60%;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   }
-  
+  .navbar{
+    width: 100%;
+  }
   .guia {
     width: 95%;
     height: auto;

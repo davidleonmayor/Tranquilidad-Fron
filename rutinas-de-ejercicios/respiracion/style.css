@@ -638,3 +638,6 @@ main {
 header{
   margin-bottom: 130px;
 }
+.navbar{
+  width: 100%;
+}

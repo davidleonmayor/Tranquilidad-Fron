@@ -16,7 +16,9 @@
     flex-direction: column;
     justify-content: space-around;
   }
-  
+  .navbar{
+    width: 100%;
+  }
   .sidebar .menu-item {
     padding: 12px;
     margin: 10px 0;

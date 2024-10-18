@@ -10,7 +10,9 @@ h1{
   color: #59009A;
   font-style: italic;
 }
-
+.navbar{
+  width: 100%;
+}
 
 
 body {
