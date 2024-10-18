@@ -799,3 +799,6 @@ main {
     flex-direction: column;
   }
 }
+.navbar{
+  width: 100%;
+}

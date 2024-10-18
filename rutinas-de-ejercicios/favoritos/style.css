@@ -335,6 +335,9 @@ footer {
     width: 80%;
   }
 
+  .navbar{
+    width: 100%;
+  }
   .tasks {
     grid-template-columns: repeat(2, 1fr);
   }
