@@ -14,7 +14,9 @@ body {
 *::after {
     box-sizing: inherit; /* Asegura que todos los elementos usen el box-sizing adecuado */
 }
-
+main{
+    flex-grow: 1; /* Esto asegura que el contenido principal ocupe todo el espacio disponible */
+}
 .main-content {
     flex: 1;
     display: flex;
@@ -75,6 +77,13 @@ body {
     transform: scale(1.05);
     box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.3); /* 4px */
 }
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
 
 /* Media query para pantallas pequeñas */
 @media (max-width: 48rem) { /* 768px */
