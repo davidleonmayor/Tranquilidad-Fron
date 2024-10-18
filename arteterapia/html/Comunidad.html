@@ -5,76 +5,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Css/comunidad.css">
-    <link rel="stylesheet" href="../Css/headerYfooter.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <title>Explorar</title>
+    <script src="/FootNav/footNav.js"></script>
+    <link rel="stylesheet" href="/FootNav/footNav.css"> 
+  <link rel="stylesheet" href="../component/explore-section/explore-section.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js"></script>
 
 </head>
 
-<body>
-    <header>
-        <nav class="navbar">
-          <div class="logo">
-            <a href="../Home_Usuario/HomeUsuario.html"><img src="https://i.ibb.co/4MSTbtM/2f043346-e172-4c47-b8b4-d69f213fc49e.jpg" alt="Logo de Atención Profesional"></a>
-            <span class="Profesional">Libros</span>
-          </div>
-          <div class="menu-icon">
-            <i class="material-icons">menu</i>
-          </div>
-          <div class="servicios">
-            <span>Servicios</span>
-            <div class="submenu">
-              <ul>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Mapa de sueños</a></li>
-                <li><a href="#">Alimentacion</a></li>
-                <li><a href="#">Ejercicios</a></li>
-                <li><a href="#">Arteterapia</a></li>
-                <li><a href="#">Musicoterapia</a></li>
-                <li><a href="#">Atención profesional</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="user-info">
-            <span>Juanito Alimaña</span>
-            <img class="imagen-usuario" src="https://pps.whatsapp.net/v/t61.24694-24/425171185_1161987931585359_8379654463750076539_n.jpg?ccb=11-4&oh=01_Q5AaICQrNgt5q8xzlA08ydTiz0MYYzWsQrMTW8GSElA5yevr&oe=670D1BA8&_nc_sid=5e03e0&_nc_cat=101" alt="Foto de perfil del usuario">
-          </div>
-        </nav>
-        <div class="dropdown-menu">
-          <ul>
-            <li><a href="#">Inicio</a></li>
-        
-            <li><a href="#">Alimentacion</a></li>
-            <li><a href="#">Ejercicios</a></li>
-            <li><a href="#">Arteterapia</a></li>
-            <li><a href="#">Musicoterapia</a></li>
-            <li><a href="#">Atención profesional</a></li>
-          </ul>
-        </div>
-      </header>
+<body class="body">
+
+    <header id="header-placeholder"></header>
+
+  <div id="explore-section-placeholder"></div>
     
-    <div class="main-content-wrapper">
-
-        <div class="explore-section">
-            <h2 class="explore-title">Explorar</h2>
-            <div class="search-bar">
-                <input type="text" placeholder="Buscar...">
-                <button>Buscar</button>
-                <a href="publicarComunidad.html">
-                    <button class="publicar">Publicar</button>
-                </a>
-
-
-            </div>
-
-
-        </div>
+    
+    
         <main class="main-content">
 
-            <div class="card">
+            <div class="card" onclick="toggleContent(this)">
                 <details>
                     <summary>
-                        <img src="/img2/68705.jpg" alt="Imagen">
+                        <img src="../img2/68705.jpg" alt="Imagen">
                         <div class="title">Amanecer en el Bosque</div>
                         <div class="username">Julito Maraña</div>
                         <div class="heart">
@@ -94,10 +47,10 @@
                 </details>
 
             </div>
-            <div class="card">
+            <div class="card" onclick="toggleContent(this)">
                 <details>
                     <summary>
-                        <img src="/img2/68701.webp" alt="Imagen">
+                        <img src="../img2/68701.webp" alt="Imagen">
                         <div class="title">Amanecer en el Bosque</div>
                         <div class="username">Julito Maraña</div>
                         <div class="heart">
@@ -116,10 +69,10 @@
                     </div>
                 </details>
             </div>
-            <div class="card">
+            <div class="card" onclick="toggleContent(this)">
                 <details>
                     <summary>
-                        <img src="/img2/68704.jpg" alt=" Imagen">
+                        <img src="../img2/68704.jpg" alt=" Imagen">
                         <div class="title">Amanecer en el Bosque</div>
                         <div class="username">Julito Maraña</div>
                         <div class="heart">
@@ -140,10 +93,10 @@
             </div>
 
 
-            <div class="card">
+            <div class="card" onclick="toggleContent(this)">
                 <details>
                     <summary>
-                        <img src="/img2/68705.jpg" alt="Imagen">
+                        <img src="../img2/68705.jpg" alt="Imagen">
                         <div class="title">Título del Contenido</div>
                         <div class="username">Nombre de Usuario</div>
                         <div class="heart">
@@ -163,10 +116,10 @@
                 </details>
             </div>
 
-            <div class="card">
+            <div class="card" onclick="toggleContent(this)">
                 <details>
                     <summary>
-                        <img src="/img2/image.jpg" alt="Imagen">
+                        <img src="../img2/image.jpg" alt="Imagen">
                         <div class="title">Título del Contenido</div>
                         <div class="username">Nombre de Usuario</div>
                         <div class="heart">
@@ -187,10 +140,10 @@
             </div>
 
 
-            <div class="card">
+            <div class="card" onclick="toggleContent(this)">
                 <details>
                     <summary>
-                        <img src="/img2/68701.webp" alt="Imagen">
+                        <img src="../img2/68701.webp" alt="Imagen">
                         <div class="title">Título del Contenido</div>
                         <div class="username">Nombre de Usuario</div>
                         <div class="heart">
@@ -209,10 +162,10 @@
                     </div>
                 </details>
             </div>
-            <div class="card">
+            <div class="card" onclick="toggleContent(this)">
                 <details>
                     <summary>
-                        <img src="/img2/68704.jpg" alt="Imagen">
+                        <img src="../img2/68704.jpg" alt="Imagen">
                         <div class="title">Título del Contenido</div>
                         <div class="username">Nombre de Usuario</div>
                         <div class="heart">
@@ -231,10 +184,10 @@
                     </div>
                 </details>
             </div>
-            <div class="card">
+            <div class="card" onclick="toggleContent(this)">
                 <details>
                     <summary>
-                        <img src="/img2/68705.jpg" alt="Imagen">
+                        <img src="../img2/68705.jpg" alt="Imagen">
                         <div class="title">Título del Contenido</div>
                         <div class="username">Nombre de Usuario</div>
                         <div class="heart">
@@ -253,10 +206,10 @@
                     </div>
                 </details>
             </div>
-            <div class="card">
+            <div class="card" onclick="toggleContent(this)">
                 <details>
                     <summary>
-                        <img src="/img2/image.jpg" alt="Imagen">
+                        <img src="../img2/image.jpg" alt="Imagen">
                         <div class="title">Título del Contenido</div>
                         <div class="username">Nombre de Usuario</div>
                         <div class="heart">
@@ -265,7 +218,7 @@
 
                         </div>
                     </summary>
-                    <div class="options">
+                    <div class="options" >
                         <i class="material-icons icon">share</i>
                         <i class="material-icons icon">download</i>
                         <div class="description">Descripción del contenido que se muestra al hacer clic en la imagen.
@@ -275,10 +228,10 @@
                     </div>
                 </details>
             </div>
-            <div class="card">
+            <div class="card" onclick="toggleContent(this)">
                 <details>
                     <summary>
-                        <img src="/img2/68701.webp" alt="Imagen">
+                        <img src="../img2/68701.webp" alt="Imagen">
                         <div class="title">Título del Contenido</div>
                         <div class="username">Nombre de Usuario</div>
                         <div class="heart">
@@ -299,45 +252,58 @@
             </div>
     </div>
 
-    <footer>
-        <div class="footer-container">
-            <div class="contact-item">
-                <span>Contáctanos</span>
-                <div class="iconos">
-                    <a href="https://web.whatsapp.com/"><img src="../../imagenes/WhatsApp.png" alt="WhatsApp"></a>
-                </div>
-            </div>
-            <div class="contact-item">
-                <span>Canales de atención</span>
-                <div class="iconos">
-                    <a href="https://web.telegram.org/"><img src="../../imagenes/Telegram App.png" alt="Telegram"></a>
-                    <a href="https://mail.google.com/mail/u/0/?ogbl#inbox"><img src="../../imagenes/Email.png" alt="Email"></a>
-                </div>
-            </div>
-            <div class="contact-item">
-                <span>Redes sociales</span>
-                <div class="iconos">
-                    <a href="https://www.facebook.com/"><img src="../../imagenes/Facebook.png" alt="Facebook"></a>
-                    <a href="https://www.instagram.com/"><img src="../../imagenes/Instagram.png" alt="Instagram"></a>
-                </div>
-            </div>
-            <a class="quienes-somos" href="#">¿Quiénes somos?</a>
-        </div>
-      </footer>
+    
 
 
     </main>
+    <footer class="footer"> <div id="footer-placeholder"></div> </footer>
+    
 <!--  -->
-    <script>
-        document.addEventListener('click', function (event) {
-            const details = document.querySelectorAll('.card details');
-            details.forEach((detail) => {
-                if (!detail.contains(event.target)) {
-                    detail.removeAttribute('open');
-                }
-            });
-        });
-    </script>
+<script>
+
+    var grid = document.querySelector('.main-content');
+        var msnry = new Masonry(grid, {
+            itemSelector: '.card',
+            columnWidth: '.card',
+            percentPosition: true
+    });
+    document.addEventListener('click', function(event) {
+      const details = document.querySelectorAll('.card details');
+      details.forEach((detail) => {
+        if (!detail.contains(event.target)) {
+          detail.removeAttribute('open');
+        }
+      });
+    });
+    function toggleContent(card) {
+    const content = card.querySelector('.options');
+    const isVisible = content.style.display === 'block';
+    const allContents = document.querySelectorAll('.options');
+    allContents.forEach((item) => {
+        item.style.display = 'none';
+        item.parentElement.parentElement.style.height = 'auto'; 
+    });
+    content.style.display = isVisible ? 'none' : 'block';
+
+    // Ajusta la altura de la tarjeta
+    if (isVisible) {
+        card.style.height = 'auto'; 
+    } else {
+        const contentHeight = content.offsetHeight; // Altura del contenido
+        const imgHeight = card.querySelector('img').offsetHeight; // Altura de la imagen
+        card.style.height = `${contentHeight + imgHeight}px`; // Ajusta la altura total
+    }
+
+    // Reorganiza el layout de Masonry
+    const grid = document.querySelector('.main-content');
+    const msnry = new Masonry(grid, {
+        itemSelector: '.card',
+        columnWidth: '.card',
+        percentPosition: true,
+    });
+    msnry.layout(); // Reorganiza los elementos
+}
+  </script> 
 
 </body>
 

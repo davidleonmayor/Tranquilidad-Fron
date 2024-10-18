@@ -127,3 +127,78 @@ body{
     gap: 15px;
     
 } 
+@media screen and (max-width: 768px) {
+    .contenedorCrearcuenta {
+      flex-direction: column;
+      height: auto;
+    }
+  
+    .ingresar {
+      width: 100%;
+      padding: 10px;
+      text-align: center;
+    }
+  
+    .contenedorP {
+      margin-top: 10px;
+    }
+  
+    .crearCuenta {
+      width: 100%;
+      padding: 20px;
+      justify-content: flex-start;
+    }
+  
+    .contenedorIngresar {
+      width: 80%;
+      padding: 10px;
+    }
+  
+    .inputGrupo input {
+      padding: 15px 10px;
+    }
+  
+    .redes {
+      gap: 10px;
+    }
+  
+    .button {
+      margin-top: 20px;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .contenedorIngresar {
+      width: 90%;
+    }
+  
+    .contenedorLogo {
+        margin: 0;
+      width: 100px;
+      height: 100px;
+    }
+  
+    .contenedorH2 h2 {
+        margin: 0;
+      font-size: 1.5rem;
+    }
+  
+    .crearCuenta p,
+    .crearCuenta h1 {
+      font-size: 1.2rem;
+    }
+  
+    .inputGrupo input {
+      padding: 10px;
+      font-size: 0.9rem;
+    }
+  
+    .button {
+      padding: 8px 12px;
+    }
+  
+    .contenedorRedes {
+      width: 30px;
+      height: 30px;
+    }
+  }

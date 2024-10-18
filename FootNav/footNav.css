@@ -1,0 +1,332 @@
+/* Estilos Globales */
+* {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  min-height: 100%;
+  position: relative;
+}
+
+  /* no poner nada, daña el todo, llamas a body y afecta a todos los body */
+
+/* Header */
+header {
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 80px;
+  box-sizing: border-box;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 0.0625rem solid #ddd;
+}
+
+header span {
+  cursor: pointer;
+}
+
+header nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 0px 10px;
+}
+
+.servicios {
+  position: relative;
+}
+
+.servicios span {
+  color: #59009A;
+}
+
+.service-user {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
+  font-size: 1.0625rem;
+}
+
+.menu-icon {
+  display: none;
+}
+
+.logo span {
+  color: #59009A;
+  font-size: 1.5rem;
+}
+
+.logo img, .user-info img {
+  width: 60px;
+  height: auto;
+  object-fit: cover;
+}
+
+.logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+}
+
+.user-info span {
+  color: #59009A;
+}
+
+.user-info img {
+  width: 60px;
+  border-radius: 50%;
+}
+
+.imagen-usuario{
+  width: 10px;
+}
+
+/* Submenu de Servicios */
+.submenu {
+  display: none;
+  position: absolute;
+  background-color: white;
+  top: 100%;
+  left: 50%; /* Centrado horizontalmente */
+  transform: translateX(-50%);
+  width: 180px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  z-index: 1000;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.servicios:hover .submenu {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+
+.submenu ul {
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+}
+
+.submenu li {
+  padding: 12px 20px;
+  border-bottom: 1px solid #eee;
+  font-size: 1rem;
+  color: black; /* Color de las letras */
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave */
+}
+
+.submenu li:last-child {
+  border-bottom: none; /* Sin borde para el último */
+}
+
+.submenu li:hover {
+  background-color: #f4f4f4; /* Color al pasar el ratón */
+  color: #59009A; /* Cambia a color primario en hover */
+}
+
+.submenu li a {
+  text-decoration: none;
+  color: inherit; /* Hereda el color del texto */
+  display: block; /* Para que el enlace cubra todo el área del li */
+  width: 100%;
+}
+
+.submenu li a:hover {
+  color: #59009A; /* Cambia a color primario */
+}
+
+/* Submenu de Perfil */
+.submenu-profile {
+  display: none;
+  position: absolute;
+  background-color: white;
+  top: 100%;
+  right: 0;
+  width: 160px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.user-info:hover .submenu-profile {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+
+.submenu-profile ul {
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+}
+
+.submenu-profile li {
+  padding: 12px 20px;
+  border-bottom: 1px solid #eee;
+  font-size: 1rem;
+  color: black;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.submenu-profile li:last-child {
+  border-bottom: none;
+}
+
+.submenu-profile li:hover {
+  background-color: #f4f4f4;
+  color: #59009A;
+}
+
+.submenu-profile li a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  width: 100%;
+}
+
+.submenu-profile li a:hover {
+  color: #59009A;
+}
+
+/* Para ajustar el estilo del icono de usuario */
+.user-info {
+  position: relative;
+}
+
+.user-info img {
+  cursor: pointer;
+}
+
+
+.servicios:hover span {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+  
+/* Footer */
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #59009A;
+  z-index: 999;
+}
+
+footer div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.contact-item {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  text-align: center;
+}
+
+.footer-container {
+  padding: 10px;
+}
+
+.items {
+  gap: 30px;
+}
+
+.quienes-somos {
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.iconos img {
+  width: 35px;
+}
+
+.items .contact-item span {
+  color: white;
+}
+
+/* Media Queries para pantallas pequeñas */
+@media (max-width: 480px) {
+  header {
+    height: 100px;
+  }
+
+  .submenu {
+    margin-left: -90px;
+    margin-top: 1px;
+    border-radius: 20px 0 0 20px;
+  }
+
+  .service-user {
+    flex-direction: row-reverse;
+  }
+
+  .servicios span {
+    display: none;
+  }
+
+  .menu-icon {
+    display: flex;
+    color: #59009A;
+    cursor: pointer;
+  }
+
+  .menu-icon .material-icons {
+    font-size: 50px;
+    font-family: 'Material Icons';
+    font-style: normal;
+  }
+
+  .user-info {
+    display: none;
+  }
+
+  .logo {
+    flex-direction: row;
+  }
+
+  .footer-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .contact-item span {
+    display: none;
+  }
+
+  .items {
+    gap: 10px;
+  }
+
+  .iconos .icono {
+    width: 30px;
+    height: 30px;
+  }
+} 

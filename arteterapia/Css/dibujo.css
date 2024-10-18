@@ -5,36 +5,48 @@ body {
   background-color: #fffcfc;
 }
 
+main{
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+  overflow-y: auto;
+  height: calc(100vh - 180px);
+  box-sizing: border-box;
+}
+
 .sidebar-container {
   display: flex;
-  flex: 1;
-  height: calc(100vh - 100px); /* Ajusta según la altura de tu header y footer */
+  flex-direction: row;
+  width: 100%;
+  height: calc(100vh - 180px); /* Ajusta según la altura de tu header y footer */
 }
 
 .sidebar {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   padding: 10px 0;
-  width: 100px; /* Ajusta el ancho según tus necesidades */
+  width: 10%; /* Ajusta el ancho según tus necesidades */
 }
 
 .sidebar .options,
 .sidebar .icons {
   border: 1px solid #ccc;
+  border-radius: 10px;
   margin: 10px 0;
   padding: 10px;
-  width: 80px; /* Ajusta el ancho según tus necesidades */
+  width: 80%; /* Ajusta el ancho según tus necesidades */
 }
 
 .sidebar .options {
   position: relative;
 }
 
-.sidebar .options button {
+.sidebar .options .Opciones {
   background: none;
   border: none;
-  font-size: 16px;
+  font-size: clamp(10px, 1.5vw, 18px); /* Tamaño mínimo 12px, ajustable a 1.5% del ancho del viewport, y máximo 18px */
   cursor: pointer;
   font-weight: bold;
   width: 100%;
@@ -67,97 +79,224 @@ body {
 .sidebar .options-menu li {
   padding: 10px;
   border-right: 1px solid #ddd;
+  cursor: pointer;
 }
 
 .sidebar .options-menu li:hover {
   background-color: #f0f0f0;
 }
 
-.sidebar .icons {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-auto-rows: minmax(40px, auto);
-  grid-gap: 10px;
+/* iconos */
+.icons{
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
 }
 
-.sidebar .icons i {
+.icons i{
   font-size: 20px;
-  cursor: pointer;
+}
+
+.icons i:hover{
+  transform: scale(1.3);
+}
+
+/* contenedor */
+.contenedor{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  height: 90%;
+  margin: auto;
+  border: 1px solid black;
+  border-radius: 20px;
+}
+
+.contenedor .dibujo{
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.content {
-  flex: 1;
+/* modales */
+/* Modal específico */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 15% auto;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 8px;
-  margin: 20px;
+  width: 80%;
+  height: 80%;
+  max-width: 800px;
+  margin: auto;
 }
 
-.container {
-  max-width: 1000px;
-  margin: 0 auto;
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.card {
+  border-radius: 8px;
+  width: 80%;
+  height: 80%;
+  max-width: 800px;
+  margin: auto;
   padding: 20px;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.card-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.card-titulo h1 {
+  font-size: 20px;
+  margin: 0;
+}
+
+.card-header span{
+  cursor: pointer;
+}
+
+.dibujo-compartir{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 20px;
+}
+
+.card-contenido{
+  border:1px solid black;
+  border-radius: 10px;
+  height: max-content;
+}
+
+.card-contenido .contenido{
+  width:  100%;
+  height: 100%;
+}
+
+.card img {
+  width: 50px;
+  height: 50px;
+}
+
+.card .contenido img {
+  width: 100%;
+  height: 100%;
+}
+
+.card-social{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.card-social a img {
+  width: 80%;
+  height: 80%;
+  margin-right: 10px;
+}
+
+.card-form{
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  flex: 1;
+  align-items: center;
+  height: 90%;
+  max-height: 1000px;
+  width: 80%;
+  margin: auto;
+  gap: 10px;
 }
 
-.bloque {
-  width: 309px;
-  height: auto; /* Permitir que la altura se ajuste al contenido */
-  margin: 10px;
-  flex: 1 1 calc(25% - 20px);
-  box-sizing: border-box;
+.form-group-img{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  border: 1px solid black;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.form-group-img .contenido{
+  width: 100%;
+}
+
+.info{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 70%;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-group input{
+  width: 70%;
+  max-width: 180px;
+  min-width: 100px;
+  height: 20px;
   text-align: center;
-  border: 1px solid #ccc;
-  padding: 20px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  position: relative; /* Mantener el contexto de posición */
-  overflow: hidden; /* Evitar que el contenido sobresalga */
+  border-radius: 5px;
 }
 
-.bloque img {
-  width: 100%; /* Asegúrate de que la imagen ocupa todo el ancho del contenedor */
-  height: auto; /* Mantener la proporción de la imagen */
-  display: block; /* Evitar espacios en blanco debajo de la imagen */
-  margin: 0 auto; /* Centrar la imagen si es necesario */
+.form-group textarea{
+  text-align: center;
+  border-radius: 5px;
+  width: 100%;
+  min-height: 30px;
+  max-width: 300px;
+  max-height: 50px;
 }
 
-.bloque p {
-  font-size: 16px;
-  margin-bottom: 0;
+.enviar{
+  width: 100px;
+  height: 9%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-
-
-@media (max-width: 768px) {
-  .sidebar {
-      width: 70px; /* Ajustar el ancho del sidebar para pantallas pequeñas */
-  }
-
-  .content {
-      margin: 10px; /* Reducir el margen en pantallas pequeñas */
-  }
-
-  .bloque {
-      flex: 1 1 calc(50% - 20px); /* Dos bloques por fila en pantallas pequeñas */
-  }
-}
-
-@media (max-width: 480px) {
-  .sidebar {
-      display: none; /* Ocultar sidebar en pantallas muy pequeñas */
-  }
-
-  .content {
-      margin: 0; /* Sin márgenes en pantallas muy pequeñas */
-  }
-
-  .bloque {
-      flex: 1 1 100%; /* Un bloque por fila en pantallas muy pequeñas */
-  }
+.enviar button{
+  width: 150px;
+  height: 100%;
+  background-color: #C8B6FE;
+  border: none;
+  border-radius: 10px;
 }
