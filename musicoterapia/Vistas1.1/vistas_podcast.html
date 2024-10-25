@@ -1,435 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <script src="footNav.js"></script>
-  <link rel="stylesheet" href="footNav.css"> 
-  <title>Musicoterapia</title>
-  <style>
-  
-     
-    /* El resto del código CSS permanece igual */
-      /* Estilos adicionales para la interacción */
-      .genre:hover img,
-      .imagen-footer:hover,
-      .title:hover span,
-      .nav a:hover {
-        transform: scale(1.1); /* Aumenta el tamaño al pasar el cursor */
-      }
-      /*ESTILOS */
-    /* Header */
-    * {
-  font-family: 'Roboto', sans-serif;
-  margin: 0;
-  padding: 0;
-    }
-/* Estilos Globales */
-* {
-  font-family: 'Roboto', sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  min-height: 100%;
-  position: relative;
-}
-
-body {
-  margin-top: 100px;
-  margin-bottom: 60px;
-}
-
-/* Header */
-header {
-  position: fixed;
-  top: 0;
-  z-index: 1000;
-  width: 100%;
-  height: 100px;
-  box-sizing: border-box;
-  background-color: white;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  border-bottom: 0.0625rem solid #ddd;
-}
-
-header span {
-  cursor: pointer;
-}
-
-header nav {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  margin: 0px 10px;
-}
-
-.servicios {
-  position: relative;
-}
-
-.servicios span {
-  color: #59009A;
-}
-
-.service-user {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 30px;
-  font-size: 1.0625rem;
-}
-
-.menu-icon {
-  display: none;
-}
-
-.logo span {
-  color: #59009A;
-  font-size: 1.5rem;
-}
-
-.logo img, .user-info img {
-  width: 60px;
-  height: auto;
-  object-fit: cover;
-}
-
-.logo {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 10px;
-}
-
-.user-info {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 15px;
-}
-
-.user-info span {
-  color: #59009A;
-}
-
-.user-info img {
-  width: 60px;
-  border-radius: 50%;
-}
-
-/* Submenu de Servicios */
-.submenu {
-  display: none;
-  position: absolute;
-  background-color: white;
-  top: 100%;
-  left: 50%; /* Centrado horizontalmente */
-  transform: translateX(-50%);
-  width: 180px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
-  z-index: 1000;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
-  opacity: 0;
-  visibility: hidden;
-}
-
-.servicios:hover .submenu {
-  display: block;
-  opacity: 1;
-  visibility: visible;
-}
-
-.submenu ul {
-  list-style: none;
-  padding: 10px 0;
-  margin: 0;
-}
-
-.submenu li {
-  padding: 12px 20px;
-  border-bottom: 1px solid #eee;
-  font-size: 1rem;
-  color: black; /* Color de las letras */
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave */
-}
-
-.submenu li:last-child {
-  border-bottom: none; /* Sin borde para el último */
-}
-
-.submenu li:hover {
-  background-color: #f4f4f4; /* Color al pasar el ratón */
-  color: #59009A; /* Cambia a color primario en hover */
-}
-
-.submenu li a {
-  text-decoration: none;
-  color: inherit; /* Hereda el color del texto */
-  display: block; /* Para que el enlace cubra todo el área del li */
-  width: 100%;
-}
-
-.submenu li a:hover {
-  color: #59009A; /* Cambia a color primario */
-}
-
-/* Submenu de Perfil */
-.submenu-profile {
-  display: none;
-  position: absolute;
-  background-color: white;
-  top: 100%;
-  right: 0;
-  width: 160px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
-  opacity: 0;
-  visibility: hidden;
-}
-
-.user-info:hover .submenu-profile {
-  display: block;
-  opacity: 1;
-  visibility: visible;
-}
-
-.submenu-profile ul {
-  list-style: none;
-  padding: 10px 0;
-  margin: 0;
-}
-
-.submenu-profile li {
-  padding: 12px 20px;
-  border-bottom: 1px solid #eee;
-  font-size: 1rem;
-  color: black;
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.submenu-profile li:last-child {
-  border-bottom: none;
-}
-
-.submenu-profile li:hover {
-  background-color: #f4f4f4;
-  color: #59009A;
-}
-
-.submenu-profile li a {
-  text-decoration: none;
-  color: inherit;
-  display: block;
-  width: 100%;
-}
-
-.submenu-profile li a:hover {
-  color: #59009A;
-}
-
-/* Para ajustar el estilo del icono de usuario */
-.user-info {
-  position: relative;
-}
-
-.user-info img {
-  cursor: pointer;
-}
-
-
-.servicios:hover span {
-  text-decoration: underline;
-  cursor: pointer;
-}
-
-  
-/* Footer */
-footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  background-color: #59009A;
-  z-index: 999;
-}
-
-footer div {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.contact-item {
-  display: flex;
-  flex-direction: column-reverse;
-  align-items: center;
-  text-align: center;
-}
-
-.footer-container {
-  padding: 10px;
-}
-
-.items {
-  gap: 30px;
-}
-
-.quienes-somos {
-  display: flex;
-  align-items: center;
-  color: white;
-}
-
-.iconos img {
-  width: 35px;
-}
-
-.items .contact-item span {
-  color: white;
-}
-
-/* Media Queries para pantallas pequeñas */
-@media (max-width: 480px) {
-  header {
-    height: 100px;
-  }
-
-  .submenu {
-    margin-left: -90px;
-    margin-top: 1px;
-    border-radius: 20px 0 0 20px;
-  }
-
-  .service-user {
-    flex-direction: row-reverse;
-  }
-
-  .servicios span {
-    display: none;
-  }
-
-  .menu-icon {
-    display: flex;
-    color: #59009A;
-    cursor: pointer;
-  }
-
-  .menu-icon .material-icons {
-    font-size: 50px;
-    font-family: 'Material Icons';
-    font-style: normal;
-  }
-
-  .user-info {
-    display: none;
-  }
-
-  .logo {
-    flex-direction: row;
-  }
-
-  .footer-container {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
-  .contact-item span {
-    display: none;
-  }
-
-  .items {
-    gap: 10px;
-  }
-
-  .iconos .icono {
-    width: 30px;
-    height: 30px;
-  }
-} 
-@media (max-width: 768px) {
-    .menu-icon {
-        display: block;
-        cursor: pointer;
-    }
-
-    .menu-icon .material-icons {
-        font-size: 30px;
-        color: #59009A;
-    }
-
-    .services-text {
-        display: none;
-    }
-
-    .user-info {
-        display: none; /* Oculta completamente la información del usuario */
-    }
-
-    .service-user {
-        justify-content: flex-end; /* Alinea el ícono de menú a la derecha */
-    }
-
-   
-    .submenu.active {
-        display: block;
-    }
-
-    .submenu ul {
-        list-style-type: none;
-        padding: 0;
-    }
-
-    .submenu li {
-        padding: 15px 20px;
-        border-bottom: 1px solid #eee;
-    }
-
-    .submenu li a {
-        color: #59009A;
-        text-decoration: none;
-        display: block;
-    }
-
-    .logo {
-        flex-grow: 1;
-    }
-}
-
-@media (min-width: 769px) {
-    .menu-icon {
-        display: none;
-    }
-
-    .services-text {
-        display: inline;
-    }
-
-    .submenu {
-        display: none;
-        position: absolute;
-        background-color: white;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    .servicios:hover .submenu {
-        display: block;
-    }
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="footNav.js"></script>
+    <link rel="stylesheet" href="footNav.css"> 
+    <style>
         /* Estilos del contenedor principal */
         .container {
             display: flex; /* Usa un diseño flexbox */
@@ -744,229 +322,225 @@ footer div {
       }
     }
 
-  </style>
+
+    </style>
 </head>
-<body>
-<header> 
-  <nav>
-      <div class="logo">
-          <a href="/inicio-de-sesion/Modulo-iniciar-sesion/home/home.html">
-              <img src="https://i.ibb.co/4MSTbtM/2f043346-e172-4c47-b8b4-d69f213fc49e.jpg"
-                  alt="Logo de Atención Profesional">
-          </a>
-          <span class="Profesional">TRANQUILIDAD</span>
-      </div>
-      <div class="service-user">
-          <div class="servicios">
-              <div class="menu-icon" id="menu-toggle">
-                  <i class="material-icons">menu</i>
-              </div>
-              <span class="services-text">Servicios</span>
-              <div class="submenu" id="services-submenu">
-                  <ul>
-                      <li><a href="/mapa-de-suenos/Inicio/Inicio.html">Mapa De Sueños</a></li>
-                      <li><a href="/alimentacion/Inicio/index.html">Alimentacion</a></li>
-                      <li><a href="/arteterapia/html/Navegacion.html">Arteterapia</a></li>
-                      <li><a href="/musicoterapia/Vistas1.1/bienvenido_a_musicoterapia.html">Musicoterapia</a></li>
-                      <li><a href="/rutinas-de-ejercicios/inicio/index.html">Ejercicios</a></li>
-                      <li><a href="/atencion-profesional/USUARIO/Home_Usuario/HomeUsuario.html">Atencion Profesional</a></li>
-                      <li><a href="/inicio-de-sesion/Modulo-iniciar-sesion/usuario/usuario.html">Perfil</a></li>
-                  </ul>
-              </div>
-          </div>
-          <div class="user-info">
-              <span>Juanito Alimaña</span>
-              <a href="#" class="profile-toggle">
-                  <img class="imagen-usuario" 
-                  src="images/user.png"
-                  alt="Foto de perfil del usuario">
-              </a>
-              <div class="submenu-profile">
-                  <ul>
-                    <li><a href="/inicio-de-sesion/Modulo-iniciar-sesion/usuario/usuario.html">Ver Perfil</a></li>
-                    <li><a href="/inicio-de-sesion/Modulo-iniciar-sesion/login/login.html">Cerrar Sesión</a></li>
-                  </ul>
-              </div>
-          </div>
-      </div>
-  </nav>
-</header>
-    <div class="container">
-      <aside class="sidebar">
-        <br>
-        <br>
-        <div class="menu-item">
-          <a href="principal_generos.html" style="text-decoration: none;">
-            <img src="images/genero.png" alt="Icon">
-            <span>Géneros</span>
-          </a>
-        </div>
-        <div class="menu-item">
-          <a href="principal_album.html" style="text-decoration: none;">
-            <img src="images/album.png" alt="Icon">
-            <span>Álbum</span>
-          </a>
-        </div>
-        <div class="menu-item">
-          <a href="principal_podcast.html" style="text-decoration: none;">
-            <img src="images/pod.png" alt="Icon">
-            <span>Podcast</span>
-          </a>
-        </div>
-        <div class="menu-item">
-          <a href="binaurales.html" style="text-decoration: none;">
-            <img src="images/binaural.png" alt="Icon">
-            <span>Sonidos Binaurales</span>
-          </a>
-        </div>
-        <div class="menu-item">
-          <a href="playList.html" style="text-decoration: none;">
-            <img src="images/playL.png" alt="Icon">
-            <span>PlayList</span>
-          </a>
-        </div>
-        <div class="menu-item">
-          <a href="Tus me gustas pistas.html" style="text-decoration: none;">
-            <img src="images/like.png" alt="Icon" />
-            <span>Me gusta</span>
-          </a>
-        </div>
-        <div class="menu-item">
-          <a href="buscar.html" style="text-decoration: none;">
-            <img src="images/buscar boton.png" alt="Icon" />
-            <span>Buscar</span>
-          </a>
-        </div>
-      </aside>
-      <main class="main-content">
-        <div class="image-container">
-          <img src="images/podcast 1.png" alt="Podcast 1 Image" onerror="this.onerror=null;this.src='img/placeholder.png';">
-          <button class="play-button">
-            <a href="Reproductorpodcast.html?podcastId=1">
+<body class="body">
 
-            <img src="images/botonPlay.png" alt="Play"> 
+    <header> 
+        <nav>
+            <div class="logo">
+                <a href="/inicio-de-sesion/Modulo-iniciar-sesion/home/home.html">
+                    <img src="imagenes/logo.png"
+                        alt="Logo de Atención Profesional">
+                </a>
+                <a href="/inicio-de-sesion/Modulo-iniciar-sesion/home/home.html"><span class="Profesional">TRANQUILIDAD</span></a>
+            </div>
+            <div class="service-user">
+                <div class="servicios">
+                    <div class="menu-icon">
+                        <i class="material-icons">menu</i>
+                    </div>
+                    <span>Servicios</span>
+                    <div class="submenu">
+                        <ul>
+                            <li><a href="/mapa-de-suenos/Inicio/Inicio.html">Biblioterapia</a></li>
+                            <li><a href="/alimentacion/Inicio/index.html">Alimentacion</a></li>
+                            <li><a href="/arteterapia/html/Navegacion.html">Arteterapia</a></li>
+                            <li><a href="/musicoterapia/Vistas1.1/bienvenido_a_musicoterapia.html">Musicoterapia</a></li>
+                            <li><a href="/rutinas-de-ejercicios/inicio/index.html">Ejercicios</a></li>
+                            <li><a href="/atencion-profesional/USUARIO/Home_Usuario/HomeUsuario.html">Atencion Profesional</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="user-info">
+                    <span>Juanito Alimaña</span>
+                      <a class="profile-toggle"><img class="imagen-usuario" 
+                        src="images/user.png"
+                        alt="Foto de perfil del usuario">
+                      </a>
+                    
+                    <div class="submenu-profile">
+                        <ul>
+                            <li><a href="/inicio-de-sesion/Modulo-iniciar-sesion/usuario/usuario.html">Ver Perfil</a></li>
+                            <li><a href="/inicio-de-sesion/Modulo-iniciar-sesion/configuracion/configuracion.html">Configuracion</a></li>
+                            <li><a href="/inicio-de-sesion/Modulo-iniciar-sesion/login/login.html">Cerrar Sesión</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+      </header>
 
-          </button>
-        </a>
-          <div class="small-image-container">
-            <button class="small-button">
-              <img src="images/botoncompartir.png" alt="Compartir">
-            </button>
-          </div>
-          <div class="social-icons-container">
-            <a href="#" class="social-icon"><img src="icono_facebook.png" alt="Facebook"></a>
-            <a href="#" class="social-icon"><img src="icono_instagram.png" alt="Instagram"></a>
-            <a href="#" class="social-icon"><img src="icono_whatsapp.png" alt="WhatsApp"></a>
-            <a href="#" class="social-icon"><img src="icono_telegram.png" alt="Telegram"></a>
-          </div>
-        </div>
   
-        <div class="image-container">
-          <img src="images/podcast 2.png" alt="Podcast 2 Image"onerror="this.onerror=null;this.src='img/placeholder.png';">
-          <button class="play-button">
-            <a href="Reproductorpodcast.html?podcastId=2">
-            <img src="images/botonPlay.png" alt="Play">
-          </button>
-        </a>
-          <div class="small-image-container">
-            <button class="small-button">
-              <img src="images/botoncompartir.png" alt="Compartir">
-            </button>
+      <div class="container">
+        <aside class="sidebar">
+          <br>
+          <br>
+          <div class="menu-item">
+            <a href="principal_generos.html" style="text-decoration: none;">
+              <img src="images/genero.png" alt="Icon">
+              <span>Géneros</span>
+            </a>
           </div>
-          <div class="social-icons-container">
-            <a href="#" class="social-icon"><img src="icono_facebook.png" alt="Facebook"></a>
-            <a href="#" class="social-icon"><img src="icono_instagram.png" alt="Instagram"></a>
-            <a href="#" class="social-icon"><img src="icono_whatsapp.png" alt="WhatsApp"></a>
-            <a href="#" class="social-icon"><img src="icono_telegram.png" alt="Telegram"></a>
+          <div class="menu-item">
+            <a href="principal_album.html" style="text-decoration: none;">
+              <img src="images/album.png" alt="Icon">
+              <span>Álbum</span>
+            </a>
           </div>
-        </div>
+          <div class="menu-item">
+            <a href="principal_podcast.html" style="text-decoration: none;">
+              <img src="images/pod.png" alt="Icon">
+              <span>Podcast</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a href="binaurales.html" style="text-decoration: none;">
+              <img src="images/binaural.png" alt="Icon">
+              <span>Sonidos Binaurales</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a href="playList.html" style="text-decoration: none;">
+              <img src="images/playL.png" alt="Icon">
+              <span>PlayList</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a href="Tus me gustas pistas.html" style="text-decoration: none;">
+              <img src="images/like.png" alt="Icon" />
+              <span>Me gusta</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a href="buscar.html" style="text-decoration: none;">
+              <img src="images/buscar boton.png" alt="Icon" />
+              <span>Buscar</span>
+            </a>
+          </div>
+        </aside>
+        <main class="main-content">
+          <div class="image-container">
+            <img src="images/podcast 1.png" alt="Podcast 1 Image" onerror="this.onerror=null;this.src='img/placeholder.png';">
+            <button class="play-button">
+              <a href="Reproductorpodcast.html">
   
-        <div class="image-container">
-          <img src="images/podcast 3.png" alt="Podcast 3 Image" onerror="this.onerror=null;this.src='img/placeholder.png';">
-          <button class="play-button">
-            <a href="Reproductorpodcast.html?podcastId=3">
-            <img src="images/botonPlay.png" alt="Play">
-          </button>
-        </a>
-          <div class="small-image-container">
-            <button class="small-button">
-              <img src="images/botoncompartir.png" alt="Compartir">
-            </button>
-          </div>
-          <div class="social-icons-container">
-            <a href="#" class="social-icon"><img src="icono_facebook.png" alt="Facebook"></a>
-            <a href="#" class="social-icon"><img src="icono_instagram.png" alt="Instagram"></a>
-            <a href="#" class="social-icon"><img src="icono_whatsapp.png" alt="WhatsApp"></a>
-            <a href="#" class="social-icon"><img src="icono_telegram.png" alt="Telegram"></a>
-          </div>
-        </div>
+              <img src="images/botonPlay.png" alt="Play"> 
   
-        <div class="image-container">
-          <img src="images/podcast 4.png" alt="Podcast 4 Image"onerror="this.onerror=null;this.src='img/placeholder.png';">
-          <button class="play-button">
-            <a href="Reproductorpodcast.html?podcastId=4">
-            <img src="images/botonPlay.png" alt="Play">
-          </button>
-        </a>
-          <div class="small-image-container">
-            <button class="small-button">
-              <img src="images/botoncompartir.png" alt="Compartir">
             </button>
-          </div>
-          <div class="social-icons-container">
-            <a href="#" class="social-icon"><img src="icono_facebook.png" alt="Facebook"></a>
-            <a href="#" class="social-icon"><img src="icono_instagram.png" alt="Instagram"></a>
-            <a href="#" class="social-icon"><img src="icono_whatsapp.png" alt="WhatsApp"></a>
-            <a href="#" class="social-icon"><img src="icono_telegram.png" alt="Telegram"></a>
-          </div>
-        </div>
-  
-      </main>
-    </div>
-    <footer>
-      <div class="footer-container">
-        <div class="items">
-          <div class="contact-item">
-            <span>Contáctanos</span>
-            <div class="iconos">
-              <a href="https://web.whatsapp.com/"
-                ><img class="icono" src="imagenes/WhatsApp.png" alt="WhatsApp"
-              /></a>
+          </a>
+            <div class="small-image-container">
+              <button class="small-button">
+                <img src="images/botoncompartir.png" alt="Compartir">
+              </button>
+            </div>
+            <div class="social-icons-container">
+              <a href="#" class="social-icon"><img src="icono_facebook.png" alt="Facebook"></a>
+              <a href="#" class="social-icon"><img src="icono_instagram.png" alt="Instagram"></a>
+              <a href="#" class="social-icon"><img src="icono_whatsapp.png" alt="WhatsApp"></a>
+              <a href="#" class="social-icon"><img src="icono_telegram.png" alt="Telegram"></a>
             </div>
           </div>
-          <div class="contact-item">
-            <span>Canales de atención</span>
-            <div class="iconos">
-              <a href="https://web.telegram.org/"
-                ><img
-                  class="icono"
-                  src="imagenes/Telegram App.png"
-                  alt="Telegram"
-              /></a>
-              <a href="https://mail.google.com/mail/u/0/?ogbl#inbox"
-                ><img class="icono" src="imagenes/Email.png" alt="Email"
-              /></a>
+    
+          <div class="image-container">
+            <img src="images/podcast 2.png" alt="Podcast 2 Image"onerror="this.onerror=null;this.src='img/placeholder.png';">
+            <button class="play-button">
+              <a href="Reproductorpodcast.html">
+              <img src="images/botonPlay.png" alt="Play">
+            </button>
+          </a>
+            <div class="small-image-container">
+              <button class="small-button">
+                <img src="images/botoncompartir.png" alt="Compartir">
+              </button>
+            </div>
+            <div class="social-icons-container">
+              <a href="#" class="social-icon"><img src="icono_facebook.png" alt="Facebook"></a>
+              <a href="#" class="social-icon"><img src="icono_instagram.png" alt="Instagram"></a>
+              <a href="#" class="social-icon"><img src="icono_whatsapp.png" alt="WhatsApp"></a>
+              <a href="#" class="social-icon"><img src="icono_telegram.png" alt="Telegram"></a>
             </div>
           </div>
-          <div class="contact-item">
-            <span>Redes sociales</span>
-            <div class="iconos">
-              <a href="https://www.facebook.com/"
-                ><img class="icono" src="imagenes/Facebook.png" alt="Facebook"
-              /></a>
-              <a href="https://www.instagram.com/"
-                ><img
-                  class="icono"
-                  src="imagenes/Instagram.png"
-                  alt="Instagram"
-              /></a>
+    
+          <div class="image-container">
+            <img src="images/podcast 3.png" alt="Podcast 3 Image" onerror="this.onerror=null;this.src='img/placeholder.png';">
+            <button class="play-button">
+              <a href="Reproductorpodcast.html">
+              <img src="images/botonPlay.png" alt="Play">
+            </button>
+          </a>
+            <div class="small-image-container">
+              <button class="small-button">
+                <img src="images/botoncompartir.png" alt="Compartir">
+              </button>
+            </div>
+            <div class="social-icons-container">
+              <a href="#" class="social-icon"><img src="icono_facebook.png" alt="Facebook"></a>
+              <a href="#" class="social-icon"><img src="icono_instagram.png" alt="Instagram"></a>
+              <a href="#" class="social-icon"><img src="icono_whatsapp.png" alt="WhatsApp"></a>
+              <a href="#" class="social-icon"><img src="icono_telegram.png" alt="Telegram"></a>
             </div>
           </div>
-        </div>
-        <a class="quienes-somos" href="#">¿Quiénes somos?</a>
+    
+          <div class="image-container">
+            <img src="images/podcast 4.png" alt="Podcast 4 Image"onerror="this.onerror=null;this.src='img/placeholder.png';">
+            <button class="play-button">
+              <a href="Reproductorpodcast.html">
+              <img src="images/botonPlay.png" alt="Play">
+            </button>
+          </a>
+            <div class="small-image-container">
+              <button class="small-button">
+                <img src="images/botoncompartir.png" alt="Compartir">
+              </button>
+            </div>
+            <div class="social-icons-container">
+              <a href="#" class="social-icon"><img src="icono_facebook.png" alt="Facebook"></a>
+              <a href="#" class="social-icon"><img src="icono_instagram.png" alt="Instagram"></a>
+              <a href="#" class="social-icon"><img src="icono_whatsapp.png" alt="WhatsApp"></a>
+              <a href="#" class="social-icon"><img src="icono_telegram.png" alt="Telegram"></a>
+            </div>
+          </div>
+    
+        </main>
       </div>
-    </footer>
-  </body>
+
+
+    <footer> 
+        <div class="footer-container">
+            <div class="items">
+                <div class="contact-item">
+                    <span>Contáctanos</span>
+                    <div class="iconos">
+                        <a href="https://web.whatsapp.com/"><img class="icono" src="/FootNav/imagenes/WhatsApp.png"
+                                alt="WhatsApp"></a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <span>Canales de atención</span>
+                    
+                    <div class="iconos">
+                        <a href="https://web.telegram.org/"><img class="icono" src="/FootNav/imagenes/Telegram App.png"
+                                alt="Telegram"></a>
+                        <a href="https://mail.google.com/mail/u/0/?ogbl#inbox"><img class="icono" src="/FootNav/imagenes//Email.png"
+                                alt="Email"></a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <span>Redes sociales</span>
+                    <div class="iconos">
+                        <a href="https://www.facebook.com/"><img class="icono" src="/FootNav/imagenes/Facebook.png"
+                                alt="Facebook"></a>
+                        <a href="https://www.instagram.com/"><img class="icono" src="/FootNav/imagenes/Instagram.png"
+                                alt="Instagram"></a>
+                    </div>
+                </div>
+            </div>
+            <a class="quienes-somos" href="#">¿Quiénes somos?</a>
+        </div>
+      </footer>
+
 </body>
 <script>
   document.addEventListener('DOMContentLoaded', function() {
@@ -986,3 +560,4 @@ footer div {
  
  </script>
 </html>
+
