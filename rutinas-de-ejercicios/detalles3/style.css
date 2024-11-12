@@ -374,6 +374,9 @@ body {
   .comment-card:hover .comment-info .comment-text {
     display: block;
   }
+  footer{
+    color: white;
+  }
   
   @media (max-width: 1024px) {
     .grid {

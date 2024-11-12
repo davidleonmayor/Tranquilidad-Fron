@@ -1,13 +1,16 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="esp">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <link rel="stylesheet" href="Style.css">
-  <title>Rutinas de Ejercicios</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="style3.css">
+    
+    <title>tranquilidad</title>
 </head>
 <body>
+    
   <header> 
     <nav>
         <div class="logo">
@@ -52,35 +55,50 @@
         </div>
     </nav>
   </header>
-  <div class="cont">
-  <div class="contenedor">
-    <img src="/rutinas-de-ejercicios/detalles/sportswoman-stretching-her-back-white-copyspace.jpg" alt="" class="guia">
-    <div class="instruccines">
-    <h2> <span class="title">Instrucciones</span></h2>
-    <ul>
-        <li class="one">Acuéstate boca abajo con las piernas extendidas y los pies juntos.</li>
-        <br>
-        <li>Coloca las manos debajo de los hombros, con los codos cerca del cuerpo.
-        </li>
-        <br>
-        <li>Inhala y presiona las manos contra el suelo, levantando el pecho y la cabeza.</li>
-        <br>
-        <li>Endereza los brazos mientras levantas el torso y las piernas del suelo.</li><br>
-        <li>Extiende los brazos completamente, manteniendo los hombros alejados de las orejas.</li><br>
-        <li>Abre el pecho y lleva los omóplatos hacia abajo y juntos.</li><br>
-        <li>Mira ligeramente hacia arriba sin forzar el cuello.
-          .</li><br>
-        <li>Mantén la postura por 5-10 respiraciones profundas.
-        </li>
-       
-    </ul>
-   
+  
+
+  <div class="container">
+    <aside class="sidebar">
+      <div class="menu-item active">
+        <a href="/rutinas-de-ejercicios/inicio/index.html">
+            <img src="/rutinas-de-ejercicios/imagenes/home_24dp_434343_FILL0_wght400_GRAD0_opsz24.svg" alt="Icon" />
+            <span>Inicio</span>
+        </a>
+    </div>
+      <div class="menu-item">
+        <a href="/rutinas-de-ejercicios/calendario/index.html">
+          <img src="/rutinas-de-ejercicios/imagenes/event_24dp_434343_FILL0_wght400_GRAD0_opsz24.svg" alt="Icon" />
+          <span>Calendario</span>
+        </a>
+      </div>
+      <div class="menu-item">
+        <a href="/rutinas-de-ejercicios/favoritos/favoritos.html">
+          <img src="/rutinas-de-ejercicios/imagenes/favorite_24dp_434343_FILL0_wght400_GRAD0_opsz24.svg" alt="Icon" />
+          <span href="#">Favoritos</span>
+        </a>
+      </div>
+      <div class="menu-item">
+        <a href="/rutinas-de-ejercicios/notificaciones/index.html">
+          <img src="/rutinas-de-ejercicios/imagenes/notifications_24dp_434343_FILL0_wght400_GRAD0_opsz24.svg" alt="Icon" />
+          <span href="#">Notificaciones</span>
+        </a>
+      </div>
+     
+    </aside>
+    <div class="carousel">
+        
+        <div class="carousel-slide">
+          <img src="/rutinas-de-ejercicios/imagenes/imag1.jpg" alt="Técnicas de respiración">
+          <img src="/rutinas-de-ejercicios/imagenes/imag2.jpg" alt="Estiramientos">
+          <img src="/rutinas-de-ejercicios/imagenes/imag3.jpg" alt="Meditación">
+        </div>
+        <!-- Botones de navegación -->
+        <button class="prev-btn">❮</button>
+        <button class="next-btn">❯</button>
+      </div>
 </div>
-<a href="/rutinas-de-ejercicios/andres/ejercicios/index.html">
-<button class="volver">volver</button>
-</a>
-</div>
-</div>
+<br>
+
 <footer> 
   <div class="footer-container">
       <div class="items">
@@ -151,10 +169,41 @@ loadTemplate('footer-placeholder', '../../../FootNav/footer.html');
 loadTemplate('explore-section-placeholder', '/arteterapia/component/explore-section/explore-section.html');
 
 /* FIN ArteTerapia template */
-</script>
-</body>
-</html>
 
-<script src="script.js"></script>
+
+// Variables de referencia
+const carouselSlide = document.querySelector('.carousel-slide');
+    const images = document.querySelectorAll('.carousel-slide img');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+
+    let currentIndex = 0;
+
+    // Función para actualizar el carrusel
+    function updateCarousel() {
+        // Calculamos el ancho del contenedor y lo usamos para el desplazamiento
+        const carouselWidth = document.querySelector('.carousel').offsetWidth;
+        const offset = -currentIndex * carouselWidth;  // Desplazamos por el ancho del contenedor
+        carouselSlide.style.transform = `translateX(${offset}px)`;
+    }
+
+    // Evento del botón siguiente
+    nextBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % images.length;
+        updateCarousel();
+    });
+
+    // Evento del botón anterior
+    prevBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        updateCarousel();
+    });
+
+    // Ajustar el carrusel cuando la ventana cambie de tamaño
+    window.addEventListener('resize', updateCarousel);
+
+    // Inicializar el carrusel al cargar la página
+    updateCarousel();
+</script>
 </body>
 </html>

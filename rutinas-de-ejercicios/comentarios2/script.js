@@ -40,3 +40,18 @@
         comentariosGuardados.push(comentario);
         localStorage.setItem('comentarios', JSON.stringify(comentariosGuardados));
     }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const favoriteIcons = document.querySelectorAll(".favorite");
+    
+        favoriteIcons.forEach(function (icon) {
+            icon.addEventListener("click", function () {
+                if (icon.style.color === "red") {
+                    icon.style.color = "gray"; // Vuelve al color original
+                } else {
+                    icon.style.color = "red";  // Cambia a rojo
+                }
+            });
+        });
+    });
+    
