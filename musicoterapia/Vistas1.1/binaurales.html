@@ -8,9 +8,7 @@
     <script src="footNav.js"></script>
     <link rel="stylesheet" href="footNav.css"> 
     <style>
-      
-      /* ------------------- */
-    /* INICIODEL CONTENIDO CENTRAL */
+    /* ESTILOS  */
     .container {
       display: flex;
       height: calc(100vh - 126px);
@@ -183,7 +181,7 @@
 
 
 
-        * fin del Menu fijo */
+    /* fin del Menu fijo */
     /* fin del Menu fijo */
 
     .main-content {
@@ -550,9 +548,6 @@
         width: 100%;
         justify-content: center;
     }
-
-
-
 
 
     
@@ -1432,6 +1427,90 @@
   align-items: center;
 }
 
+/* Estilos del contenedor principal mejorados */
+.container {
+  display: flex;
+  min-height: calc(100vh - 126px);
+  position: relative;
+}
+
+.main-content {
+  width: 75%;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centrado de contenido */
+}
+
+/* Media queries mejorados para responsive */
+@media only screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center; /* Centrado del contenedor principal */
+    padding: 10px;
+  }
+
+  .main-content {
+    width: 100%;
+    max-width: 95%; /* Limita el ancho máximo en móvil */
+    margin: 0 auto; /* Centrado horizontal */
+    padding: 10px;
+  }
+
+  .genres {
+    width: 100%;
+    justify-content: center;
+    gap: 15px;
+    padding: 0;
+  }
+
+  .genre {
+    width: calc(50% - 10px);
+    margin: 0 auto 15px; /* Centrado y espacio inferior */
+    max-width: 300px; /* Limita el ancho máximo de cada género */
+  }
+
+  .genre img {
+    width: 100%;
+    height: auto;
+    display: block; /* Mejora el centrado de la imagen */
+    margin: 0 auto 10px; /* Centrado y espacio inferior */
+  }
+
+  .sidebar {
+    width: 95%;
+    margin: 0 auto 20px; /* Centrado y espacio inferior */
+    padding: 10px;
+  }
+
+  .title {
+    width: 100%;
+    text-align: center;
+    margin: 15px auto; /* Centrado y espacio vertical */
+  }
+}
+
+/* Para pantallas muy pequeñas */
+@media only screen and (max-width: 480px) {
+  .main-content {
+    max-width: 100%;
+    padding: 5px;
+  }
+
+  .genres {
+    gap: 10px;
+  }
+
+  .genre {
+    width: calc(50% - 5px);
+    max-width: 250px; /* Ajuste para pantallas muy pequeñas */
+  }
+
+  .title {
+    font-size: 32px; /* Ajuste del tamaño del título para pantallas muy pequeñas */
+  }
+}
 
     </style>
 </head>
@@ -1503,7 +1582,8 @@
               <span>Podcast</span>
             </a>
           </div>
-          <div class="menu-item active">
+         
+          <div class="menu-item">
             <a href="binaurales.html" style="text-decoration: none;">
               <img src="img/binaural.png" alt="Icon" />
               <span>Sonidos Binaurales</span>
@@ -1516,21 +1596,19 @@
             </a>
           </div>
           <div class="menu-item">
-            <a href="Tus me gustas pistas.html" style="text-decoration: none;">
+            <a href="Tus me gustas pistas.html">
               <img src="img/like.png" alt="Icon" />
               <span>Me gusta</span>
             </a>
           </div>
-          <div class="menu-item">
-            <a href="buscar.html" >
+          <div class="menu-item active">
+            <a href="buscar.html" style="text-decoration: none;">
               <img src="img/buscar.png" alt="Icon" />
               <span>Buscar</span>
             </a>
           </div>
         </aside>
-    
-    
-    
+        <!-- TITULO -->
         <main class="main-content">
           <div class="title">
             <span>Sonidos Binaurales</span>
@@ -1542,137 +1620,129 @@
               ONDAS GAMMA BINAURALES: Rendimiento Mental, Concentración y Memoria
             </div>
           </div>
-          
-          <!-- Contenedor de pistas -->
-           
-          <div class="content">
-            <div class="tracks-container">
-              <!-- Pista 1 -->
-              <div class="track">
-                <img src="img/Pista1.jpg" alt="Pista 1" onerror="this.onerror=null;this.src='img/placeholder.png';" />
-                <div>
-                  <span>Pista 1</span><br />
-                  <span>Time</span>
+
+            <!-- Contenedor de pistas -->
+            <div class="image-container2">
+    
+              <div class="content">
+                <div class="tracks-container">
+                  <div class="track">
+                    <img src="img/Pista1.jpg" alt="Pista 1" onerror="this.onerror=null;this.src='img/placeholder.png';" />
+                    <div>
+                      <span>Pista 1</span><br />
+                      <span>Time</span>
+                    </div>
+                    <div>FRECUENCIA</div>
+                    <div>GAMMA</div>
+                    <a href="Reproductor2.html?binauralId=1" class="play-button"></a>
+                  </div>
+                  <div class="track">
+                    <img src="img/pista2.jpg" alt="Pista 2" onerror="this.onerror=null;this.src='img/placeholder.png';" />
+                    <div>
+                      <span>Pista 2</span><br />
+                      <span>Time</span>
+                    </div>
+                    <div>FRECUENCIA</div>
+                    <div>GAMMA</div>
+                    <a href="Reproductor2.html?binauralId=2" class="play-button"></a>
+                  </div>
+    
+                  <div class="track">
+                    <img src="img/pista3.jpeg" alt="Pista 3" onerror="this.onerror=null;this.src='img/placeholder.png';" />
+                    <div>
+                      <span>Pista 3</span><br />
+                      <span>Time</span>
+                    </div>
+                    <div>FRECUENCIA</div>
+                    <div>GAMMA</div>
+                    <a href="Reproductor2.html?binauralId=3" class="play-button"></a>
+                  </div>
+    
+                  <div class="track">
+                    <img src="img/pista4.avif" alt="Pista 4" onerror="this.onerror=null;this.src='img/placeholder.png';" />
+                    <div>
+                      <span>Pista 4</span><br />
+                      <span>Time</span>
+                    </div>
+                    <div>FRECUENCIA</div>
+                    <div>GAMMA</div>
+                    <a href="Reproductor2.html?binauralId=4" class="play-button"></a>
+                  </div>
+    
+                  <div class="track">
+                    <img src="img/pista5.jpg" alt="Pista 5" onerror="this.onerror=null;this.src='img/placeholder.png';" />
+                    <div>
+                      <span>Pista 5</span><br />
+                      <span>Time</span>
+                    </div>
+                    <div>FRECUENCIA</div>
+                    <div>GAMMA</div>
+                    <a href="Reproductor2.html?binauralId=5" class="play-button"></a>
+                  </div>
+                  <div class="track">
+                    <img src="img/pista6.jpg" alt="Pista 6" onerror="this.onerror=null;this.src='img/placeholder.png';" />
+                    <div>
+                      <span>Pista 6</span><br />
+                      <span>Time</span>
+                    </div>
+                    <div>FRECUENCIA</div>
+                    <div>GAMMA</div>
+                    <a href="Reproductor2.html?binauralId=6" class="play-button"></a>
+                  </div>
+                  <div class="track">
+                    <img src="img/pista7.jpg" alt="Pista 7" onerror="this.onerror=null;this.src='img/placeholder.png';" />
+                    <div>
+                      <span>Pista 7</span><br />
+                      <span>Time</span>
+                    </div>
+                    <div>FRECUENCIA</div>
+                    <div>GAMMA</div>
+                    <a href="Reproductor2.html?binauralId=7" class="play-button"></a>
+                  </div>
+                  <div class="track">
+                    <img src="img/pista8.jpg" alt="Pista 8" onerror="this.onerror=null;this.src='img/placeholder.png';" />
+                    <div>
+                      <span>Pista 8</span><br />
+                      <span>Time</span>
+                    </div>
+                    <div>FRECUENCIA</div>
+                    <div>GAMMA</div>
+                    <a href="Reproductor2.html?binauralId=8" class="play-button"></a>
+                  </div>
+                  <div class="track">
+                    <img src="img/pista9.jpg" alt="Pista 9" onerror="this.onerror=null;this.src='img/placeholder.png';" />
+                    <div>
+                      <span>Pista 9</span><br />
+                      <span>Time</span>
+                    </div>
+                    <div>FRECUENCIA</div>
+                    <div>GAMMA</div>
+                    <a href="Reproductor2.html?binauralId=9" class="play-button"></a>
+                  </div>
+                  <div class="track">
+                    <img src="img/pista10.jpg" alt="Pista 10" onerror="this.onerror=null;this.src='img/placeholder.png';" />
+                    <div>
+                      <span>Pista 10</span><br />
+                      <span>Time</span>
+                    </div>
+                    <div>FRECUENCIA</div>
+                    <div>GAMMA</div>
+                    <a href="Reproductor2.html?binauralId=10" class="play-button"></a>
+                  </div>
                 </div>
-                <div>FRECUENCIA</div>
-                <div>GAMMA</div>
-                <a href="Reproductor2.html?binauralId=1" class="play-button"></a>
-              </div>
-              
-               <!-- Pista 2 -->
-               <div class="track">
-                <img src="img/pista2.jpg" alt="Pista 2" onerror="this.onerror=null;this.src='img/placeholder.png';" />
-                <div>
-                  <span>Pista 2</span><br />
-                  <span>Time</span>
-                </div>
-                <div>FRECUENCIA</div>
-                <div>GAMMA</div>
-                <a href="Reproductor2.html?binauralId=2" class="play-button"></a>
               </div>
     
-               <!-- Pista 3 -->
-               <div class="track">
-                <img src="img/pista3.jpeg" alt="Pista 3" onerror="this.onerror=null;this.src='img/placeholder.png';" />
-                <div>
-                  <span>Pista 3</span><br />
-                  <span>Time</span>
-                </div>
-                <div>FRECUENCIA</div>
-                <div>GAMMA</div>
-                <a href="Reproductor2.html?binauralId=3" class="play-button"></a>
-              </div>
-    
-               <!-- Pista 4 -->
-               <div class="track">
-                <img src="img/pista4.avif" alt="Pista 4" onerror="this.onerror=null;this.src='img/placeholder.png';" />
-                <div>
-                  <span>Pista 4</span><br />
-                  <span>Time</span>
-                </div>
-                <div>FRECUENCIA</div>
-                <div>GAMMA</div>
-                <a href="Reproductor2.html?binauralId=4" class="play-button"></a>
-              </div>
-    
-              <!-- Pista 5 -->
-              <div class="track">
-                <img src="img/pista5.jpg" alt="Pista 5" onerror="this.onerror=null;this.src='img/placeholder.png';" />
-                <div>
-                  <span>Pista 5</span><br />
-                  <span>Time</span>
-                </div>
-                <div>FRECUENCIA</div>
-                <div>GAMMA</div>
-                <a href="Reproductor2.html?binauralId=5" class="play-button"></a>
-              </div>
-    
-            <!-- Pista 6 -->
-    <div class="track">
-      <img src="img/pista6.jpg" alt="Pista 6" onerror="this.onerror=null;this.src='img/placeholder.png';" />
-      <div>
-        <span>Pista 6</span><br />
-        <span>Time</span>
-      </div>
-      <div>FRECUENCIA</div>
-      <div>GAMMA</div>
-      <a href="Reproductor2.html?binauralId=6" class="play-button"></a>
-    </div>
-    
-             <!-- Pista 7 -->
-    <div class="track">
-      <img src="img/pista7.jpg" alt="Pista 7" onerror="this.onerror=null;this.src='img/placeholder.png';" />
-      <div>
-        <span>Pista 7</span><br />
-        <span>Time</span>
-      </div>
-      <div>FRECUENCIA</div>
-      <div>GAMMA</div>
-      <a href="Reproductor2.html?binauralId=7" class="play-button"></a>
-    </div>
-    
-              <!-- Pista 8 -->
-    <div class="track">
-      <img src="img/pista8.jpg" alt="Pista 8" onerror="this.onerror=null;this.src='img/placeholder.png';" />
-      <div>
-        <span>Pista 8</span><br />
-        <span>Time</span>
-      </div>
-      <div>FRECUENCIA</div>
-      <div>GAMMA</div>
-      <a href="Reproductor2.html?binauralId=8" class="play-button"></a>
-    </div>
-    
-           <!-- Pista 9 -->
-    <div class="track">
-      <img src="img/pista9.jpg" alt="Pista 9" onerror="this.onerror=null;this.src='img/placeholder.png';" />
-      <div>
-        <span>Pista 9</span><br />
-        <span>Time</span>
-      </div>
-      <div>FRECUENCIA</div>
-      <div>GAMMA</div>
-      <a href="Reproductor2.html?binauralId=9" class="play-button"></a>
-    </div>
-    <!-- Pista 10 -->
-    <div class="track">
-      <img src="img/pista10.jpg" alt="Pista 10" onerror="this.onerror=null;this.src='img/placeholder.png';" />
-      <div>
-        <span>Pista 10</span><br />
-        <span>Time</span>
-      </div>
-      <div>FRECUENCIA</div>
-      <div>GAMMA</div>
-      <a href="Reproductor2.html?binauralId=10" class="play-button"></a>
-    </div>
-    
-              </div>
             </div>
-          </div>
+    
           </div>
         </main>
       </div>
-
+      </div>
+      <!-- Add more playlist items as needed -->
+    
+    
+      </main>
+      </div>
     <footer> 
         <div class="footer-container">
             <div class="items">
@@ -1763,4 +1833,3 @@
   });
   </script>
 </html>
-
