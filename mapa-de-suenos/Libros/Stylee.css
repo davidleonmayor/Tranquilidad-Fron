@@ -59,19 +59,20 @@ h2 {
 }
 
 button {
-    display: block;
+    
     padding: 0.625rem 1.875rem; /* Cambiado de 10px 30px a rem */
     background-color: #59009A;
-    color: #fff;
+    color: #ffffff;
     border: none;
     border-radius: 1.875rem; /* Cambiado de 30px a rem */
     cursor: pointer;
     margin-left: auto;
     margin-right: 12.5rem; /* Cambiado de 200px a rem */
+    
 }
 
 button:hover {
-    background-color: #59009A;
+    background-color: #651e98;
 }
 
 .main {
@@ -79,7 +80,9 @@ button:hover {
     display: flex;
     align-items: flex-start;
     flex-grow: 1;
-    margin-top: 6.25rem; /* Cambiado de 100px a rem */
+    margin-top: 10rem; /* Cambiado de 100px a rem */
+    margin-bottom:10rem;
+
 }
 
 .book {
@@ -181,20 +184,37 @@ button:hover {
   border: 0.0625rem solid #CCC; /* Cambiado de 1px a rem */
   border-radius: 0.25rem; /* Cambiado de 4px a rem */
   resize: vertical;
+  
 }
+#add-comment-btn {
+  padding: 0.625rem 1.875rem;
+  background-color: #59009A;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: 12.5rem;
+  margin-top: 1rem; /* Ajusta este valor según sea necesario */
+}
+
+#add-comment-btn:hover {
+  background-color: #7a30c4; /* Color morado más claro */
+}
+
 
 #comment-text {
   font-family: 'roboto', sans-serif;
 }
 
 .comments button {
-  margin-top: 0.625rem; /* Cambiado de 10px a rem */
-  padding: 0.625rem 1.25rem; /* Cambiado de 10px 20px a rem */
-  background-color: #59009A;
+  margin-top: -0.3rem; /* Cambiado de 10px a rem */
+  
+  
   color: white;
   border: none;
   border-radius: 0.25rem; /* Cambiado de 4px a rem */
   cursor: pointer;
+  
 }
 
 .comment-item {
@@ -209,6 +229,10 @@ button:hover {
   overflow: hidden; /* Ocultar el desbordamiento */
   word-wrap: break-word; /* Ajustar palabras largas */
 }
+.comment-item :hover {
+ background-color: #ffffff;
+}
+
 
 .comment-item:last-child {
   border-bottom: none;
@@ -217,21 +241,27 @@ button:hover {
 .referencia {
   color: white;
 }
-
 .delete-btn {
-  width: 1.25rem; /* Cambiado de 20px a rem */
-  height: 1.25rem; /* Cambiado de 20px a rem */
-  background: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23FFFFFF"><path d="M3 6h18v2H3V6zm2 3h14l-1 12H6L5 9zm3 0v10h2V9H8zm4 0v10h2V9h-2z"/></svg>') no-repeat center;
-  background-size: contain;
-  border: none;
+  background: none;  /* Elimina cualquier fondo */
+  color: #080608;  /* Color morado para el texto */
+  font-size: 0.75rem;  /* Tamaño pequeño de fuente */
+  border: none;  /* Elimina cualquier borde */
   cursor: pointer;
-  margin-left: 0.625rem; /* Cambiado de 10px a rem */
-  padding: 0;
-  position: absolute; /* Posicionamiento absoluto para situar el botón */
-  right: -11.25rem; /* Cambiado de 180px a rem */
-  top: 0.625rem; /* Cambiado de 10px a rem */
+  padding: 0;  /* Elimina cualquier relleno adicional */
+  position: absolute;
+  right: -11.25rem;
+  top: 0.625rem;
+  display: inline;  /* Asegura que el texto no se comporte como un bloque */
 }
 
+.delete-btn::after {
+  content: "Eliminar";  /* El texto generado desde CSS */
+  color: #59009A;  /* Color morado para el texto */
+}
+
+.delete-btn:hover::after {
+  color: #7a30c4;  /* Cambia el color al pasar el cursor */
+}
 .confirm-delete {
   display: none;
   position: fixed;
@@ -258,7 +288,7 @@ button:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+ 
   z-index: 999;
 }
 
