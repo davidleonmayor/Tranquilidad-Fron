@@ -1,433 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <title>Inicio</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <script src="footNav.js"></script>
     <link rel="stylesheet" href="footNav.css"> 
-    <title>Musicoterapia</title>
     <style>
-     
-   /* El resto del código CSS permanece igual */
-      /* Estilos adicionales para la interacción */
-      .genre:hover img,
-      .imagen-footer:hover,
-      .title:hover span,
-      .nav a:hover {
-        transform: scale(1.1); /* Aumenta el tamaño al pasar el cursor */
-      }
-      /*ESTILOS */
-    /* Header */
-    * {
-  font-family: 'Roboto', sans-serif;
-  margin: 0;
-  padding: 0;
-    }
-/* Estilos Globales */
-* {
-  font-family: 'Roboto', sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  min-height: 100%;
-  position: relative;
-}
-
-body {
-  margin-top: 100px;
-  margin-bottom: 60px;
-}
-
-/* Header */
-header {
-  position: fixed;
-  top: 0;
-  z-index: 1000;
-  width: 100%;
-  height: 100px;
-  box-sizing: border-box;
-  background-color: white;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  border-bottom: 0.0625rem solid #ddd;
-}
-
-header span {
-  cursor: pointer;
-}
-
-header nav {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  margin: 0px 10px;
-}
-
-.servicios {
-  position: relative;
-}
-
-.servicios span {
-  color: #59009A;
-}
-
-.service-user {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 30px;
-  font-size: 1.0625rem;
-}
-
-.menu-icon {
-  display: none;
-}
-
-.logo span {
-  color: #59009A;
-  font-size: 1.5rem;
-}
-
-.logo img, .user-info img {
-  width: 60px;
-  height: auto;
-  object-fit: cover;
-}
-
-.logo {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 10px;
-}
-
-.user-info {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 15px;
-}
-
-.user-info span {
-  color: #59009A;
-}
-
-.user-info img {
-  width: 60px;
-  border-radius: 50%;
-}
-
-/* Submenu de Servicios */
-.submenu {
-  display: none;
-  position: absolute;
-  background-color: white;
-  top: 100%;
-  left: 50%; /* Centrado horizontalmente */
-  transform: translateX(-50%);
-  width: 180px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
-  z-index: 1000;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
-  opacity: 0;
-  visibility: hidden;
-}
-
-.servicios:hover .submenu {
-  display: block;
-  opacity: 1;
-  visibility: visible;
-}
-
-.submenu ul {
-  list-style: none;
-  padding: 10px 0;
-  margin: 0;
-}
-
-.submenu li {
-  padding: 12px 20px;
-  border-bottom: 1px solid #eee;
-  font-size: 1rem;
-  color: black; /* Color de las letras */
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave */
-}
-
-.submenu li:last-child {
-  border-bottom: none; /* Sin borde para el último */
-}
-
-.submenu li:hover {
-  background-color: #f4f4f4; /* Color al pasar el ratón */
-  color: #59009A; /* Cambia a color primario en hover */
-}
-
-.submenu li a {
-  text-decoration: none;
-  color: inherit; /* Hereda el color del texto */
-  display: block; /* Para que el enlace cubra todo el área del li */
-  width: 100%;
-}
-
-.submenu li a:hover {
-  color: #59009A; /* Cambia a color primario */
-}
-
-/* Submenu de Perfil */
-.submenu-profile {
-  display: none;
-  position: absolute;
-  background-color: white;
-  top: 100%;
-  right: 0;
-  width: 160px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
-  opacity: 0;
-  visibility: hidden;
-}
-
-.user-info:hover .submenu-profile {
-  display: block;
-  opacity: 1;
-  visibility: visible;
-}
-
-.submenu-profile ul {
-  list-style: none;
-  padding: 10px 0;
-  margin: 0;
-}
-
-.submenu-profile li {
-  padding: 12px 20px;
-  border-bottom: 1px solid #eee;
-  font-size: 1rem;
-  color: black;
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.submenu-profile li:last-child {
-  border-bottom: none;
-}
-
-.submenu-profile li:hover {
-  background-color: #f4f4f4;
-  color: #59009A;
-}
-
-.submenu-profile li a {
-  text-decoration: none;
-  color: inherit;
-  display: block;
-  width: 100%;
-}
-
-.submenu-profile li a:hover {
-  color: #59009A;
-}
-
-/* Para ajustar el estilo del icono de usuario */
-.user-info {
-  position: relative;
-}
-
-.user-info img {
-  cursor: pointer;
-}
-
-
-.servicios:hover span {
-  text-decoration: underline;
-  cursor: pointer;
-}
-
-  
-/* Footer */
-footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  background-color: #59009A;
-  z-index: 999;
-}
-
-footer div {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.contact-item {
-  display: flex;
-  flex-direction: column-reverse;
-  align-items: center;
-  text-align: center;
-}
-
-.footer-container {
-  padding: 10px;
-}
-
-.items {
-  gap: 30px;
-}
-
-.quienes-somos {
-  display: flex;
-  align-items: center;
-  color: white;
-}
-
-.iconos img {
-  width: 35px;
-}
-
-.items .contact-item span {
-  color: white;
-}
-/* Media Queries para pantallas pequeñas */
-@media (max-width: 480px) {
-  header {
-    height: 100px;
-  }
-
-  .submenu {
-    margin-left: -90px;
-    margin-top: 1px;
-    border-radius: 20px 0 0 20px;
-  }
-
-  .service-user {
-    flex-direction: row-reverse;
-  }
-
-  .servicios span {
-    display: none;
-  }
-
-  .menu-icon {
-    display: flex;
-    color: #59009A;
-    cursor: pointer;
-  }
-
-  .menu-icon .material-icons {
-    font-size: 50px;
-    font-family: 'Material Icons';
-    font-style: normal;
-  }
-
-  .user-info {
-    display: none;
-  }
-
-  .logo {
-    flex-direction: row;
-  }
-
-  .footer-container {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
-  .contact-item span {
-    display: none;
-  }
-
-  .items {
-    gap: 10px;
-  }
-
-  .iconos .icono {
-    width: 30px;
-    height: 30px;
-  }
-} 
-@media (max-width: 768px) {
-    .menu-icon {
-        display: block;
-        cursor: pointer;
-    }
-
-    .menu-icon .material-icons {
-        font-size: 30px;
-        color: #59009A;
-    }
-
-    .services-text {
-        display: none;
-    }
-
-    .user-info {
-        display: none; /* Oculta completamente la información del usuario */
-    }
-
-    .service-user {
-        justify-content: flex-end; /* Alinea el ícono de menú a la derecha */
-    }
-
-   
-    .submenu.active {
-        display: block;
-    }
-
-    .submenu ul {
-        list-style-type: none;
-        padding: 0;
-    }
-
-    .submenu li {
-        padding: 15px 20px;
-        border-bottom: 1px solid #eee;
-    }
-
-    .submenu li a {
-        color: #59009A;
-        text-decoration: none;
-        display: block;
-    }
-
-    .logo {
-        flex-grow: 1;
-    }
-}
-
-@media (min-width: 769px) {
-    .menu-icon {
-        display: none;
-    }
-
-    .services-text {
-        display: inline;
-    }
-
-    .submenu {
-        display: none;
-        position: absolute;
-        background-color: white;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    .servicios:hover .submenu {
-        display: block;
-    }
-}
+     }
     /* INICIODEL CONTENIDO CENTRAL */
     .container {
       display: flex;
@@ -691,332 +272,1197 @@ footer div {
         text-align: center;
       }
     }
-    </style>
-  </head>
-  <body>
-    <header> 
-      <nav>
-          <div class="logo">
-              <a href="/inicio-de-sesion/Modulo-iniciar-sesion/home/home.html">
-                  <img src="https://i.ibb.co/4MSTbtM/2f043346-e172-4c47-b8b4-d69f213fc49e.jpg"
-                      alt="Logo de Atención Profesional">
-              </a>
-              <span class="Profesional">TRANQUILIDAD</span>
-          </div>
-          <div class="service-user">
-              <div class="servicios">
-                  <div class="menu-icon" id="menu-toggle">
-                      <i class="material-icons">menu</i>
-                  </div>
-                  <span class="services-text">Servicios</span>
-                  <div class="submenu" id="services-submenu">
-                      <ul>
-                          <li><a href="/mapa-de-suenos/Inicio/Inicio.html">Mapa De Sueños</a></li>
-                          <li><a href="/alimentacion/Inicio/index.html">Alimentacion</a></li>
-                          <li><a href="/arteterapia/html/Navegacion.html">Arteterapia</a></li>
-                          <li><a href="/musicoterapia/Vistas1.1/bienvenido_a_musicoterapia.html">Musicoterapia</a></li>
-                          <li><a href="/rutinas-de-ejercicios/inicio/index.html">Ejercicios</a></li>
-                          <li><a href="/atencion-profesional/USUARIO/Home_Usuario/HomeUsuario.html">Atencion Profesional</a></li>
-                          <li><a href="/inicio-de-sesion/Modulo-iniciar-sesion/usuario/usuario.html">Perfil</a></li>
-                      </ul>
-                  </div>
-              </div>
-              <div class="user-info">
-                  <span>Juanito Alimaña</span>
-                  <a href="#" class="profile-toggle">
-                      <img class="imagen-usuario" 
-                      src="images/user.png"
-                      alt="Foto de perfil del usuario">
-                  </a>
-                  <div class="submenu-profile">
-                      <ul>
-                        <li><a href="/inicio-de-sesion/Modulo-iniciar-sesion/usuario/usuario.html">Ver Perfil</a></li>
-                        <li><a href="/inicio-de-sesion/Modulo-iniciar-sesion/login/login.html">Cerrar Sesión</a></li>
-                      </ul>
-                  </div>
-              </div>
-          </div>
-      </nav>
-  </header>
-    <div class="container">
-      <aside class="sidebar">
-        <br>
-        <br>
-        <div class="menu-item">
-          <a href="principal_generos.html" style="text-decoration: none;">
-            <img src="img/genero.png" alt="Icon">
-            <span>Géneros</span>
-          </a>
-        </div>
-        <div class="menu-item">
-          <a href="principal_album.html" style="text-decoration: none;">
-            <img src="img/album.png" alt="Icon">
-            <span>Álbum</span>
-          </a>
-        </div>
-        <div class="menu-item">
-          <a href="principal_podcast.html" style="text-decoration: none;">
-            <img src="img/pod.png" alt="Icon">
-            <span>Podcast</span>
-          </a>
-        </div>
-        <div class="menu-item">
-          <a href="binaurales.html" style="text-decoration: none;">
-            <img src="img/binaural.png" alt="Icon">
-            <span>Sonidos Binaurales</span>
-          </a>
-        </div>
-        <div class="menu-item">
-          <a href="playList.html" style="text-decoration: none;">
-            <img src="img/playL.png" alt="Icon">
-            <span>PlayList</span>
-          </a>
-        </div>
-        <div class="menu-item">
-          <a href="Tus me gustas podcast.html">
-            <img src="img/like.png" alt="Icon">
-            <span>Me gusta</span>
-          </a>
-        </div>
-        <div class="menu-item">
-          <a href="buscar.html" style="text-decoration: none;">
-            <img src="img/buscar boton.png" alt="Buscar Icon">
-            <span>Buscar</span>
-          </a>
-        </div>
-      </aside>
-      <main class="main-content">
-        <div class="title">
-          <span>Mis Creaciones</span>
-        </div>
 
-        
 
-        <div class="content">
-          <div class="tracks-container">
-            <div class="track">
-              <img
-                src="img/Pista1.jpg" 
-                alt="pista 1"
-              />
-              <div>
-                <span>Pista 1</span><br />
-                <span>Artista</span>
-              </div>
-              <div>Álbum</div>
-              <div>11/07/2024</div>
-              <a href="Reproductor_creaciones.html?creacionesId=1" class="play-button" onerror="this.onerror=null;this.src='img/placeholder.png';"></a>
-            </div>
 
-            <div class="track">
-              <img
-                src="img/pista2.jpg"
-                alt="pista 2"
-              />
-              <div>
-                <span>Pista 2</span><br />
-                <span>Artista</span>
-              </div>
-              <div>Álbum</div>
-              <div>11/07/2024</div>
-              <a href="Reproductor_creaciones.html?creacionesId=2" class="play-button" onerror="this.onerror=null;this.src='img/placeholder.png';"></a>
-            </div>
+    
+/* NUEVOS ESTILOS DR RESPONSIVE -------------------------------------------------*/
 
-            <div class="track">
-              <img
-                src="img/pista3.jpeg"
-                alt="pista 3"
-              />
-              <div>
-                <span>Pista 3</span><br />
-                <span>Artista</span>
-              </div>
-              <div>Álbum</div>
-              <div>11/07/2024</div>
-              <a href="Reproductor_creaciones.html?creacionesId=3" class="play-button" onerror="this.onerror=null;this.src='img/placeholder.png';"></a>
-            </div>
+/* NUEVOS ESTILOS  */
+.submenu {
+        position: absolute;
+        background-color: #fff;
+        padding: 5px 5px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        display: none;
+        top: 24px;
+        left: 0px;
+        width: auto;
+        z-index: 1000; /* Asegura que el submenú esté por encima de otros elementos */
+      }
 
-            <div class="track">
-              <img
-                src="img/pista4.avif"
-                alt="pista 4"
-              />
-              <div>
-                <span>Pista 4</span><br />
-                <span>Artista</span>
-              </div>
-              <div>Álbum</div>
-              <div>11/07/2024</div>
-              <a href="Reproductor_creaciones.html?creacionesId=4" class="play-button" onerror="this.onerror=null;this.src='img/placeholder.png';"></a>
-            </div>
+      .nav:hover .submenu {
+        display: flex;
+        flex-direction: column;
+      }
 
-            <div class="track">
-              <img
-                src="img/pista5.jpg"
-                alt="pista 5"
-              />
-              <div>
-                <span>Pista 5</span><br />
-                <span>Artista</span>
-              </div>
-              <div>Álbum</div>
-              <div>11/07/2024</div>
-              <a href="Reproductor_creaciones.html?creacionesId=5" class="play-button" onerror="this.onerror=null;this.src='img/placeholder.png';"></a>
-            </div>
-            <div class="track">
-              <img
-                src="img/pista6.jpg"
-                alt="pista 6"
-              />
-              <div>
-                <span>Pista 6</span><br />
-                <span>Artista</span>
-              </div>
-              <div>Álbum</div>
-              <div>11/07/2024</div>
-              <a href="Reproductor_creaciones.html?creacionesId=6" class="play-button" onerror="this.onerror=null;this.src='img/placeholder.png';"></a>
-            </div>
-            <div class="track">
-              <img
-                src="img/pista7.jpg"
-                alt="pista 7"
-              />
-              <div>
-                <span>Pista 7</span><br />
-                <span>Artista</span>
-              </div>
-              <div>Álbum</div>
-              <div>11/07/2024</div>
-              <a href="Reproductor_creaciones.html?creacionesId=7" class="play-button" onerror="this.onerror=null;this.src='img/placeholder.png';"></a>
-            </div>
-            <div class="track">
-              <img
-                src="img/pista8.jpg"
-                alt="pista 8"
-              />
-              <div>
-                <span>Pista 8</span><br />
-                <span>Artista</span>
-              </div>
-              <div>Álbum</div>
-              <div>11/07/2024</div>
-              <a href="Reproductor_creaciones.html?creacionesId=8" class="play-button" onerror="this.onerror=null;this.src='img/placeholder.png';"></a>
-            </div>
-            <div class="track">
-              <img
-                src="img/pista9.jpg"
-                alt="pista 9"
-              />
-              <div>
-                <span>Pista 9</span><br />
-                <span>Artista</span>
-              </div>
-              <div>Álbum</div>
-              <div>11/07/2024</div>
-              <a href="Reproductor_creaciones.html?creacionesId=9" class="play-button" onerror="this.onerror=null;this.src='img/placeholder.png';"></a>
-            </div>
-            <div class="track">
-              <img
-                src="img/pista10.jpg"
-                alt="pista 10"
-              />
-              <div>
-                <span>Pista 10</span><br />
-                <span>Artista</span>
-              </div>
-              <div>Álbum</div>
-              <div>11/07/2024</div>
-              <a href="Reproductor_creaciones.html?creacionesId=10" class="play-button" onerror="this.onerror=null;this.src='img/placeholder.png';"></a>
-            </div>
-          </div>
-        </div>
-      </main>
-    </div>
-    <footer> 
-      <div class="footer-container">
-          <div class="items">
-              <div class="contact-item">
-                  <span>Contáctanos</span>
-                  <div class="iconos">
-                      <a href="https://web.whatsapp.com/"><img class="icono" src="imagenes/WhatsApp.png"
-                              alt="WhatsApp"></a>
-                  </div>
-              </div>
-              <div class="contact-item">
-                  <span>Canales de atención</span>
-                  <div class="iconos">
-                      <a href="https://web.telegram.org/"><img class="icono" src="imagenes/Telegram App.png"
-                              alt="Telegram"></a>
-                      <a href="https://mail.google.com/mail/u/0/?ogbl#inbox"><img class="icono" src="imagenes/Email.png"
-                              alt="Email"></a>
-                  </div>
-              </div>
-              <div class="contact-item">
-                  <span>Redes sociales</span>
-                  <div class="iconos">
-                      <a href="https://www.facebook.com/"><img class="icono" src="imagenes/Facebook.png"
-                              alt="Facebook"></a>
-                      <a href="https://www.instagram.com/"><img class="icono" src="imagenes/Instagram.png"
-                              alt="Instagram"></a>
-                  </div>
-              </div>
-          </div>
-          <a class="quienes-somos" href="#">¿Quiénes somos?</a>
-      </div>
-    </footer>
-</body>
-<script>
-  function loadTemplate(templateId, filePath, callback) {
-  fetch(filePath)
-      .then(response => response.text())
-      .then(data => {
-          document.getElementById(templateId).innerHTML = data;
-          if (callback) callback();
-      })
-      .catch(error => console.error('Error al cargar la plantilla:', error));
+      .submenu ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .submenu li {
+        padding: 10px 20px; /* Reducido para mejor apariencia */
+        border-bottom: 1px solid #ddd;
+        cursor: pointer; /* Indica que es clickable */
+      }
+
+      .submenu li:hover {
+        background-color: #f0f0f0;
+      }
+
+      /* Estilos del contenedor principal */
+      .container {
+        display: flex;
+        height: calc(100vh - 126px);
+      }
+
+      /* Estilos de la barra lateral */
+      .sidebar {
+        width: 25%;
+        background-color: #c7b7fe49;
+        padding: 20px;
+      }
+
+      /* Estilos de los elementos del menu en la barra lateral */
+      .sidebar .menu-item {
+        padding: 12px;
+        margin: 10px 0;
+        background: #fff;
+        border-radius: 15px;
+        transition: background 0.3s ease;
+      }
+
+      /* Estilos de los elementos del menú cuando están activos o al pasar el ratón */
+      .sidebar .menu-item.active,
+      .sidebar .menu-item:hover {
+        background: linear-gradient(#ffffff, #9c76c1);
+        box-shadow: 1px 5px 10px 0.1px rgb(145, 145, 145);
+      }
+
+      /* Estilos de las imágenes dentro de los elementos del menú */
+      .sidebar .menu-item img {
+        width: 24px;
+        height: 24px;
+        margin-right: 10px;
+      }
+
+      /* Estilos de los enlaces dentro de los elementos del menú */
+      .sidebar .menu-item a {
+        display: flex;
+        align-items: center;
+        color: inherit;
+        text-decoration: none;
+        justify-content: center;
+      }
+
+      /* Estilos del texto dentro de los elementos del menú */
+      .sidebar .menu-item span {
+        flex-grow: 1;
+        text-align: center;
+        font-size: 16px;
+      }
+
+      /* Estilos del contenido principal */
+      .main-content {
+        width: 75%;
+        padding: 20px;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .title {
+        display: flex;
+        justify-content: center; /* Centra horizontalmente */
+        align-items: center; /* Centra verticalmente */
+        font-size: 75px;
+        margin-bottom: 20px;
+        font-family: "Roboto Slab", serif;
+        width: 100%; /* Asegura que tome todo el ancho disponible */
+        margin-left: 0; /* Elimina el margen izquierdo */
+      }
+
+      .title span {
+        position: relative;
+        z-index: 1;
+        transition: color 0.3s;
+      }
+
+      .genres {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        font-family: "Roboto", sans-serif;
+        flex-grow: 1;
+      }
+
+      .genre {
+        width: calc(50% - 20px);
+        text-align: center;
+      }
+
+      .genre h3 {
+        margin-bottom: 10px;
+        font-family: "Roboto Slab", serif; /* Fuente Roboto Slab para los títulos */
+        transition: color 0.3s; /* Agrega una transición de color al pasar el cursor sobre el título */
+      }
+
+      .genre:hover h3 {
+        color: #59009a; /* Cambia el color del título al pasar el cursor */
+      }
+
+
+      .genre:hover img {
+        transform: scale(
+          1.1
+        ); /* Aumenta el tamaño de la imagen al pasar el cursor */
+      }
+
+      .genres a {
+        color: inherit; /* Inherits the color from parent elements */
+        text-decoration: none; /* Removes the underline */
+      }
+
+      .genres a:hover {
+        color: #59009a; /* Optional: Change color on hover for visual feedback */
+      }
+
+      /* Estilo para el título Álbum */
+      .main-content .title span {
+        font-family: "Roboto", sans-serif; /* Cambia la fuente a Roboto */
+      }
+
+      /* Estilo para el título Álbum */
+      .main-content .title span {
+        font-family: "Roboto", sans-serif; /* Cambia la fuente a Roboto */
+      }
+
+      /* Estilos para pantallas más pequeñas, como tablets o móviles */
+      @media only screen and (max-width: 768px) {
+        .container {
+          flex-direction: column;
+          height: auto;
+          /* Ajustar altura automática */
+        }
+
+        .sidebar {
+          width: 95%;
+          /* Ocupar todo el ancho disponible */
+          margin-bottom: 20px;
+          /* Espacio entre el sidebar y el contenido principal */
+          padding: 8px 16px;
+        }
+
+        .main-content {
+          width: 100%;
+          /* Ocupar todo el ancho disponible */
+        }
+
+        .image-container {
+          /* Ajustar el margen izquierdo */
+          margin-left: 0;
+          text-align: left;
+          /* Centrar el contenido */
+        }
+
+        .image-container2 {
+          margin-left: 0;
+          text-align: center;
+          /* Centrar el contenido */
+          width: 100%;
+          /* Ajustar el ancho al 100% */
+          padding: 10px;
+          /* Agregar algo de padding si es necesario */
+        }
+
+        .track-list {
+          max-height: none;
+          /* Ajustar altura automática */
+          width: 100%;
+          /* Ajustar el ancho al 100% */
+          padding: 10px;
+          /* Agregar algo de padding si es necesario */
+          box-sizing: border-box;
+          overflow-y: auto;
+          background-size: cover;
+          /* Asegura que la imagen cubra el contenedor sin distorsionarse */
+          background-position: center;
+          /* Centra la imagen de fondo */
+          background-repeat: no-repeat;
+          /* Evita que la imagen se repita */
+        }
+
+        .corner-text {
+          font-size: 1.5em;
+          /* Reducir tamaño de fuente para pantallas pequeñas */
+          top: 10px;
+          left: 10px;
+        }
+
+        .bottom-left-text {
+          font-size: 1em;
+          /* Reducir tamaño de fuente para pantallas pequeñas */
+          bottom: 10px;
+          left: 10px;
+        }
+
+        .title {
+          font-size: 55px;
+          /* Cambiar el tamaño del texto para pantallas pequeñas */
+          margin: 20px;
+          width: 100%;
+          /* Asegúrate de que ocupe el ancho completo */
+          text-align: center;
+          /* Asegura que el texto esté centrado */
+        }
+
+        /* Centrar el título de géneros */
+        .title {
+          text-align: center;
+          margin-left: 0;
+          margin-right: 0;
+          width: 100%;
+          justify-content: center;
+        }
+      }
+
+      
+      /* --------------------------- */
+      /* NUEVOS ESTILOS */
+.submenu {
+  position: absolute;
+  background-color: #fff;
+  padding: 5px 5px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  display: none;
+  top: 24px;
+  left: 0px;
+  width: auto;
+  z-index: 1000;
 }
 
-loadTemplate('header-placeholder', '../../../FootNav/header.html', function() {
-  const servicios = document.querySelector('.servicios');
-  const submenu = document.querySelector('.submenu'); 
-  if (servicios) { 
-      servicios.addEventListener('click', () => {
-          const submenu = document.querySelector('.submenu');
-          submenu.classList.toggle('active');
-      });
-      
+.nav:hover .submenu {
+  display: flex;
+  flex-direction: column;
+}
+
+.submenu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.submenu li {
+  padding: 10px 20px;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+}
+
+.submenu li:hover {
+  background-color: #f0f0f0;
+}
+
+/* Estilos del contenedor principal */
+.container {
+  display: flex;
+  min-height: calc(100vh - 126px);
+  position: relative;
+}
+
+/* Estilos de la barra lateral */
+.sidebar {
+  width: 25%;
+  background-color: #c7b7fe49;
+  padding: 20px;
+}
+
+/* Estilos de los elementos del menu en la barra lateral */
+.sidebar .menu-item {
+  padding: 12px;
+  margin: 10px 0;
+  background: #fff;
+  border-radius: 15px;
+  transition: background 0.3s ease;
+}
+
+/* Estilos de los elementos del menú cuando están activos o al pasar el ratón */
+.sidebar .menu-item.active,
+.sidebar .menu-item:hover {
+  background: linear-gradient(#ffffff, #9c76c1);
+  box-shadow: 1px 5px 10px 0.1px rgb(145, 145, 145);
+}
+
+     
+/* Estilos de las imágenes dentro de los elementos del menú */
+.sidebar .menu-item img {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+
+/* Estilos de los enlaces dentro de los elementos del menú */
+.sidebar .menu-item a {
+  display: flex;
+  align-items: center;
+  color: inherit;
+  text-decoration: none;
+  justify-content: center;
+}
+
+/* Estilos del texto dentro de los elementos del menú */
+.sidebar .menu-item span {
+  flex-grow: 1;
+  text-align: center;
+  font-size: 16px;
+}
+
+/* Estilos del contenido principal */
+.main-content {
+  width: 75%;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 75px;
+  margin-bottom: 20px;
+  font-family: "Roboto Slab", serif;
+  width: 100%;
+  margin-left: 0;
+}
+
+.genres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  font-family: "Roboto", sans-serif;
+  flex-grow: 1;
+}
+
+.genre {
+  width: calc(50% - 20px);
+  text-align: center;
+}
+
+.genre h3 {
+  margin-bottom: 10px;
+  font-family: "Roboto Slab", serif;
+  transition: color 0.3s;
+}
+
+.genre:hover h3 {
+  color: #59009a;
+}
+
+
+.genre:hover img {
+  transform: scale(1.1);
+}
+
+.genres a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.genres a:hover {
+  color: #59009a;
+}
+
+/* Media queries mejorados */
+@media only screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    min-height: calc(100vh - 126px);
+    padding-bottom: 60px; /* Espacio para el footer */
   }
 
-  document.addEventListener('click', function(event) {
-      if (!servicios.contains(event.target) && !submenu.contains(event.target)) {
-          submenu.classList.remove('active');
+  .sidebar {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 0;
+  }
+
+  .main-content {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .title {
+    font-size: 40px;
+    margin: 15px 0;
+    text-align: center;
+  }
+
+  /* Mantenemos el comportamiento original de los géneros */
+  .genre {
+    width: calc(50% - 20px);
+  }
+
+
+  /* Ajustes para el menú en móvil */
+  .nav {
+    position: relative;
+  }
+
+  .submenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    max-width: 100vw;
+    z-index: 1000;
+  }
+
+  .submenu ul {
+    width: 100%;
+  }
+
+  .submenu li {
+    padding: 15px;
+    text-align: center;
+  }
+
+  /* Ajustes para el footer */
+  footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #59009A;
+    padding: 10px 0;
+  }
+
+  /* Ajustes adicionales para evitar que el contenido se oculte detrás del footer */
+  .main-content {
+    margin-bottom: 60px;
+  }
+}
+/* ------------------------------------------------------- */
+  
+   
+   
+      /* Estilos de las imágenes dentro de los elementos del menú */
+      .sidebar .menu-item img {
+        width: 24px;
+        height: 24px;
+        margin-right: 10px;
       }
+
+   
+
+
+    /* Muestra el texto del elemento del menu al pasar el ratón por la barra lateral */
+    .sidebar:hover .menu-item span {
+      display: initial;
+    }
+
+    .sidebar .menu-item a {
+      text-decoration: none;
+      /* Removes the underline */
+      display: block;
+      /* Makes the <a> tag behave like a block-level element */
+      color: inherit;
+      /* Inherits the color from parent elements */
+      width: 100%;
+      /* Ensures the clickable area spans the full width of the menu item */
+      text-align: center;
+    }
+
+    /* Estilos del contenedor principal de contenido */
+    .main {
+      width: calc(100% - 60px);
+      padding: 20px;
+      overflow-y: auto;
+      overflow-x: hidden;
+      /* Evitar el scroll horizontal */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+    }
+
+   
+
+    /* Estilos del texto dentro del título */
+    .title span {
+      position: relative;
+      z-index: 2;
+    }
+
+   
+
+    /* Estilos de cada pestaña */
+    .tabs div {
+      cursor: pointer;
+    }
+
+    /* Cambia el color al pasar el ratón por las pestañas */
+    .tabs div:hover {
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+  
+
+
+@media only screen and (max-width: 768px) {
+  body {
+    padding-top: 100px;
+  }
+
+  .container {
+    flex-direction: column;
+    height: auto;
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 95%;
+  }
+
+  .sidebar {
+    width: 100%;
+    max-width: 450px;
+    margin: 20px auto;
+    border-radius: 40px;
+    padding: 8px 16px;
+    border: 2px solid #59009A;
+  }
+
+  .main {
+    width: 100%;
+    padding: 20px;
+    margin: 0 auto;
+  }
+
+  .content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .player {
+    width: 90%;
+    max-width: 100%;
+    margin: 20px auto;
+    padding: 15px;
+    border: 2px solid #59009A;
+    border-radius: 15px;
+  }
+
+  .tracks-container {
+    width: 90%;
+    max-width: 100%;
+    margin: 20px auto;
+    border: 2px solid #59009A;
+    border-radius: 15px;
+    padding: 15px;
+    transform: translateX(0);
+  }
+
+  .title {
+    font-size: 35px;
+    margin: 20px 0;
+    text-align: center;
+  }
+
+  .tabs {
+    margin-left: 0;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .track-list {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+
+
+
+/* Media query para pantallas grandes hasta 1200px */
+@media only screen and (max-width: 1200px) {
+  .content {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .tracks-container {
+    margin: 20px auto; /* Centrado horizontal */
+    width: 90%;
+    max-width: 800px; /* Limitamos el ancho máximo */
+    transform: none; /* Eliminamos cualquier transformación */
+  }
+
+  .player {
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+}
+
+/* Media query para tablets y dispositivos medianos */
+@media only screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 95%;
+  }
+
+  .tracks-container {
+    width: 90%;
+    max-width: 600px;
+    margin: 20px auto;
+    transform: none;
+    border: 2px solid #59009A;
+    border-radius: 15px;
+    padding: 15px;
+  }
+}
+
+/* Media query para dispositivos móviles */
+@media only screen and (max-width: 480px) {
+  .tracks-container {
+    width: 95%;
+    margin: 15px auto;
+    padding: 10px;
+  }
+
+  .track-info h3 {
+    font-size: 1.2rem;
+  }
+
+  .track-info p {
+    font-size: 0.9rem;
+  }
+}
+}
+/* ----------------------------------------------------------- */
+/* Estilos del contenedor nav */
+.nav {
+  position: relative;
+  display: inline-block;
+}
+
+/* Estilos del submenú */
+.submenu {
+  position: absolute;
+  background-color: #fff;
+  padding: 5px 5px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  display: none;
+  top: 24px;  /* Mantenemos la posición original */
+  left: 0px;  /* Mantenemos la posición original */
+  width: auto;
+  min-width: 180px; /* Aseguramos un ancho mínimo para mejor legibilidad */
+  z-index: 1000;
+}
+
+/* Mostrar submenú al hacer hover */
+.nav:hover .submenu {
+  display: block; /* Cambiado de flex a block para mantener el comportamiento original */
+}
+
+/* Estilos de la lista del submenú */
+.submenu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Estilos de los elementos de la lista */
+.submenu li {
+  padding: 10px 20px;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  white-space: nowrap; /* Evita que el texto se rompa en múltiples líneas */
+}
+
+/* Quitar el borde del último elemento */
+.submenu li:last-child {
+  border-bottom: none;
+}
+
+/* Efecto hover en los elementos */
+.submenu li:hover {
+  background-color: #f0f0f0;
+  color: #59009a;
+}
+
+/* Estilos para dispositivos móviles */
+@media only screen and (max-width: 768px) {
+  .submenu {
+    position: absolute;
+    top: 24px;
+    width: auto;
+    min-width: 200px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+  }
+
+  .submenu li {
+    padding: 12px 20px;
+    text-align: left;
+  }
+}
+/* ------------------------------------------------------------- */
+/* Estilos del contenedor principal */
+.container {
+  display: flex;
+  min-height: calc(100vh - 126px);
+}
+
+/* Estilos de la barra lateral */
+.sidebar {
+  width: 25%;
+  background-color: #c7b7fe49;
+  padding: 20px;
+}
+
+/* Estilos de los elementos del menu en la barra lateral */
+.sidebar .menu-item {
+  padding: 12px;
+  margin: 10px 0;
+  background: #fff;
+  border-radius: 15px;
+  transition: background 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* Estilos de los elementos del menú cuando están activos o al pasar el ratón */
+.sidebar .menu-item.active,
+.sidebar .menu-item:hover {
+  background: linear-gradient(#ffffff, #9c76c1);
+  box-shadow: 1px 5px 10px 0.1px rgb(145, 145, 145);
+}
+
+/* Estilos de las imágenes dentro de los elementos del menú */
+.sidebar .menu-item img {
+  width: 24px;
+  height: 24px;
+  margin-right: 15px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Estilos de los enlaces dentro de los elementos del menú */
+.sidebar .menu-item a {
+  display: flex;
+  align-items: center;
+  color: inherit;
+  text-decoration: none;
+  width: 100%;
+}
+
+/* Estilos del texto dentro de los elementos del menú */
+.sidebar .menu-item span {
+  font-size: 16px;
+  white-space: nowrap;
+  margin-left: 5px;
+}
+
+/* Ajustes responsive */
+@media only screen and (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .sidebar .menu-item {
+    padding: 10px;
+  }
+
+  .sidebar .menu-item img {
+    margin-right: 10px;
+  }
+}
+/* --------------------------------------------------------------------------- */
+@media only screen and (max-width: 768px) {
+  body {
+    padding-top: 60px; /* Reducido de 100px a 60px */
+  }
+
+  .container {
+    flex-direction: column;
+    height: auto;
+    margin: 0 auto;
+    padding: 10px; /* Reducido de 20px a 10px */
+    max-width: 95%;
+  }
+
+  .sidebar {
+    width: 100%;
+    max-width: 450px;
+    margin: 10px auto; /* Reducido de 20px a 10px */
+    border-radius: 40px;
+    padding: 8px 16px;
+    border: 2px solid #59009A;
+  }
+
+  .main {
+    width: 100%;
+    padding: 10px; /* Reducido de 20px a 10px */
+    margin: 0 auto;
+  }
+
+  /* Resto de los estilos se mantienen igual */
+  .content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .title {
+    font-size: 35px;
+    margin: 10px 0; /* Reducido de 20px a 10px */
+    text-align: center;
+  }
+}
+    </style>
+</head>
+<body class="body">
+
+    <header> 
+        <nav>
+            <div class="logo">
+                <a href="/inicio-de-sesion/Modulo-iniciar-sesion/home/home.html">
+                    <img src="https://i.ibb.co/4MSTbtM/2f043346-e172-4c47-b8b4-d69f213fc49e.jpg"
+                        alt="Logo de Atención Profesional">
+                </a>
+                <a href="/inicio-de-sesion/Modulo-iniciar-sesion/home/home.html"><span class="Profesional">TRANQUILIDAD</span></a>
+            </div>
+            <div class="service-user">
+                <div class="servicios">
+                    <div class="menu-icon">
+                        <i class="material-icons">menu</i>
+                    </div>
+                    <span>Servicios</span>
+                    <div class="submenu">
+                        <ul>
+                            <li><a href="/mapa-de-suenos/Inicio/Inicio.html">Biblioterapia</a></li>
+                            <li><a href="/alimentacion/Inicio/index.html">Alimentacion</a></li>
+                            <li><a href="/musicoterapia/Vistas1.1/bienvenido_a_musicoterapia.html">Musicoterapia</a></li>
+                            <li><a href="/rutinas-de-ejercicios/inicio/index.html">Ejercicios</a></li>
+                            <li><a href="/atencion-profesional/USUARIO/Home_Usuario/HomeUsuario.html">Atencion Profesional</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="user-info">
+                    <span>Juanito Alimaña</span>
+                      <a class="profile-toggle"><img class="imagen-usuario" 
+                        src="images/user.png"
+                        alt="Foto de perfil del usuario">
+                      </a>
+                    
+                    <div class="submenu-profile">
+                        <ul>
+                            <li><a href="/inicio-de-sesion/Modulo-iniciar-sesion/usuario/usuario.html">Ver Perfil</a></li>
+                            <li><a href="/inicio-de-sesion/Modulo-iniciar-sesion/configuracion/configuracion.html">Configuracion</a></li>
+                            <li><a href="/inicio-de-sesion/Modulo-iniciar-sesion/login/login.html">Cerrar Sesión</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+      </header>
+
+    
+      <div class="container">
+        <aside class="sidebar">
+          <br>
+          <br>
+          <div class="menu-item">
+            <a href="principal_generos.html" style="text-decoration: none;">
+              <img src="img/genero.png" alt="Icon">
+              <span>Géneros</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a href="principal_album.html" style="text-decoration: none;">
+              <img src="img/album.png" alt="Icon">
+              <span>Álbum</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a href="principal_podcast.html" style="text-decoration: none;">
+              <img src="img/pod.png" alt="Icon">
+              <span>Podcast</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a href="binaurales.html" style="text-decoration: none;">
+              <img src="img/binaural.png" alt="Icon">
+              <span>Sonidos Binaurales</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a href="playList.html" style="text-decoration: none;">
+              <img src="img/playL.png" alt="Icon">
+              <span>PlayList</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a href="Tus me gustas podcast.html">
+              <img src="img/like.png" alt="Icon">
+              <span>Me gusta</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a href="buscar.html" style="text-decoration: none;">
+              <img src="img/buscar boton.png" alt="Buscar Icon">
+              <span>Buscar</span>
+            </a>
+          </div>
+        </aside>
+        <main class="main-content">
+          <div class="title">
+            <span>Mis Creaciones</span>
+          </div>
+  
+          
+  
+          <div class="content">
+            <div class="tracks-container">
+              <div class="track">
+                <img
+                  src="img/Pista1.jpg" 
+                  alt="pista 1"
+                />
+                <div>
+                  <span>Pista 1</span><br />
+                  <span>Artista</span>
+                </div>
+                <div>Álbum</div>
+                <div>11/07/2024</div>
+                <a href="Reproductor_creaciones.html?creacionesId=1" class="play-button" onerror="this.onerror=null;this.src='img/placeholder.png';"></a>
+              </div>
+  
+              <div class="track">
+                <img
+                  src="img/pista2.jpg"
+                  alt="pista 2"
+                />
+                <div>
+                  <span>Pista 2</span><br />
+                  <span>Artista</span>
+                </div>
+                <div>Álbum</div>
+                <div>11/07/2024</div>
+                <a href="Reproductor_creaciones.html?creacionesId=2" class="play-button" onerror="this.onerror=null;this.src='img/placeholder.png';"></a>
+              </div>
+  
+              <div class="track">
+                <img
+                  src="img/pista3.jpeg"
+                  alt="pista 3"
+                />
+                <div>
+                  <span>Pista 3</span><br />
+                  <span>Artista</span>
+                </div>
+                <div>Álbum</div>
+                <div>11/07/2024</div>
+                <a href="Reproductor_creaciones.html?creacionesId=3" class="play-button" onerror="this.onerror=null;this.src='img/placeholder.png';"></a>
+              </div>
+  
+              <div class="track">
+                <img
+                  src="img/pista4.avif"
+                  alt="pista 4"
+                />
+                <div>
+                  <span>Pista 4</span><br />
+                  <span>Artista</span>
+                </div>
+                <div>Álbum</div>
+                <div>11/07/2024</div>
+                <a href="Reproductor_creaciones.html?creacionesId=4" class="play-button" onerror="this.onerror=null;this.src='img/placeholder.png';"></a>
+              </div>
+  
+              <div class="track">
+                <img
+                  src="img/pista5.jpg"
+                  alt="pista 5"
+                />
+                <div>
+                  <span>Pista 5</span><br />
+                  <span>Artista</span>
+                </div>
+                <div>Álbum</div>
+                <div>11/07/2024</div>
+                <a href="Reproductor_creaciones.html?creacionesId=5" class="play-button" onerror="this.onerror=null;this.src='img/placeholder.png';"></a>
+              </div>
+              <div class="track">
+                <img
+                  src="img/pista6.jpg"
+                  alt="pista 6"
+                />
+                <div>
+                  <span>Pista 6</span><br />
+                  <span>Artista</span>
+                </div>
+                <div>Álbum</div>
+                <div>11/07/2024</div>
+                <a href="Reproductor_creaciones.html?creacionesId=6" class="play-button" onerror="this.onerror=null;this.src='img/placeholder.png';"></a>
+              </div>
+              <div class="track">
+                <img
+                  src="img/pista7.jpg"
+                  alt="pista 7"
+                />
+                <div>
+                  <span>Pista 7</span><br />
+                  <span>Artista</span>
+                </div>
+                <div>Álbum</div>
+                <div>11/07/2024</div>
+                <a href="Reproductor_creaciones.html?creacionesId=7" class="play-button" onerror="this.onerror=null;this.src='img/placeholder.png';"></a>
+              </div>
+              <div class="track">
+                <img
+                  src="img/pista8.jpg"
+                  alt="pista 8"
+                />
+                <div>
+                  <span>Pista 8</span><br />
+                  <span>Artista</span>
+                </div>
+                <div>Álbum</div>
+                <div>11/07/2024</div>
+                <a href="Reproductor_creaciones.html?creacionesId=8" class="play-button" onerror="this.onerror=null;this.src='img/placeholder.png';"></a>
+              </div>
+              <div class="track">
+                <img
+                  src="img/pista9.jpg"
+                  alt="pista 9"
+                />
+                <div>
+                  <span>Pista 9</span><br />
+                  <span>Artista</span>
+                </div>
+                <div>Álbum</div>
+                <div>11/07/2024</div>
+                <a href="Reproductor_creaciones.html?creacionesId=9" class="play-button" onerror="this.onerror=null;this.src='img/placeholder.png';"></a>
+              </div>
+              <div class="track">
+                <img
+                  src="img/pista10.jpg"
+                  alt="pista 10"
+                />
+                <div>
+                  <span>Pista 10</span><br />
+                  <span>Artista</span>
+                </div>
+                <div>Álbum</div>
+                <div>11/07/2024</div>
+                <a href="Reproductor_creaciones.html?creacionesId=10" class="play-button" onerror="this.onerror=null;this.src='img/placeholder.png';"></a>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    <footer> 
+        <div class="footer-container">
+            <div class="items">
+                <div class="contact-item">
+                    <span>Contáctanos</span>
+                    <div class="iconos">
+                        <a href="https://web.whatsapp.com/"><img class="icono" src="/FootNav/imagenes/WhatsApp.png"
+                                alt="WhatsApp"></a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <span>Canales de atención</span>
+                    
+                    <div class="iconos">
+                        <a href="https://web.telegram.org/"><img class="icono" src="/FootNav/imagenes/Telegram App.png"
+                                alt="Telegram"></a>
+                        <a href="https://mail.google.com/mail/u/0/?ogbl#inbox"><img class="icono" src="/FootNav/imagenes//Email.png"
+                                alt="Email"></a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <span>Redes sociales</span>
+                    <div class="iconos">
+                        <a href="https://www.facebook.com/"><img class="icono" src="/FootNav/imagenes/Facebook.png"
+                                alt="Facebook"></a>
+                        <a href="https://www.instagram.com/"><img class="icono" src="/FootNav/imagenes/Instagram.png"
+                                alt="Instagram"></a>
+                    </div>
+                </div>
+            </div>
+            <a class="quienes-somos" href="#">¿Quiénes somos?</a>
+        </div>
+      </footer>
+
+</body>
+<script>
+    function loadTemplate(templateId, filePath, callback) {
+    fetch(filePath)
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById(templateId).innerHTML = data;
+            if (callback) callback();
+        })
+        .catch(error => console.error('Error al cargar la plantilla:', error));
+  }
+  
+  loadTemplate('header-placeholder', '../../../FootNav/header.html', function() {
+    const servicios = document.querySelector('.servicios');
+    const submenu = document.querySelector('.submenu'); 
+    if (servicios) { 
+        servicios.addEventListener('click', () => {
+            const submenu = document.querySelector('.submenu');
+            submenu.classList.toggle('active');
+        });
+        
+    }
+  
+    document.addEventListener('click', function(event) {
+        if (!servicios.contains(event.target) && !submenu.contains(event.target)) {
+            submenu.classList.remove('active');
+        }
+    });
   });
-});
-
-loadTemplate('footer-placeholder', '../../../FootNav/footer.html');
-
-
-document.addEventListener('DOMContentLoaded', function() {
-  const menuToggle = document.getElementById('menu-toggle');
-  const servicesSubmenu = document.getElementById('services-submenu');
-
-  menuToggle.addEventListener('click', function(e) {
-      e.stopPropagation();
-      servicesSubmenu.classList.toggle('active');
+  
+  loadTemplate('footer-placeholder', '../../../FootNav/footer.html');
+  
+  
+  document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.getElementById('menu-toggle');
+    const servicesSubmenu = document.getElementById('services-submenu');
+  
+    menuToggle.addEventListener('click', function(e) {
+        e.stopPropagation();
+        servicesSubmenu.classList.toggle('active');
+    });
+  
+    // Cerrar el menú al hacer clic fuera de él
+    document.addEventListener('click', function(event) {
+        if (!menuToggle.contains(event.target) && !servicesSubmenu.contains(event.target)) {
+            servicesSubmenu.classList.remove('active');
+        }
+    });
+  
+    // Prevenir que los clics dentro del menú lo cierren
+    servicesSubmenu.addEventListener('click', function(e) {
+        e.stopPropagation();
+    });
   });
-
-  // Cerrar el menú al hacer clic fuera de él
-  document.addEventListener('click', function(event) {
-      if (!menuToggle.contains(event.target) && !servicesSubmenu.contains(event.target)) {
-          servicesSubmenu.classList.remove('active');
-      }
-  });
-
-  // Prevenir que los clics dentro del menú lo cierren
-  servicesSubmenu.addEventListener('click', function(e) {
-      e.stopPropagation();
-  });
-});
-</script>
+  </script>
 </html>
+

@@ -1,17 +1,179 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-  <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <title>Inicio</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <script src="footNav.js"></script>
-  <title>Lista de Reproduccion</title>
+    <link rel="stylesheet" href="footNav copy.css">
+  <title>mis creaciones </title>
   <style>
+
+    
+/*  */
+/* Agregar al final: */
+
+/* Media Queries para pantallas pequeñas */
+/* Media Queries para pantallas pequeñas */
+@media (max-width: 480px) {
+  header {
+    height: 100px;
+  }
+
+  .submenu {
+    margin-left: -90px;
+    margin-top: 1px;
+    border-radius: 20px 0 0 20px;
+  }
+
+  .service-user {
+    flex-direction: row-reverse;
+  }
+
+  .servicios span {
+    display: none;
+  }
+
+  .user-info {
+    display: none;
+  }
+
+  .logo {
+    flex-direction: row;
+  }
+
+  .footer-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .contact-item span {
+    display: none;
+  }
+
+  .items {
+    gap: 10px;
+  }
+
+  .iconos .icono {
+    width: 30px;
+    height: 30px;
+  }
+} 
+
+@media (max-width: 768px) {
+  header {
+    position: absolute;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    height: 100px;
+    position: absolute;
+  }
+
+  .service-user {
+    justify-content: flex-end;
+  }
+
+  .submenu.active {
+    display: block;
+  }
+
+  .submenu ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+ 
+/* Estilos responsive para contenedor y otros elementos */
+@media only screen and (max-width: 1200px) {
+  .content {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .tracks-container {
+    margin-top: 20px;
+    width: 90%;
+    max-width: 100%;
+    margin-left: 195px;
+    margin-top: 50px;
+  }
+
+  .player {
+    width: 90%;
+    max-width: 100%;
+  }
+}
+
+header {
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 100px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  border-bottom: 0.0625rem solid #ddd;
+}
+
+.logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 60px;
+  height: auto;
+  object-fit: cover;
+}
+
+.logo span {
+  color: #59009A;
+  font-size: 1.5rem;
+}
+
+.service-user {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
+  font-size: 1.0625rem;
+}
+
+.servicios span {
+  color: #59009a;
+  cursor: pointer;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+}
+
+.user-info span {
+  color: #59009a;
+}
+
+.user-info img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+}
 
 /* Estilos Globales */
 * {
@@ -283,6 +445,24 @@ footer div {
 .items .contact-item span {
   color: white;
 }
+.user-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+}
+
+.user-info span {
+  color: #59009a;
+}
+
+.user-info img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
 /* Media Queries para pantallas pequeñas */
 @media (max-width: 480px) {
   header {
@@ -342,7 +522,6 @@ footer div {
   }
 } 
 @media (max-width: 768px) {
-
   header {
         position: absolute;
       }
@@ -364,57 +543,66 @@ footer div {
     .user-info {
         display: none; /* Oculta completamente la información del usuario */
     }
+/* Media Queries para pantallas pequeñas */
+@media (max-width: 680px) {
+  header {
+    height: 100px;
+  }
 
-    .service-user {
-        justify-content: flex-end; /* Alinea el ícono de menú a la derecha */
-    }
+  .submenu {
+    margin-left: -90px;
+    margin-top: 1px;
+    border-radius: 20px 0 0 20px;
+  }
 
-   
-    .submenu.active {
-        display: block;
-    }
+  .service-user {
+    flex-direction: row-reverse;
+  }
 
-    .submenu ul {
-        list-style-type: none;
-        padding: 0;
-    }
+  .servicios span {
+    display: none;
+  }
 
-    .submenu li {
-        padding: 15px 20px;
-        border-bottom: 1px solid #eee;
-    }
+  .menu-icon {
+    display: flex;
+    color: #59009A;
+    cursor: pointer;
+  }
 
-    .submenu li a {
-        color: #59009A;
-        text-decoration: none;
-        display: block;
-    }
+  .menu-icon .material-icons {
+    font-size: 50px;
+    font-family: 'Material Icons';
+    font-style: normal;
+  }
 
-    .logo {
-        flex-grow: 1;
-    }
+  .user-info {
+    display: none;
+  }
+
+  .logo {
+    flex-direction: row;
+  }
+
+  .footer-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .contact-item span {
+    display: none;
+  }
+
+  .items {
+    gap: 10px;
+  }
+
+  .iconos .icono {
+    width: 30px;
+    height: 30px;
+  }
+} 
 }
 
-@media (min-width: 769px) {
-    .menu-icon {
-        display: none;
-    }
-
-    .services-text {
-        display: inline;
-    }
-
-    .submenu {
-        display: none;
-        position: absolute;
-        background-color: white;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    .servicios:hover .submenu {
-        display: block;
-    }
-}
 
 /* Estilos adicionales */
 .genre:hover img,
@@ -1112,94 +1300,269 @@ body {
     margin-top: 0; /* Eliminar el margen superior del contenedor principal */
 }
     }
-/* Media query para pantallas pequeñas */
-@media only screen and (max-width: 768px) {
-    body {
-        padding-top: 100px; /* Asegurarse de que hay espacio para el header */
-    }
-
-    .container {
-        flex-direction: column;
-        height: auto;
-        margin-top: 0;
-    }
-
-    .sidebar {
-        width: 100%;
-        max-width: 450px;
-        margin: 20px auto;
-        border-radius: 40px;
-        padding: 8px 16px;
-    }
-
-    .main {
-        width: 100%;
-        padding: 20px;
-        margin-top: 0;
-    }
-
-    .content {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .player, .tracks-container {
-        width: 90%;
-        max-width: 100%;
-        margin: 20px auto;
-    }
-
-    .title {
-        font-size: 35px;
-        margin: 20px 0;
-        text-align: center;
-    }
-
-    .tabs {
-        margin-left: 0;
-        justify-content: center;
-    }
-
-    /* Ajustes adicionales para elementos específicos */
-    .track-list {
-        width: 100%;
-        padding: 10px;
-        box-sizing: border-box;
-    }
-
-    .image-container, .image-container2 {
-        margin-left: 0;
-        text-align: center;
-        width: 100%;
-    }
-}
-
-/* Ajustes para el header en pantallas pequeñas */
-@media only screen and (max-width: 480px) {
-    header {
-        height: auto;
-        padding: 10px 0;
-    }
-
-    .logo, .service-user {
-        width: 100%;
-        justify-content: center;
-        margin-bottom: 10px;
-    }
-
-    .menu-icon {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-    }
-}
 /* -------------------------------------------------- */
+/* ... (mantener todos los estilos anteriores hasta los media queries) ... */
+
+/* Media Queries para pantallas pequeñas */
+@media only screen and (max-width: 1200px) {
+  .content {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .tracks-container {
+    margin-top: 20px;
+    width: 90%;
+    max-width: 100%;
+    margin: 50px auto 0;
+  }
+
+  .player {
+    width: 90%;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-item {
+    text-align: center;
+  }
+
+  .quienes-somos {
+    margin-left: 0;
+    margin-top: 20px;
+    align-self: center;
+  }
+
+  .iconos img {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  body {
+    padding-top: 100px;
+  }
+
+  .container {
+    flex-direction: column;
+    height: auto;
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 95%;
+  }
+
+  .sidebar {
+    width: 100%;
+    max-width: 450px;
+    margin: 20px auto;
+    border-radius: 40px;
+    padding: 8px 16px;
+    border: 2px solid #59009A;
+  }
+
+  .main {
+    width: 100%;
+    padding: 20px;
+    margin: 0 auto;
+  }
+
+  .content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .player {
+    width: 90%;
+    max-width: 100%;
+    margin: 20px auto;
+    padding: 15px;
+    border: 2px solid #59009A;
+    border-radius: 15px;
+  }
+
+  .tracks-container {
+    width: 90%;
+    max-width: 100%;
+    margin: 20px auto;
+    border: 2px solid #59009A;
+    border-radius: 15px;
+    padding: 15px;
+    transform: translateX(0);
+  }
+
+  .title {
+    font-size: 35px;
+    margin: 20px 0;
+    text-align: center;
+  }
+
+  .tabs {
+    margin-left: 0;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .track-list {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  .image-container, 
+  .image-container2 {
+    margin-left: 0;
+    text-align: center;
+    width: 100%;
+  }
+
+  /* Eliminar menú hamburguesa y relacionados */
+  .menu-icon {
+    display: none;
+  }
+
+  .servicios span {
+    display: block;
+  }
+}
+
+/* Ajustes adicionales para pantallas muy pequeñas */
+@media only screen and (max-width: 480px) {
+  header {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    margin-right: auto;
+  }
+
+  .service-user {
+    gap: 15px;
+  }
+
+  .container {
+    padding: 10px;
+  }
+
+  .track-info h3 {
+    font-size: 1.2rem;
+  }
+
+  .track-info p {
+    font-size: 0.9rem;
+  }
+
+  .track button {
+    font-size: 1.5rem;
+  }
+}
+.user-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+}
+
+.user-info span {
+  color: #59009a;
+}
+
+.user-info img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+/* Estilos base del contenedor de pistas */
+.tracks-container {
+  width: 45%;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  background: transparent;
+  overflow-y: auto;
+  max-height: 70vh;
+  /* Eliminamos el transform que estaba causando el desplazamiento */
+  /* transform: translateX(-70px); */
+  margin: 0 auto; /* Esto ayudará a centrar el contenedor */
+}
+
+/* Media query para pantallas grandes hasta 1200px */
+@media only screen and (max-width: 1200px) {
+  .content {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .tracks-container {
+    margin: 20px auto; /* Centrado horizontal */
+    width: 90%;
+    max-width: 800px; /* Limitamos el ancho máximo */
+    transform: none; /* Eliminamos cualquier transformación */
+  }
+
+  .player {
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+}
+
+/* Media query para tablets y dispositivos medianos */
+@media only screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 95%;
+  }
+
+  .tracks-container {
+    width: 90%;
+    max-width: 600px;
+    margin: 20px auto;
+    transform: none;
+    border: 2px solid #59009A;
+    border-radius: 15px;
+    padding: 15px;
+  }
+}
+
+/* Media query para dispositivos móviles */
+@media only screen and (max-width: 480px) {
+  .tracks-container {
+    width: 95%;
+    margin: 15px auto;
+    padding: 10px;
+  }
+
+  .track-info h3 {
+    font-size: 1.2rem;
+  }
+
+  .track-info p {
+    font-size: 0.9rem;
+  }
+}
+
+
+
     
   </style>
 
 </head>
-
-<body>
+<body class="body">
   <header> 
     <nav>
         <div class="logo">
@@ -1207,210 +1570,215 @@ body {
                 <img src="images/logo.png"
                     alt="Logo de Atención Profesional">
             </a>
-            <span class="Profesional">TRANQUILIDAD</span>
+            <a href="/inicio-de-sesion/Modulo-iniciar-sesion/home/home.html"><span class="Profesional">TRANQUILIDAD</span></a>
         </div>
         <div class="service-user">
             <div class="servicios">
-                <div class="menu-icon" id="menu-toggle">
+                <div class="menu-icon">
                     <i class="material-icons">menu</i>
                 </div>
-                <span class="services-text">Servicios</span>
-                <div class="submenu" id="services-submenu">
+                <span>Servicios</span>
+                <div class="submenu">
                     <ul>
-                        <li><a href="/mapa-de-suenos/Inicio/Inicio.html">Mapa De Sueños</a></li>
-                        <li><a href="/alimentacion/Inicio/index.html">Alimentacion</a></li>
-                        <li><a href="/arteterapia/html/Navegacion.html">Arteterapia</a></li>
-                        <li><a href="/musicoterapia/Vistas1.1/bienvenido_a_musicoterapia.html">Musicoterapia</a></li>
-                        <li><a href="/rutinas-de-ejercicios/inicio/index.html">Ejercicios</a></li>
-                        <li><a href="/atencion-profesional/USUARIO/Home_Usuario/HomeUsuario.html">Atencion Profesional</a></li>
-                        <li><a href="/inicio-de-sesion/Modulo-iniciar-sesion/usuario/usuario.html">Perfil</a></li>
+                      <li><a href="/mapa-de-suenos/Inicio/Inicio.html">Biblioterapia</a></li>
+                      <li><a href="/alimentacion/Inicio/index.html">Alimentacion</a></li>
+                      <li><a href="/musicoterapia/Vistas1.1/bienvenido_a_musicoterapia.html">Musicoterapia</a></li>
+                      <li><a href="/rutinas-de-ejercicios/inicio/index.html">Ejercicios</a></li>
+                      <li><a href="/atencion-profesional/USUARIO/Home_Usuario/HomeUsuario.html">Atencion Profesional</a></li>
                     </ul>
                 </div>
             </div>
             <div class="user-info">
                 <span>Juanito Alimaña</span>
-                <a href="#" class="profile-toggle">
-                    <img class="imagen-usuario" 
+                  <a class="profile-toggle"><img class="imagen-usuario" 
                     src="images/user.png"
                     alt="Foto de perfil del usuario">
-                </a>
+                  </a>
+                
                 <div class="submenu-profile">
                     <ul>
-                      <li><a href="/inicio-de-sesion/Modulo-iniciar-sesion/usuario/usuario.html">Ver Perfil</a></li>
-                      <li><a href="/inicio-de-sesion/Modulo-iniciar-sesion/login/login.html">Cerrar Sesión</a></li>
+                        <li><a href="/inicio-de-sesion/Modulo-iniciar-sesion/usuario/usuario.html">Ver Perfil</a></li>
+                        <li><a href="/inicio-de-sesion/Modulo-iniciar-sesion/configuracion/configuracion.html">Configuracion</a></li>
+                        <li><a href="/inicio-de-sesion/Modulo-iniciar-sesion/login/login.html">Cerrar Sesión</a></li>
                     </ul>
                 </div>
             </div>
         </div>
     </nav>
-</header>
-
-  <div class="container">
-    <aside class="sidebar">
-      <br>
-      <br>
-      <br>
-      <div class="menu-item">
-        <img src="images/genero.png" alt="Icon" />
-        <a href="principal_generos.html">
-          <span>Géneros</span>
-        </a>
-      </div>
-      <div class="menu-item">
-        <img src="images/album.png" alt="Icon" />
-        <a href="principal_album.html">
-          <span>Álbum</span>
-        </a>
-      </div>
-      <div class="menu-item">
-        <img src="images/pod.png" alt="Icon" />
-        <a href="principal_podcast.html">
-          <span>Podcast</span>
-        </a>
-      </div>
-      <div class="menu-item">
-        <img src="images/binaural.png" alt="Icon" />
-        <a href="binaurales.html">
-          <span>Sonidos Binaurales</span>
-        </a>
-      </div>
-      <div class="menu-item">
-        <img src="images/playL.png" alt="Icon" />
-        <a href="playList.html">
-          <span>PlayList</span>
-        </a>
-      </div>
-
-      <div class="menu-item ">
-        <img src="images/like.png" alt="Icon" />
-        <a href="Tus me gustas pistas.html">
-          <span>Me gusta</span>
-        </a>
-        </a>
-      </div>
-      <div class="menu-item">
-        <img src="images/buscar boton.png" alt="Buscar Icon">
-        <a href="buscar.html">
-          <span>Buscar</span>
-        </a>
-        </a>
-      </div>
-    </aside>
-
-    <main class="main">
-      <div class="title">
-        <span></span>
-      </div>
-      <div class="tabs">
-        <div class="black" onclick="window.location.href='#pistas'"></div>
-        <div class="purple" onclick="window.location.href='#podcast'">
-          <h1 id="titulo-genero">Lista de Reproduccion</h1>
-        </div>
-      </div>
-      <div class="content">
+  </header>
 
 
-
-        <div class="player">
-          <div class="album-cover">
-            <img id="album-image" src="images/El-piano.jpg" alt="genre" />
-            <div class="playhead"></div>
+      <div class="container">
+        <aside class="sidebar">
+          <br>
+          <br>
+          <br>
+          <div class="menu-item">
+            <img src="images/genero.png" alt="Icon" />
+            <a href="principal_generos.html">
+              <span>Géneros</span>
+            </a>
           </div>
-          <div>
-            <h2 id="audio-title" style="margin: 0">Bienvenido y disfruta ♫</h2>
-            <p id="audio-artist">Artist</p>
+          <div class="menu-item">
+            <img src="images/album.png" alt="Icon" />
+            <a href="principal_album.html">
+              <span>Álbum</span>
+            </a>
           </div>
-          <div class="progress-container">
-            <input type="range" id="progress-bar" value="0" min="0" max="100" step="0.1">
+          <div class="menu-item">
+            <img src="images/pod.png" alt="Icon" />
+            <a href="principal_podcast.html">
+              <span>Podcast</span>
+            </a>
           </div>
-          <div class="time">
-            <span id="current-time">0:00</span>
-            <span id="total-duration">0:00</span>
+          <div class="menu-item">
+            <img src="images/binaural.png" alt="Icon" />
+            <a href="binaurales.html">
+              <span>Sonidos Binaurales</span>
+            </a>
           </div>
-          <div class="controls">
-            <button id="prev-btn">&#9664;&#9664;</button>
-            <button id="play-pause-btn">&#9654;</button>
-            <button id="next-btn">&#9654;&#9654;</button>
+          <div class="menu-item">
+            <img src="images/playL.png" alt="Icon" />
+            <a href="playList.html">
+              <span>PlayList</span>
+            </a>
           </div>
-          <div class="actions">
-            <div><span class="me-gusta">❤</span></div>
-            <button class="dropdown-button" onclick="toggleDropdown('dropdown')">
-              &#8942;
-            </button>
-            <div id="dropdown" class="dropdown">
-              <div class="dropdown-content">Agregar a favoritos</div>
-              <div class="dropdown-content" onclick="toggleNestedDropdown('playlist-dropdown')">
-                Agregar a playlist
-              </div>
-              <div id="playlist-dropdown" class="nested-dropdown">
-                <div class="dropdown-content">Playlist 1</div>
-                <div class="dropdown-content">Playlist 2</div>
-                <div class="dropdown-content">Playlist 3</div>
-              </div>
-              <div class="dropdown-content" onclick="showHorizontalList()">
-                Compartir
-              </div>
+    
+          <div class="menu-item ">
+            <img src="images/like.png" alt="Icon" />
+            <a href="Tus me gustas pistas.html">
+              <span>Me gusta</span>
+            </a>
+            </a>
+          </div>
+          <div class="menu-item">
+            <img src="images/buscar boton.png" alt="Buscar Icon">
+            <a href="buscar.html">
+              <span>Buscar</span>
+            </a>
+            </a>
+          </div>
+        </aside>
+    
+        <main class="main">
+          <div class="title">
+            <span></span>
+          </div>
+          <div class="tabs">
+            <div class="black" onclick="window.location.href='#pistas'"></div>
+            <div class="purple" onclick="window.location.href='#podcast'">
+              <h1 id="titulo-genero">Lista de Reproducción</h1>
             </div>
           </div>
-          <div id="horizontal-list" class="horizontal-list">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
-            <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg"
-              alt="Facebook" />
-            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" />
-            <button onclick="copyLink()">Copiar Link</button>
+          <div class="content">
+    
+    
+    
+            <div class="player">
+              <div class="album-cover">
+                <img id="album-image" src="images/El-piano.jpg" alt="genre" />
+                <div class="playhead"></div>
+              </div>
+              <div>
+                <h2 id="audio-title" style="margin: 0">Bienvenido y disfruta ♫</h2>
+                <p id="audio-artist">Artist</p>
+              </div>
+              <div class="progress-container">
+                <input type="range" id="progress-bar" value="0" min="0" max="100" step="0.1">
+              </div>
+              <div class="time">
+                <span id="current-time">0:00</span>
+                <span id="total-duration">0:00</span>
+              </div>
+              <div class="controls">
+                <button id="prev-btn">&#9664;&#9664;</button>
+                <button id="play-pause-btn">&#9654;</button>
+                <button id="next-btn">&#9654;&#9654;</button>
+              </div>
+              <div class="actions">
+                <div><span class="me-gusta">❤</span></div>
+                <button class="dropdown-button" onclick="toggleDropdown('dropdown')">
+                  &#8942;
+                </button>
+                <div id="dropdown" class="dropdown">
+                  <div class="dropdown-content">Agregar a favoritos</div>
+                  <div class="dropdown-content" onclick="toggleNestedDropdown('playlist-dropdown')">
+                    Agregar a playlist
+                  </div>
+                  <div id="playlist-dropdown" class="nested-dropdown">
+                    <div class="dropdown-content">Playlist 1</div>
+                    <div class="dropdown-content">Playlist 2</div>
+                    <div class="dropdown-content">Playlist 3</div>
+                  </div>
+                  <div class="dropdown-content" onclick="showHorizontalList()">
+                    Compartir
+                  </div>
+                </div>
+              </div>
+              <div id="horizontal-list" class="horizontal-list">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg"
+                  alt="Facebook" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" />
+                <button onclick="copyLink()">Copiar Link</button>
+              </div>
+            </div>
+    
+    
+    
+    
+            <div class="tracks-container" id="tracks-list">
+              <!-- Los audios se cargarán dinámicamente aquí -->
+    
+            </div>
+    
+    
+    
+    
           </div>
-        </div>
-
-
-
-
-        <div class="tracks-container" id="tracks-list">
-          <!-- Los audios se cargarán dinámicamente aquí -->
-
-        </div>
-
-
-
-
+        </main>
       </div>
-    </main>
-  </div>
-  <footer> 
-    <div class="footer-container">
-        <div class="items">
-            <div class="contact-item">
-                <span>Contáctanos</span>
-                <div class="iconos">
-                    <a href="https://web.whatsapp.com/"><img class="icono" src="imagenes/WhatsApp.png"
-                            alt="WhatsApp"></a>
+
+
+    <footer> 
+        <div class="footer-container">
+            <div class="items">
+                <div class="contact-item">
+                    <span>Contáctanos</span>
+                    <div class="iconos">
+                        <a href="https://web.whatsapp.com/"><img class="icono" src="/FootNav/imagenes/WhatsApp.png"
+                                alt="WhatsApp"></a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <span>Canales de atención</span>
+                    
+                    <div class="iconos">
+                        <a href="https://web.telegram.org/"><img class="icono" src="/FootNav/imagenes/Telegram App.png"
+                                alt="Telegram"></a>
+                        <a href="https://mail.google.com/mail/u/0/?ogbl#inbox"><img class="icono" src="/FootNav/imagenes//Email.png"
+                                alt="Email"></a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <span>Redes sociales</span>
+                    <div class="iconos">
+                        <a href="https://www.facebook.com/"><img class="icono" src="/FootNav/imagenes/Facebook.png"
+                                alt="Facebook"></a>
+                        <a href="https://www.instagram.com/"><img class="icono" src="/FootNav/imagenes/Instagram.png"
+                                alt="Instagram"></a>
+                    </div>
                 </div>
             </div>
-            <div class="contact-item">
-                <span>Canales de atención</span>
-                <div class="iconos">
-                    <a href="https://web.telegram.org/"><img class="icono" src="imagenes/Telegram App.png"
-                            alt="Telegram"></a>
-                    <a href="https://mail.google.com/mail/u/0/?ogbl#inbox"><img class="icono" src="imagenes/Email.png"
-                            alt="Email"></a>
-                </div>
-            </div>
-            <div class="contact-item">
-                <span>Redes sociales</span>
-                <div class="iconos">
-                    <a href="https://www.facebook.com/"><img class="icono" src="imagenes/Facebook.png"
-                            alt="Facebook"></a>
-                    <a href="https://www.instagram.com/"><img class="icono" src="imagenes/Instagram.png"
-                            alt="Instagram"></a>
-                </div>
-            </div>
+            <a class="quienes-somos" href="#">¿Quiénes somos?</a>
         </div>
-        <a class="quienes-somos" href="#">¿Quiénes somos?</a>
-    </div>
-  </footer>
+      </footer>
+
+</body>
+<script>
 
 
 
-  <script>
 
 
 
@@ -1472,297 +1840,320 @@ body {
         horizontalList.style.display = "none";
       }
     }
+    // CORAZON LIKE l
 
 
 
-    // configurar audios 
-    let currentTrackId = null;  // Variable global para almacenar el ID de la pista actual
+    // Definir las variables del reproductor y el contenedor
+    const audioPlayer = new Audio(); // Reproductor de audio
+    const audioTitle = document.getElementById('audio-title');
+    const albumImage = document.getElementById('album-image');
+    const playPauseBtn = document.getElementById('play-pause-btn');
+    const prevBtn = document.getElementById('prev-btn'); // Botón de retroceder
+    const nextBtn = document.getElementById('next-btn'); // Botón de adelantar
+    const currentTimeElement = document.getElementById('current-time'); // Elemento que muestra el tiempo actual
+    const totalDurationElement = document.getElementById('total-duration'); // Elemento que muestra la duración total del audio
+
+    const progressBar = document.getElementById('progress-bar');
+    const likedTracksList = document.getElementById('liked-tracks-list');
+    const likeButton = document.querySelector('.me-gusta'); // Corazón en el reproductor
+
+    const SKIP_TIME = 10;  // Tiempo en segundos para retroceder o avanzar
+
+    let likedAudios = []; // Mantener los audios "me gusta" cargados
+    let currentTrackIndex = 0; // Índice de la pista actual en la lista de likedAudios
+
+    // Cargar los audios que han sido marcados como "me gusta"
 
 
-    const audioPlayer = new Audio(); // Inicializar el reproductor de audio
-    let currentTrackIndex = 0; // Índice actual de la pista
-    let audios = []; // Lista de pistas , esencial para reproducir siguiente audio
-    let userLikes = {};  // Objeto para almacenar los likes del usuario
 
-    // Función para obtener el parámetro 'genreId' de la URL
-    function getQueryParam(param) {
-      const urlParams = new URLSearchParams(window.location.search);
-      return urlParams.get(param);
-    }
-
-
-    document.addEventListener('DOMContentLoaded', function () {
-      const genreId = getQueryParam('genreId');  // Obtener el ID del género de la URL
-      const apiUrl = `http://tranquilidad.test/v1/genres/${genreId}?included=audios.album`;
-
-      // Variables para el reproductor
-      const playPauseBtn = document.getElementById('play-pause-btn');
-      const prevBtn = document.getElementById('prev-btn');
-      const nextBtn = document.getElementById('next-btn');
-      const progressBar = document.getElementById('progress-bar');
-      const albumImage = document.getElementById('album-image');
-      const audioTitle = document.getElementById('audio-title');
-      const audioArtist = document.getElementById('audio-artist');
-      const currentTimeElement = document.getElementById('current-time');
-      const totalDurationElement = document.getElementById('total-duration');
-      const tracksList = document.getElementById('tracks-list');
-      const likeButton = document.querySelector('.me-gusta'); // El botón de like fijo en el reproductor
-
-      const SKIP_TIME = 10;  // Tiempo en segundos para retroceder o adelantar
-
-
-      // Cargar los likes del usuario al iniciar
-      fetch('http://tranquilidad.test/v1/likes')
-        .then(response => response.json())
-        .then(data => {
-          // Guardar los likes en un objeto
-          data.forEach(like => {
-            userLikes[like.likeable_id] = like.id;
-          });
-        })
-        .catch(error => console.error('Error al cargar los likes:', error));
-
-
-      // Función para cargar y reproducir audios
-      function loadAudio(audioUrl, title, description, image, index) {
-        audioPlayer.src = audioUrl; // Establece el audio en el reproductor
-        audioTitle.textContent = title; // Cambia el título
-        audioArtist.textContent = description;
-        albumImage.src = image; // Cambia la portada del álbum
-        audioPlayer.load(); // Carga el nuevo audio
-        audioPlayer.play(); // Inicia la reproducción
-        playPauseBtn.textContent = '❚❚';  // Cambiar a pausa
-        currentTrackIndex = index; // Actualizar el índice actual de la pista
-        currentTrackId = audios[index].id;  // Guarda el ID del audio actual para los "likes"
-
-
-        // Verificar si el audio tiene "like" y activar el botón
-        if (userLikes[audios[index].id]) {
-          likeButton.classList.add('active');
-          likeButton.dataset.likeId = userLikes[audios[index].id];  // Guardar el ID del "like"
-        } else {
-          likeButton.classList.remove('active');
-          delete likeButton.dataset.likeId;  // Limpiar el ID del "like"
-        }
+    // Función para cargar y reproducir el audio
+    function loadAudio(audioUrl, title, cover, index) {
+      if (!audioUrl) {
+        console.error('No hay ningún audio actualmente en reproducción.');
+        return;
       }
 
-      // Cargar los audios del género seleccionado
-      fetch(apiUrl)
-        .then(response => response.json())
-        .then(data => {
-          const tituloGenero = document.getElementById('titulo-genero');
-          tituloGenero.textContent = `Audios del género ${data.name}`;  // Cambiar el título al nombre del género
+      audioPlayer.src = audioUrl;
+      audioTitle.textContent = title;
+      albumImage.src = cover;
+      audioPlayer.load();
+      audioPlayer.play();
+      playPauseBtn.innerHTML = '❚❚';  // Cambiar a pausa
 
-          tracksList.innerHTML = '';  // Limpiamos la lista de audios
-          audios = data.audios; // Guardar los audios para uso futuro
+      // Actualizar el índice actual y el estado del botón de me gusta
+      currentTrackIndex = index;
+      console.log(`Reproduciendo: ${title} en índice: ${currentTrackIndex}`);
 
-          if (audios && audios.length > 0) {
-            audios.forEach((audio, index) => {
-              const trackElement = document.createElement('div');
-              trackElement.classList.add('track');
-
-              trackElement.innerHTML = `
-              <img src="${audio.image_file}" alt="${audio.title}" />
-              <div class="track-info">
-                <h3>${audio.title}</h3>
-                <div class="track-details">
-                  <p>Álbum: ${audio.album ? audio.album.title : 'Sin álbum'}</p>
-                  <p>Artista: ${audio.description ? audio.description : 'Sin descripción'}</p>
-                </div>  
-              </div>
-              <button>&#9654;</button>
-            `;
-
-              // Asociar el botón de reproducción al reproductor
-              const playButton = trackElement.querySelector('button');
-              playButton.addEventListener('click', function () {
-                loadAudio(audio.audio_file, audio.title, audio.description, audio.image_file, index);
-              });
-
-              tracksList.appendChild(trackElement);
-            });
-          } else {
-            tracksList.innerHTML = '<p>No hay audios disponibles para este género.</p>';
-          }
-        })
-        .catch(error => console.error('Error al cargar los audios:', error));
-
-
-
-      // Agregar una bandera para evitar múltiples solicitudes simultáneas
-
-
-
-      function toggleLike() {
-        const isLiked = likeButton.classList.contains('active');  // Verificar si ya está "likeado"
-
-        const likeData = {
-          likeable_type: 'App\\Models\\Audio',
-          likeable_id: currentTrackId,  // ID del audio actual
-          user_id: 5  // Usuario ficticio, cambiar por el ID real del usuario si es necesario
-        };
-
-        if (!currentTrackId) {
-          console.error("currentTrackId no está definido. No se puede realizar la solicitud.");
-          return;
-        }
-
-        // Deshabilitar el botón antes de iniciar la solicitud
-        likeButton.disabled = true;
-
-        // Si el audio ya tiene un "like", gestionar el dislike
-        if (isLiked) {
-          handleDislike();  // Llama a handleDislike para eliminar el like
-        } else {
-          // Si no tiene like, hacer la solicitud POST para agregar el like
-          fetch('http://tranquilidad.test/v1/likes', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(likeData)
-          })
-
-            .then(response => response.json())
-            .then(data => {
-              console.log('Like agregado correctamente:', data);
-              likeButton.classList.add('active');  // Iluminar el corazón
-              likeButton.dataset.likeId = data.like.id;  // Guardar el ID del like en el botón
-
-              // Llamar a una función para actualizar la vista "Tus me gustas"
-              updateLikedAudiosView();
-            })
-            .catch(error => console.error('Error gestionando el like:', error))
-            .finally(() => likeButton.disabled = false);
-        }
-      }
-
-
-      function handleDislike() {
-        return fetch(`http://tranquilidad.test/v1/likes/${likeButton.dataset.likeId}`, {
-          method: 'DELETE',
-          headers: {
-            'Content-Type': 'application/json',
-          }
-        })
-          .then(response => response.json())
-          .then(data => {
-            console.log('Like eliminado correctamente:', data);
-            likeButton.classList.remove('active');
-            delete likeButton.dataset.likeId;
-
-            // Llamar a una función para actualizar la vista "Tus me gustas"
-            updateLikedAudiosView();
-          })
-          .catch(error => console.error('Error gestionando el dislike:', error))
-          .finally(() => likeButton.disabled = false);
-      }
-
-
-      // Asignar el evento click al botón de like
-
-      //  debounce: asegura que si haces clics múltiples muy rápidos, 
-      // solo se ejecute la última acción después del tiempo de espera (delay), 
-      // que en este caso es de 500 milisegundos (medio segundo).
-      // toggleLike: será invocado después de este retardo, evitando la sobrecarga 
-      // del servidor o problemas de duplicación de likes/dislikes cuando el usuario 
-      // interactúa demasiado rápido.
-
-      let debounceTimeout;
-      function debounce(func, delay) {
-        return function (...args) {
-          clearTimeout(debounceTimeout);
-          debounceTimeout = setTimeout(() => func.apply(this, args), delay);
-        };
-      }
-
-      // Función toggleLike con debounce
-      likeButton.addEventListener('click', debounce(toggleLike, 500));
-      //likeButton.addEventListener('click', toggleLike);
-
-
-
-
-      // Controlar el botón de play/pausa
-      playPauseBtn.addEventListener('click', function () {
-        if (audioPlayer.paused) {
-          audioPlayer.play();
-          playPauseBtn.innerHTML = '&#10074;&#10074;';  // Cambiar a pausa (❚❚)
-        } else {
-          audioPlayer.pause();
-          playPauseBtn.innerHTML = '&#9654;';  // Cambiar a play (▶️)
-        }
-      });
-
-      // Al terminar una canción, pasar a la siguiente automáticamente
-      audioPlayer.addEventListener('ended', function () {
-        currentTrackIndex++;
-        if (currentTrackIndex < audios.length) {
-          const nextTrack = audios[currentTrackIndex];
-          loadAudio(nextTrack.audio_file, nextTrack.title, nextTrack.description, nextTrack.image_file, currentTrackIndex);
-        } else {
-          currentTrackIndex = 0;  // Reiniciar al principio si es necesario
-        }
-      });
-
-
-
-
-
-
-      // Actualizar la barra de progreso
-      audioPlayer.addEventListener('timeupdate', function () {
-        const progressPercentage = (audioPlayer.currentTime / audioPlayer.duration) * 100;
-        progressBar.value = progressPercentage;
-        currentTimeElement.textContent = formatTime(audioPlayer.currentTime);
-        totalDurationElement.textContent = formatTime(audioPlayer.duration);
-      });
-
-      // Asegurar que el audio esté completamente cargado antes de usar su duración
+      // Actualizar el estado del botón "me gusta" en el reproductor
+      updateLikeButtonState(audioUrl);
+      // Actualizar la duración total del audio cuando se cargue el archivo
       audioPlayer.addEventListener('loadedmetadata', function () {
         totalDurationElement.textContent = formatTime(audioPlayer.duration);
       });
+      // Actualizar la barra de progreso mientras se reproduce
+      audioPlayer.addEventListener('timeupdate', updateProgressBar);
+    }
 
-      // Actualizar el progreso mientras se reproduce
-      audioPlayer.addEventListener('timeupdate', function () {
-        if (!isNaN(audioPlayer.duration)) {
-          const progressPercentage = (audioPlayer.currentTime / audioPlayer.duration) * 100;
-          progressBar.value = progressPercentage;
+    // Actualizar el estado del botón "Me gusta" basado en el audio actual
 
-          // Cambiar el color dinámicamente
-          progressBar.style.background = `linear-gradient(to right, #59009A ${progressPercentage}%, #e1bee7 ${progressPercentage}%)`;
+    function updateLikeButtonState(audioUrl) {
+      const likeButton = document.querySelector('.me-gusta'); // Seleccionar el botón del reproductor
+      if (!likeButton) return; // Salir si no hay un botón de like
 
-          // Actualizar el tiempo actual
-          currentTimeElement.textContent = formatTime(audioPlayer.currentTime);
+      // Verificar si el audio está en la lista de likes cargados desde la API
+      const likedAudio = likedAudios.find(audio => audio.audio_file === audioUrl);
+
+      if (likedAudio) {
+        likeButton.classList.add('active');  // Iluminar el corazón
+        likeButton.dataset.likeId = likedAudio.like_id; // Guardar el ID del like en el botón
+        likeButton.dataset.audioId = likedAudio.id; // Guardar el ID del audio en el botón
+
+      } else {
+        likeButton.classList.remove('active');  // Desiluminar el corazón
+        delete likeButton.dataset.likeId; // Eliminar el ID del like del botón
+        delete likeButton.dataset.audioId; // Eliminar el ID del audio del botón
+
+      }
+    }
+
+    // Función para alternar el estado de "me gusta"
+
+
+    // Función para alternar el estado de "Me gusta" en el botón del reproductor
+    async function toggleLike(element) {
+      const likeButton = element;
+      likeButton.classList.toggle('active');
+
+      const isLiked = likeButton.classList.contains('active');
+      const audioUrl = audioPlayer.src; // Obtener la URL del audio en reproducción
+      const audio = likedAudios[currentTrackIndex]; // Obtener el audio actual en la lista de `likedAudios`
+      const audioId = audio ? audio.id : likeButton.dataset.audioId; // Usar el ID del audio desde `likedAudios` o `dataset`
+      const userId = 5; // ID ficticio por ahora
+
+      if (!audioUrl || !audioId || isNaN(audioId)) {
+        console.error('No hay ningún audio en reproducción o ID de audio inválido para dar "Me gusta".');
+        return;
+      }
+
+      try {
+        if (isLiked) {
+          const likeData = {
+            likeable_type: 'App\\Models\\Audio',
+            likeable_id: audioId, // Usar el ID real del audio, no el índice
+            user_id: userId
+          };
+
+          const response = await fetch('http://tranquilidad.test/v1/likes', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(likeData)
+          });
+
+          if (!response.ok) throw new Error(`Error en la solicitud POST. Status: ${response.status}`);
+          const data = await response.json();
+
+          console.log('Like agregado correctamente:', data);
+          likeButton.dataset.likeId = data.like.id; // Guardar el ID del like en el botón
+          likeButton.dataset.audioId = audioId; // Mantener el ID del audio en el dataset del botón
+
+        } else {
+          // Eliminar el "Me gusta"
+          const likeId = likeButton.dataset.likeId;
+
+          if (!likeId) {
+            console.error('No se encontró el likeId para eliminar el like.');
+            return;
+          }
+
+          const response = await fetch(`http://tranquilidad.test/v1/likes/${likeId}`, {
+            method: 'DELETE',
+            headers: { 'Content-Type': 'application/json' }
+          });
+
+          if (!response.ok) throw new Error(`Error en la solicitud DELETE. Status: ${response.status}`);
+
+          console.log('Like eliminado correctamente');
+          likeButton.classList.remove('active'); // Desiluminar el corazón
+          delete likeButton.dataset.likeId; // Eliminar el ID del like del botón
+          removeAudioFromView(audioId); // Eliminar el audio de la vista "Tus me gustas"
+          removeAudioFromList(audioId); // Eliminar el audio de `likedAudios`
         }
+      } catch (error) {
+        console.error('Error gestionando el like:', error);
+      }
+    }
 
+    // Función para eliminar el audio de la vista "Tus me gustas"
+    function removeAudioFromView(audioId) {
+      const likedTracksList = document.getElementById('liked-tracks-list');
+      const trackElements = likedTracksList.querySelectorAll('.track');
+
+      trackElements.forEach(track => {
+        // Verificar si el atributo 'data-id' coincide con el audio a eliminar
+        if (track.getAttribute('data-id') === String(audioId)) {
+          likedTracksList.removeChild(track); // Eliminar el contenedor del DOM
+          console.log(`Audio eliminado de la vista: ${audioId}`);
+        }
       });
+    }
 
-      // Permitir que el usuario cambie el progreso al arrastrar la barra
-      progressBar.addEventListener('input', function () {
-        const seekTime = (progressBar.value / 100) * audioPlayer.duration;
-        audioPlayer.currentTime = seekTime;
-      });
 
-      // Adelantar o retroceder dentro de la misma pista
-      nextBtn.addEventListener('click', function () {
-        audioPlayer.currentTime = Math.min(audioPlayer.currentTime + SKIP_TIME, audioPlayer.duration);
-      });
+    // Función para eliminar el audio de la lista `likedAudios`
+    function removeAudioFromList(audioId) {
+      const index = likedAudios.findIndex(audio => audio.id === audioId);
+      if (index !== -1) {
+        likedAudios.splice(index, 1); // Eliminar el audio de la lista
+        console.log(`Audio eliminado de la lista: ${audioId}. Índice: ${index}`);
 
-      prevBtn.addEventListener('click', function () {
-        audioPlayer.currentTime = Math.max(audioPlayer.currentTime - SKIP_TIME, 0);
-      });
+        // Ajustar el índice de la pista actual si es necesario
+        if (index <= currentTrackIndex && currentTrackIndex > 0) {
+          currentTrackIndex--; // Ajustar el índice si el audio eliminado estaba antes de la pista actual
+        }
+        console.log(`Nuevo índice de pista actual: ${currentTrackIndex}`);
+      }
+    }
 
-      // Función para formatear el tiempo en minutos:segundos
-      function formatTime(seconds) {
-        const minutes = Math.floor(seconds / 60);
-        const remainingSeconds = Math.floor(seconds % 60);
-        return `${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
+    // Cargar y gestionar la lista de audios "Me gusta"
+    function loadLikedAudios() {
+      const userId = 5; // Usuario ficticio por ahora
+      fetch(`http://tranquilidad.test/v1/likes?user_id=${userId}`)
+        .then(response => response.json())
+        .then(data => {
+          if (data.length === 0) {
+            console.log('No hay audios guardados en "Me gusta".');
+            return;
+          }
+
+          likedAudios = []; // Limpiar la lista de likedAudios global
+          data.forEach(like => {
+            const audioId = like.likeable_id;
+            fetch(`http://tranquilidad.test/v1/audios/${audioId}`)
+              .then(response => response.json())
+              .then(audioData => {
+                if (audioData) {
+                  likedAudios.push({
+                    ...audioData,
+                    like_id: like.id // Agregar el ID del like al objeto de audio
+                  });
+
+                  // Llamar a la función para agregar el audio a la vista
+                  addLikedAudioToView(audioData, likedAudios.length - 1); // Índice basado en la longitud actual de la lista
+                }
+              })
+              .catch(error => console.error(`Error al cargar el audio con ID ${audioId}:`, error));
+          });
+        })
+        .catch(error => console.error('Error al cargar los likes:', error));
+    }
+
+    // Ejecutar la carga de audios "Me gusta" al iniciar la vista
+    document.addEventListener('DOMContentLoaded', loadLikedAudios);
+
+    // Función para agregar un audio a la vista de "Tus me gustas"
+    function addLikedAudioToView(audio, index) {
+      const likedTracksList = document.getElementById('liked-tracks-list');
+      const existingTrack = likedTracksList.querySelector(`[data-id="${audio.id}"]`);
+
+      if (!existingTrack) {
+        const trackElement = document.createElement('div');
+        trackElement.classList.add('track');
+        trackElement.setAttribute('data-id', audio.id);
+
+        trackElement.innerHTML = `
+      <img src="${audio.image_file}" alt="${audio.title}" />
+      <div class="track-info">
+          <h3>${audio.title}</h3>
+          <p>${audio.description}</p>
+      </div>
+      <button class="play-btn">&#9654;</button>
+    `;
+
+        // Asociar el botón de reproducción al reproductor
+        const playButton = trackElement.querySelector('.play-btn');
+        playButton.addEventListener('click', function () {
+          // Obtener el índice del audio en `likedAudios` utilizando el ID del audio
+          const trackIndex = likedAudios.findIndex(a => a.id === audio.id);
+          if (trackIndex !== -1) { // Si se encontró el índice, reproducir
+            loadAudio(audio.audio_file, audio.title, audio.image_file, trackIndex);
+          } else {
+            console.error('No se encontró el índice del audio en likedAudios.');
+          }
+        });
+
+        likedTracksList.appendChild(trackElement);
+      }
+    }
+
+
+
+
+
+    // Controlar el botón de play/pausa
+    playPauseBtn.addEventListener('click', function () {
+      if (audioPlayer.paused) {
+        audioPlayer.play();
+        playPauseBtn.innerHTML = '&#10074;&#10074;';  // Cambiar a pausa (❚❚)
+      } else {
+        audioPlayer.pause();
+        playPauseBtn.innerHTML = '&#9654;';  // Cambiar a play (▶️)
       }
     });
 
-// ----------------------------------
-function loadTemplate(templateId, filePath, callback) {
+    // Función para actualizar la barra de progreso y el tiempo actual del reproductor
+    function updateProgressBar() {
+      if (!isNaN(audioPlayer.duration)) {
+        const progressPercentage = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+        progressBar.value = progressPercentage;
+
+        // Cambiar el color dinámicamente según el progreso
+        progressBar.style.background = `linear-gradient(to right, #59009A ${progressPercentage}%, #e1bee7 ${progressPercentage}%)`;
+
+        // Actualizar el tiempo actual y la duración total
+        currentTimeElement.textContent = formatTime(audioPlayer.currentTime);
+        totalDurationElement.textContent = formatTime(audioPlayer.duration);
+      }
+    }
+
+    // Permitir que el usuario cambie el progreso al arrastrar la barra
+    progressBar.addEventListener('input', function () {
+      const seekTime = (progressBar.value / 100) * audioPlayer.duration;
+      audioPlayer.currentTime = seekTime;
+    });
+
+    // Función para avanzar la pista en 10 segundos
+    nextBtn.addEventListener('click', function () {
+      audioPlayer.currentTime = Math.min(audioPlayer.currentTime + SKIP_TIME, audioPlayer.duration);
+    });
+
+    // Función para retroceder la pista en 10 segundos
+    prevBtn.addEventListener('click', function () {
+      audioPlayer.currentTime = Math.max(audioPlayer.currentTime - SKIP_TIME, 0);
+    });
+
+    // Función para formatear el tiempo en minutos y segundos
+    function formatTime(seconds) {
+      const minutes = Math.floor(seconds / 60);
+      const remainingSeconds = Math.floor(seconds % 60);
+      return `${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
+    }
+    // Al terminar la pista, pasar a la siguiente automáticamente
+    audioPlayer.addEventListener('ended', function () {
+      console.log(`Pista actual (índice): ${currentTrackIndex}, Total de pistas: ${likedAudios.length}`);
+
+      // Verificar si hay más pistas en la lista para reproducir
+      if (currentTrackIndex + 1 < likedAudios.length) {
+        currentTrackIndex++; // Incrementar el índice para la siguiente pista
+        const nextTrack = likedAudios[currentTrackIndex];
+        console.log(`Reproduciendo la siguiente pista: ${nextTrack.title} (Índice: ${currentTrackIndex})`);
+        loadAudio(nextTrack.audio_file, nextTrack.title, nextTrack.image_file, currentTrackIndex);
+      } else {
+        console.warn('Fin de la lista de reproducción. No hay más pistas para reproducir.');
+      }
+    });
+
+
+    function loadTemplate(templateId, filePath, callback) {
     fetch(filePath)
         .then(response => response.text())
         .then(data => {
@@ -1815,9 +2206,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+
   </script>
 
-</body>
-</body>
-
 </html>
+
