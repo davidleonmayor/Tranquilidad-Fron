@@ -1,0 +1,73 @@
+
+
+
+
+/* Contendo Body*/
+
+.archivos {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem; /* 10px */
+}
+
+.archivo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem; /* 20px */
+  background-color: #f9f9f9;
+  border: 0.0625rem solid #ddd; /* 1px */
+  border-radius: 0.5rem; /* 8px */
+}
+
+.archivo-info, .archivo-details {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.875rem; /* 30px */
+}
+
+.archivo-icon img {
+  width: 2.1875rem; /* 35px */
+  height: 2.1875rem; /* 35px */
+  margin-right: 1.875rem; /* 30px */
+}
+
+
+/* Para pantallas de tablets (ancho máximo de 768px) */
+@media (max-width: 768px) {
+  .archivo {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem; /* Ajusta el padding para pantallas más pequeñas */
+  }
+
+  .archivo-info, .archivo-details {
+    line-height: 1.5rem; /* Ajusta el espacio entre líneas */
+  }
+
+  .archivo-icon img {
+    width: 2rem; /* 32px */
+    height: 2rem; /* Ajusta el tamaño del ícono */
+    margin: 0; /* Elimina el margen para centrar el ícono en pantallas más pequeñas */
+  }
+}
+
+/* Para pantallas móviles pequeñas (ancho máximo de 480px) */
+@media (max-width: 480px) {
+  .archivo {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.9375rem; /* 15px */
+  }
+
+  .archivo-info, .archivo-details {
+    line-height: 1.25rem; /* Ajusta el espacio entre líneas para móviles */
+    font-size: 0.875rem; /* Reduce el tamaño de la fuente */
+  }
+
+  .archivo-icon img {
+    width: 1.75rem; /* 28px */
+    height: 1.75rem; /* Ajusta el tamaño del ícono */
+    margin-top: 0.625rem; /* 10px de margen superior */
+  }
+}

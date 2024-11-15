@@ -1,0 +1,273 @@
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+.form-container {
+  width: 100%;
+  max-width: 1200px;  /* Ajuste máximo para pantallas grandes */
+  margin: 0 auto;  /* Centrado */
+  padding: 20px;   /* Espaciado interno */
+  display: flex;
+  flex-wrap: wrap;  /* Permite que los elementos se ajusten cuando el ancho sea limitado */
+  gap: 20px;
+}
+
+.form-section {
+  flex: 1 1 100%;  /* Abarcará el 100% del ancho en pantallas pequeñas */
+  max-width: 100%; /* Evita desbordamientos */
+}
+
+.form-group {
+  margin-bottom: 20px; /* Espacio entre campos */
+}
+
+.form-label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px; /* Espacio entre la etiqueta y el campo */
+  color: #333;
+}
+
+.form-input {
+  width: 100%;
+  padding: 10px; /* Tamaño del campo de entrada */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+textarea.form-input {
+  resize: vertical;
+  height: 120px; /* Tamaño del área de texto */
+}
+
+.form-button {
+  background-color: rgba(167, 26, 26, 0.993);
+  color: #fff;
+  padding: 10px 20px; /* Tamaño del botón */
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-button:hover {
+  background-color: #7a1ab1;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end; /* Alinea el botón a la derecha */
+  width: 100%;
+  max-width: 1200px; /* Tamaño máximo del contenedor */
+  padding: 0 20px;
+}
+
+.body {
+  padding: 20px;
+} /* Barra de navegación y otros estilos */
+html, body {
+  margin: 0; /* Elimina márgenes por defecto */
+  padding: 0; /* Elimina relleno por defecto */
+  height: 100%;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal; /* Esto asegura que no esté en cursiva */
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Asegúrate de que el cuerpo tenga al menos el 100% de la altura de la ventana */
+}
+
+
+
+
+@media (max-width: 768px) {
+  /* Ocultar texto en el footer */
+
+  /* Asegurarte de que los iconos se muestren */
+  .iconos {
+    display: flex;
+    justify-content: center; /* Centra los iconos */
+  }
+
+  .iconos a {
+    margin: 0 10px; /* Ajusta el margen entre iconos */
+  }
+}
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #fff;
+  margin-top: 80px; /* Ajuste para el navbar fijo */
+}
+
+.video-call {
+  display: flex;
+  width: 95%;
+  max-width: 1500px;
+  height: auto;
+  margin-bottom: 20px;
+  border: 2px solid #ddd;
+  gap: 20px;
+  flex-wrap: wrap; /* Permite que los elementos se apilen en pantallas pequeñas */
+}
+
+.video {
+  flex: 3;
+  min-width: 300px; /* Ancho mínimo para el video */
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px; /* Altura fija para mantener proporción */
+}
+
+.video img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Mantiene la proporción de la imagen */
+}
+
+.chat {
+  flex: 1;
+  min-width: 250px; /* Ancho mínimo para el chat */
+  background-color: #f0f0f0;
+  padding: 10px;
+  height: 500px; /* Misma altura que el video */
+  display: flex;
+  flex-direction: column;
+}
+
+#chat-box {
+  flex: 1;
+  overflow-y: auto;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+#chat-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+#send-chat {
+  width: 100%;
+  padding: 10px;
+  background-color: #59009A;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+
+.controls .btn {
+  background-color: #fff;
+  border: none;
+  width: 60px;  /* Tamaño fijo para los botones */
+  height: 60px; /* Tamaño fijo para los botones */
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;    /* Eliminamos el padding */
+}
+
+.controls .btn img {
+  width: 30px;   /* Tamaño fijo para los íconos */
+  height: 30px;  /* Tamaño fijo para los íconos */
+  object-fit: contain; /* Asegura que la imagen se ajuste bien */
+}
+
+@media screen and (max-width: 1024px) {
+  .video-call {
+      gap: 10px;
+  }
+  
+  .video {
+      flex: 2;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .video-call {
+      flex-direction: column;
+      height: auto;
+  }
+  
+  .video, .chat {
+      width: 100%;
+      min-width: 100%;
+  }
+  
+  .video {
+      height: 400px;
+  }
+  
+  .chat {
+      height: 300px;
+  }
+  
+  
+  .controls {
+    gap: 10px;
+}
+
+.controls .btn {
+    width: 50px;  /* Ligeramente más pequeño en tablets */
+    height: 50px;
+}
+
+.controls .btn img {
+    width: 25px;
+    height: 25px;
+}
+}
+
+@media screen and (max-width: 480px) {
+  main {
+      padding: 10px;
+  }
+  
+  .video {
+      height: 300px;
+  }
+  .controls {
+    gap: 8px;
+}
+
+.controls .btn {
+    width: 45px;  /* Aún más pequeño en móviles */
+    height: 45px;
+}
+
+.controls .btn img {
+    width: 22px;
+    height: 22px;
+}
+}
+

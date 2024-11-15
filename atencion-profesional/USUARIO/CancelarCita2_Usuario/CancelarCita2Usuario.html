@@ -1,0 +1,62 @@
+<!DOCTYPE html> 
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../Header/style.css">
+    <link rel="stylesheet" href="../Footer/inicio/styles.css">
+   
+</head>
+<body>
+  <div id="header"></div>
+    <br><br><br><br><br><br><br><br><br>
+    <main>
+        <div class="comments-section">
+            <div class="comment">
+                <div class="comment-info">
+                    <h3>Nombre del Paciente</h3>
+                    <p>Juan</p>
+                    
+                    <h3>Profesional</h3>
+                    <p>Diego Armando Maradona</p>
+                    <div class="fecha-hora">
+                        <p>Fecha: 2024-07-16</p>
+                        <p>Hora: 14:00</p>
+                    </div>
+                </div>
+                <div class="cancel">
+                    <label for="motivo-cancelacion">Motivo de la Cancelación:</label>
+                    <select id="motivo-cancelacion" name="motivo-cancelacion">
+                        <option value="opcion1">Opción 1</option>
+                        <option value="opcion2">Opción 2</option>
+                        <option value="opcion3">Opción 3</option>
+                    </select>
+                    
+                    <label for="reprogramar">¿Desea Reprogramar?</label>
+                    <select id="reprogramar" name="reprogramar">
+                        <option value="si">Sí</option>
+                        <option value="no">No</option>
+                    </select>
+                    
+                    <label for="notas-adicionales">Notas Adicionales:</label>
+                    <textarea id="notas-adicionales" name="notas-adicionales" rows="3"></textarea>
+                </div>
+                
+            </div>
+            <a href="../Home_Usuario/HomeUsuario.html"><button type="submit" class="cancelar-button">Cancelar</button></a>
+        </div>
+        
+    </main>
+    
+    <div id="footer"></div>
+
+
+    <script src="../Header/script.js"></script>
+  
+      
+      <script src="script.js"></script>
+</body>
+</html>

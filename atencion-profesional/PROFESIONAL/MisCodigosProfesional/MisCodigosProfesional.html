@@ -1,0 +1,106 @@
+<!DOCTYPE html> 
+<html lang="es">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+      <link rel="stylesheet" href="MiCodigoProfesional.css">
+      <link rel="stylesheet" href="../Header/style.css">
+    <link rel="stylesheet" href="../Footer/inicio/styles.css">
+   
+</head>
+<body>
+  <div id="header"></div>
+   <br><br><br><br><br>
+    <body>
+      <div id="header-placeholder"></div>
+        <main>
+            <section class="historial-codigos">
+              <h2>Historial de Pagos</h2>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Código</th>
+                    <th>Metodo De Pago</th>
+                    <th>Monto</th>
+                    <th>Fecha de Pago</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>ABC123</td>
+                    <td class="metodo-pago" data-detalles='{"fecha": "2024-06-30", "descripcion": "Cita médica general", "metodo": "Nequi", "nombre": "Juanito Alimaña", "telefono": "123456789", "monto": "50.000"}'>Nequi</td>
+                    <td>50.000</td>
+                    <td>2024-06-30</td>
+                  </tr>
+                  <tr>
+                    <td>XYZ789</td>
+                    <td class="metodo-pago" data-detalles='{"fecha": "2024-07-10", "descripcion": "Cita de seguimiento", "metodo": "Nequi", "nombre": "Juanito Alimaña", "telefono": "123456789", "monto": "120.000"}'>Nequi</td>
+                    <td>120.000</td>
+                    <td>2024-07-10</td>
+                  </tr>
+                  <tr>
+                    <td>LMN456</td>
+                    <td class="metodo-pago" data-detalles='{"fecha": "2024-12-31", "descripcion": "Cita de especialidad", "metodo": "Bancolombia", "nombre": "Juanito Alimaña", "telefono": "123456789", "monto": "170.000"}'>Bancolombia</td>
+                    <td>170.000</td>
+                    <td>2024-12-31</td>
+                  </tr>
+                  <!-- Agrega más filas según sea necesario -->
+                </tbody>
+              </table>
+            </section>
+            <section class="detalle-factura" id="detalle-factura">
+              <h3>Detalle de la Factura</h3>
+              <table>
+                  <tr>
+                      <td><strong>Fecha de Pago:</strong></td>
+                      <td id="detalle-fecha"></td>
+                  </tr>
+                  <tr>
+                      <td><strong>Descripción:</strong></td>
+                      <td id="detalle-descripcion"></td>
+                  </tr>
+                  <tr>
+                      <td><strong>Método de Pago:</strong></td>
+                      <td id="detalle-metodo"></td>
+                  </tr>
+                  <tr>
+                      <td><strong>Nombre del Usuario:</strong></td>
+                      <td id="detalle-nombre"></td>
+                  </tr>
+                  <tr>
+                      <td><strong>Número de Teléfono:</strong></td>
+                      <td id="detalle-telefono"></td>
+                  </tr>
+                  <tr>
+                      <td><strong>Monto:</strong></td>
+                      <td id="detalle-monto"></td>
+                  </tr>
+              </table>
+              <button class="boton-aceptar" onclick="cerrarDetalle()">Aceptar</button>
+          </section>
+          </main>
+          <br><br><br><br><br>
+          <div id="footer"></div>
+
+    <script >
+      // Función para cargar el contenido del archivo HTML
+      function loadHTML(elementId, fileName) {
+        fetch(fileName)
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById(elementId).innerHTML = data;
+          })
+          .catch(error => {
+            console.error("Error al cargar el archivo:", error);
+          });
+      }
+      
+      // Cargar el header y footer
+      loadHTML('header', '../Header/header.html');
+      loadHTML('footer', '../Footer/inicio/inicio.html');
+      </script>
+      <script src="../Header/script.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html> 

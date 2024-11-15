@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="SubirArchivoProfesional.css">
+    <link rel="stylesheet" href="../Header/style.css">
+    <link rel="stylesheet" href="../Footer/inicio/styles.css">
+   
+</head>
+<body>
+  <div id="header"></div>
+     <br>
+     <br><br><br><br><br><br>
+  <main>
+        <section class="servicios1">
+            <div class="servicio">
+                <img class="cargar-archivo" src="../Imagenes/cargar.png" alt="Foto cargar archivos">
+                <h3>Cargar Archivos</h3>
+                <p>Sube tus archivos de forma segura y confiable.</p>
+            </div>
+
+            <div class="servicio">
+                <img class="cargar-archivo" src="../Imagenes/intercambiar.png" alt="Foto cargar archivos">
+                <h3>Intercambiar Archivos</h3>
+                <p>Comparte tus archivos con otros usuarios fácilmente.</p>
+            </div>
+
+            <div class="servicio">
+                <img class="cargar-archivo" src="../Imagenes/conectar.png" alt="Foto cargar archivos">
+                <h3>Conectar con tu DRIVE</h3>
+                <p>Accede a tus archivos de Google Drive sin problemas.</p>
+            </div>
+        </section>
+            <button class="subir-nuevo"><a href="../Archivos_Profesional/ArchivosProfesional.html">Subir</a></button>
+    </main>
+    <br><br>
+    <div id="footer"></div>
+
+    <script >
+      // Función para cargar el contenido del archivo HTML
+      function loadHTML(elementId, fileName) {
+        fetch(fileName)
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById(elementId).innerHTML = data;
+          })
+          .catch(error => {
+            console.error("Error al cargar el archivo:", error);
+          });
+      }
+      
+      // Cargar el header y footer
+      loadHTML('header', '../Header/header.html');
+      loadHTML('footer', '../Footer/inicio/inicio.html');
+      </script>
+      <script src="../Header/script.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

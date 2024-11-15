@@ -1,0 +1,169 @@
+
+
+/* Contenido Body*/
+.search-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 100%; /* Ajuste para centrar la barra de búsqueda */
+  margin: 0 auto;
+  padding: 0.625rem; /* 10px */
+  box-sizing: border-box;
+  box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.2); /* Sombra para la barra de búsqueda */
+  background-color: #fff;
+  border-radius: 0.3125rem; /* 5px */
+}
+
+.search-bar {
+  flex: 1;
+  padding: 0.625rem; /* 10px */
+  font-size: 1rem; /* 16px */
+  border: 0.125rem solid #59009A; /* 2px */
+  border-radius: 0.3125rem 0 0 0.3125rem; /* Bordes redondeados, solo para la izquierda */
+  outline: none;
+}
+
+.search-button {
+  padding: 0.625rem 1.25rem; /* 10px 20px */
+  font-size: 1rem; /* 16px */
+  background-color: #59009A;
+  color: #fff;
+  border: 0.125rem solid #59009A; /* 2px */
+  border-left: none; /* Eliminar el borde izquierdo del botón */
+  border-radius: 0 0.3125rem 0.3125rem 0; /* Bordes redondeados, solo para la derecha */
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+  background-color: #7a3ec8;
+}
+
+.profile-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem; /* 20px */
+  margin-top: 1.875rem; /* 30px */
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  border-radius: 0.625rem; /* 10px */
+  box-shadow: 0 0.125rem 0.3125rem rgba(0,0,0,0.2); /* Mejor sombra */
+  padding: 1.25rem; /* 20px */
+  transition: transform 0.2s ease; /* Transición para el hover */
+}
+
+.profile:hover {
+  transform: translateY(-0.3125rem); /* Efecto de elevación en hover */
+}
+
+.profile img {
+  height: 5rem; /* 80px */
+  width: 5rem; /* 80px */
+  border-radius: 0.625rem; /* 10px */
+  margin-right: 1.25rem; /* 20px */
+}
+
+.profile-info {
+  flex-grow: 1;
+}
+
+.profile-info h3 {
+  margin: 0 0 0.625rem 0; /* 10px */
+  font-size: 1.25rem; /* 20px */
+  color: #59009A;
+}
+
+.profile-info p {
+  margin: 0;
+  font-size: 1rem; /* 16px */
+  color: #333;
+}
+
+.profile-link {
+  display: flex;
+  align-items: center; /* Alinea el icono verticalmente con la descripción */
+}
+
+.visitar-perfil {
+  width: 0.0625rem; /* 1px */
+  height: 0.0625rem; /* 1px */
+  cursor: pointer;
+  margin-left: 1.25rem; /* 20px */
+  transition: transform 0.3s ease; /* Transición para el hover */
+}
+
+.visitar-perfil:hover {
+  transform: scale(1.1);
+}
+
+button {
+  display: block;
+  padding: 0.625rem 1.875rem; /* 10px 30px */
+  background-color: #59009A;
+  color: #fff;
+  border: none;
+  border-radius: 1.875rem;} /* 30
+
+
+  /* Estilos Responsivos */
+
+/* Para tablets (máximo 768px) */
+@media (max-width: 768px) {
+  .search-container {
+    flex-direction: column;
+  }
+
+  .profile {
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .profile img {
+    margin-bottom: 1rem;
+  }
+
+  .visitar-perfil {
+    margin: 1rem 0 0 0;
+  }
+}
+
+/* Para móviles (máximo 480px) */
+@media (max-width: 480px) {
+  .search-container {
+    padding: 0.5rem;
+  }
+
+  .search-bar {
+    padding: 0.5rem;
+    font-size: 0.875rem; /* 14px */
+  }
+
+  .search-button {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+  }
+
+  .profile-info h3 {
+    font-size: 1.125rem; /* 18px */
+  }
+
+  .profile-info p {
+    font-size: 0.875rem; /* 14px */
+  }
+
+  .profile img {
+    height: 4rem; /* 64px */
+    width: 4rem; /* 64px */
+  }
+
+  .profile-list {
+    gap: 1rem;
+  }
+}

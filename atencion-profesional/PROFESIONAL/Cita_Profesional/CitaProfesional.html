@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atención Profesional - Citas</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="CitaProfesional.css">
+    <link rel="stylesheet" href="../Header/style.css">
+    <link rel="stylesheet" href="../Footer/inicio/styles.css">
+   
+</head>
+<body>
+  <div id="header"></div>
+    <main>
+    <div class="container">
+      <a href="../ProgramarCita_Profesional/ProgramarCita.html">
+        <div class="card">
+          <img src="imagenes/Agendar.jpeg" alt="">
+          <h3>Agendar Cita</h3>
+        </div>
+      </a>
+      <a href="../CancelarCita1_Profesional/CancelarCita.html">
+        <div class="card">
+          <img src="imagenes/Cancelar.jpeg" alt="">
+          <h3>Cancelar Cita</h3>
+        </div>
+      </a>
+      <a href="../MisCitas/MisCitas.html">
+        <div class="card">
+          <img src="imagenes/Citas.jpeg" alt="">
+          <h3>MisCitas</h3>
+        </div>
+      </a>
+    </div>
+  </main>
+
+ 
+  <div id="footer"></div>
+
+  <script >
+    // Función para cargar el contenido del archivo HTML
+    function loadHTML(elementId, fileName) {
+      fetch(fileName)
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById(elementId).innerHTML = data;
+        })
+        .catch(error => {
+          console.error("Error al cargar el archivo:", error);
+        });
+    }
+    
+    // Cargar el header y footer
+    loadHTML('header', '../Header/header.html');
+    loadHTML('footer', '../Footer/inicio/inicio.html');
+    </script>
+    <script src="../Header/script.js"></script>
+  
+
+
+</body>
+</html>

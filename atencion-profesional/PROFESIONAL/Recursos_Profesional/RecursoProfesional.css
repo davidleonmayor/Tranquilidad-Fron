@@ -1,0 +1,268 @@
+
+
+
+
+
+/* contenido body */
+
+body::before,
+body::after {
+  content: '';
+  position: absolute;
+  background-color: #59009A;
+  border-radius: 50%;
+  filter: blur(6.25rem); /* 100px */
+  opacity: 0.7;
+}
+
+body::before {
+  width: 18.75rem; /* 300px */
+  height: 18.75rem; /* 300px */
+  top: 20%;
+  left: 15%;
+  animation: move 10s infinite alternate;
+}
+
+body::after {
+  width: 12.5rem; /* 200px */
+  height: 12.5rem; /* 200px */
+  bottom: 20%;
+  right: 15%;
+  animation: move 8s infinite alternate-reverse;
+}
+
+@keyframes move {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    transform: translate(3.125rem, 3.125rem) scale(1);
+  }
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+}
+
+main {
+  position: relative;
+  z-index: 1;
+}
+
+.footer {
+  position: relative;
+  z-index: 1;
+}
+
+.body {
+  padding: 1.25rem; /* 20px */
+}
+
+.text h1 {
+  margin: 0;
+  color: #59009A;
+}
+
+.text p {
+  margin: 0;
+  color: #999;
+}
+
+main {
+  padding: 8.75rem; /* 140px */
+  background-color: #fff;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3.125rem; /* 50px */
+}
+
+.grid-item {
+  color: #59009A;
+  width: 18.75rem; /* 300px */
+  height: 12.5rem; /* 200px */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 0.5rem; /* 8px */
+  position: relative;
+  border: 0.125rem solid #59009A; /* 2px */
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out, font-size 0.3s ease-in-out;
+}
+
+.grid-item::before {
+  content: '';
+  position: absolute;
+  top: -1.25rem; /* -20px */
+  left: -1.25rem; /* -20px */
+  width: 6.25rem; /* 100px */
+  height: 6.25rem; /* 100px */
+  background-color: #59009A;
+  border-radius: 50%;
+  z-index: -1;
+  transition: transform 0.3s ease-in-out;
+}
+
+.grid-item:hover::before {
+  transform: scale(1.5);
+}
+
+.grid-item:hover {
+  transform: scale(1.1);
+  font-size: 1.2em;
+}
+
+a {
+  text-decoration: none;
+}
+
+.grid-item.archivos {
+  background-image: url('../Imagenes/WhatsApp.png');
+}
+
+.grid-item.informes {
+  background-image: url('Informes.png');
+}
+
+.grid-item.resenas {
+  background-image: url('Reseñas.png');
+}
+
+.grid-item.historial {
+  background-image: url('Historial.png');
+}
+
+.grid-item.proximamente1 {
+  background-image: url('Proximamente.png');
+}
+
+.grid-item.proximamente2 {
+  background-image: url('Proximamente.png');
+}
+
+/* Estilos básicos para la animación de fondo */
+.background-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.ball {
+  position: absolute;
+  width: 3.125rem; /* 50px */
+  height: 3.125rem; /* 50px */
+  border-radius: 50%;
+  background: #6200ea;
+  box-shadow: 0 0 1.25rem
+}
+  .ball1 {
+    animation: moveWorm1 20s linear infinite;
+  }
+  
+  .ball2 {
+    animation: moveWorm2 15s linear infinite;
+  }
+  
+  @keyframes moveWorm1 {
+    0% {
+        transform: translate(0, 0);
+    }
+    25% {
+        transform: translate(30vw, 20vh);
+    }
+    50% {
+        transform: translate(60vw, 40vh);
+    }
+    75% {
+        transform: translate(30vw, 60vh);
+    }
+    100% {
+        transform: translate(0, 80vh);
+    }
+  } 
+  
+  @keyframes moveWorm2 {
+    0% {
+        transform: translate(100vw, 0);
+    }
+    25% {
+        transform: translate(70vw, 20vh);
+    }
+    50% {
+        transform: translate(40vw, 40vh);
+    }
+    75% {
+        transform: translate(70vw, 60vh);
+    }
+    100% {
+        transform: translate(100vw, 80vh);
+    }
+  }
+
+  
+ /* Estilos para pantallas pequeñas */
+@media (max-width: 768px) {
+  body {
+      padding: 0.625rem; /* 10px */
+  }
+
+  main {
+      padding: 4.375rem; /* 70px */
+  }
+
+  .grid {
+      grid-template-columns: 1fr; /* Una sola columna en pantallas pequeñas */
+      gap: 2rem; /* Reduce el espacio entre los elementos */
+  }
+
+  .grid-item {
+      width: 100%; /* Ocupa todo el ancho disponible */
+      height: auto; /* Ajusta la altura automáticamente */
+      font-size: 1.1em; /* Reduce un poco el tamaño de la fuente */
+  }
+}
+
+/* Estilos para pantallas medianas */
+@media (min-width: 769px) and (max-width: 1024px) {
+  body {
+      padding: 1.25rem; /* 20px */
+  }
+
+  main {
+      padding: 6.25rem; /* 100px */
+  }
+
+  .grid {
+      grid-template-columns: repeat(2, 1fr); /* Dos columnas en pantallas medianas */
+  }
+
+  .grid-item {
+      height: auto; /* Ajusta la altura automáticamente */
+      font-size: 1.15em; /* Un poco más grande que en pantallas pequeñas */
+  }
+}
+
+/* Estilos para pantallas grandes */
+@media (min-width: 1025px) {
+  main {
+      padding: 8.75rem; /* 140px */
+  }
+
+  .grid {
+      grid-template-columns: repeat(3, 1fr); /* Tres columnas en pantallas grandes */
+  }
+
+  .grid-item {
+      height: 12.5rem; /* 200px */
+  }
+} 

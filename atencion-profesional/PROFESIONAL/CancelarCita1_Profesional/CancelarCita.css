@@ -1,0 +1,65 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.schedule-container {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.schedule {
+  border-bottom: 1px solid #59009A;
+  padding: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #59009A;
+  border-radius: 10px;
+}
+
+.schedule-info {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.schedule-info .details {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+
+.schedule-info .details span {
+  margin-bottom: 25px;
+}
+
+.schedule-info .cancel {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: red;
+  gap: 5px;
+}
+
+.schedule-info .cancel svg {
+  margin-right: 5px;
+}
+

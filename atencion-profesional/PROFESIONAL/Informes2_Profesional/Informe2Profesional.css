@@ -1,0 +1,128 @@
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal; /* Esto asegura que no esté en cursiva */
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Asegúrate de que el cuerpo tenga al menos el 100% de la altura de la ventana */
+}
+
+/* contenido body */
+
+/* Estilos globales */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 1.25rem; /* 20px */
+  background-color: #fff;
+  margin-top: 6.25rem; /* 100px */
+  flex: 1;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 75rem; /* 1200px */
+  padding: 1.25rem; /* 20px */
+  background-color: #f9f9f9;
+  border: 0.0625rem solid #ddd; /* 1px */
+  border-radius: 0.5rem; /* 8px */
+  box-shadow: 0 0.625rem rgba(0, 0, 0, 0.1); /* 0 0 10px */
+  line-height: 2.5rem; /* 40px */
+}
+
+.paciente-section {
+  width: 48%;
+}
+
+.paciente-info {
+  padding: 1.25rem; /* 20px */
+  background-color: #fff;
+  border: 0.0625rem solid #ddd; /* 1px */
+  border-radius: 0.5rem; /* 8px */
+}
+
+
+/* Estilos Responsive */
+
+/* Para tablets (máximo 768px de ancho) */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .paciente-section {
+    width: 100%;
+    margin-bottom: 1.25rem; /* 20px */
+  }
+
+  .paciente-info {
+    line-height: 2rem; /* 32px */
+  }
+}
+
+/* Para móviles (máximo 480px de ancho) */
+@media (max-width: 480px) {
+  main {
+    padding: 0.9375rem; /* 15px */
+    margin-top: 3.75rem; /* 60px */
+    flex: 1;
+  }
+
+  .container {
+    padding: 0.625rem; /* 10px */
+    border-radius: 0.3125rem; /* 5px */
+  }
+
+  .paciente-info {
+    padding: 0.9375rem; /* 15px */
+    line-height: 1.5rem; /* 24px */
+  }
+
+  h2 {
+    font-size: 1.25rem; /* 20px */
+  }
+
+  p {
+    font-size: 0.875rem; /* 14px */
+  }
+}
+
+/* .file-upload {
+  display: flex;
+  align-items: center;
+}
+
+.upload-button {
+  padding: 10px 20px;
+  background-color: #6a1b9a;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s ease;
+}
+
+.upload-button:hover {
+  background-color: #7a3ec8;
+} */

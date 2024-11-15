@@ -1,0 +1,259 @@
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+/* Contenido Body*/
+main {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 20px;
+  background-color: #ffffff;
+  flex: 1; /* Asegurar que main tome el espacio disponible */
+}
+
+.appointments {
+  width: 600px;
+  gap: 40px;
+}
+
+.appointment {
+  border: 1px solid #6a1b9a;
+  padding: 10px;
+  margin-bottom: 30px;
+  position: relative; /* Añadir posición relativa */
+}
+
+.dropdown {
+  position: absolute; /* Permite posicionar el dropdown relativo al contenedor */
+  right: 10px;
+  top: 10px;
+  display: inline-block;
+}
+
+.dropdown-button {
+  background-color: #59009A; /* Mismo color morado del footer */
+  color: white;
+  padding: 10px;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.dropdown-button:hover {
+  background-color: #7a1fb3;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  right: 0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.dropdown-content button {
+  width: 100%;
+  padding: 10px 20px;
+  text-align: left;
+  border: none;
+  cursor: pointer;
+  background-color: white;
+}
+
+.dropdown-content button:hover {
+  background-color: #f1f1f1;
+}
+
+.accept-button {
+  color: #59009A; /* Mismo color morado del footer */
+}
+
+.deny-button {
+  color: red;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.datepicker {
+  margin-right: 200px;
+  align-items: center;
+  border-radius: 5px;
+  box-shadow: 0 0 2px 0 rgba(#000, .2), 0 5px 10px 0 rgba(#000, .1);
+  padding: 2rem;
+}
+
+.datepicker-top {
+  margin-bottom: 1rem;
+}
+
+.month-name {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.datepicker-calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-row-gap: rem;
+  width: 300px;
+  height: 300px;
+}
+
+.day, .date {
+  justify-self: center;
+}
+
+.day {
+  font-size: 14px;
+  font-weight: bold;
+  justify-self: center;
+}
+
+.date {
+  border: 0;
+  padding: 0;
+  height: 60px;
+  width: 60px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  border: 0.5px solid #D5D4DF;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.date:hover {
+  background: #e0e4e9;
+}
+
+.faded {
+  color: var(--c-text-secondary);
+}
+
+.current-day {
+  color: #FFF;
+  border-color: var(--c-theme-primary);
+  background-color: var(--c-theme-primary);
+}
+
+.historial {
+  display: flex;
+  flex-direction: column;
+  margin-top: 120px;
+  align-items: center;
+}
+
+.realizado {
+  width: 312px;
+  height: 54;
+  margin-top: 50px;
+  background: #ffffff;
+  border-bottom: #1F1F25;
+  border-bottom: solid 1px #D5D4DF;
+  font-size: 15px;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 150px;
+  gap: 150px;
+}
+
+.edit-button {
+  display: none; /* El botón Editar está oculto inicialmente */}
+
+  
+/* Estilos responsive */
+@media (max-width: 768px) {
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  .container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .appointments {
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  .appointment {
+    width: 320px;
+    font-size: 0.9em;
+    padding: 10px;
+  }
+
+  .dropdown-button {
+    padding: 5px 10px;
+    font-size: 10px;
+  }
+
+  .datepicker {
+    display: none;
+  }
+  p{
+    margin: 0;
+    font-size: 15px;
+    text-align: left;
+  }
+  .dropdown-content button {
+    width: 100%;
+    padding: 10px 20px;
+    text-align: right;
+    border: none;
+    cursor: pointer;
+    background-color: white;
+  }
+  
+  .dropdown-content button:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .accept-button {
+    color: #59009A; /* Mismo color morado del footer */
+  }
+  
+  .deny-button {
+    color: red;
+  }
+  .edit-button {
+    display: block; /* El botón Editar se muestra solo en pantallas pequeñas */
+    background-color: white; /* Color de fondo morado */
+    color: blue;
+    padding: 10px 20px;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-top: 1px; /* Espacio superior */
+    text-align: left;
+ }
+
+ 
+}

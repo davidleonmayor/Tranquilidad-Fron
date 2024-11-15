@@ -1,0 +1,129 @@
+
+
+
+
+
+/* Estilos adicionales para el historial de códigos */
+.historial-codigos {
+  margin: 6.25rem auto 1.25rem auto; /* 100px auto 20px auto */
+  max-width: 75rem; /* 1200px */
+  padding: 1.25rem; /* 20px */
+  border-radius: 0.625rem; /* 10px */
+  background-color: #fff;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1); /* 0 2px 4px */
+}
+
+.historial-codigos h2 {
+  margin-bottom: 1.25rem; /* 20px */
+  color: #59009A;
+  text-align: center;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table, th, td {
+  border: 0.0625rem solid #ddd; /* 1px */
+}
+
+th, td {
+  padding: 0.9375rem; /* 15px */
+  text-align: left;
+}
+
+th {
+  background-color: #59009A;
+  color: #fff;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr:hover {
+  background-color: #f1f1f1;
+}
+
+.detalle-factura {
+  display: none;
+  border: 0.0625rem solid #ccc; /* 1px */
+  padding: 1.25rem; /* 20px */
+  margin-top: 1.25rem; /* 20px */
+  width: 80%;
+  margin: 1.25rem auto; /* 20px auto */
+  text-align: center;
+}
+
+.detalle-factura h3 {
+  margin-top: 0;
+}
+
+.detalle-factura table {
+  width: 100%;
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+
+.detalle-factura td {
+  padding: 0.625rem; /* 10px */
+  border: 0.0625rem solid #ddd; /* 1px */
+}
+
+.detalle-factura .boton-aceptar {
+  margin-top: 1.25rem; /* 20px */
+  padding: 0.625rem 1.25rem; /* 10px 20px */
+  background-color: #59009A;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 1.875rem; /* 30px */
+}
+
+.detalle-factura .boton-aceptar:hover {
+  background-color: #9555c2;
+}
+
+
+/* Responsive Design */
+
+/* Para tablets (máximo 768px) */
+@media (max-width: 768px) {
+  .historial-codigos {
+    padding: 1rem;
+    margin: 5rem auto 1rem auto;
+    max-width: 90%; /* Reduce el ancho máximo */
+  }
+
+  table, th, td {
+    font-size: 0.875rem; /* 14px */
+    padding: 0.75rem; /* 12px */
+  }
+
+  .detalle-factura {
+    width: 90%; /* Reduce el ancho */
+  }
+}
+
+/* Para móviles (máximo 480px) */
+@media (max-width: 480px) {
+  .historial-codigos {
+    margin: 3.75rem auto 1rem auto; /* 60px auto 20px auto */
+    padding: 0.9375rem; /* 15px */
+  }
+
+  table, th, td {
+    font-size: 0.75rem; /* 12px */
+    padding: 0.625rem; /* 10px */
+  }
+
+  .detalle-factura {
+    width: 100%;
+    margin: 1rem auto;
+  }
+
+  .detalle-factura .boton-aceptar {
+    padding: 0.5rem 1rem; /* Reduce el padding del botón */
+  }
+}

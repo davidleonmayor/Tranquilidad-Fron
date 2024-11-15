@@ -1,0 +1,94 @@
+<!DOCTYPE html> 
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+      <link rel="stylesheet" href="ProfesionalesProfesional.css">
+      <link rel="stylesheet" href="../Header/style.css">
+    <link rel="stylesheet" href="../Footer/inicio/styles.css">
+   
+</head>
+<body>
+  <div id="header"></div>
+  <br><br><br><br><br><br><br>
+        <main>
+            <div class="search-container">
+                <input type="text" class="search-bar" placeholder="Buscar...">
+                <button class="search-button">Buscar</button>
+            </div>
+            <section class="profile-list">
+                <div class="profile">
+                    <img class="imagen-usuario" src="../Imagenes/FotoUsuario.png" alt="Foto de perfil del usuario">
+                    <div class="profile-info">
+                        <h3>Diego Armando Maradona.</h3>
+                        <p>Especialista en salud mental es un profesional altamente capacitado que trabaja en el campo de la psicología y psiquiatría para proporcionar evaluaciones, diagnósticos, tratamientos y apoyo a individuos que enfrentan desafíos relacionados con su bienestar emocional, mental y conductual.</p>
+                    </div class="profile-link">
+                    <a href="../Perfil-Profesional/PerfilProfesional.html"><img class="visitar-perfil" src="../Imagenes/VisitarPerfil.png" alt="Visitar Perfil"></a>
+                </div>
+                <div class="profile">
+                    <img class="imagen-usuario" src="../Imagenes/FotoUsuario.png" alt="Foto de perfil del usuario">
+                    <div class="profile-info">
+                        <h3>Juan Roman Riquelme.</h3>
+                        <p>Especialista en corregir dinámicas familiares complejas y en facilitar un entorno seguro donde los miembros de la familia puedan expresar sus preocupaciones y trabajar juntos hacia soluciones constructivas.</p>
+                    </div>
+                    <a href="../Perfil-Profesional/PerfilProfesional.html"><img class="visitar-perfil" src="../Imagenes/VisitarPerfil.png" alt="Visitar Perfil"></a>
+                </div>
+                <div class="profile">
+                    <img class="imagen-usuario" src="../Imagenes/FotoUsuario.png" alt="Foto de perfil del usuario">
+                    <div class="profile-info">
+                        <h3>Zinedine Zidane.</h3>
+                        <p>Especialista en salud mental es un profesional altamente capacitado que trabaja en el campo de la psicología y psiquiatría para proporcionar evaluaciones, diagnósticos, tratamientos y apoyo a individuos que enfrentan desafíos relacionados con su bienestar emocional, mental y conductual.</p>
+                    </div>
+                    <a href="../Perfil-Profesional/PerfilProfesional.html"><img class="visitar-perfil" src="../Imagenes/VisitarPerfil.png" alt="Visitar Perfil"></a>
+                </div>
+                <div class="profile">
+                    <img class="imagen-usuario" src="../Imagenes/FotoUsuario.png" alt="Foto de perfil del usuario">
+                    <div class="profile-info">
+                        <h3>Zinedine Zidane.</h3>
+                        <p>Especialista en salud mental es un profesional altamente capacitado que trabaja en el campo de la psicología y psiquiatría para proporcionar evaluaciones, diagnósticos, tratamientos y apoyo a individuos que enfrentan desafíos relacionados con su bienestar emocional, mental y conductual.</p>
+                    </div>
+                    <a href="../Perfil-Profesional/PerfilProfesional.html"><img class="visitar-perfil" src="../Imagenes/VisitarPerfil.png" alt="Visitar Perfil"></a>
+                </div>
+                <div class="profile">
+                    <img class="imagen-usuario" src="../Imagenes/FotoUsuario.png" alt="Foto de perfil del usuario">
+                    <div class="profile-info">
+                        <h3>Zinedine Zidane.</h3>
+                        <p>Especialista en salud mental es un profesional altamente capacitado que trabaja en el campo de la psicología y psiquiatría para proporcionar evaluaciones, diagnósticos, tratamientos y apoyo a individuos que enfrentan desafíos relacionados con su bienestar emocional, mental y conductual.</p>
+                    </div>
+                    <a href="../Perfil-Profesional/PerfilProfesional.html"><img class="visitar-perfil" src="../Imagenes/VisitarPerfil.png" alt="Visitar Perfil"></a>
+                </div>
+                <div class="profile">
+                    <img class="imagen-usuario" src="../Imagenes/FotoUsuario.png" alt="Foto de perfil del usuario">
+                    <div class="profile-info">
+                        <h3>Zinedine Zidane.</h3>
+                        <p>Especialista en salud mental es un profesional altamente capacitado que trabaja en el campo de la psicología y psiquiatría para proporcionar evaluaciones, diagnósticos, tratamientos y apoyo a individuos que enfrentan desafíos relacionados con su bienestar emocional, mental y conductual.</p>
+                    </div>
+                    <a href="../Perfil-Profesional/PerfilProfesional.html"><img class="visitar-perfil" src="../Imagenes/VisitarPerfil.png" alt="Visitar Perfil"></a>
+                </div>
+            </section>
+        </main>
+        <br><br><br>
+        <div id="footer"></div>
+
+    <script >
+      // Función para cargar el contenido del archivo HTML
+      function loadHTML(elementId, fileName) {
+        fetch(fileName)
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById(elementId).innerHTML = data;
+          })
+          .catch(error => {
+            console.error("Error al cargar el archivo:", error);
+          });
+      }
+      
+      // Cargar el header y footer
+      loadHTML('header', '../Header/header.html');
+      loadHTML('footer', '../Footer/inicio/inicio.html');
+      </script>
+      <script src="../Header/script.js"></script>
+          <script src="script.js"></script>
+    </body>
+</html>

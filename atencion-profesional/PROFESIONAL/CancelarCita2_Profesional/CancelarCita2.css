@@ -1,0 +1,143 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+.form-container {
+  width: 100%;
+  max-width: 1200px;  /* Ajuste máximo para pantallas grandes */
+  margin: 0 auto;  /* Centrado */
+  padding: 20px;   /* Espaciado interno */
+  display: flex;
+  flex-wrap: wrap;  /* Permite que los elementos se ajusten cuando el ancho sea limitado */
+  gap: 20px;
+}
+
+.form-section {
+  flex: 1 1 100%;  /* Abarcará el 100% del ancho en pantallas pequeñas */
+  max-width: 100%; /* Evita desbordamientos */
+}
+
+.form-group {
+  margin-bottom: 20px; /* Espacio entre campos */
+}
+
+.form-label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px; /* Espacio entre la etiqueta y el campo */
+  color: #333;
+}
+
+.form-input {
+  width: 100%;
+  padding: 10px; /* Tamaño del campo de entrada */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+textarea.form-input {
+  resize: vertical;
+  height: 120px; /* Tamaño del área de texto */
+}
+
+.form-button {
+  background-color: rgba(167, 26, 26, 0.993);
+  color: #fff;
+  padding: 10px 20px; /* Tamaño del botón */
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-button:hover {
+  background-color: #7a1ab1;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end; /* Alinea el botón a la derecha */
+  width: 100%;
+  max-width: 1200px; /* Tamaño máximo del contenedor */
+  padding: 0 20px;
+}
+
+.body {
+  padding: 20px;
+} /* Barra de navegación y otros estilos */
+html, body {
+  margin: 0; /* Elimina márgenes por defecto */
+  padding: 0; /* Elimina relleno por defecto */
+  height: 100%;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal; /* Esto asegura que no esté en cursiva */
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Asegúrate de que el cuerpo tenga al menos el 100% de la altura de la ventana */
+}
+
+.navbar {
+  background-color: #fff;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 0.0625rem solid #ddd;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+
+
+
+@media (min-width: 768px) {
+  .form-section {
+    flex: 1;
+    max-width: 48%;
+  }
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+textarea.form-input {
+  resize: vertical;
+  height: 120px;
+}
+
+.form-button {
+  background-color: rgba(167, 26, 26, 0.993);
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 20px;
+}
+

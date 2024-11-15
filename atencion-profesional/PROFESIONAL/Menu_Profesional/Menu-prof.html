@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Psicólogo - Home</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="Menu-prof.css">
+    <link rel="stylesheet" href="../Header/style.css">
+    <link rel="stylesheet" href="../Footer/inicio/styles.css">
+   
+</head>
+<body>
+  <div id="header"></div>
+   <br><br>
+    <br>
+    <main>
+        <div class="carrusel">
+            <h2>Respira. Todo estará bien. A veces, es necesario solo un paso a la vez.</h2>
+        </div>
+        <br><br><br>
+        <br><br>
+
+        
+        <script>
+            const mensajes = [
+                "Respira. Todo estará bien. A veces, es necesario solo un paso a la vez.",
+                "Cada pequeño paso cuenta hacia tu bienestar.",
+                "Tu salud mental es importante. Vamos a cuidarla."
+            ];
+        
+            let mensajeActual = 0;
+            const carrusel = document.querySelector(".carrusel h2");
+        
+            function cambiarMensaje() {
+                mensajeActual = (mensajeActual + 1) % mensajes.length;
+                carrusel.textContent = mensajes[mensajeActual];
+            }
+        
+            setInterval(cambiarMensaje, 4000); // Cambia el mensaje cada 4 segundos
+        </script>
+        <script>
+            document.querySelector('.servicios').addEventListener('mouseover', () => {
+                document.querySelector('.submenu').style.transition = "opacity 0.5s ease-in-out";
+            });
+        </script>
+        
+        <div class="options">
+            <a href="../Cita_Profesional/CitaProfesional.html"><div class="option">
+                <img src="imagenes/citas.jpeg" alt="Citas">
+                <span>Citas</span>
+            </div></a>
+            <a href="../Notificaciones_Profesional/NotificacionesProfesional.html"><div class="option">
+              <img src="imagenes/noti.jpeg" alt="Citas">
+              <span>Notificaciones</span>
+            </div></a>
+            <a href="../MisCodigosProfesional/MisCodigosProfesional.html"><div class="option">
+              <img src="imagenes/pagos.jpeg" alt="Citas">
+              <span>Historial de Pagos</span>
+            </div></a>
+            <a href="../Profesionales_Profesional/ProfesionalesProfesional.html"><div class="option">
+              <img src="imagenes/prof.jpeg" alt="Citas">
+              <span>Profesionales</span>
+            </div></a>
+            <a href="../Recursos_Profesional/RecursosProfesional.html"><div class="option">
+              <img src="imagenes/recurso.jpeg" alt="Citas">
+              <span>Recursos</span>
+            </div></a>
+        </div>
+    </main>
+    <br><br>
+    <div id="footer"></div>
+
+    <script >
+      // Función para cargar el contenido del archivo HTML
+      function loadHTML(elementId, fileName) {
+        fetch(fileName)
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById(elementId).innerHTML = data;
+          })
+          .catch(error => {
+            console.error("Error al cargar el archivo:", error);
+          });
+      }
+      
+      // Cargar el header y footer
+      loadHTML('header', '../Header/header.html');
+      loadHTML('footer', '../Footer/inicio/inicio.html');
+      </script>
+      <script src="../Header/script.js"></script>
+
+</body>
+</html>

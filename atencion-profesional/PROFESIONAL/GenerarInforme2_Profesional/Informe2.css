@@ -1,0 +1,43 @@
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+ /* Contenido Body*/
+
+.formulario {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.formulario h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.formulario textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  resize: vertical;
+}
+
+button {
+  float: right; /* Colocamos el botón a la derecha */
+  background-color: #59009A;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+

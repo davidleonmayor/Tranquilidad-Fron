@@ -1,0 +1,53 @@
+
+
+
+/* Contenido Body*/
+main {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+    background-color: #ffffff;
+}
+
+.appointment-requests {
+    width: 60%;
+    
+}
+
+.appointment-request {
+    border: 1px solid #6a1b9a;
+    padding: 15px;
+    margin-bottom: 50px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    
+}
+
+.appointment-request p {
+    margin: 5px 0;
+}
+
+.actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.accept-button, .decline-button {
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.accept-button {
+    background-color: #6a1b9a;
+    color: white;
+}
+
+.decline-button {
+    background-color: #e0e0e0;
+    color: #333;
+}
+
