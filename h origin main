@@ -1,0 +1,574 @@
+[33mcommit 474d37bc9997de465feca0a86ed67904be0dc4c3[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m
+Merge: 940a3df 6d85415
+Author: Pinedita777 <pinedajuandavid428@gmail.com>
+Date:   Thu Nov 14 19:28:14 2024 -0500
+
+    Merge branch 'main' from remote repository
+    Resolución de conflictos y actualización con cambios remotos
+    Merge branch 'main' of https://github.com/Pinedita777/Tranquilidad-Front
+
+[33mcommit 940a3df1da6cf2dc3e0663bbe09b56ed8c597d9b[m
+Author: Pinedita777 <pinedajuandavid428@gmail.com>
+Date:   Thu Nov 14 19:27:06 2024 -0500
+
+    Agregar nuevos scripts para las secciones Profesional
+
+[33mcommit 6d8541562d76463ee202ce38c093a5da92dea8d7[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: ad50cae 1f6eba8
+Author: sebasttis <jhon123seba@gmail.com>
+Date:   Thu Nov 14 17:54:21 2024 -0500
+
+    holas
+
+[33mcommit ad50cae3d6b59c0cc81cc042cc714652bc1accaf[m
+Merge: a967e1a 13a3b6f
+Author: sebasttis <jhon123seba@gmail.com>
+Date:   Thu Nov 14 17:51:13 2024 -0500
+
+    nuevos cambios
+
+[33mcommit a967e1a0c8d6de0f35ab13558cf433493610791b[m
+Author: sebasttis <jhon123seba@gmail.com>
+Date:   Thu Nov 14 17:38:54 2024 -0500
+
+    Cambios locales temporales
+
+[33mcommit 13a3b6f5d4980f2ce6769bf95d2c683f2aa625a5[m
+Author: sebasttis <jhon123seba@gmail.com>
+Date:   Thu Nov 14 17:24:29 2024 -0500
+
+    Cambios4
+
+[33mcommit 9d04ae0461fa04dd82926ae416dedafdf40cf4ec[m
+Author: sebasttis <jhon123seba@gmail.com>
+Date:   Thu Nov 14 17:10:14 2024 -0500
+
+    Cambios mapa de sueños 3
+
+[33mcommit 1f6eba8bdee52b812bd77701ca2d25772bc30438[m
+Author: Dayanna <derlygonzalez688@gmail.com>
+Date:   Tue Nov 12 14:08:37 2024 -0500
+
+    Resolviendo conflictos y fusionando musicoterapia en main
+
+[33mcommit 29c84cc244de3f3c595d5f886585f382d5816b4c[m
+Author: Dayanna <derlygonzalez688@gmail.com>
+Date:   Tue Nov 5 16:10:43 2024 -0500
+
+    Resolviendo conflictos y fusionando musicoterapia en main
+
+[33mcommit e199a38b0c8b83433e267b36b5fd55d21749a58d[m
+Author: Dayanna <derlygonzalez688@gmail.com>
+Date:   Thu Oct 24 23:37:32 2024 -0500
+
+    Descripción breve de los cambios
+
+[33mcommit 9b6aaa547d24ceb13c31eada59fb77faa0bb905f[m
+Merge: 19d3294 79b9c32
+Author: rtJuan22 <juanmanuelriverasc@gmail.com>
+Date:   Fri Oct 18 07:56:15 2024 -0500
+
+    Merge branch 'main' of https://github.com/Pinedita777/Tranquilidad-Front
+
+[33mcommit 19d32943999fef4a9afd2acc0c7a7cf081c3eb88[m
+Author: rtJuan22 <juanmanuelriverasc@gmail.com>
+Date:   Fri Oct 18 07:51:08 2024 -0500
+
+    cambios nuevos
+
+[33mcommit 01db5fc09b1beec3f3e914c0cd51b7077619724c[m
+Merge: 79b9c32 b9cc6dc
+Author: sebasttis <jhon123seba@gmail.com>
+Date:   Fri Oct 18 07:41:46 2024 -0500
+
+    Merge branch 'mapa-de-suenos'
+    Merge branch 'mapa-de-suenos' into main
+
+[33mcommit b9cc6dcc092e2d7c0544802d84ecdb1bda27c419[m[33m ([m[1;31morigin/mapa-de-suenos[m[33m)[m
+Author: sebasttis <jhon123seba@gmail.com>
+Date:   Fri Oct 18 07:39:21 2024 -0500
+
+    9
+
+[33mcommit 79b9c32373f6cbd2ee6e33dd82ec9a9d692e3929[m
+Author: Julian616378 <felipeveru616@gmail.com>
+Date:   Fri Oct 18 07:17:07 2024 -0500
+
+    rutinas de ejercicio
+
+[33mcommit 7fca24969843fcd55fd85a5409e2a036d7dc3ee6[m
+Merge: b37c1e2 7e9b32f
+Author: Julian616378 <felipeveru616@gmail.com>
+Date:   Fri Oct 18 07:08:30 2024 -0500
+
+    Merge branch 'main' of https://github.com/Pinedita777/Tranquilidad-Front
+
+[33mcommit b37c1e2a6f45735dde3b8d47455aecb1c57fbe34[m
+Author: Julian616378 <felipeveru616@gmail.com>
+Date:   Fri Oct 18 07:08:15 2024 -0500
+
+    rutinas de ejercicio
+
+[33mcommit 7e9b32f84af249211cf84b9f7bf4ebe57374d0ca[m
+Author: bolaalcatras <jhonalexander2016.com@gmail.com>
+Date:   Fri Oct 18 01:40:06 2024 -0500
+
+    alimentacion end
+
+[33mcommit 43b330efb187a7fbb135974186628e96de6de88d[m
+Author: Dayanna Gonzalez <derlygonzalez688@gmail.com>
+Date:   Thu Oct 17 23:46:28 2024 -0500
+
+    Resolviendo conflictos y fusionando musicoterapia en main
+
+[33mcommit 779cd6d9368ea5145ce2a339285eb0ec45141bbb[m
+Author: Daniela Diaz <calidad8844@gmail.com>
+Date:   Thu Oct 17 23:19:30 2024 -0500
+
+    @medi768  head position ab reproductores
+
+[33mcommit 31e8d5afb24b4c16daf15f8e720a5bbf1fe09898[m
+Author: sebastian chito <jhon123seba@gmail.com>
+Date:   Thu Oct 17 21:58:02 2024 -0500
+
+    Holasss
+
+[33mcommit 751aa41d17d1c9462130e28bcdd96ca992a88505[m
+Author: balvin22 <sb1181358@gmail.com>
+Date:   Thu Oct 17 20:03:29 2024 -0500
+
+    otros-cambios
+
+[33mcommit 8e6a5744e5656a7e928f9a1c65c99ec833adbf05[m
+Author: Dayanna Gonzalez <derlygonzalez688@gmail.com>
+Date:   Thu Oct 17 19:57:28 2024 -0500
+
+    Descripción breve de los cambios
+
+[33mcommit 1f18bca776bee2960ce7811ac436e4b98cce7758[m
+Author: CamiloMaca <camilomaca741@gmail.com>
+Date:   Thu Oct 17 19:14:24 2024 -0500
+
+    modales
+
+[33mcommit c1c47f262bbef59ebf7a5dfeac07b1a97c9d097f[m
+Author: Dayanna Gonzalez <derlygonzalez688@gmail.com>
+Date:   Thu Oct 17 17:30:41 2024 -0500
+
+    Descripción breve de los cambios
+
+[33mcommit 092453985ba274fba4bf90ada39c165061d73315[m
+Author: Dayanna Gonzalez <derlygonzalez688@gmail.com>
+Date:   Thu Oct 17 17:10:02 2024 -0500
+
+    Descripción breve de los cambios
+
+[33mcommit c01a63ebddb284adde98a4b796ece6a3b467e5cc[m
+Author: andressenar <andresenar96@gmail.com>
+Date:   Thu Oct 17 14:59:46 2024 -0500
+
+    actualizacion de vistas varias
+
+[33mcommit 5dc29c75ed893810a52ad05b6e8c01bf4a4c8449[m
+Author: Gaby <GabyD06910@gmail.com>
+Date:   Thu Oct 17 10:49:39 2024 -0500
+
+    Commit Gaby2
+
+[33mcommit d51be1cddbe9bdddbba516a8f5c1fe8da31a53e7[m
+Merge: 0958dc5 e71b69a
+Author: Gaby <GabyD06910@gmail.com>
+Date:   Thu Oct 17 08:14:51 2024 -0500
+
+    Merge branch 'main' of https://github.com/Pinedita777/Tranquilidad-Front
+
+[33mcommit 0958dc5a9f287ff9e09ad4fa79530605486b3eba[m
+Author: Gaby <GabyD06910@gmail.com>
+Date:   Thu Oct 17 08:14:03 2024 -0500
+
+    Commit Gaby
+
+[33mcommit e71b69a8d0c076bee0afb0eb1da19203ecb5b980[m
+Author: andressenar <andresenar96@gmail.com>
+Date:   Thu Oct 17 08:02:57 2024 -0500
+
+    correcion ruta iconos
+
+[33mcommit c10cd79bdc7388988daab5946d82d8ec8c587cc5[m
+Author: bolaalcatras <jhonalexander2016.com@gmail.com>
+Date:   Thu Oct 17 08:00:22 2024 -0500
+
+    cambios en header and footer
+
+[33mcommit 43dcd53f4932486b4fd319b83e9257c7469d5aff[m
+Merge: d0b146d 3cbaa4b
+Author: balvin22 <sb1181358@gmail.com>
+Date:   Thu Oct 17 00:49:01 2024 -0500
+
+    home
+
+[33mcommit d0b146dea53aaa24989df787f2ed3762ce87b9ae[m
+Author: balvin22 <sb1181358@gmail.com>
+Date:   Thu Oct 17 00:40:56 2024 -0500
+
+    home
+
+[33mcommit 3cbaa4b6c4133cbb4d246e7a035996790169bd59[m
+Author: Anttoniio11 <Anttoniio2312@gmail.com>
+Date:   Wed Oct 16 21:58:14 2024 -0500
+
+    Cambio estilo y link del header, modifico footer
+
+[33mcommit 04954b7a145485f4f8f545a4b2aca1fb17213b87[m
+Author: Anttoniio11 <Anttoniio2312@gmail.com>
+Date:   Wed Oct 16 21:51:41 2024 -0500
+
+    Cambio estilo y link del header, modifico footer
+
+[33mcommit ec4337fab560b0783a7cebf6d9b18e8863cf726e[m
+Merge: a59d21b 1b1d9b1
+Author: Anttoniio11 <Anttoniio2312@gmail.com>
+Date:   Wed Oct 16 21:51:04 2024 -0500
+
+    Merge branch 'main' of https://github.com/Pinedita777/Tranquilidad-Front
+
+[33mcommit a59d21bc2da029307efd51bc7963ebf56dbbc7c6[m
+Author: Anttoniio11 <Anttoniio2312@gmail.com>
+Date:   Wed Oct 16 21:50:33 2024 -0500
+
+    Cambio estilo y link del header, modifico footer
+
+[33mcommit 1b1d9b1575076b8ae5b71a20b20006dd165dd6b8[m
+Author: CamiloMaca <camilomaca741@gmail.com>
+Date:   Wed Oct 16 21:30:20 2024 -0500
+
+    falta:modales-imgFooter
+
+[33mcommit 858806efeeb9409338178343215b49a7209348ac[m
+Author: andressenar <andresenar96@gmail.com>
+Date:   Wed Oct 16 17:32:16 2024 -0500
+
+    modificacion de de comunidad y creacion de componete explore-section
+
+[33mcommit 5af46365efe02404c7c5b19972569b00f4fb8e6f[m
+Author: andressenar <andresenar96@gmail.com>
+Date:   Tue Oct 15 16:59:01 2024 -0500
+
+    creacion de component explore-section
+
+[33mcommit 1cd58b283e24c6f83ab698d3602cf28696364331[m
+Author: Antonio Rodriguez <anttoniio2312@gmail.com>
+Date:   Mon Oct 14 15:39:03 2024 -0500
+
+    Cambios atencion profesional - Usuarios
+
+[33mcommit dd99f3477c0c736574b6b1d5bfb94c744ecf4299[m
+Author: bolaalcatras <jhonalexander2016.com@gmail.com>
+Date:   Sun Oct 13 15:05:16 2024 -0500
+
+    FootNav terminado y atencio profesional /home/alexander/dev/Tranquilidad-Front/atencion-profesional/USUARIO/Home_Usuario/HomeUsuario.html y /home/alexander/dev/Tranquilidad-Front/atencion-profesional/USUARIO/Home_Usuario/style.css modificados
+
+[33mcommit 8f423952296d9bd2a8670b7fdce29c79496cda9f[m
+Author: Antonio Rodriguez <anttoniio2312@gmail.com>
+Date:   Sun Oct 13 12:32:35 2024 -0500
+
+    cambios en footer y header
+
+[33mcommit 18ee51106e30cdb5fedf2dc825a0946ca251951d[m
+Author: Antonio Rodriguez <anttoniio2312@gmail.com>
+Date:   Sun Oct 13 12:19:50 2024 -0500
+
+    cambios en footer y header
+
+[33mcommit dbbf0490143a76edc552aef5e8225d26386bd574[m
+Author: Antonio Rodriguez <anttoniio2312@gmail.com>
+Date:   Sun Oct 13 12:17:20 2024 -0500
+
+    cambios en footer y header
+
+[33mcommit 005181013a152242f249ab69f18a26e89d9a5950[m
+Author: Antonio Rodriguez <anttoniio2312@gmail.com>
+Date:   Sun Oct 13 12:14:31 2024 -0500
+
+    cambios en footer y header
+
+[33mcommit a0220375c7756d999f03658af2d13fd3ed43c9d0[m
+Author: bolaalcatras <jhonalexander2016.com@gmail.com>
+Date:   Sun Oct 13 01:34:05 2024 -0500
+
+    foot y nav terminados
+
+[33mcommit 1a01ec75b9056adda3582bede670d730c998aef6[m
+Author: Antonio Rodriguez <anttoniio2312@gmail.com>
+Date:   Sat Oct 12 16:27:23 2024 -0500
+
+    Importacion del footer y el header
+
+[33mcommit 128a5e5d8acaa7fd60115d1a49c94c3ba55dbecb[m
+Merge: 792fd51 bc8a2dc
+Author: jefermar <jefermar17jjs@gmail.com>
+Date:   Fri Oct 11 10:30:43 2024 -0500
+
+    Merge branch 'main' of https://github.com/Pinedita777/Tranquilidad-Front
+
+[33mcommit 792fd512b551967678a7e096cb2bc73268717ec7[m
+Author: jefermar <jefermar17jjs@gmail.com>
+Date:   Fri Oct 11 10:30:34 2024 -0500
+
+    Footer y nav
+
+[33mcommit bc8a2dc71571cce0ef964bacbe9a8c352c34d157[m
+Author: Dayanna Gonzalez <derlygonzalez688@gmail.com>
+Date:   Fri Oct 11 10:14:09 2024 -0500
+
+    Resolviendo conflictos y fusionando musicoterapia en main
+
+[33mcommit d81afacbf595f0fb506e5d0cdfda896035a90bdb[m
+Author: GabyD12 <gabyd06910@gmail.com>
+Date:   Fri Oct 11 09:34:04 2024 -0500
+
+    gabriela
+
+[33mcommit 8c599f0746d4a66d96abe1eada49dddc2bf92fea[m
+Author: Dayanna0428 <149832775+Dayanna0428@users.noreply.github.com>
+Date:   Fri Oct 11 09:20:52 2024 -0500
+
+    Delete musicoterapia directory
+
+[33mcommit f30d3679a6bc0c7065cb0ca077299ce7346f11a6[m
+Merge: 15e902b 55dec74
+Author: balvin22 <sb1181358@gmail.com>
+Date:   Fri Oct 11 08:58:22 2024 -0500
+
+    Merge branch 'main' of https://github.com/Pinedita777/Tranquilidad-Front
+
+[33mcommit 15e902bb4f08ab869e5bbee26336d862ab082e3b[m
+Author: balvin22 <sb1181358@gmail.com>
+Date:   Fri Oct 11 08:57:55 2024 -0500
+
+    Cambios1
+
+[33mcommit 55dec741d7c9850a788079442c1f2df075f56be5[m
+Merge: 5251b44 5c026bf
+Author: Dayanna Gonzalez <derlygonzalez688@gmail.com>
+Date:   Fri Oct 11 08:37:53 2024 -0500
+
+    Merge branch 'musicoterapia'
+
+[33mcommit 5251b44ea4e74790968097f156aef5d57ca26866[m
+Merge: 11796d1 8abc9f7
+Author: Julian616378 <felipeveru616@gmail.com>
+Date:   Fri Oct 11 08:16:42 2024 -0500
+
+    Merge branch 'rutinas-de-ejercicios' of https://github.com/Pinedita777/Tranquilidad-Front
+
+[33mcommit 11796d1152430f7e002e0234629e4881da795611[m
+Merge: 4106584 a70c30f
+Author: balvin22 <sb1181358@gmail.com>
+Date:   Fri Oct 11 08:12:06 2024 -0500
+
+    Merge branch 'main' of https://github.com/Pinedita777/Tranquilidad-Front
+
+[33mcommit a70c30f3f968c95c3a0b8aad0eac7b5856dfe6d3[m
+Merge: 5ef4aa3 878c75e
+Author: Pinedita777 <pinedajuandavid428@gmail.com>
+Date:   Fri Oct 11 08:08:23 2024 -0500
+
+    Merge branch 'main' of https://github.com/Pinedita777/Tranquilidad-Front
+
+[33mcommit 41065844d1f254ba15835dc71d0be211157712bd[m
+Author: balvin22 <sb1181358@gmail.com>
+Date:   Fri Oct 11 08:07:34 2024 -0500
+
+    inicio de sesion
+
+[33mcommit 878c75e895ad3bbe36dc2da371038b423fd53921[m
+Author: CamiloMaca <camilomaca741@gmail.com>
+Date:   Fri Oct 11 08:03:34 2024 -0500
+
+    link
+
+[33mcommit 5ef4aa3726f3f64cf8f1efc545185ae5f8a23f02[m
+Merge: 77452c2 41f1862
+Author: Pinedita777 <pinedajuandavid428@gmail.com>
+Date:   Fri Oct 11 07:57:15 2024 -0500
+
+    alimentacion
+
+[33mcommit e47f2789781d208a8f3dcef5c7d49e7468b6b8a8[m
+Author: Dayanna Gonzalez <derlygonzalez688@gmail.com>
+Date:   Fri Oct 11 07:49:08 2024 -0500
+
+    Añadiendo archivos no rastreados
+
+[33mcommit e2416edcdff88ec35767db4216041c8f27f41ab4[m
+Merge: 77452c2 0fca5a3
+Author: CamiloMaca <camilomaca741@gmail.com>
+Date:   Fri Oct 11 07:46:33 2024 -0500
+
+    Merge branch 'arte-terapia' of https://github.com/Pinedita777/Tranquilidad-Front
+
+[33mcommit 1fbef43dd901a481d118b25456f41f9d04bb2de3[m
+Author: sebastian chito <jhon123seba@gmail.com>
+Date:   Fri Oct 11 07:43:58 2024 -0500
+
+    hola
+
+[33mcommit 77452c22dea5b992e6b8d83ea890b8747c05caac[m
+Merge: 6222515 8b8ba31
+Author: Pinedita777 <pinedajuandavid428@gmail.com>
+Date:   Fri Oct 11 07:43:12 2024 -0500
+
+    Merge branch 'atencion-profesional' of https://github.com/Pinedita777/Tranquilidad-Front
+
+[33mcommit 0fca5a33e87a544450adc6a2941f2a709a94e8d4[m[33m ([m[1;31morigin/arte-terapia[m[33m)[m
+Author: CamiloMaca <camilomaca741@gmail.com>
+Date:   Fri Oct 11 07:32:58 2024 -0500
+
+    carpeta
+
+[33mcommit d745237bc4cbd4416fc361f55cf4bbfa8d98d8df[m
+Author: fernanda realpe <ferpaulis100@gmail.com>
+Date:   Fri Oct 11 07:23:58 2024 -0500
+
+    segunda
+
+[33mcommit 41f1862639a5504fe3fb81386aeed3ebf05c6af8[m[33m ([m[1;31morigin/alimentacion[m[33m)[m
+Author: bolaalcatras <jhonalexander2016.com@gmail.com>
+Date:   Fri Oct 11 07:13:59 2024 -0500
+
+    se meten los archivos dentro de la carpeta
+
+[33mcommit e46e801c217d9e719dd289d551e3713bcc8ab61e[m
+Author: bolaalcatras <jhonalexander2016.com@gmail.com>
+Date:   Fri Oct 11 02:52:54 2024 -0500
+
+    mejoras
+
+[33mcommit 62225152d33a015bc6b7c1f2c19b23fe541850ee[m
+Merge: 71180ef 721b43e
+Author: Pinedita777 <pinedajuandavid428@gmail.com>
+Date:   Thu Oct 10 23:19:23 2024 -0500
+
+    k
+
+[33mcommit 71180ef2993e340d5cbee5c83bd642160a13df12[m
+Merge: 9510654 4f18f63
+Author: Pinedita777 <pinedajuandavid428@gmail.com>
+Date:   Thu Oct 10 23:14:48 2024 -0500
+
+    pol
+
+[33mcommit 8abc9f755aff17e18317d3c75eaa5a1c51fa8dc8[m[33m ([m[1;31morigin/rutinas-de-ejercicios[m[33m)[m
+Author: Julian616378 <felipeveru616@gmail.com>
+Date:   Thu Oct 10 22:39:21 2024 -0500
+
+    commit
+
+[33mcommit 7b889dfa3978915d167f172d22304278ece208dc[m
+Author: CamiloMaca <camilomaca741@gmail.com>
+Date:   Thu Oct 10 22:38:42 2024 -0500
+
+    vistas
+
+[33mcommit dae58254d646cde11057077d110bb1d970668899[m
+Author: Julian616378 <felipeveru616@gmail.com>
+Date:   Thu Oct 10 22:31:04 2024 -0500
+
+    first commit
+
+[33mcommit 8b8ba31fd4d5ee9a26ae95b33248861b1dc36cfe[m[33m ([m[1;31morigin/atencion-profesional[m[33m)[m
+Author: Pinedita777 <pinedajuandavid428@gmail.com>
+Date:   Thu Oct 10 22:30:46 2024 -0500
+
+    hola
+
+[33mcommit a4eaaa41255b0949f172d7bc39886f0e75a1b738[m
+Author: Your Name <you@example.com>
+Date:   Thu Oct 10 22:18:11 2024 -0500
+
+    agregado vistas de alimentacion
+
+[33mcommit 4f18f6396bbbfa4cd25ed8e94960dca7fc306b38[m
+Author: Your Name <you@example.com>
+Date:   Thu Oct 10 18:30:35 2024 -0500
+
+    Añadir archivo de alimentación
+
+[33mcommit 13b8b3fca0b61f097576ade1e7e974e8fdcf5d35[m
+Author: Your Name <you@example.com>
+Date:   Thu Oct 10 18:26:27 2024 -0500
+
+    Añadiendo archivo de prueba
+
+[33mcommit 7f2b0db0847dab65d9ffd38ff5c7ecbb40dd54fb[m
+Author: Your Name <you@example.com>
+Date:   Thu Oct 10 18:20:57 2024 -0500
+
+    Commit vacío para registrar progreso
+
+[33mcommit 721b43e93944d48402c1b685f896079e1b629cb7[m
+Author: sebastian chito <jhon123seba@gmail.com>
+Date:   Thu Oct 10 18:12:52 2024 -0500
+
+    hola
+
+[33mcommit 5c026bf290422b55ab272750abc9fd53d33ece70[m
+Author: Dayanna Gonzalez <derlygonzalez688@gmail.com>
+Date:   Thu Oct 10 17:47:38 2024 -0500
+
+    Subiendo nuevas vistas para la rama musicoterapia
+
+[33mcommit f9f91fed846f8e5978ce1293f33d2baded73851d[m
+Author: Pinedita777 <pinedajuandavid428@gmail.com>
+Date:   Thu Oct 10 16:34:26 2024 -0500
+
+    add rutinas-de-ejercicios
+
+[33mcommit 5b090b6b728602b28218c1f91627fa489b816978[m
+Author: Pinedita777 <pinedajuandavid428@gmail.com>
+Date:   Thu Oct 10 16:33:22 2024 -0500
+
+    add musicoterapia
+
+[33mcommit 91dd699b15ebc05e1ca0338e9b345096b96ee210[m
+Author: Pinedita777 <pinedajuandavid428@gmail.com>
+Date:   Thu Oct 10 16:30:55 2024 -0500
+
+    add mapa-de-suenos
+
+[33mcommit 133543adf6e8b5aaa45ffbf98bcaea6b9633f964[m[33m ([m[1;31morigin/inicio-de-sesion[m[33m)[m
+Author: Pinedita777 <pinedajuandavid428@gmail.com>
+Date:   Thu Oct 10 16:29:38 2024 -0500
+
+    Add inicio-de-sesion
+
+[33mcommit 38c19e9d3647ae478c638f04c6797b4e72c88240[m
+Author: Pinedita777 <pinedajuandavid428@gmail.com>
+Date:   Thu Oct 10 16:28:27 2024 -0500
+
+    Add atencion-profesional
+
+[33mcommit 9e940d63d85c5ec73a96931142496e1d18087cfa[m
+Author: Pinedita777 <pinedajuandavid428@gmail.com>
+Date:   Thu Oct 10 16:27:49 2024 -0500
+
+    Add arteterapia
+
+[33mcommit 257ba9c634ebf6c4b1f5c360968415eaaa277533[m
+Author: Pinedita777 <pinedajuandavid428@gmail.com>
+Date:   Thu Oct 10 16:23:21 2024 -0500
+
+    Add alimentacion
+
+[33mcommit 9510654b79c1d143c1f65e1fbb4a9e10d832b663[m
+Author: Pinedita777 <149815084+Pinedita777@users.noreply.github.com>
+Date:   Thu Oct 10 16:17:47 2024 -0500
+
+    Delete alimentacion directory
+
+[33mcommit 3378f60c21e645c473aa9e3f84edff4ad4e228db[m
+Author: Pinedita777 <pinedajuandavid428@gmail.com>
+Date:   Thu Oct 10 15:55:54 2024 -0500
+
+    Add alimentacion

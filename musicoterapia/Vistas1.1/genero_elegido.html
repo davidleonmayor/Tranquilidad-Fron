@@ -3,447 +3,430 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <script src="footNav.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="footNav copy.css"></script>
   <title>genero_elegido</title>
   <style>
-    /* Estilos Globales */
-    * {
-      font-family: 'Roboto', sans-serif;
-      margin: 0;
-      padding: 0;
+/* Estilos Globales */
+* {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  min-height: 100%;
+  position: relative;
+}
+
+body {
+  margin-top: 100px;
+  margin-bottom: 60px;
+        font-family: "Roboto", sans-serif;
+        display: flex;
+        margin: 0;
+        padding-top: 100px; /* Altura del header */
+  overflow-x: hidden;
+        flex-direction: column; background: url('images/fondoselegidos.png') no-repeat center center fixed;
+}
+
+h1 {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: #59009A;
+  font-style: italic;
+}
+
+/* Header */
+header {
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 100px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 0.0625rem solid #ddd;
+}
+
+header span {
+  cursor: pointer;
+}
+
+header nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 0px 10px;
+}
+
+.servicios {
+  position: relative;
+}
+
+.servicios span {
+  color: #59009a;
+}
+
+.service-user {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
+  font-size: 1.0625rem;
+}
+
+.menu-icon {
+  display: none;
+}
+
+.logo span {
+  color: #59009A;
+  font-size: 1.5rem;
+}
+
+.logo img, .user-info img {
+  width: 60px;
+  height: auto;
+  object-fit: cover;
+}
+
+.logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+
+.user-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+}
+
+.user-info span {
+  color: #59009a;
+}
+
+.user-info img {
+  width: 60px;
+  border-radius: 50%;
+}
+
+/* Submenu de Servicios */
+.submenu {
+  display: none;
+  position: absolute;
+  background-color: white;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 180px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.servicios:hover .submenu {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+
+.submenu ul {
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+}
+
+.submenu li {
+  padding: 12px 20px;
+  border-bottom: 1px solid #eee;
+  font-size: 1rem;
+  color: black;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.submenu li:last-child {
+  border-bottom: none;
+}
+
+.submenu li:hover {
+  background-color: #f4f4f4;
+  color: #59009A;
+}
+
+.submenu li a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  width: 100%;
+}
+
+.submenu li a:hover {
+  color: #59009A;
+}
+
+/* Submenu de Perfil */
+.submenu-profile {
+  display: none;
+  position: absolute;
+  background-color: white;
+  top: 100%;
+  right: 0;
+  width: 160px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.user-info:hover .submenu-profile {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+
+.submenu-profile ul {
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+}
+
+.submenu-profile li {
+  padding: 12px 20px;
+  border-bottom: 1px solid #eee;
+  font-size: 1rem;
+  color: black;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.submenu-profile li:last-child {
+  border-bottom: none;
+}
+
+.submenu-profile li:hover {
+  background-color: #f4f4f4;
+  color: #59009A;
+}
+
+.submenu-profile li a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  width: 100%;
+}
+
+.submenu-profile li a:hover {
+  color: #59009A;
+}
+
+/* Footer */
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #59009A;
+  z-index: 999;
+}
+
+footer div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.contact-item {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  text-align: center;
+}
+
+.footer-container {
+  padding: 10px;
+}
+
+.items {
+  gap: 30px;
+}
+
+.quienes-somos {
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.iconos img {
+  width: 35px;
+}
+
+.items .contact-item span {
+  color: white;
+}
+/* Media Queries para pantallas pequeñas */
+@media (max-width: 480px) {
+  header {
+    height: 100px;
+  }
+
+  .submenu {
+    margin-left: -90px;
+    margin-top: 1px;
+    border-radius: 20px 0 0 20px;
+  }
+
+  .service-user {
+    flex-direction: row-reverse;
+  }
+
+  .servicios span {
+    display: none;
+  }
+
+  .menu-icon {
+    display: flex;
+    color: #59009A;
+    cursor: pointer;
+  }
+
+  .menu-icon .material-icons {
+    font-size: 50px;
+    font-family: 'Material Icons';
+    font-style: normal;
+  }
+
+  .user-info {
+    display: none;
+  }
+
+  .logo {
+    flex-direction: row;
+  }
+
+  .footer-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .contact-item span {
+    display: none;
+  }
+
+  .items {
+    gap: 10px;
+  }
+
+  .iconos .icono {
+    width: 30px;
+    height: 30px;
+  }
+} 
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block;
+        cursor: pointer;
     }
 
-    html {
-      min-height: 100%;
-      position: relative;
+    .menu-icon .material-icons {
+        font-size: 30px;
+        color: #59009A;
     }
 
-    body {
-      margin-top: 100px;
-      margin-bottom: 60px;
-      font-family: "Roboto", sans-serif;
-      display: flex;
-      margin: 0;
-      padding-top: 100px;
-      /* Altura del header */
-      overflow-x: hidden;
-      flex-direction: column;
-      background: url('images/fondoselegidos.png') no-repeat center center fixed;
+    .services-text {
+        display: none;
     }
 
-    h1 {
-      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-      color: #59009A;
-      font-style: italic;
-    }
-
-    /* Header */
-    header {
-      position: fixed;
-      top: 0;
-      z-index: 1000;
-      width: 100%;
-      height: 100px;
-      box-sizing: border-box;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      border-bottom: 0.0625rem solid #ddd;
-    }
-
-    header span {
-      cursor: pointer;
-    }
-
-    header nav {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-      width: 100%;
-      margin: 0px 10px;
-    }
-
-    .servicios {
-      position: relative;
-    }
-
-    .servicios span {
-      color: #59009a;
+    .user-info {
+        display: none; /* Oculta completamente la información del usuario */
     }
 
     .service-user {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      gap: 30px;
-      font-size: 1.0625rem;
+        justify-content: flex-end; /* Alinea el ícono de menú a la derecha */
     }
 
-    .menu-icon {
-      display: none;
-    }
-
-    .logo span {
-      color: #59009A;
-      font-size: 1.5rem;
-    }
-
-    .logo img,
-    .user-info img {
-      width: 60px;
-      height: auto;
-      object-fit: cover;
-    }
-
-    .logo {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      gap: 10px;
-    }
-
-
-    .user-info {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      gap: 15px;
-    }
-
-    .user-info span {
-      color: #59009a;
-    }
-
-    .user-info img {
-      width: 60px;
-      border-radius: 50%;
-    }
-
-    /* Submenu de Servicios */
-    .submenu {
-      display: none;
-      position: absolute;
-      background-color: white;
-      top: 100%;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 180px;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      z-index: 1000;
-      transition: opacity 0.3s ease, visibility 0.3s ease;
-      opacity: 0;
-      visibility: hidden;
-    }
-
-    .servicios:hover .submenu {
-      display: block;
-      opacity: 1;
-      visibility: visible;
+   
+    .submenu.active {
+        display: block;
     }
 
     .submenu ul {
-      list-style: none;
-      padding: 10px 0;
-      margin: 0;
+        list-style-type: none;
+        padding: 0;
     }
 
     .submenu li {
-      padding: 12px 20px;
-      border-bottom: 1px solid #eee;
-      font-size: 1rem;
-      color: black;
-      cursor: pointer;
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
-
-    .submenu li:last-child {
-      border-bottom: none;
-    }
-
-    .submenu li:hover {
-      background-color: #f4f4f4;
-      color: #59009A;
+        padding: 15px 20px;
+        border-bottom: 1px solid #eee;
     }
 
     .submenu li a {
-      text-decoration: none;
-      color: inherit;
-      display: block;
-      width: 100%;
-    }
-
-    .submenu li a:hover {
-      color: #59009A;
-    }
-
-    /* Submenu de Perfil */
-    .submenu-profile {
-      display: none;
-      position: absolute;
-      background-color: white;
-      top: 100%;
-      right: 0;
-      width: 160px;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      z-index: 1000;
-      transition: opacity 0.3s ease, visibility 0.3s ease;
-      opacity: 0;
-      visibility: hidden;
-    }
-
-    .user-info:hover .submenu-profile {
-      display: block;
-      opacity: 1;
-      visibility: visible;
-    }
-
-    .submenu-profile ul {
-      list-style: none;
-      padding: 10px 0;
-      margin: 0;
-    }
-
-    .submenu-profile li {
-      padding: 12px 20px;
-      border-bottom: 1px solid #eee;
-      font-size: 1rem;
-      color: black;
-      cursor: pointer;
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
-
-    .submenu-profile li:last-child {
-      border-bottom: none;
-    }
-
-    .submenu-profile li:hover {
-      background-color: #f4f4f4;
-      color: #59009A;
-    }
-
-    .submenu-profile li a {
-      text-decoration: none;
-      color: inherit;
-      display: block;
-      width: 100%;
-    }
-
-    .submenu-profile li a:hover {
-      color: #59009A;
-    }
-
-    /* Footer */
-    footer {
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      height: 60px;
-      background-color: #59009A;
-      z-index: 999;
-    }
-
-    footer div {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-    }
-
-    .contact-item {
-      display: flex;
-      flex-direction: column-reverse;
-      align-items: center;
-      text-align: center;
-    }
-
-    .footer-container {
-      padding: 10px;
-    }
-
-    .items {
-      gap: 30px;
-    }
-
-    .quienes-somos {
-      display: flex;
-      align-items: center;
-      color: white;
-    }
-
-    .iconos img {
-      width: 35px;
-    }
-
-    .items .contact-item span {
-      color: white;
-    }
-
-    /* Media Queries para pantallas pequeñas */
-    @media (max-width: 480px) {
-      header {
-        height: 100px;
-      }
-
-      .submenu {
-        margin-left: -90px;
-        margin-top: 1px;
-        border-radius: 20px 0 0 20px;
-      }
-
-      .service-user {
-        flex-direction: row-reverse;
-      }
-
-      .servicios span {
-        display: none;
-      }
-
-      .menu-icon {
-        display: flex;
-        color: #59009A;
-        cursor: pointer;
-      }
-
-      .menu-icon .material-icons {
-        font-size: 50px;
-        font-family: 'Material Icons';
-        font-style: normal;
-      }
-
-      .user-info {
-        display: none;
-      }
-
-      .logo {
-        flex-direction: row;
-      }
-
-      .footer-container {
-        flex-direction: row;
-        justify-content: space-between;
-      }
-
-      .contact-item span {
-        display: none;
-      }
-
-      .items {
-        gap: 10px;
-      }
-
-      .iconos .icono {
-        width: 30px;
-        height: 30px;
-      }
-    }
-
-    @media (max-width: 768px) {
-
-      header {
-        position: absolute;
-      }
-
-      .menu-icon {
-        display: block;
-        cursor: pointer;
-      }
-
-      .menu-icon .material-icons {
-        font-size: 30px;
-        color: #59009A;
-      }
-
-      .services-text {
-        display: none;
-      }
-
-      .user-info {
-        display: none;
-        /* Oculta completamente la información del usuario */
-      }
-
-      .service-user {
-        justify-content: flex-end;
-        /* Alinea el ícono de menú a la derecha */
-      }
-
-
-      .submenu.active {
-        display: block;
-      }
-
-      .submenu ul {
-        list-style-type: none;
-        padding: 0;
-      }
-
-      .submenu li {
-        padding: 15px 20px;
-        border-bottom: 1px solid #eee;
-      }
-
-      .submenu li a {
         color: #59009A;
         text-decoration: none;
         display: block;
-      }
-
-      .logo {
-        flex-grow: 1;
-      }
     }
 
-    @media (min-width: 769px) {
-      .menu-icon {
+    .logo {
+        flex-grow: 1;
+    }
+}
+
+@media (min-width: 769px) {
+    .menu-icon {
         display: none;
-      }
+    }
 
-      .services-text {
+    .services-text {
         display: inline;
-      }
+    }
 
-      .submenu {
+    .submenu {
         display: none;
         position: absolute;
         background-color: white;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      }
+    }
 
-      .servicios:hover .submenu {
+    .servicios:hover .submenu {
         display: block;
-      }
     }
+}
 
-    /* Estilos adicionales */
-    .genre:hover img,
-    .imagen-footer:hover,
-    .title:hover span,
-    .nav a:hover {
-      transform: scale(1.1);
-    }
+/* Estilos adicionales */
+.genre:hover img,
+.imagen-footer:hover,
+.title:hover span,
+.nav a:hover {
+  transform: scale(1.1);
+}
+/*  */
 
-    /*  */
-
-    /* -------------------------------------------- */
+/* -------------------------------------------- */
     /* Estilos generales del contenedor principal */
     .container {
       display: flex;
-      margin-top: 0;
-      /* Eliminar el margen superior del contenedor principal */
-      height: calc(100vh - 160px);
-      /* Ajusta esto según la altura exacta de tu header y footer */
+      margin-top: 0; /* Eliminar el margen superior del contenedor principal */
+  height: calc(100vh - 160px); /* Ajusta esto según la altura exacta de tu header y footer */
 
-      margin-bottom: 60px;
-      /* Altura del footer */
-      /
+  margin-bottom: 60px; /* Altura del footer *//
     }
 
     /* Estilos de la barra lateral */
@@ -953,9 +936,8 @@
     .me-gusta.active {
       color: #59009A;
     }
-
-    /* Estilos para pantallas más pequeñas, como tablets o móviles */
-    @media only screen and (max-width: 1200px) {
+      /* Estilos para pantallas más pequeñas, como tablets o móviles */
+      @media only screen and (max-width: 1200px) {
       .content {
         flex-direction: column;
         justify-content: center;
@@ -1042,7 +1024,7 @@
       .sidebar:hover {
         width: 450px;
         /* Mantiene el ancho desplegado */
-      }
+      }
 
       .main-content {
         width: 100%;
@@ -1107,161 +1089,1702 @@
         /* Ajustar el margen izquierdo */
         text-align: center;
       }
-
-      /* Centrar el título de géneros */
-      .title {
+        /* Centrar el título de géneros */
+        .title {
         text-align: center;
         margin-left: 0;
         margin-right: 0;
         width: 100%;
         justify-content: center;
-      }
+    }
+    /* Ajustes generales */
+body {
+    padding-top: 100px; /* Altura del header */
+}
 
-      /* Ajustes generales */
-      body {
-        padding-top: 100px;
-        /* Altura del header */
-      }
-
-      .container {
-        margin-top: 0;
-        /* Eliminar el margen superior del contenedor principal */
-      }
+.container {
+    margin-top: 0; /* Eliminar el margen superior del contenedor principal */
+}
+    }
+/* Media query para pantallas pequeñas */
+@media only screen and (max-width: 768px) {
+    body {
+        padding-top: 100px; /* Asegurarse de que hay espacio para el header */
     }
 
-    /* Media query para pantallas pequeñas */
-    @media only screen and (max-width: 768px) {
-      body {
-        padding-top: 100px;
-        /* Asegurarse de que hay espacio para el header */
-      }
-
-      .container {
+    .container {
         flex-direction: column;
         height: auto;
         margin-top: 0;
-      }
+    }
 
-      .sidebar {
+    .sidebar {
         width: 100%;
         max-width: 450px;
         margin: 20px auto;
         border-radius: 40px;
         padding: 8px 16px;
-      }
+    }
 
-      .main {
+    .main {
         width: 100%;
         padding: 20px;
         margin-top: 0;
-      }
+    }
 
-      .content {
+    .content {
         flex-direction: column;
         align-items: center;
-      }
+    }
 
-      .player,
-      .tracks-container {
+    .player, .tracks-container {
         width: 90%;
         max-width: 100%;
         margin: 20px auto;
+    }
+
+    .title {
+        font-size: 35px;
+        margin: 20px 0;
+        text-align: center;
+    }
+
+    .tabs {
+        margin-left: 0;
+        justify-content: center;
+    }
+
+    /* Ajustes adicionales para elementos específicos */
+    .track-list {
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    .image-container, .image-container2 {
+        margin-left: 0;
+        text-align: center;
+        width: 100%;
+    }
+}
+
+/* Ajustes para el header en pantallas pequeñas */
+@media only screen and (max-width: 480px) {
+    header {
+        height: auto;
+        padding: 10px 0;
+    }
+
+    .logo, .service-user {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+
+    .menu-icon {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+}
+/* -------------------------------------------------- */
+
+/*  */
+/* Agregar al final: */
+
+/* Media Queries para pantallas pequeñas */
+/* Media Queries para pantallas pequeñas */
+@media (max-width: 480px) {
+  header {
+    height: 100px;
+  }
+
+  .submenu {
+    margin-left: -90px;
+    margin-top: 1px;
+    border-radius: 20px 0 0 20px;
+  }
+
+  .service-user {
+    flex-direction: row-reverse;
+  }
+
+  .servicios span {
+    display: none;
+  }
+
+  .user-info {
+    display: none;
+  }
+
+  .logo {
+    flex-direction: row;
+  }
+
+  .footer-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .contact-item span {
+    display: none;
+  }
+
+  .items {
+    gap: 10px;
+  }
+
+  .iconos .icono {
+    width: 30px;
+    height: 30px;
+  }
+} 
+
+@media (max-width: 768px) {
+  header {
+    position: absolute;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    height: 100px;
+    position: absolute;
+  }
+
+  .service-user {
+    justify-content: flex-end;
+  }
+
+  .submenu.active {
+    display: block;
+  }
+
+  .submenu ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+ 
+/* Estilos responsive para contenedor y otros elementos */
+@media only screen and (max-width: 1200px) {
+  .content {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .tracks-container {
+    margin-top: 20px;
+    width: 90%;
+    max-width: 100%;
+    margin-left: 195px;
+    margin-top: 50px;
+  }
+
+  .player {
+    width: 90%;
+    max-width: 100%;
+  }
+}
+
+header {
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 100px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  border-bottom: 0.0625rem solid #ddd;
+}
+
+.logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 60px;
+  height: auto;
+  object-fit: cover;
+}
+
+.logo span {
+  color: #59009A;
+  font-size: 1.5rem;
+}
+
+.service-user {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
+  font-size: 1.0625rem;
+}
+
+.servicios span {
+  color: #59009a;
+  cursor: pointer;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+}
+
+.user-info span {
+  color: #59009a;
+}
+
+.user-info img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+}
+
+/* Estilos Globales */
+* {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  min-height: 100%;
+  position: relative;
+}
+
+body {
+  margin-top: 100px;
+  margin-bottom: 60px;
+        font-family: "Roboto", sans-serif;
+        display: flex;
+        margin: 0;
+        padding-top: 100px; /* Altura del header */
+  overflow-x: hidden;
+        flex-direction: column; background: url('images/fondoselegidos.png') no-repeat center center fixed;
+}
+
+h1 {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: #59009A;
+  font-style: italic;
+}
+
+/* Header */
+header {
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 100px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 0.0625rem solid #ddd;
+}
+
+header span {
+  cursor: pointer;
+}
+
+header nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 0px 10px;
+}
+
+.servicios {
+  position: relative;
+}
+
+.servicios span {
+  color: #59009a;
+}
+
+.service-user {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
+  font-size: 1.0625rem;
+}
+
+.menu-icon {
+  display: none;
+}
+
+.logo span {
+  color: #59009A;
+  font-size: 1.5rem;
+}
+
+.logo img, .user-info img {
+  width: 60px;
+  height: auto;
+  object-fit: cover;
+}
+
+.logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+
+.user-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+}
+
+.user-info span {
+  color: #59009a;
+}
+
+.user-info img {
+  width: 60px;
+  border-radius: 50%;
+}
+
+/* Submenu de Servicios */
+.submenu {
+  display: none;
+  position: absolute;
+  background-color: white;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 180px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.servicios:hover .submenu {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+
+.submenu ul {
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+}
+
+.submenu li {
+  padding: 12px 20px;
+  border-bottom: 1px solid #eee;
+  font-size: 1rem;
+  color: black;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.submenu li:last-child {
+  border-bottom: none;
+}
+
+.submenu li:hover {
+  background-color: #f4f4f4;
+  color: #59009A;
+}
+
+.submenu li a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  width: 100%;
+}
+
+.submenu li a:hover {
+  color: #59009A;
+}
+
+/* Submenu de Perfil */
+.submenu-profile {
+  display: none;
+  position: absolute;
+  background-color: white;
+  top: 100%;
+  right: 0;
+  width: 160px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.user-info:hover .submenu-profile {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+
+.submenu-profile ul {
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+}
+
+.submenu-profile li {
+  padding: 12px 20px;
+  border-bottom: 1px solid #eee;
+  font-size: 1rem;
+  color: black;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.submenu-profile li:last-child {
+  border-bottom: none;
+}
+
+.submenu-profile li:hover {
+  background-color: #f4f4f4;
+  color: #59009A;
+}
+
+.submenu-profile li a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  width: 100%;
+}
+
+.submenu-profile li a:hover {
+  color: #59009A;
+}
+
+/* Footer */
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #59009A;
+  z-index: 999;
+}
+
+footer div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.contact-item {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  text-align: center;
+}
+
+.footer-container {
+  padding: 10px;
+}
+
+.items {
+  gap: 30px;
+}
+
+.quienes-somos {
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.iconos img {
+  width: 35px;
+}
+
+.items .contact-item span {
+  color: white;
+}
+.user-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+}
+
+.user-info span {
+  color: #59009a;
+}
+
+.user-info img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Media Queries para pantallas pequeñas */
+@media (max-width: 480px) {
+  header {
+    height: 100px;
+  }
+
+  .submenu {
+    margin-left: -90px;
+    margin-top: 1px;
+    border-radius: 20px 0 0 20px;
+  }
+
+  .service-user {
+    flex-direction: row-reverse;
+  }
+
+  .servicios span {
+    display: none;
+  }
+
+  .menu-icon {
+    display: flex;
+    color: #59009A;
+    cursor: pointer;
+  }
+
+  .menu-icon .material-icons {
+    font-size: 50px;
+    font-family: 'Material Icons';
+    font-style: normal;
+  }
+
+  .user-info {
+    display: none;
+  }
+
+  .logo {
+    flex-direction: row;
+  }
+
+  .footer-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .contact-item span {
+    display: none;
+  }
+
+  .items {
+    gap: 10px;
+  }
+
+  .iconos .icono {
+    width: 30px;
+    height: 30px;
+  }
+} 
+@media (max-width: 768px) {
+  header {
+        position: absolute;
+      }
+
+    .menu-icon {
+        display: block;
+        cursor: pointer;
+    }
+
+    .menu-icon .material-icons {
+        font-size: 30px;
+        color: #59009A;
+    }
+
+    .services-text {
+        display: none;
+    }
+
+    .user-info {
+        display: none; /* Oculta completamente la información del usuario */
+    }
+/* Media Queries para pantallas pequeñas */
+@media (max-width: 680px) {
+  header {
+    height: 100px;
+  }
+
+  .submenu {
+    margin-left: -90px;
+    margin-top: 1px;
+    border-radius: 20px 0 0 20px;
+  }
+
+  .service-user {
+    flex-direction: row-reverse;
+  }
+
+  .servicios span {
+    display: none;
+  }
+
+  .menu-icon {
+    display: flex;
+    color: #59009A;
+    cursor: pointer;
+  }
+
+  .menu-icon .material-icons {
+    font-size: 50px;
+    font-family: 'Material Icons';
+    font-style: normal;
+  }
+
+  .user-info {
+    display: none;
+  }
+
+  .logo {
+    flex-direction: row;
+  }
+
+  .footer-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .contact-item span {
+    display: none;
+  }
+
+  .items {
+    gap: 10px;
+  }
+
+  .iconos .icono {
+    width: 30px;
+    height: 30px;
+  }
+} 
+}
+
+
+/* Estilos adicionales */
+.genre:hover img,
+.imagen-footer:hover,
+.title:hover span,
+.nav a:hover {
+  transform: scale(1.1);
+}
+/*  */
+
+/* -------------------------------------------- */
+    /* Estilos generales del contenedor principal */
+    .container {
+      display: flex;
+      margin-top: 0; /* Eliminar el margen superior del contenedor principal */
+  height: calc(100vh - 160px); /* Ajusta esto según la altura exacta de tu header y footer */
+
+  margin-bottom: 60px; /* Altura del footer *//
+    }
+
+    /* Estilos de la barra lateral */
+    .sidebar {
+      width: 60px;
+      background-color: #c7b7fe49;
+      padding: 20px;
+      transition: width 0.0s ease;
+      /* Modified for smoother transition */
+      overflow: hidden;
+    }
+
+    /* Estilos de la barra lateral al pasar el ratón */
+    .sidebar:hover {
+      width: 450px;
+    }
+
+    /* Estilos de los elementos del menu de la barra lateral */
+    .sidebar .menu-item {
+      padding: 12px;
+      margin: 10px 0;
+      background: #fff;
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      transition: background 0.3s ease, transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    /* Estilos de los elementos del menú cuando están activos o al pasar el ratón */
+    .sidebar .menu-item.active,
+    .sidebar .menu-item:hover {
+      background: linear-gradient(#ffffff, #9c76c1);
+      box-shadow: 1px 5px 10px 0.1px rgb(145, 145, 145);
+      transform: scale(1.05);
+    }
+
+    /* Estilos de las imagenes dentro de los elementos del menu */
+    .sidebar .menu-item img {
+      width: 24px;
+      height: 24px;
+      margin-right: 10px;
+    }
+
+    /* Estilos del texto dentro de los elementos del menu */
+    .sidebar .menu-item span {
+      flex-grow: 1;
+      text-align: center;
+      font-size: 16px;
+      display: none;
+      text-decoration: none;
+      color: #000000;
+    }
+
+    /* Muestra el texto del elemento del menu al pasar el ratón por la barra lateral */
+    .sidebar:hover .menu-item span {
+      display: initial;
+    }
+
+    .sidebar .menu-item a {
+      text-decoration: none;
+      /* Removes the underline */
+      display: block;
+      /* Makes the <a> tag behave like a block-level element */
+      color: inherit;
+      /* Inherits the color from parent elements */
+      width: 100%;
+      /* Ensures the clickable area spans the full width of the menu item */
+      text-align: center;
+    }
+
+    /* Estilos del contenedor principal de contenido */
+    .main {
+      width: calc(100% - 60px);
+      padding: 20px;
+      overflow-y: auto;
+      overflow-x: hidden;
+      /* Evitar el scroll horizontal */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+    }
+
+    /* Estilos del título principal */
+    .title {
+      font-size: 54px;
+      color: #59009a;
+      text-align: center;
+      position: relative;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    /* Estilos del texto dentro del título */
+    .title span {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Estilos de las pestañas para navegar */
+    .tabs {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      margin-bottom: 20px;
+      font-size: 28px;
+      margin-left: 150px;
+    }
+
+    /* Estilos de cada pestaña */
+    .tabs div {
+      cursor: pointer;
+    }
+
+    /* Cambia el color al pasar el ratón por las pestañas */
+    .tabs div:hover {
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    /* Estilos específicos para cada color de pestaña */
+    .tabs div.black {
+      color: black;
+    }
+
+    .tabs div.purple {
+      color: rgb(69, 29, 69);
+    }
+
+    /* Estilos del contenedor de contenido principal */
+    .content {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+    }
+
+    /* Estilos del contenedor del reproductor */
+    .player {
+      text-align: center;
+      width: 45%;
+      max-width: 700px;
+      position: relative;
+    }
+
+    /* Estilos de la portada del album */
+    .album-cover {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 0 auto;
+      border: 3px solid #e87efb;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    /* Estilos de la imagen dentro de la portada del álbum */
+    .album-cover img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+
+
+
+
+
+
+    /* Estilos del tiempo de reproducción */
+    .time {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      margin: 10px auto 0;
+      font-size: 12px;
+    }
+
+    /* Estilos de los controles de reproducción */
+    .controls {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    /* Estilos de los botones de control */
+    .controls button {
+      background: none;
+      border: none;
+      color: black;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    #play-pause-btn {
+      width: 50px;
+      /* Ancho fijo para evitar el cambio de tamaño */
+      height: 50px;
+      /* Alto fijo */
+      font-size: 24px;
+      /* Asegurar que los símbolos tengan el mismo tamaño */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Estilos de las acciones adicionales */
+    .actions {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      width: 100%;
+      margin: 20px auto 0;
+      position: relative;
+    }
+
+    /* Estilos de los botones de acciones */
+    .actions button {
+      background: none;
+      border: none;
+      color: black;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    /* Estilos del menú desplegable */
+    .dropdown {
+      display: none;
+      position: absolute;
+      bottom: 30px;
+      right: 0;
+      background-color: #f9f9f9;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    /* Estilos del contenido del menú desplegable */
+    .dropdown-content {
+      padding: 12px 16px;
+      text-align: left;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    /* Estilos del contenido del menú desplegable al pasar el ratón */
+    .dropdown-content:hover {
+      background-color: #e1e6f5;
+    }
+
+    /* Estilos del menú anidado */
+    .nested-dropdown {
+      display: none;
+      position: relative;
+      background-color: #f9f9f9;
+      padding-left: 20px;
+      margin-top: 10px;
+    }
+
+    /* Estilos de la lista horizontal */
+    .horizontal-list {
+      display: none;
+      justify-content: center;
+      margin-top: 20px;
+      gap: 30px;
+      padding: 10px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: auto;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Estilos de las imágenes y botones dentro de la lista horizontal */
+    .horizontal-list img,
+    .horizontal-list button {
+      width: 50px;
+      height: 50px;
+      cursor: pointer;
+    }
+
+    .horizontal-list button {
+      border: none;
+      background: none;
+      color: black;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    /* Estilos del contenedor de pistas */
+    .tracks-container {
+
+      width: 45%;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+
+      transform: translateX(-70px);
+      padding: 10px;
+      background: transparent;
+      overflow-y: auto;
+
+      max-height: 70vh;
+
+
+
+    }
+
+    /* Estilos generales de cada pista */
+    .track {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px;
+      background-color: rgba(44, 44, 44, 0.218);
+      color: #fff;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      min-width: 0;
+      /* Permite que los elementos flexibles se ajusten */
+
+    }
+
+    /* Estilos del contenedor de la información del audio */
+    .track-info {
+      display: flex;
+      flex-direction: column;
+      /* Para que el título y el álbum estén uno debajo del otro */
+
+      flex-grow: 1;
+      /* Ocupar el espacio restante entre la imagen y el botón */
+      margin-left: 5px;
+      /* Añade espacio entre la imagen y el texto */
+      min-width: 0;
+      /* Esto evitará que el contenido se desborde */
+    }
+
+    /* Elimina el borde inferior de la última pista */
+    .track:last-child {
+      border-bottom: none;
+    }
+
+    /* Estilos de las imágenes de las pistas */
+    .track img {
+      height: 50px;
+      width: 50px;
+      border-radius: 5px;
+      object-fit: cover;
+
+    }
+
+    .track-details {
+      display: flex;
+      gap: 90px;
+      /* Espacio entre el álbumText y el artista */
+      font-size: 0.9rem;
+    }
+
+    /* Estilos de los divs dentro de cada pista */
+    .track div {
+      padding: 0 20px;
+    }
+
+    /* Alinear el título y el álbum a la izquierda */
+    .track-info h3,
+    .track-info p {
+      margin: 0;
+      text-align: left;
+    }
+
+    .track-info h3 {
+      margin-bottom: 7px;
+      /* Espacio entre el título y el nombre del álbum */
+      color: #11001d;
+      font-weight: bold;
+      /* Si deseas que el texto sea más destacado */
+      font-size: 1.5rem;
+      text-overflow: ellipsis;
+      /* Si el texto es muy largo, agrega puntos suspensivos */
+
+
+    }
+
+    .track-info p {
+      color: #d3d0d4;
+      font-size: 1rem;
+      color: #ccc;
+      margin: 0;
+    }
+
+
+
+    /* Estilos de los botones dentro de cada pista */
+    .track button {
+      font-size: 1.9rem;
+      background: none;
+      /* Sin fondo */
+
+      border: none;
+
+      color: black;
+      /* Color del ícono */
+      cursor: pointer;
+      /* Manito cuando se pasa el mouse */
+      padding: 10px;
+      /* Espacio alrededor del ícono */
+      display: flex;
+      /* Alineación flexible */
+      justify-content: center;
+      /* Centrar horizontalmente */
+      align-items: center;
+      /* Centrar verticalmente */
+      width: 50px;
+      /* Ancho del botón */
+      height: 50px;
+      /* Altura del botón */
+
+      margin-right: 0px;
+      /* Empuja el botón hacia la izquierda */
+
+
+    }
+
+    .track button:hover {
+      color: #59009A;
+      /* Cambiar el color del ícono al pasar el mouse */
+    }
+
+    /* Estilos para la barra de progreso */
+
+    /* Barra de progreso general */
+    #progress-bar {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 11px;
+      border-radius: 5px;
+      background: linear-gradient(to right, #e1bee7 0%, #e1bee7 100%);
+      /* Fondo inicial */
+      outline: none;
+      transition: background 0.3s ease-in-out;
+      cursor: pointer;
+    }
+
+    /* Parte que ya ha sido reproducida (el thumb no cambia) */
+    #progress-bar::-webkit-slider-runnable-track {
+      height: 10px;
+      border-radius: 5px;
+    }
+
+    /* Estilo para el control deslizante (thumb) */
+    #progress-bar::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 12px;
+      height: 12px;
+      background: #4a2f65;
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+      transition: transform 0.2s ease;
+    }
+
+    #progress-bar::-webkit-slider-thumb:hover {
+      transform: scale(1.2);
+    }
+
+    #progress-bar::-moz-range-thumb {
+      width: 10px;
+      height: 10px;
+      background: #ded8e2;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    #progress-bar::-moz-range-track {
+      height: 8px;
+      border-radius: 5px;
+    }
+
+    /* Cambiar color al arrastrar */
+    #progress-bar:active::-webkit-slider-thumb {
+      background: #e1bee7;
+    }
+
+    .me-gusta.active {
+      color: #59009A;
+    }
+
+    /* Estilos adicionales para el corazón */
+    .me-gusta {
+      font-size: 24px;
+      /* Aumenta el tamaño de la fuente */
+      color: black;
+      cursor: pointer;
+    }
+
+    .me-gusta.active {
+      color: #59009A;
+    }
+      /* Estilos para pantallas más pequeñas, como tablets o móviles */
+      @media only screen and (max-width: 1200px) {
+      .content {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+      }
+
+      .tracks-container {
+        margin-top: 20px;
+        width: 90%;
+        max-width: 100%;
+        /* Asegurar que ocupe todo el ancho disponible */
+        margin-left: 195px;
+        margin-top: 50px;
+
+
+
+      }
+
+      .player {
+        width: 90%;
+        /* Asegurar que el reproductor también ocupe todo el ancho */
+        max-width: 100%;
+        /* Asegurar que ocupe todo el ancho disponible */
+      }
+
+
+
+      .footer-container {
+        flex-direction: column;
+        /* Cambia las columnas a filas */
+        align-items: center;
+        /* Alinea los elementos al centro */
+      }
+
+      .contact-item {
+        text-align: center;
+        /* Centra el texto de los items */
+      }
+
+      .quienes-somos {
+        margin-left: 0;
+        /* Elimina el margen izquierdo para centrar el enlace en pantallas pequeñas */
+        margin-top: 20px;
+        /* Agrega un poco de espacio superior */
+        align-self: center;
+        /* Centra horizontalmente en el contexto de la columna */
+      }
+
+      .iconos img {
+        margin-right: 0;
+        margin-bottom: 10px;
+        /* Espacio entre los íconos en móviles */
+      }
+
+    }
+
+    /* Estilos para pantallas más pequeñas, como tablets o móviles */
+    @media only screen and (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        height: auto;
+        /* Ajustar altura automática */
+      }
+
+      .sidebar {
+        margin-top: 20px;
+        border-radius: 40px;
+        width: 450px;
+        /* Ocupar todo el ancho disponible */
+        margin-bottom: 20px;
+        /* Espacio entre el sidebar y el contenido principal */
+        padding: 8px 16px;
+
+
+      }
+
+      /* Muestra el texto de los elementos del menú en pantallas pequeñas */
+      .sidebar .menu-item span {
+        display: initial;
+      }
+
+      /* Deshabilita el hover en pantallas pequeñas */
+      .sidebar:hover {
+        width: 450px;
+        /* Mantiene el ancho desplegado */
+      }
+
+      .main-content {
+        width: 100%;
+        /* Ocupar todo el ancho disponible */
+
+      }
+
+      .image-container {
+        /* Ajustar el margen izquierdo */
+        margin-left: 0;
+        text-align: left;
+        /* Centrar el contenido */
+
+      }
+
+      .image-container2 {
+        margin-left: 0;
+        text-align: center;
+        /* Centrar el contenido */
+        width: 100%;
+        /* Ajustar el ancho al 100% */
+        padding: 10px;
+        /* Agregar algo de padding si es necesario */
+      }
+
+      .track-list {
+        max-height: none;
+        /* Ajustar altura automática */
+        width: 100%;
+        /* Ajustar el ancho al 100% */
+        padding: 10px;
+        /* Agregar algo de padding si es necesario */
+        box-sizing: border-box;
+        overflow-y: auto;
+        background-size: cover;
+        /* Asegura que la imagen cubra el contenedor sin distorsionarse */
+        background-position: center;
+        /* Centra la imagen de fondo */
+        background-repeat: no-repeat;
+        /* Evita que la imagen se repita */
+      }
+
+
+      .corner-text {
+        font-size: 1.5em;
+        /* Reducir tamaño de fuente para pantallas pequeñas */
+        top: 10px;
+        left: 10px;
+      }
+
+      .bottom-left-text {
+        font-size: 1em;
+        /* Reducir tamaño de fuente para pantallas pequeñas */
+        bottom: 10px;
+        left: 10px;
       }
 
       .title {
         font-size: 35px;
-        margin: 20px 0;
+        /* Reducir el tamaño del título */
+        margin-left: 20px;
+        /* Ajustar el margen izquierdo */
         text-align: center;
       }
-
-      .tabs {
-        margin-left: 0;
-        justify-content: center;
-      }
-
-      /* Ajustes adicionales para elementos específicos */
-      .track-list {
-        width: 100%;
-        padding: 10px;
-        box-sizing: border-box;
-      }
-
-      .image-container,
-      .image-container2 {
-        margin-left: 0;
+        /* Centrar el título de géneros */
+        .title {
         text-align: center;
-        width: 100%;
-      }
-    }
-
-    /* Ajustes para el header en pantallas pequeñas */
-    @media only screen and (max-width: 480px) {
-      header {
-        height: auto;
-        padding: 10px 0;
-      }
-
-      .logo,
-      .service-user {
+        margin-left: 0;
+        margin-right: 0;
         width: 100%;
         justify-content: center;
-        margin-bottom: 10px;
-      }
-
-      .menu-icon {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-      }
     }
+    /* Ajustes generales */
+body {
+    padding-top: 100px; /* Altura del header */
+}
 
-    /* -------------------------------------------------- */
+.container {
+    margin-top: 0; /* Eliminar el margen superior del contenedor principal */
+}
+    }
+/* -------------------------------------------------- */
+/* ... (mantener todos los estilos anteriores hasta los media queries) ... */
+
+/* Media Queries para pantallas pequeñas */
+@media only screen and (max-width: 1200px) {
+  .content {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .tracks-container {
+    margin-top: 20px;
+    width: 90%;
+    max-width: 100%;
+    margin: 50px auto 0;
+  }
+
+  .player {
+    width: 90%;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-item {
+    text-align: center;
+  }
+
+  .quienes-somos {
+    margin-left: 0;
+    margin-top: 20px;
+    align-self: center;
+  }
+
+  .iconos img {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  body {
+    padding-top: 100px;
+  }
+
+  .container {
+    flex-direction: column;
+    height: auto;
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 95%;
+  }
+
+  .sidebar {
+    width: 100%;
+    max-width: 450px;
+    margin: 20px auto;
+    border-radius: 40px;
+    padding: 8px 16px;
+    border: 2px solid #59009A;
+  }
+
+  .main {
+    width: 100%;
+    padding: 20px;
+    margin: 0 auto;
+  }
+
+  .content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .player {
+    width: 90%;
+    max-width: 100%;
+    margin: 20px auto;
+    padding: 15px;
+    border: 2px solid #59009A;
+    border-radius: 15px;
+  }
+
+  .tracks-container {
+    width: 90%;
+    max-width: 100%;
+    margin: 20px auto;
+    border: 2px solid #59009A;
+    border-radius: 15px;
+    padding: 15px;
+    transform: translateX(0);
+  }
+
+  .title {
+    font-size: 35px;
+    margin: 20px 0;
+    text-align: center;
+  }
+
+  .tabs {
+    margin-left: 0;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .track-list {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  .image-container, 
+  .image-container2 {
+    margin-left: 0;
+    text-align: center;
+    width: 100%;
+  }
+
+  /* Eliminar menú hamburguesa y relacionados */
+  .menu-icon {
+    display: none;
+  }
+
+  .servicios span {
+    display: block;
+  }
+}
+
+/* Ajustes adicionales para pantallas muy pequeñas */
+@media only screen and (max-width: 480px) {
+  header {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    margin-right: auto;
+  }
+
+  .service-user {
+    gap: 15px;
+  }
+
+  .container {
+    padding: 10px;
+  }
+
+  .track-info h3 {
+    font-size: 1.2rem;
+  }
+
+  .track-info p {
+    font-size: 0.9rem;
+  }
+
+  .track button {
+    font-size: 1.5rem;
+  }
+}
+.user-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+}
+
+.user-info span {
+  color: #59009a;
+}
+
+.user-info img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+/* Estilos base del contenedor de pistas */
+.tracks-container {
+  width: 45%;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  background: transparent;
+  overflow-y: auto;
+  max-height: 70vh;
+  /* Eliminamos el transform que estaba causando el desplazamiento */
+  /* transform: translateX(-70px); */
+  margin: 0 auto; /* Esto ayudará a centrar el contenedor */
+}
+
+/* Media query para pantallas grandes hasta 1200px */
+@media only screen and (max-width: 1200px) {
+  .content {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .tracks-container {
+    margin: 20px auto; /* Centrado horizontal */
+    width: 90%;
+    max-width: 800px; /* Limitamos el ancho máximo */
+    transform: none; /* Eliminamos cualquier transformación */
+  }
+
+  .player {
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+}
+
+/* Media query para tablets y dispositivos medianos */
+@media only screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 95%;
+  }
+
+  .tracks-container {
+    width: 90%;
+    max-width: 600px;
+    margin: 20px auto;
+    transform: none;
+    border: 2px solid #59009A;
+    border-radius: 15px;
+    padding: 15px;
+  }
+}
+
+/* Media query para dispositivos móviles */
+@media only screen and (max-width: 480px) {
+  .tracks-container {
+    width: 95%;
+    margin: 15px auto;
+    padding: 10px;
+  }
+
+  .track-info h3 {
+    font-size: 1.2rem;
+  }
+
+  .track-info p {
+    font-size: 0.9rem;
+  }
+}
+
+
   </style>
 
 </head>
 
 <body>
-  <header>
+  <header> 
     <nav>
-      <div class="logo">
-        <a href="/inicio-de-sesion/Modulo-iniciar-sesion/home/home.html">
-          <img src="images/logo.png" alt="Logo de Atención Profesional">
-        </a>
-        <span class="Profesional">TRANQUILIDAD</span>
-      </div>
-      <div class="service-user">
-        <div class="servicios">
-          <div class="menu-icon" id="menu-toggle">
-            <i class="material-icons">menu</i>
-          </div>
-          <span class="services-text">Servicios</span>
-          <div class="submenu" id="services-submenu">
-            <ul>
-              <li><a href="/mapa-de-suenos/Inicio/Inicio.html">Mapa De Sueños</a></li>
-              <li><a href="/alimentacion/Inicio/index.html">Alimentacion</a></li>
-              <li><a href="/arteterapia/html/Navegacion.html">Arteterapia</a></li>
-              <li><a href="/musicoterapia/Vistas1.1/bienvenido_a_musicoterapia.html">Musicoterapia</a></li>
-              <li><a href="/rutinas-de-ejercicios/inicio/index.html">Ejercicios</a></li>
-              <li><a href="/atencion-profesional/USUARIO/Home_Usuario/HomeUsuario.html">Atencion Profesional</a></li>
-              <li><a href="/inicio-de-sesion/Modulo-iniciar-sesion/usuario/usuario.html">Perfil</a></li>
-            </ul>
-          </div>
+        <div class="logo">
+            <a href="/inicio-de-sesion/Modulo-iniciar-sesion/home/home.html">
+                <img src="images/logo.png"
+                    alt="Logo de Atención Profesional">
+            </a>
+            <a href="/inicio-de-sesion/Modulo-iniciar-sesion/home/home.html"><span class="Profesional">TRANQUILIDAD</span></a>
         </div>
-        <div class="user-info">
-          <span>Juanito Alimaña</span>
-          <a href="#" class="profile-toggle">
-            <img class="imagen-usuario" src="images/user.png" alt="Foto de perfil del usuario">
-          </a>
-          <div class="submenu-profile">
-            <ul>
-              <li><a href="/inicio-de-sesion/Modulo-iniciar-sesion/usuario/usuario.html">Ver Perfil</a></li>
-              <li><a href="/inicio-de-sesion/Modulo-iniciar-sesion/login/login.html">Cerrar Sesión</a></li>
-            </ul>
-          </div>
+        <div class="service-user">
+            <div class="servicios">
+                <div class="menu-icon">
+                    <i class="material-icons">menu</i>
+                </div>
+                <span>Servicios</span>
+                <div class="submenu">
+                    <ul>
+                        <li><a href="/mapa-de-suenos/Inicio/Inicio.html">Biblioterapia</a></li>
+                        <li><a href="/alimentacion/Inicio/index.html">Alimentacion</a></li>
+                        <li><a href="/musicoterapia/Vistas1.1/bienvenido_a_musicoterapia.html">Musicoterapia</a></li>
+                        <li><a href="/rutinas-de-ejercicios/inicio/index.html">Ejercicios</a></li>
+                        <li><a href="/atencion-profesional/USUARIO/Home_Usuario/HomeUsuario.html">Atencion Profesional</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="user-info">
+                <span>Juanito Alimaña</span>
+                  <a class="profile-toggle"><img class="imagen-usuario" 
+                    src="images/user.png"
+                    alt="Foto de perfil del usuario">
+                  </a>
+                
+                <div class="submenu-profile">
+                    <ul>
+                        <li><a href="/inicio-de-sesion/Modulo-iniciar-sesion/usuario/usuario.html">Ver Perfil</a></li>
+                        <li><a href="/inicio-de-sesion/Modulo-iniciar-sesion/configuracion/configuracion.html">Configuracion</a></li>
+                        <li><a href="/inicio-de-sesion/Modulo-iniciar-sesion/login/login.html">Cerrar Sesión</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
-      </div>
     </nav>
   </header>
+
+
 
   <div class="container">
     <aside class="sidebar">
@@ -1393,32 +2916,37 @@
       </div>
     </main>
   </div>
-  <footer>
+  <footer> 
     <div class="footer-container">
-      <div class="items">
-        <div class="contact-item">
-          <span>Contáctanos</span>
-          <div class="iconos">
-            <a href="https://web.whatsapp.com/"><img class="icono" src="imagenes/WhatsApp.png" alt="WhatsApp"></a>
-          </div>
+        <div class="items">
+            <div class="contact-item">
+                <span>Contáctanos</span>
+                <div class="iconos">
+                    <a href="https://web.whatsapp.com/"><img class="icono" src="/FootNav/imagenes/WhatsApp.png"
+                            alt="WhatsApp"></a>
+                </div>
+            </div>
+            <div class="contact-item">
+                <span>Canales de atención</span>
+                
+                <div class="iconos">
+                    <a href="https://web.telegram.org/"><img class="icono" src="/FootNav/imagenes/Telegram App.png"
+                            alt="Telegram"></a>
+                    <a href="https://mail.google.com/mail/u/0/?ogbl#inbox"><img class="icono" src="/FootNav/imagenes//Email.png"
+                            alt="Email"></a>
+                </div>
+            </div>
+            <div class="contact-item">
+                <span>Redes sociales</span>
+                <div class="iconos">
+                    <a href="https://www.facebook.com/"><img class="icono" src="/FootNav/imagenes/Facebook.png"
+                            alt="Facebook"></a>
+                    <a href="https://www.instagram.com/"><img class="icono" src="/FootNav/imagenes/Instagram.png"
+                            alt="Instagram"></a>
+                </div>
+            </div>
         </div>
-        <div class="contact-item">
-          <span>Canales de atención</span>
-          <div class="iconos">
-            <a href="https://web.telegram.org/"><img class="icono" src="imagenes/Telegram App.png" alt="Telegram"></a>
-            <a href="https://mail.google.com/mail/u/0/?ogbl#inbox"><img class="icono" src="imagenes/Email.png"
-                alt="Email"></a>
-          </div>
-        </div>
-        <div class="contact-item">
-          <span>Redes sociales</span>
-          <div class="iconos">
-            <a href="https://www.facebook.com/"><img class="icono" src="imagenes/Facebook.png" alt="Facebook"></a>
-            <a href="https://www.instagram.com/"><img class="icono" src="imagenes/Instagram.png" alt="Instagram"></a>
-          </div>
-        </div>
-      </div>
-      <a class="quienes-somos" href="#">¿Quiénes somos?</a>
+        <a class="quienes-somos" href="#">¿Quiénes somos?</a>
     </div>
   </footer>
 
@@ -1775,59 +3303,59 @@
       }
     });
 
-    // ----------------------------------
-    function loadTemplate(templateId, filePath, callback) {
-      fetch(filePath)
+// ----------------------------------
+function loadTemplate(templateId, filePath, callback) {
+    fetch(filePath)
         .then(response => response.text())
         .then(data => {
-          document.getElementById(templateId).innerHTML = data;
-          if (callback) callback();
+            document.getElementById(templateId).innerHTML = data;
+            if (callback) callback();
         })
         .catch(error => console.error('Error al cargar la plantilla:', error));
+}
+
+loadTemplate('header-placeholder', '../../../FootNav/header.html', function() {
+    const servicios = document.querySelector('.servicios');
+    const submenu = document.querySelector('.submenu'); 
+    if (servicios) { 
+        servicios.addEventListener('click', () => {
+            const submenu = document.querySelector('.submenu');
+            submenu.classList.toggle('active');
+        });
+        
     }
 
-    loadTemplate('header-placeholder', '../../../FootNav/header.html', function () {
-      const servicios = document.querySelector('.servicios');
-      const submenu = document.querySelector('.submenu');
-      if (servicios) {
-        servicios.addEventListener('click', () => {
-          const submenu = document.querySelector('.submenu');
-          submenu.classList.toggle('active');
-        });
-
-      }
-
-      document.addEventListener('click', function (event) {
+    document.addEventListener('click', function(event) {
         if (!servicios.contains(event.target) && !submenu.contains(event.target)) {
-          submenu.classList.remove('active');
+            submenu.classList.remove('active');
         }
-      });
     });
+});
 
-    loadTemplate('footer-placeholder', '../../../FootNav/footer.html');
+loadTemplate('footer-placeholder', '../../../FootNav/footer.html');
 
 
-    document.addEventListener('DOMContentLoaded', function () {
-      const menuToggle = document.getElementById('menu-toggle');
-      const servicesSubmenu = document.getElementById('services-submenu');
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.getElementById('menu-toggle');
+    const servicesSubmenu = document.getElementById('services-submenu');
 
-      menuToggle.addEventListener('click', function (e) {
+    menuToggle.addEventListener('click', function(e) {
         e.stopPropagation();
         servicesSubmenu.classList.toggle('active');
-      });
-
-      // Cerrar el menú al hacer clic fuera de él
-      document.addEventListener('click', function (event) {
-        if (!menuToggle.contains(event.target) && !servicesSubmenu.contains(event.target)) {
-          servicesSubmenu.classList.remove('active');
-        }
-      });
-
-      // Prevenir que los clics dentro del menú lo cierren
-      servicesSubmenu.addEventListener('click', function (e) {
-        e.stopPropagation();
-      });
     });
+
+    // Cerrar el menú al hacer clic fuera de él
+    document.addEventListener('click', function(event) {
+        if (!menuToggle.contains(event.target) && !servicesSubmenu.contains(event.target)) {
+            servicesSubmenu.classList.remove('active');
+        }
+    });
+
+    // Prevenir que los clics dentro del menú lo cierren
+    servicesSubmenu.addEventListener('click', function(e) {
+        e.stopPropagation();
+    });
+});
 
   </script>
 

@@ -1,51 +1,53 @@
+    /* Estilos generales */
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        height: 100vh;
+        margin: 0;
+    }
+             
+    .sidebar {
+        width: 100px;
+        background-color: #CCBAF2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 20px;
+        height: 627px; /* Establecer una altura fija */
+        border-radius: 13px;
+    }
+
+    .sidebar button {
+        background-color: #fff;
+        border: none;
+        cursor: pointer;
+        margin-bottom: 22px;
+        padding: 10px;
+        font-size: 20px;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
  
 
-body {
-    margin: 0; /* Eliminar el margen del cuerpo */
-    font-family: Arial, sans-serif; /* Fuente general */
-}
+    #canvas-container {
+position: relative; 
+width: 100vw; /* 100% del ancho de la ventana */
+height: 100vh; /* 100% del alto de la ventana */
+display: flex; /* Asegura que el lienzo esté centrado */
+justify-content: center;
+align-items: center;
+overflow: hidden; /* Evita desplazamientos si el tamaño es mayor que la pantalla */
 
-.sidebar {
-    width: 80px; /* Ancho de la barra lateral */
-    background-color: #59009A; /* Color de fondo */
-    display: flex; /* Flexbox para alineación */
-    flex-direction: column; /* Alinear elementos en columna */
-    align-items: center; /* Centrar elementos horizontalmente */
-    padding-top: 20px; /* Espacio en la parte superior */
-    border-radius: 1px; /* Bordes redondeados */
-    position: fixed; /* Fijar la barra lateral */
-    top: 0; /* Posicionarla en la parte superior */
-    left: 0; /* Posicionarla a la izquierda */
-    height: 100%; /* Altura completa */
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2); /* Sombra a la derecha */
-    z-index: 1000; /* Asegurarse de que esté por encima de otros elementos */
 }
-
-.sidebar button {
-    background-color: #fff; /* Color de fondo de los botones */
-    border: none; /* Sin borde */
-    cursor: pointer; /* Cambiar cursor al pasar sobre el botón */
-    margin: 15px 0; /* Espaciado vertical */
-    padding: 10px; /* Espaciado interno */
-    font-size: 18px; /* Tamaño de fuente */
-    width: 60px; /* Ancho de los botones */
-    height: 60px; /* Altura de los botones */
-    border-radius: 50%; /* Botones redondeados */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra del botón */
-    transition: background-color 0.3s, transform 0.3s; /* Transición suave */
-}
-
-.sidebar button:hover {
-    background-color: #e0e0e0; /* Color de fondo al pasar el mouse */
-    transform: scale(1.1); /* Aumentar ligeramente el tamaño del botón */
-}
-
-.sidebar i {
-    font-size: 24px; /* Tamaño del ícono */
-    color: #59009A; /* Color del ícono */
-}
-#canvas-container {
-position: relative; /* Asegura que los elementos dentro se posicionen relativos a este contenedor */
+#myCanvas {
+    border-bottom: 1px solid rgb(162, 162, 162); /* Cambia el color y grosor del borde según tus preferencias */
+  }
+canvas {
+width: 100%; /* El lienzo se ajusta al ancho del contenedor */
+height: 100%; /* El lienzo se ajusta al alto del contenedor */
+display: block; /* Elimina el espacio extra alrededor del lienzo */
 }
 
 
@@ -58,135 +60,162 @@ height: 50px; /* Altura del textarea */
 pointer-events: auto; /* Permite la interacción con el textarea */
 z-index: 10; /* Asegura que el textarea esté encima del lienzo */
 background-color: rgba(255, 255, 255, 0.8); /* Fondo ligeramente blanco */
-border: 9px solid #000000; /* Borde del textarea */
+border: 1px solid #ccc; /* Borde del textarea */
 font-size: 16px; /* Tamaño de texto */
-color: rgb(255, 0, 0); /* Color del texto */
+color: black; /* Color del texto */
 outline: none; /* Elimina el borde al hacer clic */
 padding: 5px; /* Espaciado interno */
 resize: none; /* Desactiva la opción de redimensionar el textarea */
 cursor: text; /* Cursor de texto para indicar que se puede escribir */
 }
-#canvas-container {
-    position: relative; /* Asegura que los elementos dentro se posicionen relativos a este contenedor */
-    border: 2px solid #000; /* Agrega un borde de 2px de grosor y color negro */
-    border-radius: 5px; /* Bordes redondeados (opcional) */
-    overflow: hidden; /* Evita que el botón de pantalla completa se salga del contenedor */
-}
 
-/* Menús emergentes */
+
+    /* Menús emergentes */
+    /* Menú emergente para stickers */
 .popup-menu {
-    display: none;
-    position: absolute;
-    top: 80px;
-    left: 80px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 10px;
-    z-index: 10;
-    overflow-y: auto;
-    max-height: 80vh; /* Limita la altura del menú */
+display: none;
+position: absolute;
+top: 80px;
+left: 100px;
+background-color: #fff;
+border: 1px solid #ddd;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+padding: 10px;
+z-index: 10;
+max-height: 80vh; /* Limita la altura del menú */
+overflow-y: auto; /* Permite desplazamiento vertical */
 }
 
+/* Estilo para el contenedor de stickers */
+.popup-menu.stickers {
+display: flex; /* Utiliza flexbox */
+flex-wrap: wrap; /* Permite que los stickers se envuelvan */
+max-height: 100px; /* Altura máxima para los stickers en línea */
+}
+
+/* Estilo para cada sticker */
+.popup-menu .sticker {
+width: 40px; /* Ancho de cada sticker */
+height: 40px; /* Alto de cada sticker */
+margin: 5px; /* Espacio entre stickers */
+background-color: transparent; /* Fondo transparente */
+cursor: pointer; /* Cambia el cursor al pasar el ratón */
+}
+
+/* Estilo para el contenedor de formas */
+.popup-menu.shapes {
+display: flex; /* Utiliza flexbox */
+flex-direction: row; /* Alinea las formas en una fila */
+flex-wrap: nowrap; /* No permite el ajuste de líneas */
+overflow-x: auto; /* Desplazamiento horizontal si hay más formas */
+}
+
+/* Estilo de los botones de formas */
 .popup-menu button {
-    background-color: #fff;
-    border: none;
-    cursor: pointer;
-    margin: 5px;
-    padding: 10px;
-    font-size: 20px;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
+background-color: transparent; /* Fondo transparente para que se vea la forma */
+border: none; /* Sin borde */
+cursor: pointer; /* Cambia el cursor al pasar el ratón */
+margin: 5px; /* Espacio entre los botones */
+padding: 0; /* Sin padding para que la forma se vea correctamente */
+display: flex; /* Para centrar el contenido */
+justify-content: center; /* Centrar contenido horizontalmente */
+align-items: center; /* Centrar contenido verticalmente */
 }
 
-.popup-menu .shape {
-    background-color: transparent;
-}
-
+/* Estilo para la forma cuadrada */
 .popup-menu .shape.square {
-    background-color: blue;
+width: 40px; /* Ancho del cuadrado */
+height: 40px; /* Alto del cuadrado */
+background-color: blue; /* Color de fondo */
 }
 
+/* Estilo para la forma circular */
 .popup-menu .shape.circle {
-    border-radius: 50%;
-    background-color: red;
+width: 40px; /* Ancho del círculo */
+height: 40px; /* Alto del círculo */
+border-radius: 50%; /* Hace que el botón sea circular */
+background-color: red; /* Color de fondo */
 }
 
+/* Estilo para la forma triangular */
 .popup-menu .shape.triangle {
-    width: 0;
-    height: 0;
-    border-left: 20px solid transparent;
-    border-right: 20px solid transparent;
-    border-bottom: 40px solid green;
+width: 0; /* Ancho 0 para crear un triángulo */
+height: 0; /* Alto 0 para crear un triángulo */
+border-left: 20px solid transparent; /* Bordes para formar un triángulo */
+border-right: 20px solid transparent; /* Bordes para formar un triángulo */
+border-bottom: 40px solid green; /* Color del triángulo */
 }
 
+/* Estilo para forma personalizada */
 .popup-menu .shape.custom {
-    background-color: gray;
-    border: 1px solid #ccc;
-}
-
-.popup-menu .shape.sticker {
-    font-size: 30px;
-    line-height: 1;
+width: 40px; /* Ancho de la forma personalizada */
+height: 25px; /* Alto de la forma personalizada */
+background-color: gray; /* Color de fondo */
+border: 1px solid #ccc; /* Borde */
 }
 
 
-
-.eraser-mode-button {
-    background-color: #4caf50;
+.fullscreen-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000; /* Asegúrate de que está por encima de otros elementos */
 }
+   
+    /* Controles adicionales */
+    .drawing-controls, .eraser-controls {
+        display: none;
+        position: absolute;
+        top: 160px; /* Ajusta según sea necesario */
+        left: 80px; /* Ajusta según sea necesario */
+        background-color: #fff;
+        border: 1px solid #ddd;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+        z-index: 10;
+    }
 
-/* Controles adicionales */
-.drawing-controls, .eraser-controls {
-    display: none;
-    position: absolute;
-    top: 160px; /* Ajusta según sea necesario */
-    left: 80px; /* Ajusta según sea necesario */
-    background-color: #fff;
-    border: 1px solid #ddd;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 10px;
-    z-index: 10;
-}
+    .drawing-controls input[type="color"],
+    .drawing-controls input[type="range"],
+    .eraser-controls input[type="range"] {
+        margin-bottom: 10px;
+    }
+      /* Estilo para el canvas en modo pantalla completa */
+        .fullscreen-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 1;
+            background-color: white;
+        }
 
-.drawing-controls input[type="color"],
-.drawing-controls input[type="range"],
-.eraser-controls input[type="range"] {
-    margin-bottom: 10px;
-}
+    #fullscreen-toggle {
+        position: fixed;
+        bottom: 10px;
+        right: 10px; /* Cambiado para estar a la derecha */
+        color: rgb(56, 56, 56);
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        z-index: 999;
+        cursor: pointer;
+    }
 
-#fullscreen-btn {
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 10px;
-    position: absolute;
-    bottom: 10px;
-    right: 2px;
-    transform: translateY(10px);
-}
-
-#fullscreen-btn img {
-    width: 30px;
-    height: 30px;
-    margin-top: 1px;
-}
-
-.btn {
-    padding: 10px 15px;
-    margin: 10px;
-    font-size: 16px;
-    cursor: pointer;
-}
-/* Barra de herramientas flotante */
+    #fullscreen-toggle i {
+        font-size: 20px;
+    }
+   /* Barra de herramientas flotante */
 .toolbar {
 position: fixed; /* Fijo para que no se mueva al hacer scroll */
 top: 5px; /* Ajuste de posición en la parte superior */
 left: 100px; /* Un poco de espacio desde la izquierda */
 display: flex;
 justify-content: flex-start;
-background-color: #59009A;
+background-color: #CCBAF2;
 padding: 10px;
 border-radius: 5px;
 box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2); /* Sombra para efecto visual */
@@ -223,16 +252,20 @@ background-color: #e0e0e0;
 /* Responsive: ajusta el tamaño del texto y los botones en pantallas pequeñas */
 @media (max-width: 600px) {
 .toolbar {
-top: 5px;
-left: 5px;
-padding: 8px;
-width: calc(100% - 10px); /* Más ajustado en pantallas pequeñas */
+    top: 5px;
+    left: 5px;
+    padding: 8px;
+    width: calc(100% - 10px); /* Más ajustado en pantallas pequeñas */
 }
 
 .toolbar button {
-font-size: 14px; /* Tamaño de texto más pequeño */
-padding: 4px;
-height: 35px; /* Altura ajustada en pantallas pequeñas */
+    font-size: 14px; /* Tamaño de texto más pequeño */
+    padding: 4px;
+    height: 35px; /* Altura ajustada en pantallas pequeñas */
 }
 }
 
+
+#colorPicker {
+    display: none; /* Se oculta inicialmente */
+}

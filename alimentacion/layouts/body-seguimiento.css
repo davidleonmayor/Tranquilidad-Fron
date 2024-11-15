@@ -1,6 +1,13 @@
-body{
-    margin-bottom: 80px;
+/* body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 50px;
 }
+
+canvas {
+    max-width: 600px;
+    margin: 0 auto;
+} */
 
 .section {
     padding: 15px;

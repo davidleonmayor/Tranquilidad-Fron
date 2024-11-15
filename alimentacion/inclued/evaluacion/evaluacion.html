@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../layouts/body-evaluacion.css">
+    <link rel="stylesheet" href="../layouts/styleHeader.css">
+    <link rel="stylesheet" href="../layouts/styleFooter.css">
+    <title>Evaluacion</title>
+</head>
+<header>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="../Home_Usuario/HomeUsuario.html"><img src="https://i.ibb.co/4MSTbtM/2f043346-e172-4c47-b8b4-d69f213fc49e.jpg" alt="Logo de Atención Profesional"></a>
+        <span class="Alimentaciòn">Alimentaciòn </span>
+      </div>
+      <div class="menu-icon">
+        <i class="material-icons">menu</i>
+      </div>
+      <div class="servicios">
+        <span>Alimentacion</span>
+        <div class="submenu">
+          <ul>
+            <li>Biblioterapia</li>
+            <li>Arteterapia</li>
+            <li>Musicoterapia</li>
+            <li>Ejercicios</li>
+          </ul>
+        </div>
+      </div>
+      <div class="user-info">
+        <span>Juanito Alimaña</span>
+        <img class="imagen-usuario" src="https://pps.whatsapp.net/v/t61.24694-24/425171185_1161987931585359_8379654463750076539_n.jpg?ccb=11-4&oh=01_Q5AaICQrNgt5q8xzlA08ydTiz0MYYzWsQrMTW8GSElA5yevr&oe=670D1BA8&_nc_sid=5e03e0&_nc_cat=101" alt="Foto de perfil del usuario">
+      </div>
+    </nav>
+    <div class="dropdown-menu">
+      <ul>
+        <li><a href="#">Biblioterapia</a></li>
+        <li><a href="#">Arteterapia</a></li>
+        <li><a href="#">Musicoterapia</a></li>
+        <li><a href="#">Ejercicios</a></li>
+        <li><a href="#">Perfil</a></li>
+      </ul>
+    </div>
+  </header>
+
+<body>
+    <main>
+      <section class="card" id="test">
+        <form>
+            <h2>Evaluación de Salud</h2>
+            <!-- Género -->
+            <div>
+                <label for="genero">Género:</label>
+                <select id="genero" name="genero">
+                    <option value="masculino">Masculino</option>
+                    <option value="femenino">Femenino</option>
+                </select>
+            </div>
+            <!-- Peso -->
+            <div>
+                <label for="peso">Peso (kg):</label>
+                <input type="number" id="peso" name="peso" step="0.1" placeholder="Tu peso en kg">
+            </div>
+
+            <!-- Altura -->
+            <div>
+                <label for="altura">Altura (cm):</label>
+                <input type="number" id="altura" name="altura" step="0.1" placeholder="Tu altura en cm">
+            </div>
+
+            <!-- Edad -->
+            <div>
+                <label for="edad">Edad:</label>
+                <input type="number" id="edad" name="edad" min="0" placeholder="Tu edad">
+            </div>
+
+            <!-- Nivel de actividad -->
+            <div>
+                <label for="nivel_actividad">Nivel de actividad:</label>
+                <select id="nivel_actividad" name="nivel_actividad">
+                    <option value="sedentario">Sedentario</option>
+                    <option value="ligero">Ligero</option>
+                    <option value="moderado">Moderado</option>
+                    <option value="activo">Activo</option>
+                    <option value="muy activo">Muy Activo</option>
+                </select>
+            </div>
+
+            <!-- Tipo de trabajo -->
+            <div>
+                <label for="tipo_trabajo">Tipo de trabajo:</label>
+                <select id="tipo_trabajo" name="tipo_trabajo">
+                    <option value="sedentario">Sedentario</option>
+                    <option value="activo">Activo</option>
+                </select>
+            </div>
+
+            <!-- Horas dormidas -->
+            <div>
+                <label for="horas_dormidas">Horas dormidas:</label>
+                <input type="number" id="horas_dormidas" name="horas_dormidas" min="0"
+                    placeholder="Horas dormidas por noche">
+
+            </div>
+            <!-- Nivel de estrés -->
+            <div>
+                <label for="nivel_estres">Nivel de estrés:</label>
+                <select id="nivel_estres" name="nivel_estres">
+                    <option value="bajo">Bajo</option>
+                    <option value="moderado">Moderado</option>
+                    <option value="alto">Alto</option>
+                </select>
+            </div>
+
+            <!-- Frecuencia de comida procesada -->
+            <div>
+                <label for="frecuencia_comida_procesada">Frecuencia de comida procesada:</label>
+                <select id="frecuencia_comida_procesada" name="frecuencia_comida_procesada">
+                    <option value="baja">Baja</option>
+                    <option value="moderada">Moderada</option>
+                    <option value="alta">Alta</option>
+                </select>
+            </div>
+
+            <!-- Frecuencia de comidas -->
+            <div>
+                <label for="frecuencia_comidas">Frecuencia de comidas al día:</label>
+                <input type="number" id="frecuencia_comidas" name="frecuencia_comidas" min="0"
+                    placeholder="Veces que comes al día">
+            </div>
+
+            <!-- Consumo de alcohol -->
+            <div>
+                <label for="consumo_alcohol">Consumo de alcohol:</label>
+                <select id="consumo_alcohol" name="consumo_alcohol">
+                    <option value="ocasional">Ocasional</option>
+                    <option value="regular">Regular</option>
+                    <option value="no consume">No consume</option>
+                </select>
+            </div>
+
+            <!-- Objetivo -->
+            <div>
+                <label for="objetivo">Objetivo:</label>
+                <select id="objetivo" name="objetivo">
+                    <option value="mantener peso">Mantener peso</option>
+                    <option value="perder peso">Perder peso</option>
+                    <option value="ganar peso">Ganar peso</option>
+                </select>
+            </div>
+
+            <!-- Botón de envío -->
+             <a href="../resultados/resultados.html" role="button">Enviar
+            </a>
+           
+            
+        </form>
+    </section>
+    </main>
+</body>
+
+<footer>
+    <div class="footer-container">
+      <div class="contact-item">
+        <span>Contáctanos</span>
+        <div class="iconos">
+          <a href="https://web.whatsapp.com/"><img src="../inclued/WhatsApp.png" alt="WhatsApp"></a>
+        </div>
+      </div>
+     
+      <div class="contact-item">
+        <span>Canales de atención</span>
+        <div class="iconos">
+          <a href="https://web.telegram.org/"><img src="../inclued/Telegram App.png" alt="Telegram"></a>
+          <a href="https://mail.google.com/mail/u/0/?ogbl#inbox"><img src="../inclued/Email.png" alt="Email"></a>
+        </div>
+      </div>
+      <div class="contact-item">
+        <span>Redes sociales</span>
+        <div class="iconos">
+          <a href="https://www.facebook.com/"><img src="../inclued/Facebook.png" alt="Facebook"></a>
+          <a href="https://www.instagram.com/"><img src="../inclued/Instagram.png" alt="Instagram"></a>
+        </div>
+      </div>
+      <a class="quienes-somos" href="#">¿Quiénes somos?</a>
+    </div>
+  </footer>
+  
+  <script src="/Tranquilidad-Front-alimentacion/alimentacion/script.js"></script>
+  
+
+</html>
+

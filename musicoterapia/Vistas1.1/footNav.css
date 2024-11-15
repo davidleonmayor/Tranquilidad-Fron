@@ -43,22 +43,6 @@ header nav {
   margin: 0px 10px;
 }
 
-.servicios {
-  position: relative;
-}
-
-.servicios span {
-  color: #59009A;
-}
-
-.service-user {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 30px;
-  font-size: 1.0625rem;
-}
-
 .menu-icon {
   display: none;
 }
@@ -304,6 +288,7 @@ footer div {
     font-style: normal;
   }
 
+
   .user-info {
     display: none;
   }
@@ -329,4 +314,131 @@ footer div {
     width: 30px;
     height: 30px;
   }
-} 
+}/* Submenu de Servicios */
+.submenu {
+  display: none;
+  position: absolute;
+  background-color: white;
+  top: 100%;
+  left: 50%; /* Centrado horizontalmente */
+  transform: translateX(-50%);
+  width: 180px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  z-index: 1000;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.servicios:hover .submenu {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+
+.submenu ul {
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+}
+
+.submenu li {
+  padding: 12px 20px;
+  border-bottom: 1px solid #eee;
+  font-size: 1rem;
+  color: black; /* Color de las letras */
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave */
+}
+
+.submenu li:last-child {
+  border-bottom: none; /* Sin borde para el último */
+}
+
+.submenu li:hover {
+  background-color: #f4f4f4; /* Color al pasar el ratón */
+  color: #59009A; /* Cambia a color primario en hover */
+}
+
+.submenu li a {
+  text-decoration: none;
+  color: inherit; /* Hereda el color del texto */
+  display: block; /* Para que el enlace cubra todo el área del li */
+  width: 100%;
+}
+
+.submenu li a:hover {
+  color: #59009A; /* Cambia a color primario */
+}
+
+.servicios {
+  position: relative;
+}
+
+.servicios span {
+  color: #59009A;
+}
+
+.service-user {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
+  font-size: 1.0625rem;
+}
+/* ---------------------------------------------------- */
+/* Estilos base del submenu */
+.submenu {
+  display: none;
+  position: absolute;
+  background-color: white;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 180px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Media query para móviles */
+@media (max-width: 480px) {
+  .submenu {
+    position: absolute; /* Cambiado a absolute */
+    top: 100%; /* Posicionar justo debajo del elemento padre */
+    left: auto; /* Quitar left auto-posicionamiento */
+    right: 0; /* Alinear a la derecha */
+    transform: none; /* Eliminar transform */
+    width: 200px; /* Ancho fijo */
+    max-width: calc(100vw - 20px); /* Evitar desbordamiento horizontal */
+    margin-top: 5px; /* Pequeño espacio desde el elemento padre */
+    border-radius: 8px;
+    z-index: 2000; /* Aumentar z-index para asegurar que aparezca sobre otros elementos */
+  }
+
+  .servicios {
+    position: relative; /* Mantener relative para el posicionamiento del submenu */
+  }
+
+  .submenu ul {
+    max-height: calc(100vh - 150px); /* Altura máxima para evitar desbordamiento vertical */
+    overflow-y: auto; /* Permitir scroll si el contenido es muy largo */
+  }
+
+  .submenu li {
+    padding: 12px 20px;
+    white-space: nowrap; /* Evitar que el texto se rompa */
+  }
+
+  /* Asegurar que el submenu sea visible cuando se active */
+  .servicios:hover .submenu {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+  }
+}

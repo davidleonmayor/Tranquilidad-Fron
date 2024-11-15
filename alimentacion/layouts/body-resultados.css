@@ -114,23 +114,9 @@ body {
     cursor: pointer;
 }
 
-.opciones .btn-action {
-  background-color: #59009A;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
 .acciones button:hover{
     background-color: #be5cb6;
     transition: background-color 0.3s ease;
-}
-
-.btn-action:hover {
-  background-color: #be5cb6;
-  transition: background-color 0.3s ease;
 }
 
 

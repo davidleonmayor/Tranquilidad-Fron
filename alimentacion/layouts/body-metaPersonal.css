@@ -3,7 +3,6 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     color: #333;
-    margin-bottom: 90px;
 }
 
 main {
@@ -12,7 +11,6 @@ main {
 }
 
 section {
-    margin: 10px;
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
