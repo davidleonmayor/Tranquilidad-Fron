@@ -1,100 +1,116 @@
 body {
-  font-family: sans-serif;
+  font-family: 'Quicksand', sans-serif;
+  background-color: #f8f7fa;
+  color: #333;
   margin: 0;
   padding: 0;
-  background-color: #fffcfc;
-  width: 100%;
 }
 
 .container {
-  width: 80%;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 1.2rem 0;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 60px;
+  
+  justify-items: center;
+  margin-top: 20px;
+  margin-bottom: 70px;
 }
-
-h2 {
-  text-align: center;
-  color: #59009A;
-  font-size: 1rem;
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
-
-.pregunta {
-  margin-bottom: 1.2rem;
-  margin: 2.4rem;
-}
-
-button {
-  display: block;
-  padding: 0.6rem 1.8rem;
-  background-color: #59009A;
-  color: #fff;
-  border: none;
-  border-radius: 1.8rem;
-  cursor: pointer;
-  margin: 1.2rem auto;
-}
-
-button:hover {
-  background-color: #440173;
-}
-
-main {
+.card {
   display: flex;
-  justify-content: space-around;
-  padding: 1.2rem;
-  flex-wrap: wrap;
+  
+  overflow: hidden;
+  width: 100%;
+ 
+  max-width: 500px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-main section {
-  text-align: center;
-  flex: 1;
-  margin: 0 0.6rem;
-}
 
-main section img {
-  width: 22.8rem; /* Tamaño fijo de la imagen */
-  height: 10.8rem; /* Tamaño fijo de la imagen */
-  border: double;
-  border-radius: 5%;
+
+.card img {
+  width: 40%; /* Reduje el tamaño de la imagen para hacerla más pequeña */
+  height: 73%;
   object-fit: cover;
-  max-width: none; /* Evita que la imagen cambie de tamaño */
+  margin: 10px; /* Añadí margen para que no toque los bordes de la tarjeta */
+  border-radius: 5px;
+  margin-top: 60px;
 }
 
-/* Media query usando rem */
-@media (max-width: 48rem) {
-  main {
-    flex-direction: column;
-    align-items: center;
-  }
+.card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 15px;
+  text-align: left;
+  width: 60%;
+  
+}
+h1 {
+  font-size: 1.5em;
+  font-weight: bold;
+  text-transform: uppercase; /* Asegura que el texto esté en mayúsculas */
+  color: #59009a;
+  margin-bottom: 30px;
+  margin-top: 50px;
+  background: linear-gradient(45deg, #59009a, #e74c3c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  text-align: center;
+  font-size: 32px;
+}
+.card-title {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #59009a;
+  margin-bottom: 10px;
+  background: linear-gradient(45deg, #59009a, #e74c3c);
+  -webkit-background-clip: text;
+  color: transparent;
+}
 
-  main section {
-    margin-bottom: 1.2rem;
-    width: auto; /* Mantén el tamaño de la sección, sin cambios */
-  }
+.card-description {
+  font-size: 1em;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
 
-  main section img {
-    width: 22.8rem; /* Mantén el tamaño fijo de la imagen */
-    height: 10.8rem; /* Mantén el tamaño fijo de la imagen */
+.card-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background: linear-gradient(145deg, #59009a, #8a2be2);
+  color: #fff;
+  text-align: center;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.card-button:hover {
+  background: linear-gradient(145deg, #8a2be2, #59009a);
+  transform: translateY(-3px);
+}
+
+@media (max-width: 968px) {
+  .container {
+    grid-template-columns: 1fr 1fr;
   }
 }
-section a img {
-  transition: transform 0.3s ease; /* Añade una transición suave */
-}
 
-section a:hover img {
-  transform: scale(1.09); /* Incrementa el tamaño de la imagen al pasar el cursor */
-}
-@keyframes clickedEffect {
-  0% {
-    transform: scale(1);
-    opacity: 1;
+@media (max-width: 780px) {
+  .container {
+    grid-template-columns: 1fr;
   }
-  50% {
-    transform: scale(1.4);
-    opacity: 0.8;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
+ 
+  
 }

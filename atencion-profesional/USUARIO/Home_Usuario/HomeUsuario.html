@@ -3,23 +3,70 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link rel="stylesheet" href="style.css"> 
-  <!-- Tu CSS personalizado --> 
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"> <!-- Bootstrap -->
+ 
   <title>Atención Profesional</title>
-
-  <script src="../../../FootNav/footNav.js"></script>
-  <link rel="stylesheet" href="../../../FootNav/footNav.css">
-
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body>
   
-  <div id="header-placeholder"></div> 
-
+  <header>
+    <div class="logo-container">
+        <a href="#"><img href="#inicio" src="../Imagenes/logo.png" alt="Logo" class="logo"></a>
+       
+    </div>
+    <button class="hamburger" onclick="toggleHamburgerMenu()">☰</button>
+    <nav class="nav-links">
+        <a href="#inicio" class="nav-item">Inicio</a>
+        <div class="nav-item modules-item" onclick="toggleModules()">Módulos</div>
+        <a href="#acerca" class="nav-item  ">Acerca de </a>
+        <a href="#contacto" class="nav-item ">Contacto</a>
+        <div id="modules-indicator" class="modules-indicator"></div>
+        
+    </nav>
+    <div class="nav-right">
+       
+        
+    </div>
+    <div class="profile-container">
+        <div class="profile-box">
+            <a href="#nombre" class="nav-item special-item profile-name">Jhon Sebastian</a>
+            <img src="../Header-Footer/imagenes/logo.png" alt="Foto de perfil" class="profile-pic" onclick="toggleProfileMenu()">
+            <div id="profile-menu" class="profile-menu">
+                <a href="#perfil">Perfil</a>
+                <a href="#cerrar-sesion">Cerrar sesión</a>
+            </div>
+        </div>
+    </div>
+    <!-- Menú hamburguesa -->
+<div id="hamburger-menu" class="hamburger-menu">
+<a href="#inicio" class="hamburger-item">Inicio</a>
+<a href="#"><div class="hamburger-item" onclick="toggleModulues()">Módulos</div></a>
+<!-- Contenedor de módulos (oculto por defecto) -->
+<div id="modules-content" class="modules-content" style="display: none;">
+    <a href="#"><div class="modulo">Mapa de sueños</div></a>
+    <a href="#"><div class="modulo">Alimentación</div></a>
+    <a href="#"><div class="modulo">Arteterapia</div></a>
+    <a href="#"><div class="modulo">Musicoterapia</div></a>
+    <a href="#"><div class="modulo">Ejercicios</div></a>
+    <a href="#"><div class="modulo">Atención Profesional</div></a>
+</div>
+<a href="#perfil" class="hamburger-item">Perfil</a>
+</div>
+    <!-- Pestaña de módulos -->
+    <div id="modules-overlay" class="modules-overlay">
+        <div class="module-grid">
+           <a href="#"> <div class="module">Mapa de sueños</div></a>
+           <a href="#"><div class="module">Alimentación</div></a>
+            <a href="#"><div class="module">Arteterapia</div></a>
+            <a href="#"><div class="module">Musicoterapia</div></a>
+            <a href="#"><div class="module">Ejercicios</div></a>
+            <a href="#"><div class="module">Atención Profesional</div></a>
+        </div>
+    </div>
+</header>
+   <br><br><br><br><br><br><br>
   <main class="body">
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
@@ -55,7 +102,7 @@
     </div>
 
     <div class="cards">
-      <a href="../Citas_Usuario/CitasUsuario.html">
+      <a href="../Citas_Usuario/CitaUsuario.html">
         <div class="cuadro">
           <img src="../Imagenes/Citas.png" alt="Citas">
           <h3>Citas</h3>
@@ -110,7 +157,53 @@
     </div>
   </main>
 
-  <div id="footer-placeholder"></div> 
+  <footer class="footer">
+    <div class="footer-container">
+      
+      
+      
+  
+      <div class="footer-column">
+        <h4>Acerca de Tranquilidad</h4>
+        <ul>
+            <li><a href="/inicio /link/quienessomos.html">Acerca de</a></li>
+            <li><a href="/inicio /link/beneficiosdetranquilidad.html">Beneficios de la Tranquilidad</a></li>
+            <li><a href="/inicio /link/consejodebienestar.html">Consejos de Bienestar</a></li>
+        </ul>
+    </div>
+    
+  
+  
+  
+      <div class="footer-column">
+        <h4>Ayuda y Soporte</h4>
+        <ul>
+          <li><a href="/inicio /link/contacto.html">Contacto</a></li>
+          <li><a href="/inicio /link/sugerencias.html">Sugerencias</a></li>
+          <li><a href="/inicio /link/guiadeuso.html">Guía de uso</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column">
+        <h4>Información Legal</h4>
+        <ul>
+          <li><a href="/inicio /link/terminosycondiciones.html">Términos y condiciones</a></li>
+          <li><a href="/inicio /link/politica de privacidad .html">Política de privacidad</a></li>
+          <li><a href="/inicio /link/avisolegal.html">Aviso legal</a></li>
+        </ul>
+      </div>
+      
+    </div>
+    
+    <div class="footer-bottom">
+      <p>Copyright © 2024 Tranquilidad. Todos los derechos reservados.</p>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+  </footer>
   
   <script src="script.js"></script>
 

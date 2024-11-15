@@ -1,203 +1,190 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="es">
-    <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="style.css">
     <title>Atención Profesional</title>
-
-    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
-		<script src="https://unpkg.com/unlazy@0.11.3/dist/unlazy.with-hashing.iife.js" defer init></script>
-		<script type="text/javascript">
-			window.tailwind.config = {
-				darkMode: ['class'],
-				theme: {
-					extend: {
-						colors: {
-							border: 'hsl(var(--border))',
-							input: 'hsl(var(--input))',
-							ring: 'hsl(var(--ring))',
-							background: 'hsl(var(--background))',
-							foreground: 'hsl(var(--foreground))',
-							primary: {
-								DEFAULT: 'hsl(var(--primary))',
-								foreground: 'hsl(var(--primary-foreground))'
-							},
-							secondary: {
-								DEFAULT: 'hsl(var(--secondary))',
-								foreground: 'hsl(var(--secondary-foreground))'
-							},
-							destructive: {
-								DEFAULT: 'hsl(var(--destructive))',
-								foreground: 'hsl(var(--destructive-foreground))'
-							},
-							muted: {
-								DEFAULT: 'hsl(var(--muted))',
-								foreground: 'hsl(var(--muted-foreground))'
-							},
-							accent: {
-								DEFAULT: 'hsl(var(--accent))',
-								foreground: 'hsl(var(--accent-foreground))'
-							},
-							popover: {
-								DEFAULT: 'hsl(var(--popover))',
-								foreground: 'hsl(var(--popover-foreground))'
-							},
-							card: {
-								DEFAULT: 'hsl(var(--card))',
-								foreground: 'hsl(var(--card-foreground))'
-							},
-						},
-					}
-				}
-			}
-		</script>
-		<style type="text/tailwindcss">
-			@layer base {
-				:root {
-					--background: 0 0% 100%;
---foreground: 240 10% 3.9%;
---card: 0 0% 100%;
---card-foreground: 240 10% 3.9%;
---popover: 0 0% 100%;
---popover-foreground: 240 10% 3.9%;
---primary: 240 5.9% 10%;
---primary-foreground: 0 0% 98%;
---secondary: 240 4.8% 95.9%;
---secondary-foreground: 240 5.9% 10%;
---muted: 240 4.8% 95.9%;
---muted-foreground: 240 3.8% 46.1%;
---accent: 240 4.8% 95.9%;
---accent-foreground: 240 5.9% 10%;
---destructive: 0 84.2% 60.2%;
---destructive-foreground: 0 0% 98%;
---border: 240 5.9% 90%;
---input: 240 5.9% 90%;
---ring: 240 5.9% 10%;
---radius: 0.5rem;
-				}
-				.dark {
-					--background: 240 10% 3.9%;
---foreground: 0 0% 98%;
---card: 240 10% 3.9%;
---card-foreground: 0 0% 98%;
---popover: 240 10% 3.9%;
---popover-foreground: 0 0% 98%;
---primary: 0 0% 98%;
---primary-foreground: 240 5.9% 10%;
---secondary: 240 3.7% 15.9%;
---secondary-foreground: 0 0% 98%;
---muted: 240 3.7% 15.9%;
---muted-foreground: 240 5% 64.9%;
---accent: 240 3.7% 15.9%;
---accent-foreground: 0 0% 98%;
---destructive: 0 62.8% 30.6%;
---destructive-foreground: 0 0% 98%;
---border: 240 3.7% 15.9%;
---input: 240 3.7% 15.9%;
---ring: 240 4.9% 83.9%;
-				}
-			}
-		</style>
-    </head>
-    <body>
-      <header>
-        <nav class="navbar">
-          <div class="logo">
-            <a href="../Home_Usuario/HomeUsuario.html"><img src="https://i.ibb.co/4MSTbtM/2f043346-e172-4c47-b8b4-d69f213fc49e.jpg" alt="Logo de Atención Profesional"></a>
-            <span class="Profesional">Atención Profesional</span>
-          </div>
-          <div class="menu-icon">
-            <i class="material-icons">menu</i>
-          </div>
-          <div class="servicios">
-            <span>Servicios</span>
-            <div class="submenu">
-              <ul>
-                <li>Biblioterapia</li>
-                <li>Arteterapia</li>
-                <li>Musicoterapia</li>
-                <li>Ejercicios</li>
-              </ul>
-            </div>
-          </div>
-          <div class="user-info">
-            <span>Juanito Alimaña</span>
-            <img class="imagen-usuario" src="https://pps.whatsapp.net/v/t61.24694-24/425171185_1161987931585359_8379654463750076539_n.jpg?ccb=11-4&oh=01_Q5AaICQrNgt5q8xzlA08ydTiz0MYYzWsQrMTW8GSElA5yevr&oe=670D1BA8&_nc_sid=5e03e0&_nc_cat=101" alt="Foto de perfil del usuario">
-          </div>
-        </nav>
-        <div class="dropdown-menu">
-          <ul>
-            <li><a href="#">Biblioterapia</a></li>
-            <li><a href="#">Arteterapia</a></li>
-            <li><a href="#">Musicoterapia</a></li>
-            <li><a href="#">Ejercicios</a></li>
-            <li><a href="#">Perfil</a></li>
-          </ul>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="ConsultaUsuario.css">
+  </head>
+  <body>
+    <header>
+        <div class="logo-container">
+            <a href="#"><img href="#inicio" src="../Imagenes/logo.png" alt="Logo" class="logo"></a>
+           
         </div>
-      </header>  
-        
-        <div class="flex p-4 border border-border rounded-lg">
-  
-            <div class="flex-1 flex flex-col items-center justify-center border border-border rounded-lg p-4">
-              <img src="../Imagenes/Consulta.jpg" alt="Video feed" class="w-full h-auto rounded-lg">
-              <div class="flex justify-around w-full mt-4 p-2 border-t border-border">
-                <button class="bg-secondary text-secondary-foreground p-2 rounded-full">
-                  <img aria-hidden="true" alt="music-note" src="https://openui.fly.dev/openui/24x24.svg?text=🎵" />
-                </button>
-                <button class="bg-secondary text-secondary-foreground p-2 rounded-full">
-                  <img aria-hidden="true" alt="microphone" src="https://openui.fly.dev/openui/24x24.svg?text=🎤" />
-                </button>
-                <button class="bg-destructive text-destructive-foreground p-2 rounded-full">
-                  <a href="../EscribirReseña_Usuario/EscribirReseñaUsuario.html"><img aria-hidden="true" alt="phone-hangup" src="https://openui.fly.dev/openui/24x24.svg?text=📞" /></a>
-                </button>
-                <button class="bg-secondary text-secondary-foreground p-2 rounded-full">
-                  <img aria-hidden="true" alt="smile" src="https://openui.fly.dev/openui/24x24.svg?text=😊" />
-                </button>
-                <button class="bg-secondary text-secondary-foreground p-2 rounded-full">
-                  <img aria-hidden="true" alt="settings" src="https://openui.fly.dev/openui/24x24.svg?text=⚙️" />
-                </button>
-              </div>
-            </div>
+        <button class="hamburger" onclick="toggleHamburgerMenu()">☰</button>
+        <nav class="nav-links">
+            <a href="#inicio" class="nav-item">Inicio</a>
+            <div class="nav-item modules-item" onclick="toggleModules()">Módulos</div>
+            <a href="#acerca" class="nav-item  ">Acerca de </a>
+            <a href="#contacto" class="nav-item ">Contacto</a>
+            <div id="modules-indicator" class="modules-indicator"></div>
             
-            <div class="w-1/4 ml-4 flex flex-col border border-border rounded-lg p-4">
-              <div class="flex-1 bg-muted rounded-lg"></div>
-              <div class="flex items-center mt-4">
-                <input type="text" class="flex-1 p-2 border border-border rounded-lg" placeholder="Type a message...">
-                <button class="bg-primary text-primary-foreground p-2 rounded-lg ml-2">
-                  <img aria-hidden="true" alt="send-arrow" src="https://openui.fly.dev/openui/24x24.svg?text=➡️" />
-                </button>
-              </div>
+        </nav>
+        <div class="nav-right">
+           
+            
+        </div>
+        <div class="profile-container">
+            <div class="profile-box">
+                <a href="#nombre" class="nav-item special-item profile-name">Jhon Sebastian</a>
+                <img src="../Header-Footer/imagenes/logo.png" alt="Foto de perfil" class="profile-pic" onclick="toggleProfileMenu()">
+                <div id="profile-menu" class="profile-menu">
+                    <a href="#perfil">Perfil</a>
+                    <a href="#cerrar-sesion">Cerrar sesión</a>
+                </div>
             </div>
-          </div>
-               
-          <footer>
-            <div class="footer-container">
-              <div class="contact-item">
-                <span>Contáctanos</span>
-                <div class="iconos">
-                  <a href="https://web.whatsapp.com/"><img src="imagenes/WhatsApp.png" alt="WhatsApp"></a>
-                </div>
-              </div>
-              <div class="contact-item">
-                <span>Canales de atención</span>
-                <div class="iconos">
-                  <a href="https://web.telegram.org/"><img src="imagenes/Telegram App.png" alt="Telegram"></a>
-                  <a href="https://mail.google.com/mail/u/0/?ogbl#inbox"><img src="imagenes/Email.png" alt="Email"></a>
-                </div>
-              </div>
-              <div class="contact-item">
-                <span>Redes sociales</span>
-                <div class="iconos">
-                  <a href="https://www.facebook.com/"><img src="imagenes/Facebook.png" alt="Facebook"></a>
-                  <a href="https://www.instagram.com/"><img src="imagenes/Instagram.png" alt="Instagram"></a>
-                </div>
-              </div>
-              <a class="quienes-somos" href="#">¿Quiénes somos?</a>
+        </div>
+        <!-- Menú hamburguesa -->
+  <div id="hamburger-menu" class="hamburger-menu">
+    <a href="#inicio" class="hamburger-item">Inicio</a>
+    <a href="#"><div class="hamburger-item" onclick="toggleModulues()">Módulos</div></a>
+    <!-- Contenedor de módulos (oculto por defecto) -->
+    <div id="modules-content" class="modules-content" style="display: none;">
+        <a href="#"><div class="modulo">Mapa de sueños</div></a>
+        <a href="#"><div class="modulo">Alimentación</div></a>
+        <a href="#"><div class="modulo">Arteterapia</div></a>
+        <a href="#"><div class="modulo">Musicoterapia</div></a>
+        <a href="#"><div class="modulo">Ejercicios</div></a>
+        <a href="#"><div class="modulo">Atención Profesional</div></a>
+    </div>
+    <a href="#perfil" class="hamburger-item">Perfil</a>
+  </div>
+        <!-- Pestaña de módulos -->
+        <div id="modules-overlay" class="modules-overlay">
+            <div class="module-grid">
+               <a href="#"> <div class="module">Mapa de sueños</div></a>
+               <a href="#"><div class="module">Alimentación</div></a>
+                <a href="#"><div class="module">Arteterapia</div></a>
+                <a href="#"><div class="module">Musicoterapia</div></a>
+                <a href="#"><div class="module">Ejercicios</div></a>
+                <a href="#"><div class="module">Atención Profesional</div></a>
             </div>
-          </footer>
+        </div>
+    </header>
+    <br><br><br><br><br><br><br>
+    <main>
+        <div class="video-call">
+            <div class="video">
+                <img src="imagenes/video.avif" alt="Video Placeholder">
+            </div>
+            <div class="chat">
+                <div id="chat-box" style="height: 400px; overflow-y: auto; background-color: #f0f0f0; padding: 10px; border: 1px solid #ddd;"></div>
+                <input type="text" id="chat-input" placeholder="Escribe tu mensaje..." style="width: 100%; padding: 10px; margin-top: 10px;">
+                <button id="send-chat" style="width: 100%; padding: 10px; margin-top: 5px; background-color: #59009A; color: white;">Enviar</button>
+            </div>
+        </div>
+        <div class="controls">
+            <button class="btn audio" id="toggle-audio"><img src="imagenes/audio.png" alt="Audio"></button>
+            <button class="btn video" id="toggle-video"><img src="imagenes/video.jpg" alt="Video"></button>
+            <a href="../GenerarInforme1_Profesional/Informe.html"><button class="btn end-call"><img src="imagenes/end.webp" alt="End Call"></button></a>
+            <button class="btn settings"><img src="imagenes/Ajustes.png" alt="Settings"></button>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
           
-          <script src="script.js"></script>
-    </body>
-</html> 
+          
+          
+      
+          <div class="footer-column">
+            <h4>Acerca de Tranquilidad</h4>
+            <ul>
+                <li><a href="/inicio /link/quienessomos.html">Acerca de</a></li>
+                <li><a href="/inicio /link/beneficiosdetranquilidad.html">Beneficios de la Tranquilidad</a></li>
+                <li><a href="/inicio /link/consejodebienestar.html">Consejos de Bienestar</a></li>
+            </ul>
+        </div>
+        
+      
+      
+      
+          <div class="footer-column">
+            <h4>Ayuda y Soporte</h4>
+            <ul>
+              <li><a href="/inicio /link/contacto.html">Contacto</a></li>
+              <li><a href="/inicio /link/sugerencias.html">Sugerencias</a></li>
+              <li><a href="/inicio /link/guiadeuso.html">Guía de uso</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer-column">
+            <h4>Información Legal</h4>
+            <ul>
+              <li><a href="/inicio /link/terminosycondiciones.html">Términos y condiciones</a></li>
+              <li><a href="/inicio /link/politica de privacidad .html">Política de privacidad</a></li>
+              <li><a href="/inicio /link/avisolegal.html">Aviso legal</a></li>
+            </ul>
+          </div>
+          
+        </div>
+        
+        <div class="footer-bottom">
+          <p>Copyright © 2024 Tranquilidad. Todos los derechos reservados.</p>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+      </footer>
+    
+    <script src="scriptmenu.js"></script>
+    
+    <script>
+        // 1. Submenú desplegable con JavaScript
+        const serviciosBtn = document.getElementById('servicios-btn');
+        const submenu = document.getElementById('submenu');
+
+        serviciosBtn.addEventListener('click', function() {
+            submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+        });
+
+        // 2. Validación de imagen de usuario
+        const imgUsuario = document.getElementById('imagen-usuario');
+        imgUsuario.onerror = function() {
+            imgUsuario.src = 'imagenes/default-user.png'; // Imagen de reemplazo
+        };
+
+        // 3. Botones de control de videollamada
+        let audioEnabled = true;
+        let videoEnabled = true;
+
+        const toggleAudio = document.getElementById('toggle-audio');
+        const toggleVideo = document.getElementById('toggle-video');
+
+        toggleAudio.addEventListener('click', function() {
+            audioEnabled = !audioEnabled;
+            toggleAudio.innerHTML = audioEnabled 
+                ? '<img src="imagenes/audio.png" alt="Audio">'
+                : '<img src="imagenes/mute.png" alt="Audio Mute">';
+        });
+
+        toggleVideo.addEventListener('click', function() {
+            videoEnabled = !videoEnabled;
+            toggleVideo.innerHTML = videoEnabled 
+                ? '<img src="imagenes/video.jpg" alt="Video">'
+                : '<img src="imagenes/no-video.png" alt="Video Off">';
+        });
+
+        // 4. Simulación de chat
+        const sendChatBtn = document.getElementById('send-chat');
+        const chatInput = document.getElementById('chat-input');
+        const chatBox = document.getElementById('chat-box');
+
+        sendChatBtn.addEventListener('click', function() {
+            const message = chatInput.value;
+            if (message.trim() !== '') {
+                const newMessage = document.createElement('p');
+                newMessage.textContent = `Tú: ${message}`;
+                chatBox.appendChild(newMessage);
+                chatInput.value = ''; // Limpiar el campo de entrada
+                chatBox.scrollTop = chatBox.scrollHeight; // Desplazar al final del chat
+            }
+        });
+    </script>
+</body>
+</html>
