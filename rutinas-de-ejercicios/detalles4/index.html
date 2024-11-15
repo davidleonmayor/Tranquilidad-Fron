@@ -4,45 +4,37 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <link rel="stylesheet" href="Style.css">
+  <link rel="stylesheet" href="Style.css"><script>
+    async function includeHTML() {
+        const elements = document.querySelectorAll('[include-html]');
+        for (let el of elements) {
+            const file = el.getAttribute('include-html');
+            try {
+                const response = await fetch(file);
+                if (response.ok) {
+                    el.innerHTML = await response.text();
+                    // Cargar el JS del footer después de insertarlo
+                    if (file.includes("header.html")) {
+                        const script = document.createElement("script");
+                        script.src = "/rutinas-de-ejercicios/includes/Header/script.js";
+                        document.body.appendChild(script);
+                    }
+                } else {
+                    el.innerHTML = "<p>Error al cargar el contenido.</p>";
+                }
+            } catch (error) {
+                el.innerHTML = "<p>Error de conexión al cargar el contenido.</p>";
+            }
+        }
+    }
+    document.addEventListener("DOMContentLoaded", includeHTML);
+</script>
+
   <title>Rutinas de Ejercicios</title>
 </head>
 <body>
-  <header>
-    <nav class="navbar">
-      <div class="logo">
-        <a href="../Home_Usuario/HomeUsuario.html"><img src="https://i.ibb.co/4MSTbtM/2f043346-e172-4c47-b8b4-d69f213fc49e.jpg" alt="Logo de Atención Profesional"></a>
-        <span class="Profesional">Rutinas de ejercicios</span>
-      </div>
-      <div class="menu-icon">
-        <i class="material-icons">menu</i>
-      </div>
-      <div class="servicios">
-        <span>Servicios</span>
-        <div class="submenu">
-          <ul>
-            <li>Biblioterapia</li>
-            <li>Arteterapia</li>
-            <li>Musicoterapia</li>
-            <li>Ejercicios</li>
-          </ul>
-        </div>
-      </div>
-      <div class="user-info">
-        <span>Juanito Alimaña</span>
-        <img class="imagen-usuario" src="https://pps.whatsapp.net/v/t61.24694-24/425171185_1161987931585359_8379654463750076539_n.jpg?ccb=11-4&oh=01_Q5AaICQrNgt5q8xzlA08ydTiz0MYYzWsQrMTW8GSElA5yevr&oe=670D1BA8&_nc_sid=5e03e0&_nc_cat=101" alt="Foto de perfil del usuario">
-      </div>
-    </nav>
-    <div class="dropdown-menu">
-      <ul>
-        <li><a href="#">Biblioterapia</a></li>
-        <li><a href="#">Arteterapia</a></li>
-        <li><a href="#">Musicoterapia</a></li>
-        <li><a href="#">Ejercicios</a></li>
-        <li><a href="#">Perfil</a></li>
-      </ul>
-    </div>
-  </header>
+  <div include-html="/rutinas-de-ejercicios/includes/Header/header.html"></div>
+
   
       <div class="cont">
         <div class="contenedor">
@@ -71,38 +63,11 @@
           </ul>
          
       </div>
-      <a href="/rutinas-de-ejercicios/meditacion/index.html">
-      <button class="volver">volver</button>
-      </a>
+      
       </div>
       </div>
 
-    </body>
-    <footer>
-        <div class="footer-container">
-          <div class="contact-item">
-            <span>Contáctanos</span>
-            <div class="iconos">
-              <a href="https://web.whatsapp.com/"><img src="/rutinas-de-ejercicios/imagenes/WhatsApp.png" alt="WhatsApp"></a>
-            </div>
-          </div>
-          <div class="contact-item">
-            <span>Canales de atención</span>
-            <div class="iconos">
-              <a href="https://web.telegram.org/"><img src="/rutinas-de-ejercicios/imagenes/Telegram App.png" alt="Telegram"></a>
-              <a href="https://mail.google.com/mail/u/0/?ogbl#inbox"><img src="imagenes/Email.png" alt="Email"></a>
-            </div>
-          </div>
-          <div class="contact-item">
-            <span>Redes sociales</span>
-            <div class="iconos">
-              <a href="https://www.facebook.com/"><img src="/rutinas-de-ejercicios/imagenes/Facebook.png" alt="Facebook"></a>
-              <a href="https://www.instagram.com/"><img src="/rutinas-de-ejercicios/imagenes/Instagram.png" alt="Instagram"></a>
-            </div>
-          </div>
-          <a class="quienes-somos" href="#">¿Quiénes somos?</a>
-        </div>
-      </footer>
+      <div include-html="/rutinas-de-ejercicios/includes/inicio/inicio.html"></div>
       
       <script src="script.js"></script>
     </body>

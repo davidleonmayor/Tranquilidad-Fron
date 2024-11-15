@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="Style.css">
+  <script>
+    async function includeHTML() {
+        const elements = document.querySelectorAll('[include-html]');
+        for (let el of elements) {
+            const file = el.getAttribute('include-html');
+            try {
+                const response = await fetch(file);
+                if (response.ok) {
+                    el.innerHTML = await response.text();
+                    // Cargar el JS del footer después de insertarlo
+                    if (file.includes("header.html")) {
+                        const script = document.createElement("script");
+                        script.src = "/rutinas-de-ejercicios/includes/Header/script.js";
+                        document.body.appendChild(script);
+                    }
+                } else {
+                    el.innerHTML = "<p>Error al cargar el contenido.</p>";
+                }
+            } catch (error) {
+                el.innerHTML = "<p>Error de conexión al cargar el contenido.</p>";
+            }
+        }
+    }
+    document.addEventListener("DOMContentLoaded", includeHTML);
+</script>
+
+  <title>Rutinas de Ejercicios</title>
+</head>
+<body>
+    <div include-html="/rutinas-de-ejercicios/includes/Header/header.html"></div>
+
+    <div class="container">
+        <div class="player-container">
+            <div class="album-art">
+                <video id="video" width="640" height="360"></video>
+                <div class="playhead"></div>
+            </div>
+    
+            <div class="actions">
+                <button id="likeBtn" class="favorite">&#10084;</button>
+                <button id="optionsBtn">&#8942;</button>
+            </div>
+    
+            <div id="optionsMenu" class="options-menu">
+                <button class="menu-option" onclick="setPlaybackRate(0.5)">Velocidad 0.5x</button>
+                <button class="menu-option" onclick="setPlaybackRate(1)">Velocidad 1x</button>
+                <button class="menu-option" onclick="setPlaybackRate(1.5)">Velocidad 1.5x</button>
+                <button class="menu-option" onclick="toggleSubtitles()">Subtítulos</button>
+            </div>
+    
+            <div class="time-container">
+                <span id="currentTime" class="time">0:00</span>
+                <span id="duration" class="time">0:00</span>
+            </div>
+    
+            <div class="progress-bar-container">
+                <div class="progress-bar"></div>
+                <div class="progress" id="progress"></div>
+                <div class="progress-thumb" id="progressThumb"></div>
+            </div>
+    
+            <div class="controls">
+                <button id="prevBtn">&#9664;&#9664;</button>
+                <button id="playPauseBtn">&#9658;</button>
+                <button id="nextBtn">&#9654;&#9654;</button>
+                <button id="fullscreenBtn">&#x26F6;</button> <!-- Botón de pantalla completa -->
+            </div>
+        </div>
+
+        <!-- Sección de comentarios -->
+        <div class="comments">
+            <h2>Comentarios</h2>
+            <textarea id="comentario" rows="4" placeholder="Escribe un comentario"></textarea>
+            <button id="enviar" class="boton">Enviar</button>
+            <div id="comentarios-container" class="comentarios">
+                <!-- Los comentarios se agregarán aquí -->
+            </div>
+        </div>
+    </div>
+    <div include-html="/rutinas-de-ejercicios/includes/inicio/inicio.html"></div>
+  </body>
+
+
+  
+  
+  
+    
+    <script src="script.js"></script>
+  
+  </html>
