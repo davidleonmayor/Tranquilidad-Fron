@@ -1,147 +1,245 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bienvenida</title>
-  <script src="/FootNav/footNav.js"></script>
-  <link rel="stylesheet" href="/FootNav/footNav.css">
-
-  <!-- Slick Carousel CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
-
-  <!-- Tu CSS personalizado -->
-  <link rel="stylesheet" href="home.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tranquilidad y Bienestar</title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
 </head>
 
-
 <body>
-  <div id="header-placeholder"></div>
-  <main>
-    <div class="modulos">
-      <section class="intro-modulos">
-        <h2>Explora nuestras categorías</h2>
-        <p>
-          A continuación, te presentamos nuestras categorías principales para
-          que puedas explorar y encontrar lo que más se ajuste a tus necesidades.
-          No importa si buscas mejorar tu alimentación, relajarte con la música o diseñar
-          un plan de ejercicio personalizado, tenemos algo para todos.
-        </p>
-      </section>
-
-      <!-- Slick Carousel Container -->
-      <section class="carousel">
-        <div class="card" data-url="/alimentacion/Inicio/index.html"
-          style="background-image:url(/inicio-de-sesion/Modulo-iniciar-sesion/home/imagenes/alimentacion.jpg)">
-          <div class="sombra">
-            <h2>Alimentación</h2>
-            <p>Consejos y planes de alimentación saludable.</p>
-          </div>
+    <header>
+        <div class="logo-container">
+            <a href="#"><img href="#inicio" src="/Header-Footer/imagenes/logo.png" alt="Logo" class="logo"></a>
+           
         </div>
-
-        <div class="card" data-url="/arteterapia/html/Navegacion.html"
-          style="background-image: url(/inicio-de-sesion/Modulo-iniciar-sesion/home/imagenes/arteterapia.webp);">
-          <div class="sombra">
-            <h2>Arte Terapia</h2>
-            <p>Explora tu creatividad y bienestar emocional.</p>
-          </div>
+        <button class="hamburger" onclick="toggleHamburgerMenu()">☰</button>
+        <nav class="nav-links">
+            <a href="#inicio" class="nav-item">Inicio</a>
+            <div class="nav-item modules-item" onclick="toggleModules()">Módulos</div>
+            <a href="#acerca" class="nav-item  ">Acerca de </a>
+            <a href="#contacto" class="nav-item ">Contacto</a>
+            <div id="modules-indicator" class="modules-indicator"></div>
+            
+        </nav>
+        <div class="nav-right">
+           
+            
         </div>
-
-        <div class="card" data-url="/atencion-profesional/USUARIO/Home_Usuario/HomeUsuario.html"
-          style="background-image: url(/inicio-de-sesion/Modulo-iniciar-sesion/home/imagenes/atencionprofesional.jpg);">
-          <div class="sombra">
-            <h2>Atención Profesional</h2>
-            <p>Asesoría personalizada por expertos en salud mental.</p>
-          </div>
+        <div class="profile-container">
+            <div class="profile-box">
+                <a href="#nombre" class="nav-item special-item profile-name">Jhon Sebastian</a>
+                <img src="../Header-Footer/imagenes/logo.png" alt="Foto de perfil" class="profile-pic" onclick="toggleProfileMenu()">
+                <div id="profile-menu" class="profile-menu">
+                    <a href="#perfil">Perfil</a>
+                    <a href="#cerrar-sesion">Cerrar sesión</a>
+                </div>
+            </div>
         </div>
-
-        <div class="card" data-url="/musicoterapia/Vistas1.1/bienvenido_a_musicoterapia.html"
-          style="background-image: url(/inicio-de-sesion/Modulo-iniciar-sesion/home/imagenes/musicoterapia.jpeg);">
-          <div class="sombra">
-            <h2>Musicoterapia</h2>
-            <p>Relájate y equilibra tu mente a través de la música.</p>
-          </div>
-        </div>
-
-        <div class="card" data-url="/mapa-de-suenos/Inicio/Inicio.html"
-          style="background-image: url(/inicio-de-sesion/Modulo-iniciar-sesion/home/imagenes/bibloterapia.jpg);">
-          <div class="sombra">
-            <h2>Biblioterapia</h2>
-            <p>Diseña y sigue tus metas con un mapa visual.</p>
-          </div>
-        </div>
-
-        <div class="card" data-url="/rutinas-de-ejercicios/inicio/index.html"
-          style="background-image: url(/inicio-de-sesion/Modulo-iniciar-sesion/home/imagenes/ejercicio.jpg) ;">
-          <div class="sombra">
-            <h2>Rutinas de Ejercicio</h2>
-            <p>Mantén tu cuerpo activo con ejercicios personalizados.</p>
-          </div>
-        </div>
-      </section>
+        <!-- Menú hamburguesa -->
+<div id="hamburger-menu" class="hamburger-menu">
+    <a href="#inicio" class="hamburger-item">Inicio</a>
+    <a href="#"><div class="hamburger-item" onclick="toggleModulues()">Módulos</div></a>
+    <!-- Contenedor de módulos (oculto por defecto) -->
+    <div id="modules-content" class="modules-content" style="display: none;">
+        <a href="#"><div class="modulo">Mapa de sueños</div></a>
+        <a href="#"><div class="modulo">Alimentación</div></a>
+        <a href="#"><div class="modulo">Arteterapia</div></a>
+        <a href="#"><div class="modulo">Musicoterapia</div></a>
+        <a href="#"><div class="modulo">Ejercicios</div></a>
+        <a href="#"><div class="modulo">Atención Profesional</div></a>
     </div>
-    <div class="acerca-nosotros">
-      <div class="paisaje" style="background-image: url(/inicio-de-sesion/Modulo-iniciar-sesion/home/imagenes/paisa.avif);">
+    <a href="#perfil" class="hamburger-item">Perfil</a>
+</div>
+        <!-- Pestaña de módulos -->
+        <div id="modules-overlay" class="modules-overlay">
+            <div class="module-grid">
+               <a href="#"> <div class="module">Mapa de sueños</div></a>
+               <a href="#"><div class="module">Alimentación</div></a>
+                <a href="#"><div class="module">Arteterapia</div></a>
+                <a href="#"><div class="module">Musicoterapia</div></a>
+                <a href="#"><div class="module">Ejercicios</div></a>
+                <a href="#"><div class="module">Atención Profesional</div></a>
+            </div>
+        </div>
+    </header>
+    <br>
+    <br><br>
+    <main class="main-content">
 
 
-      </div>
-      <section class="intro-acerca">
-        <h2>Acerca de nosotros</h2>
-        <p>
-          Somos un equipo comprometido con tu bienestar. Sabemos que la vida moderna puede ser estresante y, a veces,
-          abrumadora. Por eso hemos creado esta plataforma para ofrecerte una experiencia única de autocuidado, enfocada
-          en el equilibrio entre mente, cuerpo y espíritu. A través de nuestros módulos interactivos, podrás encontrar
-          la tranquilidad que necesitas para llevar una vida más plena y saludable. Ya sea que desees aprender nuevas
-          técnicas para relajarte, mejorar tus hábitos alimenticios o conectarte con profesionales de la salud, estamos
-          aquí para acompañarte en cada paso de tu camino.
-        </p>
-      </section>
-    </div>
-  </main>
-  <div id="footer-placeholder"></div>
+        <div class="container mt-5">
+            <!-- Carrusel -->
+            <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="/Imagenes/atardecer.jpg" alt="">
+                        
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/Imagenes/atardecer2.jpg" alt="">
+                        
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/Imagenes/atardecer3.jpg" alt="">
+                        
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Anterior</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Siguiente</span>
+                </button>
+            </div>
 
-  <!-- jQuery y Slick Carousel JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+            <!-- Frases y Tips -->
+            <div class="tips">
+                <p id="motivational-quote">"La tranquilidad es el camino hacia la paz interior."</p>
+            </div>
 
-  <!-- Inicializar el carrusel -->
-  <!-- <script>
-    $(document).ready(function () {
-      $('.carousel').slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: true,
-        dots: true,
-        autoplay: true,
-        autoplaySpeed: 3000,
-        adaptiveHeight: true
-      });
-    });
+            <!-- Título del apartado de Tips -->
+            <h1 id="modulosTitle">Tips</h1>
 
+            <!-- Tips y Recomendaciones -->
+            <div id="tips-container" class="tips-container">
+                <!-- Las tarjetas de tips se generarán dinámicamente aquí -->
+            </div>
+
+            <!-- Paginación -->
+            <div class="pagination">
+                <button onclick="changePage(1)">1</button>
+                <button onclick="changePage(2)">2</button>
+                <button onclick="changePage(3)">3</button>
+                <button onclick="changePage(4)">4</button>
+                <button onclick="changePage(5)">5</button>
+            </div>
+
+            <!-- Título de Módulos -->
+            <h2 class="text-center mt-5 mb-4" id="modulosTitle">Módulos</h2>
+
+            <!-- Tarjetas principales -->
+            <div class="main-card-container">
+                <div class="row mt-4">
+                    <div class="col-md-4">
+                        <div class="card text-center" onclick="window.location.href='atencion_profesional.html';">
+                            <div class="card-body">
+                                <h5 class="card-title">Atención Profesional</h5>
+                                <img src="/Imagenes/imagen3.jpg" alt="">
+                                <p class="card-text">Recibe apoyo de expertos.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card text-center" onclick="window.location.href='mapa_de_suenos.html';">
+                            <div class="card-body">
+                                <h5 class="card-title">Mapa de Sueños</h5>
+                                <img src="/Imagenes/imagen2.jpg" alt="">
+                                <p class="card-text">Visualiza tus metas y sueños.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card text-center" onclick="window.location.href='musicoterapia.html';">
+                            <div class="card-body">
+                                <h5 class="card-title">Musicoterapia</h5>
+                                <img src="/Imagenes/imagen1.jpg" alt="">
+                                <p class="card-text">La música como herramienta de sanación.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Botón Ver Más centrado -->
+            <div class="ver-mas-container text-center">
+                <button class="btn-ver-mas" onclick="mostrarModulos()">Ver Más</button>
+            </div>
+
+            <!-- Módulos ocultos al inicio con animación de aparición -->
+            <div id="modulos-extras" class="modulos-ocultos animate-fade-in">
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <div class="card text-center">
+                            <div class="card-body">
+                                <h5 class="card-title">Alimentación</h5>
+                                <img src="/Imagenes/imagen4.jpg" alt="">
+                                <p class="card-text">Consejos de alimentación saludable.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card text-center">
+                            <div class="card-body">
+                                <h5 class="card-title">Ejercicios</h5>
+                                <img src="/Imagenes/imagen5.jpg" alt="">
+                                <p class="card-text">Rutinas de ejercicio recomendadas.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Flecha de scroll hacia arriba -->
+            <div id="scrollToTop" onclick="scrollToTop()">
+                &#9650; <!-- Código de flecha hacia arriba -->
+            </div>
+    </main>
+    <footer class="footer">
+        <div class="footer-container">
+          
+          
+          
     
-  </script> -->
-  <script>
-    $(document).ready(function () {
-      // Inicializar el carrusel
-      $('.carousel').slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: true,
-        dots: true,
-        autoplay: true,
-        autoplaySpeed: 3000,
-        adaptiveHeight: true
-      });
-
-      // Redirigir cuando se hace clic en la tarjeta
-      $('.card').on('click', function () {
-        const url = $(this).data('url');
-        window.location.href = url;
-      });
-    });
-  </script>
+          <div class="footer-column">
+            <h4>Acerca de Tranquilidad</h4>
+            <ul>
+                <li><a href="/inicio /link/quienessomos.html">Acerca de</a></li>
+                <li><a href="/inicio /link/beneficiosdetranquilidad.html">Beneficios de la Tranquilidad</a></li>
+                <li><a href="/inicio /link/consejodebienestar.html">Consejos de Bienestar</a></li>
+            </ul>
+        </div>
+        
+    
+    
+    
+          <div class="footer-column">
+            <h4>Ayuda y Soporte</h4>
+            <ul>
+              <li><a href="/inicio /link/contacto.html">Contacto</a></li>
+              <li><a href="/inicio /link/sugerencias.html">Sugerencias</a></li>
+              <li><a href="/inicio /link/guiadeuso.html">Guía de uso</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer-column">
+            <h4>Información Legal</h4>
+            <ul>
+              <li><a href="/inicio /link/terminosycondiciones.html">Términos y condiciones</a></li>
+              <li><a href="/inicio /link/politica de privacidad .html">Política de privacidad</a></li>
+              <li><a href="/inicio /link/avisolegal.html">Aviso legal</a></li>
+            </ul>
+          </div>
+          
+        </div>
+        
+        <div class="footer-bottom">
+          <p>Copyright © 2024 Tranquilidad. Todos los derechos reservados.</p>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+      </footer>
+    <script src="home.js"></script>
 </body>
 
 </html>
