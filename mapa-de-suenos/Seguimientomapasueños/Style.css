@@ -1,110 +1,188 @@
-/* Contenido del body */
-body {
-    font-family: 'Arial', sans-serif;
+/* Configuración de fuente */
+* {
+    box-sizing: border-box;
     margin: 0;
-    background: linear-gradient(135deg, white, white);
-    display: flex;
-    flex-direction: column;
-    min-height: 115vh;
-    box-sizing: border-box; /* Asegura que el padding y los bordes no causen desbordamiento */
+    padding: 0;
 }
 
-*,
-*::before,
-*::after {
-    box-sizing: inherit; /* Asegura que todos los elementos usen el box-sizing adecuado */
+/* Estilos para el cuerpo de la página */
+body {
+    background-color: #f7f2fa;
+    min-height: 100vh;
 }
 
-.main-content {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-bottom: 3.125rem; /* 50px */
-    margin-top: 2rem; /* Agregar margen superior para bajar la caja en pantallas grandes */
-}
-
+/* Estilos para el contenedor de columnas (tablero) */
 .board {
     display: flex;
-    justify-content: space-between;
-    width: 80%;
-    height: 43.75rem; /* 70vh */
-    background-color: #CCBAF2;
-    padding: 1.25rem; /* 20px */
-    border-radius: 0.625rem; /* 10px */
-    box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.1); /* 20px */
-    overflow: hidden;
+    gap: 1rem;
+    background-color: #e8e0f0;
+    padding: 1rem;
+    border-radius: 15px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    width: 70vw;
+    min-height: 70vh;
+    margin: 80px auto;
 }
 
+/* Estilos para cada columna */
 .column {
-    width: 30%;
-    background-color: #f9f9f9;
-    padding: 0.625rem; /* 10px */
-    border-radius: 0.3125rem; /* 5px */
-    transition: background-color 0.3s ease;
-    overflow-y: auto;
-    margin-bottom: 1rem; /* Agrega un margen para evitar que las columnas se peguen */
+    background-color: #ffffff;
+    color: #4a4a4a;
+    padding: 1rem;
+    flex: 1;
+    min-width: 250px;
+    border-radius: 10px;
+    border: 3px solid #c5b8de;
+    display: flex;
+    flex-direction: column;
 }
 
-.column:hover {
-    background-color: #FCF2F2;
-}
-
+/* Encabezado de cada columna */
 .column h2 {
+    background-color: #d4c4e0;
+    color: #4a4a4a;
+    padding: 0.5rem;
     text-align: center;
-    color: #333;
-    margin-bottom: 0.625rem; /* 10px */
-    padding: 0.625rem; /* 10px */
-    background-color: #CCBAF2;
-    border-radius: 0.3125rem; /* 5px */
-    color: white;
+    border-radius: 8px;
+    font-size: 1.2rem;
     text-transform: uppercase;
-    font-size: 1.2em;
+    margin-bottom: 1rem;
 }
 
-.task {
-    background-color: #fff;
-    margin: 0.625rem 0; /* 10px */
-    padding: 0.625rem; /* 10px */
-    border-radius: 0.3125rem; /* 5px */
-    box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.2); /* 2px */
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+/* Botones generales */
+button {
+    background-color: #a885d8;
+    color: white;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    border-radius: 5px;
 }
 
-.task:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.3); /* 4px */
+button:hover {
+    background-color: #7a57b5;
 }
 
-/* Media query para pantallas pequeñas */
-@media (max-width: 48rem) { /* 768px */
-    .main-content {
-        margin-top: 2rem; /* Agregar margen superior para bajar la caja */
-    }
+/* Superposición del formulario */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
 
+.overlay.active {
+    display: flex;
+}
+
+.form-container {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 10px;
+    width: 320px;
+    text-align: center;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo para el encabezado del formulario */
+.form-container h3 {
+    background-color: #d4c4e0;
+    color: #4a4a4a;
+    padding: 0.5rem;
+    border-radius: 5px;
+    margin-top: -2rem;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+
+/* Campos de formulario */
+label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: bold;
+    color: #4a4a4a;
+}
+
+input, textarea {
+    width: 100%;
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 0.9rem;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+/* Tarjeta de tarea */
+.task-card {
+    background-color: #efe7f5;
+    color: #4a4a4a;
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+    border-radius: 5px;
+    position: relative;
+}
+
+.task-card h4 {
+    background-color: #d4c4e0;
+    color: #4a4a4a;
+    padding: 0.3rem 0.5rem;
+    border-radius: 5px;
+    display: inline-block;
+    font-size: 1rem;
+}
+
+.task-card .task-date {
+    font-size: 0.8rem;
+    color: #666666;
+}
+
+/* Íconos de edición y eliminación */
+.icon-container {
+    display: flex;
+    gap: 4px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+.icon-btn {
+    color: #9ca3af;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.icon-btn:hover {
+    color: #4a4a4a;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
     .board {
-        flex-direction: column; /* Coloca las columnas de manera vertical */
-        height: auto; /* Ajusta la altura al contenido */
-        width: 90%; /* Ajusta el ancho para pantallas pequeñas */
-        padding: 0.625rem; /* Reduce el padding en pantallas pequeñas */
+        width: 90vw;
+        flex-direction: column;
+        min-height: auto;
     }
 
     .column {
-        width: 100%; /* Las columnas ocupan el 100% del ancho */
-        margin-bottom: 1rem; /* Espaciado entre columnas */
-        padding: 0.5rem; /* Reduce el padding para pantallas pequeñas */
+        min-width: 100%;
     }
 
-    .task {
-        font-size: 0.875rem; /* Ajustar el tamaño de la tarea en pantallas pequeñas */
+    .form-container {
+        width: 90%;
     }
-
-    .column h2 {
-        font-size: 1rem; /* Reduce el tamaño del título para que se ajuste mejor */
-        padding: 0.5rem; /* Reduce el padding del título */
-    }
-}
-
-.mapa {
-    font-size: 2.1875rem; /* 35px */
 }

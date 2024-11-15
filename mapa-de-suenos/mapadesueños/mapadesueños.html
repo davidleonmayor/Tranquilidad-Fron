@@ -3,19 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectrum/1.8.1/spectrum.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/spectrum/1.8.1/spectrum.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editor de Lienzo Interactivo</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-   
     <link rel="stylesheet" href="style.css">
+    <style>
     
+</style>
+        
+    </style>
 </head>
-
 <body>
     <div class="sidebar">
         <button class="btn-image" title="Agregar imagen"><i class="fa-solid fa-image"></i></button>
-        <button onclick="addTextbox()">A</button>
+        <button onclick="addTextbox()">T</button>
         <button class="btn-shape" title="Agregar forma"><i class="fa-regular fa-square"></i></button>
-        <button class="btn-sticker" title="Agregar sticker"><i class="fa-regular fa-face-smile"></i></button>
+        <button class="btn-sticker" title="Agregar emogie"><i class="fa-regular fa-face-smile"></i></button>
         <button class="btn-undo" title="Deshacer"><i class="fa-solid fa-undo"></i></button>
         <button id="zoomInBtn" title="Acercar">+</button>
         <button id="zoomOutBtn" title="Alejar">-</button>
@@ -28,13 +36,14 @@
 <div class="toolbar">
     <button onclick="toggleBold()"><i class="fas fa-bold"></i></button>
     <button onclick="toggleItalic()"><i class="fas fa-italic"></i></button>
-    <button onclick="changeTextColor()"><i class="fas fa-paint-brush"></i></button>
     <button onclick="alignText('left')"><i class="fas fa-align-left"></i></button>
     <button onclick="alignText('center')"><i class="fas fa-align-center"></i></button>
     <button onclick="alignText('right')"><i class="fas fa-align-right"></i></button>
+
+    <input type="text" id="colorPicker" style="display:none;" />
 </div>
     <div id="canvas-container">
-        <canvas id="myCanvas" width="10000" height="610"></canvas>
+        <canvas id="myCanvas" width="1500" height="590"></canvas>
         <button id="fullscreen-btn" onclick="toggleFullscreen()">
             <img src="https://img.icons8.com/ios/452/full-screen.png" alt="Fullscreen Icon">
         </button>
@@ -46,16 +55,9 @@
         <button class="shape square" title="Cuadrado"></button>
         <button class="shape circle" title="Círculo"></button>
         <button class="shape triangle" title="Triángulo"></button>
-        <button class="shape rectangle" title="Rectángulo"></button>
-<button class="shape oval" title="Óvalo"></button>
-<button class="shape star" title="Estrella"></button>
-<button class="shape heart" title="Corazón"></button>
-<button class="shape diamond" title="Diamante"></button>
-<button class="shape hexagon" title="Hexágono"></button>
-<button class="shape pentagon" title="Pentágono"></button>
-<button class="shape parallelogram" title="Paralelogramo"></button>
-<button class="shape trapezoid" title="Trapecio"></button>
-<button class="shape crescent" title="Media Luna"></button>
+        
+      
+  
 
     </div>
 
@@ -114,9 +116,9 @@
 
         <!-- Agregar más stickers aquí -->
     </div>
+     <!-- Botón para pantalla completa -->
+     <button id="fullscreen-toggle"><i class="fas fa-expand"></i></button>
     <script src="https://cdn.jsdelivr.net/npm/fabric@5.0.0/dist/fabric.min.js"></script>
- 
-    <script src="../headeryfooter/script.js"></script> 
-    <script src="script.js"></script> 
+    <script src="script.js"></script>
 </body>
 </html>
