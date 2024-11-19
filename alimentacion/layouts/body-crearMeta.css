@@ -46,3 +46,6 @@ input, textarea {
     cursor: pointer;
     align-self: flex-end;
 }
+.btn-save:hover {
+    background-color: #be5cb6;
+}
