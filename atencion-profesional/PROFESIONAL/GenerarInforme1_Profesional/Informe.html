@@ -5,15 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Informe de Consulta Psicológica</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link rel="stylesheet" href="Informe.css">
-  <link rel="stylesheet" href="../Header/style.css">
-  <link rel="stylesheet" href="../Footer/inicio/styles.css">
- 
 </head>
 <body>
-<div id="header"></div>
-<br><br><br><br><br>
+  <!-- Lugar donde se cargará el header -->
+  <div id="header-container"></div>
 
+<br><br><br><br><br><br><br>
 <div class="body">
   <form class="formulario" action="procesar_formulario.php" method="POST">
     <h2>Datos Generales</h2>
@@ -53,26 +52,9 @@
   </form>
   <a href="../GenerarInforme2_Profesional/Informe2.html"><button type="siguiente">Siguiente</button></a>
 </div>
+ <!-- Lugar donde se cargará el footer -->
+ <div id="footer-container"></div>
 
-<div id="footer"></div>
-
-<script >
-  // Función para cargar el contenido del archivo HTML
-  function loadHTML(elementId, fileName) {
-    fetch(fileName)
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById(elementId).innerHTML = data;
-      })
-      .catch(error => {
-        console.error("Error al cargar el archivo:", error);
-      });
-  }
-  
-  // Cargar el header y footer
-  loadHTML('header', '../Header/header.html');
-  loadHTML('footer', '../Footer/inicio/inicio.html');
-  </script>
-  <script src="../Header/script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

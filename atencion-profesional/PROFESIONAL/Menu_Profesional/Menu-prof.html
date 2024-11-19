@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Psicólogo - Home</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="Menu-prof.css">
-    <link rel="stylesheet" href="../Header/style.css">
-    <link rel="stylesheet" href="../Footer/inicio/styles.css">
-   
-</head>
-<body>
-  <div id="header"></div>
-   <br><br>
+  </head>
+  <body>
+    <!-- Lugar donde se cargará el header -->
+  <div id="header-container"></div>
+    <br>
+    <br>
     <br>
     <main>
         <div class="carrusel">
@@ -45,50 +45,41 @@
             });
         </script>
         
-        <div class="options">
-            <a href="../Cita_Profesional/CitaProfesional.html"><div class="option">
-                <img src="imagenes/citas.jpeg" alt="Citas">
-                <span>Citas</span>
-            </div></a>
-            <a href="../Notificaciones_Profesional/NotificacionesProfesional.html"><div class="option">
-              <img src="imagenes/noti.jpeg" alt="Citas">
-              <span>Notificaciones</span>
-            </div></a>
-            <a href="../MisCodigosProfesional/MisCodigosProfesional.html"><div class="option">
-              <img src="imagenes/pagos.jpeg" alt="Citas">
-              <span>Historial de Pagos</span>
-            </div></a>
-            <a href="../Profesionales_Profesional/ProfesionalesProfesional.html"><div class="option">
-              <img src="imagenes/prof.jpeg" alt="Citas">
-              <span>Profesionales</span>
-            </div></a>
-            <a href="../Recursos_Profesional/RecursosProfesional.html"><div class="option">
-              <img src="imagenes/recurso.jpeg" alt="Citas">
-              <span>Recursos</span>
-            </div></a>
-        </div>
+        <div class="cards">
+            <a href="../Cita_Profesional/CitaProfesional.html">
+              <div class="cuadro">
+                <img src="imagenes/Citas.png" alt="Citas">
+                <h3>Citas</h3>
+              </div>
+            </a>
+            <a href="../Profesionales_Profesional/ProfesionalesProfesional.html">
+              <div class="cuadro">
+                <img src="imagenes/Profesional.png" alt="Profesionales">
+                <h3>Profesionales</h3>
+              </div>
+            </a>
+            <a href="../Recursos_Profesional/RecursosProfesional.html">
+              <div class="cuadro">
+                <img src="imagenes/Recurso.png" alt="Recursos">
+                <h3>Recursos</h3>
+              </div>
+            </a>
+            <a href="../Notificaciones_Profesional/NotificacionesProfesional.html">
+              <div class="cuadro">
+                <img src="imagenes/notificaciones.png" alt="Notificaciones">
+                <h3>Notificaciones</h3>
+              </div>
+            </a>
+            <a href="../MisCodigosProfesional/MisCodigosProfesional.html">
+              <div class="cuadro">
+                <img src="imagenes/Pagos.png" alt="Historial de pagos">
+                <h3>Historial de pagos</h3>
+              </div>
+            </a>
+          </div>
     </main>
-    <br><br>
-    <div id="footer"></div>
-
-    <script >
-      // Función para cargar el contenido del archivo HTML
-      function loadHTML(elementId, fileName) {
-        fetch(fileName)
-          .then(response => response.text())
-          .then(data => {
-            document.getElementById(elementId).innerHTML = data;
-          })
-          .catch(error => {
-            console.error("Error al cargar el archivo:", error);
-          });
-      }
-      
-      // Cargar el header y footer
-      loadHTML('header', '../Header/header.html');
-      loadHTML('footer', '../Footer/inicio/inicio.html');
-      </script>
-      <script src="../Header/script.js"></script>
-
+    <!-- Lugar donde se cargará el footer -->
+  <div id="footer-container"></div>
+   <script src="script.js"></script>
 </body>
 </html>

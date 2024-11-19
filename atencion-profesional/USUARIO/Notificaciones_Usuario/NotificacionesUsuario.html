@@ -6,12 +6,13 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="../Header/style.css">
-    <link rel="stylesheet" href="../Footer/inicio/styles.css">
-   
+    <title>Atención Profesional</title>
 </head>
 <body>
-  <div id="header"></div>
+   
+    <!-- Lugar donde se cargará el header -->
+    <div id="header-container"></div>
+
 
        <br><br><br><br><br><br><br><br><br>
     <main class="body">
@@ -95,13 +96,9 @@
             </div>
         </div>
     </main>
-
-    <div id="footer"></div>
-
-
-  <script src="../Header/script.js"></script>
-
-    
+     <!-- Lugar donde se cargará el footer -->
+  <div id="footer-container"></div>
+  <script src="script.js"></script>    
     <script>
         // JavaScript para redirigir al hacer clic en una fila
         document.querySelectorAll('.clickable-row').forEach(row => {
@@ -113,6 +110,5 @@
             });
         });
     </script>
-     <script src="script.js"></script>
 </body>
 </html>

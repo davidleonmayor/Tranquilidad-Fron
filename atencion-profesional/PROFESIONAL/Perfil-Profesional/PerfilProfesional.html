@@ -6,14 +6,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Perfil</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="PerfilProfesional.css">
-    <link rel="stylesheet" href="../Header/style.css">
-    <link rel="stylesheet" href="../Footer/inicio/styles.css">
-   
 </head>
 <body>
-  <div id="header"></div>
-   <br><br><br><br><br>
+     <!-- Lugar donde se cargará el header -->
+     <div id="header-container"></div>
+
+    <br><br><br>
     <main>
     <section id="inicio" class="inicio">
         <div class="contenido-banner">
@@ -392,7 +392,7 @@
                      <input type="text" placeholder="Numero telefonico">
                      <input type="text" placeholder="Direccion de correo">
                      <input type="text" placeholder="Tema">
-                     <textarea name="" id="" cols="30" rows="10" placeholder="Mensaje"></textarea>
+                     <input type="text" placeholder="Mensaje">
                      <button>
                         Enviar Mensaje<i class="fa-solid fa-paper-plane"></i>
                         <span class="overlay"></span>
@@ -401,50 +401,15 @@
 
                 <div class="col">
                       <img src="../Imagenes/mapa.jpg" alt="">
-                      <div class="info">
-                        <ul>
-                            <li>
-                                <i class="fa-solid fa-location-dot"></i>
-                                Argentina 159, San Rafael
-                            </li>
-                            <li>
-                                <i class="fa-solid fa-mobile-screen"></i>
-                                Llamanos: 2384 - 4343443
-                            </li>
-                            <li>
-                                <i class="fa-solid fa-envelope"></i>
-                                Email: diegodona@gmail.com
-                            </li>
-                        </ul>
-                      </div>
+                      
                 </div>
             </div>
          </div>   
     </section>
 
 </main>
-
-<div id="footer"></div>
-
-    <script >
-      // Función para cargar el contenido del archivo HTML
-      function loadHTML(elementId, fileName) {
-        fetch(fileName)
-          .then(response => response.text())
-          .then(data => {
-            document.getElementById(elementId).innerHTML = data;
-          })
-          .catch(error => {
-            console.error("Error al cargar el archivo:", error);
-          });
-      }
-      
-      // Cargar el header y footer
-      loadHTML('header', '../Header/header.html');
-      loadHTML('footer', '../Footer/inicio/inicio.html');
-      </script>
-      <script src="../Header/script.js"></script>
-  
+ <!-- Lugar donde se cargará el footer -->
+ <div id="footer-container"></div>
   <script src="java.js"></script>
 </body>
 </html>
