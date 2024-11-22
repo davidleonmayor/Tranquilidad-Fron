@@ -3271,7 +3271,74 @@ text-align: center;
   }
 }
 
+/* Media queries mejorados para responsive */
+@media only screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center; /* Centrado del contenedor principal */
+    padding: 10px;
+  }
 
+  .main-content {
+    width: 100%;
+    max-width: 95%; /* Limita el ancho máximo en móvil */
+    margin: 0 auto; /* Centrado horizontal */
+    padding: 10px;
+  }
+
+  .genres {
+    width: 100%;
+    justify-content: center;
+    gap: 15px;
+    padding: 0;
+  }
+
+  .genre {
+    width: calc(50% - 10px);
+    margin: 0 auto 15px; /* Centrado y espacio inferior */
+    max-width: 300px; /* Limita el ancho máximo de cada género */
+  }
+
+  .genre img {
+    width: 100%;
+    height: auto;
+    display: block; /* Mejora el centrado de la imagen */
+    margin: 0 auto 10px; /* Centrado y espacio inferior */
+  }
+
+  .sidebar {
+    width: 95%;
+    margin: 0 auto 20px; /* Centrado y espacio inferior */
+    padding: 10px;
+  }
+
+  .title {
+    width: 100%;
+    text-align: center;
+    margin: 15px auto; /* Centrado y espacio vertical */
+  }
+}
+
+/* Para pantallas muy pequeñas */
+@media only screen and (max-width: 480px) {
+  .main-content {
+    max-width: 100%;
+    padding: 5px;
+  }
+
+  .genres {
+    gap: 10px;
+  }
+
+  .genre {
+    width: calc(50% - 5px);
+    max-width: 250px; /* Ajuste para pantallas muy pequeñas */
+  }
+
+  .title {
+    font-size: 32px; /* Ajuste del tamaño del título para pantallas muy pequeñas */
+  }
+}
     </style>
 </head>
 <body class="body">
