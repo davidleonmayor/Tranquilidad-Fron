@@ -8,63 +8,10 @@
     <link rel="stylesheet" href="home.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
 </head>
-
 <body>
-    <header>
-        <div class="logo-container">
-            <a href="#"><img href="#inicio" src="/Header-Footer/imagenes/logo.png" alt="Logo" class="logo"></a>
-           
-        </div>
-        <button class="hamburger" onclick="toggleHamburgerMenu()">☰</button>
-        <nav class="nav-links">
-            <a href="#inicio" class="nav-item">Inicio</a>
-            <div class="nav-item modules-item" onclick="toggleModules()">Módulos</div>
-            <a href="#acerca" class="nav-item  ">Acerca de </a>
-            <a href="#contacto" class="nav-item ">Contacto</a>
-            <div id="modules-indicator" class="modules-indicator"></div>
-            
-        </nav>
-        <div class="nav-right">
-           
-            
-        </div>
-        <div class="profile-container">
-            <div class="profile-box">
-                <a href="#nombre" class="nav-item special-item profile-name">Jhon Sebastian</a>
-                <img src="../Header-Footer/imagenes/logo.png" alt="Foto de perfil" class="profile-pic" onclick="toggleProfileMenu()">
-                <div id="profile-menu" class="profile-menu">
-                    <a href="#perfil">Perfil</a>
-                    <a href="#cerrar-sesion">Cerrar sesión</a>
-                </div>
-            </div>
-        </div>
-        <!-- Menú hamburguesa -->
-<div id="hamburger-menu" class="hamburger-menu">
-    <a href="#inicio" class="hamburger-item">Inicio</a>
-    <a href="#"><div class="hamburger-item" onclick="toggleModulues()">Módulos</div></a>
-    <!-- Contenedor de módulos (oculto por defecto) -->
-    <div id="modules-content" class="modules-content" style="display: none;">
-        <a href="#"><div class="modulo">Mapa de sueños</div></a>
-        <a href="#"><div class="modulo">Alimentación</div></a>
-        <a href="#"><div class="modulo">Arteterapia</div></a>
-        <a href="#"><div class="modulo">Musicoterapia</div></a>
-        <a href="#"><div class="modulo">Ejercicios</div></a>
-        <a href="#"><div class="modulo">Atención Profesional</div></a>
-    </div>
-    <a href="#perfil" class="hamburger-item">Perfil</a>
-</div>
-        <!-- Pestaña de módulos -->
-        <div id="modules-overlay" class="modules-overlay">
-            <div class="module-grid">
-               <a href="#"> <div class="module">Mapa de sueños</div></a>
-               <a href="#"><div class="module">Alimentación</div></a>
-                <a href="#"><div class="module">Arteterapia</div></a>
-                <a href="#"><div class="module">Musicoterapia</div></a>
-                <a href="#"><div class="module">Ejercicios</div></a>
-                <a href="#"><div class="module">Atención Profesional</div></a>
-            </div>
-        </div>
-    </header>
+    <!-- Lugar donde se cargará el header -->
+    <div id="header-container"></div>
+
     <br>
     <br><br>
     <main class="main-content">
@@ -75,15 +22,15 @@
             <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="/Imagenes/atardecer.jpg" alt="">
+                        <img src="/imagenes/atardecer.jpg" alt="">
                         
                     </div>
                     <div class="carousel-item">
-                        <img src="/Imagenes/atardecer2.jpg" alt="">
+                        <img src="/imagenes/atardecer2.jpg" alt="">
                         
                     </div>
                     <div class="carousel-item">
-                        <img src="/Imagenes/atardecer3.jpg" alt="">
+                        <img src="/imagenes/atardecer3.jpg" alt="">
                         
                     </div>
                 </div>
@@ -128,28 +75,28 @@
             <div class="main-card-container">
                 <div class="row mt-4">
                     <div class="col-md-4">
-                        <div class="card text-center" onclick="window.location.href='atencion_profesional.html';">
+                        <div class="card text-center" onclick="window.location.href='/atencion-profesional/USUARIO/Home_Usuario/HomeUsuario.html';">
                             <div class="card-body">
                                 <h5 class="card-title">Atención Profesional</h5>
-                                <img src="/Imagenes/imagen3.jpg" alt="">
+                                <img src="/imagenes/imagen3.jpg" alt="">
                                 <p class="card-text">Recibe apoyo de expertos.</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="card text-center" onclick="window.location.href='mapa_de_suenos.html';">
+                        <div class="card text-center" onclick="window.location.href='/mapa-de-suenos/Inicio/Inicio.html';">
                             <div class="card-body">
                                 <h5 class="card-title">Mapa de Sueños</h5>
-                                <img src="/Imagenes/imagen2.jpg" alt="">
+                                <img src="/imagenes/imagen2.jpg" alt="">
                                 <p class="card-text">Visualiza tus metas y sueños.</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="card text-center" onclick="window.location.href='musicoterapia.html';">
+                        <div class="card text-center" onclick="window.location.href='/musicoterapia/Vistas1.1/bienvenido_a_musicoterapia.html';">
                             <div class="card-body">
                                 <h5 class="card-title">Musicoterapia</h5>
-                                <img src="/Imagenes/imagen1.jpg" alt="">
+                                <img src="/imagenes/imagen1.jpg" alt="">
                                 <p class="card-text">La música como herramienta de sanación.</p>
                             </div>
                         </div>
@@ -164,82 +111,39 @@
             </div>
 
             <!-- Módulos ocultos al inicio con animación de aparición -->
-            <div id="modulos-extras" class="modulos-ocultos animate-fade-in">
-                <div class="row mt-4">
-                    <div class="col-md-6">
-                        <div class="card text-center">
-                            <div class="card-body">
-                                <h5 class="card-title">Alimentación</h5>
-                                <img src="/Imagenes/imagen4.jpg" alt="">
-                                <p class="card-text">Consejos de alimentación saludable.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="card text-center">
-                            <div class="card-body">
-                                <h5 class="card-title">Ejercicios</h5>
-                                <img src="/Imagenes/imagen5.jpg" alt="">
-                                <p class="card-text">Rutinas de ejercicio recomendadas.</p>
-                            </div>
-                        </div>
-                    </div>
+<div id="modulos-extras" class="modulos-ocultos animate-fade-in">
+    <div class="row mt-4">
+        <!-- Módulo de Alimentación -->
+        <div class="col-md-6">
+            <div class="card text-center" onclick="window.location.href='/alimentacion/Inicio/index.html';">
+                <div class="card-body">
+                    <h5 class="card-title">Alimentación</h5>
+                    <img src="/imagenes/imagen4.jpg" alt="Alimentación" class="img-fluid">
+                    <p class="card-text">Consejos de alimentación saludable.</p>
                 </div>
             </div>
-
+        </div>
+        <!-- Módulo de Ejercicios -->
+        <div class="col-md-6">
+            <div class="card text-center" onclick="window.location.href='/rutinas-de-ejercicios/inicio/index.html';">
+                <div class="card-body">
+                    <h5 class="card-title">Ejercicios</h5>
+                    <img src="/imagenes/imagen5.jpg" alt="Ejercicios" class="img-fluid">
+                    <p class="card-text">Rutinas de ejercicio recomendadas.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
             <!-- Flecha de scroll hacia arriba -->
             <div id="scrollToTop" onclick="scrollToTop()">
                 &#9650; <!-- Código de flecha hacia arriba -->
             </div>
     </main>
-    <footer class="footer">
-        <div class="footer-container">
-          
-          
-          
-    
-          <div class="footer-column">
-            <h4>Acerca de Tranquilidad</h4>
-            <ul>
-                <li><a href="/inicio /link/quienessomos.html">Acerca de</a></li>
-                <li><a href="/inicio /link/beneficiosdetranquilidad.html">Beneficios de la Tranquilidad</a></li>
-                <li><a href="/inicio /link/consejodebienestar.html">Consejos de Bienestar</a></li>
-            </ul>
-        </div>
-        
-    
-    
-    
-          <div class="footer-column">
-            <h4>Ayuda y Soporte</h4>
-            <ul>
-              <li><a href="/inicio /link/contacto.html">Contacto</a></li>
-              <li><a href="/inicio /link/sugerencias.html">Sugerencias</a></li>
-              <li><a href="/inicio /link/guiadeuso.html">Guía de uso</a></li>
-            </ul>
-          </div>
-          
-          <div class="footer-column">
-            <h4>Información Legal</h4>
-            <ul>
-              <li><a href="/inicio /link/terminosycondiciones.html">Términos y condiciones</a></li>
-              <li><a href="/inicio /link/politica de privacidad .html">Política de privacidad</a></li>
-              <li><a href="/inicio /link/avisolegal.html">Aviso legal</a></li>
-            </ul>
-          </div>
-          
-        </div>
-        
-        <div class="footer-bottom">
-          <p>Copyright © 2024 Tranquilidad. Todos los derechos reservados.</p>
-          <div class="social-icons">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-          </div>
-        </div>
-      </footer>
+    <!-- Lugar donde se cargará el footer -->
+  <div id="footer-container"></div>
+    <script src="script.js"></script>
     <script src="home.js"></script>
+    <script src="/Header/Header/script.js"></script>
 </body>
-
 </html>

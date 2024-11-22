@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="ArchivoProfesional.css">
+  <title>Atención Profesional</title>
+  </head>
+  <body>
+    <!-- Lugar donde se cargará el header -->
+  <div id="header-container"></div>
+
+  <br>
+  <br>
+  <br><br><br><br><br><br>
+    <section class="files-section">
+      <h2>ARCHIVOS</h2>
+      <div class="search-container">
+        <input type="text" class="search-bar" placeholder="Buscar...">
+        <button class="search-button">Buscar</button>
+    </div>
+      <div class="file-item">
+        <div class="file-icon">
+          <img class="imagen" src="../Imagenes/lista.png" alt="Foto de perfil del usuario">
+        </div>
+        <span>Informe_SaludMental_Paciente_Anonimo_14_05.pdf</span>
+        <div class="settings-icon" onclick="openPDF('../Pdf-Profesional')">
+          <img src="../Imagenes/Pdf.png" alt="Settings Icon">
+        </div>
+      </div>
+      <div class="file-item">
+        <div class="file-icon">
+          <img class="imagen" src="../Imagenes/lista.png" alt="Foto de perfil del usuario">
+        </div>
+        <span>Sesiones_Habilidades_Blandas_Roger_Blant.pdf</span>
+        <div class="settings-icon" onclick="openPDF('../Pdf-Profesional')">
+          <img src="../Imagenes/Pdf.png" alt="Settings Icon">
+        </div>
+      </div>
+
+      <div class="file-item">
+        <div class="file-icon">
+          <img class="imagen" src="../Imagenes/lista.png" alt="Foto de perfil del usuario">
+        </div>
+        <span>Sesiones_Habilidades_Blandas_Roger_Blant.pdf</span>
+        <div class="settings-icon" onclick="openPDF('../Pdf-Profesional')">
+          <img src="../Imagenes/Pdf.png" alt="Settings Icon">
+        </div>
+      </div>
+
+      <div class="file-item">
+        <div class="file-icon">
+          <img class="imagen" src="../Imagenes/lista.png" alt="Foto de perfil del usuario">
+        </div>
+        <span>Sesiones_Habilidades_Blandas_Roger_Blant.pdf</span>
+        <div class="settings-icon" onclick="openPDF('../Pdf-Profesional')">
+          <img src="../Imagenes/Pdf.png" alt="Settings Icon">
+        </div>
+      </div>
+        <button class="cargar"><a href="../Subir-Archivos/SubirArchivosProfesional.html">Subir Nuevo</a></button>
+    </section>
+    <!-- Modal para ver PDF -->
+ <div id="pdfModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closePDF()">&times;</span>
+    <iframe id="pdfViewer" src="" width="100%" height="600px"></iframe>
+  </div>
+</div>
+ <!-- Lugar donde se cargará el footer -->
+ <div id="footer-container"></div>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Psicólogo - Home</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="Menu-prof.css">
+  </head>
+  <body>
+    <!-- Lugar donde se cargará el header -->
+  <div id="header-container"></div>
+    <br>
+    <br>
+    <br>
+    <main>
+        <div class="carrusel">
+            <h2>Respira. Todo estará bien. A veces, es necesario solo un paso a la vez.</h2>
+        </div>
+        <br><br><br>
+        <br><br>
+
+        
+        <script>
+            const mensajes = [
+                "Respira. Todo estará bien. A veces, es necesario solo un paso a la vez.",
+                "Cada pequeño paso cuenta hacia tu bienestar.",
+                "Tu salud mental es importante. Vamos a cuidarla."
+            ];
+        
+            let mensajeActual = 0;
+            const carrusel = document.querySelector(".carrusel h2");
+        
+            function cambiarMensaje() {
+                mensajeActual = (mensajeActual + 1) % mensajes.length;
+                carrusel.textContent = mensajes[mensajeActual];
+            }
+        
+            setInterval(cambiarMensaje, 4000); // Cambia el mensaje cada 4 segundos
+        </script>
+        <script>
+            document.querySelector('.servicios').addEventListener('mouseover', () => {
+                document.querySelector('.submenu').style.transition = "opacity 0.5s ease-in-out";
+            });
+        </script>
+        
+        <div class="cards">
+            <a href="../Cita_Profesional/CitaProfesional.html">
+              <div class="cuadro">
+                <img src="imagenes/Citas.png" alt="Citas">
+                <h3>Citas</h3>
+              </div>
+            </a>
+            <a href="../Profesionales_Profesional/ProfesionalesProfesional.html">
+              <div class="cuadro">
+                <img src="imagenes/Profesional.png" alt="Profesionales">
+                <h3>Profesionales</h3>
+              </div>
+            </a>
+            <a href="../Recursos_Profesional/RecursosProfesional.html">
+              <div class="cuadro">
+                <img src="imagenes/Recurso.png" alt="Recursos">
+                <h3>Recursos</h3>
+              </div>
+            </a>
+            <a href="../Notificaciones_Profesional/NotificacionesProfesional.html">
+              <div class="cuadro">
+                <img src="imagenes/notificaciones.png" alt="Notificaciones">
+                <h3>Notificaciones</h3>
+              </div>
+            </a>
+            <a href="../MisCodigosProfesional/MisCodigosProfesional.html">
+              <div class="cuadro">
+                <img src="imagenes/Pagos.png" alt="Historial de pagos">
+                <h3>Historial de pagos</h3>
+              </div>
+            </a>
+          </div>
+    </main>
+    <!-- Lugar donde se cargará el footer -->
+  <div id="footer-container"></div>
+   <script src="script.js"></script>
+</body>
+</html>
