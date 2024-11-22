@@ -9,6 +9,12 @@ canvas {
     margin: 0 auto;
 } */
 
+main {
+    padding: 20px;
+    margin-top: 150px;
+}
+
+
 .section {
     padding: 15px;
     margin-bottom: 10px;

@@ -1,692 +1,106 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <script src="footNav.js"></script>
-    <link rel="stylesheet" href="footNav copy.css">
-  <title>binaural_elegido</title>
-  <style>
-
-    
-/*  */
-/* Agregar al final: */
-
-/* Media Queries para pantallas pequeñas */
-/* Media Queries para pantallas pequeñas */
-@media (max-width: 480px) {
-  header {
-    height: 100px;
-  }
-
-  .submenu {
-    margin-left: -90px;
-    margin-top: 1px;
-    border-radius: 20px 0 0 20px;
-  }
-
-  .service-user {
-    flex-direction: row-reverse;
-  }
-
-  .servicios span {
-    display: none;
-  }
-
-  .user-info {
-    display: none;
-  }
-
-  .logo {
-    flex-direction: row;
-  }
-
-  .footer-container {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
-  .contact-item span {
-    display: none;
-  }
-
-  .items {
-    gap: 10px;
-  }
-
-  .iconos .icono {
-    width: 30px;
-    height: 30px;
-  }
-} 
-
-@media (max-width: 768px) {
-  header {
-    position: absolute;
-  }
-}
-
-@media (max-width: 768px) {
-  header {
-    height: 100px;
-    position: absolute;
-  }
-
-  .service-user {
-    justify-content: flex-end;
-  }
-
-  .submenu.active {
-    display: block;
-  }
-
-  .submenu ul {
-    list-style-type: none;
-    padding: 0;
-  }
-
- 
-/* Estilos responsive para contenedor y otros elementos */
-@media only screen and (max-width: 1200px) {
-  .content {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .tracks-container {
-    margin-top: 20px;
-    width: 90%;
-    max-width: 100%;
-    margin-left: 195px;
-    margin-top: 50px;
-  }
-
-  .player {
-    width: 90%;
-    max-width: 100%;
-  }
-}
-
-header {
-  position: fixed;
-  top: 0;
-  z-index: 1000;
-  width: 100%;
-  height: 100px;
-  box-sizing: border-box;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reproductor</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="/musicoterapia/Header/style copy.css"> 
+<link rel="stylesheet" href="/musicoterapia/footer/footer/inicio/styles.css"> 
+    <style>
+      
+/* Ajuste del contenedor principal para compensar el nuevo ancho de la sidebar */
+.main {
+  width: calc(100% - 80px); /* Ajustado de 60px a 80px */
+  padding: 20px;
+  overflow-y: auto;
+  overflow-x: hidden;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  padding: 0 20px;
-  border-bottom: 0.0625rem solid #ddd;
-}
-
-.logo {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 10px;
-}
-
-.logo img {
-  width: 60px;
-  height: auto;
-  object-fit: cover;
-}
-
-.logo span {
-  color: #59009A;
-  font-size: 1.5rem;
-}
-
-.service-user {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 30px;
-  font-size: 1.0625rem;
-}
-
-.servicios span {
-  color: #59009a;
-  cursor: pointer;
-}
-
-.user-info {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 15px;
-}
-
-.user-info span {
-  color: #59009a;
-}
-
-.user-info img {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-}
-
-/* Estilos Globales */
-* {
-  font-family: 'Roboto', sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  min-height: 100%;
   position: relative;
 }
-
-body {
-  margin-top: 100px;
-  margin-bottom: 60px;
-        font-family: "Roboto", sans-serif;
-        display: flex;
-        margin: 0;
-        padding-top: 100px; /* Altura del header */
-  overflow-x: hidden;
-        flex-direction: column; background: url('images/fondoselegidos.png') no-repeat center center fixed;
-}
-
-h1 {
+      h1 {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   color: #59009A;
   font-style: italic;
 }
-
-/* Header */
-header {
-  position: fixed;
-  top: 0;
-  z-index: 1000;
-  width: 100%;
-  height: 100px;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  border-bottom: 0.0625rem solid #ddd;
-}
-
-header span {
-  cursor: pointer;
-}
-
-header nav {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  margin: 0px 10px;
-}
-
-.servicios {
-  position: relative;
-}
-
-.servicios span {
-  color: #59009a;
-}
-
-.service-user {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 30px;
-  font-size: 1.0625rem;
-}
-
-.menu-icon {
-  display: none;
-}
-
-.logo span {
-  color: #59009A;
-  font-size: 1.5rem;
-}
-
-.logo img, .user-info img {
-  width: 60px;
-  height: auto;
-  object-fit: cover;
-}
-
-.logo {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 10px;
-}
-
-
-.user-info {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 15px;
-}
-
-.user-info span {
-  color: #59009a;
-}
-
-.user-info img {
-  width: 60px;
-  border-radius: 50%;
-}
-
-/* Submenu de Servicios */
-.submenu {
-  display: none;
-  position: absolute;
-  background-color: white;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 180px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
-  opacity: 0;
-  visibility: hidden;
-}
-
-.servicios:hover .submenu {
-  display: block;
-  opacity: 1;
-  visibility: visible;
-}
-
-.submenu ul {
-  list-style: none;
-  padding: 10px 0;
-  margin: 0;
-}
-
-.submenu li {
-  padding: 12px 20px;
-  border-bottom: 1px solid #eee;
-  font-size: 1rem;
-  color: black;
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.submenu li:last-child {
-  border-bottom: none;
-}
-
-.submenu li:hover {
-  background-color: #f4f4f4;
-  color: #59009A;
-}
-
-.submenu li a {
-  text-decoration: none;
-  color: inherit;
-  display: block;
-  width: 100%;
-}
-
-.submenu li a:hover {
-  color: #59009A;
-}
-
-/* Submenu de Perfil */
-.submenu-profile {
-  display: none;
-  position: absolute;
-  background-color: white;
-  top: 100%;
-  right: 0;
-  width: 160px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
-  opacity: 0;
-  visibility: hidden;
-}
-
-.user-info:hover .submenu-profile {
-  display: block;
-  opacity: 1;
-  visibility: visible;
-}
-
-.submenu-profile ul {
-  list-style: none;
-  padding: 10px 0;
-  margin: 0;
-}
-
-.submenu-profile li {
-  padding: 12px 20px;
-  border-bottom: 1px solid #eee;
-  font-size: 1rem;
-  color: black;
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.submenu-profile li:last-child {
-  border-bottom: none;
-}
-
-.submenu-profile li:hover {
-  background-color: #f4f4f4;
-  color: #59009A;
-}
-
-.submenu-profile li a {
-  text-decoration: none;
-  color: inherit;
-  display: block;
-  width: 100%;
-}
-
-.submenu-profile li a:hover {
-  color: #59009A;
-}
-
-/* Footer */
-footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  height: 60px;
-  background-color: #59009A;
-  z-index: 999;
-}
-
-footer div {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.contact-item {
-  display: flex;
-  flex-direction: column-reverse;
-  align-items: center;
-  text-align: center;
-}
-
-.footer-container {
-  padding: 10px;
-}
-
-.items {
-  gap: 30px;
-}
-
-.quienes-somos {
-  display: flex;
-  align-items: center;
-  color: white;
-}
-
-.iconos img {
-  width: 35px;
-}
-
-.items .contact-item span {
-  color: white;
-}
-.user-info {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 15px;
-}
-
-.user-info span {
-  color: #59009a;
-}
-
-.user-info img {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-/* Media Queries para pantallas pequeñas */
-@media (max-width: 480px) {
-  header {
-    height: 100px;
-  }
-
-  .submenu {
-    margin-left: -90px;
-    margin-top: 1px;
-    border-radius: 20px 0 0 20px;
-  }
-
-  .service-user {
-    flex-direction: row-reverse;
-  }
-
-  .servicios span {
-    display: none;
-  }
-
-  .menu-icon {
-    display: flex;
-    color: #59009A;
-    cursor: pointer;
-  }
-
-  .menu-icon .material-icons {
-    font-size: 50px;
-    font-family: 'Material Icons';
-    font-style: normal;
-  }
-
-  .user-info {
-    display: none;
-  }
-
-  .logo {
-    flex-direction: row;
-  }
-
-  .footer-container {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
-  .contact-item span {
-    display: none;
-  }
-
-  .items {
-    gap: 10px;
-  }
-
-  .iconos .icono {
-    width: 30px;
-    height: 30px;
-  }
-} 
-@media (max-width: 768px) {
-  header {
-        position: absolute;
-      }
-
-    .menu-icon {
-        display: block;
-        cursor: pointer;
-    }
-
-    .menu-icon .material-icons {
-        font-size: 30px;
-        color: #59009A;
-    }
-
-    .services-text {
-        display: none;
-    }
-
-    .user-info {
-        display: none; /* Oculta completamente la información del usuario */
-    }
-/* Media Queries para pantallas pequeñas */
-@media (max-width: 680px) {
-  header {
-    height: 100px;
-  }
-
-  .submenu {
-    margin-left: -90px;
-    margin-top: 1px;
-    border-radius: 20px 0 0 20px;
-  }
-
-  .service-user {
-    flex-direction: row-reverse;
-  }
-
-  .servicios span {
-    display: none;
-  }
-
-  .menu-icon {
-    display: flex;
-    color: #59009A;
-    cursor: pointer;
-  }
-
-  .menu-icon .material-icons {
-    font-size: 50px;
-    font-family: 'Material Icons';
-    font-style: normal;
-  }
-
-  .user-info {
-    display: none;
-  }
-
-  .logo {
-    flex-direction: row;
-  }
-
-  .footer-container {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
-  .contact-item span {
-    display: none;
-  }
-
-  .items {
-    gap: 10px;
-  }
-
-  .iconos .icono {
-    width: 30px;
-    height: 30px;
-  }
-} 
-}
-
-
-/* Estilos adicionales */
-.genre:hover img,
-.imagen-footer:hover,
-.title:hover span,
-.nav a:hover {
-  transform: scale(1.1);
-}
-/*  */
-
-/* -------------------------------------------- */
-    /* Estilos generales del contenedor principal */
-    .container {
+   /* Estilos generales del contenedor principal */
+   .container {
       display: flex;
       margin-top: 0; /* Eliminar el margen superior del contenedor principal */
   height: calc(100vh - 160px); /* Ajusta esto según la altura exacta de tu header y footer */
-
-  margin-bottom: 60px; /* Altura del footer *//
     }
+/* Barra lateral */
+.sidebar {
+  width: 80px;
+  background-color: #c7b7fe49;
+  padding: 20px;
+  transition: width 0.0s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 100px; /* Añadido para bajar los botones */
+}
 
-    /* Estilos de la barra lateral */
-    .sidebar {
-      width: 60px;
-      background-color: #c7b7fe49;
-      padding: 20px;
-      transition: width 0.0s ease;
-      /* Modified for smoother transition */
-      overflow: hidden;
-    }
+/* Estilos de la barra lateral al pasar el ratón */
+.sidebar:hover {
+  width: 500px;
+}
 
-    /* Estilos de la barra lateral al pasar el ratón */
-    .sidebar:hover {
-      width: 450px;
-    }
+/* Estilos de los elementos del menu de la barra lateral */
+.sidebar .menu-item {
+  padding: 12px;
+  margin: 5px 0; /* Reducido de 10px a 5px para acercar los botones */
+  background: #fff;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  transition: background 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
 
-    /* Estilos de los elementos del menu de la barra lateral */
-    .sidebar .menu-item {
-      padding: 12px;
-      margin: 10px 0;
-      background: #fff;
-      border-radius: 15px;
-      display: flex;
-      align-items: center;
-      transition: background 0.3s ease, transform 0.3s ease;
-      cursor: pointer;
-    }
+/* El resto permanece igual */
+.sidebar .menu-item.active,
+.sidebar .menu-item:hover {
+  background: #ba7fe7;
+  box-shadow: #59009A;
+  transform: scale(1.05);
+}
 
-    /* Estilos de los elementos del menú cuando están activos o al pasar el ratón */
-    .sidebar .menu-item.active,
-    .sidebar .menu-item:hover {
-      background: linear-gradient(#ffffff, #9c76c1);
-      box-shadow: 1px 5px 10px 0.1px rgb(145, 145, 145);
-      transform: scale(1.05);
-    }
+.sidebar .menu-item img {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
 
-    /* Estilos de las imagenes dentro de los elementos del menu */
-    .sidebar .menu-item img {
-      width: 24px;
-      height: 24px;
-      margin-right: 10px;
-    }
+.sidebar .menu-item span {
+  flex-grow: 1;
+  text-align: center;
+  font-size: 16px;
+  display: none;
+  text-decoration: none;
+  color: #000000;
+}
 
-    /* Estilos del texto dentro de los elementos del menu */
-    .sidebar .menu-item span {
-      flex-grow: 1;
-      text-align: center;
-      font-size: 16px;
-      display: none;
-      text-decoration: none;
-      color: #000000;
-    }
+.sidebar:hover .menu-item span {
+  display: initial;
+}
 
-   
-    .sidebar .menu-item a {
-      text-decoration: none;
-      /* Removes the underline */
-      display: block;
-      /* Makes the <a> tag behave like a block-level element */
-      color: inherit;
-      /* Inherits the color from parent elements */
-      width: 100%;
-      /* Ensures the clickable area spans the full width of the menu item */
-      text-align: center;
-    }
+.sidebar .menu-item a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: inherit;
+  width: 100%;
+}
 
     /* Estilos del contenedor principal de contenido */
     .main {
@@ -703,13 +117,20 @@ footer div {
 
     /* Estilos del título principal */
     .title {
-      font-size: 54px;
-      color: #59009a;
-      text-align: center;
-      position: relative;
-      width: 100%;
-      margin-bottom: 20px;
+  font-size: 54px;
+  color: #59009a;
+  text-align: center;
+  position: relative;
+  width: 100%;
+  margin-top: 50px; /* Añadido margen superior */
+  margin-bottom: 40px; /* Aumentado el margen inferior */
     }
+    .content {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 20px; /* Reducido de 40px a 20px */
+}
 
     /* Estilos del texto dentro del título */
     .title span {
@@ -755,11 +176,12 @@ footer div {
 
     /* Estilos del contenedor del reproductor */
     .player {
-      text-align: center;
-      width: 45%;
-      max-width: 700px;
-      position: relative;
-    }
+  text-align: center;
+  width: 45%;
+  max-width: 700px;
+  position: relative;
+  margin-bottom: 0; /* Eliminar cualquier margen inferior */
+}
 
     /* Estilos de la portada del album */
     .album-cover {
@@ -781,12 +203,6 @@ footer div {
       height: 100%;
       object-fit: cover;
     }
-
-
-
-
-
-
 
     /* Estilos del tiempo de reproducción */
     .time {
@@ -814,6 +230,7 @@ footer div {
       color: black;
       font-size: 24px;
       cursor: pointer;
+      margin-top: 10px; /* Reducido de 20px a 10px */
     }
 
     #play-pause-btn {
@@ -830,14 +247,13 @@ footer div {
 
     /* Estilos de las acciones adicionales */
     .actions {
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      width: 100%;
-      margin: 20px auto 0;
-      position: relative;
-    }
-
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  margin: 10px auto 0; /* Reducido de 20px a 10px */
+  position: relative;
+}
     /* Estilos de los botones de acciones */
     .actions button {
       background: none;
@@ -917,22 +333,15 @@ footer div {
 
     /* Estilos del contenedor de pistas */
     .tracks-container {
+  width: 45%;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  transform: translateX(-70px);
+  padding: 10px;
+  background: transparent;
+  overflow-y: auto;
 
-      width: 45%;
-      border: 1px solid #ccc;
-      border-radius: 10px;
-
-      transform: translateX(-70px);
-      padding: 10px;
-      background: transparent;
-      overflow-y: auto;
-
-      max-height: 70vh;
-
-
-
-    }
-
+}
     /* Estilos generales de cada pista */
     .track {
       display: flex;
@@ -1126,221 +535,62 @@ footer div {
     .me-gusta.active {
       color: #59009A;
     }
-      /* Estilos para pantallas más pequeñas, como tablets o móviles */
-      @media only screen and (max-width: 1200px) {
-      .content {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-
-      }
-
-      .tracks-container {
-        margin-top: 20px;
-        width: 90%;
-        max-width: 100%;
-        /* Asegurar que ocupe todo el ancho disponible */
-        margin-left: 195px;
-        margin-top: 50px;
-
-
-
-      }
-
-      .player {
-        width: 90%;
-        /* Asegurar que el reproductor también ocupe todo el ancho */
-        max-width: 100%;
-        /* Asegurar que ocupe todo el ancho disponible */
-      }
-
-
-
-      .footer-container {
-        flex-direction: column;
-        /* Cambia las columnas a filas */
-        align-items: center;
-        /* Alinea los elementos al centro */
-      }
-
-      .contact-item {
-        text-align: center;
-        /* Centra el texto de los items */
-      }
-
-      .quienes-somos {
-        margin-left: 0;
-        /* Elimina el margen izquierdo para centrar el enlace en pantallas pequeñas */
-        margin-top: 20px;
-        /* Agrega un poco de espacio superior */
-        align-self: center;
-        /* Centra horizontalmente en el contexto de la columna */
-      }
-
-      .iconos img {
-        margin-right: 0;
-        margin-bottom: 10px;
-        /* Espacio entre los íconos en móviles */
-      }
-
-    }
-
-    /* Estilos para pantallas más pequeñas, como tablets o móviles */
-    @media only screen and (max-width: 768px) {
-      .container {
-        flex-direction: column;
-        height: auto;
-        /* Ajustar altura automática */
-      }
-
-      .sidebar {
-        margin-top: 20px;
-        border-radius: 40px;
-        width: 450px;
-        /* Ocupar todo el ancho disponible */
-        margin-bottom: 20px;
-        /* Espacio entre el sidebar y el contenido principal */
-        padding: 8px 16px;
-
-
-      }
-
-      /* Muestra el texto de los elementos del menú en pantallas pequeñas */
-      .sidebar .menu-item span {
-        display: initial;
-      }
-
-      /* Deshabilita el hover en pantallas pequeñas */
-      .sidebar:hover {
-        width: 450px;
-        /* Mantiene el ancho desplegado */
-      }
-
-      .main-content {
-        width: 100%;
-        /* Ocupar todo el ancho disponible */
-
-      }
-
-      .image-container {
-        /* Ajustar el margen izquierdo */
-        margin-left: 0;
-        text-align: left;
-        /* Centrar el contenido */
-
-      }
-
-      .image-container2 {
-        margin-left: 0;
-        text-align: center;
-        /* Centrar el contenido */
-        width: 100%;
-        /* Ajustar el ancho al 100% */
-        padding: 10px;
-        /* Agregar algo de padding si es necesario */
-      }
-
-      .track-list {
-        max-height: none;
-        /* Ajustar altura automática */
-        width: 100%;
-        /* Ajustar el ancho al 100% */
-        padding: 10px;
-        /* Agregar algo de padding si es necesario */
-        box-sizing: border-box;
-        overflow-y: auto;
-        background-size: cover;
-        /* Asegura que la imagen cubra el contenedor sin distorsionarse */
-        background-position: center;
-        /* Centra la imagen de fondo */
-        background-repeat: no-repeat;
-        /* Evita que la imagen se repita */
-      }
-
-
-      .corner-text {
-        font-size: 1.5em;
-        /* Reducir tamaño de fuente para pantallas pequeñas */
-        top: 10px;
-        left: 10px;
-      }
-
-      .bottom-left-text {
-        font-size: 1em;
-        /* Reducir tamaño de fuente para pantallas pequeñas */
-        bottom: 10px;
-        left: 10px;
-      }
-
-      .title {
-        font-size: 35px;
-        /* Reducir el tamaño del título */
-        margin-left: 20px;
-        /* Ajustar el margen izquierdo */
-        text-align: center;
-      }
-        /* Centrar el título de géneros */
-        .title {
-        text-align: center;
-        margin-left: 0;
-        margin-right: 0;
-        width: 100%;
-        justify-content: center;
-    }
-    /* Ajustes generales */
-body {
-    padding-top: 100px; /* Altura del header */
-}
-
-.container {
-    margin-top: 0; /* Eliminar el margen superior del contenedor principal */
-}
-    }
-/* -------------------------------------------------- */
-/* ... (mantener todos los estilos anteriores hasta los media queries) ... */
-
-/* Media Queries para pantallas pequeñas */
-@media only screen and (max-width: 1200px) {
-  .content {
+       
+/* Media queries mejorados */
+@media only screen and (max-width: 768px) {
+  .container {
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    min-height: calc(100vh - 126px);
+    padding-bottom: 60px; /* Espacio para el footer */
   }
 
-  .tracks-container {
-    margin-top: 20px;
-    width: 90%;
-    max-width: 100%;
-    margin: 50px auto 0;
+  .sidebar {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 0;
   }
 
-  .player {
-    width: 90%;
-    max-width: 100%;
-    margin: 0 auto;
+  .main-content {
+    width: 100%;
+    padding: 10px;
   }
 
-  .footer-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .contact-item {
+  .title {
+    font-size: 40px;
+    margin: 15px 0;
     text-align: center;
   }
 
-  .quienes-somos {
-    margin-left: 0;
-    margin-top: 20px;
-    align-self: center;
+  /* Mantenemos el comportamiento original de los géneros */
+  .genre {
+    width: calc(50% - 20px);
   }
 
-  .iconos img {
-    margin-right: 0;
-    margin-bottom: 10px;
+
+  /* Ajustes para el menú en móvil */
+  .nav {
+    position: relative;
   }
+
+  .submenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    max-width: 100vw;
+    z-index: 1000;
+  }
+
+  .submenu ul {
+    width: 100%;
+  }
+
+  .submenu li {
+    padding: 15px;
+    text-align: center;
+  }
+
 }
-
 @media only screen and (max-width: 768px) {
   body {
     padding-top: 100px;
@@ -1411,373 +661,336 @@ body {
     box-sizing: border-box;
   }
 
-  .image-container, 
-  .image-container2 {
-    margin-left: 0;
+
+
+/* Para pantallas muy pequeñas */
+@media only screen and (max-width: 480px) {
+  .main-content {
+    max-width: 100%;
+    padding: 5px;
+  }
+
+  .genres {
+    gap: 10px;
+  }
+
+  .genre {
+    width: calc(50% - 5px);
+    max-width: 250px; /* Ajuste para pantallas muy pequeñas */
+  }
+
+  .title {
+    font-size: 32px; /* Ajuste del tamaño del título para pantallas muy pequeñas */
+  }
+}
+
+/* NUEVOS ESTILOS Y RESPOSIVE */
+
+/* Media queries para móvil */
+@media only screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .sidebar {
+    width: 100%;
+    max-width: 450px;
+    margin: 20px auto; /* Margen uniforme arriba y abajo */
+    padding: 20px 15px; /* Padding horizontal y vertical uniforme */
+    border-radius: 20px;
+    border: 2px solid #59009A;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+  }
+
+  .sidebar .menu-item {
+    width: 96%; /* Ancho ajustado */
+    margin: 6px 0; /* Espaciado vertical entre items */
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .sidebar .menu-item img {
+    width: 20px;
+    height: 20px;
+    margin-right: 12px;
+  }
+
+  .sidebar .menu-item span {
+    font-size: 14px;
+  }
+}
+/* Para pantallas aún más pequeñas */
+@media only screen and (max-width: 480px) {
+  .sidebar {
+    border-radius: 20px; /* Mantenemos la forma ovalada */
+  }
+  
+  .sidebar .menu-item {
+    border-radius: 15px; /* Ligeramente menor pero manteniendo el aspecto ovalado */
+  }
+}
+}
+@media only screen and (max-width: 768px) {
+  .title {
+    font-size: 40px;
+    margin: 15px auto; /* Añadido auto para centrar horizontalmente */
     text-align: center;
     width: 100%;
   }
 
-  /* Eliminar menú hamburguesa y relacionados */
-  .menu-icon {
-    display: none;
-  }
-
-  .servicios span {
-    display: block;
-  }
-}
-
-/* Ajustes adicionales para pantallas muy pequeñas */
-@media only screen and (max-width: 480px) {
-  header {
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .logo {
-    margin-right: auto;
-  }
-
-  .service-user {
-    gap: 15px;
-  }
-
-  .container {
-    padding: 10px;
-  }
-
-  .track-info h3 {
-    font-size: 1.2rem;
-  }
-
-  .track-info p {
-    font-size: 0.9rem;
-  }
-
-  .track button {
-    font-size: 1.5rem;
-  }
-}
-.user-info {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 15px;
-}
-
-.user-info span {
-  color: #59009a;
-}
-
-.user-info img {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-/* Estilos base del contenedor de pistas */
-.tracks-container {
-  width: 45%;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  padding: 10px;
-  background: transparent;
-  overflow-y: auto;
-  max-height: 70vh;
-  /* Eliminamos el transform que estaba causando el desplazamiento */
-  /* transform: translateX(-70px); */
-  margin: 0 auto; /* Esto ayudará a centrar el contenedor */
-}
-
-/* Media query para pantallas grandes hasta 1200px */
-@media only screen and (max-width: 1200px) {
-  .content {
-    flex-direction: column;
+  .tabs {
+    margin: 0 auto 20px auto; /* Centrado horizontal */
     justify-content: center;
-    align-items: center;
-  }
-
-  .tracks-container {
-    margin: 20px auto; /* Centrado horizontal */
-    width: 90%;
-    max-width: 800px; /* Limitamos el ancho máximo */
-    transform: none; /* Eliminamos cualquier transformación */
-  }
-
-  .player {
-    width: 90%;
-    max-width: 800px;
-    margin: 0 auto;
+    width: 100%;
+    font-size: 24px; /* Opcional: reducir tamaño de fuente en móvil */
   }
 }
 
-/* Media query para tablets y dispositivos medianos */
-@media only screen and (max-width: 768px) {
-  .container {
-    flex-direction: column;
-    height: auto;
-    margin: 0 auto;
-    padding: 20px;
-    max-width: 95%;
-  }
-
-  .tracks-container {
-    width: 90%;
-    max-width: 600px;
-    margin: 20px auto;
-    transform: none;
-    border: 2px solid #59009A;
-    border-radius: 15px;
-    padding: 15px;
-  }
-}
-
-/* Media query para dispositivos móviles */
+/* Para pantallas muy pequeñas */
 @media only screen and (max-width: 480px) {
-  .tracks-container {
-    width: 95%;
-    margin: 15px auto;
-    padding: 10px;
-  }
-
-  .track-info h3 {
-    font-size: 1.2rem;
-  }
-
-  .track-info p {
-    font-size: 0.9rem;
+  .title {
+    font-size: 32px;
+    margin: 10px auto; /* Mantener centrado */
+    text-align: center;
   }
 }
 
 
-
-    
-  </style>
-
+    </style>
 </head>
 <body class="body">
-  <header> 
-    <nav>
-        <div class="logo">
-            <a href="/inicio-de-sesion/Modulo-iniciar-sesion/home/home.html">
-                <img src="images/logo.png"
-                    alt="Logo de Atención Profesional">
-            </a>
-            <a href="/inicio-de-sesion/Modulo-iniciar-sesion/home/home.html"><span class="Profesional">TRANQUILIDAD</span></a>
+    <header>
+        <div class="logo-container">
+            <a href="#inicio"><img src="/musicoterapia/Header/Captura de pantalla 2.png" alt="Logo" class="logo"></a>
         </div>
-        <div class="service-user">
-            <div class="servicios">
-                <div class="menu-icon">
-                    <i class="material-icons">menu</i>
-                </div>
-                <span>Servicios</span>
-                <div class="submenu">
-                    <ul>
-                      <li><a href="/mapa-de-suenos/Inicio/Inicio.html">Biblioterapia</a></li>
-                      <li><a href="/alimentacion/Inicio/index.html">Alimentacion</a></li>
-                      <li><a href="/musicoterapia/Vistas1.1/bienvenido_a_musicoterapia.html">Musicoterapia</a></li>
-                      <li><a href="/rutinas-de-ejercicios/inicio/index.html">Ejercicios</a></li>
-                      <li><a href="/atencion-profesional/USUARIO/Home_Usuario/HomeUsuario.html">Atencion Profesional</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="user-info">
-                <span>Juanito Alimaña</span>
-                  <a class="profile-toggle"><img class="imagen-usuario" 
-                    src="images/user.png"
-                    alt="Foto de perfil del usuario">
-                  </a>
-                
-                <div class="submenu-profile">
-                    <ul>
-                        <li><a href="/inicio-de-sesion/Modulo-iniciar-sesion/usuario/usuario.html">Ver Perfil</a></li>
-                        <li><a href="/inicio-de-sesion/Modulo-iniciar-sesion/configuracion/configuracion.html">Configuracion</a></li>
-                        <li><a href="/inicio-de-sesion/Modulo-iniciar-sesion/login/login.html">Cerrar Sesión</a></li>
-                    </ul>
+        
+        <button class="hamburger" onclick="toggleHamburgerMenu()">☰</button>
+        
+        <nav class="nav-links">
+            <a href="/inicio-de-sesion/Modulo-iniciar-sesion/home/home.html" class="nav-item">Inicio</a>
+            <div class="nav-item modules-item" onclick="toggleModules()">Módulos</div>
+            <a href="/musicoterapia/Vistas1.1/footer/inicio/link/quienessomos.html" class="nav-item">Acerca de</a>
+            <a href="/musicoterapia/Vistas1.1/footer/inicio/link/contacto.html" class="nav-item">Contacto</a>
+        </nav>
+        
+        <div class="profile-container">
+            <div class="profile-box">
+                <a href="#nombre" class="nav-item special-item profile-name">Juanito Alimaña</a>
+                <img src="/musicoterapia/Vistas1.1/images/user.png" alt="Foto de perfil" class="profile-pic" onclick="toggleProfileMenu()">
+                <div id="profile-menu" class="profile-menu">
+                    <a href="/inicio-de-sesion/Modulo-iniciar-sesion/usuario/usuario.html">Perfil</a>
+                    <a href="/inicio-de-sesion/Modulo-iniciar-sesion/login/login.html">Cerrar sesión</a>
                 </div>
             </div>
         </div>
-    </nav>
-  </header>
-
-
-      <div class="container">
-        <aside class="sidebar">
-          <br>
-          <br>
-          <br>
-          <div class="menu-item">
-            <img src="images/genero.png" alt="Icon" />
-            <a href="principal_generos.html">
-              <span>Géneros</span>
-            </a>
-          </div>
-          <div class="menu-item">
-            <img src="images/album.png" alt="Icon" />
-            <a href="principal_album.html">
-              <span>Álbum</span>
-            </a>
-          </div>
-          <div class="menu-item">
-            <img src="images/pod.png" alt="Icon" />
-            <a href="principal_podcast.html">
-              <span>Podcast</span>
-            </a>
-          </div>
-          <div class="menu-item">
-            <img src="images/binaural.png" alt="Icon" />
-            <a href="binaurales.html">
-              <span>Sonidos Binaurales</span>
-            </a>
-          </div>
-          <div class="menu-item">
-            <img src="images/playL.png" alt="Icon" />
-            <a href="playList.html">
-              <span>PlayList</span>
-            </a>
-          </div>
     
-          <div class="menu-item ">
-            <img src="images/like.png" alt="Icon" />
-            <a href="Tus me gustas pistas.html">
-              <span>Me gusta</span>
-            </a>
-            </a>
-          </div>
-          <div class="menu-item">
-            <img src="images/buscar boton.png" alt="Buscar Icon">
-            <a href="buscar.html">
-              <span>Buscar</span>
-            </a>
-            </a>
-          </div>
-        </aside>
-    
-        <main class="main">
-          <div class="title">
-            <span></span>
-          </div>
-          <div class="tabs">
-            <div class="black" onclick="window.location.href='#pistas'"></div>
-            <div class="purple" onclick="window.location.href='#podcast'">
-              <h1 id="titulo-genero">Sonido Binaural</h1>
+        <!-- Menú hamburguesa -->
+        <div id="hamburger-menu" class="hamburger-menu">
+            <a href="/inicio-de-sesion/Modulo-iniciar-sesion/home/home.html" class="hamburger-item">Inicio</a>
+            <a href="modules"><div class="hamburger-item" onclick="toggleModules()">Módulos</div></a>
+            <div id="modules-content" class="modules-content" style="display: none;">
+                <a href="/mapa-de-suenos/Inicio/Inicio.html"><div class="modulo">Mapa de sueños</div></a>
+                <a href="/alimentacion/Inicio/index.html"><div class="modulo">Alimentación</div></a>
+                <a href="/arteterapia/html/Navegacion.html"><div class="modulo">Arteterapia</div></a>
+                <a href="/musicoterapia/Vistas1.1/principal_generos.html"><div class="modulo">Musicoterapia</div></a>
+                <a href="/rutinas-de-ejercicios/inicio/index.html"><div class="modulo">Ejercicios</div></a>
+                <a href="/atencion-profesional/USUARIO/Home_Usuario/HomeUsuario.html"><div class="modulo">Atención Profesional</div></a>
             </div>
+            <a href="/inicio-de-sesion/Modulo-iniciar-sesion/usuario/usuario.html" class="hamburger-item">Perfil</a>
+        </div>
+    
+        <!-- Pestaña de módulos -->
+        <div id="modules-overlay" class="modules-overlay">
+            <div class="module-grid">
+                <a href="/mapa-de-suenos/Inicio/Inicio.html"><div class="module">Mapa de sueños</div></a>
+                <a href="/alimentacion/Inicio/index.html"><div class="module">Alimentación</div></a>
+                <a href="/arteterapia/html/Navegacion.html"><div class="module">Arteterapia</div></a>
+                <a href="/musicoterapia/Vistas1.1/principal_generos.html"><div class="module">Musicoterapia</div></a>
+                <a href="/rutinas-de-ejercicios/inicio/index.html"><div class="module">Ejercicios</div></a>
+                <a href="/atencion-profesional/USUARIO/Home_Usuario/HomeUsuario.html"><div class="module">Atención Profesional</div></a>
+            </div>
+        </div>
+    </header>
+    
+    
+      
+    <script src="/musicoterapia/Header/script copy.js"></script>
+    <div class="container">
+      <aside class="sidebar">
+        <br>
+        <br>
+        <br>
+        <div class="menu-item">
+          <img src="images/genero.png" alt="Icon" />
+          <a href="principal_generos.html">
+            <span>Géneros</span>
+          </a>
+        </div>
+        <div class="menu-item">
+          <img src="images/album.png" alt="Icon" />
+          <a href="principal_album.html">
+            <span>Álbum</span>
+          </a>
+        </div>
+        <div class="menu-item">
+          <img src="images/pod.png" alt="Icon" />
+          <a href="principal_podcast.html">
+            <span>Podcast</span>
+          </a>
+        </div>
+        <div class="menu-item">
+          <img src="images/binaural.png" alt="Icon" />
+          <a href="binaurales.html">
+            <span>Sonidos Binaurales</span>
+          </a>
+        </div>
+        <div class="menu-item">
+          <img src="images/playL.png" alt="Icon" />
+          <a href="playList.html">
+            <span>PlayList</span>
+          </a>
+        </div>
+  
+        <div class="menu-item ">
+          <img src="images/like.png" alt="Icon" />
+          <a href="Tus me gustas pistas.html">
+            <span>Me gusta</span>
+          </a>
+          </a>
+        </div>
+        <div class="menu-item">
+          <img src="images/buscar boton.png" alt="Buscar Icon">
+          <a href="buscar.html">
+            <span>Buscar</span>
+          </a>
+          </a>
+        </div>
+      </aside>
+  
+      <main class="main">
+        <div class="title">
+          <span></span>
+        </div>
+        <div class="tabs">
+          <div class="black" onclick="window.location.href='#pistas'"></div>
+          <div class="purple" onclick="window.location.href='#podcast'">
+            <h1 id="titulo-genero">Sonido Binaural</h1>
           </div>
-          <div class="content">
-    
-    
-    
-            <div class="player">
-              <div class="album-cover">
-                <img id="album-image" src="images/El-piano.jpg" alt="genre" />
-                <div class="playhead"></div>
-              </div>
-              <div>
-                <h2 id="audio-title" style="margin: 0">Bienvenido y disfruta ♫</h2>
-                <p id="audio-artist">Artist</p>
-              </div>
-              <div class="progress-container">
-                <input type="range" id="progress-bar" value="0" min="0" max="100" step="0.1">
-              </div>
-              <div class="time">
-                <span id="current-time">0:00</span>
-                <span id="total-duration">0:00</span>
-              </div>
-              <div class="controls">
-                <button id="prev-btn">&#9664;&#9664;</button>
-                <button id="play-pause-btn">&#9654;</button>
-                <button id="next-btn">&#9654;&#9654;</button>
-              </div>
-              <div class="actions">
-                <div><span class="me-gusta">❤</span></div>
-                <button class="dropdown-button" onclick="toggleDropdown('dropdown')">
-                  &#8942;
-                </button>
-                <div id="dropdown" class="dropdown">
-                  <div class="dropdown-content">Agregar a favoritos</div>
-                  <div class="dropdown-content" onclick="toggleNestedDropdown('playlist-dropdown')">
-                    Agregar a playlist
-                  </div>
-                  <div id="playlist-dropdown" class="nested-dropdown">
-                    <div class="dropdown-content">Playlist 1</div>
-                    <div class="dropdown-content">Playlist 2</div>
-                    <div class="dropdown-content">Playlist 3</div>
-                  </div>
-                  <div class="dropdown-content" onclick="showHorizontalList()">
-                    Compartir
-                  </div>
+        </div>
+        <div class="content">
+  
+  
+  
+          <div class="player">
+            <div class="album-cover">
+              <img id="album-image" src="images/El-piano.jpg" alt="genre" />
+              <div class="playhead"></div>
+            </div>
+            <div>
+              <h2 id="audio-title" style="margin: 0">Bienvenido y disfruta ♫</h2>
+              <p id="audio-artist">Artist</p>
+            </div>
+            <div class="progress-container">
+              <input type="range" id="progress-bar" value="0" min="0" max="100" step="0.1">
+            </div>
+            <div class="time">
+              <span id="current-time">0:00</span>
+              <span id="total-duration">0:00</span>
+            </div>
+            <div class="controls">
+              <button id="prev-btn">&#9664;&#9664;</button>
+              <button id="play-pause-btn">&#9654;</button>
+              <button id="next-btn">&#9654;&#9654;</button>
+            </div>
+            <div class="actions">
+              <div><span class="me-gusta">❤</span></div>
+              <button class="dropdown-button" onclick="toggleDropdown('dropdown')">
+                &#8942;
+              </button>
+              <div id="dropdown" class="dropdown">
+                <div class="dropdown-content">Agregar a favoritos</div>
+                <div class="dropdown-content" onclick="toggleNestedDropdown('playlist-dropdown')">
+                  Agregar a playlist
+                </div>
+                <div id="playlist-dropdown" class="nested-dropdown">
+                  <div class="dropdown-content">Playlist 1</div>
+                  <div class="dropdown-content">Playlist 2</div>
+                  <div class="dropdown-content">Playlist 3</div>
+                </div>
+                <div class="dropdown-content" onclick="showHorizontalList()">
+                  Compartir
                 </div>
               </div>
-              <div id="horizontal-list" class="horizontal-list">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
-                <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg"
-                  alt="Facebook" />
-                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" />
-                <button onclick="copyLink()">Copiar Link</button>
-              </div>
             </div>
-    
-    
-    
-    
-            <div class="tracks-container" id="tracks-list">
-              <!-- Los audios se cargarán dinámicamente aquí -->
-    
+            <div id="horizontal-list" class="horizontal-list">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+              <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg"
+                alt="Facebook" />
+              <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" />
+              <button onclick="copyLink()">Copiar Link</button>
             </div>
-    
-    
-    
-    
           </div>
-        </main>
-      </div>
+  
+  
+  
+  
+          <div class="tracks-container" id="tracks-list">
+            <!-- Los audios se cargarán dinámicamente aquí -->
+  
+          </div>
+  
+  
+  
+  
+        </div>
+      </main>
+    </div>
 
-
-    <footer> 
+      <footer class="footer">
         <div class="footer-container">
-            <div class="items">
-                <div class="contact-item">
-                    <span>Contáctanos</span>
-                    <div class="iconos">
-                        <a href="https://web.whatsapp.com/"><img class="icono" src="/FootNav/imagenes/WhatsApp.png"
-                                alt="WhatsApp"></a>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <span>Canales de atención</span>
-                    
-                    <div class="iconos">
-                        <a href="https://web.telegram.org/"><img class="icono" src="/FootNav/imagenes/Telegram App.png"
-                                alt="Telegram"></a>
-                        <a href="https://mail.google.com/mail/u/0/?ogbl#inbox"><img class="icono" src="/FootNav/imagenes//Email.png"
-                                alt="Email"></a>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <span>Redes sociales</span>
-                    <div class="iconos">
-                        <a href="https://www.facebook.com/"><img class="icono" src="/FootNav/imagenes/Facebook.png"
-                                alt="Facebook"></a>
-                        <a href="https://www.instagram.com/"><img class="icono" src="/FootNav/imagenes/Instagram.png"
-                                alt="Instagram"></a>
-                    </div>
-                </div>
+            <div class="footer-column">
+                <h4>Acerca de Tranquilidad</h4>
+                <ul>
+                    <li><a href="/musicoterapia/Vistas1.1/footer/inicio/link/quienessomos.html">Acerca de</a></li>
+                    <li><a href="/musicoterapia/Vistas1.1/footer/inicio/link/beneficiosdetranquilidad.html">Beneficios de la Tranquilidad</a></li>
+                    <li><a href="/musicoterapia/Vistas1.1/footer/inicio/link/consejodebienestar.html">Consejos de Bienestar</a></li>
+                </ul>
             </div>
-            <a class="quienes-somos" href="#">¿Quiénes somos?</a>
+            <div class="footer-column">
+                <h4>Ayuda y Soporte</h4>
+                <ul>
+                    <li><a href="/musicoterapia/Vistas1.1/footer/inicio/link/contacto.html">Contacto</a></li>
+                    <li><a href="/musicoterapia/Vistas1.1/footer/inicio/link/sugerencias.html">Sugerencias</a></li>
+                    <li><a href="/musicoterapia/Vistas1.1/footer/inicio/link/guiadeuso.html">Guía de uso</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Información Legal</h4>
+                <ul>
+                    <li><a href="/musicoterapia/Vistas1.1/footer/inicio/link/terminosycondiciones.html">Términos y condiciones</a></li>
+                    <li><a href="/musicoterapia/Vistas1.1/footer/inicio/link/politica de privacidad .html">Política de privacidad</a></li>
+                    <li><a href="/musicoterapia/Vistas1.1/footer/inicio/link/avisolegal.html">Aviso legal</a></li>
+                </ul>
+            </div>
         </div>
-      </footer>
+        <div class="footer-bottom">
+            <p>Copyright © 2024 Tranquilidad. Todos los derechos reservados.</p>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                <a href="https://x.com/?lang=es.com/"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
 
 </body>
 <script>
-
-
-
-
-
-
+   
     // Funcion que alterna la visibilidad de un menu desplegable
     function toggleDropdown(elementId) {
       const dropdown = document.getElementById(elementId);
@@ -2201,9 +1414,5 @@ document.addEventListener('DOMContentLoaded', function() {
         e.stopPropagation();
     });
 });
-
-
   </script>
-
 </html>
-

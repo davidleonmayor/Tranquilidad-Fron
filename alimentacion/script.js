@@ -36,6 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
           }
       }
   });
+<<<<<<< HEAD
   function toggleProfileMenu() {
     const menu = document.getElementById("profile-menu");
     menu.style.display = menu.style.display === "block" ? "none" : "block";
@@ -62,6 +63,8 @@ function toggleModulues() {
     const modulesContent = document.getElementById("modules-content");
     modulesContent.style.display = modulesContent.style.display === "block" ? "none" : "block";
 }
+=======
+>>>>>>> alimentacion
 
 });
 

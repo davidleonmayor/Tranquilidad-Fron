@@ -15,7 +15,7 @@ body {
 
 /* Header */
 header {
-    position: fixed;
+    position: relative; /* Cambia a 'relative' en lugar de 'fixed' */
     top: 0;
     left: 0;
     width: 100%;
@@ -265,5 +265,24 @@ a{
     }
     .module-grid{
         display: none;
+    }
+}
+@media (max-width: 800px) {
+    header {
+        padding: 8px 15px; /* Padding más balanceado */
+        min-height: 75px; /* Altura intermedia que no sea ni muy alta ni muy baja */
+        box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+        width: 95%; /* Reducir el ancho para que no llegue hasta los bordes */
+        margin: 0 auto; /* Centrar el header */
+        border-radius: 0 0 10px 10px; /* Bordes redondeados en la parte inferior */
+    }
+
+    /* Ajustar el menú hamburguesa desplegado */
+    .hamburger-menu {
+        top: 75px; /* Ajustar al nuevo tamaño del header */
+        width: 95%; /* Hacer que coincida con el ancho del header */
+        margin: 0 auto; /* Centrar el menú */
+        left: 50%;
+        transform: translateX(-50%);
     }
 }

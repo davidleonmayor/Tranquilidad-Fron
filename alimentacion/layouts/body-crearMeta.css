@@ -5,6 +5,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 160px;
 }
 
 section {
@@ -44,4 +45,7 @@ input, textarea {
     border-radius: 5px;
     cursor: pointer;
     align-self: flex-end;
+}
+.btn-save:hover {
+    background-color: #be5cb6;
 }
