@@ -10,6 +10,7 @@ body {
   main{
     margin: 0;
     padding: 20px;
+    margin-top: 150px;
   }
 
   a{
@@ -94,6 +95,10 @@ body {
     cursor: pointer;
 }
 
+.opcion button:hover {
+  background-color: #be5cb6;
+}
+
 .opcion img {
     width: 100px;
     margin-bottom: 10px;
@@ -114,7 +119,7 @@ body {
     cursor: pointer;
 }
 
-.acciones button:hover{
+.acciones .btn-action:hover{
     background-color: #be5cb6;
     transition: background-color 0.3s ease;
 }
