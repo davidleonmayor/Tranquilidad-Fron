@@ -1,0 +1,148 @@
+
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  main{
+    margin: 0;
+    padding: 20px;
+    margin-top: 150px;
+  }
+
+  a{
+    text-decoration: none;
+  }
+  
+  
+  /* Caja de resultados */
+  .result-box {
+    background-color: #f7f9fc;
+    border: 2px solid #d1e3f1;
+    border-radius: 15px;
+    padding: 20px;
+    max-width: 600px;
+    margin: auto;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    font-size: 1.8em;
+    color: #4a90e2;
+    margin-bottom: 20px;
+  }
+  
+  .content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .image-container img {
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+  }
+  
+  .text-content p {
+    font-size: 1.2em;
+    color: #333;
+    margin: 5px 0;
+  }
+  
+  .calorias {
+    font-size: 2em;
+    font-weight: bold;
+    color: #e74c3c;
+  }
+  
+  .description {
+    font-size: 1em;
+    color: #666;
+  }
+  
+ 
+.opciones {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.opcion {
+    margin: 10px;
+    background-color: #f7f9fc;
+    border: 2px solid #d1e3f1;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.opcion button{
+  background-color: #59009A;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.opcion button:hover {
+  background-color: #be5cb6;
+}
+
+.opcion img {
+    width: 100px;
+    margin-bottom: 10px;
+}
+
+.acciones {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.acciones .btn-action {
+    background-color: #59009A;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.acciones .btn-action:hover{
+    background-color: #be5cb6;
+    transition: background-color 0.3s ease;
+}
+
+
+.btn-recomendaciones {
+    background-color: #59009A;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1em;
+    cursor: pointer;
+    margin-top: 20px;
+    
+    margin-left: auto; /* Mueve el botón hacia la derecha */
+    margin-right: 0; /* Alineado completamente a la derecha */
+
+  }
+  
+  .btn-recomendaciones:hover {
+    background-color: #be5cb6;
+    transition: background-color 0.3s ease;
+  }
+
+ 

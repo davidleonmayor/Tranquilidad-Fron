@@ -1,0 +1,56 @@
+/* Estilos para el contenido principal (main) */
+main {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
+    margin-top: 160px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+h2{
+    font-family: Roboto Slob, Serif;
+}
+
+
+/* Asegúrate de que este estilo solo afecte a los elementos dentro de main */
+.card {
+    height: 105%;
+    font-family: 'Roboto', sans-serif;
+    background-color: white;
+    padding: 0;
+    border: 2px solid #d1e3f1;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.card:hover {
+    transform: scale(1.1);
+    transition: 500ms;
+}
+
+.card img {
+    width: 150px;
+    margin-bottom: 20px;
+}
+
+.card p {
+    font-family: sans-serif;
+    margin: 10px;
+}
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 400px) {
+    main {
+        display: grid;
+        grid-template-columns: 1fr; /* Cambia a una sola columna en pantallas pequeñas */
+    }
+
+    .card p {
+        display: none; /* Esconde los párrafos en pantallas muy pequeñas */
+    }
+}

@@ -1,0 +1,90 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    margin-top: 160px;
+}
+
+.caja {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center; 
+    position: relative; /* Agregar esta línea */
+}
+
+
+
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    width: 100%;
+    overflow: hidden;
+    border: 2px solid #d1e3f1;/* Color del borde */
+
+    transition: all 0.3s ease; /* Añadir transición para suavizar el efecto */
+
+}
+
+.card:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Aumentar sombra */
+    transform: scale(1.05); /* Aumentar ligeramente el tamaño */
+}
+
+.card:hover .image img {
+    transform: scale(1.1); /* Hace que la imagen se agrande */
+    opacity: 0.9; /* Cambia la opacidad para un efecto suave */
+}
+
+.image img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Suaviza la transición de la imagen */
+}
+.image {
+    height: 300px;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.recipe-image {
+    width: 100%;
+    height: auto;
+}
+
+.recipe-info {
+    padding: 20px;
+}
+
+.recipe-info h2 {
+    margin-top: 0;
+}
+
+.recipe-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.recipe-info li {
+    background: #f4f4f4;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+}
