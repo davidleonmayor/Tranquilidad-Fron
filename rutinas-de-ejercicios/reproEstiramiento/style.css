@@ -6,18 +6,22 @@
   padding: 20px;
   box-sizing: border-box;
   margin-top: 150px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 
 .player-container {
   text-align: center;
-  width: 50%;
-  max-width:50% ;
+  width: 90%;
   background-color: #ffffff;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-  margin-left: 30px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50px;
 }
 
 .album-art {
@@ -185,8 +189,9 @@ video::-moz-media-controls {
 .comments {
   display: flex;
   flex-direction: column;
-  width: 40%;
-  margin-right: 30px;
+  width: 90%;
+  justify-content: start;
+
 }
 
 .comments h2 {
@@ -200,6 +205,9 @@ video::-moz-media-controls {
   border: 1px solid #ccc;
   border-radius: 4px;
   resize: vertical;
+  width: 70%;
+  margin-right: 30px;
+  height:70px ;
 }
 
 .comments button {
@@ -210,18 +218,19 @@ video::-moz-media-controls {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  height: 50px;
 }
 
 /* Contenedor de comentarios con scroll */
 .comentarios {
   min-height: 300px;
-  max-height: 300px; /* Altura máxima del contenedor */
+  max-height: 500px; /* Altura máxima del contenedor */
   width: 100%;
   margin-top: 10px;
   overflow-y: scroll; /* Habilitar desplazamiento vertical */
   border: 1px solid #ccc;
   padding: 0.625rem;
-  background-color: #f9f9f9; /* Fondo claro */
+  background-color: #ffffff; /* Fondo claro */
 }
 
 
@@ -231,13 +240,27 @@ video::-moz-media-controls {
   margin-top: 20px;
   margin-bottom: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  padding: 10px;
+  padding: 20px;
+  align-items: center;
 }
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+.escribir{
+  display: flex;
+  align-items: center;
+}
+.material-symbols-outlined{
+  margin-right:20px;
+  margin-left: 10pz;
+}
+.comentar p{
+  
+  font-weight: bold;
+  margin-bottom: 5px;
 }
 @media (max-width: 768px){
   .container{

@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <link rel="stylesheet" href="Style.css"><script>
+  <link rel="stylesheet" href="detalles.css">
+  <script>
     async function includeHTML() {
         const elements = document.querySelectorAll('[include-html]');
         for (let el of elements) {
@@ -36,22 +37,26 @@
     <div include-html="/rutinas-de-ejercicios/includes/Header/header.html"></div>
   <div class="cont">
   <div class="contenedor">
-    <img src="/rutinas-de-ejercicios/detalles/sportswoman-stretching-her-back-white-copyspace.jpg" alt="" class="guia">
+     <video autoplay muted controls width="640" height="360" class="guia">
+        <source src="/rutinas-de-ejercicios/includes/videos/cobra.mp4" type="video/mp4">
+        <source src="mi-video.ogg" type="video/ogg">
+        Tu navegador no soporta la reproducción de videos.
+    </video>
     <div class="instruccines">
     <h2> <span class="title">Instrucciones</span></h2>
     <ul>
         <li class="one">Acuéstate boca abajo con las piernas extendidas y los pies juntos.</li>
-        <br>
+    
         <li>Coloca las manos debajo de los hombros, con los codos cerca del cuerpo.
         </li>
-        <br>
+      
         <li>Inhala y presiona las manos contra el suelo, levantando el pecho y la cabeza.</li>
-        <br>
-        <li>Endereza los brazos mientras levantas el torso y las piernas del suelo.</li><br>
-        <li>Extiende los brazos completamente, manteniendo los hombros alejados de las orejas.</li><br>
-        <li>Abre el pecho y lleva los omóplatos hacia abajo y juntos.</li><br>
+      
+        <li>Endereza los brazos mientras levantas el torso y las piernas del suelo.</li>
+        <li>Extiende los brazos completamente, manteniendo los hombros alejados de las orejas.</li>
+        <li>Abre el pecho y lleva los omóplatos hacia abajo y juntos.</li>
         <li>Mira ligeramente hacia arriba sin forzar el cuello.
-          .</li><br>
+          .</li>
         <li>Mantén la postura por 5-10 respiraciones profundas.
         </li>
        
@@ -60,7 +65,36 @@
 </div>
 
 </div>
+
 </div>
+<main>
+    <div class="Recomendaciones">
+    <h2>Recomendaciones de Estiramientos</h2>
+</div>
+    <div class="video-carousel">
+      <div class="video-item">
+        <iframe src="https://www.youtube.com/embed/DwRR59ektIs
+        " 
+                title="Estiramiento 1" allowfullscreen></iframe>
+      </div>
+      <div class="video-item">
+        <iframe src="https://www.youtube.com/embed/u-0M2Cb-jrw" 
+                title="Estiramiento 2" allowfullscreen></iframe>
+      </div>
+      <div class="video-item">
+        <iframe src="https://www.youtube.com/embed/ZuQkqgrKcfM" 
+                title="Estiramiento 3" allowfullscreen></iframe>
+      </div>
+      <div class="video-item">
+        <iframe src="https://www.youtube.com/embed//pF46ZFaR7Ag" 
+                title="Estiramiento 4" allowfullscreen></iframe>
+      </div>
+      <div class="video-item">
+        <iframe src="https://www.youtube.com/embed//h4AS1ggmnLk" 
+                title="Estiramiento 4" allowfullscreen></iframe>
+      </div>
+    
+</main>
 <div include-html="/rutinas-de-ejercicios/includes/inicio/inicio.html"></div>
 
 <script src="script.js"></script>

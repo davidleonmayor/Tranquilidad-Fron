@@ -31,7 +31,15 @@ function agregarComentario(comentario) {
     const comentarioDiv = document.createElement('div');
     comentarioDiv.classList.add('com');
     comentarioDiv.innerHTML = `
-        <div class="comentar">${comentario}</div>
+    <div class="usuario">
+    <span class="material-symbols-outlined">
+person 
+</span>
+    
+    </div>
+    <div class="comentar">
+    <p>Usuario</p>
+        ${comentario}</div>
     `;
     comentariosContainer.appendChild(comentarioDiv);
 }
@@ -85,7 +93,7 @@ const fullscreenButton = document.getElementById('fullscreenBtn');
 function loadVideo(index) {
     const videoData = videos[index];
     videoElement.src = videoData.url;
-    likeButton.textContent = videoData.liked ? '❤️' : '🤍';
+    likeButton.textContent = videoData.liked ? '💜' : '🤍';
     videoElement.load();
 }
 
@@ -95,7 +103,7 @@ loadVideo(currentVideoIndex);
 likeButton.addEventListener('click', () => {
     const videoData = videos[currentVideoIndex];
     videoData.liked = !videoData.liked;
-    likeButton.textContent = videoData.liked ? '❤️' : '🤍';
+    likeButton.textContent = videoData.liked ? '💜' : '🤍';
 });
 
 // Función para pasar al siguiente video
