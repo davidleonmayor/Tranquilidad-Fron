@@ -1,4 +1,16 @@
+/* Fondo de marca de agua */
+body {
+    background: url('../inclued/marcaAgua.png') center center fixed; /* Imagen centrada y fija */
+    background-size: cover; /* Asegura que la imagen cubra todo el espacio */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-blend-mode: overlay; /* Mezcla la imagen con el fondo */
+    background-color: rgba(255, 245, 220, 0.8); /* Fondo translúcido beige */
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
 
+/* Main container */
 main {
     flex: 1;
     padding: 20px;
@@ -6,28 +18,35 @@ main {
     justify-content: center;
     align-items: center;
     margin-top: 160px;
+    position: relative; /* Asegura que el contenido esté por encima de la imagen de fondo */
+    z-index: 1;
 }
 
+/* Sección de contenido con fondo semitransparente */
 section {
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.85); /* Fondo blanco translúcido */
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 800px;
+    position: relative;
+    z-index: 2; /* Asegura que el contenido esté por encima del fondo */
 }
 
+/* Títulos dentro de las secciones */
 section h2 {
     margin-top: 0;
 }
 
+/* Estilos del formulario */
 form {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
-
+/* Estilos de los inputs y textareas */
 input, textarea {
     padding: 10px;
     border: 1px solid #ccc;
@@ -36,7 +55,8 @@ input, textarea {
     box-sizing: border-box;
 }
 
-.btn-save{
+/* Botón de guardar */
+.btn-save {
     text-decoration: none;
     background-color: #59009A;
     color: #fff;
@@ -45,7 +65,4 @@ input, textarea {
     border-radius: 5px;
     cursor: pointer;
     align-self: flex-end;
-}
-.btn-save:hover {
-    background-color: #be5cb6;
 }

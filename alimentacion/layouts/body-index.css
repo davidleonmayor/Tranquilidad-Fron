@@ -1,56 +1,77 @@
-/* Estilos para el contenido principal (main) */
+/* Fondo del cuerpo con marca de agua */
+body {
+    background: url('../inclued/marcaAgua.png') no-repeat center center fixed; /* Imagen no se repite */
+    background-size: cover; /* La imagen cubre toda la pantalla */
+    background-blend-mode: overlay; /* Mezcla la imagen con el color de fondo */
+    background-color: rgba(255, 245, 220, 0.8); /* Fondo beige pálido translúcido */
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Mantener las cartas con forma redonda y un poco de transparencia */
+.card {
+    width: 100%;
+    max-width: 400px; /* Tamaño original de las cartas */
+    background: rgba(255, 255, 255, 0.85); /* Fondo semitransparente para las cartas */
+    padding: 20px; /* Mantener el padding consistente */
+    border-radius: 25px; /* Forma redonda */
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* Flexbox para organizar el contenido dentro de la carta */
+    justify-content: space-between;
+    box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.1), 
+                -10px -10px 20px rgba(255, 255, 255, 0.7);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-height: 300px; /* Asegura que todas las cartas tengan al menos una altura mínima */
+}
+
+/* Color de texto de los párrafos en negro */
+.card p {
+    color: black; /* Asegura que el texto de las cartas sea negro */
+}
+
+/* Color morado para los títulos de las cartas */
+.card h2 {
+    color: #59009A; /* Color morado para los títulos */
+}
+
+/* Efecto hover para las cartas */
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.2), 
+                -5px -5px 20px rgba(255, 255, 255, 0.6);
+}
+
+/* Ajustar el tamaño de las imágenes dentro de las cartas */
+.card img {
+    width: 80%; /* Ajusta el tamaño de la imagen al 80% del contenedor */
+    max-width: 200px; /* Limita el tamaño máximo de las imágenes */
+    height: auto; /* Mantiene la proporción de la imagen */
+    object-fit: contain; /* Asegura que la imagen se ajuste sin distorsión */
+    margin: 0 auto; /* Centra la imagen horizontalmente */
+    display: block; /* Hace que la imagen se comporte como un bloque */
+}
+.imagen-redondeada {
+    border-radius: 15px; /* Ajusta el valor según lo redondeado que quieras */
+  }
+
+/* Responsividad intacta */
 main {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas */
+    gap: 20px; /* Espacio entre las tarjetas */
     padding: 20px;
     margin-top: 160px;
+    justify-items: center; /* Centra las cartas horizontalmente */
 }
 
-a {
-    text-decoration: none;
-    color: black;
-}
-h2{
-    font-family: Roboto Slob, Serif;
-}
-
-
-/* Asegúrate de que este estilo solo afecte a los elementos dentro de main */
-.card {
-    height: 105%;
-    font-family: 'Roboto', sans-serif;
-    background-color: white;
-    padding: 0;
-    border: 2px solid #d1e3f1;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-.card:hover {
-    transform: scale(1.1);
-    transition: 500ms;
-}
-
-.card img {
-    width: 150px;
-    margin-bottom: 20px;
-}
-
-.card p {
-    font-family: sans-serif;
-    margin: 10px;
-}
-
-/* Media query para pantallas pequeñas */
-@media (max-width: 400px) {
+@media (max-width: 768px) {
     main {
-        display: grid;
-        grid-template-columns: 1fr; /* Cambia a una sola columna en pantallas pequeñas */
+        grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
     }
 
     .card p {
-        display: none; /* Esconde los párrafos en pantallas muy pequeñas */
+        display: none; /* Oculta los párrafos en pantallas pequeñas */
     }
 }

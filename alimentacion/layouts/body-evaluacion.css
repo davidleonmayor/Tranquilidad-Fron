@@ -1,39 +1,60 @@
+/* Fondo de marca de agua */
+body {
+    background: url('../inclued/marcaAgua.png') center center fixed; /* Imagen centrada y fija */
+    background-size: cover; /* Asegura que la imagen cubra todo el espacio */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-blend-mode: overlay; /* Mezcla la imagen con el fondo */
+    background-color: rgba(255, 245, 220, 0.8); /* Fondo translúcido beige */
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
 /* Estilos generales para el formulario */
 main {
     padding: 20px;
     display: flex;
     justify-content: center;
     margin-top: 140px;
+    position: relative; /* Asegura que el contenido esté por encima de la imagen de fondo */
 }
 
+/* Estilos de la tarjeta */
 .card {
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.85); /* Fondo blanco semitransparente */
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 60%;
+    position: relative;
+    z-index: 2; /* Asegura que la tarjeta esté por encima de la imagen */
 }
 
-a{
+/* Enlaces dentro de la tarjeta */
+a {
     text-decoration: none;
 }
 
-.card div{
-   display: flex;
-   flex-direction: column;
+/* Contenido dentro de la tarjeta */
+.card div {
+    display: flex;
+    flex-direction: column;
 }
 
+/* Estilos del título de la tarjeta */
 .card h2 {
     margin-top: 0;
 }
 
+/* Estilos del formulario */
 .card form {
     display: flex;
     flex-direction: column;
     width: 100%; /* Asegura que el formulario ocupe todo el ancho de la tarjeta */
 }
 
-.card form label{
+/* Estilo de los labels dentro del formulario */
+.card form label {
     margin: 15px 0; /* Espaciado más amplio entre elementos */
     height: 22px;
     width: 100%; /* Asegura que los elementos ocupen todo el ancho disponible */
@@ -41,7 +62,7 @@ a{
     margin-bottom: 0px;
 }
 
-
+/* Estilo de los inputs dentro del formulario */
 .card form input {
     margin: 5px 0; /* Espaciado más amplio entre elementos */
     height: 22px;
@@ -49,6 +70,7 @@ a{
     font-size: 16px; /* Tamaño de fuente aumentado */
 }
 
+/* Estilo del botón dentro del formulario */
 .card form a {
     background-color: #59009A;
     color: white;
@@ -61,15 +83,15 @@ a{
     font-size: 16px; /* Aumenta el tamaño de la fuente */
 }
 
+/* Efecto hover para el botón */
 .card form a:hover {
     background-color: #7300BF; /* Color más claro al pasar el mouse */
 }
 
+/* Efecto focus para mejorar la accesibilidad del botón */
 .card form a:focus {
     outline: 2px solid #59009A; /* Mejora de accesibilidad */
 }
-
-
 
 /* Estilos responsivos */
 @media (max-width: 768px) {

@@ -1,90 +1,77 @@
+/* Fondo del cuerpo con marca de agua */
 body {
-    font-family: Arial, sans-serif;
+    background: url('../inclued/marcaAgua.png') no-repeat center center fixed; /* Imagen no se repite */
+    background-size: cover; /* La imagen cubre toda la pantalla */
+    background-blend-mode: overlay; /* Mezcla la imagen con el color de fondo */
+    background-color: rgba(255, 245, 220, 0.8); /* Fondo beige pálido translúcido */
     margin: 0;
     padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Estilo para las cartas */
+.card {
+    width: 100%;
+    max-width: 320px; /* Tamaño fijo de las cartas */
+    background: rgba(255, 255, 255, 0.85); /* Fondo semitransparente para las cartas */
+    padding: 20px; /* Mantener el padding consistente */
+    border-radius: 25px; /* Forma redonda */
+    text-align: center;
     display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+    flex-direction: column; /* Flexbox para organizar el contenido dentro de la carta */
+    justify-content: space-between;
+    box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.1), 
+                -10px -10px 20px rgba(255, 255, 255, 0.7);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-height: 300px; /* Asegura que todas las cartas tengan al menos una altura mínima */
 }
 
-main {
-    justify-content: space-around;
-    align-items: center;
-    padding: 20px;
-    margin-top: 160px;
+/* Color de texto de los párrafos en negro */
+.card p {
+    color: black; /* Asegura que el texto de las cartas sea negro */
 }
 
+/* Color morado para los títulos de las cartas */
+.card h2 {
+    color: #59009A; /* Color morado para los títulos */
+}
+
+/* Efecto hover para las cartas */
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.2), 
+                -5px -5px 20px rgba(255, 255, 255, 0.6);
+}
+
+/* Ajustar el tamaño de las imágenes dentro de las cartas */
+.card img {
+    width: 80%; /* Ajusta el tamaño de la imagen al 80% del contenedor */
+    max-width: 200px; /* Limita el tamaño máximo de las imágenes */
+    height: auto; /* Mantiene la proporción de la imagen */
+    object-fit: contain; /* Asegura que la imagen se ajuste sin distorsión */
+    margin: 0 auto; /* Centra la imagen horizontalmente */
+    display: block; /* Hace que la imagen se comporte como un bloque */
+}
+
+/* Layout de las cartas en un grid horizontal */
 .caja {
     display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center; 
-    position: relative; /* Agregar esta línea */
-}
-
-
-
-.card {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    display: flex;
-    flex-direction: column;
-    max-width: 400px;
-    width: 100%;
-    overflow: hidden;
-    border: 2px solid #d1e3f1;/* Color del borde */
-
-    transition: all 0.3s ease; /* Añadir transición para suavizar el efecto */
-
-}
-
-.card:hover {
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Aumentar sombra */
-    transform: scale(1.05); /* Aumentar ligeramente el tamaño */
-}
-
-.card:hover .image img {
-    transform: scale(1.1); /* Hace que la imagen se agrande */
-    opacity: 0.9; /* Cambia la opacidad para un efecto suave */
-}
-
-.image img {
-    width: 100%;
-    height: auto;
-    transition: transform 0.3s ease, opacity 0.3s ease; /* Suaviza la transición de la imagen */
-}
-.image {
-    height: 300px;
-    width: 300px;
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.recipe-image {
-    width: 100%;
-    height: auto;
-}
-
-.recipe-info {
+    justify-content: space-between; /* Asegura que las cartas estén distribuidas */
+    flex-wrap: wrap; /* Permite que las cartas se ajusten a la siguiente fila si es necesario */
+    gap: 10px; /* Reducción del espacio entre las tarjetas */
     padding: 20px;
+    margin-top: 160px;
+    justify-items: center; /* Centra las cartas horizontalmente */
 }
 
-.recipe-info h2 {
-    margin-top: 0;
-}
+/* Responsividad */
+@media (max-width: 768px) {
+    .caja {
+        flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+        justify-content: center;
+    }
 
-.recipe-info ul {
-    list-style: none;
-    padding: 0;
-}
-
-.recipe-info li {
-    background: #f4f4f4;
-    margin: 5px 0;
-    padding: 10px;
-    border-radius: 5px;
+    .card p {
+        display: none; /* Oculta los párrafos en pantallas pequeñas */
+    }
 }

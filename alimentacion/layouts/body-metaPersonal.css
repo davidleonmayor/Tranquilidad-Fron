@@ -1,18 +1,24 @@
-
+/* Fondo de marca de agua */
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     color: #333;
+    background: url('../inclued/marcaAgua.png') no-repeat center center fixed; /* Imagen de marca de agua */
+    background-size: cover; /* La imagen cubre toda la pantalla */
+    background-blend-mode: overlay; /* Mezcla la imagen con el color de fondo */
+    background-color: rgba(255, 245, 220, 0.8); /* Fondo translúcido beige */
 }
 
+/* Contenedor principal */
 main {
     max-width: 800px;
     margin: auto;
     margin-top: 150px;
 }
 
+/* Estilo de las secciones */
 section {
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.85); /* Fondo semitransparente */
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -20,15 +26,18 @@ section {
     transition: transform 0.2s;
 }
 
-a{
+/* Estilos para enlaces */
+a {
     text-decoration: none;
     color: #333;
 }
 
+/* Efecto hover para secciones */
 section:hover {
     transform: scale(1.02);
 }
 
+/* Estilos para los títulos */
 h2 {
     color: black;
 }
@@ -37,6 +46,7 @@ h3 {
     color: #555;
 }
 
+/* Estilo de la lista */
 ul {
     list-style: none;
     padding: 0;
@@ -51,16 +61,17 @@ li:last-child {
     border-bottom: none;
 }
 
+/* Estilo para la sección de agregar metas */
 .add-goal {
-    
     text-align: center; /* Centra el contenido de la sección */
 }
 
+/* Estilo para el contenedor de nueva meta */
 .nuevaMeta {
-    
     display: inline-block; /* Permite centrar el contenedor */
 }
 
+/* Estilo del botón */
 .add-button {
     text-decoration: none;
     background-color: #59009A;
@@ -75,14 +86,17 @@ li:last-child {
     margin: 20px auto; /* Centra el botón */
 }
 
+/* Efecto hover para el botón */
 .add-button:hover {
     background-color: #be5cb6;
 }
 
+/* Estilos para texto fuerte */
 strong {
     color: #000;
 }
 
+/* Estilos para texto en cursiva */
 em {
     color: #777;
 }

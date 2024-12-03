@@ -1,11 +1,28 @@
+/* Fondo de marca de agua */
+body {
+    background: url('../inclued/marcaAgua.png') no-repeat center center fixed; /* Imagen no se repite */
+    background-size: cover; /* La imagen cubre toda la pantalla */
+    background-blend-mode: overlay; /* Mezcla la imagen con el color de fondo */
+    background-color: rgba(255, 245, 220, 0.8); /* Fondo beige pálido translúcido */
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
 
+/* Mantener el fondo con marca de agua y transparencia en el main */
 main {
     padding: 20px;
     max-width: 1200px;
     margin: 0 auto;
     margin-top: 160px;
+    background: rgba(255, 255, 255, 0.85); /* Fondo semitransparente para que la marca de agua se vea */
+    border-radius: 25px; /* Forma redondeada */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Añadir sombra para resaltar el contenido */
+    position: relative; /* Mantener el contenido sobre la marca de agua */
+    z-index: 2; /* Asegura que el contenido esté por encima del fondo */
 }
 
+/* Estilo de la tarjeta o post */
 .post {
     background-color: #fff;
     padding: 20px;
@@ -16,28 +33,42 @@ main {
     justify-content: space-between;
     left: 10%;
     right: 10%;
+    background: rgba(255, 255, 255, 0.85); /* Fondo semitransparente */
 }
 
+/* Estilos de los enlaces de la vista */
+.btn-view {
+    text-decoration: none;
+}
 
+/* Estilo de los párrafos dentro del post */
 .post p {
     margin: 0;
 }
+
+/* Detalles dentro del post */
 .post .details {
     display: flex;
     align-items: center;
 }
+
+/* Estilo para el icono dentro de los detalles */
 .post .details i {
     margin-right: 10px;
 }
+
+/* Estilo del botón de vista */
 .post .btn-view {
     background-color: #59009A;
     color: white;
     border: none;
-    padding: 8px 10px 5px 10px; 
+    padding: 8px 10px 5px 10px;
     cursor: pointer;
     border-radius: 3px;
 }
-.view-button:hover{
-    transform:scale(1.1);
+
+/* Efecto hover en el botón */
+.view-button:hover {
+    transform: scale(1.1);
     transition: 300ms;
 }

@@ -2,40 +2,37 @@
     font-family: Arial, sans-serif;
     text-align: center;
     padding: 50px;
-}
-
-canvas {
-    max-width: 600px;
-    margin: 0 auto;
 } */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: url('../inclued/marcaAgua.png') no-repeat center center fixed; /* Imagen de marca de agua */
+    background-size: cover; /* La imagen cubre toda la pantalla */
+    background-blend-mode: overlay; /* Mezcla la imagen con el color de fondo */
+    background-color: rgba(255, 245, 220, 0.8); /* Fondo translúcido */
+}
 
 main {
     padding: 20px;
     margin-top: 150px;
 }
 
-
 .section {
     padding: 15px;
     margin-bottom: 10px;
-    background-color: #fff;
-    /* background-color: #fff;
-    padding: 15px;
-    margin-bottom: 10px;
+    background-color: rgba(255, 255, 255, 0.85); /* Fondo semitransparente */
     border-radius: 5px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
+
 .section h3 {
     font-size: 18px;
     color: white;
     background-color: #59009A;
     padding: 5px 10px;
-    /* font-size: 18px;
-    margin: 0 0 10px 0;
-    color: white;
-    background-color: #59009A;
-    padding: 5px 10px;
-    border-radius: 5px 5px 0 0; */
 }
 
 canvas {
@@ -47,14 +44,15 @@ canvas {
     display: block;
 }
 
-
 .section table {
     width: 100%;
     border-collapse: collapse;
 }
+
 .section table, .section th, .section td {
     border: 1px solid #ddd;
 }
+
 .section th, .section td {
     padding: 8px;
     text-align: left;
@@ -62,6 +60,4 @@ canvas {
 
 .columna {
     width: 50%;
-  }
-  
- 
+}
