@@ -226,6 +226,21 @@ a{
 
 
 /* Body */
+body {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh; /* Asegura que el fondo cubra toda la altura */
+  background-image: url('/atencion-profesional/PROFESIONAL/Imagenes/Entorno-Profesional.jpg'); /* Cambia por la ruta de tu imagen */
+  background-size: cover; /* Ajusta la imagen para cubrir todo el fondo */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  background-position: center top; /* Centra la imagen y la desplaza hacia arriba */
+  background-attachment: fixed; /* Hace que la imagen sea fija al hacer scroll */
+  background-color: rgba(255, 255, 255, 0.9); /* Color de fondo blanco con transparencia */
+  background-blend-mode: overlay; /* Mezcla el color con la imagen */
+}
+
 main {
   padding: 20px;
   margin-top: 10px;

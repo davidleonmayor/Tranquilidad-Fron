@@ -8,6 +8,34 @@ fetch('../Footer/Footer/inicio/inicio.html')
 .then(response => response.text())
 .then(data => document.getElementById('footer-container').innerHTML = data);
 
+let currentIndex = 0;
+
+function showSlide(index) {
+  const slides = document.querySelectorAll(".carousel-item");
+  const totalSlides = slides.length;
+
+  slides.forEach((slide, i) => {
+    slide.style.transform = `translateX(${(i - index) * 100}%)`;
+  });
+}
+
+function nextSlide() {
+  const slides = document.querySelectorAll(".carousel-item");
+  currentIndex = (currentIndex + 1) % slides.length;
+  showSlide(currentIndex);
+}
+
+function prevSlide() {
+  const slides = document.querySelectorAll(".carousel-item");
+  currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+  showSlide(currentIndex);
+}
+
+// Initialize the first slide
+document.addEventListener("DOMContentLoaded", () => {
+  showSlide(currentIndex);
+});
+
 
 const menuIcon = document.querySelector('.menu-icon');
   const navbar = document.querySelector('header');
