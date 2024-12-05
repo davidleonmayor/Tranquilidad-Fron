@@ -228,60 +228,6 @@ a{
 /* contenido body */
 
 
-body::before,
-body::after {
-  content: '';
-  position: absolute;
-  background-color: #59009A;
-  border-radius: 50%;
-  filter: blur(6.25rem);
-  /* 100px */
-  opacity: 0.7;
-
-  font-family: 'Roboto', sans-serif;
-  font-style: normal;
-  margin: 0;
-  padding: 0;
-  min-height: 100vh; /* Asegura que el fondo cubra toda la altura */
-  background-image: url('/atencion-profesional/PROFESIONAL/Imagenes/Entorno-Profesional.jpg'); /* Cambia por la ruta de tu imagen */
-  background-size: cover; /* Ajusta la imagen para cubrir todo el fondo */
-  background-repeat: no-repeat; /* Evita que la imagen se repita */
-  background-position: center top; /* Centra la imagen y la desplaza hacia arriba */
-  background-attachment: fixed; /* Hace que la imagen sea fija al hacer scroll */
-  background-color: rgba(255, 255, 255, 0.9); /* Color de fondo blanco con transparencia */
-  background-blend-mode: overlay; /* Mezcla el color con la imagen */
-}
-
-body::before {
-  width: 18.75rem;
-  /* 300px */
-  height: 18.75rem;
-  /* 300px */
-  top: 20%;
-  left: 15%;
-  animation: move 10s infinite alternate;
-}
-
-body::after {
-  width: 12.5rem;
-  /* 200px */
-  height: 12.5rem;
-  /* 200px */
-  bottom: 20%;
-  right: 15%;
-  animation: move 8s infinite alternate-reverse;
-}
-
-@keyframes move {
-  0% {
-    transform: translate(0, 0) scale(1);
-  }
-
-  100% {
-    transform: translate(3.125rem, 3.125rem) scale(1);
-  }
-}
-
 .container {
   position: relative;
   z-index: 1;
@@ -319,7 +265,18 @@ main {
 
 main {
   padding: 2rem;
-  background-color: #fff;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh; /* Asegura que el fondo cubra toda la altura */
+  background-image: url('/atencion-profesional/USUARIO/Imagenes/apartado-cita.png'); /* Cambia por la ruta de tu imagen */
+  background-size: cover; /* Ajusta la imagen para cubrir todo el fondo */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  background-position: center top; /* Centra la imagen y la desplaza hacia arriba */
+  background-attachment: fixed; /* Hace que la imagen sea fija al hacer scroll */
+  background-color: rgba(255, 255, 255, 0.8); /* Color de fondo blanco con transparencia */
+  background-blend-mode: overlay; /* Mezcla el color con la imagen */
 }
 
 .grid {

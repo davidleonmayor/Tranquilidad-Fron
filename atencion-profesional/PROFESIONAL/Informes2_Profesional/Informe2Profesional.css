@@ -231,12 +231,12 @@ body {
   margin: 0;
   padding: 0;
   min-height: 100vh; /* Asegura que el fondo cubra toda la altura */
-  background-image: url('/atencion-profesional/PROFESIONAL/Imagenes/Entorno-Profesional.jpg'); /* Cambia por la ruta de tu imagen */
+  background-image: url('/atencion-profesional/USUARIO/Imagenes/papeleo.png'); /* Cambia por la ruta de tu imagen */
   background-size: cover; /* Ajusta la imagen para cubrir todo el fondo */
   background-repeat: no-repeat; /* Evita que la imagen se repita */
   background-position: center top; /* Centra la imagen y la desplaza hacia arriba */
   background-attachment: fixed; /* Hace que la imagen sea fija al hacer scroll */
-  background-color: rgba(255, 255, 255, 0.9); /* Color de fondo blanco con transparencia */
+  background-color: rgba(255, 255, 255, 0.7); /* Color de fondo blanco con transparencia */
   background-blend-mode: overlay; /* Mezcla el color con la imagen */
 }
 
@@ -260,7 +260,6 @@ main {
   justify-content: center;
   align-items: flex-start; /* Cambiado a flex-start para evitar centrar verticalmente */
   padding: 1.25rem; /* 20px */
-  background-color: #fff;
   margin-top: 3rem; /* Ajustado */
   flex: 1;
 }
@@ -272,7 +271,6 @@ main {
   width: 100%;
   max-width: 75rem; /* 1200px */
   padding: 1.25rem; /* 20px */
-  background-color: #f9f9f9;
   border: 0.0625rem solid #ddd; /* 1px */
   border-radius: 0.5rem; /* 8px */
   box-shadow: 0 0.625rem rgba(0, 0, 0, 0.1); /* 0 0 10px */

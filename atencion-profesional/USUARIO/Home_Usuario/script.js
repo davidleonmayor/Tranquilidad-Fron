@@ -12,8 +12,6 @@ let currentIndex = 0;
 
 function showSlide(index) {
   const slides = document.querySelectorAll(".carousel-item");
-  const totalSlides = slides.length;
-
   slides.forEach((slide, i) => {
     slide.style.transform = `translateX(${(i - index) * 100}%)`;
   });
@@ -30,6 +28,14 @@ function prevSlide() {
   currentIndex = (currentIndex - 1 + slides.length) % slides.length;
   showSlide(currentIndex);
 }
+
+// Cambiar automáticamente cada 3 segundos
+setInterval(nextSlide, 3000);
+
+// Mostrar la primera diapositiva al cargar la página
+document.addEventListener("DOMContentLoaded", () => {
+  showSlide(currentIndex);
+});
 
 // Initialize the first slide
 document.addEventListener("DOMContentLoaded", () => {

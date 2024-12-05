@@ -232,20 +232,7 @@ a{
   padding: 0;
 }
 
-body {
-  font-family: 'Roboto', sans-serif;
-  font-style: normal;
-  margin: 0;
-  padding: 0;
-  min-height: 100vh; /* Asegura que el fondo cubra toda la altura */
-  background-image: url('/atencion-profesional/PROFESIONAL/Imagenes/Entorno-Profesional.jpg'); /* Cambia por la ruta de tu imagen */
-  background-size: cover; /* Ajusta la imagen para cubrir todo el fondo */
-  background-repeat: no-repeat; /* Evita que la imagen se repita */
-  background-position: center top; /* Centra la imagen y la desplaza hacia arriba */
-  background-attachment: fixed; /* Hace que la imagen sea fija al hacer scroll */
-  background-color: rgba(255, 255, 255, 0.9); /* Color de fondo blanco con transparencia */
-  background-blend-mode: overlay; /* Mezcla el color con la imagen */
-}
+
 
 .form-container {
   width: 100%;
@@ -319,11 +306,17 @@ html, body {
 
 body {
   font-family: 'Roboto', sans-serif;
-  font-style: normal; /* Esto asegura que no esté en cursiva */
-  background-color: #fff;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh; /* Asegúrate de que el cuerpo tenga al menos el 100% de la altura de la ventana */
+  font-style: normal;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh; /* Asegura que el fondo cubra toda la altura */
+  background-image: url('/atencion-profesional/USUARIO/Imagenes/citas.png'); /* Cambia por la ruta de tu imagen */
+  background-size: cover; /* Ajusta la imagen para cubrir todo el fondo */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  background-position: center top; /* Centra la imagen y la desplaza hacia arriba */
+  background-attachment: fixed; /* Hace que la imagen sea fija al hacer scroll */
+  background-color: rgba(255, 255, 255, 0.7); /* Color de fondo blanco con transparencia */
+  background-blend-mode: overlay; /* Mezcla el color con la imagen */
 }
 
 
@@ -347,7 +340,7 @@ main {
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  background-color: #fff;
+  
   margin-top: 80px; /* Ajuste para el navbar fijo */
   margin-bottom: 100px;
 }
