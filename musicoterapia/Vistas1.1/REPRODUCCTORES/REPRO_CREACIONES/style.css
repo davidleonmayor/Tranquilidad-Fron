@@ -1,0 +1,936 @@
+      
+      .container {
+        display: flex;
+        min-height: calc(100vh - 126px);
+        gap: 40px;
+        
+        }
+        /* ESTILOS DE VIDEO */
+        * .video-container {
+        position: relative;
+        width: 550px; /* Ancho de un smartphone típico */
+        height: 750px; /* Altura de un smartphone típico */
+        overflow: hidden;
+        background-color: white;
+        border-radius: 30px; /* Bordes más redondeados */
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+        margin: 50px auto; /* Centrar horizontalmente */
+        border: 10px solid #121212; /* Borde grueso para destacar */
+        outline: 4px solid #333; /* Contorno adicional */
+        transform: scale(1.05); /* Ligero escalado para dar más presencia */
+        transition: transform 0.3s ease;
+        }
+        
+        .video-container:hover {
+        transform: scale(1.08); /* Efecto hover para más dinamismo */
+        }
+        
+        .video-scroll-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        overflow-y: scroll;
+        scroll-snap-type: y mandatory;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        border-radius: 20px; /* Redondear bordes internos */
+        background-color: black; /* Fondo negro para contraste */
+        }
+        
+        .video-card {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        scroll-snap-align: start;
+        flex-shrink: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        }
+        
+            .video-player {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        
+            .video-actions {
+            position: absolute;
+            right: 20px;
+            bottom: 100px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            z-index: 10;
+            color: white;
+        }
+        
+        .action-button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .action-count {
+            font-size: 14px;
+            margin-top: 5px;
+        }
+        
+        .action-button:hover {
+            transform: scale(1.1);
+        }
+        
+        /* Like button states */
+        .like-button.active {
+            color:  #59009A;
+          } /* Bright red when active */
+        
+        
+        .like-button {
+            color: white;
+        }
+        
+        /* Bookmark button states */
+        .bookmark-button.active {
+            color:#8e68a8; /* Gold color when active */
+        }
+        
+        .bookmark-button {
+            color: white;
+        }
+        
+        /* Share button states */
+        .share-button.active {
+            color: #b2a2bd; /* Green when active */
+        }
+        
+        .share-button {
+            color: white;
+        }
+        
+        @keyframes heartBeat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        
+            /* Ajustes responsive */
+            @media (max-width: 768px) {
+              .video-container {
+        margin-top: 10px; /* Reduce el margen superior del contenedor de videos */
+        height: calc(100vh - 150px); /* Ajusta la altura si es necesario */
+        }
+        }
+        /* Ajustes para tablets */
+        @media (min-width: 481px) and (max-width: 768px) {
+        .video-container {
+            width: 90%;
+            height: 75vh;
+        }
+        }
+        
+                .video-player {
+                    max-width: 100%;
+                }
+        
+                .video-actions {
+                    right: 10px;
+                }
+            
+        /* FIN DE LOS ESTILOS DEL MENU */
+          
+        /* ESTILOS DEL MENU */
+        
+        /* Estilos del contenedor principal */
+        .container {
+        display: flex;
+        height: calc(100vh - 126px);
+        gap: 450px;
+        }
+        
+        /* Estilos de la barra lateral */
+        .sidebar {
+        width: 25%;
+        background-color: #c7b7fe49;
+        padding: 20px;
+        }
+        
+        /* Estilos de los elementos del menu en la barra lateral */
+        .sidebar .menu-item {
+        padding: 12px;
+        margin: 10px 0;
+        background: #fff;
+        border-radius: 15px;
+        transition: background 0.3s ease;
+        }
+        /* Estilos de las imágenes dentro de los elementos del menú */
+        .sidebar .menu-item img {
+        width: 24px;
+        height: 24px;
+        margin-right: 10px;
+        }
+        
+        /* Estilos de los enlaces dentro de los elementos del menú */
+        .sidebar .menu-item a {
+        display: flex;
+        align-items: center;
+        color: inherit;
+        text-decoration: none;
+        justify-content: center;
+        }
+        
+        /* Estilos del texto dentro de los elementos del menú */
+        .sidebar .menu-item span {
+        flex-grow: 1;
+        text-align: center;
+        font-size: 16px;
+        }
+        
+        /* Estilos del contenido principal */
+        .main-content {
+        width: 75%;
+        padding: 20px;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        }
+        
+        .title {
+        display: flex;
+        justify-content: center; 
+        align-items: center;
+        font-size: 75px;
+        margin-bottom: 20px;
+        font-family: "Roboto Slab", serif;
+        width: 100%;
+        margin-left: 0; 
+        }
+        
+        .title span {
+        position: relative;
+        z-index: 1;
+        transition: color 0.3s;
+        }
+        
+        
+        
+        /* Centrar el título de géneros */
+        .title {
+        text-align: center;
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
+        justify-content: center;
+        }
+        
+          /* --------------------------- */
+        
+        
+        /* Estilos del contenedor de pistas */
+        .tracks-container {
+          width: 100%;
+          border: 1px solid #ccc;
+          border-radius: 10px;
+          padding: 10px;
+          background: url();
+          border-radius: 15px;
+          align-items: center;
+          transition: background 0.3s ease, transform 0.3s ease;
+          cursor: pointer;
+          
+        }
+        
+        /* Estilos generales de cada pista */
+        .track {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 10px;
+          border-bottom: 1px solid #ccc;
+        }
+        
+        /* Elimina el borde inferior de la última pista */
+        .track:last-child {
+          border-bottom: none;
+        }
+        
+        /* Estilos de las imágenes de las pistas */
+        .track img {
+          height: 50px;
+          width: 50px;
+          border-radius: 5px;
+        }
+        
+        /* Estilos de los divs dentro de cada pista */
+        .track div {
+          padding: 0 20px;
+        }
+        
+        /* Estilos de los enlaces de los botones de reproducción */
+        .track a.play-button {
+          background: white;
+          border: 2px solid black;
+          border-radius: 50%;
+          width: 40px;
+          height: 40px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-decoration: none;
+          cursor: pointer;
+          position: relative;
+          color: black;
+        }
+        
+        /* Estilos del triángulo dentro del botón de reproducción */
+        .track a.play-button::before {
+          content: '';
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 10px 0 10px 16px;
+          border-color: transparent transparent transparent black;
+          position: absolute;
+          left: 13px;
+        }
+        
+        
+        
+        /* ------------------------------------------------------------- */
+        /* Estilos del contenedor principal */
+        .container {
+        display: flex;
+        min-height: calc(100vh - 126px);
+        }
+        
+        /* Estilos de la barra lateral */
+        .sidebar {
+        width: 25%;
+        background-color: #c7b7fe49;
+        padding: 20px;
+        }
+        
+        /* Estilos de los elementos del menu en la barra lateral */
+        .sidebar .menu-item {
+        padding: 12px;
+        margin: 10px 0;
+        background: #fff;
+        border-radius: 15px;
+        transition: background 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        }
+        /* Estilos de los elementos del menú cuando están activos o al pasar el ratón */
+        .sidebar .menu-item.active,
+        .sidebar .menu-item:hover {
+        background:  #ba7fe7;;
+        box-shadow:   #59009A;
+        }; /* Elimina las sombras */
+        
+        
+        /* Estilos de las imágenes dentro de los elementos del menú */
+        .sidebar .menu-item img {
+        width: 24px;
+        height: 24px;
+        margin-right: 15px;
+        display: inline-block;
+        vertical-align: middle;
+        }
+        
+        /* Estilos de los enlaces dentro de los elementos del menú */
+        .sidebar .menu-item a {
+        display: flex;
+        align-items: center;
+        color: inherit;
+        text-decoration: none;
+        width: 100%;
+        }
+        
+        /* Estilos del texto dentro de los elementos del menú */
+        .sidebar .menu-item span {
+        font-size: 16px;
+        white-space: nowrap;
+        margin-left: 5px;
+        }
+        /* Modificar el espaciado de los elementos del menu en la barra lateral */
+        
+        .sidebar .menu-item {
+        padding: 12px;
+        margin: 8px 0; /* Reducido a 8px para un espaciado más compacto y uniforme */
+        background: #fff;
+        border-radius: 15px;
+        transition: background 0.3s ease;
+        }
+        .sidebar {
+        width: 25%;
+        background-color: #c7b7fe49;
+        padding: 20px;
+        padding-top: 108px; /* Reducido de 100px a 60px para un espaciado más moderado */
+        }
+        /* RESPONSIVE */
+        /* Estilos base del contenedor */
+        .container {
+        display: flex;
+        min-height: calc(100vh - 126px);
+        }
+        
+        /* Estilos de la barra lateral */
+        .sidebar {
+        width: 25%;
+        background-color: #c7b7fe49;
+        padding: 20px;
+        padding-top: 108px;
+        }
+        
+        /* Estilos de los elementos del menu */
+        .sidebar .menu-item {
+        padding: 12px;
+        margin: 8px 0;
+        background: #fff;
+        border-radius: 15px;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        }
+        
+        
+        /* NUEVOS ESTILOS Y RESPOSIVE */
+        /* Estilos base del contenedor */
+        .container {
+        display: flex;
+        min-height: calc(100vh - 126px);
+        }
+        
+        /* Estilos de la barra lateral */
+        .sidebar {
+        width: 25%;
+        background-color: #c7b7fe49;
+        padding: 20px;
+        padding-top: 108px;
+        }
+        
+        .sidebar .menu-item {
+        padding: 12px;
+        margin: 10px 0;
+        background: #fff;
+        border-radius: 15px;
+        transition: background 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        }
+        
+        
+        
+        
+        /* Estilos base de la barra lateral */
+        .sidebar {
+        width: 25%;
+        background-color: #c7b7fe49;
+        padding: 20px;
+        padding-top: 108px;
+        }
+        
+        .sidebar .menu-item {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 12px;
+        margin: 10px 0;
+        background: #fff;
+        border-radius: 15px;
+        transition: background 0.3s ease;
+        }
+        
+        /* Efectos hover y active */
+        .sidebar .menu-item.active,
+        .sidebar .menu-item:hover {
+        background: #ba7fe7;
+        transform: scale(1.05);
+        }
+        
+        
+        /* Efectos hover y active */
+        .sidebar .menu-item.active,
+        .sidebar .menu-item:hover {
+        background: #ba7fe7;
+        transform: scale(1.05);
+        }
+        
+        /* Media queries para móvil */
+        @media only screen and (max-width: 768px) {
+        .container {
+        flex-direction: column;
+        padding: 10px;
+        height: auto;
+        margin: 0 auto;
+        max-width: 95%;
+        }
+        
+        .sidebar {
+        width: 100%;
+        max-width: 450px;
+        margin: 120px auto 20px auto; /* Aumentado significativamente el margen superior */
+        padding: 20px 15px;
+        border-radius: 25px;
+        border: 2px solid #59009A;
+        box-sizing: border-box;
+        }
+        }
+        
+            /* Media queries mejorados */
+        @media only screen and (max-width: 768px) {
+        .container {
+        flex-direction: column;
+        min-height: calc(100vh - 126px);
+        padding-bottom: 60px; /* Espacio para el footer */
+        }
+        
+        .sidebar {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 0;
+        }
+        
+        .main-content {
+        width: 100%;
+        padding: 10px;
+        }
+        
+        .title {
+        font-size: 40px;
+        margin: 15px 0;
+        text-align: center;
+        }
+        
+        /* Mantenemos el comportamiento original de los géneros */
+        .genre {
+        width: calc(50% - 20px);
+        }
+        
+        
+        /* Ajustes para el menú en móvil */
+        .nav {
+        position: relative;
+        }
+        
+        .submenu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        max-width: 100vw;
+        z-index: 1000;
+        }
+        
+        .submenu ul {
+        width: 100%;
+        }
+        
+        .submenu li {
+        padding: 15px;
+        text-align: center;
+        }
+        
+        }
+        @media only screen and (max-width: 768px) {
+        body {
+        padding-top: 100px;
+        }
+        
+        .container {
+        flex-direction: column;
+        height: auto;
+        margin: 0 auto;
+        padding: 20px;
+        max-width: 95%;
+        }
+        
+        .sidebar {
+        width: 100%;
+        max-width: 450px;
+        margin: 20px auto;
+        border-radius: 40px;
+        padding: 8px 16px;
+        border: 2px solid #59009A;
+        }
+        
+        .main {
+        width: 100%;
+        padding: 20px;
+        margin: 0 auto;
+        }
+        
+        .content {
+        flex-direction: column;
+        align-items: center;
+        }
+        
+        .player {
+        width: 90%;
+        max-width: 100%;
+        margin: 20px auto;
+        padding: 15px;
+        border: 2px solid #59009A;
+        border-radius: 15px;
+        }
+        
+        .tracks-container {
+        width: 90%;
+        max-width: 100%;
+        margin: 20px auto;
+        border: 2px solid #59009A;
+        border-radius: 15px;
+        padding: 15px;
+        transform: translateX(0);
+        }
+        
+        .title {
+        font-size: 35px;
+        margin: 20px 0;
+        text-align: center;
+        }
+        
+        .tabs {
+        margin-left: 0;
+        justify-content: center;
+        width: 100%;
+        }
+        
+        .track-list {
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+        }
+        
+        
+        
+        /* Para pantallas muy pequeñas */
+        @media only screen and (max-width: 480px) {
+        .main-content {
+        max-width: 100%;
+        padding: 5px;
+        }
+        
+        .genres {
+        gap: 10px;
+        }
+        
+        .genre {
+        width: calc(50% - 5px);
+        max-width: 250px; /* Ajuste para pantallas muy pequeñas */
+        }
+        
+        .title {
+        font-size: 32px; /* Ajuste del tamaño del título para pantallas muy pequeñas */
+        }
+        }
+        
+        /* NUEVOS ESTILOS Y RESPOSIVE */
+        
+        /* Media queries para móvil */
+        @media only screen and (max-width: 768px) {
+        .container {
+        flex-direction: column;
+        padding: 10px;
+        }
+        
+        .sidebar {
+        width: 100%;
+        max-width: 450px;
+        margin: 20px auto; /* Margen uniforme arriba y abajo */
+        padding: 20px 15px; /* Padding horizontal y vertical uniforme */
+        border-radius: 20px;
+        border: 2px solid #59009A;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+        }
+        
+        .sidebar .menu-item {
+        width: 96%; /* Ancho ajustado */
+        margin: 6px 0; /* Espaciado vertical entre items */
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        }
+        
+        .sidebar .menu-item img {
+        width: 20px;
+        height: 20px;
+        margin-right: 12px;
+        }
+        
+        .sidebar .menu-item span {
+        font-size: 14px;
+        }
+        }
+        /* Para pantallas aún más pequeñas */
+        @media only screen and (max-width: 480px) {
+        .sidebar {
+        border-radius: 20px; /* Mantenemos la forma ovalada */
+        }
+        
+        .sidebar .menu-item {
+        border-radius: 15px; /* Ligeramente menor pero manteniendo el aspecto ovalado */
+        }
+        }
+        }
+        @media only screen and (max-width: 768px) {
+        .title {
+        font-size: 40px;
+        margin: 15px auto; /* Añadido auto para centrar horizontalmente */
+        text-align: center;
+        width: 100%;
+        }
+        
+        .tabs {
+        margin: 0 auto 20px auto; /* Centrado horizontal */
+        justify-content: center;
+        width: 100%;
+        font-size: 24px; /* Opcional: reducir tamaño de fuente en móvil */
+        }
+        }
+        
+        /* Para pantallas muy pequeñas */
+        @media only screen and (max-width: 480px) {
+        .title {
+        font-size: 32px;
+        margin: 10px auto; /* Mantener centrado */
+        text-align: center;
+        }
+        }
+            /* Media queries mejorados */
+        @media only screen and (max-width: 768px) {
+        .container {
+        flex-direction: column;
+        min-height: calc(100vh - 126px);
+        padding-bottom: 60px; /* Espacio para el footer */
+        }
+        
+        .sidebar {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 0;
+        }
+        
+        .main-content {
+        width: 100%;
+        padding: 10px;
+        }
+        
+        .title {
+        font-size: 40px;
+        margin: 15px 0;
+        text-align: center;
+        }
+        
+        /* Mantenemos el comportamiento original de los géneros */
+        .genre {
+        width: calc(50% - 20px);
+        }
+        
+        
+        /* Ajustes para el menú en móvil */
+        .nav {
+        position: relative;
+        }
+        
+        .submenu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        max-width: 100vw;
+        z-index: 1000;
+        }
+        
+        .submenu ul {
+        width: 100%;
+        }
+        
+        .submenu li {
+        padding: 15px;
+        text-align: center;
+        }
+        
+        }
+        @media only screen and (max-width: 768px) {
+        body {
+        padding-top: 100px;
+        }
+        
+        .container {
+        flex-direction: column;
+        padding: 10px;
+        gap: 10px; /* Reduce el espacio entre elementos */
+        }
+        
+        .sidebar {
+        width: 100%;
+        max-width: 450px;
+        margin: 20px auto;
+        border-radius: 40px;
+        padding: 8px 16px;
+        border: 2px solid #59009A;
+        }
+        
+        .main {
+        width: 100%;
+        padding: 20px;
+        margin: 0 auto;
+        }
+        
+        .content {
+        flex-direction: column;
+        align-items: center;
+        }
+        
+        .player {
+        width: 90%;
+        max-width: 100%;
+        margin: 20px auto;
+        padding: 15px;
+        border: 2px solid #59009A;
+        border-radius: 15px;
+        }
+        
+        .tracks-container {
+        width: 90%;
+        max-width: 100%;
+        margin: 20px auto;
+        border: 2px solid #59009A;
+        border-radius: 15px;
+        padding: 15px;
+        transform: translateX(0);
+        }
+        
+        .title {
+        font-size: 35px;
+        margin: 20px 0;
+        text-align: center;
+        }
+        
+        .tabs {
+        margin-left: 0;
+        justify-content: center;
+        width: 100%;
+        }
+        
+        .track-list {
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+        }
+        
+        
+        
+        /* Para pantallas muy pequeñas */}
+        @media only screen and (max-width: 480px) {
+        .main-content {
+        max-width: 100%;
+        padding: 5px;
+        }
+        
+        .genres {
+        gap: 10px;
+        }
+        
+        .genre {
+        width: calc(50% - 5px);
+        max-width: 250px; /* Ajuste para pantallas muy pequeñas */
+        }
+        
+        .title {
+        font-size: 32px; /* Ajuste del tamaño del título para pantallas muy pequeñas */
+        }
+        }
+        
+        /* NUEVOS ESTILOS Y RESPOSIVE */
+        
+        /* Media queries para móvil */
+        @media only screen and (max-width: 768px) {
+        .container {
+        flex-direction: column;
+        padding: 10px;
+        gap: 10px; /* Reduce el espacio entre elementos */
+        }
+        .sidebar {
+        width: 100%;
+        max-width: 450px;
+        margin: 20px auto; /* Margen uniforme arriba y abajo */
+        padding: 20px 15px; /* Padding horizontal y vertical uniforme */
+        border-radius: 20px;
+        border: 2px solid #59009A;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+        }
+        
+        .sidebar .menu-item {
+        width: 96%; /* Ancho ajustado */
+        margin: 6px 0; /* Espaciado vertical entre items */
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        }
+        
+        .sidebar .menu-item img {
+        width: 20px;
+        height: 20px;
+        margin-right: 12px;
+        }
+        
+        .sidebar .menu-item span {
+        font-size: 14px;
+        }
+        }
+        /* Para pantallas aún más pequeñas */
+        @media only screen and (max-width: 480px) {
+        .sidebar {
+        border-radius: 20px; /* Mantenemos la forma ovalada */
+        }
+        
+        .sidebar .menu-item {
+        border-radius: 15px; /* Ligeramente menor pero manteniendo el aspecto ovalado */
+        }
+        }
+        
+        @media only screen and (max-width: 768px) {
+        .title {
+        font-size: 40px;
+        margin: 15px auto; /* Añadido auto para centrar horizontalmente */
+        text-align: center;
+        width: 100%;
+        }
+        
+        .tabs {
+        margin: 0 auto 20px auto; /* Centrado horizontal */
+        justify-content: center;
+        width: 100%;
+        font-size: 24px; /* Opcional: reducir tamaño de fuente en móvil */
+        }
+        }
+        
+        /* Para pantallas muy pequeñas */
+        @media only screen and (max-width: 480px) {
+        .title {
+        font-size: 32px;
+        margin: 10px auto; /* Mantener centrado */
+        text-align: center;
+        }
+        }

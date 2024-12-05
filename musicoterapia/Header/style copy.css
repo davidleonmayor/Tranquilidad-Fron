@@ -3,15 +3,19 @@
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
-/* Fondo de imagen en el body */
 body {
-    background-image: url('/musicoterapia/Vistas1.1/images/fondoselegidos.png'); /* Cambia 'ruta/de/tu/imagen.jpg' por la ruta de tu imagen */
-    background-size: cover; /* Asegura que la imagen cubra todo el fondo */
-    background-position: center; /* Centra la imagen */
-    background-attachment: fixed; /* Fija la imagen para que no se desplace con el scroll */
-    margin: 0; /* Elimina el margen para evitar espacios en blanco */
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), 
+        url('/musicoterapia/Vistas1.1/images/fondoselegidos.png');
+    background-size: cover; /* Cover the entire viewport */
+    background-position: center center; /* Center the background */
+    background-repeat: no-repeat; /* Prevent repeating */
+    background-attachment: fixed; /* Keep background fixed during scrolling */
+    margin: 0;
     padding: 0;
+    min-height: 100vh; /* Ensure full viewport height */
 }
+
 
 /* Header */
 header {
@@ -272,7 +276,7 @@ a{
         padding: 8px 15px; /* Padding más balanceado */
         min-height: 75px; /* Altura intermedia que no sea ni muy alta ni muy baja */
         box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
-        width: 95%; /* Reducir el ancho para que no llegue hasta los bordes */
+        width: 100%; /* Reducir el ancho para que no llegue hasta los bordes */
         margin: 0 auto; /* Centrar el header */
         border-radius: 0 0 10px 10px; /* Bordes redondeados en la parte inferior */
     }
@@ -280,9 +284,39 @@ a{
     /* Ajustar el menú hamburguesa desplegado */
     .hamburger-menu {
         top: 75px; /* Ajustar al nuevo tamaño del header */
-        width: 95%; /* Hacer que coincida con el ancho del header */
+        width: 100%; /* Hacer que coincida con el ancho del header */
         margin: 0 auto; /* Centrar el menú */
         left: 50%;
         transform: translateX(-50%);
     }
 }
+
+/* Add a media query for mobile responsiveness */
+@media (max-width: 800px) {
+    body {
+        background-size: cover; /* Ensure image covers entire mobile screen */
+        background-position: center center; /* Center on smaller screens */
+        background-attachment: scroll; /* Allow scrolling on mobile */
+    }
+}
+
+/* Optional: If the image looks stretched or distorted on mobile */
+@media (max-width: 480px) {
+    body {
+        background-image: url('/musicoterapia/Vistas1.1/images/fondoselegidos.png');
+        background-size: 100% 100%; /* Stretch to fill exactly */
+        background-repeat: no-repeat;
+    }
+}
+@media (max-width: 800px) {
+    header{
+        padding: 8px 15px;
+        min-height: 85px;
+        box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        margin: 0 auto;
+        border-radius: 0 0 10px 10px;
+
+    }
+ 
+ }

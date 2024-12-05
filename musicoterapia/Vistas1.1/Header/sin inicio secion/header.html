@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../sin inicio secion/stylos3.css">
+    
+    <link rel="stylesheet" href="../sin inicio secion/footer/inicio/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+
+
+
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <a href="#"><img href="#inicio" src="/Captura de pantalla 2024-11-12 091241.png" alt="Logo" class="logo"></a>
+            
+        </div>
+        <button class="hamburger" onclick="toggleHamburgerMenu()">☰</button>
+        <nav class="nav-links">
+            <a href="#inicio" class="nav-item">Inicio</a>
+            <div class="nav-item modules-item" onclick="toggleModules()">Módulos</div>
+            <a href="#acerca" class="nav-item  ">Acerca de </a>
+            <a href="#contacto" class="nav-item ">Contacto</a>
+            <div id="modules-indicator" class="modules-indicator"></div>
+            
+        </nav>
+        <div class="nav-right">
+           
+        </div>
+        <div class="profile-container">
+            <div class="profile-box">
+                <a href="#nombre" class="nav-item special-item profile-name">Iniciar sesión</a>
+                <img src="https://th.bing.com/th/id/OIP.ddYkYqqWMKSwEsjE_MC3pwHaHa?rs=1&pid=ImgDetMain" alt="Foto de perfil" class="profile-pic" onclick="toggleProfileMenu()">
+                <div id="profile-menu" class="profile-menu">
+                    <a href="#perfil">Inicia sesión</a>
+                  
+                </div>
+            </div>
+        </div>
+        <!-- Menú hamburguesa -->
+<div id="hamburger-menu" class="hamburger-menu">
+    <a href="#inicio" class="hamburger-item">Inicio</a>
+    <a href="#"><div class="hamburger-item" onclick="toggleModulues()">Módulos</div></a>
+    <!-- Contenedor de módulos (oculto por defecto) -->
+    <div id="modules-content" class="modules-content" style="display: none;">
+        <a href="#"><div class="modulo">Mapa de sueños</div></a>
+        <a href="#"><div class="modulo">Alimentación</div></a>
+        <a href="#"><div class="modulo">Arteterapia</div></a>
+        <a href="#"><div class="modulo">Musicoterapia</div></a>
+        <a href="#"><div class="modulo">Ejercicios</div></a>
+        <a href="#"><div class="modulo">Atención Profesional</div></a>
+    </div>
+    <a href="#perfil" class="hamburger-item">Iniciar sesión</a>
+</div>
+        <!-- Pestaña de módulos -->
+        <div id="modules-overlay" class="modules-overlay">
+            <div class="module-grid">
+               <a href="#"> <div class="module">Mapa de sueños</div></a>
+               <a href="#"><div class="module">Alimentación</div></a>
+                <a href="#"><div class="module">Arteterapia</div></a>
+                <a href="#"><div class="module">Musicoterapia</div></a>
+                <a href="#"><div class="module">Ejercicios</div></a>
+                <a href="#"><div class="module">Atención Profesional</div></a>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <aside class="sidebar">
+          <br>
+          <br>
+          <div class="menu-item">
+            <a href="principal_generos.html" style="text-decoration: none;">
+              <img src="img/genero.png" alt="Icon" />
+              <span>Géneros</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a href="principal_album.html" style="text-decoration: none;">
+              <img src="img/album.png" alt="Icon" />
+              <span>Álbum</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a href="principal_podcast.html" style="text-decoration: none;">
+              <img src="img/pod.png" alt="Icon" />
+              <span>Podcast</span>
+            </a>
+          </div>
+         
+          <div class="menu-item active">
+            <a href="binaurales.html" style="text-decoration: none;">
+              <img src="img/binaural.png" alt="Icon" />
+              <span>Sonidos Binaurales</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a href="playList.html" style="text-decoration: none;">
+              <img src="img/playL.png" alt="Icon" />
+              <span>PlayList</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a href="Tus me gustas pistas.html">
+              <img src="img/like.png" alt="Icon" />
+              <span>Me gusta</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a href="buscar.html" style="text-decoration: none;">
+              <img src="img/buscar.png" alt="Icon" />
+              <span>Buscar</span>
+            </a>
+          </div>
+        </aside>
+        <!-- TITULO -->
+        <main class="main-content">
+          <div class="title">
+            <span>Sonidos Binaurales</span>
+          </div>
+          <div class="image-container" style="position: relative;">
+            <img src="imgBin/1.png" alt="fondoOndas" />
+            <div class="corner-text">ACTIVA TU CEREBRO</div>
+            <div class="bottom-left-text">
+              ONDAS GAMMA BINAURALES: Rendimiento Mental, Concentración y Memoria
+            </div>
+          </div>
+
+            <!-- Contenedor de pistas -->
+            <div class="image-container2">
+    
+              <div class="content">
+                <div class="tracks-container">
+                  <div class="track">
+                    <img src="img/Pista1.jpg" alt="Pista 1" onerror="this.onerror=null;this.src='img/placeholder.png';" />
+                    <div>
+                      <span>Pista 1</span><br />
+                      <span>Time</span>
+                    </div>
+                    <div>FRECUENCIA</div>
+                    <div>GAMMA</div>
+                    <a href="Reproductor2.html?binauralId=1" class="play-button"></a>
+                  </div>
+                  <div class="track">
+                    <img src="img/pista2.jpg" alt="Pista 2" onerror="this.onerror=null;this.src='img/placeholder.png';" />
+                    <div>
+                      <span>Pista 2</span><br />
+                      <span>Time</span>
+                    </div>
+                    <div>FRECUENCIA</div>
+                    <div>GAMMA</div>
+                    <a href="Reproductor2.html?binauralId=2" class="play-button"></a>
+                  </div>
+    
+                  <div class="track">
+                    <img src="img/pista3.jpeg" alt="Pista 3" onerror="this.onerror=null;this.src='img/placeholder.png';" />
+                    <div>
+                      <span>Pista 3</span><br />
+                      <span>Time</span>
+                    </div>
+                    <div>FRECUENCIA</div>
+                    <div>GAMMA</div>
+                    <a href="Reproductor2.html?binauralId=3" class="play-button"></a>
+                  </div>
+    
+                  <div class="track">
+                    <img src="img/pista4.avif" alt="Pista 4" onerror="this.onerror=null;this.src='img/placeholder.png';" />
+                    <div>
+                      <span>Pista 4</span><br />
+                      <span>Time</span>
+                    </div>
+                    <div>FRECUENCIA</div>
+                    <div>GAMMA</div>
+                    <a href="Reproductor2.html?binauralId=4" class="play-button"></a>
+                  </div>
+    
+                  <div class="track">
+                    <img src="img/pista5.jpg" alt="Pista 5" onerror="this.onerror=null;this.src='img/placeholder.png';" />
+                    <div>
+                      <span>Pista 5</span><br />
+                      <span>Time</span>
+                    </div>
+                    <div>FRECUENCIA</div>
+                    <div>GAMMA</div>
+                    <a href="Reproductor2.html?binauralId=5" class="play-button"></a>
+                  </div>
+                  <div class="track">
+                    <img src="img/pista6.jpg" alt="Pista 6" onerror="this.onerror=null;this.src='img/placeholder.png';" />
+                    <div>
+                      <span>Pista 6</span><br />
+                      <span>Time</span>
+                    </div>
+                    <div>FRECUENCIA</div>
+                    <div>GAMMA</div>
+                    <a href="Reproductor2.html?binauralId=6" class="play-button"></a>
+                  </div>
+                  <div class="track">
+                    <img src="img/pista7.jpg" alt="Pista 7" onerror="this.onerror=null;this.src='img/placeholder.png';" />
+                    <div>
+                      <span>Pista 7</span><br />
+                      <span>Time</span>
+                    </div>
+                    <div>FRECUENCIA</div>
+                    <div>GAMMA</div>
+                    <a href="Reproductor2.html?binauralId=7" class="play-button"></a>
+                  </div>
+                  <div class="track">
+                    <img src="img/pista8.jpg" alt="Pista 8" onerror="this.onerror=null;this.src='img/placeholder.png';" />
+                    <div>
+                      <span>Pista 8</span><br />
+                      <span>Time</span>
+                    </div>
+                    <div>FRECUENCIA</div>
+                    <div>GAMMA</div>
+                    <a href="Reproductor2.html?binauralId=8" class="play-button"></a>
+                  </div>
+                  <div class="track">
+                    <img src="img/pista9.jpg" alt="Pista 9" onerror="this.onerror=null;this.src='img/placeholder.png';" />
+                    <div>
+                      <span>Pista 9</span><br />
+                      <span>Time</span>
+                    </div>
+                    <div>FRECUENCIA</div>
+                    <div>GAMMA</div>
+                    <a href="Reproductor2.html?binauralId=9" class="play-button"></a>
+                  </div>
+                  <div class="track">
+                    <img src="img/pista10.jpg" alt="Pista 10" onerror="this.onerror=null;this.src='img/placeholder.png';" />
+                    <div>
+                      <span>Pista 10</span><br />
+                      <span>Time</span>
+                    </div>
+                    <div>FRECUENCIA</div>
+                    <div>GAMMA</div>
+                    <a href="Reproductor2.html?binauralId=10" class="play-button"></a>
+                  </div>
+                </div>
+              </div>
+    
+            </div>
+    
+          </div>
+      
+    <script src="script.js"></script>
+    <footer class="footer">
+        <div class="footer-container">
+          
+          
+          
+    
+          <div class="footer-column">
+            <h4>Acerca de Tranquilidad</h4>
+            <ul>
+                <li><a href="/inicio /link/quienessomos.html">Acerca de</a></li>
+                <li><a href="/inicio /link/beneficiosdetranquilidad.html">Beneficios de la Tranquilidad</a></li>
+                <li><a href="/inicio /link/consejodebienestar.html">Consejos de Bienestar</a></li>
+            </ul>
+        </div>
+        
+    
+    
+    
+          <div class="footer-column">
+            <h4>Ayuda y Soporte</h4>
+            <ul>
+              <li><a href="/inicio /link/contacto.html">Contacto</a></li>
+              <li><a href="/inicio /link/sugerencias.html">Sugerencias</a></li>
+              <li><a href="/inicio /link/guiadeuso.html">Guía de uso</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer-column">
+            <h4>Información Legal</h4>
+            <ul>
+              <li><a href="/inicio /link/terminosycondiciones.html">Términos y condiciones</a></li>
+              <li><a href="/inicio /link/politica de privacidad .html">Política de privacidad</a></li>
+              <li><a href="/inicio /link/avisolegal.html">Aviso legal</a></li>
+            </ul>
+          </div>
+          
+        </div>
+        
+        <div class="footer-bottom">
+          <p>Copyright © 2024 Tranquilidad. Todos los derechos reservados.</p>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+      </footer>
+      
+      
+      
+      
+     
+    
+      
+    </body>
+    </html>

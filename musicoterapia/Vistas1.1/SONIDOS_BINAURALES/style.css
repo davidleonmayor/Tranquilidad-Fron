@@ -1,0 +1,1675 @@
+
+main {
+    margin-top: 75px;
+}
+
+
+/* Añadir margen superior al contenedor del menú */
+.sidebar {
+  margin-top: 75px; /* Esto bajará todo el menú */
+  padding: 20px;
+}
+
+/* Ajustar el espaciado entre los botones del menú */
+.sidebar .menu-item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Alineación a la izquierda */
+  padding: 12px;
+  margin: 15px 0; /* Espacio entre botones */
+  background: #fff;
+  border-radius: 15px;
+  transition: background 0.3s ease;
+}
+
+/* Ajustar el primer elemento del menú (Géneros) si es necesario */
+.sidebar .menu-item:first-child {
+  margin-top: 30px; /* Espacio adicional en el primer botón */
+}
+/* Ajuste adicional para que el texto y la imagen estén bien alineados */
+.sidebar .menu-item img {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+
+.sidebar .menu-item span {
+  text-align: center;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Ajuste del título */
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 75px;
+  margin-top: 200px; /* Aumentado de 150px a 200px para bajar más el título */
+  margin-bottom: 50px; /* Aumentado de 20px a 50px para dar más espacio */
+  width: 100%;
+  font-family: "Roboto Slab", serif;
+}
+
+/* Añadido para dar más espacio al inicio del menú */
+.sidebar {
+  padding-top: 30px;
+}
+
+  
+     /* NUEVOS ESTILOS  */
+     .submenu {
+        position: absolute;
+        background-color: #fff;
+        padding: 5px 5px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        display: none;
+        top: 24px;
+        left: 0px;
+        width: auto;
+        z-index: 1000; /* Asegura que el submenú esté por encima de otros elementos */
+      }
+
+      .nav:hover .submenu {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .submenu ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .submenu li {
+        padding: 10px 20px; /* Reducido para mejor apariencia */
+        border-bottom: 1px solid #ddd;
+        cursor: pointer; /* Indica que es clickable */
+      }
+
+      .submenu li:hover {
+        background-color: #f0f0f0;
+      }
+
+      /* Estilos del contenedor principal */
+      .container {
+        display: flex;
+        height: calc(100vh - 126px);
+      }
+
+      /* Estilos de la barra lateral */
+      .sidebar {
+        width: 25%;
+        background-color: #c7b7fe49;
+        padding: 20px;
+      }
+
+      /* Estilos de los elementos del menu en la barra lateral */
+      .sidebar .menu-item {
+        padding: 12px;
+        margin: 10px 0;
+        background: #fff;
+        border-radius: 15px;
+        transition: background 0.3s ease;
+      }
+
+      /* Estilos de los elementos del menú cuando están activos o al pasar el ratón */
+      .sidebar .menu-item.active,
+      .sidebar .menu-item:hover {
+        background: linear-gradient(#ffffff, #9c76c1);
+        box-shadow: 1px 5px 10px 0.1px rgb(145, 145, 145);
+      }
+
+      /* Estilos de las imágenes dentro de los elementos del menú */
+      .sidebar .menu-item img {
+        width: 24px;
+        height: 24px;
+        margin-right: 10px;
+      }
+
+      /* Estilos de los enlaces dentro de los elementos del menú */
+      .sidebar .menu-item a {
+        display: flex;
+        align-items: center;
+        color: inherit;
+        text-decoration: none;
+        justify-content: center;
+      }
+
+      /* Estilos del texto dentro de los elementos del menú */
+      .sidebar .menu-item span {
+        flex-grow: 1;
+        text-align: center;
+        font-size: 16px;
+      }
+
+      /* Estilos del contenido principal */
+      .main-content {
+        width: 75%;
+        padding: 20px;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .title {
+        display: flex;
+        justify-content: center; /* Centra horizontalmente */
+        align-items: center; /* Centra verticalmente */
+        font-size: 75px;
+        margin-bottom: 20px;
+        font-family: "Roboto Slab", serif;
+        width: 100%; /* Asegura que tome todo el ancho disponible */
+        margin-left: 0; /* Elimina el margen izquierdo */
+      }
+
+      .title span {
+        position: relative;
+        z-index: 1;
+        transition: color 0.3s;
+      }
+
+      .genres {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        font-family: "Roboto", sans-serif;
+        flex-grow: 1;
+      }
+
+      .genre {
+        width: calc(50% - 20px);
+        text-align: center;
+      }
+
+      .genre h3 {
+        margin-bottom: 10px;
+        font-family: "Roboto Slab", serif; /* Fuente Roboto Slab para los títulos */
+        transition: color 0.3s; /* Agrega una transición de color al pasar el cursor sobre el título */
+      }
+
+      .genre:hover h3 {
+        color: #59009a; /* Cambia el color del título al pasar el cursor */
+      }
+
+      .genre img {
+        width: 60%; /* Aumenta el ancho a 60% */
+        height: 230px; /* Define un alto específico */
+        border-radius: 10px;
+        transition: transform 0.3s; /* Agrega una transición para suavizar el cambio */
+      }
+
+      .genre:hover img {
+        transform: scale(
+          1.1
+        ); /* Aumenta el tamaño de la imagen al pasar el cursor */
+      }
+
+      .genres a {
+        color: inherit; /* Inherits the color from parent elements */
+        text-decoration: none; /* Removes the underline */
+      }
+
+      .genres a:hover {
+        color: #59009a; /* Optional: Change color on hover for visual feedback */
+      }
+
+      /* Estilo para el título Álbum */
+      .main-content .title span {
+        font-family: "Roboto", sans-serif; /* Cambia la fuente a Roboto */
+      }
+
+      /* Estilo para el título Álbum */
+      .main-content .title span {
+        font-family: "Roboto", sans-serif; /* Cambia la fuente a Roboto */
+      }
+
+      /* Estilos para pantallas más pequeñas, como tablets o móviles */
+      @media only screen and (max-width: 768px) {
+        .container {
+          flex-direction: column;
+          height: auto;
+          /* Ajustar altura automática */
+        }
+
+
+        .main-content {
+          width: 100%;
+          /* Ocupar todo el ancho disponible */
+        }
+
+
+        /* Centrar el título de géneros */
+        .title {
+          text-align: center;
+          margin-left: 0;
+          margin-right: 0;
+          width: 100%;
+          justify-content: center;
+        }
+      }
+      
+
+      /* --------------------------- */
+  
+    /* Estilos del contenedor de pistas */
+  /* Estilos del contenedor de pistas */
+  .tracks-container {
+  width: 100%;
+  border: 2px solid #59009a; /* Borde morado */
+  border-radius: 10px;
+  padding: 10px;
+  background-color: rgba(89, 0, 154, 0.1); /* Fondo morado muy transparente */
+  align-items: center;
+  transition: background 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(89, 0, 154, 0.2); /* Sombra suave morada */
+}
+    
+
+    /* Estilos generales de cada pista */
+    .track {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px;
+      border-bottom: 1px solid #ccc;
+    }
+
+    /* Elimina el borde inferior de la última pista */
+    .track:last-child {
+      border-bottom: none;
+    }
+
+    /* Estilos de las imágenes de las pistas */
+    .track img {
+      height: 50px;
+      width: 50px;
+      border-radius: 5px;
+    }
+
+    /* Estilos de los divs dentro de cada pista */
+    .track div {
+      padding: 0 20px;
+    }
+
+    /* Estilos de los enlaces de los botones de reproducción */
+    .track a.play-button {
+      background: white;
+      border: 2px solid black;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      cursor: pointer;
+      position: relative;
+      color: black;
+    }
+
+    /* Estilos del triángulo dentro del botón de reproducción */
+    .track a.play-button::before {
+      content: '';
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 10px 0 10px 16px;
+      border-color: transparent transparent transparent black;
+      position: absolute;
+      left: 13px;
+    }
+
+   
+/* ------------------------------------------------------------- */
+/* Estilos del contenedor principal */
+.container {
+  display: flex;
+  min-height: calc(100vh - 126px);
+}
+
+/* Estilos de la barra lateral */
+.sidebar {
+  width: 25%;
+  background-color: #c7b7fe49;
+  padding: 20px;
+}
+
+/* Estilos de los elementos del menu en la barra lateral */
+.sidebar .menu-item {
+  padding: 12px;
+  margin: 10px 0;
+  background: #fff;
+  border-radius: 15px;
+  transition: background 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+/* Estilos de los elementos del menú cuando están activos o al pasar el ratón */
+.sidebar .menu-item.active,
+.sidebar .menu-item:hover {
+  background:  #ba7fe7;;
+    box-shadow:   #59009A;
+  }; /* Elimina las sombras */
+
+
+/* Estilos de las imágenes dentro de los elementos del menú */
+.sidebar .menu-item img {
+  width: 24px;
+  height: 24px;
+  margin-right: 15px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Estilos de los enlaces dentro de los elementos del menú */
+.sidebar .menu-item a {
+  display: flex;
+  align-items: center;
+  color: inherit;
+  text-decoration: none;
+  width: 100%;
+}
+
+/* Estilos del texto dentro de los elementos del menú */
+.sidebar .menu-item span {
+  font-size: 16px;
+  white-space: nowrap;
+  margin-left: 5px;
+}
+
+  body {
+    padding-top: 60px; /* Reducido de 100px a 60px */
+  }
+
+
+  .title {
+    font-size: 60px;
+    margin: 40px 0; /* Reducido de 20px a 10px */
+    text-align: center;
+  }
+
+
+/* Media queries mejorados para responsive */
+@media only screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center; /* Centrado del contenedor principal */
+    padding: 10px;
+  }
+
+  .main-content {
+    width: 100%;
+    max-width: 95%; /* Limita el ancho máximo en móvil */
+    margin: 0 auto; /* Centrado horizontal */
+    padding: 10px;
+  }
+
+
+  .genre img {
+    width: 100%;
+    height: auto;
+    display: block; /* Mejora el centrado de la imagen */
+    margin: 0 auto 10px; /* Centrado y espacio inferior */
+  }
+
+
+
+
+  .title {
+    font-size: 32px; /* Ajuste del tamaño del título para pantallas muy pequeñas */
+  }
+}
+/* Modificar el espaciado de los elementos del menu en la barra lateral */
+
+.sidebar .menu-item {
+    padding: 12px;
+    margin: 8px 0; /* Reducido a 8px para un espaciado más compacto y uniforme */
+    background: #fff;
+    border-radius: 15px;
+    transition: background 0.3s ease;
+}
+.sidebar {
+    width: 25%;
+    background-color: #c7b7fe49;
+    padding: 20px;
+    padding-top: 108px; /* Reducido de 100px a 60px para un espaciado más moderado */
+}
+/* RESPONSIVE */
+/* Estilos base del contenedor */
+.container {
+  display: flex;
+  min-height: calc(100vh - 126px);
+}
+
+/* Estilos de la barra lateral */
+.sidebar {
+  width: 25%;
+  background-color: #c7b7fe49;
+  padding: 20px;
+  padding-top: 108px;
+}
+
+/* Estilos de los elementos del menu */
+.sidebar .menu-item {
+  padding: 12px;
+  margin: 8px 0;
+  background: #fff;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+/* Media queries mejorados para dispositivos móviles */
+@media only screen and (max-width: 768px) {
+  
+
+  .menu-item {
+    margin: 6px 0 !important; /* Espaciado más compacto en móvil */
+    padding: 10px !important;
+  }
+
+}
+
+/* NUEVOS ESTILOS Y RESPOSIVE */
+/* Estilos base del contenedor */
+.container {
+  display: flex;
+  min-height: calc(100vh - 126px);
+}
+
+/* Estilos de la barra lateral */
+.sidebar {
+  width: 25%;
+  background-color: #c7b7fe49;
+  padding: 20px;
+  padding-top: 108px;
+}
+
+.sidebar .menu-item {
+  padding: 12px;
+  margin: 10px 0;
+  background: #fff;
+  border-radius: 15px;
+  transition: background 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+
+
+
+/* Estilos base de la barra lateral */
+.sidebar {
+  width: 25%;
+  background-color: #c7b7fe49;
+  padding: 20px;
+  padding-top: 108px;
+}
+
+.sidebar .menu-item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 12px;
+  margin: 10px 0;
+  background: #fff;
+  border-radius: 15px;
+  transition: background 0.3s ease;
+}
+
+/* Efectos hover y active */
+.sidebar .menu-item.active,
+.sidebar .menu-item:hover {
+  background: #ba7fe7;
+  transform: scale(1.05);
+}
+
+
+.image-container {
+      position: relative;
+      margin-bottom: 5px;
+      display: inline-block;
+      /* Para que el contenedor se ajuste al contenido */
+      text-align: center;
+      /* Centrar contenido */
+    }
+
+
+    .image-container img {
+      /*fondo*/
+      position: relative;
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+
+    }
+
+    .image-container2 {
+      width: 69vw;
+      position: relative;
+      margin-bottom: 5px;
+      display: inline-block;
+      height: auto;
+      /* Para que el contenedor se ajuste al contenido */
+      text-align: center;
+      /* Centrar contenido */
+
+    }
+    .corner-text {
+      font-family: Impact, Haettenschweiler, "Arial Narrow", sans-serif;
+      position: absolute;
+      top: 40px;
+      /* Ajusta según sea necesario */
+      left: 20px;
+      /* Ajusta según sea necesario */
+      font-size: 47px;
+      /* Ajusta el tamaño de fuente según sea necesario */
+      color: #59009a;
+      /* Color de letra morado */
+
+      padding: 5px 10px;
+      /* Espacio alrededor del texto */
+      border-radius: 5px;
+      /* Bordes redondeados */
+      z-index: 2;
+      /* Asegura que esté por encima de otros elementos */
+    }
+
+    .bottom-left-text {
+      font-family: Impact, Haettenschweiler, "Arial Narrow", sans-serif;
+      position: absolute;
+      bottom: 50px;
+      left: 20px;
+      /* Ajusta según sea necesario */
+      font-size: 28px;
+      /* Ajusta el tamaño de fuente según sea necesario */
+      color: #000000;
+      padding: 10px;
+      /* Espacio alrededor del texto */
+      border-radius: 5px;
+      /* Bordes redondeados */
+      z-index: 2;
+      /* Asegura que esté por encima de otros elementos */
+    }
+
+    
+    /* Elimina el borde inferior de la última pista */
+    .track:last-child {
+      border-bottom: none;
+    }
+
+    /* Estilos de las imágenes de las pistas */
+    .track img {
+      height: 50px;
+      width: 50px;
+      border-radius: 5px;
+    }
+
+    /* Estilos de los divs dentro de cada pista */
+    .track div {
+      padding: 0 20px;
+    }
+
+    /* Estilos de los enlaces de los botones de reproducción */
+    .track a.play-button {
+      background: white;
+      border: 2px solid black;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      cursor: pointer;
+      position: relative;
+      color: black;
+    }
+
+    /* Estilos del triángulo dentro del botón de reproducción */
+    .track a.play-button::before {
+      content: '';
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 10px 0 10px 16px;
+      border-color: transparent transparent transparent black;
+      position: absolute;
+      left: 13px;
+    }
+  
+/* Estilos del contenido principal */
+.main-content {
+  width: 75%;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 75px;
+  margin-bottom: 20px;
+  font-family: "Roboto Slab", serif;
+  width: 100%;
+  margin-left: 0;
+}
+
+.genres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  font-family: "Roboto", sans-serif;
+  flex-grow: 1;
+}
+
+.genre {
+  width: calc(50% - 20px);
+  text-align: center;
+}
+
+.genre h3 {
+  margin-bottom: 10px;
+  font-family: "Roboto Slab", serif;
+  transition: color 0.3s;
+}
+
+.genre:hover h3 {
+  color: #59009a;
+}
+
+
+.genre:hover img {
+  transform: scale(1.1);
+}
+
+.genres a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.genres a:hover {
+  color: #59009a;
+}
+
+--------------------------------------------------- */
+/* Estilos del contenedor nav */
+.nav {
+  position: relative;
+  display: inline-block;
+}
+
+/* Estilos del submenú */
+.submenu {
+  position: absolute;
+  background-color: #fff;
+  padding: 5px 5px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  display: none;
+  top: 24px;  /* Mantenemos la posición original */
+  left: 0px;  /* Mantenemos la posición original */
+  width: auto;
+  min-width: 180px; /* Aseguramos un ancho mínimo para mejor legibilidad */
+  z-index: 1000;
+}
+
+/* Mostrar submenú al hacer hover */
+.nav:hover .submenu {
+  display: block; /* Cambiado de flex a block para mantener el comportamiento original */
+}
+
+/* Estilos de la lista del submenú */
+.submenu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Estilos de los elementos de la lista */
+.submenu li {
+  padding: 10px 20px;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  white-space: nowrap; /* Evita que el texto se rompa en múltiples líneas */
+}
+
+/* Quitar el borde del último elemento */
+.submenu li:last-child {
+  border-bottom: none;
+}
+
+/* Efecto hover en los elementos */
+.submenu li:hover {
+  background-color: #f0f0f0;
+  color: #59009a;
+}
+
+
+/* ------------------------------------------------------------- */
+/* Estilos del contenedor principal */
+.container {
+  display: flex;
+  min-height: calc(100vh - 126px);
+}
+
+/* Estilos de la barra lateral */
+.sidebar {
+  width: 25%;
+  background-color: #c7b7fe49;
+  padding: 20px;
+}
+
+/* Estilos de los elementos del menu en la barra lateral */
+.sidebar .menu-item {
+  padding: 12px;
+  margin: 10px 0;
+  background: #fff;
+  border-radius: 15px;
+  transition: background 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+/* Estilos de los elementos del menú cuando están activos o al pasar el ratón */
+.sidebar .menu-item.active,
+.sidebar .menu-item:hover {
+  background:  #ba7fe7;;
+    box-shadow:   #59009A;
+  }; /* Elimina las sombras */
+
+
+/* Estilos de las imágenes dentro de los elementos del menú */
+.sidebar .menu-item img {
+  width: 24px;
+  height: 24px;
+  margin-right: 15px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Estilos de los enlaces dentro de los elementos del menú */
+.sidebar .menu-item a {
+  display: flex;
+  align-items: center;
+  color: inherit;
+  text-decoration: none;
+  width: 100%;
+}
+
+/* Estilos del texto dentro de los elementos del menú */
+.sidebar .menu-item span {
+  font-size: 16px;
+  white-space: nowrap;
+  margin-left: 5px;
+}
+
+
+
+/* Estilos base mejorados */
+.genres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  font-family: "Roboto", sans-serif;
+  flex-grow: 1;
+  padding: 0 10px;
+  justify-content: center; /* Centrado horizontal base */
+}
+
+.genre {
+  width: calc(50% - 20px);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Estilos del contenedor principal mejorados */
+.container {
+  display: flex;
+  min-height: calc(100vh - 126px);
+  position: relative;
+}
+
+.main-content {
+  width: 75%;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centrado de contenido */
+}
+
+/* Media queries mejorados para responsive */
+@media only screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center; /* Centrado del contenedor principal */
+    padding: 10px;
+  }
+
+  .main-content {
+    width: 100%;
+    max-width: 95%; /* Limita el ancho máximo en móvil */
+    margin: 0 auto; /* Centrado horizontal */
+    padding: 10px;
+  }
+
+  .genres {
+    width: 100%;
+    justify-content: center;
+    gap: 15px;
+    padding: 0;
+  }
+
+  .genre {
+    width: calc(50% - 10px);
+    margin: 0 auto 15px; /* Centrado y espacio inferior */
+    max-width: 300px; /* Limita el ancho máximo de cada género */
+  }
+
+  .genre img {
+    width: 100%;
+    height: auto;
+    display: block; /* Mejora el centrado de la imagen */
+    margin: 0 auto 10px; /* Centrado y espacio inferior */
+  }
+
+  .sidebar {
+    width: 95%;
+    margin: 0 auto 20px; /* Centrado y espacio inferior */
+    padding: 10px;
+  }
+
+  .title {
+    width: 100%;
+    text-align: center;
+    margin: 15px auto; /* Centrado y espacio vertical */
+  }
+}
+
+/* Para pantallas muy pequeñas */
+@media only screen and (max-width: 480px) {
+  .main-content {
+    max-width: 100%;
+    padding: 5px;
+  }
+
+  .genres {
+    gap: 10px;
+  }
+
+  .genre {
+    width: calc(50% - 5px);
+    max-width: 250px; /* Ajuste para pantallas muy pequeñas */
+  }
+
+  .title {
+    font-size: 32px; /* Ajuste del tamaño del título para pantallas muy pequeñas */
+  }
+}
+
+       
+ 
+
+      /* Estilos del contenido principal */
+      .main-content {
+        width: 75%;
+        padding: 20px;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .title {
+        display: flex;
+        justify-content: center; /* Centra horizontalmente */
+        align-items: center; /* Centra verticalmente */
+        font-size: 75px;
+        margin-bottom: 20px;
+        font-family: "Roboto Slab", serif;
+        width: 100%; /* Asegura que tome todo el ancho disponible */
+        margin-left: 0; /* Elimina el margen izquierdo */
+      }
+
+      .title span {
+        position: relative;
+        z-index: 1;
+        transition: color 0.3s;
+      }
+
+      .genres {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        font-family: "Roboto", sans-serif;
+        flex-grow: 1;
+      }
+
+      .genre {
+        width: calc(50% - 20px);
+        text-align: center;
+      }
+
+      .genre h3 {
+        margin-bottom: 10px;
+        font-family: "Roboto Slab", serif; /* Fuente Roboto Slab para los títulos */
+        transition: color 0.3s; /* Agrega una transición de color al pasar el cursor sobre el título */
+      }
+
+      .genre:hover h3 {
+        color: #59009a; /* Cambia el color del título al pasar el cursor */
+      }
+
+
+      .genre:hover img {
+        transform: scale(
+          1.1
+        ); /* Aumenta el tamaño de la imagen al pasar el cursor */
+      }
+
+      .genres a {
+        color: inherit; /* Inherits the color from parent elements */
+        text-decoration: none; /* Removes the underline */
+      }
+
+      .genres a:hover {
+        color: #59009a; /* Optional: Change color on hover for visual feedback */
+      }
+
+      /* Estilo para el título Álbum */
+      .main-content .title span {
+        font-family: "Roboto", sans-serif; /* Cambia la fuente a Roboto */
+      }
+
+      /* Estilo para el título Álbum */
+      .main-content .title span {
+        font-family: "Roboto", sans-serif; /* Cambia la fuente a Roboto */
+      }
+
+      /* Estilos para pantallas más pequeñas, como tablets o móviles */
+      @media only screen and (max-width: 768px) {
+        .container {
+          flex-direction: column;
+          height: auto;
+          /* Ajustar altura automática */
+        }
+
+      
+
+        .main-content {
+          width: 100%;
+          /* Ocupar todo el ancho disponible */
+        }
+
+        .image-container {
+          /* Ajustar el margen izquierdo */
+          margin-left: 0;
+          text-align: left;
+          /* Centrar el contenido */
+        }
+
+        .image-container2 {
+          margin-left: 0;
+          text-align: center;
+          /* Centrar el contenido */
+          width: 100%;
+          /* Ajustar el ancho al 100% */
+          padding: 10px;
+          /* Agregar algo de padding si es necesario */
+        }
+
+        .track-list {
+          max-height: none;
+          /* Ajustar altura automática */
+          width: 100%;
+          /* Ajustar el ancho al 100% */
+          padding: 10px;
+          /* Agregar algo de padding si es necesario */
+          box-sizing: border-box;
+          overflow-y: auto;
+          background-size: cover;
+          /* Asegura que la imagen cubra el contenedor sin distorsionarse */
+          background-position: center;
+          /* Centra la imagen de fondo */
+          background-repeat: no-repeat;
+          /* Evita que la imagen se repita */
+        }
+
+        .corner-text {
+          font-size: 1.5em;
+          /* Reducir tamaño de fuente para pantallas pequeñas */
+          top: 10px;
+          left: 10px;
+        }
+
+        .bottom-left-text {
+          font-size: 1em;
+          /* Reducir tamaño de fuente para pantallas pequeñas */
+          bottom: 10px;
+          left: 10px;
+        }
+
+        .title {
+          font-size: 55px;
+          /* Cambiar el tamaño del texto para pantallas pequeñas */
+          margin: 20px;
+          width: 100%;
+          /* Asegúrate de que ocupe el ancho completo */
+          text-align: center;
+          /* Asegura que el texto esté centrado */
+        }
+
+        /* Centrar el título de géneros */
+        .title {
+          text-align: center;
+          margin-left: 0;
+          margin-right: 0;
+          width: 100%;
+          justify-content: center;
+        }
+      }
+
+      
+      /* --------------------------- */
+      /* NUEVOS ESTILOS */
+.submenu {
+  position: absolute;
+  background-color: #fff;
+  padding: 5px 5px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  display: none;
+  top: 24px;
+  left: 0px;
+  width: auto;
+  z-index: 1000;
+}
+
+.nav:hover .submenu {
+  display: flex;
+  flex-direction: column;
+}
+
+.submenu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.submenu li {
+  padding: 10px 20px;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+}
+
+.submenu li:hover {
+  background-color: #f0f0f0;
+}
+
+/* Estilos del contenedor principal */
+.container {
+  display: flex;
+  min-height: calc(100vh - 126px);
+  position: relative;
+}
+
+/* Estilos de la barra lateral */
+.sidebar {
+  width: 25%;
+  background-color: #c7b7fe49;
+  padding: 20px;
+}
+
+/* Estilos de los elementos del menu en la barra lateral */
+.sidebar .menu-item {
+  padding: 12px;
+  margin: 10px 0;
+  background: #fff;
+  border-radius: 15px;
+  transition: background 0.3s ease;
+}
+
+/* Estilos de los elementos del menú cuando están activos o al pasar el ratón */
+.sidebar .menu-item.active,
+.sidebar .menu-item:hover {
+  background: linear-gradient(#ffffff, #9c76c1);
+  box-shadow: 1px 5px 10px 0.1px rgb(145, 145, 145);
+}
+
+     
+/* Estilos de las imágenes dentro de los elementos del menú */
+.sidebar .menu-item img {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+
+/* Estilos de los enlaces dentro de los elementos del menú */
+.sidebar .menu-item a {
+  display: flex;
+  align-items: center;
+  color: inherit;
+  text-decoration: none;
+  justify-content: center;
+}
+
+/* Estilos del texto dentro de los elementos del menú */
+.sidebar .menu-item span {
+  flex-grow: 1;
+  text-align: center;
+  font-size: 16px;
+}
+
+/* Estilos del contenido principal */
+.main-content {
+  width: 75%;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 75px;
+  margin-bottom: 20px;
+  font-family: "Roboto Slab", serif;
+  width: 100%;
+  margin-left: 0;
+}
+
+.genres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  font-family: "Roboto", sans-serif;
+  flex-grow: 1;
+}
+
+.genre {
+  width: calc(50% - 20px);
+  text-align: center;
+}
+
+.genre h3 {
+  margin-bottom: 10px;
+  font-family: "Roboto Slab", serif;
+  transition: color 0.3s;
+}
+
+.genre:hover h3 {
+  color: #59009a;
+}
+
+
+.genre:hover img {
+  transform: scale(1.1);
+}
+
+.genres a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.genres a:hover {
+  color: #59009a;
+}
+
+/* Media queries mejorados */
+@media only screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    min-height: calc(100vh - 126px);
+    padding-bottom: 60px; /* Espacio para el footer */
+  }
+
+  
+  .main-content {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .title {
+    font-size: 40px;
+    margin: 15px 0;
+    text-align: center;
+  }
+
+  /* Mantenemos el comportamiento original de los géneros */
+  .genre {
+    width: calc(50% - 20px);
+  }
+
+
+
+  
+}
+/* ------------------------------------------------------- */
+  
+   
+   
+      /* Estilos de las imágenes dentro de los elementos del menú */
+      .sidebar .menu-item img {
+        width: 24px;
+        height: 24px;
+        margin-right: 10px;
+      }
+
+   
+
+
+    /* Muestra el texto del elemento del menu al pasar el ratón por la barra lateral */
+    .sidebar:hover .menu-item span {
+      display: initial;
+    }
+
+    .sidebar .menu-item a {
+      text-decoration: none;
+      /* Removes the underline */
+      display: block;
+      /* Makes the <a> tag behave like a block-level element */
+      color: inherit;
+      /* Inherits the color from parent elements */
+      width: 100%;
+      /* Ensures the clickable area spans the full width of the menu item */
+      text-align: center;
+    }
+
+    /* Estilos del contenedor principal de contenido */
+    .main {
+      width: calc(100% - 60px);
+      padding: 20px;
+      overflow-y: auto;
+      overflow-x: hidden;
+      /* Evitar el scroll horizontal */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+    }
+
+   
+
+    /* Estilos del texto dentro del título */
+    .title span {
+      position: relative;
+      z-index: 2;
+    }
+
+   
+
+    /* Estilos de cada pestaña */
+    .tabs div {
+      cursor: pointer;
+    }
+
+    /* Cambia el color al pasar el ratón por las pestañas */
+    .tabs div:hover {
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+  
+
+
+@media only screen and (max-width: 768px) {
+  body {
+    padding-top: 100px;
+  }
+
+  .container {
+    flex-direction: column;
+    height: auto;
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 95%;
+  }
+
+  .main {
+    width: 100%;
+    padding: 20px;
+    margin: 0 auto;
+  }
+
+  .content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .player {
+    width: 90%;
+    max-width: 100%;
+    margin: 20px auto;
+    padding: 15px;
+    border: 2px solid #59009A;
+    border-radius: 15px;
+  }
+
+  .tracks-container {
+    width: 90%;
+    max-width: 100%;
+    margin: 20px auto;
+    border: 2px solid #59009A;
+    border-radius: 15px;
+    padding: 15px;
+    transform: translateX(0);
+  }
+
+  .title {
+    font-size: 35px;
+    margin: 20px 0;
+    text-align: center;
+  }
+
+  .tabs {
+    margin-left: 0;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .track-list {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+
+
+
+/* Media query para pantallas grandes hasta 1200px */
+@media only screen and (max-width: 1200px) {
+  .content {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .tracks-container {
+    margin: 20px auto; /* Centrado horizontal */
+    width: 90%;
+    max-width: 800px; /* Limitamos el ancho máximo */
+    transform: none; /* Eliminamos cualquier transformación */
+  }
+
+  .player {
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+}
+
+/* Media query para tablets y dispositivos medianos */
+@media only screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 95%;
+  }
+
+  .tracks-container {
+    width: 90%;
+    max-width: 600px;
+    margin: 20px auto;
+    transform: none;
+    border: 2px solid #59009A;
+    border-radius: 15px;
+    padding: 15px;
+  }
+}
+
+/* Media query para dispositivos móviles */
+@media only screen and (max-width: 480px) {
+  .tracks-container {
+    width: 95%;
+    margin: 15px auto;
+    padding: 10px;
+  }
+
+  .track-info h3 {
+    font-size: 1.2rem;
+  }
+
+  .track-info p {
+    font-size: 0.9rem;
+  }
+}
+}
+/* ----------------------------------------------------------- */
+/* Estilos del contenedor nav */
+.nav {
+  position: relative;
+  display: inline-block;
+}
+
+
+/* Mostrar submenú al hacer hover */
+.nav:hover .submenu {
+  display: block; /* Cambiado de flex a block para mantener el comportamiento original */
+}
+
+/* Estilos de la lista del submenú */
+.submenu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Estilos de los elementos de la lista */
+.submenu li {
+  padding: 10px 20px;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  white-space: nowrap; /* Evita que el texto se rompa en múltiples líneas */
+}
+
+/* Quitar el borde del último elemento */
+.submenu li:last-child {
+  border-bottom: none;
+}
+
+/* Efecto hover en los elementos */
+.submenu li:hover {
+  background-color: #f0f0f0;
+  color: #59009a;
+}
+
+
+
+/* ------------------------------------------------------------- */
+/* Estilos del contenedor principal */
+.container {
+  display: flex;
+  min-height: calc(100vh - 126px);
+}
+
+/* Estilos de la barra lateral */
+.sidebar {
+  width: 25%;
+  background-color: #c7b7fe49;
+  padding: 20px;
+}
+
+/* Estilos de los elementos del menu en la barra lateral */
+.sidebar .menu-item {
+  padding: 12px;
+  margin: 10px 0;
+  background: #fff;
+  border-radius: 15px;
+  transition: background 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* Estilos de los elementos del menú cuando están activos o al pasar el ratón */
+.sidebar .menu-item.active,
+.sidebar .menu-item:hover {
+  background: linear-gradient(#ffffff, #9c76c1);
+  box-shadow: 1px 5px 10px 0.1px rgb(145, 145, 145);
+}
+
+/* Estilos de las imágenes dentro de los elementos del menú */
+.sidebar .menu-item img {
+  width: 24px;
+  height: 24px;
+  margin-right: 15px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Estilos de los enlaces dentro de los elementos del menú */
+.sidebar .menu-item a {
+  display: flex;
+  align-items: center;
+  color: inherit;
+  text-decoration: none;
+  width: 100%;
+}
+
+/* Estilos del texto dentro de los elementos del menú */
+.sidebar .menu-item span {
+  font-size: 16px;
+  white-space: nowrap;
+  margin-left: 5px;
+}
+
+
+/* --------------------------------------------------------------------------- */
+
+  
+
+/* --------------------------------------------------------------------------- */
+
+  
+/* Media queries para móvil */
+@media only screen and (max-width: 768px) {
+ 
+ 
+ .sidebar .menu-item img {
+   width: 20px;
+   height: 20px;
+   margin-right: 12px;
+ }
+
+ .sidebar .menu-item span {
+   font-size: 14px;
+   text-align: center; /* Centrar el texto */
+ }
+}
+
+/* Mantener estilos de hover y active */
+.sidebar .menu-item.active,
+.sidebar .menu-item:hover {
+  background:  #ba7fe7;;
+  box-shadow:   #59009A;
+}
+/* Estilos de los elementos del menú cuando están activos o al pasar el ratón */
+.sidebar .menu-item.active,
+    .sidebar .menu-item:hover {
+      transform: scale(1.05);
+    }
+
+
+/* Estilos base del contenedor */
+.container {
+  display: flex;
+  min-height: calc(100vh - 126px);
+}
+
+/* Estilos de la barra lateral */
+.sidebar {
+  width: 25%;
+  background-color: #c7b7fe49;
+  padding: 20px;
+  padding-top: 108px;
+}
+
+.sidebar .menu-item {
+  padding: 12px;
+  margin: 10px 0;
+  background: #fff;
+  border-radius: 15px;
+  transition: background 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+
+/* Media query para tablets y dispositivos medianos */
+@media only screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 95%;
+  }
+
+  .tracks-container {
+    width: 90%;
+    max-width: 600px;
+    margin: 20px auto;
+    transform: none;
+    border: 2px solid #59009A;
+    border-radius: 15px;
+    padding: 15px;
+  }
+}
+@media only screen and (max-width: 768px) {
+.container {
+flex-direction: column;
+height: auto;
+margin: 0 auto;
+padding: 20px;
+max-width: 95%;
+}
+.sidebar {
+width: 100%;
+max-width: 450px;
+margin: 20px auto;
+border-radius: 40px;
+padding: 8px 16px;
+border: 2px solid #59009A;
+}
+.main-content {
+width: 100%;
+padding: 20px;
+margin: 0 auto;
+}
+.title {
+font-size: 35px;
+margin: 20px 0;
+text-align: center;
+}
+}
+
+@media only screen and (max-width: 768px) {
+  .sidebar {
+   
+    width: 100%;
+    max-width: 450px;
+    margin: 60px auto 20px auto; /* Aumentado significativamente el margen superior */
+    padding: 20px 15px;
+    border-radius: 25px;
+    border: 2px solid #59009A;
+    box-sizing: border-box;
+  }
+  
+}
