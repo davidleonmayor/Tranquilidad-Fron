@@ -39,19 +39,20 @@
   </div>
 
   
-  <div class="comments">
-    <h2>Comentarios</h2>
-    <div id="comment-list"></div>
-    <textarea id="comment-text" rows="4" placeholder="Escribe una reseña"></textarea>
-    <button id="add-comment-btn">Enviar</button>
-    <div id="commentList"></div>
-  </div>
+  <!-- Comentarios -->
+  <div class="comentarios">
+    <!-- Formulario para agregar un comentario -->
+    <form id="formComentario">
+        <textarea id="comentarioInput" placeholder="Escribe tu comentario..."></textarea>
+        <div id="contadorLetras">0 caracteres</div>
+        <button type="submit">Comentar</button>
+        <button type="button" id="cancelarBtn" class="cancelacion">Cancelar</button>
+    </form>
 
-  <div class="overlay" id="overlay"></div>
-  <div class="confirm-delete" id="confirm-delete">
-    <p>¿Estás seguro de que deseas eliminar este comentario?</p>
-    <button id="confirm-yes">Sí</button>
-    <button id="confirm-no">No</button>
+    <!-- Lista de comentarios -->
+    <ul id="listaComentarios">
+       
+    </ul>
   </div>
 </main>
 <div id="footer"></div>

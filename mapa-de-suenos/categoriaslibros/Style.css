@@ -1,10 +1,22 @@
 body {
-  font-family: 'Quicksand', sans-serif;
-  background-color: #f8f7fa;
-  color: #333;
+  background-image: url('/mapa-de-suenos/imagenes/WhatsApp\ Image\ 2024-12-02\ at\ 9.33.46\ PM\ \(1\).jpeg'); /* Ruta de la imagen */
+  background-size: cover; /* Para que la imagen cubra todo el fondo */
+  background-position: center; /* Para centrar la imagen */
+  background-attachment: fixed; /* Para que el fondo se quede fijo al hacer scroll */
+  position: relative;
   margin: 0;
-  padding: 0;
 }
+
+body::before {
+content: '';
+position: fixed;
+width: 100%;
+height: 100%;
+background-color: rgba(255, 255, 255, 0.377); /* Capa superpuesta con transparencia (ajusta la opacidad según sea necesario) */  z-index: -1; /* Asegura que esta capa quede detrás del contenido */
+z-index: -1; /* Asegura que esta capa quede detrás del contenido */
+pointer-events: none; /* Permite que se puedan hacer clics en los elementos del fondo */
+}
+
 
 .container {
   max-width: 1200px;
@@ -21,15 +33,20 @@ body {
 .card:hover {
   transform: scale(1.05);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(145deg, #e0e0e0, #ffffff);
 }
 .card {
   display: flex;
-  
   overflow: hidden;
   width: 100%;
- 
   max-width: 500px;
+  background: rgba(255, 255, 255, 0.599); /* Fondo ligeramente transparente */
+ 
+  border-radius: 15px;
+
+  overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 4%;
 }
 
 

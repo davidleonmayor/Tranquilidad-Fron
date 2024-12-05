@@ -3,6 +3,30 @@ h2 {
   text-align: center;
   color: #59009A;
 }
+body {
+ 
+  
+  
+    background-image: url('/mapa-de-suenos/imagenes/DALL·E\ 2024-12-02\ 22.12.41\ -\ A\ background\ design\ for\ a\ vision\ board\ webpage\ that\ complements\ a\ purple\ footer.\ The\ design\ features\ gradients\ of\ soft\ purples\,\ lavenders\,\ and\ hints\ o.webp'); /* Ruta de la imagen */
+    background-size: cover; /* Para que la imagen cubra todo el fondo */
+    background-position: center; /* Para centrar la imagen */
+    background-attachment: fixed; /* Para que el fondo se quede fijo al hacer scroll */
+    position: relative;
+    margin: 0;
+   
+
+
+}
+
+body::before {
+  content: '';
+  position: fixed;
+
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.377); /* Capa superpuesta con transparencia (ajusta la opacidad según sea necesario) */  z-index: -1; /* Asegura que esta capa quede detrás del contenido */
+  pointer-events: none; /* Permite que se puedan hacer clics en los elementos del fondo */
+}
 
 /* Contenedor principal */
 .main-container {
@@ -13,16 +37,17 @@ h2 {
   padding: 20px;
   margin-top: 60px;
   margin-bottom: 90px;
-  background: linear-gradient(135deg, #ffffff 40%, #f0f0f5 100%);
+ 
 }
 
 /* Estilo para las tarjetas */
 .card {
   width: 100%;
   max-width: 400px;
-  background: linear-gradient(145deg, #e0e0e0, #ffffff);
+  background: rgba(255, 255, 255, 0.599); /* Fondo ligeramente transparente */
+
   border-radius: 15px;
-  box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.1), -10px -10px 20px rgba(255, 255, 255, 0.7);
+
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
@@ -51,6 +76,7 @@ h2 {
 /* Efecto de hover */
 .card:hover {
   transform: scale(1.05);
+  background: linear-gradient(145deg, #e0e0e0, #ffffff);
   box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.2), -5px -5px 20px rgba(255, 255, 255, 0.6);
 }
 

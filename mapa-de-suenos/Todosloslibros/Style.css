@@ -1,120 +1,119 @@
-
-
-.container {
-  width: 80%;
-  margin: 0 auto;
-  padding: 1rem; /* Puedes reducir el padding para hacerlo más compacto */
-  margin-top: auto;
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-h2 {
-  text-align: center;
-  color: #59009A;
-  font-size: 0.8rem;
-  margin: 0.5rem 0; /* Reduce los márgenes */
-  text-transform: uppercase; /* Título en mayúsculas para mayor énfasis */
-}
-
-.pregunta {
-  margin: 1rem 0; /* Reduce los márgenes para que esté más cerca de otros elementos */
-}
-
-
-main {
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f4f7f9;
+  color: #333;
+  background-image: url('/mapa-de-suenos/imagenes/WhatsApp\ Image\ 2024-12-02\ at\ 9.33.46\ PM\ \(1\).jpeg'); /* Ruta de la imagen */
+  background-size: cover; /* Para que la imagen cubra todo el fondo */
+  background-position: center; /* Para centrar la imagen */
+  background-attachment: fixed; /* Para que el fondo se quede fijo al hacer scroll */
   display: flex;
-  margin-top: px;
-  justify-content: space-around;
-  padding: 1rem;
-  flex-wrap: wrap;
-  width: 70%;
-  margin: 1% auto;
-  gap: 1.5rem; /* Ajusta el espacio horizontal y vertical entre las tarjetas */
-  column-gap: 4rem; /* Ajusta este valor para controlar solo el espacio horizontal entre las tarjetas */
-  margin-top: 160px; /* Ajusta este valor para mover la imagen hacia abajo */
-  margin-bottom: 100px;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
 }
 
-main section {
-  text-align: center;
-  flex: 1 1 16%; /* Ajusta el valor para cambiar el ancho de la tarjeta, por ejemplo, 25% */
-  width: 200px; /* Agrega un ancho fijo si prefieres un tamaño específico */
-  height: auto; /* O usa un valor específico, por ejemplo, 300px */
-  margin: 0.18rem;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  background-color: #fff;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+body::before {
+content: '';
+position: fixed;
+
+width: 100%;
+height: 100%;
+background-color: rgba(255, 255, 255, 0.377); /* Capa superpuesta con transparencia (ajusta la opacidad según sea necesario) */  z-index: -1; /* Asegura que esta capa quede detrás del contenido */
+pointer-events: none; /* Permite que se puedan hacer clics en los elementos del fondo */
+}
+
+/* Header and Footer */
+#header, #footer {
+  width: 100%;
+  height: 60px;
+  background-color: #333;
+}
+
+/* Main Section */
+main {
+  width: 90%;
+  max-width: 1200px;
+  margin-top: 150px; /* Mover aún más abajo */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 items per row */
+  gap: 30px; /* Espacio entre elementos */
+  justify-items: center;
+  align-items: center;
+  grid-auto-rows: minmax(230px, auto); /* Ajustar altura */
+}
+
+/* Section Styles */
+section {
+  background-color: #ffffff;
+  border-radius: 10px; /* Bordes más suaves */
  
+  background: rgba(255, 255, 255, 0.599); /* Fondo ligeramente transparente */
+
+  overflow: hidden;
+  width: 250px; /* Ancho fijo */
+  height: 400px; /* Altura fija */
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 20px; /* Añadir relleno alrededor del contenido */
+  margin-bottom: 40px; /* Más espacio en la parte inferior */
 }
 
-
-
-main section img {
-  width: 150px;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 0%;
-  margin-top: 20px; /* Ajusta este valor para mover la imagen hacia abajo */
+section:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(145deg, #e0e0e0, #ffffff);
 }
 
-
-main section .card-footer {
-  padding: 0.5rem; /* Reduce el padding del footer */
-  background-color: #f9f9f9;
+section img {
+  width: 100%;  /* Ajustar el ancho al 100% de la caja */
+  height: 80%;  /* Altura de la imagen fija (60% del alto total de la card) */
+  object-fit: cover; /* Asegura que la imagen se recorte y mantenga la proporción */
+  border-radius: 8px; /* Bordes más suaves */
+  transition: transform 0.3s ease;
+  margin-bottom: 15px; /* Espacio entre imagen y título */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Sombra sutil para la imagen */
 }
 
-main section .card-footer h2 {
-  font-size: 0.7rem;
-  color:#59009A;
-  margin: 0.5rem 0;
+section img:hover {
+  transform: scale(1.05); /* Un pequeño efecto de zoom al hacer hover */
+}
+
+section h2 {
+  font-size: 1.05em; /* Tamaño de texto más pequeño y refinado */
+  color: #333;
+  margin: 10px 0;
+  font-weight: 500; /* Menos peso en la fuente para un look más sutil */
 }
 
 .heart {
+  font-size: 1.5em; /* Corazón más pequeño */
   cursor: pointer;
-  font-size: 1.25rem;
-  color: #ccc;
-  transition: color 0.3s ease;
+  color: #ff4081;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
-.heart.active {
-  color: purple;
+.heart:hover {
+  transform: scale(1.2);
+  color: #d500f9;
 }
 
-section a img:hover {
-  transform: scale(0.9);
-}
-
-/* Media query para pantallas medianas */
-@media (max-width: 81.25rem) and (min-width: 48rem) {
-  main section {
-    flex: 1 1 40%;
-  }
-}
-
-/* Media query para pantallas pequeñas */
-@media (max-width: 48rem) {
+/* Responsive Design */
+@media (max-width: 1024px) {
   main {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  main section {
-    width: 85%;
+      grid-template-columns: repeat(2, 1fr); /* 2 items per row on medium screens */
   }
 }
 
-/* Animación de rebote */
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
+@media (max-width: 600px) {
+  main {
+      grid-template-columns: 1fr; /* 1 item per row on small screens */
   }
-  50% {
-    transform: translateY(-5px);
-  }
-}
-
-.animate-click {
-  animation: bounce 0.5s ease;
 }

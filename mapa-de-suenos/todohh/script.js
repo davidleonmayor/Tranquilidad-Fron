@@ -36,6 +36,25 @@ function toggleModulues() {
       console.error("Error al cargar el archivo:", error);
     });
 }
+let lastScrollY = window.scrollY; // Posición inicial del scroll
+
+// Evento de scroll
+window.addEventListener('scroll', function() {
+    const header = document.querySelector('header'); // Selecciona el header
+    const currentScrollY = window.scrollY; // Obtén la posición actual del scroll
+
+    // Si el scroll es hacia abajo y no está ya oculto, agrega la clase 'hidden'
+    if (currentScrollY > 0 && !header.classList.contains('hidden')) {
+        header.classList.add('hidden');
+    } 
+    // Si el scroll es hacia arriba, elimina la clase 'hidden'
+    else if (currentScrollY === 0 && header.classList.contains('hidden')) {
+        header.classList.remove('hidden');
+    }
+
+    // Actualiza la última posición del scroll
+    lastScrollY = currentScrollY;
+});
 
 // Cargar el header y footer
 loadHTML('header', '../../../mapa-de-suenos/todohh/header.html');

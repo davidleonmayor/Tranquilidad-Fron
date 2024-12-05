@@ -5,10 +5,30 @@
     padding: 0;
 }
 
-/* Estilos para el cuerpo de la página */
 body {
-    background-color: #f7f2fa;
-    min-height: 100vh;
+ 
+  
+  
+    background-image: url('/mapa-de-suenos/imagenes/DALL·E\ 2024-12-02\ 22.12.41\ -\ A\ background\ design\ for\ a\ vision\ board\ webpage\ that\ complements\ a\ purple\ footer.\ The\ design\ features\ gradients\ of\ soft\ purples\,\ lavenders\,\ and\ hints\ o.webp'); /* Ruta de la imagen */
+    background-size: cover; /* Para que la imagen cubra todo el fondo */
+    background-position: center; /* Para centrar la imagen */
+    background-attachment: fixed; /* Para que el fondo se quede fijo al hacer scroll */
+    position: relative;
+    margin: 0;
+   
+
+
+}
+
+body::before {
+  content: '';
+  position: fixed;
+
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.377); /* Capa superpuesta con transparencia (ajusta la opacidad según sea necesario) */  z-index: -1; /* Asegura que esta capa quede detrás del contenido */
+  z-index: -1; /* Asegura que esta capa quede detrás del contenido */
+  pointer-events: none; /* Permite que se puedan hacer clics en los elementos del fondo */
 }
 
 /* Estilos para el contenedor de columnas (tablero) */

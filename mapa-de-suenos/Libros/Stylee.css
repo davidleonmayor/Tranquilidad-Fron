@@ -1,307 +1,272 @@
-@media (max-width: 768px) {
-    .main {
-      flex-direction: column; /* Cambia la dirección del flex a columna */
-      align-items: center; /* Centra el contenido */
-    }
-  
-    .book, .comments {
-      width: 100%; /* Haz que ambos elementos ocupen todo el ancho disponible */
-      margin-right: 0; /* Elimina el margen derecho de la caja del libro */
-      margin-bottom: 1.25rem; /* Añade espacio entre las dos cajas */
-    }
-  
-    .book-info {
-      max-width: 100%; /* Ajusta la caja de información del libro al 100% del ancho */
-    }
-  
-    .comments {
-      max-width: 100%; /* Haz que los comentarios ocupen todo el ancho */
-    }
-  }
-    
-      html, body {
-      height: 100%; /* Asegura que el html y body ocupen toda la altura */
-      margin: 0; /* Elimina margenes por defecto */
-  }
-     
-  
-  .servicioss {
-    cursor: pointer;
-}
 
 
 body {
-    font-family: 'roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #fffcfc;
-    width: 100%;
-    flex-direction: column;
-    display: flex;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f4f7f9;
+  color: #333;
+  background-image: url('/mapa-de-suenos/imagenes/WhatsApp\ Image\ 2024-12-02\ at\ 9.33.46\ PM\ \(1\).jpeg'); /* Ruta de la imagen */
+  background-size: cover; /* Para que la imagen cubra todo el fondo */
+  background-position: center; /* Para centrar la imagen */
+  background-attachment: fixed; /* Para que el fondo se quede fijo al hacer scroll */
+  display: flex;
+  flex-direction: column;
+ 
+  min-height: 100vh;
 }
 
-/* Contenido del body */
-.container {
-    width: 80%;
-    margin: 0 auto;
-    padding: 1.25rem 1.25rem 1.25rem 0; /* Cambiado de 20px a rem */
+
+body::before {
+content: '';
+position: fixed;
+
+width: 100%;
+height: 100%;
+background-color: rgba(255, 255, 255, 0.377); /* Capa superpuesta con transparencia (ajusta la opacidad según sea necesario) */  z-index: -1; /* Asegura que esta capa quede detrás del contenido */
+pointer-events: none; /* Permite que se puedan hacer clics en los elementos del fondo */
 }
 
-h2 {
-    text-align: center;
-    color: #59009A;
-}
 
 .pregunta {
-    margin-bottom: 1.25rem; /* Cambiado de 20px a rem */
-    margin: 2.5rem; /* Cambiado de 40px a rem */
-    margin-top: auto;
+  margin-bottom: 1.25rem;
+  margin: 2.5rem;
+  margin-top: auto;
 }
 
 button {
-    
-    padding: 0.625rem 1.875rem; /* Cambiado de 10px 30px a rem */
-    background-color: #59009A;
-    color: #ffffff;
-    border: none;
-    border-radius: 1.875rem; /* Cambiado de 30px a rem */
-    cursor: pointer;
-    margin-left: auto;
-    margin-right: 12.5rem; /* Cambiado de 200px a rem */
-    
+  padding: 0.625rem 1.875rem;
+  border: none;
+  border-radius: 1.875rem;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: 12.5rem;
 }
 
 button:hover {
-    background-color: #651e98;
+  background-color: #651e98;
 }
-
 .main {
-    padding: 1.25rem; /* Cambiado de 20px a rem */
-    display: flex;
-    align-items: flex-start;
-    flex-grow: 1;
-    margin-top: 10rem; /* Cambiado de 100px a rem */
-    margin-bottom:10rem;
-
-}
-
-.book {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    background-color: white;
-    padding: 1.25rem; /* Cambiado de 20px a rem */
-    border-radius: 0.5rem; /* Cambiado de 8px a rem */
-    box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.1); /* Cambiado de 2px 5px a rem */
-    flex-grow: 1;
-    margin-right: 1.25rem; /* Cambiado de 20px a rem */
-    position: relative;
-    min-height: 20rem; /* Ajusta este valor para darle más altura */
-    max-height: auto; /* Permite que se expanda si el contenido crece */
-}
-
-.book img {
-    max-width: 9.375rem; /* Cambiado de 150px a rem */
-    margin-right: 1.25rem; /* Cambiado de 20px a rem */
-    border-radius: 0.5rem; /* Cambiado de 8px a rem */
-    width: 20rem;
-    height: 14rem;
-}
-
-.book-info {
-    max-width: 37.5rem; /* Cambiado de 600px a rem */
-    font-size: 0.9375rem; /* Cambiado de 15px a rem */
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-.book-info p.description {
-    max-width: 112.5rem; /* Cambiado de 1800px a rem */
-    font-size: 0.9375rem; /* Cambiado de 15px a rem */
-}
-
-.book-info h1 {
-    margin: 0;
-    color: #59009A;
-}
-
-.book-info p {
-    color: #666;
-    margin: 0.3125rem 0; /* Cambiado de 5px a rem */
-}
+  width: 95%; /* Aumenta el ancho al 95% del viewport */
+  max-width: 1300px; /* O establece un ancho máximo más grande */
+  margin-left: auto; /* Centra el contenedor */
+  margin-right: auto; /* Centra el contenedor */
+  align-items: center;
 
 
   
+}
+
+
+.book {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 1.25rem;
+  flex-grow: 1;
+  margin-right: 1.25rem;
+  position: relative;
+  min-height: 20rem;
+}
+
+.book img {
+  max-width: 9.375rem;
+  margin-right: 1.25rem;
+  border-radius: 0.5rem;
+  width: 20rem;
+  height: 14rem;
+}
+
+.book-info {
+  max-width: 37.5rem;
+  font-size: 0.9375rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.book-info p.description {
+  max-width: 112.5rem;
+  font-size: 0.9375rem;
+  word-wrap: break-word; /* Permite que las palabras largas se dividan */
+  text-align: justify; /* Justifica el texto */
+}
+
+.book-info h1 {
+  margin: 0;
+  color: #59009A;
+}
+
+.book-info p {
+  color: #444444;
+  margin: 0.3125rem 0;
+}
+
 .rating {
   display: flex;
   align-items: center;
   position: absolute;
-  top: 16.25rem; /* Cambiado de 260px a rem */
-  left: 1.875rem; /* Cambiado de 30px a rem */
+  top: 16.25rem;
+  left: 1.875rem;
 }
 
 .rating .star {
-  width: 1.25rem; /* Cambiado de 20px a rem */
-  height: 1.25rem; /* Cambiado de 20px a rem */
-  background: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23D3D3D3"><path d="M12 2.5l2.2 6.8h7.1l-5.7 4.1 2.2 6.8-5.8-4.2-5.8 4.2 2.2-6.8-5.7-4.1h7.1z"/></svg>') no-repeat center;
+  width: 1.25rem;
+  height: 1.25rem;
+  background: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23444444"><path d="M12 2.5l2.2 6.8h7.1l-5.7 4.1 2.2 6.8-5.8-4.2-5.8 4.2 2.2-6.8-5.7-4.1h7.1z"/></svg>') no-repeat center;
   background-size: contain;
   cursor: pointer;
   transition: background 0.3s ease;
+  
 }
 
 /* Estrellas amarillas cuando están seleccionadas */
 .rating .star.selected {
-  background: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23FFD700"><path d="M12 2.5l2.2 6.8h7.1l-5.7 4.1 2.2 6.8-5.8-4.2-5.8 4.2 2.2-6.8-5.7-4.1h7.1z"/></svg>') no-repeat center;
+  background: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%236A0DAD"><path d="M12 2.5l2.2 6.8h7.1l-5.7 4.1 2.2 6.8-5.8-4.2-5.8 4.2 2.2-6.8-5.7-4.1h7.1z"/></svg>') no-repeat center;
   background-size: contain;
+  
 }
 
 /* Estrellas amarillas al pasar el mouse */
 .rating .star:hover,
 .rating .star.hovered {
-  background: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23FFD700"><path d="M12 2.5l2.2 6.8h7.1l-5.7 4.1 2.2 6.8-5.8-4.2-5.8 4.2 2.2-6.8-5.7-4.1h7.1z"/></svg>') no-repeat center;
+  background: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%236A0DAD"><path d="M12 2.5l2.2 6.8h7.1l-5.7 4.1 2.2 6.8-5.8-4.2-5.8 4.2 2.2-6.8-5.7-4.1h7.1z"/></svg>') no-repeat center;
   background-size: contain;
 }
 
-.comments {
-  background-color: white;
-  padding: 1.25rem; /* Cambiado de 20px a rem */
-  border-radius: 0.5rem; /* Cambiado de 8px a rem */
-  box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.1); /* Cambiado de 2px 5px a rem */
-  width: 18.75rem; /* Cambiado de 300px a rem */
-  display: flex;
-  flex-direction: column;
+
+/* Contenedor principal */
+.comentarios {
+  width: 62%;
+  max-width: 100%; /* Asegura que el contenedor pueda expandirse al 100% */
+  margin: 0 20px; /* Margen a los lados */
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.551); /* Capa superpuesta con transparencia (ajusta la opacidad según sea necesario) */  z-index: -1; /* Asegura que esta capa quede detrás del contenido */
+
+  border-radius: 10px;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.comments h2 {
-  color: #59009A;
-  margin-top: 0;
-}
-
-.comments textarea {
-  padding: 0.625rem; /* Cambiado de 10px a rem */
-  margin-top: 0.625rem; /* Cambiado de 10px a rem */
-  border: 0.0625rem solid #CCC; /* Cambiado de 1px a rem */
-  border-radius: 0.25rem; /* Cambiado de 4px a rem */
+/* Campo de texto */
+textarea {
+  width: 99%;
+  height: 100px;
+  padding: 10px;
+  margin-bottom: 12px;
+  border-radius: 5px;
+  border: 1px solid #d1d1d1;
+  font-size: 14px;
+  background-color: #f9f9f9;
   resize: vertical;
-  
+  transition: border-color 0.3s ease;
 }
-#add-comment-btn {
-  padding: 0.625rem 1.875rem;
+
+textarea:focus {
+  border-color: #59009A;
+  outline: none;
+}
+
+/* Botones */
+button {
+  padding: 8px 16px;
   background-color: #59009A;
   color: #ffffff;
   border: none;
+  border-radius: 5px;
   cursor: pointer;
-  margin-left: auto;
-  margin-right: 12.5rem;
-  margin-top: 1rem; /* Ajusta este valor según sea necesario */
+  font-weight: 500;
+  font-size: 14px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-#add-comment-btn:hover {
-  background-color: #7a30c4; /* Color morado más claro */
+button:hover {
+  background-color: #7a00cf;
+  transform: scale(1.05);
 }
 
-
-#comment-text {
-  font-family: 'roboto', sans-serif;
+/* Botón de cancelar */
+#cancelarBtn {
+  background-color: #b0b0b0;
 }
 
-.comments button {
-  margin-top: -0.3rem; /* Cambiado de 10px a rem */
-  
-  
-  color: white;
+#cancelarBtn:hover {
+  background-color: #d9534f;
+}
+/* Lista de comentarios dentro de .comentarios */
+.comentarios ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 18px;
+}
+
+/* Tarjeta de comentario dentro de .comentarios */
+.comentarios ul li {
+  margin-bottom: 15px;
+  padding: 15px;
+  background-color: #fafafa;
+  border-radius: 8px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
+  border-left: 4px solid #59009A;
+  transition: background-color 0.3s ease;
+  overflow-wrap: break-word;
+}
+
+.comentarios ul li:hover {
+  background-color: #f5f5f5;
+}
+
+/* Encabezado del comentario */
+.comment-header {
+  font-weight: bold;
+  color: #333333;
+  margin-bottom: 6px;
+  font-size: 16px;
+}
+
+/* Cuerpo del comentario */
+.comment-body {
+  font-size: 14px;
+  color: #555555;
+  line-height: 1.5;
+}
+
+/* Acciones de comentario */
+.comment-actions {
+  margin-top: 12px;
+}
+
+.comment-actions button {
+  margin-right: 8px;
+  padding: 5px 12px;
+  background-color: #59009A;
+  border-radius: 4px;
   border: none;
-  border-radius: 0.25rem; /* Cambiado de 4px a rem */
-  cursor: pointer;
-  
+  font-size: 13px;
 }
 
-.comment-item {
-  border-bottom: 0.0625rem solid #ddd; /* Cambiado de 1px a rem */
-  padding: 0.625rem 0; /* Cambiado de 10px a rem */
-  position: relative; /* Para que el botón flote correctamente */
-  border: 0.0625rem solid #ccc; /* Bordes de los comentarios */
-  padding: 0.625rem; /* Cambiado de 10px a rem */
-  margin: 0.625rem 0; /* Cambiado de 10px a rem */
-  border-radius: 0.3125rem; /* Cambiado de 5px a rem */
-  max-width: 31.25rem; /* Cambiado de 500px a rem */
-  overflow: hidden; /* Ocultar el desbordamiento */
-  word-wrap: break-word; /* Ajustar palabras largas */
-}
-.comment-item :hover {
- background-color: #ffffff;
+.comment-actions button:hover {
+  background-color: #7a00cf;
+  opacity: 0.9;
 }
 
-
-.comment-item:last-child {
-  border-bottom: none;
+/* Botón de eliminar */
+.comment-actions .deleteBtn {
+  background-color: #59009A;
 }
 
-.referencia {
-  color: white;
-}
-.delete-btn {
-  background: none;  /* Elimina cualquier fondo */
-  color: #080608;  /* Color morado para el texto */
-  font-size: 0.75rem;  /* Tamaño pequeño de fuente */
-  border: none;  /* Elimina cualquier borde */
-  cursor: pointer;
-  padding: 0;  /* Elimina cualquier relleno adicional */
-  position: absolute;
-  right: -11.25rem;
-  top: 0.625rem;
-  display: inline;  /* Asegura que el texto no se comporte como un bloque */
+.comment-actions .deleteBtn:hover {
+  background-color: #59009A;
 }
 
-.delete-btn::after {
-  content: "Eliminar";  /* El texto generado desde CSS */
-  color: #59009A;  /* Color morado para el texto */
+/* Botón de me gusta */
+.comment-actions .likeBtn {
+  background-color: #59009A;
 }
 
-.delete-btn:hover::after {
-  color: #7a30c4;  /* Cambia el color al pasar el cursor */
-}
-.confirm-delete {
-  display: none;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: white;
-  border: 0.0625rem solid #ccc; /* Cambiado de 1px a rem */
-  padding: 1.25rem; /* Cambiado de 20px a rem */
-  z-index: 1000;
-  box-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.1); /* Cambiado de 2px 10px a rem */
-  border-radius: 5%; /* Este valor se puede mantener, ya que no es px */
+.comment-actions .likeBtn:hover {
+  background-color: #59009A;
 }
 
-.confirm-delete button {
-  display: inline-block; /* Cambia a inline-block */
-  margin: 0.3125rem; /* Cambiado de 5px a rem */
-}
-
-.overlay {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
- 
-  z-index: 999;
-}
-
-::-webkit-scrollbar {
-  width: 0.5625rem; /* Cambiado de 9px a rem */
-}
-
-::-webkit-scrollbar-track {
-  background: #f0f0f0; /* Color de fondo de la pista del scrollbar */
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: #ccc; /* Color de la barra de desplazamiento */
-  border-radius: 0.625rem; /* Cambiado de 10px a rem */
-  border: 0.125rem solid #f0f0f0; /* Cambiado de 2px a rem */
+/* Deshabilitar el botón */
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
 }
