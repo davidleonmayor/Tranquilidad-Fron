@@ -13,7 +13,7 @@
         flex-direction: column;
         align-items: center;
         padding-top: 20px;
-        height: 627px; /* Establecer una altura fija */
+        height: 647px; /* Establecer una altura fija */
         border-radius: 13px;
     }
 
@@ -32,18 +32,22 @@
  
 
     #canvas-container {
-position: relative; 
-width: 100vw; /* 100% del ancho de la ventana */
-height: 100vh; /* 100% del alto de la ventana */
-display: flex; /* Asegura que el lienzo esté centrado */
-justify-content: center;
-align-items: center;
-overflow: hidden; /* Evita desplazamientos si el tamaño es mayor que la pantalla */
-
-}
-#myCanvas {
-    border-bottom: 1px solid rgb(162, 162, 162); /* Cambia el color y grosor del borde según tus preferencias */
-  }
+        position: relative;
+        margin-left: 40px;
+        width: 90vw; /* 100% del ancho de la ventana */
+        height: 100vh; /* 100% del alto de la ventana */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden; /* Evita desplazamientos si el tamaño es mayor que la pantalla */
+    }
+    
+    #myCanvas {
+        width: 40%; /* Ajusta el tamaño del lienzo (80% del contenedor, puedes cambiar el valor) */
+        height: 70%; /* Ajusta el alto del lienzo (70% del contenedor, también puedes cambiar el valor) */
+        border: 1px solid rgba(126, 97, 143, 0.527); /* Borde alrededor del lienzo */
+    }
+    
 canvas {
 width: 100%; /* El lienzo se ajusta al ancho del contenedor */
 height: 100%; /* El lienzo se ajusta al alto del contenedor */

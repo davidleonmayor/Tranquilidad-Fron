@@ -38,15 +38,8 @@
     }
 }
 
-// Llama a esta función con un evento, como un clic en un botón
-document.addEventListener('dblclick', toggleFullscreen); // Cambia esto según lo que necesites
-// Evento para el botón de pantalla completa
-document.getElementById('fullscreen-btn').addEventListener('click', toggleFullscreen);
-// Evento para el botón de pantalla completa
-document.getElementById('fullscreen-btn').addEventListener('click', toggleFullscreen);
 
-// Evento para el botón de pantalla completa
-document.getElementById('fullscreen-toggle').addEventListener('click', toggleFullscreen);
+
 
     
         // Inicializar el lienzo
