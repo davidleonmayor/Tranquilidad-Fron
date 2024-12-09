@@ -12,9 +12,9 @@ body {
   font-family: sans-serif;
 
   padding: 0;
-  background-color: #fffcfc;
   width: 100%;
   left: 0%;
+
 }
 
 
@@ -26,6 +26,7 @@ body {
   max-width: 24.5625rem; /* 393px -> 24.5625rem */
   height: auto;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 2;
 }
 
 .imag:hover {
@@ -53,7 +54,7 @@ body {
 
 .sidebar {
   width: 350px;
-  background-color: #c7b7fe49;
+  background-color: #d2b7fecc;
   padding: 20px;
   transition: width 0.0s ease;
   margin-right: 20px;
@@ -61,11 +62,12 @@ body {
   flex-direction: column;
   justify-content: center;
   padding-bottom: 210px;
-  
-  
+  margin-top: -66px;
+
+}
 
   /* Modified for smoother transition */
-}
+
 .sidebar .menu-item {
   padding: 12px;
   margin: 15px 0;
@@ -110,11 +112,12 @@ a {
 }
 
 .container {
+  position: relative;
   display: flex;
   font-family: sans-serif;
   margin-top: 80px;
   margin-bottom: -80px;
-  
+  z-index: 2;
   
 }
 
@@ -177,8 +180,86 @@ a {
   }
 }
 
+.marca-agua::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/rutinas-de-ejercicios/includes/woman-digital-disconnecting-home-by-doing-yoga.jpg'); /* Cambia la URL por tu imagen */
+  background-size: cover; /* Ajusta la imagen para cubrir todo el contenedor */
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.5; /* Ajusta la transparencia de la marca de agua */
+  z-index: 1;
+}
+.card {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+  background: linear-gradient(145deg, #e0e0e0, #ffffff);
+  border-radius: 15px;
+  box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.1), -10px -10px 20px rgba(255, 255, 255, 0.7);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius:4%;
+  margin: 5px;
+  flex-direction: column;
+}
+.card {
+  width: 100%;
+  max-width: 400px;
+  background: rgba(255, 255, 255, 0.599); /* Fondo ligeramente transparente */
+  border-radius: 15px;
+  box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  color: #59009A;
+  font-size: 19px;
+}
 
+/* Efecto de borde de luz */
+.card::before {
+  content: "";
+ 
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.4), rgba(0, 0, 0, 0));
+  opacity: 0;
+  transition: opacity 0.5s;
+}
 
+.card:hover::before {
+  opacity: 1;
+}
 
+/* Efecto de hover */
+.card:hover {
+  transform: scale(1.05);
+  background: linear-gradient(145deg, #e0e0e0, #ffffff);
+ 
+}
 
+/* Imagen dentro de la tarjeta */
+.card img {
 
+  width: 100%;;
+  margin-bottom: 1rem;
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Contenido de la tarjeta */
+.card a {
+  padding: 10px 15px;
+  text-align: center;
+}

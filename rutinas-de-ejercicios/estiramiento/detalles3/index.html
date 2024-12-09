@@ -31,33 +31,36 @@
       document.addEventListener("DOMContentLoaded", includeHTML);
   </script>
 
-    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="/rutinas-de-ejercicios/detalles/detalles.css">
 </head>
 <body>
 
   <div include-html="/rutinas-de-ejercicios/includes/Header/header.html"></div>
   <div class="cont">
   <div class="contenedor">
-    <video autoplay muted controls width="640" height="360" class="guia">
+    <div class="guia">
+    <video autoplay muted controls width="640" height="360" class="gui">
         <source src="/rutinas-de-ejercicios/includes/videos/cuello.mp4" type="video/mp4">
         <source src="mi-video.ogg" type="video/ogg">
         Tu navegador no soporta la reproducción de videos.
     </video>
+    <button class="boton" onclick="toggleInstrucciones()">Instrucciones</button>
+</div>
     <div class="instruccines">
     <h2> <span class="title">Instrucciones</span></h2>
-    <ul>
-        <li class="one">Siéntate o párate con la espalda recta y los hombros relajados.</li><br>
-        <li>Inclina la cabeza hacia un lado, acercando la oreja hacia el hombro sin levantar el hombro.</li><br>
-        <li>Coloca la mano del mismo lado en la cabeza y aplica una presión suave para intensificar el estiramiento.</li><br>
-        <li>Mantén el estiramiento durante 15-20 segundos.</li><br>
-        <li>Regresa lentamente a la posición inicial y repite en el otro lado.</li><br>
-        <li>Inclina la cabeza hacia adelante, acercando la barbilla al pecho.</li><br>
-        <li>Coloca ambas manos en la parte posterior de la cabeza y aplica una presión suave.</li><br>
-        <li>Mantén el estiramiento durante 15-20 segundos.</li><br>
-        <li>Regresa lentamente a la posición inicial.</li><br>
-        <li>Gira la cabeza lentamente hacia la derecha, mirando por encima del hombro.</li><br>
-        <li>Mantén el estiramiento durante 15-20 segundos.</li><br>
-        <li>Regresa a la posición inicial y repite hacia la izquierda.</li><br>
+    <ul class="lista">
+        <li class="one">Siéntate o párate con la espalda recta y los hombros relajados.</li>
+        <li>Inclina la cabeza hacia un lado, acercando la oreja hacia el hombro sin levantar el hombro.</li>
+        <li>Coloca la mano del mismo lado en la cabeza y aplica una presión suave para intensificar el estiramiento.</li>
+        <li>Mantén el estiramiento durante 15-20 segundos.</li>
+        <li>Regresa lentamente a la posición inicial y repite en el otro lado.</li>
+        <li>Inclina la cabeza hacia adelante, acercando la barbilla al pecho.</li>
+        <li>Coloca ambas manos en la parte posterior de la cabeza y aplica una presión suave.</li>
+        <li>Mantén el estiramiento durante 15-20 segundos.</li>
+        <li>Regresa lentamente a la posición inicial.</li>
+        <li>Gira la cabeza lentamente hacia la derecha, mirando por encima del hombro.</li>
+        <li>Mantén el estiramiento durante 15-20 segundos.</li>
+        <li>Regresa a la posición inicial y repite hacia la izquierda.</li>
        
     </ul>
    
@@ -94,5 +97,6 @@
     
 </main>
 <div include-html="/rutinas-de-ejercicios/includes/inicio/inicio.html"></div>
+<script src="/rutinas-de-ejercicios/detalles/script.js"></script>
 </body>
 </html>

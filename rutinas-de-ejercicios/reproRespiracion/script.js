@@ -1,67 +1,158 @@
+document.addEventListener('DOMContentLoaded', () => {
+    // Get the current page/view identifier
+    const pageId = getCurrentPageIdentifier();
 
-    
-   // Identificador único para este archivo (cámbialo en cada archivo HTML)
-const archivoId = 'comentariosArchivo3'; // Cambia 'comentariosArchivo1' por otro valor en cada archivo
+    const formComentario = document.getElementById('formComentario');
+    const comentarioInput = document.getElementById('comentarioInput');
+    const listaComentarios = document.getElementById('listaComentarios');
+    const cancelarBtn = document.getElementById('cancelarBtn');
+    const contadorLetras = document.getElementById('contadorLetras');
+    const enviarBtn = document.getElementById('enviarBtn');
 
-// Seleccionamos los elementos
-const comentarioInput = document.getElementById('comentario');
-const enviarBtn = document.getElementById('enviar');
-const comentariosContainer = document.getElementById('comentarios-container');
-
-// Cargar comentarios almacenados en localStorage al iniciar la página
-window.addEventListener('load', function() {
-    const comentariosGuardados = JSON.parse(localStorage.getItem(archivoId)) || [];
-    comentariosGuardados.forEach(comentario => agregarComentario(comentario));
-});
-
-// Agregar evento al botón de enviar
-enviarBtn.addEventListener('click', function() {
-    const textoComentario = comentarioInput.value.trim();
-    if (textoComentario !== "") {
-        agregarComentario(textoComentario);
-        guardarComentario(textoComentario);
-        comentarioInput.value = ''; // Limpiar el área de texto
+    // Function to get current page/view identifier
+    function getCurrentPageIdentifier() {
+        // This could be based on URL, page title, or a data attribute
+        // Modify this function to match your specific implementation
+        return window.location.pathname || 'default-page';
     }
+
+    // Function to format date and time
+    function formatDate(date) {
+        const options = { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' };
+        return date.toLocaleDateString('es-ES', options);
+    }
+
+    // Function to count letters in text
+    function contarLetras(texto) {
+        return texto.replace(/\s/g, "").length; // Remove spaces and count letters
+    }
+
+    // Function to create a new comment
+    function crearComentario(texto, likes = 0, id = Date.now(), fecha = formatDate(new Date())) {
+        const comentario = document.createElement('li');
+        comentario.classList.add('comentario-item');
+        comentario.setAttribute('data-id', id);
+
+        comentario.innerHTML = `
+            <div class="comment-header">
+                <span class="author">Usuario</span> | <span class="date">${fecha}</span>
+            </div>
+            <div class="comment-body">${texto}</div>
+            <div class="comment-actions">
+                <button class="likeBtn">👍 Me gusta <span class="likeCount">${likes}</span></button>
+                <button class="deleteBtn">Eliminar</button>
+            </div>
+        `;
+
+        // Like button
+        comentario.querySelector('.likeBtn').addEventListener('click', () => {
+            likes++;
+            comentario.querySelector('.likeCount').textContent = likes;
+            actualizarComentariosEnStorage();
+        });
+
+        // Delete button
+        comentario.querySelector('.deleteBtn').addEventListener('click', () => {
+            comentario.remove();
+            actualizarComentariosEnStorage();
+        });
+
+        listaComentarios.appendChild(comentario);
+        actualizarComentariosEnStorage();
+    }
+
+    // Function to save comments in localStorage with page-specific key
+    function guardarComentariosEnStorage(comentarios) {
+        const storageKey = `comentarios-${pageId}`;
+        localStorage.setItem(storageKey, JSON.stringify(comentarios));
+    }
+
+    // Function to retrieve comments from localStorage with page-specific key
+    function recuperarComentariosDeStorage() {
+        const storageKey = `comentarios-${pageId}`;
+        const comentarios = localStorage.getItem(storageKey);
+        return comentarios ? JSON.parse(comentarios) : [];
+    }
+
+    // Function to update comments in local storage
+    function actualizarComentariosEnStorage() {
+        const comentarios = [];
+        document.querySelectorAll('#listaComentarios li').forEach((comentario) => {
+            const texto = comentario.querySelector('.comment-body').textContent;
+            const likes = parseInt(comentario.querySelector('.likeCount').textContent);
+            const id = comentario.getAttribute('data-id');
+            const fecha = comentario.querySelector('.date').textContent;
+            comentarios.push({ texto, likes, id, fecha });
+        });
+        comentarios.sort((a, b) => b.likes - a.likes);
+        guardarComentariosEnStorage(comentarios);
+    }
+
+    // Function to render comments in the interface
+    function renderizarComentarios() {
+        listaComentarios.innerHTML = '';
+        const comentarios = recuperarComentariosDeStorage();
+        comentarios.forEach((comentario) => {
+            crearComentario(comentario.texto, comentario.likes, comentario.id, comentario.fecha);
+        });
+    }
+
+    // Load comments when page starts
+    function cargarComentarios() {
+        renderizarComentarios();
+    }
+
+    // Event to count letters and enable send button
+    comentarioInput.addEventListener('input', () => {
+        const textoComentario = comentarioInput.value.trim();
+        const letraCount = contarLetras(textoComentario);
+
+        // Show remaining letters counter
+        const letrasRestantes = 500 - letraCount;
+        contadorLetras.textContent = `${letrasRestantes} caracteres restantes`;
+
+        // Disable text field and send button if 500 characters are reached
+        if (letrasRestantes <= 0) {
+            comentarioInput.value = textoComentario.substring(0, 500); // Limit to 500 characters
+            contadorLetras.textContent = `0 caracteres restantes`;
+            enviarBtn.disabled = false;
+            comentarioInput.disabled = true;
+        } else {
+            // Re-enable text field and send button if limit is not reached
+            comentarioInput.disabled = false;
+            enviarBtn.disabled = false;
+        }
+    });
+
+    // Event to send comment
+    formComentario.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const textoComentario = comentarioInput.value.trim();
+
+        // Only add comment if it doesn't exceed character limit
+        if (textoComentario !== '' && contarLetras(textoComentario) <= 500) {
+            crearComentario(textoComentario);
+            comentarioInput.value = '';
+            contadorLetras.textContent = `500 caracteres restantes`;
+            enviarBtn.disabled = true;
+        } else {
+            alert("El comentario es demasiado largo, debes escribir menos de 500 caracteres.");
+        }
+    });
+
+    // Event to cancel comment
+    cancelarBtn.addEventListener('click', () => {
+        comentarioInput.value = '';
+        contadorLetras.textContent = `500 caracteres restantes`;
+        enviarBtn.disabled = true;
+        comentarioInput.disabled = false;
+    });
+
+    // Start loading comments
+    cargarComentarios();
 });
 
-// Función para agregar el comentario al contenedor
-function agregarComentario(comentario) {
-    const comentarioDiv = document.createElement('div');
-    comentarioDiv.classList.add('com');
-    comentarioDiv.innerHTML = `
-    <div class="usuario">
-    <span class="material-symbols-outlined">
-person 
-</span>
-    
-    </div>
-    <div class="comentar">
-    <p>Usuario</p>
-        ${comentario}</div>
-    `;
-    comentariosContainer.appendChild(comentarioDiv);
-}
-
-// Función para guardar el comentario en localStorage
-function guardarComentario(comentario) {
-    let comentariosGuardados = JSON.parse(localStorage.getItem(archivoId)) || [];
-    comentariosGuardados.push(comentario);
-    localStorage.setItem(archivoId, JSON.stringify(comentariosGuardados));
-}
-    document.addEventListener("DOMContentLoaded", function () {
-        const favoriteIcons = document.querySelectorAll(".favorite");
-    
-        favoriteIcons.forEach(function (icon) {
-            icon.addEventListener("click", function () {
-                if (icon.style.color === "red") {
-                    icon.style.color = "gray"; // Vuelve al color original
-                } else {
-                    icon.style.color = "red";  // Cambia a rojo
-                }
-            });
-        });
-    });
-    
 
 
 

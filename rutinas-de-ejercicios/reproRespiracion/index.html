@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=person" />
-  <link rel="stylesheet" href="Style.css">
+<link rel="stylesheet" href="/rutinas-de-ejercicios/reproEstiramiento/style.css">
   <script>
     async function includeHTML() {
         const elements = document.querySelectorAll('[include-html]');
@@ -76,16 +76,18 @@
         </div>
         <!-- Sección de comentarios -->
       
-        <div class="comments">
-            <h2>Comentarios</h2>
-            <div class="escribir">
-                
-            <textarea id="comentario" rows="4" placeholder="Escribe un comentario"></textarea>
-            <button id="enviar" class="boton">Enviar</button>
-        </div>
-            <div id="comentarios-container" class="comentarios">
-                <!-- Los comentarios se agregarán aquí -->
-            </div>
+        <div class="comentarios">
+            <form id="formComentario">
+                <textarea id="comentarioInput" placeholder="Escribe tu comentario..."></textarea>
+                <div id="contadorLetras">0 caracteres</div>
+                <button type="submit">Comentar</button>
+                <button type="button" id="cancelarBtn" class="cancelacion">Cancelar</button>
+            </form>
+        
+            <!-- Lista de comentarios -->
+            <ul id="listaComentarios">
+               
+            </ul>
         </div>
     
     </div>

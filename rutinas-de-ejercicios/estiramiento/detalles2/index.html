@@ -31,7 +31,7 @@
       document.addEventListener("DOMContentLoaded", includeHTML);
   </script>
 
-    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="/rutinas-de-ejercicios/detalles/detalles.css">
 </head>
 <body>
 
@@ -41,24 +41,27 @@
 
   <div class="cont">
   <div class="contenedor">
-    <video autoplay muted controls width="640" height="360" class="guia">
+    <div class="guia">
+    <video autoplay muted controls width="640" height="360" class="gui">
         <source src="/rutinas-de-ejercicios/includes/videos/tobillo.mp4" type="video/mp4">
         <source src="mi-video.ogg" type="video/ogg">
         Tu navegador no soporta la reproducción de videos.
     </video>
+    <button class="boton" onclick="toggleInstrucciones()">Instrucciones</button>
+</div>
     <div class="instruccines">
     <h2> <span class="title">Instrucciones</span></h2>
-    <ul>
+    <ul class="lista">
         <li class="one">Siéntate con las piernas extendidas.</li>
-        <br>
+        
         <li>Flexiona el pie hacia ti (5 segundos).
         </li>
-        <br>
+        
         <li>Extiende el pie alejando los dedos (5 segundos).</li>
-        <br>
-        <li>Gira el pie en círculos, primero en sentido horario (5 veces) y luego antihorario (5 veces).</li><br>
-        <li>Cruza el tobillo sobre la rodilla opuesta..</li><br>
-        <li>Tira suavemente del pie hacia ti durante 15-20 segundos.</li><br>
+        
+        <li>Gira el pie en círculos, primero en sentido horario (5 veces) y luego antihorario (5 veces).</li>
+        <li>Cruza el tobillo sobre la rodilla opuesta..</li>
+        <li>Tira suavemente del pie hacia ti durante 15-20 segundos.</li>
        
        
     </ul>
@@ -101,6 +104,6 @@
 
 
 <div include-html="/rutinas-de-ejercicios/includes/inicio/inicio.html"></div>
-
+<script src="/rutinas-de-ejercicios/detalles/script.js"></script>
 </body>
 </html>

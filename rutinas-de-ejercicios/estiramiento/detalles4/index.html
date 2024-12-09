@@ -31,7 +31,7 @@
       document.addEventListener("DOMContentLoaded", includeHTML);
   </script>
 
-    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="/rutinas-de-ejercicios/detalles/detalles.css">
 </head>
 <body>
 
@@ -39,21 +39,24 @@
 
   <div class="cont">
   <div class="contenedor">
-    <video autoplay muted controls width="640" height="360" class="guia">
+    <div class="guia">
+    <video autoplay muted controls width="640" height="360" class="gui">
         <source src="/rutinas-de-ejercicios/includes/videos/mariposa.mp4" type="video/mp4">
         <source src="mi-video.ogg" type="video/ogg">
         Tu navegador no soporta la reproducción de videos.
     </video>
+    <button class="boton" onclick="toggleInstrucciones()">Instrucciones</button>
+</div>
     <div class="instruccines">
     <h2> <span class="title">Instrucciones</span></h2>
-    <ul>
-        <li class="one">Siéntate en el suelo con la espalda recta y las piernas extendidas frente a ti.</li><br>
-        <li>Dobla las rodillas y junta las plantas de los pies, acercándolos lo más posible hacia tu cuerpo.</li><br>
-        <li>Sujeta los pies con ambas manos y mantén los codos hacia los lados.</li><br>
-        <li>Con los codos, presiona suavemente las rodillas hacia el suelo para profundizar el estiramiento.</li><br>
-        <li>Mantén la espalda recta y evita encorvarte hacia adelante.</li><br>
-        <li>Respira profundamente y mantén el estiramiento durante 20-30 segundos.</li><br>
-        <li>Relaja la presión y regresa lentamente a la posición inicial.</li><br>
+    <ul class="lista">
+        <li class="one">Siéntate en el suelo con la espalda recta y las piernas extendidas frente a ti.</li>
+        <li>Dobla las rodillas y junta las plantas de los pies, acercándolos lo más posible hacia tu cuerpo.</li>
+        <li>Sujeta los pies con ambas manos y mantén los codos hacia los lados.</li>
+        <li>Con los codos, presiona suavemente las rodillas hacia el suelo para profundizar el estiramiento.</li>
+        <li>Mantén la espalda recta y evita encorvarte hacia adelante.</li>
+        <li>Respira profundamente y mantén el estiramiento durante 20-30 segundos.</li>
+        <li>Relaja la presión y regresa lentamente a la posición inicial.</li>
        
        
     </ul>
@@ -91,6 +94,6 @@
     
 </main>
 <div include-html="/rutinas-de-ejercicios/includes/inicio/inicio.html"></div>
-
+<script src="/rutinas-de-ejercicios/detalles/script.js"></script>
 </body>
 </html>

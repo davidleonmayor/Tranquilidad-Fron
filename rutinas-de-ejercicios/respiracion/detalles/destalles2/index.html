@@ -31,27 +31,30 @@
   </script>
 
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/rutinas-de-ejercicios/detalles/detalles.css">
 </head>
 <body>
 
   <div include-html="/rutinas-de-ejercicios/includes/Header/header.html"></div>
   <div class="cont">
   <div class="contenedor">
-    <video autoplay muted controls width="640" height="360" class="guia">
+    <div class="guia">
+    <video autoplay muted controls width="640" height="360" class="gui">
         <source src="/rutinas-de-ejercicios/includes/videos/caja.mp4" type="video/mp4">
         <source src="mi-video.ogg" type="video/ogg">
         Tu navegador no soporta la reproducción de videos.
     </video>
+    <button class="boton" onclick="toggleInstrucciones()">Instrucciones</button>
+  </div>
     <div class="instruccines">
     <h2> <span class="title">Instrucciones</span></h2>
-    <ul>
-      <li class="one">Siéntate en una posición cómoda.</li><br>
-      <li>Inhala por la nariz contando hasta 4.</li><br>
-      <li>Mantén la respiración contando hasta 4.</li><br>
-      <li>Exhala por la boca contando hasta 4.</li><br>
-      <li>Mantén la respiración contando hasta 4.</li><br>
-      <li>Repite el ciclo durante 5-10 minutos.</li><br>
+    <ul class="lista">
+      <li class="one">Siéntate en una posición cómoda.</li>
+      <li>Inhala por la nariz contando hasta 4.</li>
+      <li>Mantén la respiración contando hasta 4.</li>
+      <li>Exhala por la boca contando hasta 4.</li>
+      <li>Mantén la respiración contando hasta 4.</li>
+      <li>Repite el ciclo durante 5-10 minutos.</li>
     </ul>
    
 </div>
@@ -87,6 +90,6 @@
     
 </main>
 <div include-html="/rutinas-de-ejercicios/includes/inicio/inicio.html"></div>
-
+<script src="/rutinas-de-ejercicios/detalles/script.js"></script>
 </body>
 </html>

@@ -4,27 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
-
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
     <style>
-       /* General */
+        /* General */
 * {
+    box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
+
 
 /* Header */
 header {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: #ffffff;
+    background-color: #f9e0f5f7;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     z-index: 1000;
+    width: calc(100% - 15px); /* Resta un poco para evitar que cubra la barra */
+    transition: transform 0.3s ease; /* Transición suave */
+}
+
+header.hidden {
+    transform: translateY(-100%); /* Mueve el header hacia arriba fuera de la vista */
+}
+main {
+    margin-top: 120px; /* Ajusta la altura según el header */
+    padding: 20px;
 }
   
 .logo-container {
@@ -51,7 +64,7 @@ header {
 .nav-links {
     display: flex;
     gap: 90px;
-    justify-content:center; /* Alinea todo hacia la izquierda */
+    justify-content: center; /* Alinea todo hacia la izquierda */
     flex-grow: 1; /* Permite que el menú ocupe el espacio disponible */
     margin-left: 100px;
     
@@ -94,14 +107,16 @@ header {
 }
 
 .profile-box {
-    background: #f9f9f9; /* Color de fondo de la cajita */
+    background-color: #fddaf8f0;
     border-radius: 10px; /* Bordes redondeados */
     padding: 10px; /* Espaciado interno */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.244); /* Sombra para el efecto de cajita */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.09); /* Sombra para el efecto de cajita */
     display: flex; /* Usar flexbox para alinear los elementos dentro */
     align-items: center; /* Alinea los elementos en la parte superior */
 }
-
+.profile-container .profile-box {
+    background-color: #fddaf8f0;
+}
 /* Ajusta la posición de Jhon Sebastian */
 .profile-name {
     margin-bottom: 5px; /* Espacio entre el nombre y la imagen */
@@ -129,7 +144,7 @@ a{
     right: 0; /* Alinea a la derecha */
     top: 70px; /* Ajusta la posición */
     width: 150px; /* Ancho del menú */
-    background: white; /* Color de fondo del menú */
+    background-color: #f9e0f5f7;
     border: 1px solid #ddd; /* Borde del menú */
     border-radius: 8px; /* Bordes redondeados del menú */
     padding: 10px; /* Espaciado interno */
@@ -156,7 +171,7 @@ a{
     top: 100px;
     left: 0;
     width: 100%;
-    background: white;
+    background-color: #f9e0f5f7;
     padding: 20px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     z-index: 999;
@@ -168,7 +183,7 @@ a{
     gap: 10px;
 }
 .modulo {
-    background: #ffffff;
+    background-color: #f9e0f5f7;
     padding: 20px;
     text-align:left;
     margin-left: 20px;
@@ -178,11 +193,11 @@ a{
     transition: transform 0.3s ease, background-color 0.3s ease;
 }
 .modulo:hover {
-    background-color: #ffffff; /* Cambia el color al pasar el mouse */
+    background-color: #f9e0f5f7;
     transform: scale(1.05); /* Efecto de zoom */
 }
 .module {
-    background: #ffffff;
+    background-color: #f9e0f5f7;
     padding: 20px;
     text-align: center;
     border-radius: 6px;
@@ -193,7 +208,7 @@ a{
 }
   
 .module:hover {
-    background-color: #ffffff; /* Cambia el color al pasar el mouse */
+    background-color: #f9e0f5f7;
     transform: scale(1.05); /* Efecto de zoom */
 }
 
@@ -215,7 +230,7 @@ a{
     top: 100px; /* Alinea debajo del header */
     left: 0;
     width: 100%;
-    background: white;
+    background-color: #f9e0f5f7;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -232,7 +247,7 @@ a{
 }
 
 /* Media Queries para Responsividad */
-@media (max-width: 800px) {
+@media (max-width: 1100px) {
     .nav-links {
         display: none; /* Oculta el menú en pantallas pequeñas */
     }
@@ -266,22 +281,19 @@ a{
         display: none;
     }
 }
- 
+
     </style>
-    
-</head>
-<body>
-    <header>
+    <header class="main-header">
         <div class="logo-container">
-            <a href="#"><img href="#inicio" src="/rutinas-de-ejercicios/includes/Header/Captura de pantalla 2024-11-12 091241.png" alt="Logo" class="logo"></a>
+            <a href="/inicio-de-sesion/Modulo-iniciar-sesion/home/home.html"><img href="/inicio-de-sesion/Modulo-iniciar-sesion/home/home.html" src="/mapa-de-suenos/imagenes/6aa3987c-48ce-4355-b6bf-26c76c37e93d-removebg.png" alt="Logo" class="logo"></a>
            
         </div>
-        <button class="hamburger" onclick="toggleHamburgerMenu()">☰</button>
+        <button2 class="hamburger" onclick="toggleHamburgerMenu()">☰</button2>
         <nav class="nav-links">
-            <a href="#inicio" class="nav-item">Inicio</a>
+            <a href="/inicio-de-sesion/Modulo-iniciar-sesion/home/home.html" class="nav-item">Inicio</a>
             <div class="nav-item modules-item" onclick="toggleModules()">Módulos</div>
-            <a href="#acerca" class="nav-item  ">Acerca de </a>
-            <a href="#contacto" class="nav-item ">Contacto</a>
+            <a href="/mapa-de-suenos/todohh/inicio/link/quienessomos.html" class="nav-item  ">Acerca de </a>
+            <a href="/mapa-de-suenos/todohh/inicio/link/contacto.html" class="nav-item ">Contacto</a>
             <div id="modules-indicator" class="modules-indicator"></div>
             
         </nav>
@@ -292,7 +304,7 @@ a{
         <div class="profile-container">
             <div class="profile-box">
                 <a href="#nombre" class="nav-item special-item profile-name">Jhon Sebastian</a>
-                <img src="https://media-bog2-1.cdn.whatsapp.net/v/t61.24694-24/464251565_515510564641224_6041331179142873332_n.jpg?ccb=11-4&oh=01_Q5AaIDEqM5xvz8KklH-2azNRLVT-kU3sFKniuUEQYN-AALtA&oe=6730DC33&_nc_sid=5e03e0&_nc_cat=104" alt="Foto de perfil" class="profile-pic" onclick="toggleProfileMenu()">
+                <img src="/mapa-de-suenos/imagenes/459571723_4109978595954978_2480821301631162862_n.jpg" alt="Foto de perfil" class="profile-pic" onclick="toggleProfileMenu()">
                 <div id="profile-menu" class="profile-menu">
                     <a href="#perfil">Perfil</a>
                     <a href="#cerrar-sesion">Cerrar sesión</a>
@@ -301,16 +313,16 @@ a{
         </div>
         <!-- Menú hamburguesa -->
 <div id="hamburger-menu" class="hamburger-menu">
-    <a href="#inicio" class="hamburger-item">Inicio</a>
+    <a href="/inicio-de-sesion/Modulo-iniciar-sesion/home/home.html" class="hamburger-item">Inicio</a>
     <a href="#"><div class="hamburger-item" onclick="toggleModulues()">Módulos</div></a>
     <!-- Contenedor de módulos (oculto por defecto) -->
     <div id="modules-content" class="modules-content" style="display: none;">
         <a href="/mapa-de-suenos/Inicio/Inicio.html"><div class="modulo">Mapa de sueños</div></a>
         <a href="/alimentacion/Inicio/index.html"><div class="modulo">Alimentación</div></a>
-        <a href="/arteterapia/html"><div class="modulo">Arteterapia</div></a>
-        <a href="/musicoterapia/Vistas1.1/principal_album.html"><div class="modulo">Musicoterapia</div></a>
+        <a href="/arteterapia/html/Navegacion.html"><div class="modulo">Arteterapia</div></a>
+        <a href="/musicoterapia/Vistas1.1/PRINCIPAL_GENEROS/principal_generos.html"><div class="modulo">Musicoterapia</div></a>
         <a href="/rutinas-de-ejercicios/inicio/index.html"><div class="modulo">Ejercicios</div></a>
-        <a href="/atencion-profesional/PROFESIONAL/Menu_Profesional/Menu-prof.html"><div class="modulo">Atención Profesional</div></a>
+        <a href="/atencion-profesional/USUARIO/Home_Usuario/HomeUsuario.html"><div class="modulo">Atención Profesional</div></a>
     </div>
     <a href="#perfil" class="hamburger-item">Perfil</a>
 </div>
@@ -319,17 +331,15 @@ a{
             <div class="module-grid">
                <a href="/mapa-de-suenos/Inicio/Inicio.html"> <div class="module">Mapa de sueños</div></a>
                <a href="/alimentacion/Inicio/index.html"><div class="module">Alimentación</div></a>
-                <a href="#"><div class="module">Arteterapia</div></a>
-                <a href="/musicoterapia/Vistas1.1/playList.html"><div class="module">Musicoterapia</div></a>
+                <a href="/arteterapia/html/Navegacion.html"><div class="module">Arteterapia</div></a>
+                <a href="/musicoterapia/Vistas1.1/PRINCIPAL_GENEROS/principal_generos.html"><div class="module">Musicoterapia</div></a>
                 <a href="/rutinas-de-ejercicios/inicio/index.html"><div class="module">Ejercicios</div></a>
-                <a href="#"><div class="module">Atención Profesional</div></a>
+                <a href="/atencion-profesional/USUARIO/Home_Usuario/HomeUsuario.html"><div class="module">Atención Profesional</div></a>
             </div>
         </div>
     </header>
-
-
-
     
-    <script src="script.js" defer></script>
+      
+    <script src="script.js"></script>
 </body>
 </html>

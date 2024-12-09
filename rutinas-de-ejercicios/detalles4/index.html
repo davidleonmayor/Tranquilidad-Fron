@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <link rel="stylesheet" href="Style.css"><script>
+  <link rel="stylesheet" href="/rutinas-de-ejercicios/detalles/detalles.css"><script>
     async function includeHTML() {
         const elements = document.querySelectorAll('[include-html]');
         for (let el of elements) {
@@ -38,28 +38,31 @@
   
       <div class="cont">
         <div class="contenedor">
-          <video autoplay muted controls width="640" height="360" class="guia">
+          <div class="guia">
+          <video autoplay muted controls width="640" height="360" class="gui">
             <source src="/rutinas-de-ejercicios/reproMeditacion/video/sonido.mp4" type="video/mp4">
             <source src="mi-video.ogg" type="video/ogg">
             Tu navegador no soporta la reproducción de videos.
         </video>
+        <button class="boton" onclick="toggleInstrucciones()">Instrucciones</button>
+      </div>
           <div class="instruccines">
           <h2> <span class="title">Instrucciones</span></h2>
-          <ul>
+          <ul class="lista">
               <li class="one">Puede ser una palabra, frase o sonido que te resuene, como "Om" o "Soy paz".</li>
-              <br>
+              
               <li>Siéntate en una posición cómoda con la espalda recta.
               </li>
-              <br>
+              
               <li>Cierra los ojos.</li>
-              <br>
-              <li>Inhala profundamente y al exhalar, repite tu mantra en voz alta o en tu mente.</li><br>
-              <li>Concéntrate en la vibración y el sonido del mantra.</li><br>
-              <li>Si tu mente se distrae, suavemente vuelve al mantra.</li><br>
+              
+              <li>Inhala profundamente y al exhalar, repite tu mantra en voz alta o en tu mente.</li>
+              <li>Concéntrate en la vibración y el sonido del mantra.</li>
+              <li>Si tu mente se distrae, suavemente vuelve al mantra.</li>
               <li>Continúa repitiendo el mantra durante 10-20 minutos.
-                .</li><br>
+                .</li>
               <li>Deja de repetir el mantra y siéntate en silencio por un par de minutos.
-              </li><br>
+              </li>
               <li>Abre los ojos lentamente y tómate un momento para absorber la calma.
                 .</li>
                 
@@ -101,7 +104,7 @@
 
       <div include-html="/rutinas-de-ejercicios/includes/inicio/inicio.html"></div>
       
-      <script src="script.js"></script>
+      <script src="/rutinas-de-ejercicios/detalles/script.js"></script>
     </body>
     </html>
 

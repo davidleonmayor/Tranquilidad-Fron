@@ -46,39 +46,86 @@ bottom: 0;
 }
 
 /* Card Styles */
-.card-container {
-display: flex;
-flex-wrap: wrap;
-justify-content: center;
-gap: 1.25rem; /* 20px -> 1.25rem */
-height: 70%;
-}
-
-a {
-text-decoration: none;
-}
-
 .card {
-background: #fff;
-border: 1px solid #ddd;
-border-radius: 0.625rem; /* 10px -> 0.625rem */
-box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1); /* 4px 8px -> 0.25rem 0.5rem */
-padding: 1.25rem; /* 20px -> 1.25rem */
-width: 30%;
-max-width: 37.5rem; /* 600px -> 37.5rem */
-transition: transform 0.3s ease, box-shadow 0.3s ease;
-cursor: pointer;
+  width: 100%;
+  max-width: 400px;
+  background: rgba(255, 255, 255, 0.599); /* Fondo ligeramente transparente */
+  border-radius: 15px;
+  box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  margin-bottom: 2rem;
+  padding: 1rem;
+}
+
+/* Efecto de borde de luz */
+.card::before {
+  content: "";
+ 
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.4), rgba(0, 0, 0, 0));
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+/* Efecto de hover */
+.card:hover {
+  transform: scale(1.05);
+  background: linear-gradient(145deg, #e0e0e0, #ffffff);
+ 
+}
+
+/* Imagen dentro de la tarjeta */
+.card img {
+  width: 365px;
+  height: 200px;
+  max-height: 400px;
+  margin-bottom: 1rem;
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Contenido de la tarjeta */
+.card a {
+  padding: 10px 15px;
+  text-align: center;
+}
+
+
+
+.marca-agua::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/rutinas-de-ejercicios/includes/woman-digital-disconnecting-home-by-doing-yoga.jpg'); /* Cambia la URL por tu imagen */
+  background-size: cover; /* Ajusta la imagen para cubrir todo el contenedor */
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.5; /* Ajusta la transparencia de la marca de agua */
+  z-index: 1;
 }
 
 .refe {
-width: 100%;
+
 height: 70%;
 max-width: 37.5rem; /* 600px -> 37.5rem */
 }
 
 .card:hover {
-transform: translateY(-0.625rem); /* 10px -> 0.625rem */
-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); /* 8px 16px -> 0.5rem 1rem */
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
 h2 {
@@ -114,7 +161,6 @@ border: none;
 .boton:hover{
   cursor: pointer;
 }
-
 
 
 /* Responsive Styles */

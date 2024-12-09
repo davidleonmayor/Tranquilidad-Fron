@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <link rel="stylesheet" href="Style.css">
+  <link rel="stylesheet" href="/rutinas-de-ejercicios/detalles/detalles.css">
   <script>
     async function includeHTML() {
         const elements = document.querySelectorAll('[include-html]');
@@ -38,26 +38,29 @@
 
       <div class="cont">
         <div class="contenedor">
-          <video autoplay muted controls width="640" height="360" class="guia">
+          <div class="guia">
+          <video autoplay muted controls width="640" height="360" class="gui">
             <source src="/rutinas-de-ejercicios/reproMeditacion/video/plena.mp4" type="video/mp4">
             <source src="mi-video.ogg" type="video/ogg">
             Tu navegador no soporta la reproducción de videos.
         </video>
+        <button class="boton" onclick="toggleInstrucciones()">Instrucciones</button>
+      </div>
           <div class="instruccines">
           <h2> <span class="title">Instrucciones</span></h2>
-          <ul>
+          <ul class="lista">
               <li class="one">Busca un lugar donde no te molesten.</li>
-              <br>
+          
               <li>Siéntate en una silla o en el suelo con la espalda recta y las manos en las rodillas.
               </li>
-              <br>
+          
               <li>Cierra los ojos.</li>
-              <br>
-              <li>Exhala lentamente por la boca.</li><br>
-              <li>Permite que tus pensamientos vengan y vayan sin juzgar.</li><br>
-              <li>Si te distraes, suavemente regresa tu atención a la respiración.</li><br>
+       
+              <li>Exhala lentamente por la boca.</li>
+              <li>Permite que tus pensamientos vengan y vayan sin juzgar.</li>
+              <li>Si te distraes, suavemente regresa tu atención a la respiración.</li>
               <li>Concéntrate en las sensaciones de tu cuerpo y en los sonidos a tu alrededor.
-                .</li><br>
+                .</li>
               <li>Permanece en este estado de atención plena durante 10-20 minutos.
               </li>
              
@@ -97,7 +100,7 @@
 
       <div include-html="/rutinas-de-ejercicios/includes/inicio/inicio.html"></div>
       
-      <script src="script.js"></script>
+      <script src="/rutinas-de-ejercicios/detalles/script.js"></script>
     </body>
     </html>
      

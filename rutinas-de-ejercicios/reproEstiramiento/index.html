@@ -76,16 +76,18 @@
         </div>
         <!-- Sección de comentarios -->
       
-        <div class="comments">
-            <h2>Comentarios</h2>
-            <div class="escribir">
-                
-            <textarea id="comentario" rows="4" placeholder="Escribe un comentario"></textarea>
-            <button id="enviar" class="boton">Enviar</button>
-        </div>
-            <div id="comentarios-container" class="comentarios">
-                <!-- Los comentarios se agregarán aquí -->
-            </div>
+        <div class="comentarios">
+            <form id="formComentario">
+                <textarea id="comentarioInput" placeholder="Escribe tu comentario..."></textarea>
+                <div id="contadorLetras">0 caracteres</div>
+                <button type="submit">Comentar</button>
+                <button type="button" id="cancelarBtn" class="cancelacion">Cancelar</button>
+            </form>
+        
+            <!-- Lista de comentarios -->
+            <ul id="listaComentarios">
+               
+            </ul>
         </div>
     
     </div>

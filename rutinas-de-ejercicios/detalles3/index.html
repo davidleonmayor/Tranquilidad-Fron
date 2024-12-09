@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <link rel="stylesheet" href="Style.css">
+  <link rel="stylesheet" href="/rutinas-de-ejercicios/detalles/detalles.css">
   <script>
     async function includeHTML() {
         const elements = document.querySelectorAll('[include-html]');
@@ -39,30 +39,33 @@
 
       <div class="cont">
         <div class="contenedor">
-          <video autoplay muted controls width="640" height="360" class="guia">
+          <div class="guia">
+          <video autoplay muted controls width="640" height="360" class="gui">
             <source src="/rutinas-de-ejercicios/reproMeditacion/video/sonido.mp4" type="video/mp4">
             <source src="mi-video.ogg" type="video/ogg">
             Tu navegador no soporta la reproducción de videos.
         </video>
+        <button class="boton" onclick="toggleInstrucciones()">Instrucciones</button>
+      </div>
           <div class="instruccines">
           <h2> <span class="title">Instrucciones</span></h2>
-          <ul>
+          <ul class="lista">
               <li class="one">Encuentra un lugar cómodo y tranquilo.</li>
-              <br>
+              
               <li>Siéntate o acuéstate en una posición relajada.
               </li>
-              <br>
+              
               <li>Puede ser música suave, sonidos de la naturaleza o un cuenco tibetano.</li>
-              <br>
-              <li>Asegúrate de que el sonido sea constante y relajante.</li><br>
-              <li>Cierra los ojos y enfoca tu atención completamente en el sonido.</li><br>
-              <li>Deja que el sonido te envuelva y guíe tu mente.</li><br>
+              
+              <li>Asegúrate de que el sonido sea constante y relajante.</li>
+              <li>Cierra los ojos y enfoca tu atención completamente en el sonido.</li>
+              <li>Deja que el sonido te envuelva y guíe tu mente.</li>
               <li>Si tu mente divaga, simplemente vuelve tu atención al sonido.
-                .</li><br>
+                .</li>
               <li>No intentes controlar tus pensamientos, solo obsérvalos.
-              </li><br>
+              </li>
               <li>Gradualmente, trae tu atención de vuelta a tu cuerpo y al entorno.
-                .</li><br>
+                .</li>
                 <li>Abre los ojos lentamente y tómate un momento para sentirte presente.
                     .</li>  
 
@@ -103,6 +106,6 @@
     </main>
       <div include-html="/rutinas-de-ejercicios/includes/inicio/inicio.html"></div>
       
-      <script src="script.js"></script>
+      <script src="/rutinas-de-ejercicios/detalles/script.js"></script>
     </body>
     </html>

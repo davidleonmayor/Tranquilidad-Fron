@@ -18,7 +18,7 @@ h1{
 
 .sidebar {
   width: 350px;
-  background-color: #c7b7fe49;
+  background-color: #d2b7fecc;
   padding: 20px;
   transition: width 0.0s ease;
   margin-right: 20px;
@@ -77,9 +77,11 @@ h1{
 
 
 .container{
+position: relative;
 display: flex;
 justify-content: space-between;
-margin-top: 80px;
+margin-top: 77px;
+z-index: 3;
 }
 
 
@@ -121,7 +123,7 @@ cursor: pointer;
 .datepicker {
 
 margin-right: 20px;
-
+background-color: #fff;
 border-radius: 10px;
 box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 
@@ -217,7 +219,6 @@ background-color: var(--c-theme-primary);
 
 .cal{
 display: flex;
-
 margin-top: 100px;
 margin-bottom: 40px;
 }
@@ -400,4 +401,18 @@ min-height: 30px; /* Opcional: altura mínima para mantener el diseño uniforme 
 }
 .navbar{
   width: 100%;
+}
+.marca-agua::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/rutinas-de-ejercicios/includes/woman-digital-disconnecting-home-by-doing-yoga.jpg'); /* Cambia la URL por tu imagen */
+  background-size: cover; /* Ajusta la imagen para cubrir todo el contenedor */
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.5; /* Ajusta la transparencia de la marca de agua */
+  z-index: 1;
 }

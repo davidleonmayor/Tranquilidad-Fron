@@ -15,7 +15,7 @@
 .player-container {
   text-align: center;
   width: 90%;
-  background-color: #ffffff;
+  background-color: #fff8ffe3;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
@@ -186,82 +186,150 @@ video::-moz-media-controls {
 }
 
 
-.comments {
+.comentarios {
   display: flex;
   flex-direction: column;
   width: 90%;
   justify-content: start;
-
-}
-
-.comments h2 {
-  color: #59009a;
-  margin-top: 0;
-}
-
-.comments textarea {
-  padding: 10px;
-  margin-top: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  resize: vertical;
-  width: 70%;
-  margin-right: 30px;
-  height:70px ;
-}
-
-.comments button {
-  margin-top: 10px;
-  padding: 10px 20px;
-  background-color: #6200ea;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  height: 50px;
-}
-
-/* Contenedor de comentarios con scroll */
-.comentarios {
-  min-height: 300px;
-  max-height: 500px; /* Altura máxima del contenedor */
-  width: 100%;
-  margin-top: 10px;
-  overflow-y: scroll; /* Habilitar desplazamiento vertical */
-  border: 1px solid #ccc;
-  padding: 0.625rem;
-  background-color: #ffffff; /* Fondo claro */
-}
-
-
-
-.com {
-  display: flex;
-  margin-top: 20px;
-  margin-bottom: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.551);
   padding: 20px;
-  align-items: center;
+  border-radius: 10px;
+
 }
+textarea {
+  width: 99%;
+  height: 100px;
+  padding: 10px;
+  margin-bottom: 12px;
+  border-radius: 5px;
+  border: 1px solid #d1d1d1;
+  font-size: 14px;
+  background-color: #f9f9f9;
+  resize: vertical;
+  transition: border-color 0.3s ease;
+}
+
+textarea:focus {
+  border-color: #59009A;
+  outline: none;
+}
+
+/* Botones */
+.comentarios button {
+  padding: 8px 16px;
+  background-color: #59009A;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 14px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.comentarios button:hover {
+  background-color: #7a00cf;
+  transform: scale(1.05);
+}
+
+/* Botón de cancelar */
+#cancelarBtn {
+  background-color: #b0b0b0;
+}
+
+#cancelarBtn:hover {
+  background-color: #d9534f;
+}
+/* Lista de comentarios dentro de .comentarios */
+.comentarios ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 18px;
+}
+
+/* Tarjeta de comentario dentro de .comentarios */
+.comentarios ul li {
+  margin-bottom: 15px;
+  padding: 15px;
+  background-color: #fafafa;
+  border-radius: 8px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
+  border-left: 4px solid #59009A;
+  transition: background-color 0.3s ease;
+  overflow-wrap: break-word;
+}
+
+.comentarios ul li:hover {
+  background-color: #f5f5f5;
+}
+
+/* Encabezado del comentario */
+.comment-header {
+  font-weight: bold;
+  color: #333333;
+  margin-bottom: 6px;
+  font-size: 16px;
+}
+
+/* Cuerpo del comentario */
+.comment-body {
+  font-size: 14px;
+  color: #555555;
+  line-height: 1.5;
+}
+
+/* Acciones de comentario */
+.comment-actions {
+  margin-top: 12px;
+}
+
+.comment-actions button {
+  margin-right: 8px;
+  padding: 5px 12px;
+  background-color: #59009A;
+  border-radius: 4px;
+  border: none;
+  font-size: 13px;
+}
+
+.comment-actions button:hover {
+  background-color: #7a00cf;
+  opacity: 0.9;
+}
+
+/* Botón de eliminar */
+.comment-actions .deleteBtn {
+  background-color: #59009A;
+}
+
+.comment-actions .deleteBtn:hover {
+  background-color: #59009A;
+}
+
+/* Botón de me gusta */
+.comment-actions .likeBtn {
+  background-color: #59009A;
+}
+
+.comment-actions .likeBtn:hover {
+  background-color: #59009A;
+}
+
+/* Deshabilitar el botón */
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
-.escribir{
-  display: flex;
-  align-items: center;
-}
-.material-symbols-outlined{
-  margin-right:20px;
-  margin-left: 10pz;
-}
-.comentar p{
-  
-  font-weight: bold;
-  margin-bottom: 5px;
-}
+
+
 @media (max-width: 768px){
   .container{
     flex-direction: column;
@@ -280,3 +348,17 @@ video::-moz-media-controls {
   }
 }
 
+body::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/rutinas-de-ejercicios/includes/woman-digital-disconnecting-home-by-doing-yoga.jpg'); /* Cambia la URL por tu imagen */
+  background-size: cover; /* Ajusta la imagen para cubrir todo el contenedor */
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.5; /* Ajusta la transparencia de la marca de agua */
+  z-index: -1;
+}

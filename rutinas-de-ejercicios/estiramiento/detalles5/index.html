@@ -31,7 +31,7 @@
       document.addEventListener("DOMContentLoaded", includeHTML);
   </script>
 
-    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="/rutinas-de-ejercicios/detalles/detalles.css">
 </head>
 <body>
 
@@ -39,21 +39,24 @@
 
   <div class="cont">
   <div class="contenedor">
-    <video autoplay muted controls width="640" height="360" class="guia">
+    <div class="guia">
+    <video autoplay muted controls width="640" height="360" class="gui">
         <source src="/rutinas-de-ejercicios/includes/videos/brazo.mp4" type="video/mp4">
         <source src="mi-video.ogg" type="video/ogg">
         Tu navegador no soporta la reproducción de videos.
     </video>
+    <button class="boton" onclick="toggleInstrucciones()">Instrucciones</button>
+</div>
     <div class="instruccines">
     <h2> <span class="title">Instrucciones</span></h2>
-    <ul>
-        <li class="one">Párate o siéntate con la espalda recta y los pies separados a la altura de los hombros.</li><br>
-        <li>Extiende un brazo hacia adelante, a la altura del hombro.</li><br>
-        <li>Cruza el brazo extendido frente a tu pecho.</li><br>
-        <li>Con la otra mano, sujeta el brazo extendido justo por encima del codo.</li><br>
-        <li>Tira suavemente del brazo extendido hacia tu cuerpo, sintiendo el estiramiento en el hombro y la parte superior del brazo.</li><br>
-        <li>Mantén el estiramiento durante 15-20 segundos, respirando de manera relajada.</li><br>
-        <li>Libera el brazo lentamente y repite el estiramiento con el otro brazo.</li><br>
+    <ul class="lista">
+        <li class="one">Párate o siéntate con la espalda recta y los pies separados a la altura de los hombros.</li>
+        <li>Extiende un brazo hacia adelante, a la altura del hombro.</li>
+        <li>Cruza el brazo extendido frente a tu pecho.</li>
+        <li>Con la otra mano, sujeta el brazo extendido justo por encima del codo.</li>
+        <li>Tira suavemente del brazo extendido hacia tu cuerpo, sintiendo el estiramiento en el hombro y la parte superior del brazo.</li>
+        <li>Mantén el estiramiento durante 15-20 segundos, respirando de manera relajada.</li>
+        <li>Libera el brazo lentamente y repite el estiramiento con el otro brazo.</li>
     </ul>
    
 </div>
@@ -89,5 +92,6 @@
     
 </main>
 <div include-html="/rutinas-de-ejercicios/includes/inicio/inicio.html"></div>
+<script src="/rutinas-de-ejercicios/detalles/script.js"></script>
 </body>
 </html>

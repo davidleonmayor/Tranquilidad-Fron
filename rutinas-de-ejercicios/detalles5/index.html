@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <link rel="stylesheet" href="Style.css">
+  <link rel="stylesheet" href="/rutinas-de-ejercicios/detalles/detalles.css">
   <script>
     async function includeHTML() {
         const elements = document.querySelectorAll('[include-html]');
@@ -38,28 +38,31 @@
       
       <div class="cont">
         <div class="contenedor">
-          <video autoplay muted controls width="640" height="360" class="guia">
+          <div class="guia">
+          <video autoplay muted controls width="640" height="360" class="gui">
             <source src="/rutinas-de-ejercicios/reproMeditacion/video/escritura.mp4" type="video/mp4">
             <source src="mi-video.ogg" type="video/ogg">
             Tu navegador no soporta la reproducción de videos.
         </video>
+        <button class="boton" onclick="toggleInstrucciones()">Instrucciones</button>
+      </div>
           <div class="instruccines">
           <h2> <span class="title">Instrucciones</span></h2>
-          <ul>
+          <ul class="lista">
               <li class="one">Consigue un cuaderno y un bolígrafo.</li>
-              <br>
+              
               <li>Encuentra un lugar tranquilo y sin distracciones.
               </li>
-              <br>
+              
               <li>Decide sobre qué quieres escribir, como tus pensamientos, emociones o metas.</li>
-              <br>
-              <li>Sin juzgar ni editar, escribe lo que venga a tu mente.</li><br>
-              <li>Permítete expresarte sin restricciones.</li><br>
-              <li>Dedica al menos 10-15 minutos a escribir sin parar.</li><br>
+              
+              <li>Sin juzgar ni editar, escribe lo que venga a tu mente.</li>
+              <li>Permítete expresarte sin restricciones.</li>
+              <li>Dedica al menos 10-15 minutos a escribir sin parar.</li>
               <li>Si te quedas sin ideas, escribe sobre la sensación de escribir.
-                .</li><br>
+                .</li>
               <li>Lee lo que has escrito y reflexiona sobre ello.
-              </li><br>
+              </li>
               <li>Tómate un momento para agradecer el proceso de escritura.
                 .</li>
                 
@@ -99,6 +102,6 @@
         
     </main>
       <div include-html="/rutinas-de-ejercicios/includes/inicio/inicio.html"></div>
-      <script src="script.js"></script>
+      <script src="/rutinas-de-ejercicios/detalles/script.js"></script>
     </body>
     </html>

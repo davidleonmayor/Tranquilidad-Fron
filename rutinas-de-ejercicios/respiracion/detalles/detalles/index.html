@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/rutinas-de-ejercicios/detalles/detalles.css">
     <script>
       async function includeHTML() {
           const elements = document.querySelectorAll('[include-html]');
@@ -39,19 +39,23 @@
   <div include-html="/rutinas-de-ejercicios/includes/Header/header.html"></div>
   <div class="cont">
   <div class="contenedor">
-    <video autoplay muted controls width="640" height="360" class="guia">
+    <div class="guia">
+    <video autoplay muted controls width="640" height="360" class="gui">
         <source src="/rutinas-de-ejercicios/includes/videos/abdominal.mp4" type="video/mp4">
         <source src="mi-video.ogg" type="video/ogg">
         Tu navegador no soporta la reproducción de videos.
     </video>
+  
+    <button class="boton" onclick="toggleInstrucciones()">Instrucciones</button>
+  </div>
     <div class="instruccines">
     <h2> <span class="title">Instrucciones</span></h2>
     <ul>
-      <li class="one">Siéntate o acuéstate en una posición cómoda.</li><br>
-      <li>Coloca una mano en tu abdomen y la otra en tu pecho.</li><br>
-      <li>Inhala profundamente por la nariz, asegurándote de que tu abdomen se expanda y tu pecho permanezca relativamente quieto.</li><br>
-      <li>Exhala lentamente por la boca, sintiendo cómo tu abdomen se contrae.</li><br>
-      <li>Repite durante 5-10 minutos.</li><br>
+      <li class="one">Siéntate o acuéstate en una posición cómoda.</li>
+      <li>Coloca una mano en tu abdomen y la otra en tu pecho.</li>
+      <li>Inhala profundamente por la nariz, asegurándote de que tu abdomen se expanda y tu pecho permanezca relativamente quieto.</li>
+      <li>Exhala lentamente por la boca, sintiendo cómo tu abdomen se contrae.</li>
+      <li>Repite durante 5-10 minutos.</li>
     </ul>
    
 </div>
@@ -85,5 +89,6 @@
     
 </main>
 <div include-html="/rutinas-de-ejercicios/includes/inicio/inicio.html"></div>
+<script src="/rutinas-de-ejercicios/detalles/script.js"></script>
 </body>
 </html>
