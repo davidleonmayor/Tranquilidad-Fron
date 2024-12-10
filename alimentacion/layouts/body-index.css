@@ -1,77 +1,95 @@
 /* Fondo del cuerpo con marca de agua */
 body {
-    background: url('../inclued/marcaAgua.png') no-repeat center center fixed; /* Imagen no se repite */
+    background: url('../inclued/ALIMENTACION22.jpg') no-repeat center center fixed; /* Imagen no se repite */
     background-size: cover; /* La imagen cubre toda la pantalla */
     background-blend-mode: overlay; /* Mezcla la imagen con el color de fondo */
     background-color: rgba(255, 245, 220, 0.8); /* Fondo beige pálido translúcido */
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
+    overflow-x: hidden; /* Asegura que no haya desplazamiento horizontal */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Asegura que todo el contenido ocupa el alto de la pantalla */
+    margin-top: 120px;
 }
 
-/* Mantener las cartas con forma redonda y un poco de transparencia */
+/* Contenedor principal */
+main {
+    display: flex;
+    flex-wrap: wrap; /* Permite que las cartas pasen a otra línea si es necesario */
+    justify-content: center; /* Centra las cartas horizontalmente */
+    gap: 2rem; /* Espacio entre las tarjetas */
+    padding: 20px;
+    margin: auto; /* Centra el contenedor principal */
+    flex-grow: 1; /* Asegura que ocupa todo el espacio disponible */
+    align-items: center; /* Centra las cartas verticalmente */
+}
+
+/* Cartas uniformes */
 .card {
-    width: 100%;
-    max-width: 400px; /* Tamaño original de las cartas */
+    width: 300px; /* Ancho fijo para todas las cartas */
+    height: 450px; /* Altura fija para un diseño vertical */
     background: rgba(255, 255, 255, 0.85); /* Fondo semitransparente para las cartas */
-    padding: 20px; /* Mantener el padding consistente */
+    padding: 20px;
     border-radius: 25px; /* Forma redonda */
     text-align: center;
-    display: flex;
-    flex-direction: column; /* Flexbox para organizar el contenido dentro de la carta */
-    justify-content: space-between;
+    display: flex; /* Flexbox interno */
+    flex-direction: column; /* Organiza el contenido verticalmente */
+    justify-content: space-between; /* Espacia uniformemente el contenido */
     box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.1), 
                 -10px -10px 20px rgba(255, 255, 255, 0.7);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    min-height: 300px; /* Asegura que todas las cartas tengan al menos una altura mínima */
 }
 
-/* Color de texto de los párrafos en negro */
-.card p {
-    color: black; /* Asegura que el texto de las cartas sea negro */
+/* Ajuste del contenido de las cartas */
+.card img {
+    width: 100%;
+    height: 180px; /* Tamaño fijo para las imágenes */
+    object-fit: cover; /* Mantiene la proporción sin distorsión */
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
 }
 
-/* Color morado para los títulos de las cartas */
 .card h2 {
-    color: #59009A; /* Color morado para los títulos */
+    font-size: 1.4em;
+    font-weight: bold;
+    margin-bottom: auto; /* Reduce el margen inferior del título */
+    background: linear-gradient(45deg, #59009A, #e74c3c);
+    -webkit-background-clip: text;
+    color: transparent;
 }
 
-/* Efecto hover para las cartas */
+.card p {
+    color: black; /* Texto en negro */
+    margin-top: auto; /* Reduce el margen superior del párrafo */
+    margin-bottom: auto; /* Espaciado inferior controlado */
+}
+/* Efecto hover */
 .card:hover {
     transform: scale(1.05);
     box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.2), 
                 -5px -5px 20px rgba(255, 255, 255, 0.6);
 }
 
-/* Ajustar el tamaño de las imágenes dentro de las cartas */
-.card img {
-    width: 80%; /* Ajusta el tamaño de la imagen al 80% del contenedor */
-    max-width: 200px; /* Limita el tamaño máximo de las imágenes */
-    height: auto; /* Mantiene la proporción de la imagen */
-    object-fit: contain; /* Asegura que la imagen se ajuste sin distorsión */
-    margin: 0 auto; /* Centra la imagen horizontalmente */
-    display: block; /* Hace que la imagen se comporte como un bloque */
-}
-.imagen-redondeada {
-    border-radius: 15px; /* Ajusta el valor según lo redondeado que quieras */
-  }
-
-/* Responsividad intacta */
-main {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Dos columnas */
-    gap: 20px; /* Espacio entre las tarjetas */
-    padding: 20px;
-    margin-top: 160px;
-    justify-items: center; /* Centra las cartas horizontalmente */
-}
-
+/* Responsividad */
 @media (max-width: 768px) {
     main {
-        grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+        flex-direction: column; /* Una columna en pantallas pequeñas */
+        gap: 1rem; /* Reduce el espacio entre cartas */
+    }
+
+    .card {
+        width: 90%; /* Ajusta el ancho de las cartas en pantallas pequeñas */
+        height: auto; /* Deja que la altura sea dinámica */
+    }
+
+    .card img {
+        height: 150px; /* Ajusta el tamaño de la imagen en pantallas pequeñas */
     }
 
     .card p {
-        display: none; /* Oculta los párrafos en pantallas pequeñas */
+        display: none; /* Oculta párrafos en pantallas pequeñas */
     }
 }

@@ -1,6 +1,6 @@
 /* Fondo del cuerpo con marca de agua */
 body {
-    background: url('../inclued/marcaAgua.png') no-repeat center center fixed; /* Imagen no se repite */
+    background: url('../inclued/ALIMENTACION_FRUTAS.jpg') no-repeat center center fixed; /* Imagen no se repite */
     background-size: cover; /* La imagen cubre toda la pantalla */
     background-blend-mode: overlay; /* Mezcla la imagen con el color de fondo */
     background-color: rgba(255, 245, 220, 0.8); /* Fondo beige pálido translúcido */
@@ -33,7 +33,17 @@ body {
 
 /* Color morado para los títulos de las cartas */
 .card h2 {
-    color: #59009A; /* Color morado para los títulos */
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+    background: linear-gradient(45deg, #59009A, #e74c3c);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.card h3 {
+    font-size: 2 em;
 }
 
 /* Efecto hover para las cartas */

@@ -3,77 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi perfil</title>
+    <title>Tranquilidad y Bienestar</title>
     <link rel="stylesheet" href="usuario.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <script src="/FootNav/footNav.js"></script>
-    <link rel="stylesheet" href="/FootNav/footNav.css">
 </head>
 <body>
-  <div id="header-placeholder"></div>
-    <!-- menu -->
-    <!-- <header>
-        <nav class="navbar">
-          <div class="logo">
-            <a href="/inicio-de-sesion/Modulo-iniciar-sesion/home/home.html"><img src="https://i.ibb.co/4MSTbtM/2f043346-e172-4c47-b8b4-d69f213fc49e.jpg" alt="Logo de Atención Profesional"></a>
-            <span class="Profesional">perfil</span>
-          </div>
-          <div id="menu-icon" class="menu-icon">
-            <i  class="material-icons">menu</i>
-          </div>
-          <div class="servicios" >
-            <span id="serviciosIcon">Servicios</span>
-            <div class="submenu" id="serviciosSubmenu">
-              <ul>
-                <li>Biblioterapia</li>
-                <li>Arteterapia</li>
-                <li>Musicoterapia</li>
-                <li>Ejercicios</li>
-              </ul>
-            </div>
-          </div>
-          <div class="user-info">
-            <span>Juanito Alimaña</span>
-            <img id="userIcon" class="imagen-usuario" src="imagenes/logoUsuario.png" alt="Foto de perfil del usuario">
-          </div>
-        </nav>
-        <div id="userSubmenu" class="dropdown-menu">
-          <ul>
-            <li><a href="/mapa-de-suenos/Inicio/Inicio.html">Biblioterapia</a></li>
-            <li><a href="/arteterapia/html/Abstracto.html">Arteterapia</a></li>
-            <li><a href="/musicoterapia/Vistas1.1/bienvenido_a_musicoterapia.html">Musicoterapia</a></li>
-            <li><a href="/rutinas-de-ejercicios/andres/ejercicios/index.html">Ejercicios</a></li>
-            <li><a href="">Perfil</a></li>
-          </ul>
-        </div>
-      </header> -->
-    <!-- <header id="menu">
-        <div class="logo">
-            <img src="imagenes/logo.png" alt="Logo">
-            <div class="tagline"><h2>Perfil</h2></div>
-        </div>
-        <nav>
-            <ul>
-                <li class="nav-user-icon" id="serviciosIcon">
-                    <a href="#">Servicios</a>
-                    <div class="submenu" id="serviciosSubmenu">
-                        <a href="#">Alimentación</a>
-                        <a href="#">Arteterapia</a>
-                    </div>
-                </li>
-                <li><a href="#">Juanito Alimaña</a></li>
-                <li class="nav-user-icon" id="userIcon">
-                    <a href="#"><img src="imagenes/Vector.png" alt="logoUsuario"></a>
-                    <div class="submenu" id="userSubmenu">
-                        <a href="editarDatos.html">Editar perfil</a>
-                        <a href="/configuracion">Configuración</a>
-                        <a href="login.html">Cerrar Sesión</a>
-                    </div>
-                </li>
-            </ul>
-        </nav>
-    </header> -->
-    <!-- contenido -->
+  <script>
+    async function includeHTML() {
+        const elements = document.querySelectorAll('[include-html]');
+        for (let el of elements) {
+            const file = el.getAttribute('include-html');
+            try {
+                const response = await fetch(file);
+                if (response.ok) {
+                    el.innerHTML = await response.text();
+                    // Cargar el JS del footer después de insertarlo
+                    if (file.includes("header.html")) {
+                        const script = document.createElement("script");
+                        script.src = "/rutinas-de-ejercicios/includes/Header/script.js";
+                        document.body.appendChild(script);
+                    }
+                } else {
+                    el.innerHTML = "<p>Error al cargar el contenido.</p>";
+                }
+            } catch (error) {
+                el.innerHTML = "<p>Error de conexión al cargar el contenido.</p>";
+            }
+        }
+    }
+    document.addEventListener("DOMContentLoaded", includeHTML);
+</script>
+<div include-html="/rutinas-de-ejercicios/includes/Header/header.html"></div>
+ 
+   <div class="marca-agua">
     <div class="contenido">
         <div class="informacion">
             <div class="infoUsuario">
@@ -104,7 +65,8 @@
                         <a   id="editarPerfilBtn" class="boton">
                            <div class="botonimg">
                               <img src="imagenes/editar.png" alt="Editar">
-                           </div><h3>Editar</h3>
+                           </div>
+                           <h3>Editar</h3>
                        </a> 
                     </div>
                  </div>
@@ -180,10 +142,14 @@
             </div>
         </div>
     </div> 
+  </div>
    
            
    <!-- footer -->
-   <div id="footer-placeholder"></div>
+   <div include-html="/rutinas-de-ejercicios/includes/inicio/inicio.html"></div>
+
+  
+   
   
         <script src="js.js"></script> 
 </body>

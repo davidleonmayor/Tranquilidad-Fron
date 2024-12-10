@@ -9,7 +9,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background: url('../inclued/marcaAgua.png') no-repeat center center fixed; /* Imagen de marca de agua */
+    background: url('../inclued/ALIMENTACION22.jpg') no-repeat center center fixed; /* Imagen de marca de agua */
     background-size: cover; /* La imagen cubre toda la pantalla */
     background-blend-mode: overlay; /* Mezcla la imagen con el color de fondo */
     background-color: rgba(255, 245, 220, 0.8); /* Fondo translúcido */

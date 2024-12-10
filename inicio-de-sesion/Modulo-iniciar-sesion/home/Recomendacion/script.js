@@ -21,6 +21,13 @@ fetch('../Footer/Footer/inicio/inicio.html')
   document.getElementById('recommendation-img').alt = recommendation.title;
   document.getElementById('recommendation-text').textContent = recommendation.recommendation;
 
+  const carousel = document.querySelector('.video-carousel');
+
+// Agrega un evento para manejar el scroll horizontal con el mouse
+carousel.addEventListener('wheel', (event) => {
+event.preventDefault(); // Previene el scroll vertical
+carousel.scrollLeft += event.deltaY; // Ajusta el desplazamiento horizontal
+});
 
 
 

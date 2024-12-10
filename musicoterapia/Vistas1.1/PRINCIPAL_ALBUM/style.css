@@ -1,18 +1,18 @@
 
+
+/* Ajuste del título dentro de main-content */
 main {
   margin-top: 75px;
 }
-/* Estilos del contenido principal */
-/* Ajustes para el main-content manteniendo el padding lateral */
 .main-content {
   width: 75%;
-  padding: 20px 170px; /* Mantiene el padding horizontal de 190px pero reduce el vertical */
+  padding: 20px 170px;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  
 }
-
-/* Ajuste del título dentro de main-content */
 .title {
   font-size: 60px;
   margin-top: 0;
@@ -28,17 +28,70 @@ main {
   z-index: 1;
   transition: color 0.3s;
 }
-
-
-/* Ajuste del espaciado entre géneros */
 .genres {
   display: flex;
   flex-wrap: wrap;
-  gap: 0px;
-  justify-content: flex-start; /* Change from center to flex-start */
+  gap: 60px; /* Increased from 50px to 60px */
+  padding: 0 20px;
+  justify-content: center;
+}
+.genres .genre:last-child {
+  align-self: flex-start; /* Alineación vertical al inicio */
+  margin-right: auto; /* Empuja el último elemento a la izquierda */
+  margin-left: 120px; /* Asegura que no haya margen a la izquierda */
 }
 .genre {
-  width: calc(50% - 20px);
+  width: calc(50% - 25px); /* Slightly wider */
+  max-width: 400px; /* Increased from 350px to 400px */
+  margin-bottom: 20px;
+  top: -30px; /* Moved up from -20px to -30px */
+}
+.genre-card {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.1), -10px -10px 20px rgba(255, 255, 255, 0.7);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  top: -15px;
+  background: linear-gradient(145deg, #e0e0e0, #ffffff);
+}
+.genre-card img {
+  width: 100%;
+  height: 230px; /* Define un alto específico */
+  object-fit: cover;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  top: -8px;
+}
+.genre-card img {
+  width: 100%;
+  height: 200px; /* Altura más rectangular */
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  position: relative; /* Added to help with positioning */
+  top: -5px; /* Lifts the image up by 5 pixels */
+}
+.genre-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  background-color: #59009a; /* Added background color for hover */
+}
+.genre-card-content {
+  padding: 15px;
+  text-align: center;
+  color: black; /* Changed text color to black on hover */
+}
+.genre-card-content h3 {
+  margin: 10px 0;
+  font-family: "Roboto Slab", serif;
+  transition: color 0.3s ease;
+}
+.genre-card-content h3:hover {
+  color: #59009a;  /* Purple color when hovering over the title */
+}
+.genre-card-content {
+  padding: 15px;
   text-align: center;
 }
 
@@ -47,32 +100,6 @@ main {
   font-family: "Roboto Slab", serif; /* Fuente Roboto Slab para los títulos */
   transition: color 0.3s; /* Agrega una transición de color al pasar el cursor sobre el título */
 }
-.genre img {
-  width: 100%;
-  height: 230px;
-  object-fit: cover;
-  max-width: 500px;
-  border-radius: 15px;
-  box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.1), -10px -10px 20px rgba(255, 255, 255, 0.7);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.genre img:loading {
-  opacity: 0.5; /* Fade in the image as it loads */
-}
-
-.genre:hover img {
-  transform: scale(1.05);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-}
-.genres a {
-  color: inherit; /* Inherits the color from parent elements */
-  text-decoration: none; /* Removes the underline */
-}
-
-.genres a:hover {
-  color: #59009a; /* Optional: Change color on hover for visual feedback */
-}
-
 /* Estilo para el título Álbum */
 .main-content .title span {
   font-family: "Roboto", sans-serif; /* Cambia la fuente a Roboto */
@@ -99,7 +126,7 @@ main {
 @media only screen and (max-width: 768px) {
   .genre img {
     height: auto; /* Mantén la proporción */
-    display: block; /* Convierte las imágenes en elementos de bloque */
+    display: table-column; /* Convierte las imágenes en elementos de bloque */
     margin: 0 auto; /* Centra las imágenes horizontalmente */
   }
 
@@ -116,9 +143,16 @@ main {
     margin: 10px 0; /* Ajusta el espaciado vertical */
   }
 }
-
-main {
-margin-top: 75px;
+@media only screen and (max-width: 768px) {
+  .genres .genre:last-child {
+    margin-left: 120; /* Elimina el centrado */
+    align-self: flex-start; /* Alinea verticalmente al inicio */
+    margin-right: auto;
+  }
+  
+  .genres .genre:last-child img {
+    margin-left: 120; /* Asegura que la imagen no esté centrada */
+  }
 }
 .sidebar {
 margin-top: 75px;

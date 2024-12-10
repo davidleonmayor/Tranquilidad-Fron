@@ -1,6 +1,6 @@
 /* Fondo de marca de agua */
 body {
-    background: url('../inclued/marcaAgua.png') no-repeat center center fixed; /* Imagen no se repite */
+    background: url('../inclued/ALIMENTACION22.jpg') no-repeat center center fixed; /* Imagen no se repite */
     background-size: cover; /* La imagen cubre toda la pantalla */
     background-blend-mode: overlay; /* Mezcla la imagen con el color de fondo */
     background-color: rgba(255, 245, 220, 0.8); /* Fondo beige pálido translúcido */
@@ -11,7 +11,7 @@ body {
 
 /* Mantener el fondo con marca de agua y transparencia en el main */
 main {
-    padding: 20px;
+    padding: 80px;
     max-width: 1200px;
     margin: 0 auto;
     margin-top: 160px;
@@ -24,6 +24,9 @@ main {
 
 /* Estilo de la tarjeta o post */
 .post {
+    width: 80%;
+    max-width: 900px; /* Define un límite máximo */
+    margin: 10px auto; /* Centra el post horizontalmente y agrega un poco de espacio vertical */
     background-color: #fff;
     padding: 20px;
     margin-bottom: 10px;

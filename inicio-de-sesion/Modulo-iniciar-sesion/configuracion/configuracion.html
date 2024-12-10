@@ -13,8 +13,33 @@
 </head>
 
 <body>
-    <div id="header-placeholder"></div>
-   
+    <script>
+        async function includeHTML() {
+            const elements = document.querySelectorAll('[include-html]');
+            for (let el of elements) {
+                const file = el.getAttribute('include-html');
+                try {
+                    const response = await fetch(file);
+                    if (response.ok) {
+                        el.innerHTML = await response.text();
+                        // Cargar el JS del footer después de insertarlo
+                        if (file.includes("header.html")) {
+                            const script = document.createElement("scrnjm9ipt");
+                            script.src = "/rutinas-de-ejercicios/includes/Header/script.js";
+                            document.body.appendChild(script);
+                        }
+                    } else {
+                        el.innerHTML = "<p>Error al cargar el contenido.</p>";
+                    }
+                } catch (error) {
+                    el.innerHTML = "<p>Error de conexión al cargar el contenido.</p>";
+                }
+            }
+        }
+        document.addEventListener("DOMContentLoaded", includeHTML);
+    </script>
+    <div include-html="/rutinas-de-ejercicios/includes/Header/header.html"></div>
+    <div class="marca-agua">
     <main class="contenido">
         <aside class="configuracion-menu">
             <ul>
@@ -118,11 +143,11 @@
 
         </section>
     </main>
-
+</div>
     <!-- footer -->
-    <div id="footer-placeholder"></div>
+    <div include-html="/rutinas-de-ejercicios/includes/inicio/inicio.html"></div>
    
-    <script src="configuracion.js"></script>
+    <script src="/inicio-de-sesion/Modulo-iniciar-sesion/configuracion/configuracion.js"></script>
 </body>
 
 </html>

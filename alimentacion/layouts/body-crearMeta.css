@@ -1,6 +1,6 @@
 /* Fondo de marca de agua */
 body {
-    background: url('../inclued/marcaAgua.png') center center fixed; /* Imagen centrada y fija */
+    background: url('../inclued/ALIMENTACION22.jpg') center center fixed; /* Imagen centrada y fija */
     background-size: cover; /* Asegura que la imagen cubra todo el espacio */
     background-repeat: no-repeat; /* Evita que la imagen se repita */
     background-blend-mode: overlay; /* Mezcla la imagen con el fondo */
@@ -37,6 +37,13 @@ section {
 /* Títulos dentro de las secciones */
 section h2 {
     margin-top: 0;
+    font-size: 1.6em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+    background: linear-gradient(45deg, #59009A, #e74c3c);
+    -webkit-background-clip: text;
+    color: transparent;
 }
 
 /* Estilos del formulario */

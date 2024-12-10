@@ -4,7 +4,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background: url('../inclued/marcaAgua.png') no-repeat center center fixed; /* Imagen de marca de agua */
+  background: url('../inclued/ALIMENTACION22.jpg') no-repeat center center fixed; /* Imagen de marca de agua */
   background-size: cover; /* La imagen cubre toda la pantalla */
   background-blend-mode: overlay; /* Mezcla la imagen con el color de fondo */
   background-color: rgba(255, 245, 220, 0.8); /* Fondo translúcido beige */
@@ -59,7 +59,11 @@ h2 {
 .calorias {
   font-size: 2em;
   font-weight: bold;
-  color: #e74c3c;
+  color: #333;
+  margin-bottom: 10px;
+  background: linear-gradient(45deg, #59009A, #e74c3c);
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
 .description {
@@ -96,8 +100,13 @@ h2 {
   cursor: pointer;
 }
 
+.opcion button:hover {
+  background-color: #be5cb6;
+  transition: background-color 0.3s ease;
+}
+
 .opcion img {
-  width: 100px;
+  width: 170px;
   margin-bottom: 10px;
 }
 
@@ -116,12 +125,13 @@ h2 {
   cursor: pointer;
 }
 
-.acciones button:hover {
+.btn-action:hover {
   background-color: #be5cb6;
   transition: background-color 0.3s ease;
 }
 
 .btn-recomendaciones {
+  float: right;
   background-color: #59009A;
   color: white;
   padding: 10px 20px;

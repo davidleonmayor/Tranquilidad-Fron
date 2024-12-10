@@ -3,7 +3,7 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     color: #333;
-    background: url('../inclued/marcaAgua.png') no-repeat center center fixed; /* Imagen de marca de agua */
+    background: url('../inclued/ALIMENTACION22.jpg') no-repeat center center fixed; /* Imagen de marca de agua */
     background-size: cover; /* La imagen cubre toda la pantalla */
     background-blend-mode: overlay; /* Mezcla la imagen con el color de fondo */
     background-color: rgba(255, 245, 220, 0.8); /* Fondo translúcido beige */
@@ -28,7 +28,7 @@ section {
 
 /* Estilos para enlaces */
 a {
-    text-decoration: none;
+    text-decoration: none !important;
     color: #333;
 }
 
@@ -39,7 +39,13 @@ section:hover {
 
 /* Estilos para los títulos */
 h2 {
-    color: black;
+    font-size: 1.6em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+    background: linear-gradient(45deg, #59009A, #e74c3c);
+    -webkit-background-clip: text;
+    color: transparent;
 }
 
 h3 {
@@ -52,7 +58,7 @@ ul {
     padding: 0;
 }
 
-li {
+.add-goal {
     border-bottom: 1px solid #e0e0e0;
     padding: 10px 0;
 }

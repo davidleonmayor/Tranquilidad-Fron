@@ -12,7 +12,7 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #674dbc;
+    background-color: #ffff;
     height: 100vh;
 
 }
@@ -33,7 +33,7 @@ align-items: center;
 h2{
     text-align: center;
     margin-top: 20PX;
-    color: aliceblue;
+    color: #674dbc;
 }
 .contenedorParrafo {
     text-align: center;
@@ -42,10 +42,10 @@ h2{
     width: 300px;
 }
 .contenedorParrafo P{
-    color: aliceblue;
+    color: #674dbc;
 }
 button{
-    background-color: aliceblue;
+    background-color: #674dbc;
     color: rgba(151, 71, 255, 1);
     width: 150px;
     height: 40px;
@@ -70,8 +70,8 @@ button:hover{
     align-items: center;
 }
 .contenedorLogo{
-    width: 140px;
-    height: 140px;
+    width: 210px;
+    height: 110px;
     margin-bottom: 40px;
 }
 .contenedorLogo img{
@@ -96,11 +96,13 @@ button:hover{
     height:100%;
     overflow:hidden;
     /* background-color: #fafafb; */
-    background-image: url('imagenes/fondoPino.png');
+    filter: brightness(50%); /* Reduce el brillo al 50% */
+    background-image: url('/inicio-de-sesion/Modulo-iniciar-sesion/mensajes/imagenes/DALL·E\ 2024-12-05\ 19.36.49\ -\ A\ peaceful\ and\ calming\ background\ for\ a\ webpage\,\ using\ soft\ gradients\ of\ lilac\,\ lavender\,\ and\ pastel\ blues.\ The\ design\ includes\ subtle\ flowing\ waves\ a.webp')
 }
 .crearCuentaProfesional{
     display: flex;
-    background-image: url('imagenes/fondoPino.png');
+    filter: brightness(50%); /* Reduce el brillo al 50% */
+    background-image: url('/inicio-de-sesion/Modulo-iniciar-sesion/login/imagenes/DALL·E\ 2024-12-05\ 19.36.49\ -\ A\ peaceful\ and\ calming\ background\ for\ a\ webpage\,\ using\ soft\ gradients\ of\ lilac\,\ lavender\,\ and\ pastel\ blues.\ The\ design\ includes\ subtle\ flowing\ waves\ a.webp');
     flex-direction: column;
     justify-content: center;
     align-items: center;

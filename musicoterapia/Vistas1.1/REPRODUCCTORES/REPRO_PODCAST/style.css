@@ -6,15 +6,15 @@
         
         }
         /* ESTILOS DE VIDEO */
-        * .video-container {
+         .video-container {
         position: relative;
         width: 550px; /* Ancho de un smartphone típico */
-        height: 750px; /* Altura de un smartphone típico */
+        height: 650px; /* Altura de un smartphone típico */
         overflow: hidden;
         background-color: white;
         border-radius: 30px; /* Bordes más redondeados */
         box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
-        margin: 50px auto; /* Centrar horizontalmente */
+        margin: 42px auto; /* Centrar horizontalmente */
         border: 10px solid #121212; /* Borde grueso para destacar */
         outline: 4px solid #333; /* Contorno adicional */
         transform: scale(1.05); /* Ligero escalado para dar más presencia */
@@ -148,6 +148,49 @@
                     right: 10px;
                 }
             
+                .video-volume-controls {
+                  position: absolute;
+                  bottom: 20px;
+                  left: 20px;
+                  display: flex;
+                  align-items: center;
+                  gap: 10px;
+                  z-index: 10;
+                  color: white;
+              }
+              
+              .volume-button {
+                  background: none;
+                  border: none;
+                  color: white;
+                  font-size: 24px;
+                  cursor: pointer;
+                  transition: all 0.3s ease;
+              }
+              
+              .volume-slider {
+                  width: 100px;
+                  -webkit-appearance: none;
+                  background: rgba(255,255,255,0.3);
+                  outline: none;
+                  opacity: 0.7;
+                  transition: opacity 0.2s;
+                  border-radius: 5px;
+              }
+              
+              .volume-slider::-webkit-slider-thumb {
+                  -webkit-appearance: none;
+                  appearance: none;
+                  width: 15px;
+                  height: 15px;
+                  background: white;
+                  cursor: pointer;
+                  border-radius: 50%;
+              }
+              
+              .volume-button:hover {
+                  transform: scale(1.1);
+              }
         /* FIN DE LOS ESTILOS DEL MENU */
           
         /* ESTILOS DEL MENU */
@@ -440,7 +483,7 @@
         width: 25%;
         background-color: #c7b7fe49;
         padding: 20px;
-        padding-top: 108px;
+        padding-top: 190px;
         }
         
         .sidebar .menu-item {

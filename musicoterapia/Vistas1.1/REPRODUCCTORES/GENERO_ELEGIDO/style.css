@@ -23,7 +23,7 @@
           }
       /* Barra lateral */
       .sidebar {
-        width: 80px;
+        width: 90px;
         background-color: #c7b7fe49;
         padding: 20px;
         transition: width 0.0s ease;
@@ -31,7 +31,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding-top: 100px; /* Añadido para bajar los botones */
+        padding-top: 190px; /* Añadido para bajar los botones */
       }
       
       /* Estilos de la barra lateral al pasar el ratón */
@@ -318,17 +318,16 @@
             cursor: pointer;
           }
       
-          /* Estilos del contenedor de pistas */
           .tracks-container {
-        width: 45%;
-        border: 1px solid #ccc;
-        border-radius: 10px;
-        transform: translateX(-70px);
-        padding: 10px;
-        background: transparent;
-        overflow-y: auto;
-      
-      }
+            width: 45%;
+            border: 1px solid #8C4FCC; /* Lighter purple border */
+            border-radius: 10px;
+            transform: translateX(-70px);
+            padding: 10px;
+            background: transparent;
+            overflow-y: auto;
+        }
+          
           /* Estilos generales de cada pista */
           .track {
             display: flex;
@@ -452,19 +451,22 @@
       
           /* Estilos para la barra de progreso */
       
-          /* Barra de progreso general */
-          #progress-bar {
-            -webkit-appearance: none;
-            appearance: none;
-            width: 100%;
-            height: 11px;
-            border-radius: 5px;
-            background: linear-gradient(to right, #e1bee7 0%, #e1bee7 100%);
-            /* Fondo inicial */
-            outline: none;
-            transition: background 0.3s ease-in-out;
-            cursor: pointer;
-          }
+
+
+/* Barra de progreso general */
+#progress-bar {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 11px;
+  border-radius: 5px;
+  background: linear-gradient(to right, #d6a7d8 0%, #d6a7d8 100%);
+  /* Fondo inicial */
+  outline: none;
+  transition: background 0.3s ease-in-out;
+  cursor: pointer;
+}
+
       
           /* Parte que ya ha sido reproducida (el thumb no cambia) */
           #progress-bar::-webkit-slider-runnable-track {
@@ -677,7 +679,7 @@
       @media only screen and (max-width: 768px) {
         .container {
           flex-direction: column;
-          padding: 10px;
+          padding: 60px;
         }
       
         .sidebar {
@@ -745,5 +747,24 @@
           margin: 10px auto; /* Mantener centrado */
           text-align: center;
         }
+        .sidebar .menu-item {
+          width: 96%; 
+          margin: 6px 0; 
+          padding: 10px;
+          display: flex;
+          justify-content: center; /* Ya existente */
+          align-items: center; /* Añade esta línea para centrar verticalmente */
+        }
+      
+        .sidebar .menu-item img {
+          width: 20px;
+          height: 20px;
+          margin-right: 12px;
+          display: block; /* Asegura que la imagen se comporte como un bloque */
+          margin-left: auto; /* Centra horizontalmente */
+          margin-right: auto; /* Centra horizontalmente */
+        }
       }
       
+      
+     

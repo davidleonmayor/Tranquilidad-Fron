@@ -7,13 +7,41 @@
     <title>Tranquilidad y Bienestar</title>
     <link rel="stylesheet" href="home.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
+    <script>
+        async function includeHTML() {
+            const elements = document.querySelectorAll('[include-html]');
+            for (let el of elements) {
+                const file = el.getAttribute('include-html');
+                try {
+                    const response = await fetch(file);
+                    if (response.ok) {
+                        el.innerHTML = await response.text();
+                        // Cargar el JS del footer después de insertarlo
+                        if (file.includes("header.html")) {
+                            const script = document.createElement("scrnjm9ipt");
+                            script.src = "/rutinas-de-ejercicios/includes/Header/script.js";
+                            document.body.appendChild(script);
+                        }
+                    } else {
+                        el.innerHTML = "<p>Error al cargar el contenido.</p>";
+                    }
+                } catch (error) {
+                    el.innerHTML = "<p>Error de conexión al cargar el contenido.</p>";
+                }
+            }
+        }
+        document.addEventListener("DOMContentLoaded", includeHTML);
+    </script>
+    
 </head>
+
+
 <body>
     <!-- Lugar donde se cargará el header -->
-    <div id="header-container"></div>
-
+    <div include-html="/rutinas-de-ejercicios/includes/Header/header.html"></div>
     <br>
     <br><br>
+    <div class="marca-agua">
     <main class="main-content">
 
 
@@ -140,8 +168,9 @@
                 &#9650; <!-- Código de flecha hacia arriba -->
             </div>
     </main>
+</div>
     <!-- Lugar donde se cargará el footer -->
-  <div id="footer-container"></div>
+    <div include-html="/rutinas-de-ejercicios/includes/inicio/inicio.html"></div>
     <script src="script.js"></script>
     <script src="home.js"></script>
     <script src="/inicio-de-sesion/Modulo-iniciar-sesion/Header/Header/script.js"></script>

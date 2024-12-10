@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Álbumes de Musicoterapia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    main {
+      margin-top: 75px;
+    }
+    .main-content {
+      width: 75%;
+      padding: 20px 170px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .title {
+      font-size: 60px;
+      margin-top: 0;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      font-family: "Roboto Slab", serif;
+    }
+    .title span {
+      position: relative;
+      z-index: 1;
+      transition: color 0.3s;
+    }
+    .genres {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 60px;
+      justify-content: center;
+      padding: 0 20px;
+    }
+    .genre {
+      width: calc(50% - 25px);
+      max-width: 400px;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: center;
+    }
+    .genre:last-child {
+      align-self: flex-start;
+      margin-left: 0;
+      justify-content: flex-start;
+    }
+    .genre-card {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.1), -10px -10px 20px rgba(255, 255, 255, 0.7);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      background: linear-gradient(145deg, #e0e0e0, #ffffff);
+    }
+    .genre-card img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      top: -8px;
+    }
+    .genre-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+      position: relative;
+      top: -5px;
+    }
+    .genre-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+    .genre-card-content {
+      padding: 15px;
+      text-align: center;
+    }
+    .genre-card-content h3 {
+      margin: 10px 0;
+      font-family: "Roboto Slab", serif;
+      transition: color 0.3s ease;
+    }
+  </style>
+</head>
+<body>
+  <main class="main-content">
+    <div class="title">
+      <span>Álbum</span>
+      <br><br>
+    </div>
+    <div class="genres">
+      <div class="genre">
+        <div class="genre-card">
+          <a href="/musicoterapia/Vistas1.1/REPRODUCCTORES/ALBUM_ELEGIDO/album_elegido.html?albumsId=1">
+            <img src="/musicoterapia/Vistas1.1/images/DORMIR-2.png" alt="Dormir" onerror="this.onerror=null;this.src='img/placeholder.png';"/>
+            <div class="genre-card-content">
+              <h3>Dormir</h3>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="genre">
+        <div class="genre-card">
+          <a href="/musicoterapia/Vistas1.1/REPRODUCCTORES/ALBUM_ELEGIDO/album_elegido.html?albums=2">
+            <img src="/musicoterapia/Vistas1.1/images/RELAJACION 2.jpg" alt="Relajarse" onerror="this.onerror=null;this.src='img/placeholder.png';"/>
+            <div class="genre-card-content">
+              <h3>Relajarse</h3>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="genre">
+        <div class="genre-card">
+          <a href="/musicoterapia/Vistas1.1/REPRODUCCTORES/ALBUM_ELEGIDO/album_elegido.html?albums=3">
+            <img src="/musicoterapia/Vistas1.1/images/CONCENTRASE.png" alt="Concentrarse" onerror="this.onerror=null;this.src='img/placeholder.png';"/>
+            <div class="genre-card-content">
+              <h3>Concentrarse</h3>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="genre">
+        <div class="genre-card">
+          <a href="/musicoterapia/Vistas1.1/REPRODUCCTORES/ALBUM_ELEGIDO/album_elegido.html?albums=4">
+            <img src="/musicoterapia/Vistas1.1/images/GAMER 2.webp" alt="Gamer" onerror="this.onerror=null;this.src='img/placeholder.png';"/>
+            <div class="genre-card-content">
+              <h3>Gamer</h3>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="genre" style="align-self: flex-start; margin-left: 0;">
+        <div class="genre-card">
+          <a href="/musicoterapia/Vistas1.1/REPRODUCCTORES/ALBUM_ELEGIDO/album_elegido.html?albums=5">
+            <img src="/musicoterapia/Vistas1.1/images/RELAJARSE 3.png" alt="Meditar" onerror="this.onerror=null;this.src='img/placeholder.png';"/>
+            <div class="genre-card-content">
+              <h3>Meditar</h3>
