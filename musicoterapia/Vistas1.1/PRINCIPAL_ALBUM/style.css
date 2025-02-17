@@ -1,18 +1,195 @@
-
-
-/* Ajuste del título dentro de main-content */
-main {
-  margin-top: 75px;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-.main-content {
-  width: 75%;
-  padding: 20px 170px;
-  overflow-y: auto;
+
+
+
+
+
+body {
+  font-family: sans-serif;
+
+  padding: 0;
+  width: 100%;
+  left: 0%;
+
+}
+
+
+
+/* Contenido del body */
+
+.imag {
+  width: 100%;
+  max-width: 24.5625rem; /* 393px -> 24.5625rem */
+  height: auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 2;
+}
+
+.imag:hover {
+  cursor: pointer;
+  transform: translateY(-0.625rem); /* 10px -> 0.625rem */
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); /* 8px 16px -> 0.5rem 1rem */
+}
+
+.img {
+  margin: 1.25rem; /* 20px -> 1.25rem */
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: #59009A;
+}
+
+.imagen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 70px;
+}
+
+
+.sidebar {
+  width: 500px;
+  background-color: #d2b7fecc;
+  padding: 20px;
+  transition: width 0.0s ease;
+  margin-right: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 20px;
+
+}
+
+  /* Modified for smoother transition */
+
+.sidebar .menu-item {
+  padding: 10px; /* Ajustado de 12px a 10px */
+  margin: 8px 0; /* Reducido de 15px a 8px */
+  background: #fff;
+  border-radius: 15px;
+  align-items: center;
+  transition: background 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+.sidebar .menu-item.active,
+.sidebar .menu-item:hover {
+  background:  #ba7fe7;;
+
+  transform: scale(1.05);
+}
+
+.sidebar .menu-item img {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+
+.sidebar .menu-item a {
+  display: flex;
+  align-items: center;
+  color: inherit;
+  text-decoration: none;
+  justify-content: center;
+}
+
+.sidebar .menu-item span {
+  flex-grow: 1;
+  text-align: center;
+  font-size: 16px;
+}
+
+
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  font-family: sans-serif;
+  margin-top: 80px;
+  margin-bottom: -80px;
+  z-index: 2;
   
 }
+
+.part1 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.part2 {
+  margin-bottom: 60px; /* 60px -> 3.75rem */
+}
+
+
+
+/* Estilos Globales */
+
+
+  /* no poner nada, daña el todo, llamas a body y afecta a todos los body */
+
+/* Header */
+
+
+
+
+@media (max-width: 768px) {
+
+  .imagen{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .part1{
+    margin-left: 20px;
+    width: 100%;
+    align-items: center;
+  }
+
+  /* Ajustes adicionales para el contenido dentro del container */
+  .cal, .datepicker, .historial {
+    width: 100%; /* Asegura que los elementos ocupen el 100% del ancho del contenedor */
+    margin-right: 0;
+  }
+  .cal{
+    flex-direction: column;
+  }
+}
+
+.marca-agua::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/rutinas-de-ejercicios/includes/woman-digital-disconnecting-home-by-doing-yoga.jpg'); /* Cambia la URL por tu imagen */
+  background-size: cover; /* Ajusta la imagen para cubrir todo el contenedor */
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.5; /* Ajusta la transparencia de la marca de agua */
+  z-index: 1;
+}
+/* Estilos del contenido principal */
+/* Ajustes para el main-content manteniendo el padding lateral */
+.main-content {
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  margin-top: 70px; /* Mantiene el margen superior */
+  margin-bottom: 40px; /* Añade un poco de espacio con el footer */
+  padding-bottom: 20px; /* Agrega espacio interno para evitar que se pegue demasiado */
+}
+
+/* Ajuste del título dentro de main-content */
 .title {
   font-size: 60px;
   margin-top: 0;
@@ -28,22 +205,22 @@ main {
   z-index: 1;
   transition: color 0.3s;
 }
+
+
+/* Ajuste del espaciado entre géneros */
 .genres {
   display: flex;
   flex-wrap: wrap;
   gap: 60px; /* Increased from 50px to 60px */
-  padding: 0 20px;
   justify-content: center;
+  padding: 0 20px;
 }
-.genres .genre:last-child {
-  align-self: flex-start; /* Alineación vertical al inicio */
-  margin-right: auto; /* Empuja el último elemento a la izquierda */
-  margin-left: 120px; /* Asegura que no haya margen a la izquierda */
-}
+
 .genre {
   width: calc(50% - 25px); /* Slightly wider */
   max-width: 400px; /* Increased from 350px to 400px */
   margin-bottom: 20px;
+  position: relative;
   top: -30px; /* Moved up from -20px to -30px */
 }
 .genre-card {
@@ -56,6 +233,7 @@ main {
   top: -15px;
   background: linear-gradient(145deg, #e0e0e0, #ffffff);
 }
+
 .genre-card img {
   width: 100%;
   height: 230px; /* Define un alto específico */
@@ -64,6 +242,7 @@ main {
   position: relative;
   top: -8px;
 }
+
 .genre-card img {
   width: 100%;
   height: 200px; /* Altura más rectangular */
@@ -75,803 +254,225 @@ main {
 .genre-card:hover {
   transform: scale(1.05);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  background-color: #59009a; /* Added background color for hover */
+  color: #59009a; /* Optional: Change color on hover for visual feedback */
 }
+
 .genre-card-content {
   padding: 15px;
   text-align: center;
-  color: black; /* Changed text color to black on hover */
 }
+
 .genre-card-content h3 {
   margin: 10px 0;
   font-family: "Roboto Slab", serif;
   transition: color 0.3s ease;
 }
-.genre-card-content h3:hover {
-  color: #59009a;  /* Purple color when hovering over the title */
-}
-.genre-card-content {
-  padding: 15px;
-  text-align: center;
-}
-
-.genre h3 {
-  margin-bottom: 10px;
-  font-family: "Roboto Slab", serif; /* Fuente Roboto Slab para los títulos */
-  transition: color 0.3s; /* Agrega una transición de color al pasar el cursor sobre el título */
-}
-/* Estilo para el título Álbum */
-.main-content .title span {
-  font-family: "Roboto", sans-serif; /* Cambia la fuente a Roboto */
-}
-
-/* Estilo para el título Álbum */
-.main-content .title span {
-  font-family: "Roboto", sans-serif; /* Cambia la fuente a Roboto */
-}
-
-
- /* TITULO PRINCIPAL  */
- .title {
-  font-size: 60px;
-  margin-top: 40px; /* Aumenté de 0 a 50px para bajarlo */
-  margin-bottom: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  font-family: "Roboto Slab", serif;
-}
-
 @media only screen and (max-width: 768px) {
-  .genre img {
-    height: auto; /* Mantén la proporción */
-    display: table-column; /* Convierte las imágenes en elementos de bloque */
-    margin: 0 auto; /* Centra las imágenes horizontalmente */
-  }
-
-  .genres {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; /* Asegura que el contenedor centre sus hijos */
-    align-items: center;
-  }
-
-  .genre {
-    width: 100%; /* Asegura que el contenedor de la imagen ocupe todo el ancho disponible */
-    text-align: center; /* Centra el texto y otros elementos */
-    margin: 10px 0; /* Ajusta el espaciado vertical */
-  }
-}
-@media only screen and (max-width: 768px) {
-  .genres .genre:last-child {
-    margin-left: 120; /* Elimina el centrado */
-    align-self: flex-start; /* Alinea verticalmente al inicio */
-    margin-right: auto;
-  }
-  
-  .genres .genre:last-child img {
-    margin-left: 120; /* Asegura que la imagen no esté centrada */
-  }
-}
-.sidebar {
-margin-top: 75px;
-padding: 20px;
-}
-
-
-.sidebar .menu-item {
-margin: 15px 0;
-}
-.sidebar .menu-item:first-child {
-margin-top: 30px;
-}
-
-/* Estilos del contenedor principal */
-.container {
-display: flex;
-height: calc(100vh - 126px);
-}
-
-/* Estilos de la barra lateral */
-.sidebar {
-width: 25%;
-background-color: #c7b7fe49;
-padding: 20px;
-}
-
-/* Estilos de los elementos del menu en la barra lateral */
-.sidebar .menu-item {
-padding: 12px;
-margin: 10px 0;
-background: #fff;
-border-radius: 15px;
-transition: background 0.3s ease;
-}
-
-/* Estilos de los elementos del menú cuando están activos o al pasar el ratón */
-.sidebar .menu-item.active,
-.sidebar .menu-item:hover {
-background: linear-gradient(#ffffff, #9c76c1);
-box-shadow: 1px 5px 10px 0.1px rgb(145, 145, 145);
-}
-
-/* Estilos de las imágenes dentro de los elementos del menú */
-.sidebar .menu-item img {
-width: 24px;
-height: 24px;
-margin-right: 10px;
-}
-
-/* Estilos de los enlaces dentro de los elementos del menú */
-.sidebar .menu-item a {
-display: flex;
-align-items: center;
-color: inherit;
-text-decoration: none;
-justify-content: center;
-}
-
-/* Estilos del texto dentro de los elementos del menú */
-.sidebar .menu-item span {
-flex-grow: 1;
-text-align: center;
-font-size: 16px;
-}
-/* Centrar el título de géneros */
-.title {
-text-align: center;
-margin-left: 0;
-margin-right: 0;
-width: 100%;
-justify-content: center;
-}
-
-      /* --------------------------- */
-  
-  
-    /* Estilos del contenedor de pistas */
-    .tracks-container {
+  .sidebar {
       width: 100%;
-      border: 1px solid #ccc;
-      border-radius: 10px;
-      padding: 10px;
-      background: url();
-      border-radius: 15px;
-      align-items: center;
-      transition: background 0.3s ease, transform 0.3s ease;
-      cursor: pointer;
-      
-    }
-
-    /* Estilos generales de cada pista */
-    .track {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 10px;
-      border-bottom: 1px solid #ccc;
-    }
-
-    /* Elimina el borde inferior de la última pista */
-    .track:last-child {
-      border-bottom: none;
-    }
-
-    /* Estilos de las imágenes de las pistas */
-    .track img {
-      height: 50px;
-      width: 50px;
-      border-radius: 5px;
-    }
-
-    /* Estilos de los divs dentro de cada pista */
-    .track div {
-      padding: 0 20px;
-    }
-
-    /* Estilos de los enlaces de los botones de reproducción */
-    .track a.play-button {
-      background: white;
-      border: 2px solid black;
-      border-radius: 50%;
-      width: 40px;
-      height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      cursor: pointer;
-      position: relative;
-      color: black;
-    }
-
-    /* Estilos del triángulo dentro del botón de reproducción */
-    .track a.play-button::before {
-      content: '';
-      width: 0;
-      height: 0;
-      border-style: solid;
-      border-width: 10px 0 10px 16px;
-      border-color: transparent transparent transparent black;
-      position: absolute;
-      left: 13px;
-    }
-
-
-
-/* ------------------------------------------------------------- */
-/* Estilos del contenedor principal */
-.container {
-  display: flex;
-  min-height: calc(100vh - 126px);
-}
-
-/* Estilos de la barra lateral */
-.sidebar {
-  width: 25%;
-  background-color: #c7b7fe49;
-  padding: 20px;
-}
-
-/* Estilos de los elementos del menu en la barra lateral */
-.sidebar .menu-item {
-  padding: 12px;
-  margin: 10px 0;
-  background: #fff;
-  border-radius: 15px;
-  transition: background 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
-/* Estilos de los elementos del menú cuando están activos o al pasar el ratón */
-.sidebar .menu-item.active,
-.sidebar .menu-item:hover {
-  background:  #ba7fe7;;
-    box-shadow:   #59009A;
-  }; /* Elimina las sombras */
-
-
-/* Estilos de las imágenes dentro de los elementos del menú */
-.sidebar .menu-item img {
-  width: 24px;
-  height: 24px;
-  margin-right: 15px;
-  display: inline-block;
-  vertical-align: middle;
-}
-
-/* Estilos de los enlaces dentro de los elementos del menú */
-.sidebar .menu-item a {
-  display: flex;
-  align-items: center;
-  color: inherit;
-  text-decoration: none;
-  width: 100%;
-}
-
-/* Estilos del texto dentro de los elementos del menú */
-.sidebar .menu-item span {
-  font-size: 16px;
-  white-space: nowrap;
-  margin-left: 5px;
-}
-
-  body {
-    padding-top: 60px; /* Reducido de 100px a 60px */
+      max-width: 450px;
+      margin-top: 150px; /* Aumentado para dar más espacio */
+      padding: 20px 15px;
+      border-radius: 25px;
+      border: 2px solid #59009A;
+      box-sizing: border-box;
   }
-
-
-
-/* Media queries mejorados para responsive */
-@media only screen and (max-width: 768px) {
-  .container {
-    flex-direction: column;
-    align-items: center; /* Centrado del contenedor principal */
-    padding: 10px;
+     
+  .sidebar .menu-item {
+      padding: 8px; /* Reducido de 10px a 8px */
+      margin: 6px 0; /* Menos espacio entre elementos */
+      font-size: 14px; /* Disminuir el tamaño del texto */
   }
-
-  .main-content {
-    width: 100%;
-    max-width: 95%; /* Limita el ancho máximo en móvil */
-    margin: 0 auto; /* Centrado horizontal */
-    padding: 10px;
-  }
-
-/* Media queries mejorados para responsive */
-@media only screen and (max-width: 768px) {
-  .container {
-    flex-direction: column;
-    align-items: center; /* Centrado del contenedor principal */
-    padding: 10px;
-  }
-
-  .main-content {
-    width: 100%;
-    max-width: 95%; /* Limita el ancho máximo en móvil */
-    margin: 0 auto; /* Centrado horizontal */
-    padding: 10px;
-  }
-
-  .genre img {
-    width: 60%;
-    height: auto;
-    display: block; /* Mejora el centrado de la imagen */
-      margin: 0 auto; /* Centra las imágenes horizontalmente */
-  }
-
-  .title {
-    font-size: 32px; /* Ajuste del tamaño del título para pantallas muy pequeñas */
-  }
-}
-}
-/* Modificar el espaciado de los elementos del menu en la barra lateral */
-
-.sidebar .menu-item {
-    padding: 12px;
-    margin: 8px 0; /* Reducido a 8px para un espaciado más compacto y uniforme */
-    background: #fff;
-    border-radius: 15px;
-    transition: background 0.3s ease;
-}
-.sidebar {
-    width: 25%;
-    background-color: #c7b7fe49;
-    padding: 20px;
-    padding-top: 108px; /* Reducido de 100px a 60px para un espaciado más moderado */
-}
-/* RESPONSIVE */
-/* Estilos base del contenedor */
-.container {
-  display: flex;
-  min-height: calc(100vh - 126px);
-}
-
-/* Estilos de la barra lateral */
-.sidebar {
-  width: 25%;
-  background-color: #c7b7fe49;
-  padding: 20px;
-  padding-top: 108px;
-}
-
-/* Estilos de los elementos del menu */
-.sidebar .menu-item {
-  padding: 12px;
-  margin: 8px 0;
-  background: #fff;
-  border-radius: 15px;
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-}
-
-/* Media queries mejorados para dispositivos móviles */
-@media only screen and (max-width: 768px) {
-  .container {
-    flex-direction: column;
-    padding: 10px;
-  }
-
-  .sidebar {
-    width: 100%;
-    max-width: 450px;
-    margin: 0 auto;
-    padding: 15px;
-    padding-top: 70px; /* Reducido para móviles */
-    border-radius: 20px;
-    border: 2px solid #59009A;
-  }
-
-  .menu-item {
-    margin: 6px 0 !important; /* Espaciado más compacto en móvil */
-    padding: 10px !important;
-  }
-
+  
   .sidebar .menu-item img {
-    width: 20px; /* Iconos ligeramente más pequeños en móvil */
-    height: 20px;
-    margin-right: 12px;
+      width: 20px; /* Reducido de 24px a 20px */
+      height: 20px;
+      margin-right: 8px;
   }
-
+  
   .sidebar .menu-item span {
-    font-size: 14px; /* Texto ligeramente más pequeño en móvil */
-  }
-
-  /* Mejoras de interacción táctil */
-  .sidebar .menu-item:active {
-    transform: scale(0.98);
-    background: linear-gradient(#ffffff, #9c76c1);
+      font-size: 14px; /* Ajuste para que se vea proporcionado */
   }
 }
-
-/* Ajustes para pantallas muy pequeñas */
-@media only screen and (max-width: 480px) {
-  .sidebar {
-    max-width: 100%;
-    padding: 12px;
-    padding-top: 60px;
-  }
-
-  .menu-item {
-    margin: 4px 0 !important;
-    padding: 8px !important;
-  }
-
-  .sidebar .menu-item span {
-    font-size: 13px;
-  }
-}
-/* NUEVOS ESTILOS Y RESPOSIVE */
-/* Estilos base del contenedor */
-.container {
-  display: flex;
-  min-height: calc(100vh - 126px);
-}
-
-/* Estilos de la barra lateral */
-.sidebar {
-  width: 25%;
-  background-color: #c7b7fe49;
-  padding: 20px;
-  padding-top: 108px;
-}
-
-.sidebar .menu-item {
-  padding: 12px;
-  margin: 10px 0;
-  background: #fff;
-  border-radius: 15px;
-  transition: background 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
-
-
-
-
-/* Estilos base de la barra lateral */
-.sidebar {
-  width: 25%;
-  background-color: #c7b7fe49;
-  padding: 20px;
-  padding-top: 108px;
-}
-
-.sidebar .menu-item {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 12px;
-  margin: 10px 0;
-  background: #fff;
-  border-radius: 15px;
-  transition: background 0.3s ease;
-}
-
-/* Efectos hover y active */
-.sidebar .menu-item.active,
-.sidebar .menu-item:hover {
-  background: #ba7fe7;
-  transform: scale(1.05);
-}
-
-/* Media queries para móvil */
-@media only screen and (max-width: 768px) {
-  .container {
-    flex-direction: column;
-    padding: 10px;
-    height: auto;
+  
+  @media only screen and (max-width: 768px) {
+      .container {
+      flex-direction: column;
+      height: auto;
+      margin: 0 auto;
+      padding: 20px;
+      max-width: 95%;
+      min-height: calc(100vh - 126px);
+      align-items: center; /* Centrado del contenedor principal */
+      }
+      .main-content {
+    width: 100%;
+    padding: 20px;
+    margin-top: 20px;
     margin: 0 auto;
     max-width: 95%;
   }
-
-  .sidebar {
-    width: 100%;
-    max-width: 450px;
-    margin: 120px auto 20px auto; /* Aumentado significativamente el margen superior */
-    padding: 20px 15px;
-    border-radius: 25px;
-    border: 2px solid #59009A;
-    box-sizing: border-box;
-  }
+          
+          .genres {
+              width: 100%;
+              justify-content: center;
+              gap: 15px;
+              padding: 0;
+              display: flex;
+               flex-wrap: wrap;
+          }
+          .title {
+              font-size: 40px; /* Reducido para móvil */
+              margin: 20px 0;
+              text-align: center;
+              width: 100%;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              font-family: "Roboto Slab", serif;
+              padding: 0;
+  box-sizing: border-box;
 }
 
-  /* Media queries para móvil */
-  
-  @media only screen and (max-width: 768px) {
-    .container {
-      flex-direction: column;
-      padding: 10px;
-      height: auto;
-      margin: 0 auto;
-      max-width: 95%;
-    }
   }
-  /* Media queries mejorados para responsive */
-  @media only screen and (max-width: 768px) {
-  .container {
-  flex-direction: column;
-  align-items: center; /* Centrado del contenedor principal */
-  padding: 10px;
-  }
-  .genres {
+* {
+  box-sizing: border-box;
+}
+ /* Asegurar que las imágenes mantengan su forma */
+ .genre-card img {
+  height: auto; /* Mantiene proporciones */
+  max-height: 230px; /* Para evitar que se estiren */
+}
+.genre-card-content h3 {
+color: black; /* Color negro por defecto */
+transition: color 0.3s ease;
+}
+
+.genre-card:hover .genre-card-content h3 {
+color: #59009A; /* Color morado al hacer hover */
+}
+/* Manejo específico del espaciado para alineación perfecta */
+.genres::after {
+content: '';
+flex: 0 0 calc(45% - 30px); /* Ajuste flex-grow a 0 para control preciso */
+visibility: hidden; /* Oculto pero mantiene el espacio */
+
+}
+@media only screen and (max-width: 768px) {
+.genres {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 15px;
   width: 100%;
-  justify-content: center;
+}
+
+.genre {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  top: 0;
+}
+
+.genre-card {
+  height: 100%;
+}
+
+.genre-card img {
+  height: 150px;
+}
+
+.genre-card-content h3 {
+  font-size: 14px;
+}
+}
+
+@media only screen and (max-width: 480px) {
+.genres {
+  grid-template-columns: repeat(2, 1fr);
   gap: 15px;
-  padding: 0;
-  }
-  
-  .genre {
-  width: calc(50% - 10px);
-  margin: 0 auto 15px; /* Centrado y espacio inferior */
-  max-width: 300px; /* Limita el ancho máximo de cada género */
-  }
-  
-  .genre img {
-  width: 100%;
-  height: auto;
-  display: block; /* Mejora el centrado de la imagen */
-  margin: 0 auto 10px; /* Centrado y espacio inferior */
-  }
-  
-  .sidebar {
-  width: 95%;
-  margin: 0 auto 20px; /* Centrado y espacio inferior */
   padding: 10px;
-  }
-  
-  .title {
-  width: 100%;
-  text-align: center;
-  margin: 15px auto; /* Centrado y espacio vertical */
-  }
-  }
-  /* Para pantallas muy pequeñas */
-  @media only screen and (max-width: 480px) {
-  .main-content {
-  max-width: 100%;
-  padding: 5px;
-  }
-  
-  .genres {
-  gap: 10px;
-  }
-  
-  .genre {
-  width: calc(50% - 5px);
-  max-width: 250px; /* Ajuste para pantallas muy pequeñas */
-  }
-  
-  .title {
-  font-size: 32px; /* Ajuste del tamaño del título para pantallas muy pequeñas */
-  }
-  }
-  
-  /* Media queries mejorados */
-  @media only screen and (max-width: 768px) {
-  .container {
-  flex-direction: column;
-  min-height: calc(100vh - 126px);
-  padding-bottom: 60px; /* Espacio para el footer */
-  }
-  
-  .sidebar {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 0;
-  }
-  
-  .title {
-  font-size: 40px;
-  margin: 15px 0;
-  text-align: center;
-  }
-  
-  /* Mantenemos el comportamiento original de los géneros */
-  .genre {
+}
+
+.genre-card img {
+  height: 120px;
+}
+}
+
+
+/* Ensure consistent spacing at larger screens */
+@media screen and (min-width: 769px) {
+.genres {
+  gap: 40px;
+  padding: 0 20px;
+}
+
+.genre {
   width: calc(50% - 20px);
-  }
-  
-  
-  /* Ajustes para el menú en móvil */
-  .nav {
-  position: relative;
-  }
-  
-  .submenu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  max-width: 100vw;
-  z-index: 1000;
-  }
-  
-  .submenu ul {
-  width: 100%;
-  }
-  
-  .submenu li {
+  margin-bottom: 40px;
+}
+}
+/* Card Grid Layout */
+.genres {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(calc(50% - 30px), 1fr));
+gap: 40px;
+padding: 20px;
+width: 100%;
+max-width: 1200px;
+margin: 0 auto;
+}
+
+.genre {
+width: 100%;
+margin: 0;
+position: relative;
+}
+
+.genre-card img {
+width: 100%;
+height: 200px;
+object-fit: cover;
+}
+
+.genre-card-content {
+padding: 15px;
+text-align: center;
+flex-grow: 1;
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+
+.genre-card:hover {
+transform: scale(1.05);
+box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+.genres {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
   padding: 15px;
-  text-align: center;
-  }
-  
-  
-  }
-  
-  
-  
-  @media only screen and (max-width: 768px) {
-  body {
-  padding-top: 100px;
-  }
-  
-  .container {
-  flex-direction: column;
-  height: auto;
-  margin: 0 auto;
-  padding: 20px;
-  max-width: 95%;
-  }
-  
-  .main {
-  width: 100%;
-  padding: 20px;
-  margin: 0 auto;
-  }
-  
-  .content {
-  flex-direction: column;
-  align-items: center;
-  }
-  
-  .player {
-  width: 90%;
-  max-width: 100%;
-  margin: 20px auto;
-  padding: 15px;
-  border: 2px solid #59009A;
-  border-radius: 15px;
-  }
-  
-  .tracks-container {
-  width: 90%;
-  max-width: 100%;
-  margin: 20px auto;
-  border: 2px solid #59009A;
-  border-radius: 15px;
-  padding: 15px;
-  transform: translateX(0);
-  }
-  
-  .title {
-  font-size: 35px;
-  margin: 20px 0;
-  text-align: center;
-  }
-  
-  .tabs {
-  margin-left: 0;
-  justify-content: center;
-  width: 100%;
-  }
-  
-  .track-list {
-  width: 100%;
+}
+
+.genre-card img {
+  height: 150px;
+}
+
+.genre-card-content h3 {
+  font-size: 14px;
+}
+}
+
+@media (max-width: 480px) {
+.genres {
+  gap: 15px;
   padding: 10px;
-  box-sizing: border-box;
-  }
-  
-  }
-  
-  
-  /* Media query para pantallas grandes hasta 1200px */
-  @media only screen and (max-width: 1200px) {
-  .content {
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  }
-  
-  .tracks-container {
-  margin: 20px auto; /* Centrado horizontal */
-  width: 90%;
-  max-width: 800px; /* Limitamos el ancho máximo */
-  transform: none; /* Eliminamos cualquier transformación */
-  }
-  
-  .player {
-  width: 90%;
-  max-width: 800px;
-  margin: 0 auto;
-  }
-  }
-  
-  /* Media query para tablets y dispositivos medianos */
-  @media only screen and (max-width: 768px) {
-  .container {
-  flex-direction: column;
-  height: auto;
-  margin: 0 auto;
-  padding: 20px;
-  max-width: 95%;
-  }
-  
-  .tracks-container {
-  width: 90%;
-  max-width: 600px;
-  margin: 20px auto;
-  transform: none;
-  border: 2px solid #59009A;
-  border-radius: 15px;
-  padding: 15px;
-  }
-  
-  }
-  @media only screen and (max-width: 768px) {
-  .container {
-  flex-direction: column;
-  height: auto;
-  margin: 0 auto;
-  padding: 20px;
-  max-width: 95%;
-  }
-  .sidebar {
-  width: 100%;
-  max-width: 450px;
-  margin: 20px auto;
-  border-radius: 40px;
-  padding: 8px 16px;
-  border: 2px solid #59009A;
-  }
-  .main-content {
-  margin: 0 auto;
-  }
-  .title {
-  font-size: 35px;
-  margin: 20px 0;
-  text-align: center;
-  }
-  }
-  
-  @media only screen and (max-width: 768px) {
-  .sidebar {
-  
-  width: 100%;
-  max-width: 450px;
-  margin: 60px auto 20px auto; /* Aumentado significativamente el margen superior */
-  padding: 20px 15px;
-  border-radius: 25px;
-  border: 2px solid #59009A;
-  box-sizing: border-box;
-  }
-  
-  }
-  
-  /* Ajustes responsivos */
-  @media only screen and (max-width: 768px) {
-    .main-content {
-      width: 100%;
-      padding: 20px;
-      margin-top: 20px;
-      max-width: 95%; /* Limita el ancho máximo en móvil */
-    }
-  
-    .title {
-      font-size: 40px;
-    }
-  }
-  @media only screen and (max-width: 768px) {
-    .genres .genre:last-child {
-      margin-left: 0; /* Elimina el centrado */
-      align-self: flex-start; /* Alinea a la izquierda */
-    }
-    
-    .genres .genre:last-child img {
-      margin-left: 0; /* Asegura que la imagen no esté centrada */
-    }
-  }
-  
+}
+
+.genre-card img {
+  height: 120px;
+}
+}

@@ -1,52 +1,21 @@
-function loadTemplate(templateId, filePath, callback) {
-    fetch(filePath)
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById(templateId).innerHTML = data;
-            if (callback) callback();
-        })
-        .catch(error => console.error('Error al cargar la plantilla:', error));
-  }
+const images = [
+    "/musicoterapia/Vistas1.1/images/CARRUSEL PODCAST 1.png",
+    "/musicoterapia/Vistas1.1/images/CARRUSEL PODCASTS 2.png",
+    "/musicoterapia/Vistas1.1/images/CARRUSEL PODCASTS 3.png",
+    "/musicoterapia/Vistas1.1/images/CARRUSEL PODCASTS 4.png",
+    "/musicoterapia/Vistas1.1/images/CARRUSEL PODCASTS 5.png",
+  ];
   
-  loadTemplate('header-placeholder', '../../../FootNav/header.html', function() {
-    const servicios = document.querySelector('.servicios');
-    const submenu = document.querySelector('.submenu'); 
-    if (servicios) { 
-        servicios.addEventListener('click', () => {
-            const submenu = document.querySelector('.submenu');
-            submenu.classList.toggle('active');
-        });
-        
-    }
-  
-    document.addEventListener('click', function(event) {
-        if (!servicios.contains(event.target) && !submenu.contains(event.target)) {
-            submenu.classList.remove('active');
-        }
-    });
-  });
-  
-  loadTemplate('footer-placeholder', '../../../FootNav/footer.html');
-  
-  
-  document.addEventListener('DOMContentLoaded', function() {
-    const menuToggle = document.getElementById('menu-toggle');
-    const servicesSubmenu = document.getElementById('services-submenu');
-  
-    menuToggle.addEventListener('click', function(e) {
-        e.stopPropagation();
-        servicesSubmenu.classList.toggle('active');
-    });
-  
-    // Cerrar el menú al hacer clic fuera de él
-    document.addEventListener('click', function(event) {
-        if (!menuToggle.contains(event.target) && !servicesSubmenu.contains(event.target)) {
-            servicesSubmenu.classList.remove('active');
-        }
-    });
-  
-    // Prevenir que los clics dentro del menú lo cierren
-    servicesSubmenu.addEventListener('click', function(e) {
-        e.stopPropagation();
-    });
-  });
+  let index = 0;
+const imgElement = document.getElementById("carousel-image");
+
+function changeImage() {
+  index = (index + 1) % images.length;
+  imgElement.style.opacity = 0;
+  setTimeout(() => {
+    imgElement.src = images[index];
+    imgElement.style.opacity = 1;
+  }, 500);
+}
+
+setInterval(changeImage, 2000); // Ahora cambia cada 2 segundos

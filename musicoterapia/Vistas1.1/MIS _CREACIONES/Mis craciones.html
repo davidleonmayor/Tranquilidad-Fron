@@ -1,314 +1,507 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="esp">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mis creaciones</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <link rel="stylesheet" href="/musicoterapia/Header/style.css"> 
-  <link rel="stylesheet" href="/musicoterapia/footer/footer/inicio/styles.css"> 
-  <link rel="stylesheet" href="/musicoterapia/Vistas1.1/MIS _CREACIONES/style.css"> 
+    <link rel="stylesheet" href="/musicoterapia/Header/style.css">
+   <style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+
+
+body {
+  font-family: sans-serif;
+
+  padding: 0;
+  width: 100%;
+  left: 0%;
+
+}
+
+
+
+/* Contenido del body */
+
+.imag {
+  width: 100%;
+  max-width: 24.5625rem; /* 393px -> 24.5625rem */
+  height: auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 2;
+}
+
+.imag:hover {
+  cursor: pointer;
+  transform: translateY(-0.625rem); /* 10px -> 0.625rem */
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); /* 8px 16px -> 0.5rem 1rem */
+}
+
+.img {
+  margin: 1.25rem; /* 20px -> 1.25rem */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #59009A;
+}
+
+.imagen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 70px;
+}
+
+
+.sidebar {
+  width: 385px;
+  background-color: #d2b7fecc;
+  padding: 20px;
+  transition: width 0.0s ease;
+  margin-right: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 20px;
+
+}
+
+  /* Modified for smoother transition */
+
+.sidebar .menu-item {
+  padding: 10px; /* Ajustado de 12px a 10px */
+  margin: 8px 0; /* Reducido de 15px a 8px */
+  background: #fff;
+  border-radius: 15px;
+  align-items: center;
+  transition: background 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+.sidebar .menu-item.active,
+.sidebar .menu-item:hover {
+  background:  #ba7fe7;;
+
+  transform: scale(1.05);
+}
+
+.sidebar .menu-item img {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+
+.sidebar .menu-item a {
+  display: flex;
+  align-items: center;
+  color: inherit;
+  text-decoration: none;
+  justify-content: center;
+}
+
+.sidebar .menu-item span {
+  flex-grow: 1;
+  text-align: center;
+  font-size: 16px;
+}
+
+
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  font-family: sans-serif;
+  margin-top: 80px;
+  margin-bottom: -80px;
+  z-index: 2;
+  
+}
+
+.part1 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.part2 {
+  margin-bottom: 60px; /* 60px -> 3.75rem */
+}
+
+
+
+/* Estilos Globales */
+
+
+  /* no poner nada, daña el todo, llamas a body y afecta a todos los body */
+
+/* Header */
+
+
+
+
+@media (max-width: 768px) {
+
+  .imagen{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .part1{
+    margin-left: 20px;
+    width: 100%;
+    align-items: center;
+  }
+
+  /* Ajustes adicionales para el contenido dentro del container */
+  .cal, .datepicker, .historial {
+    width: 100%; /* Asegura que los elementos ocupen el 100% del ancho del contenedor */
+    margin-right: 0;
+  }
+  .cal{
+    flex-direction: column;
+  }
+}
+
+.marca-agua::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/rutinas-de-ejercicios/includes/woman-digital-disconnecting-home-by-doing-yoga.jpg'); /* Cambia la URL por tu imagen */
+  background-size: cover; /* Ajusta la imagen para cubrir todo el contenedor */
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.5; /* Ajusta la transparencia de la marca de agua */
+  z-index: 1;
+}
+/* ... [previous styles remain the same] ... */
+
+.container {
+    position: relative;
+    display: flex;
+    font-family: sans-serif;
+    margin-top: 80px;
+    margin-bottom: -80px;
+    z-index: 2;
+}
+
+/* New styles for main content */
+.contenido-principal {
+    flex: 1;
+    margin: 20px;
+    padding: 20px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(89, 0, 154, 0.1);
+}
+
+.grid-creaciones {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.tarjeta-creacion {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.tarjeta-creacion:hover {
+    transform: translateY(-5px);
+}
+
+.video-preview {
+    width: 100%;
+    height: 180px;
+    background: #f0f0f0;
+    position: relative;
+}
+
+.video-info {
+    padding: 15px;
+}
+
+.video-title {
+    font-size: 18px;
+    color: #59009A;
+    margin-bottom: 8px;
+}
+
+.video-meta {
+    font-size: 14px;
+    color: #666;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.video-actions {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15px;
+    border-top: 1px solid #eee;
+}
+
+.action-btn {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 20px;
+    background: #ba7fe7;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.action-btn:hover {
+    background: #59009A;
+}
+
+.filtros-creaciones {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #f8f8f8;
+    border-radius: 10px;
+}
+
+.filtro-btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 20px;
+    background: #d2b7fe;
+    color: #59009A;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filtro-btn.activo {
+    background: #ba7fe7;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
     
+    .contenido-principal {
+        margin: 20px 10px;
+    }
+    
+    .grid-creaciones {
+        grid-template-columns: 1fr;
+    }
+    
+    .filtros-creaciones {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+.main-content {
+    flex: 1;
+    margin: 100px 20px 50px; /* Aumenté el margen inferior a 50px */
+    padding: 20px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(89, 0, 154, 0.1);
+    min-height: calc(100vh - 120px);
+}
+
+/* Existing styles for grid and cards */
+.grid-creaciones {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.tarjeta-creacion {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.tarjeta-creacion:hover {
+    transform: translateY(-5px);
+}
+
+/* Rest of your existing styles... */
+
+@media (max-width: 768px) {
+    .app-container {
+        flex-direction: column;
+    }
+    .main-content {
+        margin: 20px 10px;
+    }
+}
+
+
+   </style>
+    
+    <title>tranquilidad</title>
+    <script>
+      async function includeHTML() {
+          const elements = document.querySelectorAll('[include-html]');
+          for (let el of elements) {
+              const file = el.getAttribute('include-html');
+              try {
+                  const response = await fetch(file);
+                  if (response.ok) {
+                      el.innerHTML = await response.text();
+                      // Cargar el JS del footer después de insertarlo
+                      if (file.includes("header.html")) {
+                          const script = document.createElement("script");
+                          script.src = "/rutinas-de-ejercicios/includes/Header/script.js";
+                          document.body.appendChild(script);
+                      }
+                  } else {
+                      el.innerHTML = "<p>Error al cargar el contenido.</p>";
+                  }
+              } catch (error) {
+                  el.innerHTML = "<p>Error de conexión al cargar el contenido.</p>";
+              }
+          }
+      }
+      document.addEventListener("DOMContentLoaded", includeHTML);
+  </script>
+
+
 </head>
-<body class="body">
-  <header class="main-header">
-    <div class="logo-container">
-        <a href="/inicio-de-sesion/Modulo-iniciar-sesion/home/home.html"><img href="/inicio-de-sesion/Modulo-iniciar-sesion/home/home.html" src="/mapa-de-suenos/imagenes/6aa3987c-48ce-4355-b6bf-26c76c37e93d-removebg.png" alt="Logo" class="logo"></a>
-       
-    </div>
-    <button2 class="hamburger" onclick="toggleHamburgerMenu()">☰</button2>
-    <nav class="nav-links">
-        <a href="/inicio-de-sesion/Modulo-iniciar-sesion/home/home.html" class="nav-item">Inicio</a>
-        <div class="nav-item modules-item" onclick="toggleModules()">Módulos</div>
-        <a href="/mapa-de-suenos/todohh/inicio/link/quienessomos.html" class="nav-item  ">Acerca de </a>
-        <a href="/mapa-de-suenos/todohh/inicio/link/contacto.html" class="nav-item ">Contacto</a>
-        <div id="modules-indicator" class="modules-indicator"></div>
-        
-    </nav>
-    <div class="nav-right">
-       
-        
-    </div>
-    <div class="profile-container">
-        <div class="profile-box">
-            <a href="#nombre" class="nav-item special-item profile-name">Juanito Alimaña</a>
-            <img src="/musicoterapia/Vistas1.1/images/user.png" alt="Foto de perfil" class="profile-pic" onclick="toggleProfileMenu()">
-            <div id="profile-menu" class="profile-menu">
-              <a href="/inicio-de-sesion/Modulo-iniciar-sesion/usuario/usuario.html">Perfil</a>
-              <a href="/inicio-de-sesion/Modulo-iniciar-sesion/configuracion/configuracion.html">Configuracion</a>
-              <a href="/inicio-de-sesion/Modulo-iniciar-sesion/login/login.html">Cerrar sesión</a>
+<body>
+    <div include-html="/rutinas-de-ejercicios/includes/Header/header.html"></div>
+ <div class="container">
+        <aside class="sidebar">
+            <br />
+            <br />
+            <br>
+            <div class="menu-item active">
+                <a href="/musicoterapia/Vistas1.1/PRINCIPAL_GENEROS/principal_generos.html" style="text-decoration: none">
+                    <img src="/musicoterapia/Vistas1.1/images/genero.png" alt="Icon" />
+                    <span>Géneros</span>
+                </a>
+            </div>
+            <div class="menu-item">
+                <a href="/musicoterapia/Vistas1.1/PRINCIPAL_ALBUM/principal_album.html" style="text-decoration: none">
+                    <img src="/musicoterapia/Vistas1.1/images/album.png" alt="Icon" />
+                    <span>Álbum</span>
+                </a>
+            </div>
+            <div class="menu-item">
+                <a href="/musicoterapia/Vistas1.1/PRINCIPAL_PODCAST/principal_podcast.html" style="text-decoration: none">
+                    <img src="/musicoterapia/Vistas1.1/images/pod.png" alt="Icon" />
+                    <span>Podcast</span>
+                </a>
+            </div>
+
+            <div class="menu-item">
+                <a href="/musicoterapia/Vistas1.1/SONIDOS_BINAURALES/binaurales.html" style="text-decoration: none">
+                    <img src="/musicoterapia/Vistas1.1/images/binaural.png" alt="Icon" />
+                    <span>Sonidos Binaurales</span>
+                </a>
+            </div>
+            <div class="menu-item">
+                <a href="/musicoterapia/Vistas1.1/PLAYLIST/playList.html" style="text-decoration: none">
+                    <img src="/musicoterapia/Vistas1.1/images/playL.png" alt="Icon" />
+                    <span>PlayList</span>
+                </a>
+            </div>
+            <div class="menu-item">
+                <a href="/musicoterapia/Vistas1.1/ME GUSTA/Tus me gustas pistas.html" style="text-decoration: none">
+                    <img src="/musicoterapia/Vistas1.1/images/like.png" alt="Icon" />
+                    <span>Me gusta</span>
+                </a>
+            </div>
+            <div class="menu-item">
+                <a href="/musicoterapia/Vistas1.1/PRINCIPAL BUSCAR/buscar.html" style="text-decoration: none">
+                    <img src="/musicoterapia/Vistas1.1/images/buscar boton.png" alt="Icon" />
+                    <span>Buscar</span>
+                </a>
+            </div>
+        </aside>
+
+        <div class="main-content">
+          <h2 style="color:#59009A; text-align: center; margin-bottom: 60px;">Mis Creaciones</h2>
+
+
+            <div class="filtros-creaciones">
+                <button class="filtro-btn activo">Todos</button>
+                <button class="filtro-btn">Podcasts</button>
+                <button class="filtro-btn">Grabaciones</button>
+                <button class="filtro-btn">Editados</button>
+            </div>
+
+            <div class="grid-creaciones">
+                <div class="tarjeta-creacion">
+                    <div class="video-preview">
+                        </div>
+                    <div class="video-info">
+                        <h3 class="video-title">Mi Primer Podcast</h3>
+                        <div class="video-meta">
+                            <span>Duración: 15:30</span>
+                            <span>Fecha: 15/02/2024</span>
+                        </div>
+                    </div>
+                    <div class="video-actions">
+                        <button class="action-btn">
+                            <i class="fas fa-edit"></i> Editar
+                        </button>
+                        <button class="action-btn">
+                            <i class="fas fa-share"></i> Compartir
+                        </button>
+                    </div>
+                </div>
+
+                <div class="tarjeta-creacion">
+                    <div class="video-preview">
+                        </div>
+                    <div class="video-info">
+                        <h3 class="video-title">Grabación de Voz</h3>
+                        <div class="video-meta">
+                            <span>Duración: 08:45</span>
+                            <span>Fecha: 14/02/2024</span>
+                        </div>
+                    </div>
+                    <div class="video-actions">
+                        <button class="action-btn">
+                            <i class="fas fa-edit"></i> Editar
+                        </button>
+                        <button class="action-btn">
+                            <i class="fas fa-share"></i> Compartir
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    </div>
-    <!-- Menú hamburguesa -->
-<div id="hamburger-menu" class="hamburger-menu">
-<a href="/inicio-de-sesion/Modulo-iniciar-sesion/home/home.html" class="hamburger-item">Inicio</a>
-<a href="#"><div class="hamburger-item" onclick="toggleModulues()">Módulos</div></a>
-<!-- Contenedor de módulos (oculto por defecto) -->
-<div id="modules-content" class="modules-content" style="display: none;">
-    <a href="/mapa-de-suenos/Inicio/Inicio.html"><div class="modulo">Mapa de sueños</div></a>
-    <a href="/alimentacion/Inicio/index.html"><div class="modulo">Alimentación</div></a>
-    <a href="/musicoterapia/Vistas1.1/PRINCIPAL_GENEROS/principal_generos.html"><div class="modulo">Musicoterapia</div></a>
-    <a href="/rutinas-de-ejercicios/inicio/index.html"><div class="modulo">Ejercicios</div></a>
-    <a href="/atencion-profesional/USUARIO/Home_Usuario/HomeUsuario.html"><div class="modulo">Atención Profesional</div></a>
-</div>
-<a href="#perfil" class="hamburger-item">Perfil</a>
-</div>
-    <!-- Pestaña de módulos -->
-    <div id="modules-overlay" class="modules-overlay">
-        <div class="module-grid">
-           <a href="/mapa-de-suenos/Inicio/Inicio.html"> <div class="module">Mapa de sueños</div></a>
-           <a href="/alimentacion/Inicio/index.html"><div class="module">Alimentación</div></a>
-            <a href="/musicoterapia/Vistas1.1/PRINCIPAL_GENEROS/principal_generos.html"><div class="module">Musicoterapia</div></a>
-            <a href="/rutinas-de-ejercicios/inicio/index.html"><div class="module">Ejercicios</div></a>
-            <a href="/atencion-profesional/USUARIO/Home_Usuario/HomeUsuario.html"><div class="module">Atención Profesional</div></a>
-        </div>
-    </div>
-</header>
-
     
-      
-    <script src="/musicoterapia/Header/script.js"></script>
-
-    <div class="container">
-      <aside class="sidebar">
-        <br>
-        <br>
-        <div class="menu-item">
-          <a href="/musicoterapia/Vistas1.1/PRINCIPAL_GENEROS/principal_generos.html" style="text-decoration: none;">
-            <img src="/musicoterapia/Vistas1.1/images/genero.png" alt="Icon">
-            <span>Géneros</span>
-          </a>
-        </div>
-        <div class="menu-item">
-          <a href="/musicoterapia/Vistas1.1/PRINCIPAL_ALBUM/principal_album.html" style="text-decoration: none;">
-            <img src="/musicoterapia/Vistas1.1/images/album.png" alt="Icon">
-            <span>Álbum</span>
-          </a>
-        </div>
-        <div class="menu-item">
-          <a href="/musicoterapia/Vistas1.1/PRINCIPAL_PODCAST/principal_podcast.html" style="text-decoration: none;">
-            <img src="/musicoterapia/Vistas1.1/images/pod.png" alt="Icon">
-            <span>Podcast</span>
-          </a>
-        </div>
-        <div class="menu-item">
-          <a href="/musicoterapia/Vistas1.1/SONIDOS_BINAURALES/binaurales.html" style="text-decoration: none;">
-            <img src="/musicoterapia/Vistas1.1/images/binaural.png" alt="Icon">
-            <span>Sonidos Binaurales</span>
-          </a>
-        </div>
-        <div class="menu-item">
-          <a href="/musicoterapia/Vistas1.1/PLAYLIST/playList.html" style="text-decoration: none;">
-            <img src="/musicoterapia/Vistas1.1/images/playL.png" alt="Icon">
-            <span>PlayList</span>
-          </a>
-        </div>
-        <div class="menu-item">
-          <a href="/musicoterapia/Vistas1.1/TUS_ME_GUSTA_PISTAS/Tus me gustas pistas.html">
-            <img src="/musicoterapia/Vistas1.1/images/like.png" alt="Icon">
-            <span>Me gusta</span>
-            <br>
-            <br>
-          </a>
-        </div>
-        <div class="menu-item">
-          <a href="/musicoterapia/Vistas1.1/PRINCIPAL_BUSCAR/buscar.html" style="text-decoration: none;">
-            <img src="/musicoterapia/Vistas1.1/images/buscar boton.png" alt="Buscar Icon">
-            <span>Buscar</span>
-          </a>
-        </div>
-      </aside>
-      <main class="main-content">
-        <div class="title">
-          <span>Mis Creaciones</span>
-          <br>
-          <br>
-        </div>
-
-        
-
-        <div class="content">
-          <div class="tracks-container">
-            <div class="track">
-              <img
-                src="/musicoterapia/Vistas1.1/img/Pista1.jpg" 
-                alt="pista 1"
-              />
-              <div>
-                <span>Pista 1</span><br />
-                <span>Artista</span>
-              </div>
-              <div>Álbum</div>
-              <div>11/07/2024</div>
-              <a href="/musicoterapia/Vistas1.1/REPRODUCCTORES/REPRO_CREACIONES/Reproductor_creaciones.html?creacionesId=1" class="play-button" onerror="this.onerror=null;this.src='img/placeholder.png';"></a>
-            </div>
-
-            <div class="track">
-              <img
-                src="/musicoterapia/Vistas1.1/img/pista2.jpg"
-                alt="pista 2"
-              />
-              <div>
-                <span>Pista 2</span><br />
-                <span>Artista</span>
-              </div>
-              <div>Álbum</div>
-              <div>11/07/2024</div>
-              <a href="/musicoterapia/Vistas1.1/REPRODUCCTORES/REPRO_CREACIONES/Reproductor_creaciones.html?creacionesId=2" class="play-button" onerror="this.onerror=null;this.src='img/placeholder.png';"></a>
-            </div>
-
-            <div class="track">
-              <img
-                src="/musicoterapia/Vistas1.1/img/pista3.jpeg"
-                alt="pista 3"
-              />
-              <div>
-                <span>Pista 3</span><br />
-                <span>Artista</span>
-              </div>
-              <div>Álbum</div>
-              <div>11/07/2024</div>
-              <a href="/musicoterapia/Vistas1.1/REPRODUCCTORES/REPRO_CREACIONES/Reproductor_creaciones.html?creacionesId=3" class="play-button" onerror="this.onerror=null;this.src='img/placeholder.png';"></a>
-            </div>
-
-            <div class="track">
-              <img
-                src="/musicoterapia/Vistas1.1/img/pista4.avif"
-                alt="pista 4"
-              />
-              <div>
-                <span>Pista 4</span><br />
-                <span>Artista</span>
-              </div>
-              <div>Álbum</div>
-              <div>11/07/2024</div>
-              <a href="/musicoterapia/Vistas1.1/REPRODUCCTORES/REPRO_CREACIONES/Reproductor_creaciones.html?creacionesId=4" class="play-button" onerror="this.onerror=null;this.src='img/placeholder.png';"></a>
-            </div>
-
-            <div class="track">
-              <img
-                src="/musicoterapia/Vistas1.1/img/pista5.jpg"
-                alt="pista 5"
-              />
-              <div>
-                <span>Pista 5</span><br />
-                <span>Artista</span>
-              </div>
-              <div>Álbum</div>
-              <div>11/07/2024</div>
-              <a href="/musicoterapia/Vistas1.1/REPRODUCCTORES/REPRO_CREACIONES/Reproductor_creaciones.html?creacionesId=5" class="play-button" onerror="this.onerror=null;this.src='img/placeholder.png';"></a>
-            </div>
-            <div class="track">
-              <img
-                src="/musicoterapia/Vistas1.1/img/pista6.jpg"
-                alt="pista 6"
-              />
-              <div>
-                <span>Pista 6</span><br />
-                <span>Artista</span>
-              </div>
-              <div>Álbum</div>
-              <div>11/07/2024</div>
-              <a href="/musicoterapia/Vistas1.1/REPRODUCCTORES/REPRO_CREACIONES/Reproductor_creaciones.html?creacionesId=6" class="play-button" onerror="this.onerror=null;this.src='img/placeholder.png';"></a>
-            </div>
-            <div class="track">
-              <img
-                src="/musicoterapia/Vistas1.1/img/pista7.jpg"
-                alt="pista 7"
-              />
-              <div>
-                <span>Pista 7</span><br />
-                <span>Artista</span>
-              </div>
-              <div>Álbum</div>
-              <div>11/07/2024</div>
-              <a href="/musicoterapia/Vistas1.1/REPRODUCCTORES/REPRO_CREACIONES/Reproductor_creaciones.html?creacionesId=7" class="play-button" onerror="this.onerror=null;this.src='img/placeholder.png';"></a>
-            </div>
-            <div class="track">
-              <img
-                src="/musicoterapia/Vistas1.1/img/pista8.jpg"
-                alt="pista 8"
-              />
-              <div>
-                <span>Pista 8</span><br />
-                <span>Artista</span>
-              </div>
-              <div>Álbum</div>
-              <div>11/07/2024</div>
-              <a href="/musicoterapia/Vistas1.1/REPRODUCCTORES/REPRO_CREACIONES/Reproductor_creaciones.html?creacionesId=8" class="play-button" onerror="this.onerror=null;this.src='img/placeholder.png';"></a>
-            </div>
-            <div class="track">
-              <img
-                src="/musicoterapia/Vistas1.1/img/pista9.jpg"
-                alt="pista 9"
-              />
-              <div>
-                <span>Pista 9</span><br />
-                <span>Artista</span>
-              </div>
-              <div>Álbum</div>
-              <div>11/07/2024</div>
-              <a href="/musicoterapia/Vistas1.1/REPRODUCCTORES/REPRO_CREACIONES/Reproductor_creaciones.html?creacionesId=9" class="play-button" onerror="this.onerror=null;this.src='img/placeholder.png';"></a>
-            </div>
-            <div class="track">
-              <img
-                src="/musicoterapia/Vistas1.1/img/pista10.jpg"
-                alt="pista 10"
-              />
-              <div>
-                <span>Pista 10</span><br />
-                <span>Artista</span>
-              </div>
-              <div>Álbum</div>
-              <div>11/07/2024</div>
-              <a href="/musicoterapia/Vistas1.1/REPRODUCCTORES/REPRO_CREACIONES/Reproductor_creaciones.html?creacionesId=10" class="play-button" onerror="this.onerror=null;this.src='img/placeholder.png';"></a>
-            </div>
-          </div>
-        </div>
-      </main>
     </div>
+    <br>
+    <br>
+    <br>
+    <br>
+<div include-html="/rutinas-de-ejercicios/includes/inicio/inicio.html"></div>
 
-    <footer class="footer">
-      <div class="footer-container">
-          <div class="footer-column">
-              <h4>Acerca de Tranquilidad</h4>
-              <ul>
-                  <li><a href="/musicoterapia/footer/footer/inicio/link/quienessomos.html">Acerca de</a></li>
-                  <li><a href="/musicoterapia/footer/footer/inicio/link/beneficiosdetranquilidad.html">Beneficios de la Tranquilidad</a></li>
-                  <li><a href="/musicoterapia/footer/footer/inicio/link/consejodebienestar.html">Consejos de Bienestar</a></li>
-              </ul>
-          </div>
-          <div class="footer-column">
-              <h4>Ayuda y Soporte</h4>
-              <ul>
-                  <li><a href="/musicoterapia/footer/footer/inicio/link/contacto.html">Contacto</a></li>
-                  <li><a href="/musicoterapia/footer/footer/inicio/link/sugerencias.html">Sugerencias</a></li>
-                  <li><a href="/musicoterapia/footer/footer/inicio/link/guiadeuso.html">Guía de uso</a></li>
-              </ul>
-          </div>
-          <div class="footer-column">
-              <h4>Información Legal</h4>
-              <ul>
-                  <li><a href="/musicoterapia/footer/footer/inicio/link/terminosycondiciones.html">Términos y condiciones</a></li>
-                  <li><a href="/musicoterapia/footer/footer/inicio/link/politica de privacidad .html">Política de privacidad</a></li>
-                  <li><a href="/musicoterapia/footer/footer/inicio/link/avisolegal.html">Aviso legal</a></li>
-              </ul>
-          </div>
-      </div>
-      <div class="footer-bottom">
-          <p>Copyright © 2024 Tranquilidad. Todos los derechos reservados.</p>
-          <div class="social-icons">
-              <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
-              <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
-              <a href="https://x.com/?lang=es.com/"><i class="fab fa-twitter"></i></a>
-          </div>
-      </div>
-  </footer>
+<script src="/musicoterapia/Vistas1.1/MIS _CREACIONES/scrip.js"></script>
 </body>
-<script src="/musicoterapia/Vistas1.1/MIS _CREACIONES/script.js"></script>
 </html>

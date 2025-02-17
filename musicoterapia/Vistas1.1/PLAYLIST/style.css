@@ -1,726 +1,446 @@
- /* Añadir margen superior al contenedor del menú */
- .sidebar {
-    margin-top: 75px; /* Esto bajará todo el menú */
-    padding: 20px;
-  }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+
+
+body {
+  font-family: sans-serif;
+
+  padding: 0;
+  width: 100%;
+  left: 0%;
+
+}
+
+
+
+/* Contenido del body */
+
+.imag {
+  width: 100%;
+  max-width: 24.5625rem; /* 393px -> 24.5625rem */
+  height: auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 2;
+}
+
+.imag:hover {
+  cursor: pointer;
+  transform: translateY(-0.625rem); /* 10px -> 0.625rem */
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); /* 8px 16px -> 0.5rem 1rem */
+}
+
+.img {
+  margin: 1.25rem; /* 20px -> 1.25rem */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #59009A;
+}
+
+.imagen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 70px;
+}
+
+
+.sidebar {
+  width: 850px;
+  background-color: #d2b7fecc;
+  padding: 20px;
+  transition: width 0.0s ease;
+  margin-right: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 20px;
+  margin-top: -66px;
   
-  /* Ajustar el espaciado entre los botones del menú */
-  .sidebar .menu-item {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start; /* Alineación a la izquierda */
-    padding: 12px;
-    margin: 15px 0; /* Espacio entre botones */
-    background: #fff;
-    border-radius: 15px;
-    transition: background 0.3s ease;
-  }
+
+}
+
+  /* Modified for smoother transition */
+
+.sidebar .menu-item {
+  padding: 10px; /* Ajustado de 12px a 10px */
+  margin: 8px 0; /* Reducido de 15px a 8px */
+  background: #fff;
+  border-radius: 15px;
+  align-items: center;
+  transition: background 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+.sidebar .menu-item.active,
+.sidebar .menu-item:hover {
+  background:  #ba7fe7;;
+
+  transform: scale(1.05);
+}
+
+.sidebar .menu-item img {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+
+.sidebar .menu-item a {
+  display: flex;
+  align-items: center;
+  color: inherit;
+  text-decoration: none;
+  justify-content: center;
+}
+
+.sidebar .menu-item span {
+  flex-grow: 1;
+  text-align: center;
+  font-size: 16px;
+}
+
+
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  font-family: sans-serif;
+  margin-top: 80px;
+  margin-bottom: -80px;
+  z-index: 2;
   
-  /* Ajustar el primer elemento del menú (Géneros) si es necesario */
-  .sidebar .menu-item:first-child {
-    margin-top: 30px; /* Espacio adicional en el primer botón */
-  }
-  /* Ajuste adicional para que el texto y la imagen estén bien alineados */
-  .sidebar .menu-item img {
-    width: 24px;
-    height: 24px;
-    margin-right: 10px;
-  }
-  
-  .sidebar .menu-item span {
-    text-align: center;
-    font-size: 16px;
-    line-height: 1.5;
-  }
-  
-  /* Ajuste del título */
-  .title {
-    display: flex;
+}
+
+.part1 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.part2 {
+  margin-bottom: 60px; /* 60px -> 3.75rem */
+}
+
+
+
+
+
+
+/* Estilos Globales */
+
+
+  /* no poner nada, daña el todo, llamas a body y afecta a todos los body */
+
+/* Header */
+
+
+
+
+@media (max-width: 768px) {
+
+  .imagen{
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 75px;
-    margin-top: 200px; /* Aumentado de 150px a 200px para bajar más el título */
-    margin-bottom: 50px; /* Aumentado de 20px a 50px para dar más espacio */
+  }
+  .part1{
+    margin-left: 20px;
     width: 100%;
-    font-family: "Roboto Slab", serif;
+    align-items: center;
   }
-  
-  /* Añadido para dar más espacio al inicio del menú */
-  .sidebar {
-    padding-top: 30px;
+
+  /* Ajustes adicionales para el contenido dentro del container */
+  .cal, .datepicker, .historial {
+    width: 100%; /* Asegura que los elementos ocupen el 100% del ancho del contenedor */
+    margin-right: 0;
   }
-  
-    
-       /* NUEVOS ESTILOS  */
-       .submenu {
-          position: absolute;
-          background-color: #fff;
-          padding: 5px 5px;
-          border-radius: 5px;
-          box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-          display: none;
-          top: 24px;
-          left: 0px;
-          width: auto;
-          z-index: 1000; /* Asegura que el submenú esté por encima de otros elementos */
-        }
-  
-        .nav:hover .submenu {
-          display: flex;
-          flex-direction: column;
-        }
-  
-        .submenu ul {
-          list-style: none;
-          padding: 0;
-          margin: 0;
-        }
-  
-        .submenu li {
-          padding: 10px 20px; /* Reducido para mejor apariencia */
-          border-bottom: 1px solid #ddd;
-          cursor: pointer; /* Indica que es clickable */
-        }
-  
-        .submenu li:hover {
-          background-color: #f0f0f0;
-        }
-  
-        /* Estilos del contenedor principal */
-        .container {
-          display: flex;
-          height: calc(100vh - 126px);
-        }
-  
-        /* Estilos de la barra lateral */
-        .sidebar {
-          width: 25%;
-          background-color: #c7b7fe49;
-          padding: 20px;
-        }
-  
-        /* Estilos de los elementos del menu en la barra lateral */
-        .sidebar .menu-item {
-          padding: 12px;
-          margin: 10px 0;
-          background: #fff;
-          border-radius: 15px;
-          transition: background 0.3s ease;
-        }
-  
-        /* Estilos de los elementos del menú cuando están activos o al pasar el ratón */
-        .sidebar .menu-item.active,
-        .sidebar .menu-item:hover {
-          background: linear-gradient(#ffffff, #9c76c1);
-          box-shadow: 1px 5px 10px 0.1px rgb(145, 145, 145);
-        }
-  
-        /* Estilos de las imágenes dentro de los elementos del menú */
-        .sidebar .menu-item img {
-          width: 24px;
-          height: 24px;
-          margin-right: 10px;
-        }
-  
-        /* Estilos de los enlaces dentro de los elementos del menú */
-        .sidebar .menu-item a {
-          display: flex;
-          align-items: center;
-          color: inherit;
-          text-decoration: none;
-          justify-content: center;
-        }
-  
-        /* Estilos del texto dentro de los elementos del menú */
-        .sidebar .menu-item span {
-          flex-grow: 1;
-          text-align: center;
-          font-size: 16px;
-        }
-  
-        /* Estilos del contenido principal */
-        .main-content {
-          width: 75%;
-          padding: 20px;
-          overflow-y: auto;
-          display: flex;
-          flex-direction: column;
-        }
-  
-        .title {
-          display: flex;
-          justify-content: center; /* Centra horizontalmente */
-          align-items: center; /* Centra verticalmente */
-          font-size: 75px;
-          margin-bottom: 20px;
-          font-family: "Roboto Slab", serif;
-          width: 100%; /* Asegura que tome todo el ancho disponible */
-          margin-left: 0; /* Elimina el margen izquierdo */
-        }
-  
-        .title span {
-          position: relative;
-          z-index: 1;
-          transition: color 0.3s;
-        }
-  
-        .genres {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1.25rem;
-        /* 20px */
-        justify-content: space-between;
-      }
-  
-      .genre {
-        width: calc(50% - 20px);
-    text-align: center;
-    position: relative;
-    display: flex;
+  .cal{
     flex-direction: column;
-    align-items: center;
-    margin-bottom: 40px;
-    justify-content: flex-start; /* Alinea el contenido desde arriba */
-      }
-  
-  
-  
-      .genre img.imagen-interactiva {
-        width: 60%;
-        border-radius: 10px;
-        margin-bottom: 10px; margin-bottom: 30px; /* Aumenta el espacio entre la imagen y el botón */transition: transform 0.3s ease, opacity 0.3s ease;
-      }
-  
-      .genre img.imagen-interactiva:hover {
-        opacity: 0.8;
-        transform: scale(1.1);
-        
-      }
-  .genre h3 {
-          margin-bottom: 0.625rem;
-          /* 10px */
-          font-family: "Roboto Slab", serif;
-          transition: color 0.3s;
-          margin-top: 0.625rem;
-          /* 10px */
-        }
-  
-        .genre:hover h3 {
-          color: #59009a;
-          /* Cambia el color del título al pasar el cursor */
-        }
-  
-        .genre img.imagen-interactiva {
-          width: 100%;
-          /* Ocupa todo el ancho disponible */
-          height: 280px;
-          /* Define un alto fijo para todas las imágenes */
-          object-fit: cover;
-          /* Asegura que la imagen cubra el área sin distorsionarse */
-          border-radius: 10px;
-          transition: transform 0.3s ease, opacity 0.3s ease;
-          opacity: 0.8;
-          transform: scale(1.2);
-        }
-  
-        .genres a {
-          color: inherit;
-          /* Inherits the color from parent elements */
-          text-decoration: none;
-          /* Removes the underline */
-        }
-  
-        .genres a:hover {
-          color: #59009a;
-          /* Optional: Change color on hover for visual feedback */
-        }
-        .boton-enlace {
-        display: flex;
-    flex-direction: column;
-    align-items: center;
-      }
-  
-      .add-button {
-        background: none;
-        border: none;
-        padding: 40;
-        cursor: pointer;
-        position: relative; /* Cambia de absolute a relative */
-        margin-top: 20px; /* Añade espacio adicional en la parte superior del botón */
-        
-       
-      }
-  .add-button {
-          position: absolute;
-          background-color: rgba(255, 255, 255, 0.5);
-          /* Hacemos el fondo semi-transparente */
-          color: #473971;
-          border: none;
-          border-radius: 50%;
-          width: 40px;
-          height: 40px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          cursor: pointer;
-          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-          /* Añadimos un sombreado */
-          transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
-          /* Añadimos transiciones */
-          margin-top: auto;
-          /* Coloca el botón al final del contenedor */
-        }
-  
-        .add-button:hover {
-          background-color: rgba(255, 255, 255, 0.7);
-          /* Cambiamos el color de fondo semi-transparente en hover */
-          transform: scale(1.1);
-          box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-          /* Sombreado más pronunciado en hover */
-        }
-  
-        .add-button i {
-          font-size: 24px;
-          color: #4e27bf;
-        }
-  
-        /* Estilo para el título Álbum */
-        .main-content .title span {
-          font-family: "Roboto", sans-serif; /* Cambia la fuente a Roboto */
-        }
-  
-        /* Estilo para el título Álbum */
-        .main-content .title span {
-          font-family: "Roboto", sans-serif; /* Cambia la fuente a Roboto */
-        }
-  
-        /* Estilos para pantallas más pequeñas, como tablets o móviles */
-        @media only screen and (max-width: 768px) {
-          .container {
-            flex-direction: column;
-            height: auto;
-            /* Ajustar altura automática */
-          }
-  
-  
-          .main-content {
-            width: 100%;
-            /* Ocupar todo el ancho disponible */
-          }
-  
-  
-          /* Centrar el título de géneros */
-          .title {
-            text-align: center;
-            margin-left: 0;
-            margin-right: 0;
-            width: 100%;
-            justify-content: center;
-          }
-        }
-        
-  
-        /* --------------------------- */
-    
-    
-      /* Estilos del contenedor de pistas */
-      .tracks-container {
-        width: 100%;
-        border: 1px solid #ccc;
-        border-radius: 10px;
-        padding: 10px;
-        background: url();
-        border-radius: 15px;
-        align-items: center;
-        transition: background 0.3s ease, transform 0.3s ease;
-        cursor: pointer;
-        
-      }
-  
-      /* Estilos generales de cada pista */
-      .track {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 10px;
-        border-bottom: 1px solid #ccc;
-      }
-  
-      /* Elimina el borde inferior de la última pista */
-      .track:last-child {
-        border-bottom: none;
-      }
-  
-      /* Estilos de las imágenes de las pistas */
-      .track img {
-        height: 50px;
-        width: 50px;
-        border-radius: 5px;
-      }
-  
-      /* Estilos de los divs dentro de cada pista */
-      .track div {
-        padding: 0 20px;
-      }
-  
-      /* Estilos de los enlaces de los botones de reproducción */
-      .track a.play-button {
-        background: white;
-        border: 2px solid black;
-        border-radius: 50%;
-        width: 40px;
-        height: 40px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-decoration: none;
-        cursor: pointer;
-        position: relative;
-        color: black;
-      }
-  
-      /* Estilos del triángulo dentro del botón de reproducción */
-      .track a.play-button::before {
-        content: '';
-        width: 0;
-        height: 0;
-        border-style: solid;
-        border-width: 10px 0 10px 16px;
-        border-color: transparent transparent transparent black;
-        position: absolute;
-        left: 13px;
-      }
-  
-  
-  
-  /* ------------------------------------------------------------- */
-  /* Estilos del contenedor principal */
-  .container {
-    display: flex;
-    min-height: calc(100vh - 126px);
   }
+}
+
+.marca-agua::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/rutinas-de-ejercicios/includes/woman-digital-disconnecting-home-by-doing-yoga.jpg'); /* Cambia la URL por tu imagen */
+  background-size: cover; /* Ajusta la imagen para cubrir todo el contenedor */
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.5; /* Ajusta la transparencia de la marca de agua */
+  z-index: 1;
+}
+/* Estilos del contenido principal */
+/* Ajustes para el main-content manteniendo el padding lateral */
+.main-content {
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
   
-  /* Estilos de la barra lateral */
+ 
+ 
+}
+
+/* Ajuste del título dentro de main-content */
+.title {
+  font-size: 60px;
+  margin-top: 0;
+ 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-family: "Roboto Slab", serif;
+  padding-bottom: 0; /* Elimina cualquier padding innecesario */
+}
+.title span {
+  position: relative;
+  z-index: 1;
+  transition: color 0.3s;
+}
+
+
+
+@media only screen and (max-width: 768px) {
   .sidebar {
-    width: 25%;
-    background-color: #c7b7fe49;
-    padding: 20px;
-  }
-  
-  /* Estilos de los elementos del menu en la barra lateral */
-  .sidebar .menu-item {
-    padding: 12px;
-    margin: 10px 0;
-    background: #fff;
-    border-radius: 15px;
-    transition: background 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-  }
-  /* Estilos de los elementos del menú cuando están activos o al pasar el ratón */
-  .sidebar .menu-item.active,
-  .sidebar .menu-item:hover {
-    background:  #ba7fe7;;
-      box-shadow:   #59009A;
-    }; /* Elimina las sombras */
-  
-  
-  /* Estilos de las imágenes dentro de los elementos del menú */
-  .sidebar .menu-item img {
-    width: 24px;
-    height: 24px;
-    margin-right: 15px;
-    display: inline-block;
-    vertical-align: middle;
-  }
-  
-  /* Estilos de los enlaces dentro de los elementos del menú */
-  .sidebar .menu-item a {
-    display: flex;
-    align-items: center;
-    color: inherit;
-    text-decoration: none;
-    width: 100%;
-  }
-  
-  /* Estilos del texto dentro de los elementos del menú */
-  .sidebar .menu-item span {
-    font-size: 16px;
-    white-space: nowrap;
-    margin-left: 5px;
-  }
-  
-    body {
-      padding-top: 60px; /* Reducido de 100px a 60px */
-    }
-  
-  
-    .title {
-      font-size: 60px;
-      margin: 10px 0; /* Reducido de 20px a 10px */
-      text-align: center;
-    }
-  
-  /* Media queries mejorados para responsive */
-  @media only screen and (max-width: 768px) {
-    .container {
-      flex-direction: column;
-      align-items: center; /* Centrado del contenedor principal */
-      padding: 10px;
-    }
-  
-    .main-content {
-      width: 100%;
-      max-width: 95%; /* Limita el ancho máximo en móvil */
-      margin: 0 auto; /* Centrado horizontal */
-      padding: 10px;
-    }
-  
-  
-    .genre img {
-      width: 100%;
-      height: auto;
-      display: block; /* Mejora el centrado de la imagen */
-      margin: 0 auto 10px; /* Centrado y espacio inferior */
-    }
-  
-  
-  
-  
-    .title {
-      font-size: 32px; /* Ajuste del tamaño del título para pantallas muy pequeñas */
-    }
-  }
-  /* Modificar el espaciado de los elementos del menu en la barra lateral */
-  
-  .sidebar .menu-item {
-      padding: 12px;
-      margin: 8px 0; /* Reducido a 8px para un espaciado más compacto y uniforme */
-      background: #fff;
-      border-radius: 15px;
-      transition: background 0.3s ease;
-  }
-  .sidebar {
-      width: 25%;
-      background-color: #c7b7fe49;
-      padding: 20px;
-      padding-top: 108px; /* Reducido de 100px a 60px para un espaciado más moderado */
-  }
-  /* RESPONSIVE */
-  /* Estilos base del contenedor */
-  .container {
-    display: flex;
-    min-height: calc(100vh - 126px);
-  }
-  
-  /* Estilos de la barra lateral */
-  .sidebar {
-    width: 25%;
-    background-color: #c7b7fe49;
-    padding: 20px;
-    padding-top: 108px;
-  }
-  
-  /* Estilos de los elementos del menu */
-  .sidebar .menu-item {
-    padding: 12px;
-    margin: 8px 0;
-    background: #fff;
-    border-radius: 15px;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-  }
-  
-  /* Media queries mejorados para dispositivos móviles */
-  @media only screen and (max-width: 768px) {
-    .container {
-      flex-direction: column;
-      padding: 10px;
-    }
-  
-    .sidebar {
       width: 100%;
       max-width: 450px;
-      margin: 0 auto;
-      padding: 15px;
-      padding-top: 70px; /* Reducido para móviles */
-      border-radius: 20px;
-      border: 2px solid #59009A;
-    }
-  
-    .menu-item {
-      margin: 6px 0 !important; /* Espaciado más compacto en móvil */
-      padding: 10px !important;
-    }
-  
-    .sidebar .menu-item img {
-      width: 20px; /* Iconos ligeramente más pequeños en móvil */
-      height: 20px;
-      margin-right: 12px;
-    }
-  
-    .sidebar .menu-item span {
-      font-size: 14px; /* Texto ligeramente más pequeño en móvil */
-    }
-  
-    /* Mejoras de interacción táctil */
-    .sidebar .menu-item:active {
-      transform: scale(0.98);
-      background: linear-gradient(#ffffff, #9c76c1);
-    }
-  }
-  
-  /* Ajustes para pantallas muy pequeñas */
-  @media only screen and (max-width: 480px) {
-    .sidebar {
-      max-width: 100%;
-      padding: 12px;
-      padding-top: 60px;
-    }
-  
-    .menu-item {
-      margin: 4px 0 !important;
-      padding: 8px !important;
-    }
-  
-    .sidebar .menu-item span {
-      font-size: 13px;
-    }
-  }
-  /* NUEVOS ESTILOS Y RESPOSIVE */
-  /* Estilos base del contenedor */
-  .container {
-    display: flex;
-    min-height: calc(100vh - 126px);
-  }
-  
-  /* Estilos de la barra lateral */
-  .sidebar {
-    width: 25%;
-    background-color: #c7b7fe49;
-    padding: 20px;
-    padding-top: 108px;
-  }
-  
-  .sidebar .menu-item {
-    padding: 12px;
-    margin: 10px 0;
-    background: #fff;
-    border-radius: 15px;
-    transition: background 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-  }
-  
-  
-  
-  
-  /* Estilos base de la barra lateral */
-  .sidebar {
-    width: 25%;
-    background-color: #c7b7fe49;
-    padding: 20px;
-    padding-top: 108px;
-  }
-  
-  .sidebar .menu-item {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 12px;
-    margin: 10px 0;
-    background: #fff;
-    border-radius: 15px;
-    transition: background 0.3s ease;
-  }
-  
-  /* Efectos hover y active */
-  .sidebar .menu-item.active,
-  .sidebar .menu-item:hover {
-    background: #ba7fe7;
-    transform: scale(1.05);
-  }
-  
-  /* Media queries para móvil */
-  @media only screen and (max-width: 768px) {
-    .container {
-      flex-direction: column;
-      padding: 10px;
-      height: auto;
-      margin: 0 auto;
-      max-width: 95%;
-    }
-  
-    .sidebar {
-      width: 100%;
-      max-width: 450px;
-      margin: 120px auto 20px auto; /* Aumentado significativamente el margen superior */
+      margin-top: 150px; /* Aumentado para dar más espacio */
       padding: 20px 15px;
       border-radius: 25px;
       border: 2px solid #59009A;
       box-sizing: border-box;
-    }
+  }
+     
+  .sidebar .menu-item {
+      padding: 8px; /* Reducido de 10px a 8px */
+      margin: 6px 0; /* Menos espacio entre elementos */
+      font-size: 14px; /* Disminuir el tamaño del texto */
   }
   
-  .playlists {
-        margin-top: 55px;
-        margin-left: 20px;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        position: relative;
-        border-radius: 10px;
-        overflow: hidden;
-        /* Asegura que el borde redondeado aplique al pseudo-elemento */
+  .sidebar .menu-item img {
+      width: 20px; /* Reducido de 24px a 20px */
+      height: 20px;
+      margin-right: 8px;
+  }
   
+  .sidebar .menu-item span {
+      font-size: 14px; /* Ajuste para que se vea proporcionado */
+  }
+}
+  
+  @media only screen and (max-width: 768px) {
+      .container {
+      flex-direction: column;
+      height: auto;
+      margin: 0 auto;
+      padding: 20px;
+      max-width: 95%;
+      min-height: calc(100vh - 126px);
+      align-items: center; /* Centrado del contenedor principal */
       }
+      .main-content {
+    width: 100%;
+    padding: 20px;
+    margin-top: 20px;
+    margin: 0 auto;
+    max-width: 95%;
+  }
+          
+          .genres {
+              width: 100%;
+              justify-content: center;
+              gap: 15px;
+              padding: 0;
+              display: flex;
+               flex-wrap: wrap;
+          }
+          .title {
+              font-size: 40px; /* Reducido para móvil */
+              margin: 20px 0;
+              text-align: center;
+              width: 100%;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              font-family: "Roboto Slab", serif;
+              padding: 0;
+  box-sizing: border-box;
+}
+
+  }
+* {
+  box-sizing: border-box;
+}
+ /* Asegurar que las imágenes mantengan su forma */
+ .genre-card img {
+  height: auto; /* Mantiene proporciones */
+  max-height: 230px; /* Para evitar que se estiren */
   
-      .playlists::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-  
-        width: 100%;
-        height: 100%;
-        background: url(imgplaylist/pngwing.com.png) center/cover no-repeat;
-        /* Establece la imagen de fondo y su tamaño y posición */
-        opacity: 0.5;
-        /* Ajusta la opacidad según tus necesidades */
-        z-index: -100;
-        /* Coloca la capa debajo del contenido */
-        border-radius: 10px;
-        /* Aplica el borde redondeado */
-      }
-  
-      .folder-container {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 50px;
-      }
-  
-      .folder-container .folder {
-        width: 100px;
-        text-align: center;
-      }
-  
-      .folder img:hover {
-        transform: scale(1.3);
-        /* Agranda el contenedor al pasar el cursor */
-      }
-  
-      .folder-container .folder img {
-        width: 100px;
-        height: 100px;
-        transition: transform 0.3s; /* Añade una transición suave */
-      }
-      .folder p {
-          margin-top: 10px;
-    font-size: 16px;
-    transition: transform 0.3s; /* Añade una transición suave */
-      }
-  
-  
+}
+
+@media only screen and (max-width: 768px) {
+.genres {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 15px;
+  width: 100%;
+}
+
+.genre {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  top: 0;
+}
+
+.genre-card {
+  height: 100%;
+}
+
+.genre-card img {
+  height: 150px;
+}
+
+.genre-card-content h3 {
+  font-size: 14px;
+}
+}
+
+@media only screen and (max-width: 480px) {
+.genres {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  padding: 10px;
+}
+
+.genre-card img {
+  height: 120px;
+}
+}
+
+
+/* Ensure consistent spacing at larger screens */
+@media screen and (min-width: 769px) {
+.genres {
+  gap: 40px;
+  padding: 0 20px;
+}
+
+.genre {
+  width: calc(50% - 20px);
+  margin-bottom: 40px;
+}
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+.genres {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 15px;
+}
+
+.genre-card img {
+  height: 150px;
+}
+
+.genre-card-content h3 {
+  font-size: 14px;
+}
+}
+
+@media (max-width: 480px) {
+.genres {
+  gap: 15px;
+  padding: 10px;
+}
+
+.genre-card img {
+  height: 120px;
+}
+}
+
+.playlists {
+  margin-top: 120px;  /* Aumentado para crear más separación */
+  margin-left: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  padding-top: 30px;  /* Añadido padding superior */
+
+}
+
+.playlists::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+  background: url(imgplaylist/pngwing.com.png) center/cover no-repeat;
+  /* Establece la imagen de fondo y su tamaño y posición */
+  opacity: 0.5;
+  /* Ajusta la opacidad según tus necesidades */
+  z-index: -100;
+  /* Coloca la capa debajo del contenido */
+  border-radius: 10px;
+  /* Aplica el borde redondeado */
+}
+
+.folder-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+.folder-container .folder {
+  width: 80px;
+  text-align: center;
+}
+
+.folder img:hover {
+  transform: scale(1.3);
+  /* Agranda el contenedor al pasar el cursor */
+}
+
+.folder-container .folder img {
+    width: 80px;
+    height: 80px;
+    transition: transform 0.3s;
+}
+.folder p {
+  margin-top: 8px;  /* Reduced from 10px */
+  font-size: 14px;  /* Reduced from 16px */
+  transition: transform 0.3s;
+}
+
+@media only screen and (max-width: 768px) {
+  .sidebar {
+      width: 100%;
+      max-width: 450px;
+      margin-top: 60px; /* Reducido para evitar mucho espacio */
+      padding: 20px 15px;
+      border-radius: 25px;
+      border: 2px solid #59009A;
+      box-sizing: border-box;
+  }
+}

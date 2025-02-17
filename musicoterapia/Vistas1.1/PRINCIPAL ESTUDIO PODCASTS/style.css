@@ -1,0 +1,202 @@
+
+  
+  
+  
+  /* Contenido del body */
+  
+  .imag {
+    width: 100%;
+    max-width: 24.5625rem; /* 393px -> 24.5625rem */
+    height: auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 2;
+  }
+  
+  .imag:hover {
+    cursor: pointer;
+    transform: translateY(-0.625rem); /* 10px -> 0.625rem */
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); /* 8px 16px -> 0.5rem 1rem */
+  }
+  
+  .img {
+    margin: 1.25rem; /* 20px -> 1.25rem */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #59009A;
+  }
+  
+  .imagen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 70px;
+  }
+
+  .sidebar .menu-item.active,
+  .sidebar .menu-item:hover {
+    background:  #ba7fe7;;
+  
+    transform: scale(1.05);
+  }
+  
+  .sidebar .menu-item img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+  }
+  
+  .sidebar .menu-item a {
+    display: flex;
+    align-items: center;
+    color: inherit;
+    text-decoration: none;
+    justify-content: center;
+  }
+  
+  .sidebar .menu-item span {
+    flex-grow: 1;
+    text-align: center;
+    font-size: 16px;
+  }
+  
+  
+  
+  a {
+    text-decoration: none;
+  }
+
+  
+  .part1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .part2 {
+    margin-bottom: 60px; /* 60px -> 3.75rem */
+  }
+  
+  
+  
+  
+  
+  
+  /* Estilos Globales */
+  
+  
+    /* no poner nada, daña el todo, llamas a body y afecta a todos los body */
+  
+  /* Header */
+  
+  
+  
+  
+  @media (max-width: 768px) {
+  
+    .imagen{
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .part1{
+      margin-left: 20px;
+      width: 100%;
+      align-items: center;
+    }
+  
+    /* Ajustes adicionales para el contenido dentro del container */
+    .cal, .datepicker, .historial {
+      width: 100%; /* Asegura que los elementos ocupen el 100% del ancho del contenedor */
+      margin-right: 0;
+    }
+    .cal{
+      flex-direction: column;
+    }
+  }
+  
+  .marca-agua::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/rutinas-de-ejercicios/includes/woman-digital-disconnecting-home-by-doing-yoga.jpg'); /* Cambia la URL por tu imagen */
+    background-size: cover; /* Ajusta la imagen para cubrir todo el contenedor */
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.5; /* Ajusta la transparencia de la marca de agua */
+    z-index: 1;
+  }
+  
+  
+  @media only screen and (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        max-width: 450px;
+        margin-top: 150px; /* Aumentado para dar más espacio */
+        padding: 20px 15px;
+        border-radius: 25px;
+        border: 2px solid #59009A;
+        box-sizing: border-box;
+    }
+       
+    .sidebar .menu-item {
+        padding: 8px; /* Reducido de 10px a 8px */
+        margin: 6px 0; /* Menos espacio entre elementos */
+        font-size: 14px; /* Disminuir el tamaño del texto */
+    }
+    
+    .sidebar .menu-item img {
+        width: 20px; /* Reducido de 24px a 20px */
+        height: 20px;
+        margin-right: 8px;
+    }
+    
+    .sidebar .menu-item span {
+        font-size: 14px; /* Ajuste para que se vea proporcionado */
+    }
+  }
+    
+    @media only screen and (max-width: 768px) {
+        .container {
+        flex-direction: column;
+        height: auto;
+        margin: 0 auto;
+        padding: 20px;
+        max-width: 95%;
+        min-height: calc(100vh - 126px);
+        align-items: center; /* Centrado del contenedor principal */
+        }
+        .main-content {
+      width: 100%;
+      padding: 20px;
+      margin-top: 20px;
+      margin: 0 auto;
+      max-width: 95%;
+    }
+            
+            .genres {
+                width: 100%;
+                justify-content: center;
+                gap: 15px;
+                padding: 0;
+                display: flex;
+                 flex-wrap: wrap;
+            }
+            .title {
+                font-size: 40px; /* Reducido para móvil */
+                margin: 20px 0;
+                text-align: center;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-family: "Roboto Slab", serif;
+                padding: 0;
+    box-sizing: border-box;
+  }
+  
+    }

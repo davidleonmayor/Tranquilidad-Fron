@@ -1,76 +1,44 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="esp">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Generos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <link rel="stylesheet" href="/musicoterapia/Header/style.css"> 
-  <link rel="stylesheet" href="/musicoterapia/footer/footer/inicio/styles.css"> 
-  <link rel="stylesheet" href="/musicoterapia/Vistas1.1/TUS_ME_GUSTA_PODCAST/style.css"> 
+    <link rel="stylesheet" href="/musicoterapia/Header/style.css">
+    <link rel="stylesheet" href="style.css">
+    
+    <title>tranquilidad</title>
+    <script>
+      async function includeHTML() {
+          const elements = document.querySelectorAll('[include-html]');
+          for (let el of elements) {
+              const file = el.getAttribute('include-html');
+              try {
+                  const response = await fetch(file);
+                  if (response.ok) {
+                      el.innerHTML = await response.text();
+                      // Cargar el JS del footer después de insertarlo
+                      if (file.includes("header.html")) {
+                          const script = document.createElement("script");
+                          script.src = "/rutinas-de-ejercicios/includes/Header/script.js";
+                          document.body.appendChild(script);
+                      }
+                  } else {
+                      el.innerHTML = "<p>Error al cargar el contenido.</p>";
+                  }
+              } catch (error) {
+                  el.innerHTML = "<p>Error de conexión al cargar el contenido.</p>";
+              }
+          }
+      }
+      document.addEventListener("DOMContentLoaded", includeHTML);
+  </script>
+
+
 </head>
-<body class="body">
-  <header class="main-header">
-    <div class="logo-container">
-        <a href="/inicio-de-sesion/Modulo-iniciar-sesion/home/home.html"><img href="/inicio-de-sesion/Modulo-iniciar-sesion/home/home.html" src="/mapa-de-suenos/imagenes/6aa3987c-48ce-4355-b6bf-26c76c37e93d-removebg.png" alt="Logo" class="logo"></a>
-       
-    </div>
-    <button2 class="hamburger" onclick="toggleHamburgerMenu()">☰</button2>
-    <nav class="nav-links">
-        <a href="/inicio-de-sesion/Modulo-iniciar-sesion/home/home.html" class="nav-item">Inicio</a>
-        <div class="nav-item modules-item" onclick="toggleModules()">Módulos</div>
-        <a href="/mapa-de-suenos/todohh/inicio/link/quienessomos.html" class="nav-item  ">Acerca de </a>
-        <a href="/mapa-de-suenos/todohh/inicio/link/contacto.html" class="nav-item ">Contacto</a>
-        <div id="modules-indicator" class="modules-indicator"></div>
-        
-    </nav>
-    <div class="nav-right">
-       
-    </div>
-    <div class="profile-container">
-        <div class="profile-box">
-            <a href="#nombre" class="nav-item special-item profile-name">Juanito Alimaña</a>
-            <img src="/musicoterapia/Vistas1.1/images/user.png" alt="Foto de perfil" class="profile-pic" onclick="toggleProfileMenu()">
-            <div id="profile-menu" class="profile-menu">
-              <a href="/inicio-de-sesion/Modulo-iniciar-sesion/usuario/usuario.html">Perfil</a>
-              <a href="/inicio-de-sesion/Modulo-iniciar-sesion/configuracion/configuracion.html">Configuracion</a>
-              <a href="/inicio-de-sesion/Modulo-iniciar-sesion/login/login.html">Cerrar sesión</a>
-            </div>
-        </div>
-    </div>
-    <!-- Menú hamburguesa -->
-<div id="hamburger-menu" class="hamburger-menu">
-<a href="/inicio-de-sesion/Modulo-iniciar-sesion/home/home.html" class="hamburger-item">Inicio</a>
-<a href="#"><div class="hamburger-item" onclick="toggleModulues()">Módulos</div></a>
-<!-- Contenedor de módulos (oculto por defecto) -->
-<div id="modules-content" class="modules-content" style="display: none;">
-    <a href="/mapa-de-suenos/Inicio/Inicio.html"><div class="modulo">Mapa de sueños</div></a>
-    <a href="/alimentacion/Inicio/index.html"><div class="modulo">Alimentación</div></a>
-    <a href="/musicoterapia/Vistas1.1/PRINCIPAL_GENEROS/principal_generos.html"><div class="modulo">Musicoterapia</div></a>
-    <a href="/rutinas-de-ejercicios/inicio/index.html"><div class="modulo">Ejercicios</div></a>
-    <a href="/atencion-profesional/USUARIO/Home_Usuario/HomeUsuario.html"><div class="modulo">Atención Profesional</div></a>
-</div>
-<a href="#perfil" class="hamburger-item">Perfil</a>
-</div>
-    <!-- Pestaña de módulos -->
-    <div id="modules-overlay" class="modules-overlay">
-        <div class="module-grid">
-           <a href="/mapa-de-suenos/Inicio/Inicio.html"> <div class="module">Mapa de sueños</div></a>
-           <a href="/alimentacion/Inicio/index.html"><div class="module">Alimentación</div></a>
-            <a href="/musicoterapia/Vistas1.1/PRINCIPAL_GENEROS/principal_generos.html"><div class="module">Musicoterapia</div></a>
-            <a href="/rutinas-de-ejercicios/inicio/index.html"><div class="module">Ejercicios</div></a>
-            <a href="/atencion-profesional/USUARIO/Home_Usuario/HomeUsuario.html"><div class="module">Atención Profesional</div></a>
-        </div>
-    </div>
-</header>
-
-      
-    <script src="/musicoterapia/Vistas1.1/Header/sin inicio secion/script.js"></script>
-
-     
+<body>
+    <div include-html="/rutinas-de-ejercicios/includes/Header/header.html"></div>
     <div class="container">
       <aside class="sidebar">
         <br>
@@ -105,8 +73,8 @@
             <span>PlayList</span>
           </a>
         </div>
-        <div class="menu-item active">
-          <a href="/musicoterapia/Vistas1.1/TUS_ME_GUSTA_PISTAS/Tus me gustas pistas.html" style="text-decoration: none;">
+        <div class="menu-item">
+          <a href="/musicoterapia/Vistas1.1/TUS_ME_GUSTA_PISTAS/Tus me gustas pistas.html">
             <img src="/musicoterapia/Vistas1.1/images/like.png" alt="Icon">
             <span>Me gusta</span>
           </a>
@@ -125,6 +93,13 @@
           <br>
         </div>
 
+        <div class="image-container">
+          <img id="carousel-image" src="/musicoterapia/Vistas1.1/images/CARRUSEL PODCAST 1.png" alt="fondoOndas" />
+          <img id="carousel-image" src="/musicoterapia/Vistas1.1/images/CARRUSEL PODCASTS 2.png" alt="fondoOndas" />
+          <img id="carousel-image" src="/musicoterapia/Vistas1.1/images/CARRUSEL PODCASTS 3.png" alt="fondoOndas" />
+          <img id="carousel-image" src="/musicoterapia/Vistas1.1/images/CARRUSEL PODCASTS 4.png" alt="fondoOndas" />
+          <img id="carousel-image" src="/musicoterapia/Vistas1.1/images/CARRUSEL PODCASTS 5.png" alt="fondoOndas" />
+        </div>
         <div class="tabs">
           <a href="/musicoterapia/Vistas1.1/TUS_ME_GUSTA_PISTAS/Tus me gustas pistas.html" class="tabs-pistas-podcast">Pistas</a>
           <a href="/musicoterapia/Vistas1.1/TUS_ME_GUSTA_PODCAST/Tus me gusta podcast.html" class="tabs-pistas-podcast">Podcast</a>
@@ -280,43 +255,13 @@
       </main>
     </div>
 
+    <br>
+    <br>
+    <br>
+    <br>
+<div include-html="/rutinas-de-ejercicios/includes/inicio/inicio.html"></div>
 
-    <footer class="footer">
-      <div class="footer-container">
-          <div class="footer-column">
-              <h4>Acerca de Tranquilidad</h4>
-              <ul>
-                  <li><a href="/musicoterapia/footer/footer/inicio/link/quienessomos.html">Acerca de</a></li>
-                  <li><a href="/musicoterapia/footer/footer/inicio/link/beneficiosdetranquilidad.html">Beneficios de la Tranquilidad</a></li>
-                  <li><a href="/musicoterapia/footer/footer/inicio/link/consejodebienestar.html">Consejos de Bienestar</a></li>
-              </ul>
-          </div>
-          <div class="footer-column">
-              <h4>Ayuda y Soporte</h4>
-              <ul>
-                  <li><a href="/musicoterapia/footer/footer/inicio/link/contacto.html">Contacto</a></li>
-                  <li><a href="/musicoterapia/footer/footer/inicio/link/sugerencias.html">Sugerencias</a></li>
-                  <li><a href="/musicoterapia/footer/footer/inicio/link/guiadeuso.html">Guía de uso</a></li>
-              </ul>
-          </div>
-          <div class="footer-column">
-              <h4>Información Legal</h4>
-              <ul>
-                  <li><a href="/musicoterapia/footer/footer/inicio/link/terminosycondiciones.html">Términos y condiciones</a></li>
-                  <li><a href="/musicoterapia/footer/footer/inicio/link/politica de privacidad .html">Política de privacidad</a></li>
-                  <li><a href="/musicoterapia/footer/footer/inicio/link/avisolegal.html">Aviso legal</a></li>
-              </ul>
-          </div>
-      </div>
-      <div class="footer-bottom">
-          <p>Copyright © 2024 Tranquilidad. Todos los derechos reservados.</p>
-          <div class="social-icons">
-              <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
-              <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
-              <a href="https://x.com/?lang=es.com/"><i class="fab fa-twitter"></i></a>
-          </div>
-      </div>
-  </footer>
+<script src="../TUS_ME_GUSTA_PODCAST/scrip.js"></script>
+
 </body>
-<script src="/musicoterapia/Vistas1.1/TUS_ME_GUSTA_PODCAST/scrip.js"></script>
 </html>

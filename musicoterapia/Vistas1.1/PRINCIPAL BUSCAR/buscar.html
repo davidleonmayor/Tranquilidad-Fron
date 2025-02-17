@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="esp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="/musicoterapia/Header/style.css">
+    <link rel="stylesheet" href="style.css">
+    
+    <title>tranquilidad</title>
+    <script>
+      async function includeHTML() {
+          const elements = document.querySelectorAll('[include-html]');
+          for (let el of elements) {
+              const file = el.getAttribute('include-html');
+              try {
+                  const response = await fetch(file);
+                  if (response.ok) {
+                      el.innerHTML = await response.text();
+                      // Cargar el JS del footer después de insertarlo
+                      if (file.includes("header.html")) {
+                          const script = document.createElement("script");
+                          script.src = "/rutinas-de-ejercicios/includes/Header/script.js";
+                          document.body.appendChild(script);
+                      }
+                  } else {
+                      el.innerHTML = "<p>Error al cargar el contenido.</p>";
+                  }
+              } catch (error) {
+                  el.innerHTML = "<p>Error de conexión al cargar el contenido.</p>";
+              }
+          }
+      }
+      document.addEventListener("DOMContentLoaded", includeHTML);
+  </script>
+
+
+</head>
+<body>
+    <div include-html="/rutinas-de-ejercicios/includes/Header/header.html"></div>
+    <div class="container">
+        <aside class="sidebar">
+          <br />
+          <br />
+          <br>
+          <div class="menu-item">
+            <a href="/musicoterapia/Vistas1.1/PRINCIPAL_GENEROS/principal_generos.html" style="text-decoration: none">
+              <img src="/musicoterapia/Vistas1.1/images/genero.png" alt="Icon" />
+              <span>Géneros</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a href="/musicoterapia/Vistas1.1/PRINCIPAL_ALBUM/principal_album.html" style="text-decoration: none">
+              <img src="/musicoterapia/Vistas1.1/images/album.png" alt="Icon" />
+              <span>Álbum</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a href="/musicoterapia/Vistas1.1/PRINCIPAL_PODCAST/principal_podcast.html" style="text-decoration: none">
+              <img src="/musicoterapia/Vistas1.1/images/pod.png" alt="Icon" />
+              <span>Podcast</span>
+            </a>
+          </div>
+    
+          <div class="menu-item">
+            <a href="/musicoterapia/Vistas1.1/SONIDOS_BINAURALES/binaurales.html" style="text-decoration: none">
+              <img src="/musicoterapia/Vistas1.1/images/binaural.png" alt="Icon" />
+              <span>Sonidos Binaurales</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a href="/musicoterapia/Vistas1.1/PLAYLIST/playList.html" style="text-decoration: none">
+              <img src="/musicoterapia/Vistas1.1/images/playL.png" alt="Icon" />
+              <span>PlayList</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a href="/musicoterapia/Vistas1.1/ME GUSTA/Tus me gustas pistas.html" style="text-decoration: none">
+              <img src="/musicoterapia/Vistas1.1/images/like.png" alt="Icon" />
+              <span>Me gusta</span>
+            </a>
+          </div>
+          <div class="menu-item active">
+            <a href="/musicoterapia/Vistas1.1/PRINCIPAL_BUSCAR/buscar.html" style="text-decoration: none">
+              <img src="/musicoterapia/Vistas1.1/images/buscar boton.png" alt="Icon" />
+              <span>Buscar</span>
+            </a>
+          </div>
+        </aside>
+  
+      <!-- TITULO -->
+      <main class="main-content">
+        <div class="title">
+          <span>Busqueda</span>
+          <br>
+          <br>
+        </div>
+        <div class="content">
+  
+          <div class="search-bar">
+            <img src="/musicoterapia/Vistas1.1/img/buscar.png" alt="Search">
+            <input type="text" placeholder="Buscar pistas, albums, etc">
+          </div>
+          <br>
+
+          <div class="image-container">
+            <img id="carousel-image" src="../images/GENERO CARRUSEL 1.png" alt="fondoOndas" />
+            <img id="carousel-image" src="../images/ALBUM CARRUSEL.png" alt="fondoOndas" />
+            <img id="carousel-image" src="../images/PODCASTS CARRUSEL.png" alt="fondoOndas" />
+            <img id="carousel-image" src="../images/BINAURAL CARRUSEL 2.png" alt="fondoOndas" />
+
+
+          </div>
+          
+          <div class="recently">Resultados</div>
+          <!-- Contenedor de pistas -->
+          <div class="image-container2">
+  
+            <div class="content">
+              <div class="tracks-container">
+                <div class="track">
+                  <img src="/musicoterapia/Vistas1.1/img/Pista1.jpg" alt="pista 1" />
+                  <div>
+                    <span>Pista 1</span><br />
+                    <span>Time</span>
+                  </div>
+                  <div>FRECUENCIA</div>
+                  <div>GAMMA</div>
+                  <a href="/musicoterapia/Vistas1.1/REPRODUCCTORES/REPRO_BINAURALES/Reproducctor2.html" class="play-button"></a>
+                </div>
+                <div class="track">
+                  <img src="/musicoterapia/Vistas1.1/img/pista2.jpg" alt="pista 2" />
+                  <div>
+                    <span>Pista 2</span><br />
+                    <span>Time</span>
+                  </div>
+                  <div>FRECUENCIA</div>
+                  <div>GAMMA</div>
+                  <a href="/musicoterapia/Vistas1.1/REPRODUCCTORES/REPRO_BINAURALES/Reproducctor2.html" class="play-button"></a>
+                </div>
+  
+                <div class="track">
+                  <img src="/musicoterapia/Vistas1.1/img/pista3.jpeg" alt="pista 3" />
+                  <div>
+                    <span>Pista 3</span><br />
+                    <span>Time</span>
+                  </div>
+                  <div>FRECUENCIA</div>
+                  <div>GAMMA</div>
+                  <a href="/musicoterapia/Vistas1.1/REPRODUCCTORES/REPRO_BINAURALES/Reproducctor2.html" class="play-button"></a>
+                </div>
+  
+                <div class="track">
+                  <img src="/musicoterapia/Vistas1.1/img/pista4.avif" alt="pista 4" />
+                  <div>
+                    <span>Pista 4</span><br />
+                    <span>Time</span>
+                  </div>
+                  <div>FRECUENCIA</div>
+                  <div>GAMMA</div>
+                  <a href="/musicoterapia/Vistas1.1/REPRODUCCTORES/REPRO_BINAURALES/Reproducctor2.html" class="play-button"></a>
+                </div>
+  
+                <div class="track">
+                  <img src="/musicoterapia/Vistas1.1/img/pista5.jpg" alt="pista 5" />
+                  <div>
+                    <span>Pista 5</span><br />
+                    <span>Time</span>
+                  </div>
+                  <div>FRECUENCIA</div>
+                  <div>GAMMA</div>
+                  <a href="/musicoterapia/Vistas1.1/REPRODUCCTORES/REPRO_BINAURALES/Reproducctor2.html" class="play-button"></a>
+                </div>
+                <div class="track">
+                  <img src="/musicoterapia/Vistas1.1/img/pista6.jpg" alt="pista 6" />
+                  <div>
+                    <span>Pista 6</span><br />
+                    <span>Time</span>
+                  </div>
+                  <div>FRECUENCIA</div>
+                  <div>GAMMA</div>
+                  <a href="/musicoterapia/Vistas1.1/REPRODUCCTORES/REPRO_BINAURALES/Reproducctor2.html" class="play-button"></a>
+                </div>
+                <div class="track">
+                  <img src="/musicoterapia/Vistas1.1/img/pista7.jpg" alt="pista 7" />
+                  <div>
+                    <span>Pista 7</span><br />
+                    <span>Time</span>
+                  </div>
+                  <div>FRECUENCIA</div>
+                  <div>GAMMA</div>
+                  <a href="/musicoterapia/Vistas1.1/REPRODUCCTORES/REPRO_BINAURALES/Reproducctor2.html" class="play-button"></a>
+                </div>
+                <div class="track">
+                  <img src="/musicoterapia/Vistas1.1/img/pista8.jpg" alt="pista 8" />
+                  <div>
+                    <span>Pista 8</span><br />
+                    <span>Time</span>
+                  </div>
+                  <div>FRECUENCIA</div>
+                  <div>GAMMA</div>
+                  <a href="/musicoterapia/Vistas1.1/REPRODUCCTORES/REPRO_BINAURALES/Reproducctor2.html" class="play-button"></a>
+                </div>
+                <div class="track">
+                  <img src="/musicoterapia/Vistas1.1/img/pista9.jpg" alt="pista 9" />
+                  <div>
+                    <span>Pista 9</span><br />
+                    <span>Time</span>
+                  </div>
+                  <div>FRECUENCIA</div>
+                  <div>GAMMA</div>
+                  <a href="/musicoterapia/Vistas1.1/REPRODUCCTORES/REPRO_BINAURALES/Reproducctor2.html" class="play-button"></a>
+                </div>
+                <div class="track">
+                  <img src="/musicoterapia/Vistas1.1/img/pista10.jpg" alt="pista 10" />
+                  <div>
+                    <span>Pista 10</span><br />
+                    <span>Time</span>
+                  </div>
+                  <div>FRECUENCIA</div>
+                  <div>GAMMA</div>
+                  <a href="/musicoterapia/Vistas1.1/REPRODUCCTORES/REPRO_BINAURALES/Reproducctor2.html" class="play-button"></a>
+                </div>
+          
+              </div>
+
+              
+            </div>
+  
+          </div>
+  
+        </div>
+      </main>
+    </div>
+    </div>
+    <!-- Add more playlist items as needed -->
+  
+  
+    </main>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+<div include-html="/rutinas-de-ejercicios/includes/inicio/inicio.html"></div>
+
+<script src="/musicoterapia/Vistas1.1/PRINCIPAL BUSCAR/scrip.js"></script>
+
+</body>
+</html>
