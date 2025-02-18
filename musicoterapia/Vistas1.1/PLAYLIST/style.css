@@ -189,6 +189,7 @@ a {
   overflow-y: auto;
   display: flex;
   flex-direction: column;
+  margin-bottom: 80px; /* Ajusta el valor según necesites más o menos espacio */
   
  
  
@@ -376,7 +377,7 @@ a {
 }
 
 .playlists {
-  margin-top: 120px;  /* Aumentado para crear más separación */
+  margin-top: 40px; /* En lugar de 120px */
   margin-left: 50px;
   display: flex;
   flex-wrap: wrap;

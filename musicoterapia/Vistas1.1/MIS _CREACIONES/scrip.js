@@ -12,7 +12,8 @@ let creaciones = [
         type: 'Podcasts',
         duration: '15:30',
         date: '15/02/2024',
-        thumbnail: null,
+        thumbnail: '/path/to/thumbnail1.jpg',
+        videoUrl: '/path/to/video1.mp4', // Add video URL
         isEdited: true,
         editHistory: [
             { date: '14/02/2024', changes: 'Creación inicial' },
@@ -25,7 +26,8 @@ let creaciones = [
         type: 'Grabaciones',
         duration: '08:45',
         date: '14/02/2024',
-        thumbnail: null,
+        thumbnail: '/path/to/thumbnail2.jpg',
+        videoUrl: '/path/to/video2.mp4', // Add video URL
         isEdited: false,
         editHistory: [
             { date: '14/02/2024', changes: 'Creación inicial' }
@@ -464,3 +466,110 @@ shareStyles.textContent = `
 document.head.appendChild(shareStyles);
 
 
+// Modify the createCreacionCard function to include video
+function createCreacionCard(item) {
+    const card = document.createElement('div');
+    card.className = 'tarjeta-creacion';
+    
+    const editedBadge = item.isEdited ? '<span class="edited-badge">Editado</span>' : '';
+    
+    card.innerHTML = `
+        <div class="video-preview">
+            <video
+                class="video-player"
+                src="${item.videoUrl}"
+                poster="${item.thumbnail}"
+                style="width: 100%; height: 100%; object-fit: cover;"
+            >
+                Your browser does not support the video tag.
+            </video>
+            <button class="play-pause-btn">
+                <i class="fas fa-play"></i>
+            </button>
+            ${editedBadge}
+        </div>
+        <div class="video-info">
+            <h3 class="video-title">${item.title}</h3>
+            <div class="video-meta">
+                <span>Duración: ${item.duration}</span>
+                <span>Fecha: ${item.date}</span>
+            </div>
+            ${item.isEdited ? `
+                <div class="edit-history">
+                    <small>Última edición: ${item.editHistory[item.editHistory.length - 1].date}</small>
+                </div>
+            ` : ''}
+        </div>
+        <div class="video-actions">
+            <button class="action-btn edit-btn" data-id="${item.id}">
+                <i class="fas fa-edit"></i> Editar
+            </button>
+            <button class="action-btn share-btn" data-id="${item.id}">
+                <i class="fas fa-share"></i> Compartir
+            </button>
+        </div>
+    `;
+    
+    // Add video control event listeners
+    const video = card.querySelector('.video-player');
+    const playPauseBtn = card.querySelector('.play-pause-btn');
+    
+    playPauseBtn.addEventListener('click', () => {
+        if (video.paused) {
+            video.play();
+            playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+        } else {
+            video.pause();
+            playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+        }
+    });
+    
+    // Add edit and share event listeners
+    const editBtn = card.querySelector('.edit-btn');
+    const shareBtn = card.querySelector('.share-btn');
+    
+    editBtn.addEventListener('click', () => handleEdit(item.id));
+    shareBtn.addEventListener('click', () => handleShare(item.id));
+    
+    return card;
+}
+
+// Add these styles to your existing styles
+const videoStyles = document.createElement('style');
+videoStyles.textContent = `
+    .video-preview {
+        position: relative;
+        width: 100%;
+        height: 200px;
+        overflow: hidden;
+        border-radius: 8px;
+    }
+    
+    .play-pause-btn {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(0, 0, 0, 0.6);
+        border: none;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        color: white;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    
+    .play-pause-btn:hover {
+        background: rgba(0, 0, 0, 0.8);
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+    
+    .video-player {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+`;
+
+document.head.appendChild(videoStyles);

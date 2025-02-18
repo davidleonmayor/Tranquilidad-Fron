@@ -2,31 +2,32 @@
 const sampleAudios = [
   {
       id: 1,
-      title: "Daya",
-      artist: "Artist 1",
+      title: "After work",
+      artist: "Piano_Music",
       description: "A relaxing melody",
-      audio_file: "/Vistas1.1/audio/town-10169.mp3",
+      audio_file: "/musicoterapia/Vistas1.1/audio/genero-audio/CLASICA/after-work-142608.mp3",
       image_file: "/musicoterapia/Vistas1.1/images/El-piano.jpg",
       like_id: null
   },
   {
       id: 2,
-      title: "Dosis",
-      artist: "Artist 2",
+      title: "Emotional Piano Background Music",
+      artist: "DELOSound",
       description: "Calming nature sounds",
-      audio_file: "/Vistas1.1/audio/town-10169.mp3",
+      audio_file: "/musicoterapia/Vistas1.1/audio/genero-audio/CLASICA/emotional-piano-background-music-298069.mp3",
       image_file: "/musicoterapia/Vistas1.1/images/El-piano.jpg",
       like_id: null
   },
   {
       id: 3,
-      title: "Sample Track 3",
-      artist: "Artist 3",
+      title: "Perfect Beauty",
+      artist: "Good_B_Music",
       description: "Peaceful piano",
-      audio_file: "/Vistas1.1/audio/town-10169.mp3",
+      audio_file: "/musicoterapia/Vistas1.1/audio/genero-audio/CLASICA/fur-elise-by-ludwig-van-beethoven-classic-guitar-ahmad-mousavipour-13870.mp3",
       image_file: "/musicoterapia/Vistas1.1/images/El-piano.jpg",
       like_id: null
   }
+  
 ];
 
 // Inicialización de elementos del reproductor
@@ -466,6 +467,3 @@ audioPlayer.addEventListener('ended', function() {
       console.log('Fin de la lista de reproducción');
   }
 });
-
-
-

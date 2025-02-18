@@ -538,13 +538,14 @@
   
       }
   
-      .track-info p {
-        color: #d3d0d4;
-        font-size: 1rem;
-        color: #ccc;
-        margin: 0;
-      }
-  
+      
+    .track-info p {
+      color: #d3d0d4;
+      font-size: 1rem;
+      color: #000000;
+      margin: 0;
+    }
+
   
   
       /* Estilos de los botones dentro de cada pista */

@@ -2,31 +2,42 @@
 const sampleAudios = [
   {
       id: 1,
-      title: "Daya",
-      artist: "Artist 1",
+      title: "Floating Meditation",
+      artist: "Piano_Music",
       description: "A relaxing melody",
-      audio_file: "/Vistas1.1/audio/town-10169.mp3",
+      audio_file: "/musicoterapia/Vistas1.1/audio/binaurales-audio/floating-meditation-with-binaural-waves-at-4hz-for-sleep-and-relaxation-7381 (1).mp3",
       image_file: "/musicoterapia/Vistas1.1/images/El-piano.jpg",
       like_id: null
   },
   {
       id: 2,
-      title: "Dosis",
-      artist: "Artist 2",
+      title: "1 Hz Binaural Waves",
+      artist: "DELOSound",
       description: "Calming nature sounds",
-      audio_file: "/Vistas1.1/audio/town-10169.mp3",
+      audio_file: "/musicoterapia/Vistas1.1/audio/binaurales-audio/new-1-hz-239795.mp3",
       image_file: "/musicoterapia/Vistas1.1/images/El-piano.jpg",
       like_id: null
   },
   {
       id: 3,
-      title: "Sample Track 3",
-      artist: "Artist 3",
+      title: "Simply Meditation Series",
+      artist: "Good_B_Music",
       description: "Peaceful piano",
-      audio_file: "/Vistas1.1/audio/town-10169.mp3",
+      audio_file: "/musicoterapia/Vistas1.1/audio/binaurales-audio/simply-meditation-series-11hz-alpha-binaural-waves-for-relaxed-focus-8028 (1).mp3",
       image_file: "/musicoterapia/Vistas1.1/images/El-piano.jpg",
       like_id: null
-  }
+  },
+  {
+    id: 4,
+    title: "Floating Meditation",
+    artist: "Good_B_Music",
+    description: "Peaceful piano",
+    audio_file: "/musicoterapia/Vistas1.1/audio/binaurales-audio/techno-beats-unshine-star-10564 (1).mp3",
+    image_file: "/musicoterapia/Vistas1.1/images/El-piano.jpg",
+    like_id: null
+}
+
+  
 ];
 
 // Inicialización de elementos del reproductor
@@ -466,6 +477,3 @@ audioPlayer.addEventListener('ended', function() {
       console.log('Fin de la lista de reproducción');
   }
 });
-
-
-

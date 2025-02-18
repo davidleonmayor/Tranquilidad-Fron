@@ -6,7 +6,7 @@ const sampleAudios = [
       artist: "Artist 1",
       description: "A relaxing melody",
       audio_file: "/Vistas1.1/audio/town-10169.mp3",
-      image_file: "/musicoterapia/Vistas1.1/images/El-piano.jpg",
+      image_file: "/musicoterapia/Vistas1.1/audio/genero-audio/INSTRUMENTAL/dope-guitar-type-trap-beat-rap-instrumental-206686.mp3",
       like_id: null
   },
   {
@@ -14,7 +14,7 @@ const sampleAudios = [
       title: "Dosis",
       artist: "Artist 2",
       description: "Calming nature sounds",
-      audio_file: "/Vistas1.1/audio/town-10169.mp3",
+      audio_file: "/musicoterapia/Vistas1.1/audio/genero-audio/INSTRUMENTAL/drake-type-trap-beat-rap-instrumental-221923.mp3",
       image_file: "/musicoterapia/Vistas1.1/images/El-piano.jpg",
       like_id: null
   },
@@ -23,7 +23,7 @@ const sampleAudios = [
       title: "Sample Track 3",
       artist: "Artist 3",
       description: "Peaceful piano",
-      audio_file: "/Vistas1.1/audio/town-10169.mp3",
+      audio_file: "/musicoterapia/Vistas1.1/audio/genero-audio/INSTRUMENTAL/instrumental-sad-music-with-piano-and-violin-179450.mp3",
       image_file: "/musicoterapia/Vistas1.1/images/El-piano.jpg",
       like_id: null
   }

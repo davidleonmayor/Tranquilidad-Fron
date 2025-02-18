@@ -2,31 +2,32 @@
 const sampleAudios = [
   {
       id: 1,
-      title: "Daya",
-      artist: "Artist 1",
+      title: "Floating Meditation",
+      artist: "Piano_Music",
       description: "A relaxing melody",
-      audio_file: "/Vistas1.1/audio/town-10169.mp3",
+      audio_file: "/musicoterapia/Vistas1.1/audio/binaurales-audio/floating-meditation-with-binaural-waves-at-4hz-for-sleep-and-relaxation-7381 (1).mp3",
       image_file: "/musicoterapia/Vistas1.1/images/El-piano.jpg",
       like_id: null
   },
   {
       id: 2,
-      title: "Dosis",
-      artist: "Artist 2",
+      title: "After Work",
+      artist: "DELOSound",
       description: "Calming nature sounds",
-      audio_file: "/Vistas1.1/audio/town-10169.mp3",
+      audio_file: "/musicoterapia/Vistas1.1/audio/genero-audio/CLASICA/after-work-142608.mp3",
       image_file: "/musicoterapia/Vistas1.1/images/El-piano.jpg",
       like_id: null
   },
   {
       id: 3,
-      title: "Sample Track 3",
-      artist: "Artist 3",
+      title: "Deep Relaxing Music",
+      artist: "Good_B_Music",
       description: "Peaceful piano",
-      audio_file: "/Vistas1.1/audio/town-10169.mp3",
+      audio_file: "/musicoterapia/Vistas1.1/audio/album-audio/DORMIR/deep-relaxing-music-144008.mp3",
       image_file: "/musicoterapia/Vistas1.1/images/El-piano.jpg",
       like_id: null
   }
+  
 ];
 
 // Inicialización de elementos del reproductor
@@ -466,7 +467,6 @@ audioPlayer.addEventListener('ended', function() {
       console.log('Fin de la lista de reproducción');
   }
 });
-
 
 
 
