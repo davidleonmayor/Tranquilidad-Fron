@@ -1,469 +1,294 @@
-// Estructura de datos de prueba para simular audios
-const sampleAudios = [
-  {
-      id: 1,
-      title: "After work",
-      artist: "Piano_Music",
-      description: "A relaxing melody",
-      audio_file: "/musicoterapia/Vistas1.1/audio/genero-audio/CLASICA/after-work-142608.mp3",
-      image_file: "/musicoterapia/Vistas1.1/images/El-piano.jpg",
-      like_id: null
-  },
-  {
-      id: 2,
-      title: "Emotional Piano Background Music",
-      artist: "DELOSound",
-      description: "Calming nature sounds",
-      audio_file: "/musicoterapia/Vistas1.1/audio/genero-audio/CLASICA/emotional-piano-background-music-298069.mp3",
-      image_file: "/musicoterapia/Vistas1.1/images/El-piano.jpg",
-      like_id: null
-  },
-  {
-      id: 3,
-      title: "Perfect Beauty",
-      artist: "Good_B_Music",
-      description: "Peaceful piano",
-      audio_file: "/musicoterapia/Vistas1.1/audio/genero-audio/CLASICA/fur-elise-by-ludwig-van-beethoven-classic-guitar-ahmad-mousavipour-13870.mp3",
-      image_file: "/musicoterapia/Vistas1.1/images/El-piano.jpg",
-      like_id: null
-  }
-  
-];
 
-// Inicialización de elementos del reproductor
-const audioPlayer = document.getElementById('audio');
-const audioTitle = document.getElementById('audio-title');
-const audioArtist = document.getElementById('audio-artist');
-const albumImage = document.getElementById('album-image');
-const playPauseBtn = document.getElementById('play-pause-btn');
-const prevBtn = document.getElementById('prev-btn');
-const nextBtn = document.getElementById('next-btn');
-const currentTimeElement = document.getElementById('current-time');
-const totalDurationElement = document.getElementById('total-duration');
-const progressBar = document.getElementById('progress-bar');
-const tracksList = document.getElementById('tracks-list');
-const likeButton = document.querySelector('.me-gusta');
 
-// Constantes y variables globales
-const SKIP_TIME = 10;
-let likedAudios = [];
-let currentTrackIndex = 0;
+    // configurar audios 
+    let currentTrackId = null;  // Variable global para almacenar el ID de la pista actual
 
-// Función para cargar y reproducir un audio
-function loadAudio(audioUrl, title, artist, cover, index) {
-  if (!audioUrl) {
-      console.error('No hay ningún audio actualmente en reproducción.');
-      return;
-  }
 
-  audioPlayer.src = audioUrl;
-  audioTitle.textContent = title;
-  audioArtist.textContent = artist;
-  albumImage.src = cover;
-  audioPlayer.load();
-  
-  audioPlayer.play().catch(function(error) {
-      console.log('Error playing audio:', error);
-  });
-  
-  playPauseBtn.innerHTML = '&#10074;&#10074;';
-  currentTrackIndex = index;
-  updateLikeButtonState(audioUrl);
-}
+    const audioPlayer = new Audio(); // Inicializar el reproductor de audio
+    let currentTrackIndex = 0; // Índice actual de la pista
+    let audios = []; // Lista de pistas , esencial para reproducir siguiente audio
+    let userLikes = {};  // Objeto para almacenar los likes del usuario
 
-// Función para actualizar el estado del botón de me gusta
-function updateLikeButtonState(audioUrl) {
-  if (!likeButton) return;
-  const likedAudio = likedAudios.find(audio => audio.audio_file === audioUrl);
+    // Función para obtener el parámetro 'genreId' de la URL
+    function getQueryParam(param) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param);
+    }
 
-  if (likedAudio) {
-      likeButton.classList.add('active');
-      likeButton.dataset.likeId = likedAudio.like_id;
-      likeButton.dataset.audioId = likedAudio.id;
-  } else {
-      likeButton.classList.remove('active');
-      delete likeButton.dataset.likeId;
-      delete likeButton.dataset.audioId;
-  }
-}
 
-// Función para alternar el estado de me gusta
-function toggleLike(element) {
-  element.classList.toggle('active');
-  const isLiked = element.classList.contains('active');
-  
-  const currentTrack = sampleAudios[currentTrackIndex];
-  if (!currentTrack) return;
+    document.addEventListener('DOMContentLoaded', function () {
+      const genreId = getQueryParam('albumId');  // Obtener el ID del album de la URL
+      const apiUrl = `http://tranquilidad.test/v1/albums/${albumId}?included=audios.genre`;
 
-  if (isLiked) {
-      const mockLikeId = Date.now();
-      element.dataset.likeId = mockLikeId;
-      element.dataset.audioId = currentTrack.id;
-      
-      const likedAudio = { ...currentTrack, like_id: mockLikeId };
-      likedAudios.push(likedAudio);
-  } else {
-      const audioId = parseInt(element.dataset.audioId);
-      removeAudioFromList(audioId);
-      delete element.dataset.likeId;
-  }
-}
+      // Variables para el reproductor
+      const playPauseBtn = document.getElementById('play-pause-btn');
+      const prevBtn = document.getElementById('prev-btn');
+      const nextBtn = document.getElementById('next-btn');
+      const progressBar = document.getElementById('progress-bar');
+      const albumImage = document.getElementById('album-image');
+      const audioTitle = document.getElementById('audio-title');
+      const audioArtist = document.getElementById('audio-artist');
+      const currentTimeElement = document.getElementById('current-time');
+      const totalDurationElement = document.getElementById('total-duration');
+      const tracksList = document.getElementById('tracks-list');
+      const likeButton = document.querySelector('.me-gusta'); // El botón de like fijo en el reproductor
 
-// Función para eliminar un audio de la lista de favoritos
-function removeAudioFromList(audioId) {
-  const index = likedAudios.findIndex(audio => audio.id === audioId);
-  if (index !== -1) {
-      likedAudios.splice(index, 1);
-  }
-}
+      const SKIP_TIME = 10;  // Tiempo en segundos para retroceder o adelantar
 
-// Función para cargar la lista de pistas
-function loadTracks() {
-  tracksList.innerHTML = '';
-  sampleAudios.forEach((audio, index) => {
-      const trackElement = document.createElement('div');
-      trackElement.classList.add('track');
-      trackElement.innerHTML = `
-          <img src="${audio.image_file}" alt="${audio.title}" />
-          <div class="track-info">
-              <h3>${audio.title}</h3>
-              <p>${audio.artist}</p>
-          </div>
-          <button class="play-btn" onclick="playTrack(${index})">&#9654;</button>
-      `;
-      tracksList.appendChild(trackElement);
-  });
-}
 
-// Función para reproducir una pista específica
-function playTrack(index) {
-  const track = sampleAudios[index];
-  loadAudio(track.audio_file, track.title, track.artist, track.image_file, index);
-}
+      // Cargar los likes del usuario al iniciar
+      fetch('http://tranquilidad.test/v1/likes')
+        .then(response => response.json())
+        .then(data => {
+          // Guardar los likes en un objeto
+          data.forEach(like => {
+            userLikes[like.likeable_id] = like.id;
+          });
+        })
+        .catch(error => console.error('Error al cargar los likes:', error));
 
-// Event Listeners
-playPauseBtn.addEventListener('click', function() {
-  if (audioPlayer.paused) {
-      audioPlayer.play();
-      playPauseBtn.innerHTML = '&#10074;&#10074;';
-  } else {
-      audioPlayer.pause();
-      playPauseBtn.innerHTML = '&#9654;';
-  }
-});
 
-function updateProgressBar() {
-  if (!isNaN(audioPlayer.duration)) {
-      const progressPercentage = (audioPlayer.currentTime / audioPlayer.duration) * 100;
-      progressBar.value = progressPercentage;
-      progressBar.style.background = `linear-gradient(to right, #59009A ${progressPercentage}%, #e1bee7 ${progressPercentage}%)`;
-      currentTimeElement.textContent = formatTime(audioPlayer.currentTime);
-      totalDurationElement.textContent = formatTime(audioPlayer.duration);
-  }
-}
+      // Función para cargar y reproducir audios
+      function loadAudio(audioUrl, title, description, image, index) {
+        audioPlayer.src = audioUrl; // Establece el audio en el reproductor
+        audioTitle.textContent = title; // Cambia el título
+        audioArtist.textContent = description;
+        albumImage.src = image; // Cambia la portada del álbum
+        audioPlayer.load(); // Carga el nuevo audio
+        audioPlayer.play(); // Inicia la reproducción
+        playPauseBtn.textContent = '❚❚';  // Cambiar a pausa
+        currentTrackIndex = index; // Actualizar el índice actual de la pista
+        currentTrackId = audios[index].id;  // Guarda el ID del audio actual para los "likes"
 
-progressBar.addEventListener('input', function() {
-  const seekTime = (progressBar.value / 100) * audioPlayer.duration;
-  audioPlayer.currentTime = seekTime;
-});
 
-audioPlayer.addEventListener('timeupdate', updateProgressBar);
-
-nextBtn.addEventListener('click', function() {
-  audioPlayer.currentTime = Math.min(audioPlayer.currentTime + SKIP_TIME, audioPlayer.duration);
-});
-
-prevBtn.addEventListener('click', function() {
-  audioPlayer.currentTime = Math.max(audioPlayer.currentTime - SKIP_TIME, 0);
-});
-
-function formatTime(seconds) {
-  const minutes = Math.floor(seconds / 60);
-  const remainingSeconds = Math.floor(seconds % 60);
-  return `${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
-}
-
-audioPlayer.addEventListener('ended', function() {
-  if (currentTrackIndex + 1 < sampleAudios.length) {
-      playTrack(currentTrackIndex + 1);
-  } else {
-      console.log('Fin de la lista de reproducción');
-  }
-});
-
-// Funciones para el dropdown
-function toggleDropdown(id) {
-  document.getElementById(id).classList.toggle('show');
-}
-
-function toggleNestedDropdown(id) {
-  document.getElementById(id).classList.toggle('show');
-}
-
-function showHorizontalList() {
-  const horizontalList = document.getElementById('horizontal-list');
-  horizontalList.style.display = horizontalList.style.display === 'flex' ? 'none' : 'flex';
-}
-
-function copyLink() {
-  // Implementar la funcionalidad de copiar el link
-  console.log('Link copiado al portapapeles');
-}
-
-// Cierra los dropdowns si el usuario hace clic fuera de ellos
-window.onclick = function(event) {
-  if (!event.target.matches('.dropdown-button')) {
-      const dropdowns = document.getElementsByClassName('dropdown');
-      for (const dropdown of dropdowns) {
-          if (dropdown.classList.contains('show')) {
-              dropdown.classList.remove('show');
-          }
+        // Verificar si el audio tiene "like" y activar el botón
+        if (userLikes[audios[index].id]) {
+          likeButton.classList.add('active');
+          likeButton.dataset.likeId = userLikes[audios[index].id];  // Guardar el ID del "like"
+        } else {
+          likeButton.classList.remove('active');
+          delete likeButton.dataset.likeId;  // Limpiar el ID del "like"
+        }
       }
-  }
-}
 
-// Inicializar al cargar la página
-document.addEventListener('DOMContentLoaded', function() {
-  loadTracks();
-  // Cargar la primera pista
-  if (sampleAudios.length > 0) {
-      playTrack(0);
-  }
-});
+      // Cargar los audios del album seleccionado
+      fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => {
+          const tituloAlbum = document.getElementById('titulo-genre');
+          tituloGenero.textContent = `Genre ${data.name}`;  // Cambiar el título al nombre del album
 
+          tracksList.innerHTML = '';  // Limpiamos la lista de audios
+          audios = data.audios; // Guardar los audios para uso futuro
 
+          if (audios && audios.length > 0) {
+            audios.forEach((audio, index) => {
+              const trackElement = document.createElement('div');
+              trackElement.classList.add('track');
 
+              trackElement.innerHTML = `
+              <img src="${audio.image_file}" alt="${audio.title}" />
+              <div class="track-info">
+                <h3>${audio.title}</h3>
+                <div class="track-details">
+                  <p>Álbum: ${audio.album ? audio.album.title : 'Sin álbum'}</p>
+                  <p>Artista: ${audio.description ? audio.description : 'Sin descripción'}</p>
+                </div>  
+              </div>
+              <button>&#9654;</button>
+            `;
 
-// Asegurarse de que el botón de me gusta esté funcionando
-document.addEventListener('DOMContentLoaded', function() {
-  const likeButton = document.querySelector('.me-gusta');
-  
-  if (likeButton) {
-      // Inicializar el estado del botón
-      likeButton.addEventListener('click', function(e) {
-          e.preventDefault(); // Prevenir cualquier comportamiento por defecto
-          
-          // Toggle de la clase active
-          this.classList.toggle('active');
-          
-          // Obtener el audio actual
-          const currentTrack = sampleAudios[currentTrackIndex];
-          
-          if (this.classList.contains('active')) {
-              // Si se activa el me gusta
-              const mockLikeId = Date.now();
-              this.dataset.likeId = mockLikeId;
-              this.dataset.audioId = currentTrack.id;
-              
-              // Agregar a liked audios
-              const likedAudio = { ...currentTrack, like_id: mockLikeId };
-              likedAudios.push(likedAudio);
-              
-              console.log('Audio agregado a favoritos:', currentTrack.title);
+              // Asociar el botón de reproducción al reproductor
+              const playButton = trackElement.querySelector('button');
+              playButton.addEventListener('click', function () {
+                loadAudio(audio.audio_file, audio.title, audio.description, audio.image_file, index);
+              });
+
+              tracksList.appendChild(trackElement);
+            });
           } else {
-              // Si se quita el me gusta
-              const audioId = parseInt(this.dataset.audioId);
-              removeAudioFromList(audioId);
-              delete this.dataset.likeId;
-              
-              console.log('Audio removido de favoritos:', currentTrack.title);
+            tracksList.innerHTML = '<p>No hay audios disponibles para este album.</p>';
           }
+        })
+        .catch(error => console.error('Error al cargar los audios:', error));
+
+
+
+      // Agregar una bandera para evitar múltiples solicitudes simultáneas
+
+
+
+      function toggleLike() {
+        const isLiked = likeButton.classList.contains('active');  // Verificar si ya está "likeado"
+
+        const likeData = {
+          likeable_type: 'App\\Models\\Audio',
+          likeable_id: currentTrackId,  // ID del audio actual
+          user_id: 5  // Usuario ficticio, cambiar por el ID real del usuario si es necesario
+        };
+
+        if (!currentTrackId) {
+          console.error("currentTrackId no está definido. No se puede realizar la solicitud.");
+          return;
+        }
+
+        // Deshabilitar el botón antes de iniciar la solicitud
+        likeButton.disabled = true;
+
+        // Si el audio ya tiene un "like", gestionar el dislike
+        if (isLiked) {
+          handleDislike();  // Llama a handleDislike para eliminar el like
+        } else {
+          // Si no tiene like, hacer la solicitud POST para agregar el like
+          fetch('http://tranquilidad.test/v1/likes', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(likeData)
+          })
+
+            .then(response => response.json())
+            .then(data => {
+              console.log('Like agregado correctamente:', data);
+              likeButton.classList.add('active');  // Iluminar el corazón
+              likeButton.dataset.likeId = data.like.id;  // Guardar el ID del like en el botón
+
+              // Llamar a una función para actualizar la vista "Tus me gustas"
+              updateLikedAudiosView();
+            })
+            .catch(error => console.error('Error gestionando el like:', error))
+            .finally(() => likeButton.disabled = false);
+        }
+      }
+
+
+      function handleDislike() {
+        return fetch(`http://tranquilidad.test/v1/likes/${likeButton.dataset.likeId}`, {
+          method: 'DELETE',
+          headers: {
+            'Content-Type': 'application/json',
+          }
+        })
+          .then(response => response.json())
+          .then(data => {
+            console.log('Like eliminado correctamente:', data);
+            likeButton.classList.remove('active');
+            delete likeButton.dataset.likeId;
+
+            // Llamar a una función para actualizar la vista "Tus me gustas"
+            updateLikedAudiosView();
+          })
+          .catch(error => console.error('Error gestionando el dislike:', error))
+          .finally(() => likeButton.disabled = false);
+      }
+
+
+      // Asignar el evento click al botón de like
+
+      //  debounce: asegura que si haces clics múltiples muy rápidos, 
+      // solo se ejecute la última acción después del tiempo de espera (delay), 
+      // que en este caso es de 500 milisegundos (medio segundo).
+      // toggleLike: será invocado después de este retardo, evitando la sobrecarga 
+      // del servidor o problemas de duplicación de likes/dislikes cuando el usuario 
+      // interactúa demasiado rápido.
+
+      let debounceTimeout;
+      function debounce(func, delay) {
+        return function (...args) {
+          clearTimeout(debounceTimeout);
+          debounceTimeout = setTimeout(() => func.apply(this, args), delay);
+        };
+      }
+
+      // Función toggleLike con debounce
+      likeButton.addEventListener('click', debounce(toggleLike, 500));
+      //likeButton.addEventListener('click', toggleLike);
+
+
+
+
+      // Controlar el botón de play/pausa
+      playPauseBtn.addEventListener('click', function () {
+        if (audioPlayer.paused) {
+          audioPlayer.play();
+          playPauseBtn.innerHTML = '&#10074;&#10074;';  // Cambiar a pausa (❚❚)
+        } else {
+          audioPlayer.pause();
+          playPauseBtn.innerHTML = '&#9654;';  // Cambiar a play (▶️)
+        }
       });
-  }
-  
-  // Actualizar el estado del botón cuando cambia la canción
-  audioPlayer.addEventListener('loadeddata', function() {
-      updateLikeButtonState(this.src);
-  });
-});
 
-// Función para actualizar el estado del botón cuando cambia la canción
-function updateLikeButtonState(audioUrl) {
-  const likeButton = document.querySelector('.me-gusta');
-  if (!likeButton) return;
-  
-  const currentTrack = sampleAudios[currentTrackIndex];
-  const isLiked = likedAudios.some(audio => audio.id === currentTrack.id);
-  
-  if (isLiked) {
-      likeButton.classList.add('active');
-  } else {
-      likeButton.classList.remove('active');
-  }
-}
+      // Al terminar una canción, pasar a la siguiente automáticamente
+      audioPlayer.addEventListener('ended', function () {
+        currentTrackIndex++;
+        if (currentTrackIndex < audios.length) {
+          const nextTrack = audios[currentTrackIndex];
+          loadAudio(nextTrack.audio_file, nextTrack.title, nextTrack.description, nextTrack.image_file, currentTrackIndex);
+        } else {
+          currentTrackIndex = 0;  // Reiniciar al principio si es necesario
+        }
+      });
 
+      // Actualizar la barra de progreso
+      audioPlayer.addEventListener('timeupdate', function () {
+        const progressPercentage = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+        progressBar.value = progressPercentage;
+        currentTimeElement.textContent = formatTime(audioPlayer.currentTime);
+        totalDurationElement.textContent = formatTime(audioPlayer.duration);
+      });
 
+      // Asegurar que el audio esté completamente cargado antes de usar su duración
+      audioPlayer.addEventListener('loadedmetadata', function () {
+        totalDurationElement.textContent = formatTime(audioPlayer.duration);
+      });
 
+      // Actualizar el progreso mientras se reproduce
+      audioPlayer.addEventListener('timeupdate', function () {
+        if (!isNaN(audioPlayer.duration)) {
+          const progressPercentage = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+          progressBar.value = progressPercentage;
 
+          // Cambiar el color dinámicamente
+          progressBar.style.background = `linear-gradient(to right, #59009A ${progressPercentage}%, #e1bee7 ${progressPercentage}%)`;
 
-// Función que alterna la visibilidad de un menu desplegable
-function toggleDropdown(elementId) {
-  const dropdown = document.getElementById(elementId);
-  dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
-}
+          // Actualizar el tiempo actual
+          currentTimeElement.textContent = formatTime(audioPlayer.currentTime);
+        }
 
-// Muestra la lista horizontal y oculta el menu desplegable
-function showHorizontalList() {
-  const dropdown = document.getElementById("dropdown");
-  const horizontalList = document.getElementById("horizontal-list");
-  dropdown.style.display = "none";
-  horizontalList.style.display = "flex";
-}
+      });
 
-// Copia el link actual al portapapeles
-function copyLink() {
-  const dummy = document.createElement("textarea");
-  document.body.appendChild(dummy);
-  dummy.value = window.location.href;
-  dummy.select();
-  document.execCommand("copy");
-  document.body.removeChild(dummy);
-  
-  // Cambiar el texto del botón temporalmente para dar feedback
-  const button = document.querySelector('.horizontal-list button');
-  const originalText = button.textContent;
-  button.textContent = "¡Copiado!";
-  setTimeout(() => {
-      button.textContent = originalText;
-  }, 2000);
-}
+      // Permitir que el usuario cambie el progreso al arrastrar la barra
+      progressBar.addEventListener('input', function () {
+        const seekTime = (progressBar.value / 100) * audioPlayer.duration;
+        audioPlayer.currentTime = seekTime;
+      });
 
-// Alterna la visibilidad del menú desplegable anidado
-function toggleNestedDropdown(elementId) {
-  const nestedDropdown = document.getElementById(elementId);
-  if (nestedDropdown.style.display === "block") {
-      nestedDropdown.style.display = "none";
-  } else {
-      // Cerrar otros dropdowns anidados primero
-      const allNested = document.getElementsByClassName('nested-dropdown');
-      for (let nested of allNested) {
-          nested.style.display = "none";
+      // Adelantar o retroceder dentro de la misma pista
+      nextBtn.addEventListener('click', function () {
+        audioPlayer.currentTime = Math.min(audioPlayer.currentTime + SKIP_TIME, audioPlayer.duration);
+      });
+
+      prevBtn.addEventListener('click', function () {
+        audioPlayer.currentTime = Math.max(audioPlayer.currentTime - SKIP_TIME, 0);
+      });
+
+      // Función para formatear el tiempo en minutos:segundos
+      function formatTime(seconds) {
+        const minutes = Math.floor(seconds / 60);
+        const remainingSeconds = Math.floor(seconds % 60);
+        return `${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
       }
-      nestedDropdown.style.display = "block";
-  }
-  event.stopPropagation(); // Prevenir que el click se propague
-}
+    });
 
-// Cierra todos los menús desplegables y listas horizontales
-function closeDropdownsAndLists() {
-  const dropdowns = document.getElementsByClassName("dropdown");
-  for (let i = 0; i < dropdowns.length; i++) {
-      const openDropdown = dropdowns[i];
-      if (openDropdown.style.display === "block") {
-          openDropdown.style.display = "none";
-      }
-  }
-  
-  const nestedDropdowns = document.getElementsByClassName("nested-dropdown");
-  for (let i = 0; i < nestedDropdowns.length; i++) {
-      nestedDropdowns[i].style.display = "none";
-  }
-  
-  const horizontalList = document.getElementById("horizontal-list");
-  if (horizontalList.style.display === "flex") {
-      horizontalList.style.display = "none";
-  }
-}
+    // Cerrar el menú al hacer clic fuera de él
+    document.addEventListener('click', function(event) {
+        if (!menuToggle.contains(event.target) && !servicesSubmenu.contains(event.target)) {
+            servicesSubmenu.classList.remove('active');
+        }
+    });
 
-// Cierra los menús cuando se hace clic fuera
-window.onclick = function(event) {
-  if (!event.target.matches('.dropdown-button, .dropdown-content, .horizontal-list img, .horizontal-list button')) {
-      closeDropdownsAndLists();
-  }
-};
-
-
-
-
-document.addEventListener("DOMContentLoaded", function () {
-  const likeButton = document.querySelector(".me-gusta");
-  const audioTitle = document.getElementById("audio-title").textContent;
-  const audioArtist = document.getElementById("audio-artist").textContent;
-  const albumImage = document.getElementById("album-image").src;
-
-  let likedTracks = JSON.parse(localStorage.getItem("likedTracks")) || [];
-
-  // Verificar si la pista ya está en favoritos y actualizar el icono
-  const isLiked = likedTracks.some(track => track.title === audioTitle);
-  if (isLiked) {
-      likeButton.style.color = "#59009A"; // Marcar como favorito
-  }
-
-  likeButton.addEventListener("click", function () {
-      let track = {
-          title: audioTitle,
-          artist: audioArtist,
-          image: albumImage,
-          src: document.getElementById("audio").src
-      };
-
-      // Buscar si la pista ya está en favoritos
-      const index = likedTracks.findIndex(t => t.title === track.title);
-
-      if (index === -1) {
-          likedTracks.push(track);
-          likeButton.style.color = ""; // Marcar como favorito
-      } else {
-          likedTracks.splice(index, 1);
-          likeButton.style.color = "black"; // Quitar favorito
-      }
-
-      localStorage.setItem("likedTracks", JSON.stringify(likedTracks));
-  });
-});
-// Función para actualizar el estado del botón de "me gusta" cuando cambia la canción
-function updateLikeButtonState() {
-  const likeButton = document.querySelector('.me-gusta');
-  if (!likeButton) return;
-
-  const currentTrack = sampleAudios[currentTrackIndex];
-  const isLiked = likedAudios.some(audio => audio.id === currentTrack.id);
-
-  if (isLiked) {
-      likeButton.classList.add('active');
-      likeButton.dataset.audioId = currentTrack.id;
-  } else {
-      likeButton.classList.remove('active');
-      delete likeButton.dataset.audioId;
-  }
-}
-
-// Modificar la función loadAudio para actualizar el botón de "me gusta" cuando cambie la canción
-function loadAudio(audioUrl, title, artist, cover, index) {
-  if (!audioUrl) {
-      console.error('No hay ningún audio actualmente en reproducción.');
-      return;
-  }
-
-  audioPlayer.src = audioUrl;
-  audioTitle.textContent = title;
-  audioArtist.textContent = artist;
-  albumImage.src = cover;
-  audioPlayer.load();
-  
-  audioPlayer.play().catch(function(error) {
-      console.log('Error playing audio:', error);
-  });
-  
-  playPauseBtn.innerHTML = '&#10074;&#10074;';
-  currentTrackIndex = index;
-  
-  // Asegurar que el estado del botón de "me gusta" se actualiza correctamente
-  updateLikeButtonState();
-}
-
-// Modificar playTrack para asegurar la actualización del botón
-function playTrack(index) {
-  const track = sampleAudios[index];
-  loadAudio(track.audio_file, track.title, track.artist, track.image_file, index);
-  updateLikeButtonState();
-}
-
-// Event listener para actualizar cuando la pista cambia
-audioPlayer.addEventListener('ended', function() {
-  if (currentTrackIndex + 1 < sampleAudios.length) {
-      playTrack(currentTrackIndex + 1);
-  } else {
-      console.log('Fin de la lista de reproducción');
-  }
-});
+    // Prevenir que los clics dentro del menú lo cierren
+    servicesSubmenu.addEventListener('click', function(e) {
+        e.stopPropagation();
+    });

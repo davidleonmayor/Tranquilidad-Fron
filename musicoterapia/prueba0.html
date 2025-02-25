@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reproductor de Video</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/musicoterapia/Header/style copy.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #000;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .video-container {
+            width: 400px;
+            background: #1f1f1f;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            height: 600px;
+            cursor: pointer;
+        }
+
+        .video-wrapper video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .play-pause {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.5);
+            border: none;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            color: white;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.3s, background-color 0.3s;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .play-pause:hover {
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        .video-wrapper:hover .play-pause {
+            opacity: 1;
+        }
+
+        .video-controls {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+            padding: 20px;
+            transition: opacity 0.3s;
+            opacity: 0;
+        }
+
+        .video-wrapper:hover .video-controls {
+            opacity: 1;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 2px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .progress {
+            width: 0;
+            height: 100%;
+            background: #fff;
+            border-radius: 2px;
+            transition: width 0.1s linear;
+        }
+
+        .time-display {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 5px;
+            font-size: 12px;
+            color: #fff;
+        }
+
+        .video-actions {
+            position: absolute;
+            right: 20px;
+            bottom: 150px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            z-index: 3;
+        }
+
+        .action-button {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: white;
+            cursor: pointer;
+            transition: transform 0.2s;
+            background: none;
+            border: none;
+            padding: 5px;
+        }
+
+        .action-button:hover {
+            transform: scale(1.1);
+        }
+
+        .action-button.active i {
+            color: #fe2c55;
+        }
+
+        .action-button i {
+            font-size: 24px;
+            margin-bottom: 4px;
+        }
+
+        .action-count {
+            font-size: 12px;
+            color: white;
+        }
+
+        .share-menu {
+            position: absolute;
+            bottom: 100%;
+            right: 0;
+            background: #2f2f2f;
+            border-radius: 8px;
+            padding: 8px;
+            display: none;
+            min-width: 150px;
+        }
+
+        .share-menu.active {
+            display: block;
+        }
+
+        .share-option {
+            display: flex;
+            align-items: center;
+            padding: 8px;
+            cursor: pointer;
+            color: white;
+            transition: background-color 0.2s;
+        }
+
+        .share-option:hover {
+            background-color: #3f3f3f;
+        }
+
+        .share-option i {
+            margin-right: 8px;
+        }
+
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 4px;
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .video-actions {
+            position: absolute;
+            right: 20px;
+            bottom: 150px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            z-index: 3;
+        }
+
+        .action-button {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: white;
+            cursor: pointer;
+            transition: transform 0.2s;
+            background: none;
+            border: none;
+            padding: 5px;
+        }
+
+        .action-button:hover {
+            transform: scale(1.1);
+        }
+
+        .action-button.active i {
+            color: #fe2c55;
+        }
+
+        .action-button i {
+            font-size: 24px;
+            margin-bottom: 4px;
+        }
+
+        .action-count {
+            font-size: 12px;
+            color: white;
+        }
+
+        .share-menu {
+            position: absolute;
+            bottom: 100%;
+            right: 0;
+            background: #2f2f2f;
+            border-radius: 8px;
+            padding: 8px;
+            display: none;
+            min-width: 150px;
+        }
+
+        .share-menu.active {
+            display: block;
+        }
+
+        .share-option {
+            display: flex;
+            align-items: center;
+            padding: 8px;
+            cursor: pointer;
+            color: white;
+            transition: background-color 0.2s;
+        }
+
+        .share-option:hover {
+            background-color: #3f3f3f;
+        }
+
+        .share-option i {
+            margin-right: 8px;
+        }
+
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 4px;
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <div include-html="/rutinas-de-ejercicios/includes/Header/header.html"></div>
+    
+    <div class="video-container">
+        <div class="video-wrapper">
+            <video id="mainVideo" loop>
+                <source src="/musicoterapia/Vistas1.1/Videos/AFIRMACIONES-VID/WhatsApp Video 2025-02-17 at 11.08.16 PM.mp4" type="video/mp4">
+                Tu navegador no soporta el elemento de video.
+            </video>
+            <button class="play-pause">
+                <i class="fas fa-play fa-2x"></i>
+            </button>
+            <div class="video-controls">
+                <div class="progress-bar">
+                    <div class="progress"></div>
+                </div>
+                <div class="time-display">
+                    <span class="current-time">0:00</span>
+                    <span class="duration">0:00</span>
+                </div>
+            </div>
+            <div class="video-actions">
+                <button class="action-button" data-action="like">
+                    <i class="fas fa-heart"></i>
+                    <span class="action-count">65.6K</span>
+                </button>
+                <button class="action-button" data-action="share">
+                    <i class="fas fa-share"></i>
+                    <span class="action-count">Share</span>
+                    <div class="share-menu">
+                        <div class="share-option" data-platform="whatsapp">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>WhatsApp</span>
+                        </div>
+                        <div class="share-option" data-platform="facebook">
+                            <i class="fab fa-facebook"></i>
+                            <span>Facebook</span>
+                        </div>
+                        <div class="share-option" data-platform="twitter">
+                            <i class="fab fa-twitter"></i>
+                            <span>Twitter</span>
+                        </div>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="toast" id="toast"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Elementos del DOM
+            const video = document.getElementById('mainVideo');
+            const videoContainer = document.querySelector('.video-wrapper');
+            const playPauseBtn = document.querySelector('.play-pause');
+            const progressBar = document.querySelector('.progress-bar');
+            const progress = document.querySelector('.progress');
+            const currentTimeDisplay = document.querySelector('.current-time');
+            const durationDisplay = document.querySelector('.duration');
+            const actionButtons = document.querySelectorAll('.action-button');
+            const shareMenu = document.querySelector('.share-menu');
+            const toast = document.getElementById('toast');
+
+            // Variables de estado
+            let isPlaying = false;
+            let likeCount = 65600;
+
+            // Formatear tiempo
+            function formatTime(seconds) {
+                const minutes = Math.floor(seconds / 60);
+                seconds = Math.floor(seconds % 60);
+                return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+            }
+
+            // Mostrar toast
+            function showToast(message) {
+                toast.textContent = message;
+                toast.style.opacity = '1';
+                setTimeout(() => {
+                    toast.style.opacity = '0';
+                }, 2000);
+            }
+
+            // Formatear números
+            function formatNumber(num) {
+                if (num >= 1000000) {
+                    return (num / 1000000).toFixed(1) + 'M';
+                } else if (num >= 1000) {
+                    return (num / 1000).toFixed(1) + 'K';
+                }
+                return num.toString();
+            }
+
+            // Actualizar progreso
+            function updateProgress() {
+                const percent = (video.currentTime / video.duration) * 100;
+                progress.style.width = `${percent}%`;
+                currentTimeDisplay.textContent = formatTime(video.currentTime);
+            }
+
+            // Cambiar tiempo de video
+            function scrub(e) {
+                const scrubTime = (e.offsetX / progressBar.offsetWidth) * video.duration;
+                video.currentTime = scrubTime;
+            }
+
+            // Alternar reproducción/pausa
+            function togglePlay() {
+                if (video.paused) {
+                    video.play();
+                    playPauseBtn.innerHTML = '<i class="fas fa-pause fa-2x"></i>';
+                    isPlaying = true;
+                } else {
+                    video.pause();
+                    playPauseBtn.innerHTML = '<i class="fas fa-play fa-2x"></i>';
+                    isPlaying = false;
+                }
+            }
+
+            // Manejar acciones de botones
+            function handleAction(action, button) {
+                switch(action) {
+                    case 'like':
+                        button.classList.toggle('active');
+                        likeCount += button.classList.contains('active') ? 1 : -1;
+                        button.querySelector('.action-count').textContent = formatNumber(likeCount);
+                        showToast(button.classList.contains('active') ? '¡Me gusta agregado!' : 'Me gusta removido');
+                        break;
+                    case 'share':
+                        toggleShareMenu();
+                        break;
+                }
+            }
+
+            // Alternar menú compartir
+            function toggleShareMenu() {
+                const menu = document.querySelector('.share-menu');
+                menu.classList.toggle('active');
+            }
+
+            // Event Listeners
+            video.addEventListener('click', togglePlay);
+            playPauseBtn.addEventListener('click', togglePlay);
+            video.addEventListener('timeupdate', updateProgress);
+            
+            video.addEventListener('loadedmetadata', function() {
+                durationDisplay.textContent = formatTime(video.duration);
+            });
+
+            progressBar.addEventListener('click', scrub);
+            let mousedown = false;
+            progressBar.addEventListener('mousemove', (e) => mousedown && scrub(e));
+            progressBar.addEventListener('mousedown', () => mousedown = true);
+            progressBar.addEventListener('mouseup', () => mousedown = false);
+            progressBar.addEventListener('mouseleave', () => mousedown = false);
+
+            actionButtons.forEach(button => {
+                const action = button.dataset.action;
+                button.addEventListener('click', () => handleAction(action, button));
+            });
+
+            document.querySelectorAll('.share-option').forEach(option => {
+                option.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    showToast(`Compartiendo en ${option.dataset.platform}...`);
+                    toggleShareMenu();
+                });
+            });
+
+            // Cerrar menú compartir al hacer clic fuera
+            document.addEventListener('click', (e) => {
+                if (!e.target.closest('.share-menu') && !e.target.closest('[data-action="share"]')) {
+                    shareMenu.classList.remove('active');
+                }
+            });
+
+            // Tecla espaciadora
+            document.addEventListener('keydown', (e) => {
+                if (e.code === 'Space' && e.target === document.body) {
+                    e.preventDefault();
+                    togglePlay();
+                }
+            });
+
+            // Mostrar/ocultar controles
+            videoContainer.addEventListener('mouseenter', () => {
+                playPauseBtn.style.opacity = '1';
+            });
+
+            videoContainer.addEventListener('mouseleave', () => {
+                if (isPlaying) {
+                    playPauseBtn.style.opacity = '0';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

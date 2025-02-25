@@ -1,145 +1,247 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Álbumes de Musicoterapia</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;700&display=swap" rel="stylesheet">
-  <style>
-    main {
-      margin-top: 75px;
-    }
-    .main-content {
-      width: 75%;
-      padding: 20px 170px;
-      overflow-y: auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .title {
-      font-size: 60px;
-      margin-top: 0;
-      margin-bottom: 20px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      font-family: "Roboto Slab", serif;
-    }
-    .title span {
-      position: relative;
-      z-index: 1;
-      transition: color 0.3s;
-    }
-    .genres {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 60px;
-      justify-content: center;
-      padding: 0 20px;
-    }
-    .genre {
-      width: calc(50% - 25px);
-      max-width: 400px;
-      margin-bottom: 20px;
-      display: flex;
-      justify-content: center;
-    }
-    .genre:last-child {
-      align-self: flex-start;
-      margin-left: 0;
-      justify-content: flex-start;
-    }
-    .genre-card {
-      background: white;
-      border-radius: 15px;
-      box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.1), -10px -10px 20px rgba(255, 255, 255, 0.7);
-      overflow: hidden;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      background: linear-gradient(145deg, #e0e0e0, #ffffff);
-    }
-    .genre-card img {
-      width: 100%;
-      height: 230px;
-      object-fit: cover;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      position: relative;
-      top: -8px;
-    }
-    .genre-card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      transition: transform 0.3s ease;
-      position: relative;
-      top: -5px;
-    }
-    .genre-card:hover {
-      transform: scale(1.05);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    }
-    .genre-card-content {
-      padding: 15px;
-      text-align: center;
-    }
-    .genre-card-content h3 {
-      margin: 10px 0;
-      font-family: "Roboto Slab", serif;
-      transition: color 0.3s ease;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reproductor de Video</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #000;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .video-container {
+            width: 400px;
+            background: #1f1f1f;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            height: 600px;
+            cursor: pointer;
+        }
+
+        .video-wrapper video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .play-pause {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.5);
+            border: none;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            color: white;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.3s, background-color 0.3s;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .play-pause:hover {
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        .video-wrapper:hover .play-pause {
+            opacity: 1;
+        }
+
+        .video-controls {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+            padding: 20px;
+            transition: opacity 0.3s;
+            opacity: 0;
+        }
+
+        .video-wrapper:hover .video-controls {
+            opacity: 1;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 2px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .progress {
+            width: 0;
+            height: 100%;
+            background: #fff;
+            border-radius: 2px;
+            transition: width 0.1s linear;
+        }
+
+        .time-display {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 5px;
+            font-size: 12px;
+            color: #fff;
+        }
+    </style>
 </head>
 <body>
-  <main class="main-content">
-    <div class="title">
-      <span>Álbum</span>
-      <br><br>
+    <div class="video-container">
+        <div class="video-wrapper">
+            <video id="mainVideo" loop>
+                <source src="/musicoterapia/Vistas1.1/Videos/AFIRMACIONES-VID/WhatsApp Video 2025-02-17 at 11.08.16 PM.mp4" type="video/mp4">
+                Tu navegador no soporta el elemento de video.
+            </video>
+            <button class="play-pause">
+                <i class="fas fa-play fa-2x"></i>
+            </button>
+            <div class="video-controls">
+                <div class="progress-bar">
+                    <div class="progress"></div>
+                </div>
+                <div class="time-display">
+                    <span class="current-time">0:00</span>
+                    <span class="duration">0:00</span>
+                </div>
+            </div>
+            <div class="video-actions">
+              <button class="action-button" data-action="like">
+                  <i class="fas fa-heart"></i>
+                  <span class="action-count">65.6K</span>
+              </button>
+              <button class="action-button" data-action="share">
+                  <i class="fas fa-share"></i>
+                  <span class="action-count">Share</span>
+                  <div class="share-menu">
+                      <div class="share-option" data-platform="whatsapp">
+                          <i class="fab fa-whatsapp"></i>
+                          <span>WhatsApp</span>
+                      </div>
+                      <div class="share-option" data-platform="facebook">
+                          <i class="fab fa-facebook"></i>
+                          <span>Facebook</span>
+                      </div>
+                      <div class="share-option" data-platform="twitter">
+                          <i class="fab fa-twitter"></i>
+                          <span>Twitter</span>
+                      </div>
+                  </div>
+              </button>
+          </div>
+        </div>
     </div>
-    <div class="genres">
-      <div class="genre">
-        <div class="genre-card">
-          <a href="/musicoterapia/Vistas1.1/REPRODUCCTORES/ALBUM_ELEGIDO/album_elegido.html?albumsId=1">
-            <img src="/musicoterapia/Vistas1.1/images/DORMIR-2.png" alt="Dormir" onerror="this.onerror=null;this.src='img/placeholder.png';"/>
-            <div class="genre-card-content">
-              <h3>Dormir</h3>
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="genre">
-        <div class="genre-card">
-          <a href="/musicoterapia/Vistas1.1/REPRODUCCTORES/ALBUM_ELEGIDO/album_elegido.html?albums=2">
-            <img src="/musicoterapia/Vistas1.1/images/RELAJACION 2.jpg" alt="Relajarse" onerror="this.onerror=null;this.src='img/placeholder.png';"/>
-            <div class="genre-card-content">
-              <h3>Relajarse</h3>
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="genre">
-        <div class="genre-card">
-          <a href="/musicoterapia/Vistas1.1/REPRODUCCTORES/ALBUM_ELEGIDO/album_elegido.html?albums=3">
-            <img src="/musicoterapia/Vistas1.1/images/CONCENTRASE.png" alt="Concentrarse" onerror="this.onerror=null;this.src='img/placeholder.png';"/>
-            <div class="genre-card-content">
-              <h3>Concentrarse</h3>
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="genre">
-        <div class="genre-card">
-          <a href="/musicoterapia/Vistas1.1/REPRODUCCTORES/ALBUM_ELEGIDO/album_elegido.html?albums=4">
-            <img src="/musicoterapia/Vistas1.1/images/GAMER 2.webp" alt="Gamer" onerror="this.onerror=null;this.src='img/placeholder.png';"/>
-            <div class="genre-card-content">
-              <h3>Gamer</h3>
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="genre" style="align-self: flex-start; margin-left: 0;">
-        <div class="genre-card">
-          <a href="/musicoterapia/Vistas1.1/REPRODUCCTORES/ALBUM_ELEGIDO/album_elegido.html?albums=5">
-            <img src="/musicoterapia/Vistas1.1/images/RELAJARSE 3.png" alt="Meditar" onerror="this.onerror=null;this.src='img/placeholder.png';"/>
-            <div class="genre-card-content">
-              <h3>Meditar</h3>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Elementos del DOM
+            const video = document.getElementById('mainVideo');
+            const videoContainer = document.querySelector('.video-wrapper');
+            const playPauseBtn = document.querySelector('.play-pause');
+            const progressBar = document.querySelector('.progress-bar');
+            const progress = document.querySelector('.progress');
+            const currentTimeDisplay = document.querySelector('.current-time');
+            const durationDisplay = document.querySelector('.duration');
+
+            // Variables de estado
+            let isPlaying = false;
+
+            // Formatear tiempo
+            function formatTime(seconds) {
+                const minutes = Math.floor(seconds / 60);
+                seconds = Math.floor(seconds % 60);
+                return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+            }
+
+            // Actualizar progreso
+            function updateProgress() {
+                const percent = (video.currentTime / video.duration) * 100;
+                progress.style.width = `${percent}%`;
+                currentTimeDisplay.textContent = formatTime(video.currentTime);
+            }
+
+            // Cambiar tiempo de video
+            function scrub(e) {
+                const scrubTime = (e.offsetX / progressBar.offsetWidth) * video.duration;
+                video.currentTime = scrubTime;
+            }
+
+            // Alternar reproducción/pausa
+            function togglePlay() {
+                if (video.paused) {
+                    video.play();
+                    playPauseBtn.innerHTML = '<i class="fas fa-pause fa-2x"></i>';
+                    isPlaying = true;
+                } else {
+                    video.pause();
+                    playPauseBtn.innerHTML = '<i class="fas fa-play fa-2x"></i>';
+                    isPlaying = false;
+                }
+            }
+
+            // Event Listeners
+            video.addEventListener('click', togglePlay);
+            playPauseBtn.addEventListener('click', togglePlay);
+            video.addEventListener('timeupdate', updateProgress);
+            
+            // Mostrar duración cuando el video está listo
+            video.addEventListener('loadedmetadata', function() {
+                durationDisplay.textContent = formatTime(video.duration);
+            });
+
+            // Control de la barra de progreso
+            progressBar.addEventListener('click', scrub);
+            let mousedown = false;
+            progressBar.addEventListener('mousemove', (e) => mousedown && scrub(e));
+            progressBar.addEventListener('mousedown', () => mousedown = true);
+            progressBar.addEventListener('mouseup', () => mousedown = false);
+            progressBar.addEventListener('mouseleave', () => mousedown = false);
+
+            // Tecla espaciadora para controlar reproducción
+            document.addEventListener('keydown', (e) => {
+                if (e.code === 'Space' && e.target === document.body) {
+                    e.preventDefault();
+                    togglePlay();
+                }
+            });
+
+            // Mostrar/ocultar controles con el mouse
+            videoContainer.addEventListener('mouseenter', () => {
+                playPauseBtn.style.opacity = '1';
+            });
+
+            videoContainer.addEventListener('mouseleave', () => {
+                if (isPlaying) {
+                    playPauseBtn.style.opacity = '0';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
