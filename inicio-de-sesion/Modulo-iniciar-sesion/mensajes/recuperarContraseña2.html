@@ -14,17 +14,15 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            filter: brightness(90%); /* Reduce el brillo al 50% */
-    background-image: url('/inicio-de-sesion/Modulo-iniciar-sesion/login/imagenes/imagenes/Imagen\ de\ WhatsApp\ 2024-12-09\ a\ las\ 20.39.27_862bd1f7.jpg');
-}
-        
+            filter: brightness(90%);
+            background-image: url('/inicio-de-sesion/Modulo-iniciar-sesion/login/imagenes/imagenes/Imagen\ de\ WhatsApp\ 2024-12-09\ a\ las\ 20.39.27_862bd1f7.jpg');
+        }
 
         .contenedorRecuperarcontraseña {
             display: flex;
             justify-content: center;
             align-items: center;
             width: 100%;
-
         }
 
         .right {
@@ -82,11 +80,9 @@
             color: aliceblue;
         }
 
-
         .contenedorLogo {
             width: 210;
             height: 110px;
-            
         }
 
         .contenedorLogo img {
@@ -103,16 +99,18 @@
                 <img src="imagenes/logo.png" alt="">
             </div>
             <h2>Digite su correo electronico</h2>
-            <div class="input-container">
-                <input type="email" placeholder="Correo electronico">
-            </div>
-            <a href="recuperarContraseña.html" class="button">
-                <h3>Enviar codigo</h3>
-            </a>
+            <form id="forgotPasswordForm">
+                <div class="input-container">
+                    <input type="email" id="email" placeholder="Correo electronico" required>
+                </div>
+                <button type="submit" class="button">
+                    <h3>Enviar codigo</h3>
+                </button>
+            </form>
         </div>
-
     </main>
 
+    <script type="module" src="./fetch.js"></script>
 </body>
 
 </html>
