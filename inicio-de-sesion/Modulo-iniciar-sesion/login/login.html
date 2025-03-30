@@ -11,7 +11,7 @@
 <body>
   <div class="contenedorCrearcuenta">
     <!-- contenedor de ingresar -->
-    <div class="ingresar"> 
+    <div class="ingresar">
       <div class="contenedorLogo">
         <img src="/mapa-de-suenos/imagenes/6aa3987c-48ce-4355-b6bf-26c76c37e93d-removebg.png" alt="" />
       </div>
@@ -20,37 +20,33 @@
       </div>
       <div class="contenedorP">
         <p>
-          Para mantenerse conectado, inicie sesión con su información
-          personal.
+          Para mantenerse conectado, inicie sesión con su información personal.
         </p>
       </div>
-
-    
     </div>
     <!-- contenedor de crear cuenta -->
     <div class="crearCuenta">
       <div class="contenedorIngresar">
         <h1>Iniciar sesión</h1>
         <p>Ingresa tus datos</p>
-        <form class="registrarse">
+        <form class="registrarse" id="loginForm">
           <div class="inputGrupo">
-            <input type="text" placeholder="Correo:" />
+            <input type="email" id="email" placeholder="Correo:" required />
           </div>
           <div class="inputGrupo">
-            <input type="password" placeholder="Contraseña:" />
+            <input type="password" id="password" placeholder="Contraseña:" required />
           </div>
           <div class="btnRegistro">
-            <a href="/inicio-de-sesion/Modulo-iniciar-sesion/home/home.html" class="button">
+            <button type="submit" class="button">
               <h3>Ingresar</h3>
-            </a>
+            </button>
           </div>
         </form>
       </div>
-
       <a href="/inicio-de-sesion/Modulo-iniciar-sesion/mensajes/recuperarContraseña2.html">¿Olvidaste tu contraseña?</a>
-      <a href="/inicio-de-sesion/Modulo-iniciar-sesion/registroProfesional/registroProfesional.html">Registrarse como profesional</a>
+      <a href="/inicio-de-sesion/Modulo-iniciar-sesion/registroProfesional/registroProfesional.html">Registrarse como
+        profesional</a>
       <a href="/inicio-de-sesion/Modulo-iniciar-sesion/registro/registro.html">Registrate</a>
-
       <div class="redes">
         <div class="contenedorRedes">
           <a href="#"><img src="imagenes/imagenes/facebookLogo.png" alt="Facebook" /></a>
@@ -64,6 +60,8 @@
       </div>
     </div>
   </div>
+
+  <script type="module" src="./fetch.js"></script>
 </body>
 
 </html>

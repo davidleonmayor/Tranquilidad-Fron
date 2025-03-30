@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8" />
@@ -30,65 +30,64 @@
             <div class="contenedorIngresar">
                 <h1>Crear Cuenta</h1>
                 <p>Ingresa tus datos</p>
-                <form class="registrarse">
+                <form class="registrarse" id="registerForm">
                     <div class="inputGrupo" style="display: inline-flex">
-                        <input type="text" placeholder="Nombre:" />
-                        <input type="text" placeholder="Apellidos:" />
+                        <input type="text" id="name" placeholder="Nombre:" required />
+                        <input type="text" id="surname" placeholder="Apellidos:" required />
                     </div>
                     <div class="inputGrupo">
-                        <input type="email" placeholder="Correo:" />
+                        <input type="email" id="email" placeholder="Correo:" required />
                     </div>
                     <div class="inputGrupo">
-                        <input type="password" placeholder="Contraseña:" />
+                        <input type="password" id="password" placeholder="Contraseña:" required />
+                    </div>
+                    <div class="inputGrupo">
+                        <input type="password" id="password_confirmation" placeholder="Confirmar Contraseña:"
+                            required />
                     </div>
                     <h4>Fecha de nacimiento</h4>
                     <div class="inputGrupo" style="justify-content: center; display: flex">
-                        <select>
+                        <select id="day" required>
                             <option value="">Día</option>
-                            <!-- Opciones de días -->
                         </select>
-                        <select>
+                        <select id="month" required>
                             <option value="">Mes</option>
-                            <!-- Opciones de meses -->
                         </select>
-                        <select>
+                        <select id="year" required>
                             <option value="">Año</option>
-                            <!-- Opciones de años -->
                         </select>
                     </div>
                     <h4>Selecciona tu género</h4>
                     <div class="inputGrupo genero" style="display: inline-flex; justify-content: center">
-                        <label><input class="radio" type="radio" name="genero" value="Mujer" />
-                            Mujer</label>
-                        <label><input class="radio" type="radio" name="genero" value="Hombre" />
-                            Hombre</label>
+                        <label><input class="radio" type="radio" name="genero" value="Mujer" required /> Mujer</label>
+                        <label><input class="radio" type="radio" name="genero" value="Hombre" /> Hombre</label>
                         <label><input class="radio" type="radio" name="genero" value="Personalizado" />
                             Personalizado</label>
                     </div>
+                    <div class="btnRegistro">
+                        <button type="submit" class="button">
+                            <h3>Crear</h3>
+                        </button>
+                    </div>
                 </form>
-                <div class="btnRegistro">
-                    <a href="/inicio-de-sesion/Modulo-iniciar-sesion/mensajes/bienvenida.html" class="button">
-                        <h3>Crear</h3>
-                    </a>
-                </div>
-            </div>
-            <a href="/inicio-de-sesion/Modulo-iniciar-sesion/login/login.html">¿Ya tienes cuenta?</a>
-            <div class="redes">
-                <div class="contenedorRedes">
-                    <a href="#"><img src="imagenes/imagenes/facebookLogo.png" alt="Facebook" /></a>
-                </div>
-                <div class="contenedorRedes">
-                    <a href="#"><img src="imagenes/imagenes/gmail.png" alt="Google" /></a>
-                </div>
-                <div class="contenedorRedes">
-                    <a href="#"><img src="imagenes/imagenes/Apple.png" alt="Apple" /></a>
+                <a href="/inicio-de-sesion/Modulo-iniciar-sesion/login/login.html">¿Ya tienes cuenta?</a>
+                <div class="redes">
+                    <div class="contenedorRedes">
+                        <a href="#"><img src="imagenes/imagenes/facebookLogo.png" alt="Facebook" /></a>
+                    </div>
+                    <div class="contenedorRedes">
+                        <a href="#"><img src="imagenes/imagenes/gmail.png" alt="Google" /></a>
+                    </div>
+                    <div class="contenedorRedes">
+                        <a href="#"><img src="imagenes/imagenes/Apple.png" alt="Apple" /></a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    
-    <script src="script.js"></script>
 
+    <script src="script.js"></script>
+    <script type="module" src="./fetch.js"></script>
 </body>
 
 </html>
