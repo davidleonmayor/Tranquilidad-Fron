@@ -181,21 +181,7 @@
 </body>
 <!-- <script src="/musicoterapia/Vistas1.1/REPRODUCCTORES/GENERO_ELEGIDO/CLASICA/scrip.js"></script> -->
 <!-- <script type="module" src="/musicoterapia/Vistas1.1/REPRODUCCTORES/GENERO_ELEGIDO/CLASICA/scrip.js"></script> -->
-<script>
-  console.log("Script cargado correctamente");
-  fetch("http://127.0.0.1:8000/v1/audios")
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-      return response.json();
-    })
-    .then(data => {
-      console.log("Datos recibidos:", data);
-    })
-    .catch(error => {
-      console.error('Error en la petición:', error);
-    });
-</script>
+<!-- <script type="module" src="./fetch.js"></script> -->
+<script type="module" src="./script.js"></script>
 
 </html>

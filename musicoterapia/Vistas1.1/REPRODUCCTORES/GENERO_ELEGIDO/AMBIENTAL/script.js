@@ -206,33 +206,32 @@ if (likeButton) {
 // Ejecutar la función cuando la página esté cargada
 document.addEventListener('DOMContentLoaded', fetchAudiosByGenre);
 
-
 // // Estructura de datos de prueba para simular audios
 // const sampleAudios = [
 //     {
 //         id: 1,
-//         title: "Dope Guitar Type Trap Beat Rap Instrumental",
-//         artist: "Piano_Music",
+//         title: "Calm Background Music Ambient Guitar",
+//         artist: "DELOSound",
 //         description: "A relaxing melody",
-//         audio_file: "/musicoterapia/Vistas1.1/audio/genero-audio/INSTRUMENTAL/dope-guitar-type-trap-beat-rap-instrumental-206686.mp3",
+//         audio_file: "/musicoterapia/Vistas1.1/audio/genero-audio/AMBIENTAL/calm-background-music-ambient-guitar-298550.mp3",
 //         image_file: "/musicoterapia/Vistas1.1/images/El-piano.jpg",
 //         like_id: null
 //     },
 //     {
 //         id: 2,
-//         title: "Drake Type Trap Beat Rap Instrumental",
-//         artist: "DELOSound",
+//         title: "Inspiring Cinematic Ambient",
+//         artist: "Lexin_Music",
 //         description: "Calming nature sounds",
-//         audio_file: "/musicoterapia/Vistas1.1/audio/genero-audio/INSTRUMENTAL/drake-type-trap-beat-rap-instrumental-221923.mp3",
+//         audio_file: "/musicoterapia/Vistas1.1/audio/genero-audio/AMBIENTAL/inspiring-cinematic-ambient-116199.mp3",
 //         image_file: "/musicoterapia/Vistas1.1/images/El-piano.jpg",
 //         like_id: null
 //     },
 //     {
 //         id: 3,
-//         title: "Emotional Piano",
+//         title: "Perfect Beauty",
 //         artist: "Good_B_Music",
 //         description: "Peaceful piano",
-//         audio_file: "/musicoterapia/Vistas1.1/audio/genero-audio/INSTRUMENTAL/instrumental-sad-music-with-piano-and-violin-179450.mp3",
+//         audio_file: "/musicoterapia/Vistas1.1/audio/genero-audio/AMBIENTAL/perfect-beauty-191271.mp3",
 //         image_file: "/musicoterapia/Vistas1.1/images/El-piano.jpg",
 //         like_id: null
 //     }
