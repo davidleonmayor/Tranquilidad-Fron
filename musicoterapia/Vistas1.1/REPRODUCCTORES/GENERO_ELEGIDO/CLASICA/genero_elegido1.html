@@ -10,7 +10,6 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="/musicoterapia/Header/style copy.css">
   <link rel="stylesheet" href="style.css">
-
   <title>tranquilidad</title>
   <script>
     async function includeHTML() {
@@ -21,7 +20,6 @@
           const response = await fetch(file);
           if (response.ok) {
             el.innerHTML = await response.text();
-            // Cargar el JS del footer después de insertarlo
             if (file.includes("header.html")) {
               const script = document.createElement("script");
               script.src = "/rutinas-de-ejercicios/includes/Header/script.js";
@@ -37,72 +35,49 @@
     }
     document.addEventListener("DOMContentLoaded", includeHTML);
   </script>
-
-
 </head>
 
 <body>
   <div include-html="/rutinas-de-ejercicios/includes/Header/header.html"></div>
   <div class="container">
     <aside class="sidebar">
-      <br>
-      <br>
-      <br>
+      <br><br><br>
       <div class="menu-item">
         <img src="/musicoterapia/Vistas1.1/images/genero.png" alt="Icon" />
-        <a href="/musicoterapia/Vistas1.1/PRINCIPAL_GENEROS/principal_generos.html">
-          <span>Géneros</span>
-        </a>
+        <a href="/musicoterapia/Vistas1.1/PRINCIPAL_GENEROS/principal_generos.html"><span>Géneros</span></a>
       </div>
       <div class="menu-item">
         <img src="/musicoterapia/Vistas1.1/images/album.png" alt="Icon" />
-        <a href="/musicoterapia/Vistas1.1/PRINCIPAL_ALBUM/principal_album.html">
-          <span>Álbum</span>
-        </a>
+        <a fosrc="/musicoterapia/Vistas1.1/PRINCIPAL_ALBUM/principal_album.html"><span>Álbum</span></a>
       </div>
       <div class="menu-item">
         <img src="/musicoterapia/Vistas1.1/images/pod.png" alt="Icon" />
-        <a href="/musicoterapia/Vistas1.1/PRINCIPAL_PODCAST/principal_podcast.html">
-          <span>Podcast</span>
-        </a>
+        <a href="/musicoterapia/Vistas1.1/PRINCIPAL_PODCAST/principal_podcast.html"><span>Podcast</span></a>
       </div>
       <div class="menu-item">
         <img src="/musicoterapia/Vistas1.1/images/binaural.png" alt="Icon" />
-        <a href="/musicoterapia/Vistas1.1/SONIDOS_BINAURALES/binaurales.html">
-          <span>Sonidos Binaurales</span>
-        </a>
+        <a href="/musicoterapia/Vistas1.1/SONIDOS_BINAURALES/binaurales.html"><span>Sonidos Binaurales</span></a>
       </div>
       <div class="menu-item">
         <img src="/musicoterapia/Vistas1.1/images/playL.png" alt="Icon" />
-        <a href="/musicoterapia/Vistas1.1/PLAYLIST/imgplaylist/">
-          <span>PlayList</span>
-        </a>
+        <a href="/musicoterapia/Vistas1.1/PLAYLIST/imgplaylist/"><span>PlayList</span></a>
       </div>
-
-      <div class="menu-item ">
+      <div class="menu-item">
         <img src="/musicoterapia/Vistas1.1/images/like.png" alt="Icon" />
-        <a href="/musicoterapia/Vistas1.1/ME GUSTA/Tus me gustas pistas.html">
-          <span>Me gusta</span>
-        </a>
-        </a>
+        <a href="/musicoterapia/Vistas1.1/ME GUSTA/Tus me gustas pistas.html"><span>Me gusta</span></a>
       </div>
       <div class="menu-item">
         <img src="/musicoterapia/Vistas1.1/images/buscar boton.png" alt="Buscar Icon">
-        <a href="/musicoterapia/Vistas1.1/PRINCIPAL BUSCAR/buscar.html">
-          <span>Buscar</span>
-        </a>
-        </a>
+        <a href="/musicoterapia/Vistas1.1/PRINCIPAL BUSCAR/buscar.html"><span>Buscar</span></a>
       </div>
     </aside>
 
     <main class="main">
-      <div class="title">
-        <span></span>
-      </div>
+      <div class="title"><span></span></div>
       <div class="tabs">
         <div class="black" onclick="window.location.href='#pistas'"></div>
-        <div class="purple" onclick="window.location.href='#podcast'">
-          <h1 id="titulo-genero">Genero Clasica<h1>
+        <div class="purple">
+          <h1 id="titulo-genero">Genero Clasica</h1>
         </div>
       </div>
       <br>
@@ -124,33 +99,29 @@
             <span id="total-duration">0:00</span>
           </div>
           <div class="controls">
-            <button id="prev-btn">&#9664;&#9664;</button>
-            <button id="play-pause-btn">&#9654;</button>
-            <button id="next-btn">&#9654;&#9654;</button>
+            <button id="prev-btn">◀◀</button>
+            <button id="play-pause-btn">▶</button>
+            <button id="next-btn">▶▶</button>
           </div>
           <div class="actions">
             <div><span class="me-gusta">❤</span></div>
-            <button class="dropdown-button" onclick="toggleDropdown('dropdown')">
-              &#8942;
-            </button>
+            <button class="dropdown-button">⋮</button>
             <div id="dropdown" class="dropdown">
               <div class="dropdown-content" onclick="window.location.href='/me-gusta'">
                 Agregar a favoritos
               </div>
-              <div class="dropdown-content" onclick="toggleNestedDropdown('playlist-dropdown')">
+              <div class="dropdown-content" onclick="toggleNestedDropdown()">
                 Agregar a playlist
               </div>
               <div id="playlist-dropdown" class="nested-dropdown">
-                <div class="dropdown-content">Playlist 1</div>
-                <div class="dropdown-content">Playlist 2</div>
-                <div class="dropdown-content">Playlist 3</div>
-                <div class="dropdown-content" onclick="createNewPlaylist()">
-                  <i>+ Crear nueva playlist</i>
-                </div>
+                <!-- Playlists will be dynamically added here -->
+                <div class="dropdown-content" onclick="showCreatePlaylistForm()">Crear PlayList</div>
               </div>
-              <div class="dropdown-content" onclick="showHorizontalList()">
-                Compartir
-              </div>
+              <div class="dropdown-content" onclick="showHorizontalList()">Compartir</div>
+            </div>
+            <div id="create-playlist-form" class="playlist-form" style="display: none;">
+              <input type="text" id="playlist-name" placeholder="Nombre de la playlist">
+              <button onclick="createNewPlaylist()">Aceptar</button>
             </div>
           </div>
           <div id="horizontal-list" class="horizontal-list">
@@ -161,27 +132,14 @@
             <button onclick="copyLink()">Copiar Link</button>
           </div>
         </div>
-
-        <div class="tracks-container" id="tracks-list">
-          <!-- Los audios se cargarán dinámicamente aquí -->
-        </div>
+        <div class="tracks-container" id="tracks-list"></div>
       </div>
-      <audio id="audio" src="/musicoterapia/Vistas1.1/audio/genero-audio/CLASICA/after-work-142608.mp3"></audio>
-      <audio id="audio"
-        src="/musicoterapia/Vistas1.1/audio/genero-audio/CLASICA/emotional-piano-background-music-298069.mp3"></audio>
-      <audio id="audio"
-        src="/musicoterapia/Vistas1.1/audio/genero-audio/CLASICA/fur-elise-by-ludwig-van-beethoven-classic-guitar-ahmad-mousavipour-13870.mp3"></audio>
+      <audio id="audio"></audio>
     </main>
   </div>
-  <br>
-  <br>
-  <br>
-  <br>
+  <br><br><br><br>
   <div include-html="/rutinas-de-ejercicios/includes/inicio/inicio.html"></div>
+  <script type="module" src="./script.js"></script>
 </body>
-<!-- <script src="/musicoterapia/Vistas1.1/REPRODUCCTORES/GENERO_ELEGIDO/CLASICA/scrip.js"></script> -->
-<!-- <script type="module" src="/musicoterapia/Vistas1.1/REPRODUCCTORES/GENERO_ELEGIDO/CLASICA/scrip.js"></script> -->
-<!-- <script type="module" src="./fetch.js"></script> -->
-<script type="module" src="./script.js"></script>
 
 </html>
