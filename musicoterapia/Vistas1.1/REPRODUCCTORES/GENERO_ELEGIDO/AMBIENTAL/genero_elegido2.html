@@ -106,17 +106,14 @@
           </div>
           <div class="actions">
             <div><span class="me-gusta">❤</span></div>
-            <button class="dropdown-button" onclick="toggleDropdown('dropdown')">⋮</button>
+            <button class="dropdown-button">⋮</button>
             <div id="dropdown" class="dropdown">
-              <div class="dropdown-content" onclick="window.location.href='/me-gusta'">Agregar a favoritos</div>
-              <div class="dropdown-content" onclick="toggleNestedDropdown('playlist-dropdown')">Agregar a playlist</div>
-              <div id="playlist-dropdown" class="nested-dropdown">
-                <div class="dropdown-content">Playlist 1</div>
-                <div class="dropdown-content">Playlist 2</div>
-                <div class="dropdown-content">Playlist 3</div>
-                <div class="dropdown-content" onclick="createNewPlaylist()"><i>+ Crear nueva playlist</i></div>
-              </div>
-              <div class="dropdown-content" onclick="showHorizontalList()">Compartir</div>
+              <!-- Playlists will be dynamically added here -->
+            </div>
+            <div id="create-playlist-form" class="playlist-form" style="display: none;">
+              <input type="text" id="playlist-name" placeholder="Nombre de la playlist">
+              <input type="text" id="playlist-description" placeholder="Descripción de la playlist">
+              <button id="create-playlist-btn">Aceptar</button>
             </div>
           </div>
           <div id="horizontal-list" class="horizontal-list">
@@ -136,7 +133,6 @@
   </div>
   <br><br><br><br>
   <div include-html="/rutinas-de-ejercicios/includes/inicio/inicio.html"></div>
-  <!-- <script type="module" src="../fetch.js"></script> -->
   <script type="module" src="./script.js"></script>
 </body>
 

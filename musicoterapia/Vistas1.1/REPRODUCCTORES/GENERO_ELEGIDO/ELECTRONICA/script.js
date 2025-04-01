@@ -11,12 +11,15 @@ const totalDurationElement = document.getElementById('total-duration');
 const progressBar = document.getElementById('progress-bar');
 const tracksList = document.getElementById('tracks-list');
 const likeButton = document.querySelector('.me-gusta');
+const playlistsContainer = document.getElementById('dropdown');
+const authToken = localStorage.getItem('authToken');
 
 // Constantes y variables globales
 const SKIP_TIME = 10;
 let likedAudios = JSON.parse(localStorage.getItem("likedTracks")) || [];
 let currentTrackIndex = 0;
-let audios = []; // Array para almacenar los audios obtenidos de la API
+let audios = [];
+let playlists = [];
 
 // Función para obtener y cargar audios por género
 function fetchAudiosByGenre() {
@@ -44,14 +47,14 @@ function fetchAudiosByGenre() {
     })
     .then((data) => {
       console.log(`Audios del género con ID ${genreId}:`, data);
-      audios = data; // Guardar los audios obtenidos en la variable global
+      audios = data;
       const genreTitle = document.getElementById("titulo-genero");
       if (data.length > 0 && data[0].genre) {
         genreTitle.textContent = `Género ${data[0].genre.name}`;
       }
-      loadTracks(); // Cargar la lista de pistas en la interfaz
+      loadTracks();
       if (audios.length > 0) {
-        loadAudio(audios[0].audio_file, audios[0].title, audios[0].description, audios[0].image_file, 0); // Cargar el primer audio sin reproducirlo
+        loadAudio(audios[0].audio_file, audios[0].title, audios[0].description, audios[0].image_file, 0);
       }
     })
     .catch((error) => {
@@ -69,11 +72,11 @@ function loadAudio(audioUrl, title, artist, cover, index) {
 
   audioPlayer.src = audioUrl;
   audioTitle.textContent = title;
-  audioArtist.textContent = artist || "Desconocido"; // Si no hay artista, usar "Desconocido"
+  audioArtist.textContent = artist || "Desconocido";
   albumImage.src = cover;
   audioPlayer.load();
 
-  playPauseBtn.innerHTML = '▶'; // Mostrar play por defecto
+  playPauseBtn.innerHTML = '▶';
   currentTrackIndex = index;
   updateLikeButtonState();
 }
@@ -143,6 +146,156 @@ function loadTracks() {
   });
 }
 
+// Fetch playlists from backend
+async function fetchAllPlaylists() {
+  console.log('Fetching playlists...');
+  console.log('Auth token:', authToken);
+
+  if (!authToken) {
+    console.log('No auth token found');
+    playlists = [];
+    return;
+  }
+
+  try {
+    const response = await fetch('http://127.0.0.1:8000/v1/playlists', {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${authToken}`,
+        "Accept": "application/json"
+      },
+    });
+
+    console.log('Response status:', response.status);
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      console.error('Error response:', errorData);
+      throw new Error(errorData.message || errorData.error || "Error en la solicitud: " + response.statusText);
+    }
+
+    const data = await response.json();
+    console.log('Playlists data:', data);
+    playlists = data.data || [];
+  } catch (error) {
+    console.error("Error al obtener las playlists:", error);
+    playlists = [];
+  }
+}
+
+function displayPlaylists() {
+  console.log('Displaying playlists:', playlists);
+  playlistsContainer.innerHTML = '';
+
+  if (!authToken) {
+    playlistsContainer.innerHTML = `<div class="dropdown-content">Por favor, inicia sesión</div>`;
+  } else if (playlists.length === 0) {
+    playlistsContainer.innerHTML = `<div class="dropdown-content">No hay playlists</div>`;
+  } else {
+    playlists.forEach((playlist) => {
+      const playlistElement = document.createElement('div');
+      playlistElement.classList.add('dropdown-content');
+      playlistElement.textContent = playlist.name || `Playlist ${playlist.id}`;
+      playlistElement.addEventListener('click', () => {
+        console.log(`Añadiendo a playlist: ${playlist.name}`);
+        toggleDropdown();
+      });
+      playlistsContainer.appendChild(playlistElement);
+    });
+  }
+
+  const createPlaylistElement = document.createElement('div');
+  createPlaylistElement.classList.add('dropdown-content');
+  createPlaylistElement.textContent = 'Crear PlayList';
+  createPlaylistElement.addEventListener('click', showCreatePlaylistForm);
+  playlistsContainer.appendChild(createPlaylistElement);
+}
+
+function toggleDropdown() {
+  const dropdown = document.getElementById('dropdown');
+  if (dropdown) {
+    dropdown.classList.toggle('show');
+    if (dropdown.classList.contains('show')) {
+      displayPlaylists();
+    }
+    const form = document.getElementById('create-playlist-form');
+    if (form) form.style.display = 'none';
+  }
+}
+
+function showCreatePlaylistForm() {
+  const form = document.getElementById('create-playlist-form');
+  if (form) {
+    form.style.display = 'block';
+    const dropdown = document.getElementById('dropdown');
+    if (dropdown) dropdown.classList.remove('show');
+  }
+}
+
+async function createNewPlaylist() {
+  const playlistName = document.getElementById('playlist-name').value;
+  const playlistDescription = document.getElementById('playlist-description').value;
+
+  if (playlistName.trim() === '') {
+    alert('Por favor ingrese un nombre para la playlist');
+    return;
+  }
+
+  if (!authToken) {
+    alert('Por favor, inicia sesión para crear una playlist');
+    return;
+  }
+
+  try {
+    const response = await fetch('http://127.0.0.1:8000/v1/playlists', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${authToken}`,
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({
+        name: playlistName,
+        description: playlistDescription || null
+      })
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(errorData.message || 'Error al crear la playlist');
+    }
+
+    const data = await response.json();
+    console.log('Playlist creada:', data);
+    alert(`Playlist "${playlistName}" creada exitosamente!`);
+
+    const form = document.getElementById('create-playlist-form');
+    if (form) {
+      form.style.display = 'none';
+      document.getElementById('playlist-name').value = '';
+      document.getElementById('playlist-description').value = '';
+    }
+
+    await fetchAllPlaylists();
+  } catch (error) {
+    console.error('Error al crear la playlist:', error);
+    alert(`Error al crear la playlist: ${error.message}`);
+  }
+}
+
+// Share functionality
+function showHorizontalList() {
+  const list = document.getElementById('horizontal-list');
+  list.style.display = list.style.display === 'flex' ? 'none' : 'flex';
+}
+
+function copyLink() {
+  const currentTrack = audios[currentTrackIndex];
+  navigator.clipboard.writeText(currentTrack.audio_file);
+  alert('Link copiado al portapapeles');
+}
+
 // Event Listeners
 playPauseBtn.addEventListener('click', function () {
   if (audioPlayer.paused) {
@@ -204,4 +357,27 @@ if (likeButton) {
 }
 
 // Ejecutar la función cuando la página esté cargada
-document.addEventListener('DOMContentLoaded', fetchAudiosByGenre);
+document.addEventListener('DOMContentLoaded', async () => {
+  await fetchAllPlaylists(); // Fetch playlists first
+  fetchAudiosByGenre();
+
+  document.querySelector('.dropdown-button').addEventListener('click', toggleDropdown);
+
+  const createPlaylistBtn = document.getElementById('create-playlist-btn');
+  if (createPlaylistBtn) {
+    createPlaylistBtn.addEventListener('click', createNewPlaylist);
+  }
+
+  document.addEventListener('click', (event) => {
+    const dropdown = document.getElementById('dropdown');
+    const form = document.getElementById('create-playlist-form');
+    const dropdownButton = document.querySelector('.dropdown-button');
+
+    if (dropdown && !dropdown.contains(event.target) &&
+      !dropdownButton.contains(event.target) &&
+      form && !form.contains(event.target)) {
+      dropdown.classList.remove('show');
+      form.style.display = 'none';
+    }
+  });
+});
