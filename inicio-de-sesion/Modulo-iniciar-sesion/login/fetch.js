@@ -1,17 +1,23 @@
 function login(event) {
-    event.preventDefault(); // Prevent the default form submission
+    event.preventDefault(); // Prevent default form submission
 
-    // Obtener los valores de los campos de entrada
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
+    const messageDiv = document.getElementById("message");
 
-    // Validar que los campos no estén vacíos
+    // Clear previous messages
+    messageDiv.textContent = "";
+
+    // Validate inputs
     if (!email || !password) {
-        alert("Por favor, completa todos los campos.");
+        messageDiv.style.color = "red";
+        messageDiv.textContent = "Por favor, completa todos los campos.";
         return;
     }
 
-    // Realizar la solicitud fetch
+    // Show loading state
+    messageDiv.textContent = "Iniciando sesión...";
+
     fetch("http://127.0.0.1:8000/v1/login", {
         method: "POST",
         headers: {
@@ -24,31 +30,40 @@ function login(event) {
     })
         .then((response) => {
             if (!response.ok) {
-                throw new Error("Error en la solicitud: " + response.statusText);
+                return response.json().then(err => {
+                    throw new Error(err.error || "Error en la solicitud: " + response.statusText);
+                });
             }
             return response.json();
         })
         .then((data) => {
             console.log("Respuesta del servidor:", data);
-            // Asumiendo que el backend devuelve un token en data.token
             if (data.token) {
-                // Guardar el token en localStorage
+                // Store token as "authToken"
                 localStorage.setItem("authToken", data.token);
-                alert("Inicio de sesión exitoso!");
-                // Redirigir al usuario después del login exitoso
-                window.location.href = "/inicio-de-sesion/Modulo-iniciar-sesion/home/home.html";
+                messageDiv.style.color = "green";
+                messageDiv.textContent = "Inicio de sesión exitoso. Redirigiendo...";
+                // Redirect after a short delay for user feedback
+                setTimeout(() => {
+                    window.location.href = "/musicoterapia/Vistas1.1/PLAYLIST/playList.html"; // Adjusted to match your app flow
+                }, 1000);
             } else {
                 throw new Error("No se recibió un token de autenticación");
             }
         })
         .catch((error) => {
             console.error("Error:", error);
-            alert("Error al iniciar sesión: " + error.message);
+            messageDiv.style.color = "red";
+            messageDiv.textContent = error.message || "Error al iniciar sesión. Verifica tus credenciales.";
         });
 }
 
-// Añadir el event listener al formulario
+// Add event listener to the form
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById("loginForm");
-    form.addEventListener('submit', login);
+    if (form) {
+        form.addEventListener('submit', login);
+    } else {
+        console.error("Formulario con ID 'loginForm' no encontrado.");
+    }
 });
