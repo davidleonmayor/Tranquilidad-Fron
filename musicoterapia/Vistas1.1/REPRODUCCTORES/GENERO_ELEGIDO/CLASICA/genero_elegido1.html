@@ -48,6 +48,142 @@
       </div>
       <div class="menu-item">
         <img src="/musicoterapia/Vistas1.1/images/album.png" alt="Icon" />
+        <a href="/musicoterapia/Vistas1.1/PRINCIPAL_ALBUM/principal_album.html"><span>Álbum</span></a>
+      </div>
+      <div class="menu-item">
+        <img src="/musicoterapia/Vistas1.1/images/pod.png" alt="Icon" />
+        <a href="/musicoterapia/Vistas1.1/PRINCIPAL_PODCAST/principal_podcast.html"><span>Podcast</span></a>
+      </div>
+      <div class="menu-item">
+        <img src="/musicoterapia/Vistas1.1/images/binaural.png" alt="Icon" />
+        <a href="/musicoterapia/Vistas1.1/SONIDOS_BINAURALES/binaurales.html"><span>Sonidos Binaurales</span></a>
+      </div>
+      <div class="menu-item">
+        <img src="/musicoterapia/Vistas1.1/images/playL.png" alt="Icon" />
+        <a href="/musicoterapia/Vistas1.1/PLAYLIST/imgplaylist/"><span>PlayList</span></a>
+      </div>
+      <div class="menu-item">
+        <img src="/musicoterapia/Vistas1.1/images/like.png" alt="Icon" />
+        <a href="/musicoterapia/Vistas1.1/ME GUSTA/Tus me gustas pistas.html"><span>Me gusta</span></a>
+      </div>
+      <div class="menu-item">
+        <img src="/musicoterapia/Vistas1.1/images/buscar boton.png" alt="Buscar Icon">
+        <a href="/musicoterapia/Vistas1.1/PRINCIPAL BUSCAR/buscar.html"><span>Buscar</span></a>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="title"><span></span></div>
+      <div class="tabs">
+        <div class="black" onclick="window.location.href='#pistas'"></div>
+        <div class="purple">
+          <h1 id="titulo-genero">Genero Clasica</h1>
+        </div>
+      </div>
+      <br>
+      <div class="content">
+        <div class="player">
+          <div class="album-cover">
+            <img id="album-image" src="/musicoterapia/Vistas1.1/images/El-piano.jpg" alt="genre" />
+            <div class="playhead"></div>
+          </div>
+          <div>
+            <h2 id="audio-title" style="margin: 0">Bienvenido y disfruta ♫</h2>
+            <p id="audio-artist">Artist</p>
+          </div>
+          <div class="progress-container">
+            <input type="range" id="progress-bar" value="0" min="0" max="100" step="0.1">
+          </div>
+          <div class="time">
+            <span id="current-time">0:00</span>
+            <span id="total-duration">0:00</span>
+          </div>
+          <div class="controls">
+            <button id="prev-btn">◀◀</button>
+            <button id="play-pause-btn">▶</button>
+            <button id="next-btn">▶▶</button>
+          </div>
+          <div class="actions">
+            <div><span class="me-gusta">❤</span></div>
+            <button class="dropdown-button">⋮</button>
+            <div id="dropdown" class="dropdown">
+              <!-- Only playlists will be shown here -->
+            </div>
+            <div id="create-playlist-form" class="playlist-form" style="display: none;">
+              <input type="text" id="playlist-name" placeholder="Nombre de la playlist">
+              <button onclick="createNewPlaylist()">Aceptar</button>
+            </div>
+          </div>
+          <div id="horizontal-list" class="horizontal-list">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg"
+              alt="Facebook" />
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" />
+            <button onclick="copyLink()">Copiar Link</button>
+          </div>
+        </div>
+        <div class="tracks-container" id="tracks-list"></div>
+      </div>
+      <audio id="audio"></audio>
+    </main>
+  </div>
+  <br><br><br><br>
+  <div include-html="/rutinas-de-ejercicios/includes/inicio/inicio.html"></div>
+  <script type="module" src="./script.js"></script>
+</body>
+
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="/musicoterapia/Header/style copy.css">
+  <link rel="stylesheet" href="style.css">
+  <title>tranquilidad</title>
+  <script>
+    async function includeHTML() {
+      const elements = document.querySelectorAll('[include-html]');
+      for (let el of elements) {
+        const file = el.getAttribute('include-html');
+        try {
+          const response = await fetch(file);
+          if (response.ok) {
+            el.innerHTML = await response.text();
+            if (file.includes("header.html")) {
+              const script = document.createElement("script");
+              script.src = "/rutinas-de-ejercicios/includes/Header/script.js";
+              document.body.appendChild(script);
+            }
+          } else {
+            el.innerHTML = "<p>Error al cargar el contenido.</p>";
+          }
+        } catch (error) {
+          el.innerHTML = "<p>Error de conexión al cargar el contenido.</p>";
+        }
+      }
+    }
+    document.addEventListener("DOMContentLoaded", includeHTML);
+  </script>
+</head>
+
+<body>
+  <div include-html="/rutinas-de-ejercicios/includes/Header/header.html"></div>
+  <div class="container">
+    <aside class="sidebar">
+      <br><br><br>
+      <div class="menu-item">
+        <img src="/musicoterapia/Vistas1.1/images/genero.png" alt="Icon" />
+        <a href="/musicoterapia/Vistas1.1/PRINCIPAL_GENEROS/principal_generos.html"><span>Géneros</span></a>
+      </div>
+      <div class="menu-item">
+        <img src="/musicoterapia/Vistas1.1/images/album.png" alt="Icon" />
         <a fosrc="/musicoterapia/Vistas1.1/PRINCIPAL_ALBUM/principal_album.html"><span>Álbum</span></a>
       </div>
       <div class="menu-item">
@@ -114,7 +250,7 @@
                 Agregar a playlist
               </div>
               <div id="playlist-dropdown" class="nested-dropdown">
-                <!-- Playlists will be dynamically added here -->
+                
                 <div class="dropdown-content" onclick="showCreatePlaylistForm()">Crear PlayList</div>
               </div>
               <div class="dropdown-content" onclick="showHorizontalList()">Compartir</div>
@@ -142,4 +278,4 @@
   <script type="module" src="./script.js"></script>
 </body>
 
-</html>
+</html> -->
