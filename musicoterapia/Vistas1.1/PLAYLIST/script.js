@@ -37,8 +37,8 @@ function fetchAllPlaylists() {
             displayPlaylists(playlists);
         })
         .catch((error) => {
-            console.error("Error al obtener las playlists:", error);
-            playlistsContainer.innerHTML = `<p>Error al cargar las playlists: ${error.message}. Asegúrate de que el servidor esté corriendo y estés autenticado.</p>`;
+            // console.error("Error al obtener las playlists:", error);
+            // playlistsContainer.innerHTML = `<p>Error al cargar las playlists: ${error.message}. Asegúrate de que el servidor esté corriendo y estés autenticado.</p>`;
         });
 }
 

@@ -1,6 +1,6 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const videos = document.querySelectorAll('.video-player');
-    
+
     videos.forEach(video => {
         // Autoplay only when video is in view
         const observer = new IntersectionObserver((entries) => {
@@ -12,9 +12,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
         }, { threshold: 0.5 });
-        
+
         observer.observe(video);
-        
+
         // Pause other videos when one starts playing
         video.addEventListener('play', () => {
             videos.forEach(v => {
@@ -24,22 +24,20 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     });
-    
+
     // Interaction buttons handling
     const actionButtons = document.querySelectorAll('.action-button');
-    
+
     actionButtons.forEach(button => {
         button.addEventListener('click', (e) => {
             e.stopPropagation();
             button.classList.toggle('active');
-            
+
             // If it's a like button, update the counter
             if (button.classList.contains('like-button')) {
                 const count = button.querySelector('.action-count');
                 const currentCount = parseInt(count.textContent);
-                count.textContent = button.classList.contains('active') ? 
-                    (currentCount + 1) + 'K' : 
-                    (currentCount - 1) + 'K';
+                count.textContent = button.classList.contains('active') ? (currentCount + 1) + 'K' : (currentCount - 1) + 'K';
             }
         });
     });
@@ -58,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-    
+
     const videoCards = document.querySelectorAll('.video-card');
 
     videoCards.forEach(card => {
