@@ -1,180 +1,169 @@
 <!DOCTYPE html>
 <html lang="esp">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="/musicoterapia/Header/style.css">
-    <link rel="stylesheet" href="style.css">
-    
-    <title>tranquilidad</title>
-    <script>
-      async function includeHTML() {
-          const elements = document.querySelectorAll('[include-html]');
-          for (let el of elements) {
-              const file = el.getAttribute('include-html');
-              try {
-                  const response = await fetch(file);
-                  if (response.ok) {
-                      el.innerHTML = await response.text();
-                      // Cargar el JS del footer después de insertarlo
-                      if (file.includes("header.html")) {
-                          const script = document.createElement("script");
-                          script.src = "/rutinas-de-ejercicios/includes/Header/script.js";
-                          document.body.appendChild(script);
-                      }
-                  } else {
-                      el.innerHTML = "<p>Error al cargar el contenido.</p>";
-                  }
-              } catch (error) {
-                  el.innerHTML = "<p>Error de conexión al cargar el contenido.</p>";
-              }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="/musicoterapia/Header/style.css">
+  <link rel="stylesheet" href="style.css">
+
+  <title>tranquilidad</title>
+  <script>
+    async function includeHTML() {
+      const elements = document.querySelectorAll('[include-html]');
+      for (let el of elements) {
+        const file = el.getAttribute('include-html');
+        try {
+          const response = await fetch(file);
+          if (response.ok) {
+            el.innerHTML = await response.text();
+            // Cargar el JS del footer después de insertarlo
+            if (file.includes("header.html")) {
+              const script = document.createElement("script");
+              script.src = "/rutinas-de-ejercicios/includes/Header/script.js";
+              document.body.appendChild(script);
+            }
+          } else {
+            el.innerHTML = "<p>Error al cargar el contenido.</p>";
           }
+        } catch (error) {
+          el.innerHTML = "<p>Error de conexión al cargar el contenido.</p>";
+        }
       }
-      document.addEventListener("DOMContentLoaded", includeHTML);
+    }
+    document.addEventListener("DOMContentLoaded", includeHTML);
   </script>
 
 
 </head>
+
 <body>
-    <div include-html="/rutinas-de-ejercicios/includes/Header/header.html"></div>
-    <div class="container">
-      <aside class="sidebar">
-        <br />
-        <br />
-        <div class="menu-item">
-          <a href="/musicoterapia/Vistas1.1/PRINCIPAL_GENEROS/principal_generos.html" style="text-decoration: none">
-            <img src="/musicoterapia/Vistas1.1/images/genero.png" alt="Icon" />
-            <span>Géneros</span>
-          </a>
-        </div>
-        <div class="menu-item">
-          <a href="/musicoterapia/Vistas1.1/PRINCIPAL_ALBUM/principal_album.html" style="text-decoration: none">
-            <img src="/musicoterapia/Vistas1.1/images/album.png" alt="Icon" />
-            <span>Álbum</span>
-          </a>
-        </div>
-        <div class="menu-item active">
-          <a href="/musicoterapia/Vistas1.1/PRINCIPAL_PODCAST/principal_podcast.html" style="text-decoration: none">
-            <img src="/musicoterapia/Vistas1.1/images/pod.png" alt="Icon" />
-            <span>Podcast</span>
-          </a>
-        </div>
+  <div include-html="/rutinas-de-ejercicios/includes/Header/header.html"></div>
+  <div class="container">
+    <aside class="sidebar">
+      <br />
+      <br />
+      <div class="menu-item">
+        <a href="/musicoterapia/Vistas1.1/PRINCIPAL_GENEROS/principal_generos.html" style="text-decoration: none">
+          <img src="/musicoterapia/Vistas1.1/images/genero.png" alt="Icon" />
+          <span>Géneros</span>
+        </a>
+      </div>
+      <div class="menu-item">
+        <a href="/musicoterapia/Vistas1.1/PRINCIPAL_ALBUM/principal_album.html" style="text-decoration: none">
+          <img src="/musicoterapia/Vistas1.1/images/album.png" alt="Icon" />
+          <span>Álbum</span>
+        </a>
+      </div>
+      <div class="menu-item active">
+        <a href="/musicoterapia/Vistas1.1/PRINCIPAL_PODCAST/principal_podcast.html" style="text-decoration: none">
+          <img src="/musicoterapia/Vistas1.1/images/pod.png" alt="Icon" />
+          <span>Podcast</span>
+        </a>
+      </div>
 
-        <div class="menu-item">
-          <a href="/musicoterapia/Vistas1.1/SONIDOS_BINAURALES/binaurales.html" style="text-decoration: none">
-            <img src="/musicoterapia/Vistas1.1/images/binaural.png" alt="Icon" />
-            <span>Sonidos Binaurales</span>
-          </a>
-        </div>
-        <div class="menu-item">
-          <a href="/musicoterapia/Vistas1.1/PLAYLIST/playList.html" style="text-decoration: none">
-            <img src="/musicoterapia/Vistas1.1/images/playL.png" alt="Icon" />
-            <span>PlayList</span>
-          </a>
-        </div>
-        <div class="menu-item">
-          <a href="/musicoterapia/Vistas1.1/ME GUSTA/Tus me gustas pistas.html" style="text-decoration: none">
-            <img src="/musicoterapia/Vistas1.1/images/like.png" alt="Icon" />
-            <span>Me gusta</span>
-          </a>
-        </div>
-        <div class="menu-item">
-          <a href="/musicoterapia/Vistas1.1/PRINCIPAL_BUSCAR/buscar.html" style="text-decoration: none">
-            <img src="/musicoterapia/Vistas1.1/images/buscar boton.png" alt="Icon" />
-            <span>Buscar</span>
-          </a>
-        </div>
-      </aside>
-      
-        <main class="main-content">
-          <div class="title">
-            <span>Podcast</span>
-            <br>
-            <br>
+      <div class="menu-item">
+        <a href="/musicoterapia/Vistas1.1/SONIDOS_BINAURALES/binaurales.html" style="text-decoration: none">
+          <img src="/musicoterapia/Vistas1.1/images/binaural.png" alt="Icon" />
+          <span>Sonidos Binaurales</span>
+        </a>
+      </div>
+      <div class="menu-item">
+        <a href="/musicoterapia/Vistas1.1/PLAYLIST/playList.html" style="text-decoration: none">
+          <img src="/musicoterapia/Vistas1.1/images/playL.png" alt="Icon" />
+          <span>PlayList</span>
+        </a>
+      </div>
+      <div class="menu-item">
+        <a href="/musicoterapia/Vistas1.1/ME GUSTA/Tus me gustas pistas.html" style="text-decoration: none">
+          <img src="/musicoterapia/Vistas1.1/images/like.png" alt="Icon" />
+          <span>Me gusta</span>
+        </a>
+      </div>
+      <div class="menu-item">
+        <a href="/musicoterapia/Vistas1.1/PRINCIPAL_BUSCAR/buscar.html" style="text-decoration: none">
+          <img src="/musicoterapia/Vistas1.1/images/buscar boton.png" alt="Icon" />
+          <span>Buscar</span>
+        </a>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <div class="title">
+        <span>Podcast</span>
+        <br>
+        <br>
+      </div>
+      <div class="genres">
+        <!-- Tarjetas de Podcast con Cards -->
+        <div class="genre">
+          <div class="genre-card">
+            <a href="/musicoterapia/Vistas1.1/REPRODUCCTORES/REPRO_PODCAST/AFIRMACIONES/Reproductorpodcast1.html">
+              <img src="/musicoterapia/Vistas1.1/images/podcast1.jpg" alt="Afirmaciones" loading="lazy"
+                onerror="this.style.display='none'; this.parentElement.innerHTML += '<div class=\'image-placeholder\'>Image Not Available</div>';" />
+              <div class="genre-card-content">
+                <h3>Afirmaciones</h3>
+              </div>
+            </a>
           </div>
-          <div class="genres">
-            <!-- Tarjetas de Podcast con Cards -->
-            <div class="genre">
-              <div class="genre-card">
-                <a href="/musicoterapia/Vistas1.1/REPRODUCCTORES/REPRO_PODCAST/AFIRMACIONES/Reproductorpodcast1.html">
-                  <img
-                    src="/musicoterapia/Vistas1.1/images/podcast1.jpg"
-                    alt="Afirmaciones"
-                    loading="lazy"
-                    onerror="this.style.display='none'; this.parentElement.innerHTML += '<div class=\'image-placeholder\'>Image Not Available</div>';"
-                  />
-                  <div class="genre-card-content">
-                    <h3>Afirmaciones</h3>
-                  </div>
-                </a>
+        </div>
+
+        <div class="genre">
+          <div class="genre-card">
+            <a href="/musicoterapia/Vistas1.1/REPRODUCCTORES/REPRO_PODCAST/AUTOESTIMA/Reproductorpodcast2.html">
+              <img src="/musicoterapia/Vistas1.1/images/Podcast2.png" alt="Autoestima" loading="lazy"
+                onerror="this.style.display='none'; this.parentElement.innerHTML += '<div class=\'image-placeholder\'>Image Not Available</div>';" />
+              <div class="genre-card-content">
+                <h3>Autoestima</h3>
               </div>
-            </div>
-        
-            <div class="genre">
-              <div class="genre-card">
-                <a href="/musicoterapia/Vistas1.1/REPRODUCCTORES/REPRO_PODCAST/AUTOESTIMA/Reproductorpodcast2.html">
-                  <img
-                    src="/musicoterapia/Vistas1.1/images/Podcast2.png"
-                    alt="Autoestima"
-                    loading="lazy"
-                    onerror="this.style.display='none'; this.parentElement.innerHTML += '<div class=\'image-placeholder\'>Image Not Available</div>';"
-                  />
-                  <div class="genre-card-content">
-                    <h3>Autoestima</h3>
-                  </div>
-                </a>
-              </div>
-            </div>
-        
-            <div class="genre">
-              <div class="genre-card">
-                <a href="/musicoterapia/Vistas1.1/REPRODUCCTORES/REPRO_PODCAST/MOTIVACION/Reproductorpodcast3.html">
-                  <img
-                    src="/musicoterapia/Vistas1.1/images/PODCAST 2.jpg"
-                    alt="Motivación"
-                    loading="lazy"
-                    onerror="this.style.display='none'; this.parentElement.innerHTML += '<div class=\'image-placeholder\'>Image Not Available</div>';"
-                  />
-                  <div class="genre-card-content">
-                    <h3>Motivación</h3>
-                  </div>
-                </a>
-              </div>
-            </div>
-        
-            <div class="genre">
-              <div class="genre-card">
-                <a href="/musicoterapia/Vistas1.1/REPRODUCCTORES/REPRO_PODCAST/Reproductorpodcast.html?podcastId=4">
-                  <img
-                    src="/musicoterapia/Vistas1.1/images/PODCASTS 1.jpg"
-                    alt="Electrónica"
-                    loading="lazy"
-                    onerror="this.style.display='none'; this.parentElement.innerHTML += '<div class=\'image-placeholder\'>Image Not Available</div>';"
-                  />
-                  <div class="genre-card-content">
-        
-                  </div>
-                </a>
-                <a href="/musicoterapia/Vistas1.1/PRINCIPAL ESTUDIO PODCASTS/principal_estudio.html" class="boton-enlace">
-                  <button class="add-button">
-                    <i class="material-icons">add</i>
-                  </button>
-                </a>
-              </div>
-            </div>
+            </a>
           </div>
-        </main>
-    </div>
+        </div>
 
-    </div>
-    <br>
-    <br>
-    <br>
-    <br>
-<div include-html="/rutinas-de-ejercicios/includes/inicio/inicio.html"></div>
+        <div class="genre">
+          <div class="genre-card">
+            <a href="/musicoterapia/Vistas1.1/REPRODUCCTORES/REPRO_PODCAST/MOTIVACION/Reproductorpodcast3.html">
+              <img src="/musicoterapia/Vistas1.1/images/PODCAST 2.jpg" alt="Motivación" loading="lazy"
+                onerror="this.style.display='none'; this.parentElement.innerHTML += '<div class=\'image-placeholder\'>Image Not Available</div>';" />
+              <div class="genre-card-content">
+                <h3>Motivación</h3>
+              </div>
+            </a>
+          </div>
+        </div>
 
-</script>
+        <div class="genre">
+          <div class="genre-card">
+            <a href="/musicoterapia/Vistas1.1/REPRODUCCTORES/REPRO_PODCAST/Reproductorpodcast.html?podcastId=4">
+              <img src="/musicoterapia/Vistas1.1/images/PODCASTS 1.jpg" alt="Electrónica" loading="lazy"
+                onerror="this.style.display='none'; this.parentElement.innerHTML += '<div class=\'image-placeholder\'>Image Not Available</div>';" />
+              <div class="genre-card-content">
+
+              </div>
+            </a>
+            <a href="/musicoterapia/Vistas1.1/PRINCIPAL ESTUDIO PODCASTS/principal_estudio.html" class="boton-enlace">
+              <button class="add-button">
+                <i class="material-icons">add</i>
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div include-html="/rutinas-de-ejercicios/includes/inicio/inicio.html"></div>
+
+  <script type="module" src="./script.js"></script>
 </body>
+
 </html>
